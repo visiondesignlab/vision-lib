@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vision Lib</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+<link rel="stylesheet" href="/static/tools/image-slicer.css">
+<link rel="stylesheet" href="/static/assets/brand-assets.css">
+<link rel="stylesheet" href="/static/cms.css">
+<link rel="stylesheet" href="/static/responsive.css">
+<link rel="icon" type="image/png" href="/static/vision-design-logo.png">
+</head>
+<body>
+<a class="skip-link" href="#app">跳到内容</a>
+<header class="mobile-header">
+  <a href="/" class="logo" data-link aria-label="Vision Lib 首页"><img src="/static/vision-design-logo.png" alt=""><span>Vision Lib</span></a>
+  <button type="button" class="nav-toggle" id="openNav" aria-label="打开主导航" aria-controls="primaryNav" aria-expanded="false"><span></span><span></span></button>
+</header>
+<aside class="side">
+  <div class="side-top">
+    <a href="/" class="logo" data-link aria-label="Vision Lib"><img src="/static/vision-design-logo.png" alt="vision design"><span>Vision Lib</span></a>
+    <a href="/review" class="pill-btn shadow" id="reviewBtn" data-link>审核</a>
+    <button type="button" class="nav-toggle nav-close" id="closeNav" aria-label="关闭主导航"><span></span><span></span></button>
+  </div>
+  <nav class="nav" id="primaryNav" aria-label="主导航">
+    <h2>浏览</h2>
+    <a href="/?tab=video" data-link data-tab="video">视频案例</a>
+    <a href="/?tab=showcase" data-link data-tab="showcase">灵感库 <em class="new">new</em></a>
+    <a href="/?tab=graphic" data-link data-tab="graphic">平面</a>
+    <a href="/?tab=brand_skill" data-link data-tab="brand_skill">品牌 Skill</a>
+    <a href="/?tab=skill_repo" data-link data-tab="skill_repo">Skill 仓库</a>
+    <h2>工具</h2>
+    <a href="/tools/image-slicer" data-link data-tab="image-slicer">图片切图</a>
+    <a href="/review" data-link data-tab="review">内容管理 <span class="count" id="pendingCount"></span></a>
+    <a href="/static/README.html" target="_blank">使用说明</a>
+    <h2>资产</h2>
+    <a href="/assets/brand" data-link data-tab="brand-assets">品牌资产</a>
+  </nav>
+  <div class="side-bottom">
+    <div class="about">
+      <b>照着好例子，快速做出第一支 launch 视频。</b>
+      <p>团队内部案例库：每条视频案例都带复现 Prompt、步骤和依赖的 Skill；灵感库支持一键打开自己的 AI 拉片。</p>
+      <p class="muted" id="stats"></p>
+    </div>
+    <div class="foot"><span>© 2026 vision design 团队</span><a href="/review" data-link>审核</a></div>
+  </div>
+</aside>
+<main id="app"></main>
+<div id="overlay" hidden></div>
+<div id="toast" hidden></div>
+<script src="/static/site.js"></script>
+<script src="/static/app.js"></script>
+</body>
+</html>

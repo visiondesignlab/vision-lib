@@ -1,0 +1,887 @@
+{
+  "guideline": {
+    "id": "viaim-visual-guidelines-260309",
+    "title": "viaim 品牌视觉规范",
+    "version": "260309 Internal Draft",
+    "status": "latest",
+    "format": "PDF",
+    "size": "82 MB",
+    "owner": "viaim brand",
+    "updatedAt": "2026-07-05",
+    "sourceDate": "2026-03-09",
+    "href": "/static/assets/viaim/files/viaim-visual-guidelines-260309-internal-draft.pdf",
+    "summary": "最新品牌视觉规范。支持在线预览和下载，后续版本会继续追加到版本更新历史。",
+    "bytes": 85560377
+  },
+  "versions": [
+    {
+      "version": "260309 Internal Draft",
+      "date": "2026-07-05",
+      "status": "current",
+      "note": "新增到公开品牌资料库，作为当前最新品牌视觉规范。",
+      "href": "/static/assets/viaim/files/viaim-visual-guidelines-260309-internal-draft.pdf"
+    }
+  ],
+  "categories": [
+    {
+      "id": "single",
+      "label": "单 Logo",
+      "title": "viaim 单 Logo",
+      "kicker": "logo collection",
+      "summary": "透明底 Logo 集合，默认使用 Photoshop 风格棋盘底检查边缘和浅色变体。",
+      "stat": {
+        "value": "4710",
+        "label": "px wide"
+      },
+      "assets": [
+        {
+          "id": "brand-color",
+          "title": "viaim logo BrandColor",
+          "context": "brand color",
+          "usage": "Primary logo for neutral and light surfaces.",
+          "dimensions": "4710 x 1280 px",
+          "previewHref": "/static/assets/viaim/files/single-brand-color.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/single-brand-color.svg",
+              "fileName": "viaim logo BrandColor.svg",
+              "size": "3.8 KB",
+              "bytes": 3917
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/single-brand-color.png",
+              "fileName": "viaim logo BrandColor.png",
+              "size": "79 KB",
+              "bytes": 81013
+            },
+            {
+              "label": "PDF",
+              "href": "/static/assets/viaim/files/single-brand-color.pdf",
+              "fileName": "viaim logo BrandColor.pdf",
+              "size": "7.2 KB",
+              "bytes": 7337
+            }
+          ]
+        },
+        {
+          "id": "on-light",
+          "title": "viaim logo onLight",
+          "context": "on light",
+          "usage": "Logo variant prepared for light backgrounds.",
+          "dimensions": "4710 x 1280 px",
+          "previewHref": "/static/assets/viaim/files/single-on-light.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/single-on-light.svg",
+              "fileName": "viaim logo onLight.svg",
+              "size": "3.8 KB",
+              "bytes": 3903
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/single-on-light.png",
+              "fileName": "viaim logo onLight.png",
+              "size": "68 KB",
+              "bytes": 69271
+            },
+            {
+              "label": "PDF",
+              "href": "/static/assets/viaim/files/single-on-light.pdf",
+              "fileName": "viaim logo onLight.pdf",
+              "size": "7.1 KB",
+              "bytes": 7317
+            }
+          ]
+        },
+        {
+          "id": "on-dark",
+          "title": "viaim logo onDark",
+          "context": "on dark",
+          "usage": "Logo variant prepared for dark backgrounds.",
+          "dimensions": "4710 x 1280 px",
+          "previewHref": "/static/assets/viaim/files/single-on-dark.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/single-on-dark.svg",
+              "fileName": "viaim logo onDark.svg",
+              "size": "3.8 KB",
+              "bytes": 3903
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/single-on-dark.png",
+              "fileName": "viaim logo onDark.png",
+              "size": "73 KB",
+              "bytes": 74406
+            },
+            {
+              "label": "PDF",
+              "href": "/static/assets/viaim/files/single-on-dark.pdf",
+              "fileName": "viaim logo onDark.pdf",
+              "size": "7.1 KB",
+              "bytes": 7318
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "combined",
+      "label": "组合 Logo",
+      "title": "组合 Logo",
+      "kicker": "lockup collection",
+      "summary": "包含 logo+slogan 组合，以及 viaim 与 xunfei / weilai 的联合品牌组合。",
+      "stat": {
+        "value": "3",
+        "label": "sets"
+      },
+      "assets": [
+        {
+          "id": "logo-slogan-01",
+          "title": "组合 logo+slogan 01",
+          "context": "logo + slogan",
+          "usage": "viaim logo and slogan lockup.",
+          "dimensions": "1910 x 699 px",
+          "previewHref": "/static/assets/viaim/files/combined-logo-slogan-01.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-01.svg",
+              "fileName": "组合 logo+slogan 01.svg",
+              "bytes": 16649
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-01.png",
+              "fileName": "组合 logo+slogan 01.png",
+              "bytes": 37170
+            }
+          ]
+        },
+        {
+          "id": "logo-slogan-02",
+          "title": "组合 logo+slogan 02",
+          "context": "logo + slogan",
+          "usage": "viaim logo and slogan lockup.",
+          "dimensions": "1910 x 699 px",
+          "previewHref": "/static/assets/viaim/files/combined-logo-slogan-02.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-02.svg",
+              "fileName": "组合 logo+slogan 02.svg",
+              "bytes": 16679
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-02.png",
+              "fileName": "组合 logo+slogan 02.png",
+              "bytes": 41179
+            }
+          ]
+        },
+        {
+          "id": "logo-slogan-03",
+          "title": "组合 logo+slogan 03",
+          "context": "logo + slogan",
+          "usage": "viaim logo and slogan lockup.",
+          "dimensions": "1910 x 699 px",
+          "previewHref": "/static/assets/viaim/files/combined-logo-slogan-03.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-03.svg",
+              "fileName": "组合 logo+slogan 03.svg",
+              "bytes": 16637
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-03.png",
+              "fileName": "组合 logo+slogan 03.png",
+              "bytes": 35182
+            }
+          ]
+        },
+        {
+          "id": "logo-slogan-04",
+          "title": "组合 logo+slogan 04",
+          "context": "logo + slogan",
+          "usage": "viaim logo and slogan lockup.",
+          "dimensions": "1910 x 699 px",
+          "previewHref": "/static/assets/viaim/files/combined-logo-slogan-04.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-04.svg",
+              "fileName": "组合 logo+slogan 04.svg",
+              "bytes": 16667
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-04.png",
+              "fileName": "组合 logo+slogan 04.png",
+              "bytes": 38819
+            }
+          ]
+        },
+        {
+          "id": "logo-slogan-05",
+          "title": "组合 logo+slogan 05",
+          "context": "logo + slogan",
+          "usage": "viaim logo and slogan lockup.",
+          "dimensions": "1900 x 842 px",
+          "previewHref": "/static/assets/viaim/files/combined-logo-slogan-05.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-05.svg",
+              "fileName": "组合 logo+slogan 05.svg",
+              "bytes": 17089
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-05.png",
+              "fileName": "组合 logo+slogan 05.png",
+              "bytes": 45847
+            }
+          ]
+        },
+        {
+          "id": "logo-slogan-06",
+          "title": "组合 logo+slogan 06",
+          "context": "logo + slogan",
+          "usage": "viaim logo and slogan lockup.",
+          "dimensions": "1900 x 842 px",
+          "previewHref": "/static/assets/viaim/files/combined-logo-slogan-06.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-06.svg",
+              "fileName": "组合 logo+slogan 06.svg",
+              "bytes": 17119
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-06.png",
+              "fileName": "组合 logo+slogan 06.png",
+              "bytes": 49715
+            }
+          ]
+        },
+        {
+          "id": "logo-slogan-07",
+          "title": "组合 logo+slogan 07",
+          "context": "logo + slogan",
+          "usage": "viaim logo and slogan lockup.",
+          "dimensions": "1900 x 891 px",
+          "previewHref": "/static/assets/viaim/files/combined-logo-slogan-07.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-07.svg",
+              "fileName": "组合 logo+slogan 07.svg",
+              "bytes": 17072
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-07.png",
+              "fileName": "组合 logo+slogan 07.png",
+              "bytes": 44133
+            }
+          ]
+        },
+        {
+          "id": "logo-slogan-08",
+          "title": "组合 logo+slogan 08",
+          "context": "logo + slogan",
+          "usage": "viaim logo and slogan lockup.",
+          "dimensions": "1900 x 891 px",
+          "previewHref": "/static/assets/viaim/files/combined-logo-slogan-08.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-08.svg",
+              "fileName": "组合 logo+slogan 08.svg",
+              "bytes": 17102
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-logo-slogan-08.png",
+              "fileName": "组合 logo+slogan 08.png",
+              "bytes": 47144
+            }
+          ]
+        },
+        {
+          "id": "viaim+xunfei",
+          "title": "viaim+xunfei",
+          "context": "viaim + xunfei",
+          "usage": "viaim and xunfei co-brand lockup.",
+          "dimensions": "2406 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+xunfei.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei.svg",
+              "fileName": "viaim+xunfei.svg",
+              "bytes": 9546
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei.png",
+              "fileName": "viaim+xunfei.png",
+              "bytes": 37058
+            }
+          ]
+        },
+        {
+          "id": "viaim+xunfei-1",
+          "title": "viaim+xunfei-1",
+          "context": "viaim + xunfei",
+          "usage": "viaim and xunfei co-brand lockup.",
+          "dimensions": "2406 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+xunfei-1.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-1.svg",
+              "fileName": "viaim+xunfei-1.svg",
+              "bytes": 9532
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-1.png",
+              "fileName": "viaim+xunfei-1.png",
+              "bytes": 34958
+            }
+          ]
+        },
+        {
+          "id": "viaim+xunfei-2",
+          "title": "viaim+xunfei-2",
+          "context": "viaim + xunfei",
+          "usage": "viaim and xunfei co-brand lockup.",
+          "dimensions": "2406 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+xunfei-2.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-2.svg",
+              "fileName": "viaim+xunfei-2.svg",
+              "bytes": 9546
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-2.png",
+              "fileName": "viaim+xunfei-2.png",
+              "bytes": 38373
+            }
+          ]
+        },
+        {
+          "id": "viaim+xunfei-3",
+          "title": "viaim+xunfei-3",
+          "context": "viaim + xunfei",
+          "usage": "viaim and xunfei co-brand lockup.",
+          "dimensions": "2406 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+xunfei-3.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-3.svg",
+              "fileName": "viaim+xunfei-3.svg",
+              "bytes": 9532
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-3.png",
+              "fileName": "viaim+xunfei-3.png",
+              "bytes": 35677
+            }
+          ]
+        },
+        {
+          "id": "viaim+xunfei-4",
+          "title": "viaim+xunfei-4",
+          "context": "viaim + xunfei",
+          "usage": "viaim and xunfei co-brand lockup.",
+          "dimensions": "2406 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+xunfei-4.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-4.svg",
+              "fileName": "viaim+xunfei-4.svg",
+              "bytes": 9548
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-4.png",
+              "fileName": "viaim+xunfei-4.png",
+              "bytes": 37049
+            }
+          ]
+        },
+        {
+          "id": "viaim+xunfei-5",
+          "title": "viaim+xunfei-5",
+          "context": "viaim + xunfei",
+          "usage": "viaim and xunfei co-brand lockup.",
+          "dimensions": "2406 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+xunfei-5.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-5.svg",
+              "fileName": "viaim+xunfei-5.svg",
+              "bytes": 9534
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-5.png",
+              "fileName": "viaim+xunfei-5.png",
+              "bytes": 35009
+            }
+          ]
+        },
+        {
+          "id": "viaim+xunfei-6",
+          "title": "viaim+xunfei-6",
+          "context": "viaim + xunfei",
+          "usage": "viaim and xunfei co-brand lockup.",
+          "dimensions": "2406 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+xunfei-6.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-6.svg",
+              "fileName": "viaim+xunfei-6.svg",
+              "bytes": 9548
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-6.png",
+              "fileName": "viaim+xunfei-6.png",
+              "bytes": 38379
+            }
+          ]
+        },
+        {
+          "id": "viaim+xunfei-7",
+          "title": "viaim+xunfei-7",
+          "context": "viaim + xunfei",
+          "usage": "viaim and xunfei co-brand lockup.",
+          "dimensions": "2406 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+xunfei-7.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-7.svg",
+              "fileName": "viaim+xunfei-7.svg",
+              "bytes": 9534
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+xunfei-7.png",
+              "fileName": "viaim+xunfei-7.png",
+              "bytes": 35728
+            }
+          ]
+        },
+        {
+          "id": "viaim+weilai",
+          "title": "viaim+weilai",
+          "context": "viaim + weilai",
+          "usage": "viaim and weilai co-brand lockup.",
+          "dimensions": "2545 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+weilai.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai.svg",
+              "fileName": "viaim+weilai.svg",
+              "bytes": 16445
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai.png",
+              "fileName": "viaim+weilai.png",
+              "bytes": 36512
+            }
+          ]
+        },
+        {
+          "id": "viaim+weilai-1",
+          "title": "viaim+weilai-1",
+          "context": "viaim + weilai",
+          "usage": "viaim and weilai co-brand lockup.",
+          "dimensions": "2545 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+weilai-1.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-1.svg",
+              "fileName": "viaim+weilai-1.svg",
+              "bytes": 16431
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-1.png",
+              "fileName": "viaim+weilai-1.png",
+              "bytes": 33751
+            }
+          ]
+        },
+        {
+          "id": "viaim+weilai-2",
+          "title": "viaim+weilai-2",
+          "context": "viaim + weilai",
+          "usage": "viaim and weilai co-brand lockup.",
+          "dimensions": "2545 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+weilai-2.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-2.svg",
+              "fileName": "viaim+weilai-2.svg",
+              "bytes": 16445
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-2.png",
+              "fileName": "viaim+weilai-2.png",
+              "bytes": 38137
+            }
+          ]
+        },
+        {
+          "id": "viaim+weilai-3",
+          "title": "viaim+weilai-3",
+          "context": "viaim + weilai",
+          "usage": "viaim and weilai co-brand lockup.",
+          "dimensions": "2545 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+weilai-3.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-3.svg",
+              "fileName": "viaim+weilai-3.svg",
+              "bytes": 16431
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-3.png",
+              "fileName": "viaim+weilai-3.png",
+              "bytes": 35424
+            }
+          ]
+        },
+        {
+          "id": "viaim+weilai-4",
+          "title": "viaim+weilai-4",
+          "context": "viaim + weilai",
+          "usage": "viaim and weilai co-brand lockup.",
+          "dimensions": "2545 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+weilai-4.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-4.svg",
+              "fileName": "viaim+weilai-4.svg",
+              "bytes": 16554
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-4.png",
+              "fileName": "viaim+weilai-4.png",
+              "bytes": 36624
+            }
+          ]
+        },
+        {
+          "id": "viaim+weilai-5",
+          "title": "viaim+weilai-5",
+          "context": "viaim + weilai",
+          "usage": "viaim and weilai co-brand lockup.",
+          "dimensions": "2545 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+weilai-5.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-5.svg",
+              "fileName": "viaim+weilai-5.svg",
+              "bytes": 16540
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-5.png",
+              "fileName": "viaim+weilai-5.png",
+              "bytes": 33566
+            }
+          ]
+        },
+        {
+          "id": "viaim+weilai-6",
+          "title": "viaim+weilai-6",
+          "context": "viaim + weilai",
+          "usage": "viaim and weilai co-brand lockup.",
+          "dimensions": "2545 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+weilai-6.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-6.svg",
+              "fileName": "viaim+weilai-6.svg",
+              "bytes": 16554
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-6.png",
+              "fileName": "viaim+weilai-6.png",
+              "bytes": 38298
+            }
+          ]
+        },
+        {
+          "id": "viaim+weilai-7",
+          "title": "viaim+weilai-7",
+          "context": "viaim + weilai",
+          "usage": "viaim and weilai co-brand lockup.",
+          "dimensions": "2545 x 444 px",
+          "previewHref": "/static/assets/viaim/files/combined-viaim+weilai-7.svg",
+          "formats": [
+            {
+              "label": "SVG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-7.svg",
+              "fileName": "viaim+weilai-7.svg",
+              "bytes": 16540
+            },
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/combined-viaim+weilai-7.png",
+              "fileName": "viaim+weilai-7.png",
+              "bytes": 35374
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "app",
+      "label": "App Logo",
+      "title": "两个 App Logo",
+      "kicker": "app logo",
+      "summary": "展示 viaim app logo 与 app icon 两张应用图标源文件。",
+      "stat": {
+        "value": "2",
+        "label": "icons"
+      },
+      "assets": [
+        {
+          "id": "viaim-app-logo",
+          "title": "viaim App Icon",
+          "context": "viaim app logo",
+          "usage": "Primary viaim app logo image.",
+          "dimensions": "1024 x 1024 px",
+          "previewHref": "/static/assets/viaim/files/app-viaim-app-logo.png",
+          "formats": [
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/app-viaim-app-logo.png",
+              "fileName": "App Icon.png",
+              "bytes": 13915
+            }
+          ]
+        },
+        {
+          "id": "app-icon",
+          "title": "App icon",
+          "context": "app icon",
+          "usage": "App icon source image.",
+          "dimensions": "1536 x 1536 px",
+          "previewHref": "/static/assets/viaim/files/app-app-icon.png",
+          "formats": [
+            {
+              "label": "PNG",
+              "href": "/static/assets/viaim/files/app-app-icon.png",
+              "fileName": "icon.png",
+              "bytes": 277686
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "id": "misans-thin",
+      "label": "MiSans Thin",
+      "weight": 100,
+      "fileName": "MiSans-Thin.otf",
+      "href": "/static/assets/viaim/files/MiSans-Thin.otf",
+      "size": "6.4 MB",
+      "role": "Hairline display",
+      "bytes": 6724924
+    },
+    {
+      "id": "misans-extralight",
+      "label": "MiSans ExtraLight",
+      "weight": 200,
+      "fileName": "MiSans-ExtraLight.otf",
+      "href": "/static/assets/viaim/files/MiSans-ExtraLight.otf",
+      "size": "6.4 MB",
+      "role": "Light display",
+      "bytes": 6683192
+    },
+    {
+      "id": "misans-light",
+      "label": "MiSans Light",
+      "weight": 300,
+      "fileName": "MiSans-Light.otf",
+      "href": "/static/assets/viaim/files/MiSans-Light.otf",
+      "size": "6.3 MB",
+      "role": "Soft body",
+      "bytes": 6629860
+    },
+    {
+      "id": "misans-normal",
+      "label": "MiSans Normal",
+      "weight": 350,
+      "fileName": "MiSans-Normal.otf",
+      "href": "/static/assets/viaim/files/MiSans-Normal.otf",
+      "size": "6.3 MB",
+      "role": "Neutral body",
+      "bytes": 6580180
+    },
+    {
+      "id": "misans-regular",
+      "label": "MiSans Regular",
+      "weight": 400,
+      "fileName": "MiSans-Regular.otf",
+      "href": "/static/assets/viaim/files/MiSans-Regular.otf",
+      "size": "6.2 MB",
+      "role": "Default body",
+      "bytes": 6499984
+    },
+    {
+      "id": "misans-medium",
+      "label": "MiSans Medium",
+      "weight": 500,
+      "fileName": "MiSans-Medium.otf",
+      "href": "/static/assets/viaim/files/MiSans-Medium.otf",
+      "size": "6.2 MB",
+      "role": "UI emphasis",
+      "bytes": 6479600
+    },
+    {
+      "id": "misans-demibold",
+      "label": "MiSans Demibold",
+      "weight": 600,
+      "fileName": "MiSans-Demibold.otf",
+      "href": "/static/assets/viaim/files/MiSans-Demibold.otf",
+      "size": "6.2 MB",
+      "role": "Section titles",
+      "bytes": 6456744
+    },
+    {
+      "id": "misans-semibold",
+      "label": "MiSans Semibold",
+      "weight": 650,
+      "fileName": "MiSans-Semibold.otf",
+      "href": "/static/assets/viaim/files/MiSans-Semibold.otf",
+      "size": "6.2 MB",
+      "role": "Strong emphasis",
+      "bytes": 6459532
+    },
+    {
+      "id": "misans-bold",
+      "label": "MiSans Bold",
+      "weight": 700,
+      "fileName": "MiSans-Bold.otf",
+      "href": "/static/assets/viaim/files/MiSans-Bold.otf",
+      "size": "6.3 MB",
+      "role": "Headline",
+      "bytes": 6573740
+    },
+    {
+      "id": "misans-heavy",
+      "label": "MiSans Heavy",
+      "weight": 900,
+      "fileName": "MiSans-Heavy.otf",
+      "href": "/static/assets/viaim/files/MiSans-Heavy.otf",
+      "size": "6.3 MB",
+      "role": "Hero weight",
+      "bytes": 6609204
+    }
+  ],
+  "brand": "viaim",
+  "fileCount": 73,
+  "sections": [
+    {
+      "id": "brand-guidelines",
+      "name": "品牌规范"
+    },
+    {
+      "id": "company-intro",
+      "name": "公司介绍"
+    },
+    {
+      "id": "visual-assets",
+      "name": "视觉资产"
+    },
+    {
+      "id": "product-assets",
+      "name": "产品素材"
+    },
+    {
+      "id": "font-packages",
+      "name": "字体包"
+    },
+    {
+      "id": "product-ui",
+      "name": "产品界面"
+    }
+  ],
+  "companyIntros": [
+    {
+      "id": "cn",
+      "label": "国内版",
+      "title": "viaim 公司品牌介绍",
+      "version": "v260924",
+      "format": "PDF",
+      "fileName": "viaim 公司品牌介绍_国内_v260924.pdf",
+      "href": "/static/assets/viaim/files/viaim-company-intro-cn-v260924.pdf",
+      "bytes": 122424775,
+      "pages": 38,
+      "addedAt": "2026-11-04"
+    },
+    {
+      "id": "ja",
+      "label": "日语版",
+      "title": "viaim 公司品牌介绍",
+      "version": "v260924",
+      "format": "PDF",
+      "fileName": "viaim 公司品牌介绍_日语_v260924.pdf",
+      "href": "/static/assets/viaim/files/viaim-company-intro-ja-v260924.pdf",
+      "bytes": 97659049,
+      "pages": 28,
+      "addedAt": "2026-11-04"
+    },
+    {
+      "id": "en",
+      "label": "英语版",
+      "title": "viaim 公司品牌介绍",
+      "version": "v260924",
+      "format": "PDF",
+      "fileName": "viaim 公司品牌介绍_英语_v260924.pdf",
+      "href": "/static/assets/viaim/files/viaim-company-intro-en-v260924.pdf",
+      "bytes": 109936623,
+      "pages": 29,
+      "addedAt": "2026-11-04"
+    }
+  ]
+}

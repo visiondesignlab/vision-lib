@@ -1,0 +1,447 @@
+{
+  "source": "Vision Design Platform/public/brand-assets",
+  "importedAt": "2026-11-04",
+  "files": [
+    {
+      "source": "brand-assets/viaim-visual-guidelines-260309-internal-draft.pdf",
+      "file": "viaim-visual-guidelines-260309-internal-draft.pdf",
+      "bytes": 85560377,
+      "sha256": "cdcfe4641be79362bbafcfc87e78127b066381ab1dcd6f61f1558de31a0ec99c"
+    },
+    {
+      "source": "brand-assets/logos/viaim logo BrandColor.svg",
+      "file": "single-brand-color.svg",
+      "bytes": 3917,
+      "sha256": "d00926af6c393fd79c4979b970635dd3c523f6dc5a0feb3a7667ebb91b9a8f7c"
+    },
+    {
+      "source": "brand-assets/logos/viaim logo BrandColor.png",
+      "file": "single-brand-color.png",
+      "bytes": 81013,
+      "sha256": "5b7bec011c2d6da0130b48718d7f070b310829cb827e1ea6cba13d2d28f55eba"
+    },
+    {
+      "source": "brand-assets/logos/viaim logo BrandColor.pdf",
+      "file": "single-brand-color.pdf",
+      "bytes": 7337,
+      "sha256": "56555b8375a99c64527a28f9e7a8d417638343bb26898d748e81d564ebb5d299"
+    },
+    {
+      "source": "brand-assets/logos/viaim logo onLight.svg",
+      "file": "single-on-light.svg",
+      "bytes": 3903,
+      "sha256": "81307a492d52413310a9ad9c945047875996d826799841b8e285dd981f76b0e3"
+    },
+    {
+      "source": "brand-assets/logos/viaim logo onLight.png",
+      "file": "single-on-light.png",
+      "bytes": 69271,
+      "sha256": "d6636c1b57694f30daae98d930c4c8bef3bacaf6e03537bc31e45a983c8f9d4e"
+    },
+    {
+      "source": "brand-assets/logos/viaim logo onLight.pdf",
+      "file": "single-on-light.pdf",
+      "bytes": 7317,
+      "sha256": "1fcaed79731da5f1afaaf90893fd0fd4c867548e7bde0007425a24e3ad5ca2de"
+    },
+    {
+      "source": "brand-assets/logos/viaim logo onDark.svg",
+      "file": "single-on-dark.svg",
+      "bytes": 3903,
+      "sha256": "5a16118f041e16fc7c30ae40bf72ea315fba617f994a13272aa2b4d748d09e54"
+    },
+    {
+      "source": "brand-assets/logos/viaim logo onDark.png",
+      "file": "single-on-dark.png",
+      "bytes": 74406,
+      "sha256": "19d264f0d601c6d9affc9acb4e76a770217858141373329724c0dbe02c0836b0"
+    },
+    {
+      "source": "brand-assets/logos/viaim logo onDark.pdf",
+      "file": "single-on-dark.pdf",
+      "bytes": 7318,
+      "sha256": "31b3cfa412c2d85f25b5f600bba0989b11f4a9c4d623f4337ad7df2456f3a092"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 01.svg",
+      "file": "combined-logo-slogan-01.svg",
+      "bytes": 16649,
+      "sha256": "51ffacdb7544cc9c9b3e8b618cdb98aafe1896bbe0ba289633a259b3f3b90b26"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 01.png",
+      "file": "combined-logo-slogan-01.png",
+      "bytes": 37170,
+      "sha256": "360f9b177f47fad6444c3741db25e89f6ee9af004a205be5f13cdf522c23a27e"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 02.svg",
+      "file": "combined-logo-slogan-02.svg",
+      "bytes": 16679,
+      "sha256": "2417b1660c6c21b5bf125999d5bf0d9bc940508711de25c1b1ecff06eac42e88"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 02.png",
+      "file": "combined-logo-slogan-02.png",
+      "bytes": 41179,
+      "sha256": "2cc8ff75616e7b54fad7fc77ef398c733d6d76f09b25d131dc3a77031b775424"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 03.svg",
+      "file": "combined-logo-slogan-03.svg",
+      "bytes": 16637,
+      "sha256": "2aa035be211b46d618c432b862749e537590f54e2abb42067e7ad4120ffdcdf4"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 03.png",
+      "file": "combined-logo-slogan-03.png",
+      "bytes": 35182,
+      "sha256": "f4222fd1f10f95889fed797532051d7c3af73c6484dd83047110af51bb9a17ac"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 04.svg",
+      "file": "combined-logo-slogan-04.svg",
+      "bytes": 16667,
+      "sha256": "946c5401b405f3e09a75aed151067a1e9f30141f8af832411f19ed22bc71b515"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 04.png",
+      "file": "combined-logo-slogan-04.png",
+      "bytes": 38819,
+      "sha256": "5a4ecad90bf9b41ff6b4196e6e98918fd518248744e4f004fe6b70476da300a2"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 05.svg",
+      "file": "combined-logo-slogan-05.svg",
+      "bytes": 17089,
+      "sha256": "3f048868e81d2a59b3755db2e08444a2087bc937ff182f9a1b687711e4d8211e"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 05.png",
+      "file": "combined-logo-slogan-05.png",
+      "bytes": 45847,
+      "sha256": "e09214d1ed33d7fe597626c5cdc3f7e86ee7849c78e644dce19f4be1d94e5e73"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 06.svg",
+      "file": "combined-logo-slogan-06.svg",
+      "bytes": 17119,
+      "sha256": "f6c8a1028093c79a427cc0f3b8b30841a2a13c86f3ff96f1b39bfe60ceb94d0e"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 06.png",
+      "file": "combined-logo-slogan-06.png",
+      "bytes": 49715,
+      "sha256": "6e0bdd736ac033ab0819f6248e17afedff829f07aa9fbabec01cff92d6c20859"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 07.svg",
+      "file": "combined-logo-slogan-07.svg",
+      "bytes": 17072,
+      "sha256": "e41af05a046b2b078d35be685b712358eb35e01dd6b496db9c3faef467cb2200"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 07.png",
+      "file": "combined-logo-slogan-07.png",
+      "bytes": 44133,
+      "sha256": "4608fb7a201948557c0364cc7ed281770e6a71deeb4e766e5558473a3c361ad2"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 08.svg",
+      "file": "combined-logo-slogan-08.svg",
+      "bytes": 17102,
+      "sha256": "8815b31dd34f23d15e8c68e9923acf9d63afcfaed395f21c0e07cabe8c6ff6cf"
+    },
+    {
+      "source": "brand-assets/logos/combined/组合 logo+slogan 08.png",
+      "file": "combined-logo-slogan-08.png",
+      "bytes": 47144,
+      "sha256": "fc76df1e8f0281be44f7a46d645433ffbc67fa1ed5932f43f7881c896355ae38"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei.svg",
+      "file": "combined-viaim+xunfei.svg",
+      "bytes": 9546,
+      "sha256": "32ceb7e48c0d009a9af5adb36396008e38bb1acfdf3cfb6f02ac95f0f74078a6"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei.png",
+      "file": "combined-viaim+xunfei.png",
+      "bytes": 37058,
+      "sha256": "6590b8df926fad5e2b0926c33a09629f798c235d22297a2bcdb023fca3fd088b"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-1.svg",
+      "file": "combined-viaim+xunfei-1.svg",
+      "bytes": 9532,
+      "sha256": "951f90aa4467f3aa39054f8b6f36d366ed0f28c6354d1710f3a8d8d98e43d878"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-1.png",
+      "file": "combined-viaim+xunfei-1.png",
+      "bytes": 34958,
+      "sha256": "d29eba5dca68f558cb2231349970f7ae9c8ab412d3c684ac3eadb94f79e65550"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-2.svg",
+      "file": "combined-viaim+xunfei-2.svg",
+      "bytes": 9546,
+      "sha256": "996e726cb95a67d1168799e4d3d254816609b62e87226717404d439a4eead903"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-2.png",
+      "file": "combined-viaim+xunfei-2.png",
+      "bytes": 38373,
+      "sha256": "1cac87391f8dbe14d297266d27a855c7e3a419df108cf14a169ae440ed298377"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-3.svg",
+      "file": "combined-viaim+xunfei-3.svg",
+      "bytes": 9532,
+      "sha256": "fc5a6aefa4d896d5da95c9696af8dc7684decddd17943a05272f7d4f9c34d005"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-3.png",
+      "file": "combined-viaim+xunfei-3.png",
+      "bytes": 35677,
+      "sha256": "b47b4841d2c80b7253a336855d254c4ab9020f269b29a2967652102a4ac54d88"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-4.svg",
+      "file": "combined-viaim+xunfei-4.svg",
+      "bytes": 9548,
+      "sha256": "173496996720d0e8dab1739593db15467cb5ae6f6faf75df4d1993a83922dfe1"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-4.png",
+      "file": "combined-viaim+xunfei-4.png",
+      "bytes": 37049,
+      "sha256": "14ab55067afa66557ad20e65985ea9a5cfcce2759e35204cabc4ec7c2b76de66"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-5.svg",
+      "file": "combined-viaim+xunfei-5.svg",
+      "bytes": 9534,
+      "sha256": "2a772bd9441d6a1d67553f49e5c76e1618c592081b2b4f4fef97f2c1cdb09a19"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-5.png",
+      "file": "combined-viaim+xunfei-5.png",
+      "bytes": 35009,
+      "sha256": "dc26f575a178f5335403fb8f04c41cfd5565ede94c37f6ee0712d1440f57c3c1"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-6.svg",
+      "file": "combined-viaim+xunfei-6.svg",
+      "bytes": 9548,
+      "sha256": "d96a6113d8c6518f027db7b07d5b4f82b51ce34d1f0af81fe74ba795bf52ca69"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-6.png",
+      "file": "combined-viaim+xunfei-6.png",
+      "bytes": 38379,
+      "sha256": "90ca9a8aa09f9bf7480988014a247bb50e718be1eda8cf72fdb1ceed5be9b195"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-7.svg",
+      "file": "combined-viaim+xunfei-7.svg",
+      "bytes": 9534,
+      "sha256": "821b36203b586e9db705fed5d279ddd5420b5be00a53f95563dd5dcbc66ba021"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+xunfei-7.png",
+      "file": "combined-viaim+xunfei-7.png",
+      "bytes": 35728,
+      "sha256": "6f657c8d1297611a628414975b72659f20474d57be8d3778d68b68d815bd50e2"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai.svg",
+      "file": "combined-viaim+weilai.svg",
+      "bytes": 16445,
+      "sha256": "f4cc8243bc23454e2d92f5dae3dabb424304b3be82d85378ad545e5d3c00cbe5"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai.png",
+      "file": "combined-viaim+weilai.png",
+      "bytes": 36512,
+      "sha256": "04610e7caaa0184d5f7d12218fe4574fbca67c7d6467f53f29d6d97c34f5641c"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-1.svg",
+      "file": "combined-viaim+weilai-1.svg",
+      "bytes": 16431,
+      "sha256": "3749129258ab5631003fe1820a2b041392512a99aa3d1a8a36d573a48e0e60d6"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-1.png",
+      "file": "combined-viaim+weilai-1.png",
+      "bytes": 33751,
+      "sha256": "a289dcc59947599e168e9e6684db227afdbcd0eef53461a7c565eb220fe7f1a4"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-2.svg",
+      "file": "combined-viaim+weilai-2.svg",
+      "bytes": 16445,
+      "sha256": "cf5fc83ead4264bd41cf2692b49c4eb6a16857d123fed0d89f92268dd9527cbd"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-2.png",
+      "file": "combined-viaim+weilai-2.png",
+      "bytes": 38137,
+      "sha256": "cf1d15b5f687e05520c7293ff60c947415e2ab2dd6f8967c8a3b12f7f5cb0938"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-3.svg",
+      "file": "combined-viaim+weilai-3.svg",
+      "bytes": 16431,
+      "sha256": "818143d7931d2a266d8c08c68ae35985c2894e39c2b75a97ec9238173e78e64c"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-3.png",
+      "file": "combined-viaim+weilai-3.png",
+      "bytes": 35424,
+      "sha256": "7248cb74345d63e3de800abdd92131f77b6b9fcf4fbd735c8b33f11bac140303"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-4.svg",
+      "file": "combined-viaim+weilai-4.svg",
+      "bytes": 16554,
+      "sha256": "3048920934e74e0d7a409a0e71b8979fdacf6fc57e665374b4e9e90c8112ce0e"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-4.png",
+      "file": "combined-viaim+weilai-4.png",
+      "bytes": 36624,
+      "sha256": "e2504c31c0e1dc0c2a9522a1babae19f67f82588d5a6ef5af50aa60cf88f009d"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-5.svg",
+      "file": "combined-viaim+weilai-5.svg",
+      "bytes": 16540,
+      "sha256": "50cb8c6e83200ce36ba6e7b10f8702972edb2d776a3f3c00274d6433167e58f7"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-5.png",
+      "file": "combined-viaim+weilai-5.png",
+      "bytes": 33566,
+      "sha256": "a68f9698915cb757014d2dbc22237c9f1f594df6020d10be02b67c0cb61cb3bb"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-6.svg",
+      "file": "combined-viaim+weilai-6.svg",
+      "bytes": 16554,
+      "sha256": "7f1f84b960dc4f086cb0feb48bb7e673e94e168260eaa5f22e74d6ddcac8e4e1"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-6.png",
+      "file": "combined-viaim+weilai-6.png",
+      "bytes": 38298,
+      "sha256": "377d275f1f22b9c4ff768f047438f4cc32a141e420e1b9b1d131e3223b3b47d5"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-7.svg",
+      "file": "combined-viaim+weilai-7.svg",
+      "bytes": 16540,
+      "sha256": "adcfb637fb17849e3451148cb899370a5f296bf3d46b72790bb49254aa3e297a"
+    },
+    {
+      "source": "brand-assets/logos/combined/viaim+weilai-7.png",
+      "file": "combined-viaim+weilai-7.png",
+      "bytes": 35374,
+      "sha256": "e6aef9a55a682f15d18164f536bf0b321a6a4d803d1d2c2c05712fe3ffdf1a0c"
+    },
+    {
+      "source": "brand-assets/logos/app/App Icon.png",
+      "file": "app-viaim-app-logo.png",
+      "bytes": 13915,
+      "sha256": "3b577e2c43fd9c05e33c6e3bff321a7b1c8bbd8974ce863874c777503c4f4a02"
+    },
+    {
+      "source": "brand-assets/logos/app/icon.png",
+      "file": "app-app-icon.png",
+      "bytes": 277686,
+      "sha256": "bb7777b21503c1515639860812718e55b9d6aea68180d906bba25ddd216a7d79"
+    },
+    {
+      "source": "brand-assets/fonts/misans/MiSans-Thin.otf",
+      "file": "MiSans-Thin.otf",
+      "bytes": 6724924,
+      "sha256": "fa771c1adc0db9e6ed127d057333a5879e945f9db7309f9756c24293e9381a86"
+    },
+    {
+      "source": "brand-assets/fonts/misans/MiSans-ExtraLight.otf",
+      "file": "MiSans-ExtraLight.otf",
+      "bytes": 6683192,
+      "sha256": "bbbc6fb307711b3ec7e621027e0a835d248eb31ebca78e704ce9b3e62676ffa9"
+    },
+    {
+      "source": "brand-assets/fonts/misans/MiSans-Light.otf",
+      "file": "MiSans-Light.otf",
+      "bytes": 6629860,
+      "sha256": "d4df0f3f5b0e52bbbc7f7865b1a67bed97d6c4380deb5a8ddd2319688ab510e1"
+    },
+    {
+      "source": "brand-assets/fonts/misans/MiSans-Normal.otf",
+      "file": "MiSans-Normal.otf",
+      "bytes": 6580180,
+      "sha256": "b9fa8a141d2ea265d2fa5001cdba6760a48ed3070298528f292eb5677f55aa53"
+    },
+    {
+      "source": "brand-assets/fonts/misans/MiSans-Regular.otf",
+      "file": "MiSans-Regular.otf",
+      "bytes": 6499984,
+      "sha256": "962c1755fbfe9e0ac9762c9ec954784dcf0beb8cc2731537abddf8371b164b9a"
+    },
+    {
+      "source": "brand-assets/fonts/misans/MiSans-Medium.otf",
+      "file": "MiSans-Medium.otf",
+      "bytes": 6479600,
+      "sha256": "d42b498b7ed9b5bf66a2f5c545839c43f39d6a81efc10eeb83fd63a959629c65"
+    },
+    {
+      "source": "brand-assets/fonts/misans/MiSans-Demibold.otf",
+      "file": "MiSans-Demibold.otf",
+      "bytes": 6456744,
+      "sha256": "67824977c8be99f4d47cef03c7a45c22dc37047b8be158b24941d11c3ad56455"
+    },
+    {
+      "source": "brand-assets/fonts/misans/MiSans-Semibold.otf",
+      "file": "MiSans-Semibold.otf",
+      "bytes": 6459532,
+      "sha256": "aba795ad7c0c764fcaddeb671b7c09c3509587b33069ec4f9cd140e68eceef3d"
+    },
+    {
+      "source": "brand-assets/fonts/misans/MiSans-Bold.otf",
+      "file": "MiSans-Bold.otf",
+      "bytes": 6573740,
+      "sha256": "bff025b049c83d614fdabfbee0e4c2e4569ff9956745e669a45da1b7a4ea09a8"
+    },
+    {
+      "source": "brand-assets/fonts/misans/MiSans-Heavy.otf",
+      "file": "MiSans-Heavy.otf",
+      "bytes": 6609204,
+      "sha256": "2b8eb30ed34487f60b24cff0f6390ff347f4a07bab122a3a6ed2b805ac6638d9"
+    },
+    {
+      "source": "品牌资产 Brand Assets/公司品牌介绍文档 Company Brand Intro/viaim 公司品牌介绍_国内_v260924.pdf",
+      "file": "viaim-company-intro-cn-v260924.pdf",
+      "bytes": 122424775,
+      "sha256": "a0651df19eb15097ac0d362669a8fc53709c96996f96c3bb6c5c2146e02ef9ce",
+      "importedAt": "2026-11-04"
+    },
+    {
+      "source": "品牌资产 Brand Assets/公司品牌介绍文档 Company Brand Intro/viaim 公司品牌介绍_日语_v260924.pdf",
+      "file": "viaim-company-intro-ja-v260924.pdf",
+      "bytes": 97659049,
+      "sha256": "4c56c034f3bdb303f40d5998aa46288782eb1cc29381db07a84791b186754424",
+      "importedAt": "2026-11-04"
+    },
+    {
+      "source": "品牌资产 Brand Assets/公司品牌介绍文档 Company Brand Intro/viaim 公司品牌介绍_英语_v260924.pdf",
+      "file": "viaim-company-intro-en-v260924.pdf",
+      "bytes": 109936623,
+      "sha256": "b5d6a67fd3d42113be2745e070ee4069d88ac26fa411c4df22a74303bc6c1c88",
+      "importedAt": "2026-11-04"
+    }
+  ]
+}

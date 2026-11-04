@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- Chromium's native video timeline is white with a black shadow.
+       Mask out the dark shadow, retaining the track and thumb's original alpha. -->
+  <filter id="timeline-no-shadow" color-interpolation-filters="sRGB">
+    <feColorMatrix in="SourceGraphic" type="luminanceToAlpha" result="light"/>
+    <feComposite in="SourceGraphic" in2="light" operator="in"/>
+  </filter>
+</svg>

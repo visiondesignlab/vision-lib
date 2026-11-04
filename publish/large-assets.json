@@ -1,0 +1,30 @@
+[
+  {
+    "path": "static/assets/viaim/files/viaim-company-intro-cn-v260924.pdf",
+    "name": "viaim-company-intro-cn-v260924.pdf",
+    "bytes": 122424775,
+    "sha256": "a0651df19eb15097ac0d362669a8fc53709c96996f96c3bb6c5c2146e02ef9ce",
+    "url": "https://github.com/visiondesignlab/vision-lib/releases/download/brand-assets-2026-11-04/viaim-company-intro-cn-v260924.pdf"
+  },
+  {
+    "path": "static/assets/viaim/files/viaim-company-intro-en-v260924.pdf",
+    "name": "viaim-company-intro-en-v260924.pdf",
+    "bytes": 109936623,
+    "sha256": "b5d6a67fd3d42113be2745e070ee4069d88ac26fa411c4df22a74303bc6c1c88",
+    "url": "https://github.com/visiondesignlab/vision-lib/releases/download/brand-assets-2026-11-04/viaim-company-intro-en-v260924.pdf"
+  },
+  {
+    "path": "static/assets/viaim/files/viaim-company-intro-ja-v260924.pdf",
+    "name": "viaim-company-intro-ja-v260924.pdf",
+    "bytes": 97659049,
+    "sha256": "4c56c034f3bdb303f40d5998aa46288782eb1cc29381db07a84791b186754424",
+    "url": "https://github.com/visiondesignlab/vision-lib/releases/download/brand-assets-2026-11-04/viaim-company-intro-ja-v260924.pdf"
+  },
+  {
+    "path": "static/assets/viaim/files/viaim-visual-guidelines-260309-internal-draft.pdf",
+    "name": "viaim-visual-guidelines-260309-internal-draft.pdf",
+    "bytes": 85560377,
+    "sha256": "cdcfe4641be79362bbafcfc87e78127b066381ab1dcd6f61f1558de31a0ec99c",
+    "url": "https://github.com/visiondesignlab/vision-lib/releases/download/brand-assets-2026-11-04/viaim-visual-guidelines-260309-internal-draft.pdf"
+  }
+]

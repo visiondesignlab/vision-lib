@@ -1,0 +1,158 @@
+# Vision Lib（caselib）
+
+团队内部的 launch / 宣传视频案例库。GitHub Pages 发布与更新见 [部署说明](docs/github-pages.md)。两种内容：
+
+| 类型 | 标签页 | 内容 |
+| --- | --- | --- |
+| 视频案例 `video`、平面 `graphic` | 视频案例 / 平面 | 可复现的好例子：复现 Prompt、步骤、依赖的 Skill、工具、资产，带「使用」按钮 |
+| 品牌 Skill `brand_skill` | 品牌 Skill | 团队长期维护、带版本号的规范 / Skill（SKILL.md） |
+| Skill 仓库 `skill_repo` | Skill 仓库 | 做视频用的 agent skill 仓库（手册 Top 50 + 每日 GitHub 新增） |
+| 灵感库 `showcase` | 灵感库 | 纯展示：只看片，只存标题、品牌、来源、日期、数据、分类；每条可「一键拉片」，打开用户自己的 AI 并预填提示词 |
+
+视觉风格参照 recent.design（Inter 13px、灰阶 oklch、药丸按钮、左侧纯文字导航、瀑布流卡片），详情面板的信息结构参照 Open Design。
+
+## 运行
+
+```bash
+cd /workspace/caselib
+python3 server.py --port 8787          # 只用 Python 标准库；媒体入库时需要 ffmpeg（转码 / 缩略图）
+# 打开 http://localhost:8787
+```
+
+依赖：Python 3.10+（标准库 + numpy + Pillow，用于拉片和占位图）、ffmpeg/ffprobe、yt-dlp（ingest 下载 X 视频时用）。
+数据都是文件：`data/cases.json`（全部条目）、`data/rejected.json`（被拒绝的来源链接，去重用）、`media/<id>/`（转码视频、预览、缩略图、拉片结果）。
+
+## 图片切图工具
+
+侧栏「工具 → 图片切图」，地址 `/tools/image-slicer`。工具使用平台现有的字体、灰阶、药丸按钮与侧栏导航。
+
+- 支持多图自动切片、等比缩放（输出高度向下取整）、单图定点裁切、单张切片下载与 ZIP 打包。切片最大宽高默认均为 4096px。
+- 已选图片显示缩略图和尺寸，可逐张取消选择。
+- 定点裁切支持点击预览或输入整数 Y 坐标；鼠标超过当前分段的最大高度时，预览切线吸附到「上一条切线 + 最大高度」，每次点击添加一条切线。导出前检查最大分段高度。修改输出宽度后需要重新加载预览。
+- 图片仅在浏览器内处理。在平台栏目间切换会保留图片、标记和结果；刷新页面或关闭页面后清空。
+- 实现位于 `static/tools/image-slicer.js`，样式限定在工具内。JSZip 3.10.1 随平台存放于 `static/vendor/`，保留上游许可证，无需运行时访问 CDN。源自独立的「Assets 切图」工具，原目录不受影响。
+
+## 品牌资产
+
+侧栏「资产 → 品牌资产」，地址 `/assets/brand`。界面沿用平台的字体、灰阶、药丸按钮、导航和卡片样式；分类由 URL 参数 `section` 保存，可直接打开、刷新和前后导航。
+
+2026-11-04 从本机 `http://localhost:5174/` 对应的 `Vision Design Platform/public/brand-assets` 导入已有内容：品牌规范 PDF 1 份、单 Logo 3 组、组合 Logo 24 组、App Logo 2 组、MiSans 字重 10 个，共 70 个文件。产品素材、产品界面保留源站的空分类状态；品牌 Skill 统一使用「浏览」分组下的现有入口。
+
+- 品牌规范支持完整 PDF 预览、版本信息和下载；视觉资产支持分类、搜索、平铺/列表以及 SVG、PNG、PDF 原文件下载。
+- 图片大图使用平台详情弹窗，支持左右切换、放大/缩小、拖拽和适应窗口；切换图片后恢复初始视图。
+- 品牌规范与三份公司介绍均在站内阅读，预览和版本入口不另开标签页。PDF 默认连续纵向滚动，缩放由工具栏控制；支持页码跳转与大图弹窗，进入弹窗保留当前页。使用本地 PDF.js 6.5.438，按需读取和渲染附近页面，不依赖浏览器 PDF 插件或外部 CDN。
+- 「公司介绍」位于「品牌规范」之后，收录用户提供的 v260924 国内版（38 页）、日语版（28 页）、英语版（29 页），支持版本切换、在线预览和保留原文件名下载。三份原 PDF 保持完整并已校验 SHA-256，资产文件现共 73 个；URL 参数 `document=cn|ja|en` 可定位具体版本。
+- MiSans 支持字重切换、自定义文本预览及 OTF 下载；字体仅用于样张，平台 UI 字体保持不变。
+- 页面代码和样式：`static/assets/brand-assets.js`、`static/assets/brand-assets.css`；内容清单：`static/assets/viaim/manifest.json`。
+- 文件存放于 `static/assets/viaim/files/`，采用安全文件名服务，下载保留源文件名。`provenance.json` 记录来源相对路径、大小和 SHA-256，70 个文件导入时均已校验一致。
+- 这是本次内容的本地副本，运行不依赖 5174 端口；源站之后的更新需另行同步。
+
+## 内容管理平台（CMS）
+
+从站点「审核」进入 `/review`，输入管理密码后进入独立 CMS（也支持 `/cms`）。界面直接使用本站 `static/style.css` 的字体、颜色、侧栏、药丸按钮与下拉菜单。
+
+- 首次启动自动生成密码，保存在本机 `data/cms_initial_password.txt`（权限 600）；认证文件 `data/cms_password.json` 只存加盐 scrypt 哈希。也可在首次启动时用 `CASELIB_CMS_INITIAL_PASSWORD` 指定初始密码。
+- 登录后可以在「账号设置」修改密码（至少 12 个字符）。修改后删除初始密码文件并注销全部会话。浏览器使用 12 小时有效的 HttpOnly / SameSite Cookie，不在 localStorage 保存密码或 token。退出会注销当前会话；服务重启需要重新登录。
+- 「新建内容」支持视频案例、灵感库、平面、品牌 Skill、Skill 仓库。可以填写标题、分类、介绍、来源、Prompt、操作步骤、工具、版本与标签，上传封面、图片、视频和 MD / TXT / PDF 附件。
+- 流程：**保存草稿 → 提交审核 → 审核并发布**。普通用户仅能访问已发布内容与关联的站内素材；草稿、审核意见、内部备注与未审核的修改不对外展示。
+- 已发布内容再次编辑会保存独立修订稿，原版仍正常展示；新修订审核通过后才替换线上版本。退回时填写原因，修改后可再次提交；下架后前台隐藏，CMS 内保留内容。
+- 「我的内容」展示在 CMS 中创建的条目；「全部内容」也包括既有和自动收录的条目。列表支持状态、类型、搜索与滚动加载，每条内容保留操作记录。
+- 图片支持 JPG / PNG / WebP，单个最多 20 MB；视频支持 MP4 / MOV / WebM，最多 200 MB，自动生成转码、封面与预览；附件单个最多 20 MB。未保存的上传文件会保留在媒体目录，但不能被匿名访问。
+- 仍保留 `X-Admin-Token` 供已有本机脚本调用；token 来自 `data/admin_token.txt` 或 `CASELIB_ADMIN_TOKEN`，网页不再使用它。编辑和状态操作需传入返回的 `_version`，过期修改返回 409，防止覆盖其他人的更新。
+- 若部署到 HTTPS，设置 `CASELIB_COOKIE_SECURE=1`。当前配置运行在本机 127.0.0.1。
+- 运行隔离测试时可设置 `CASELIB_DATA_DIR` / `CASELIB_MEDIA_DIR`，不会影响正式案例和素材。
+
+API：`POST /api/auth/login`、`GET /api/auth/session`、`POST /api/auth/logout|password`；`GET/POST /api/admin/cases`、`GET/PUT /api/admin/cases/<id>`、`POST /api/admin/cases/<id>/submit|approve|reject|unpublish`、`POST /api/admin/uploads`。浏览器写请求需携带登录返回的 `X-CSRF-Token`。
+
+## 每日 ingest（给定时任务调用）
+
+```bash
+bash /workspace/caselib/run_daily.sh
+# 等价于：cd /workspace/caselib && python3 ingest.py --sources inbox,github,lvg --limit 30
+```
+
+- 新条目一律进 `pending`，等人在 /review 审核；以来源 URL 规范化后去重（x.com / twitter.com / i/status 视为同一条；GitHub 按 owner/repo 小写），同时排除 `rejected.json`。
+- 每次结束打印一行 JSON（`{"ok":true,"added":N,"by_source":{...}}`），`run_daily.sh` 把它追加到 `data/ingest.log`，错误写到 `data/ingest.err.log`；失败时退出码非 0。
+- 和 server 同时跑没问题：写 `cases.json` 用文件锁 + 原子替换。
+- 其他参数：`--sources lvg,inbox`（只跑部分来源）、`--limit N`（每个来源最多新增 N 条）、`--publish`（直接发布，仅用于首次批量导入）、`--dry-run`。
+
+### 来源 1：GitHub（skill 仓库）
+公开 search API，关键词 remotion skill / hyperframes / motion graphics skill / ffmpeg skill / video skill claude code / launch video agent 等，只取本月有 push、≥20 star、非 fork 的仓库。未设 `GITHUB_TOKEN` 时每次搜索间隔 7 秒（未认证限额 10 次/分钟）。
+
+### 来源 2：inbox（外部 agent 投递的 X 帖子）
+把 JSON 文件放进 `data/inbox/`，下次 ingest 处理后移到 `data/inbox/processed/`：
+
+```json
+{"items": [
+  {"type": "case",                      // case = 视频案例（带复现方法）；showcase = 灵感库（纯展示）
+   "url": "https://x.com/<user>/status/<id>",
+   "author": "@user", "title": "可选", "brand": "可选（showcase 用）",
+   "text": "帖子正文", "date": "2026-11-03",
+   "metrics": {"views": 0, "likes": 0, "reposts": 0, "bookmarks": 0}, "metrics_fetched_at": "2026-11-04",
+   "media_urls": ["https://video.twimg.com/...mp4", "https://pbs.twimg.com/media/...jpg"],
+   "category": "营销产品", "tags": ["..."]}
+]}
+```
+媒体：先直接下载 `media_urls`，没有就用 yt-dlp 抓帖子里的视频；ffmpeg 转成 1080p web.mp4、8 秒无声 hover 预览、缩略图。下载不到就生成一张「暂无媒体」文字卡（不会冒充画面）。
+
+### 来源 3：launchvideos.gallery（灵感库）
+- 站点是 SvelteKit，没有公开 RSS / JSON 接口；robots.txt 允许 `/`，禁止 `/api/`、`/admin`、`/saved`。适配器只读**公开列表页**（首页、`/latest`，以及 sitemap 里的 18 个分类页），解析页面里服务端渲染的列表数据（每页 24 条最新），不调用它背后的数据库接口；请求间隔 2 秒，User-Agent 写明用途，抓取前按 robots.txt 检查。
+- 每条记录的字段：标题、tagline、描述、品牌（名称、X 账号、官网）、原帖链接（X）、原视频地址（video.twimg.com）、缩略图、分类、发布时间、X 数据（浏览 / 点赞 / 转发 / 收藏 / 回复，含更新时间）。
+- 入库：`type=showcase`，`source.url` = 原帖，`source.via_url` = 该条在 launchvideos.gallery 的页面，列表站只用于发现原帖。入库时从 X 原帖获取原视频，生成站内 `web.mp4`、8 秒无声预览和封面，详情静音自动播放、卡片悬停播放；同时缓存真实作者头像，缺失时隐藏占位。前台只展示 X 原作者和原帖，发现路径保留在内部 `discovery` 字段，不作为作品来源展示。网站的一键拉片仍只预填用户自己的 AI，不执行在线分析。
+- 已有条目迁移：`python3 refresh_sources.py --workers 2`；可用 `--id <case_id>` 更新单条及同来源条目。运行前备份案例数据，逐组写入，只更新媒体与来源字段，不改变审核状态。
+- 限制：每个列表页只给最新 24 条，所以每天最多看到约 20 页 × 24 条（去重后本次 313 条）；更老的条目只有 sitemap 里的链接，详情页只有 og 元数据（标题、描述、视频、缩略图），没有日期 / 分类 / 数据，适配器目前不抓。分类为英文 slug，已映射成中文（AI、Agent、开发者工具、消费、效率、硬件…）。
+
+## 一键拉片（用户自己的 AI）
+
+- 灵感库卡片和详情页的「一键拉片」使用与「使用」相同的深链，打开用户电脑上的 Cursor / Codex / Claude Code，预填视频地址、原帖、案例信息与拉片要求，由用户确认发送。
+- 详情页下拉菜单可选择目标；选择保存在当前浏览器的 localStorage，刷新、关闭重开后继续使用，并同步同站点其他标签页；「复制 Prompt」适用于其他 AI 工具。提示词可以展开查看、手动复制。
+- 提示词要求读取真实视频与音轨，输出逐镜头表、节奏、结构、字体排版、可借鉴手法和结构模板；不能读取时请用户上传文件，不编造分析。
+- 网页不调用模型、不排队分析，也不保存新拉片结果。原 `/c/<id>/breakdown` 链接返回案例详情，旧 `/api/cases/<id>/breakdown` 接口返回 HTTP 410，不再执行任务。
+- `breakdown.py` 和已有结果文件保留作为本地历史工具 / 资料，未接入网站。若需自行使用命令行：`python3 breakdown.py <case_id> [--force]`。
+- 这项功能无需云端拉片服务器或网站侧模型密钥。用户在所选工具中发送提示词后，使用其自己的账号、模型及相应额度。
+
+## 使用按钮（深链）
+
+| 目标 | 链接 | 依据 |
+| --- | --- | --- |
+| Cursor | `cursor://anysphere.cursor-deeplink/prompt?text=<编码后的 prompt>`；网页版 `https://cursor.com/link/prompt?text=...`；整个 URL 上限 10,000 字符；只预填不执行 | https://cursor.com/docs/integrations/deeplinks |
+| Codex（ChatGPT 桌面 App 的 Codex） | `codex://new?prompt=<编码>`（也可带 `path` / `originUrl`）；预填到输入框，不自动发送 | https://developers.openai.com/codex/app/commands （跳转到 learn.chatgpt.com/docs/reference/commands 的 Deep links 一节） |
+| Claude Code | `claude-cli://open?q=<编码>`（可带 `cwd` / `repo`），`q` 上限 5,000 字符；需要 v2.1.91+，并且在这台电脑上至少在交互式会话里发过一次消息才会注册协议；打开新终端预填，不自动发送 | https://code.claude.com/docs/en/deep-links |
+
+点目标会同时尝试复制 Prompt 和打开对应工具；超出链接长度上限时改为复制，未安装工具时可手动粘贴。复制失败会提示手动复制，不会声称复制成功。上次选的目标会记住，成为主按钮的默认值。Codex 网页版 / CLI、claude.ai 没找到官方的预填链接，所以没做。
+
+## 手动加一个品牌 Skill
+
+1. 新建 `brand_skills/<slug>/SKILL.md`（frontmatter 写 `name`、`description`、`version`），可以参考 `brand_skills/launch-video-spec/SKILL.md`。
+2. 在 `data/cases.json` 里加一条（或先用 /review 的编辑功能改一条已有的）：
+```json
+{"id": "brand-<slug>", "type": "brand_skill", "status": "published", "category": "规范",
+ "title": "...", "subtitle": "...", "trust": "官方", "featured": true, "version": "1.0.0",
+ "media": {"kind": "image", "thumbnail": "/media/brand-<slug>/thumb.jpg"},
+ "source": {"platform": "团队", "author": "...", "url": "", "date": "2026-11-04"},
+ "prompt": "先读这份规范再开始：/brand_skills/<slug>/SKILL.md ……",
+ "how_to": ["……"], "assets": [{"name": "SKILL.md", "url": "/brand_skills/<slug>/SKILL.md"}],
+ "tags": ["品牌规范"], "changelog": [{"version": "1.0.0", "date": "2026-11-04", "note": "首版"}],
+ "added_at": "2026-11-04T00:00:00+08:00"}
+```
+3. 缩略图：放一张 jpg 到 `media/brand-<slug>/thumb.jpg`（或在 Python 里调用 `mediautil.placeholder_thumb(id, 标题, 副标题)` 生成文字卡）。
+4. 升级时：改 SKILL.md → `version` +1 → `changelog` 追加一行。prompt 里的 `/brand_skills/...` 会自动替换成站点的完整地址。
+
+## 种子数据（seed.py）
+
+`python3 seed.py` 重建种子条目（保留 ingest 进来的和审核过的）：
+- 6 支 @hello_ambi 视频（本地文件），每支有复现 Prompt 和步骤；也作为灵感库条目出现。
+- 手册 §3 标杆案例 15 支（14 支能用 yt-dlp 下载到视频；Kleo 下载失败，用文字卡），同样也进灵感库。
+- 手册 §10 的 Top 50 skill 仓库（数据来自手册，读取于 2026-11-04），其中 hyperframes、remotion skills、brag、huashu-motion、video-use 标为「推荐」。
+- 手册「候补」里的 4 个仓库作为待审核示例。
+- 1 个品牌 Skill：《Launch 视频通用规范》v1.0.0。
+- X 数据（浏览 / 点赞等）是 2026-11-04 用 X API 读的（`data/_xposts_live.json`）。
+
+## 测试
+
+回归：`python3 -m unittest discover -s tests -p 'test_*.py'`。CMS 测试使用临时数据、素材目录与端口，覆盖认证、草稿/审核/发布/退回/下架、修订隔离、素材权限和并发版本，不改正式案例。
+
+```bash
+/workspace/pwvenv/bin/python tests/e2e.py http://localhost:8787   # 无头浏览器：列表、详情、使用菜单、拉片跳转、前台只读检查，截图存 screens/
+```
+`tests/e2e.py` 只做前台浏览回归，不发布或拒绝真实内容。CMS 的浏览器操作应使用独立的临时数据目录。
