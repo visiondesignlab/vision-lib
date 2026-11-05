@@ -93,7 +93,7 @@ def build(output, base):
     (output / 'index.html').write_text(shell)
     (output / '404.html').write_text(shell)
     (output / 'static/index.html').unlink()
-    for route in ['tools/ai-nav', 'tools/image-slicer', 'assets/brand', 'review', 'cms', 'guide', *('c/' + cid for cid in sorted(ids))]:
+    for route in ['tools/ai-nav', 'tools/ai-models', 'tools/image-slicer', 'assets/brand', 'review', 'cms', 'guide', *('c/' + cid for cid in sorted(ids))]:
         target = output / route / 'index.html'
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(shell)
@@ -114,7 +114,7 @@ def build(output, base):
     total = sum(p.stat().st_size for p in output.rglob('*') if p.is_file())
     if total >= 1024 ** 3:
         raise ValueError(f'Pages output exceeds 1 GiB: {total} bytes')
-    report = {'cases': len(cases), 'basePath': base, 'bytes': total, 'routes': len(ids) + 6}
+    report = {'cases': len(cases), 'basePath': base, 'bytes': total, 'routes': len(ids) + 7}
     (output / 'build-info.json').write_text(json.dumps(report, indent=2))
     print(json.dumps(report))
     return report

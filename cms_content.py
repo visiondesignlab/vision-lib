@@ -174,6 +174,8 @@ def change(cid, action, payload):
             return {'ok': True, 'id': cid}
         elif action == 'edit':
             patch = validate(payload)
+            if {current.get('type'), patch.get('type')} == {'video', 'showcase'}:
+                raise ContentError('请使用栏目迁移操作，先核对目标栏目中的重复内容。', 409)
             # Preserve source metrics maintained by background collection.
             if 'source' in patch:
                 patch['source'] = {**current.get('source', {}), **patch['source']}

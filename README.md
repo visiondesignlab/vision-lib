@@ -24,7 +24,7 @@
 
 工具分组的「AI 导航」支持分类、搜索、管理员推荐与本机收藏；管理密码登录后可以在内容管理的「AI 导航」维护分类和入口。目录在本机读取 `data/ai-directory.json`，静态发布使用公开快照。
 
-「AI 大模型」保存 Artificial Analysis 中文榜单的前 30 名快照。更新时从[榜单原页](https://artificialanalysis.ai/zh/leaderboards/models)保存 HTML，运行 `python3 scripts/update_model_ranking.py 页面.html --as-of YYYY-MM-DD`（需要 beautifulsoup4）。脚本只更新本地 CMS；在本地确认名次、指标和日期后，再导出 Pages 快照。
+一级入口「AI 大模型」位于 `/tools/ai-models`。更新时从 Artificial Analysis 保存语言智能指数、文生图、文生视频（含音频）与文本转语音（提供商原生音色）的中文榜单页面，再运行 `python3 scripts/update_model_ranking.py --language language.html --image image.html --video video.html --speech speech.html --as-of YYYY-MM-DD`（需要 beautifulsoup4 和 Pillow）。四榜各取最多 50 个已排名模型。先在本地检查四个标签、数据和日期，确认后发布同一份快照。
 
 ## 运行
 

@@ -21,7 +21,7 @@
 .stage .skill-sample{display:grid;justify-items:center;gap:12px;max-width:100%;min-width:0;margin:0;cursor:default}
 .stage .skill-sample img{display:block;max-width:100%;max-height:calc(100dvh - 148px);object-fit:contain;border-radius:6px;box-shadow:var(--ring)}
 .skill-sample-image{position:relative;max-width:100%;touch-action:pan-y}
-.skill-sample-image .ibtn{position:absolute;top:50%;transform:translateY(-50%);background:var(--bg);box-shadow:var(--ring);width:36px;height:36px}
+.skill-sample-image .ibtn{position:absolute;top:50%;translate:0 -50%;background:var(--bg);box-shadow:var(--ring);width:36px;height:36px}
 .skill-sample-image [data-sample-prev]{left:10px}
 .skill-sample-image [data-sample-next]{right:10px}
 .skill-sample figcaption{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 12px;color:var(--fg2);font-size:12px;text-align:center}

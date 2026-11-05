@@ -7,6 +7,7 @@ import store
 import ai_directory
 import cms_auth
 import cms_content as cms
+import cms_migration
 from cms_upload import upload
 
 STATIC = os.path.join(store.ROOT, "static")
@@ -232,12 +233,16 @@ class H(BaseHTTPRequestHandler):
                     return self.send_json(ai_directory.change(self.body()))
             if p == "/api/admin/uploads" and method == "POST":
                 return self.send_json(upload(self), 201)
+            if p == "/api/admin/video-migration" and method == "POST":
+                return self.send_json(cms_migration.transfer(self.body()))
             if p == "/api/admin/cases":
                 if method == "POST":
                     return self.send_json(cms.create(self.body()), 201)
                 if method == "GET":
                     st = (q.get("status") or ["all"])[0]
-                    cs = [cms.admin_view(c) for c in store.load_cases()]
+                    records = store.load_cases()
+                    matches = cms_migration.matching_records(records)
+                    cs = [dict(cms.admin_view(c), duplicates=matches.get(c["id"], [])) for c in records]
                     cs = [c for c in cs if st == "all" or c.get("status") == st]
                     cs.sort(key=lambda c: c.get("updated_at", c.get("added_at", "")), reverse=True)
                     return self.send_json({"cases": cs})

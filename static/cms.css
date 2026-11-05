@@ -44,7 +44,7 @@
 .cms-body .tab span{font-size:12px;margin-left:4px;opacity:.6}
 .cms-body .search{height:auto;margin-left:auto;padding:0;box-shadow:none;background:none;width:200px}
 .cms-body input:not([type=checkbox]):not([type=file]),.cms-body textarea,.cms-body select{font:inherit;color:var(--fg);background:var(--bg);border:0;box-shadow:0 0 0 1px var(--line);border-radius:8px;padding:8px 10px;width:100%;min-width:0}
-.cms-body input:focus,.cms-body textarea:focus{outline:1.5px solid var(--fg);outline-offset:0}
+.cms-body input:not([type=checkbox]):focus,.cms-body textarea:focus{outline:1.5px solid var(--fg);outline-offset:0}
 .cms-body input::placeholder,.cms-body textarea::placeholder{color:var(--fg3)}
 .cms-body .search input{height:28px;border-radius:999px;padding:0 12px 0 28px;box-shadow:var(--ring);background:#fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="%23999" stroke-width="2"><circle cx="6" cy="6" r="4.5"/><path d="M9.5 9.5L13 13"/></svg>') 10px 50% no-repeat}
 .cms-body .table-wrap{overflow:auto}
@@ -181,6 +181,10 @@
 
 /* The host owns the sidebar offset; CMS fills only the shared content outlet. */
 #app.cms-view{padding:0}
+.cms-body .dialog .btn.preview-close{width:32px;height:32px;min-height:32px;padding:0;display:grid;place-items:center}
+.cms-body .preview-close svg{display:block}
+@media(pointer:coarse){.cms-body .preview-close{position:relative}.cms-body .preview-close::after{content:"";position:absolute;inset:-6px;border-radius:50%}}
+.cms-body input[type=checkbox]:focus-visible{outline:1px solid var(--fg);outline-offset:2px}
 .cms-body .bulk-bar label,.cms-body .row-select{display:inline-flex;align-items:center;gap:6px;cursor:pointer;min-height:28px}
 .cms-body .row-select{padding-inline:4px}
 .cms-body .bulk-bar [data-operations]{display:flex;gap:6px;flex-wrap:wrap}
@@ -195,3 +199,10 @@
 .cms-body .directory-row .row-actions{flex:none}
 .cms-body .directory-row [data-feature][aria-pressed=true]{background:var(--fg);color:var(--bg)}
 @media(max-width:600px){.cms-body .directory-row{align-items:flex-start;flex-wrap:wrap}.cms-body .directory-row .row-actions{flex-wrap:wrap}}
+
+.cms-body .row-actions{flex-wrap:wrap}
+.cms-body .duplicate-info{font-size:12px;white-space:normal;margin-top:4px}
+.cms-body .duplicate-info summary,.cms-body .duplicate-label{color:var(--fg2);cursor:pointer}
+.cms-body .duplicate-info ul,.cms-body .batch-items ul{padding-inline-start:16px}
+.cms-body .duplicate-info a,.cms-body .batch-items a{text-decoration:underline}
+.cms-body .duplicate-label{margin-inline-start:8px;font-weight:500;cursor:inherit}

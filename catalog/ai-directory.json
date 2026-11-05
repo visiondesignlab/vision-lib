@@ -71,10 +71,6 @@
   {
    "id": "aitools",
    "name": "AI 工具合集"
-  },
-  {
-   "id": "model-rankings",
-   "name": "AI 大模型"
   }
  ],
  "entries": [
@@ -128,9 +124,13 @@
    "category": "aiagent",
    "name": "Lovart",
    "url": "https://www.lovart.ai/",
-   "description": "和设计智能体协作",
+   "description": "在画布中与设计智能体协作创作",
    "icon": "/static/tools/ai-icons/2fe2c1df2327da1b7451.webp",
-   "heat": 80
+   "heat": 80,
+   "aliases": [
+    "Lovart AI",
+    "团队常用"
+   ]
   },
   {
    "id": "fcd943f08b99d0cac424",
@@ -495,9 +495,14 @@
    "category": "smart",
    "name": "星流 AI",
    "url": "https://www.xingliu.art/",
-   "description": "生成高清视觉素材",
+   "description": "在设计画布中生成和调整视觉素材",
    "icon": "/static/tools/ai-icons/63aa8bfccdd6e253e2c4.webp",
-   "heat": 80
+   "heat": 80,
+   "aliases": [
+    "星流",
+    "Xingliu",
+    "团队常用"
+   ]
   },
   {
    "id": "dc8a0fb9b97e3c261738",
@@ -561,6 +566,20 @@
    "description": "使用 Fooocus 绘画",
    "icon": "/static/tools/ai-icons/21a3645c48fa9ba9d35c.webp",
    "heat": 10
+  },
+  {
+   "id": "ae1d7081122c0b5391fc",
+   "category": "smart",
+   "name": "即梦 AI",
+   "url": "https://jimeng.jianying.com/ai-tool/generate",
+   "description": "用文字或参考图生成图像和视频",
+   "aliases": [
+    "即梦",
+    "Jimeng",
+    "Dreamina",
+    "团队常用"
+   ],
+   "icon": "/static/tools/ai-icons/bd7a573de7dd190aebb1.webp"
   },
   {
    "id": "c5fc3b029a24b1b5071d",
@@ -1288,6 +1307,18 @@
    "heat": 30
   },
   {
+   "id": "e738051c5fd562f479d9",
+   "category": "smart7",
+   "name": "Unicorn Studio",
+   "url": "https://www.unicorn.studio/",
+   "description": "为网页制作交互动效并嵌入网站",
+   "aliases": [
+    "UnicornStudio",
+    "团队常用"
+   ],
+   "icon": "/static/tools/ai-icons/f7e301112ec0dc3da6b0.webp"
+  },
+  {
    "id": "57a5effe03bd0b97391b",
    "category": "smart8",
    "name": "Beautiful.ai",
@@ -1457,6 +1488,31 @@
    "description": "制作中文品牌标志",
    "icon": "/static/tools/ai-icons/17c33cc899e8f184f2b6.webp",
    "heat": 10
+  },
+  {
+   "id": "37ffeace86e048b10de5",
+   "category": "smart8",
+   "name": "FLORA",
+   "url": "https://app.flora.ai/",
+   "description": "在共享画布中编排图像和视频生成流程",
+   "aliases": [
+    "Flora AI",
+    "团队常用"
+   ],
+   "icon": "/static/tools/ai-icons/95eae23a7181a1fee00c.webp"
+  },
+  {
+   "id": "34a874aaa8dcaaa7d03e",
+   "category": "smart8",
+   "name": "Figma Weave",
+   "url": "https://app.weavy.ai/",
+   "description": "在节点画布中搭建视觉生成和后期处理工作流",
+   "aliases": [
+    "Weavy",
+    "Weavy AI",
+    "团队常用"
+   ],
+   "icon": "/static/tools/ai-icons/7fac86c2f6f17a4fb27d.webp"
   },
   {
    "id": "a89d5c194ce192fbb705",
@@ -1684,10 +1740,15 @@
    "id": "c762000e0214644c3d56",
    "category": "smart10",
    "name": "ElevenLabs",
-   "description": "高拟真语音合成与配音",
-   "url": "https://elevenlabs.io/",
+   "description": "使用 Creative Agent 创作音视频、生成配音",
+   "url": "https://elevenlabs.io/app/creative-agent",
    "icon": "/static/tools/ai-icons/87a986a37a34b91f2345.webp",
-   "heat": 15598
+   "heat": 15598,
+   "aliases": [
+    "ElevenLabs Creative Agent",
+    "ElevenCreative",
+    "团队常用"
+   ]
   },
   {
    "id": "15b048bbb37827248c32",
@@ -1742,10 +1803,14 @@
    "id": "b36872a8a97812f3a2e9",
    "category": "smart10",
    "name": "Runway",
-   "url": "https://runwayml.com/",
-   "description": "生成与编辑视频",
+   "url": "https://app.runwayml.com/",
+   "description": "生成视频，在工作区编辑和管理镜头",
    "icon": "/static/tools/ai-icons/beb62ae610534c107528.webp",
-   "heat": 1279
+   "heat": 1279,
+   "aliases": [
+    "RunwayML",
+    "团队常用"
+   ]
   },
   {
    "id": "514b20824c7fd0ea5a1d",
@@ -1944,6 +2009,55 @@
    "description": "生成音乐片段",
    "icon": "/static/tools/ai-icons/b5a673369b20102c8361.webp",
    "heat": 30
+  },
+  {
+   "id": "b70e1d61114119771c4a",
+   "category": "smart10",
+   "name": "LibTV",
+   "url": "https://www.liblib.tv/",
+   "description": "在画布中组织分镜、生成镜头并制作视频",
+   "aliases": [
+    "Liblib TV",
+    "哩布视频",
+    "团队常用"
+   ],
+   "icon": "/static/tools/ai-icons/d4a63674b8b324748375.webp"
+  },
+  {
+   "id": "9ceb7dfedae9bf58dc28",
+   "category": "smart10",
+   "name": "Fuser",
+   "url": "https://app.fuser.studio/",
+   "description": "在节点画布中组合图像、视频和音频工作流",
+   "aliases": [
+    "Fuser Studio",
+    "团队常用"
+   ],
+   "icon": "/static/tools/ai-icons/84fbffb9570207391363.webp"
+  },
+  {
+   "id": "75d6640e1a0de8dc3ef5",
+   "category": "smart10",
+   "name": "Higgsfield",
+   "url": "https://higgsfield.ai/asset/all",
+   "description": "查看创作素材，制作图像和视频",
+   "aliases": [
+    "Higgsfield AI",
+    "团队常用"
+   ],
+   "icon": "/static/tools/ai-icons/971ef23353234ec96d01.webp"
+  },
+  {
+   "id": "e7dd241a0a481cc77860",
+   "category": "smart10",
+   "name": "TapNow",
+   "url": "https://app.tapnow.ai/",
+   "description": "在创作画布中组织分镜、图像和视频",
+   "aliases": [
+    "Tap Now",
+    "团队常用"
+   ],
+   "icon": "/static/tools/ai-icons/0a0c93db86ea7fb01081.webp"
   },
   {
    "id": "b1f059e50279fff60522",
@@ -2898,316 +3012,11 @@
   },
   {
    "id": "0355be3442069c329ec9",
-   "category": "model-rankings",
+   "category": "aitools",
    "name": "Artificial Analysis",
    "description": "查看大语言模型智能指数排名，比较价格、速度与上下文窗口",
    "url": "https://artificialanalysis.ai/zh/leaderboards/models",
-   "icon": "/static/tools/ai-icons/84bc579e6fb8100c7d3c.webp",
-   "ranking": {
-    "date": "2026-11-05",
-    "rows": [
-     {
-      "model": "Gemini 4 Carbon (high)",
-      "url": "https://artificialanalysis.ai/zh/models/gemini-4-carbon",
-      "provider": "Google",
-      "score": 60.0,
-      "contextTokens": 1000000,
-      "costUSD": 7.76,
-      "durationMinutes": 30.3,
-      "firstAnswerSeconds": 65.94
-     },
-     {
-      "model": "Claude Opus 5.5 (max)",
-      "url": "https://artificialanalysis.ai/zh/models/claude-opus-5-5",
-      "provider": "Anthropic",
-      "score": 59.0,
-      "contextTokens": 1000000,
-      "costUSD": 10.04,
-      "durationMinutes": 26.2,
-      "firstAnswerSeconds": 342.98
-     },
-     {
-      "model": "Gemini 4 Carbon (medium)",
-      "url": "https://artificialanalysis.ai/zh/models/gemini-4-carbon-medium",
-      "provider": "Google",
-      "score": 58.0,
-      "contextTokens": 1000000,
-      "costUSD": 6.59,
-      "durationMinutes": 22.8,
-      "firstAnswerSeconds": 22.24
-     },
-     {
-      "model": "Claude Opus 5.5 (xhigh)",
-      "url": "https://artificialanalysis.ai/zh/models/claude-opus-5-5-xhigh",
-      "provider": "Anthropic",
-      "score": 57.0,
-      "contextTokens": 1000000,
-      "costUSD": 6.05,
-      "durationMinutes": 16.0,
-      "firstAnswerSeconds": 67.16
-     },
-     {
-      "model": "GPT-6 Astra (max)",
-      "url": "https://artificialanalysis.ai/zh/models/gpt-6-astra",
-      "provider": "OpenAI",
-      "score": 57.0,
-      "contextTokens": 1000000,
-      "costUSD": 6.24,
-      "durationMinutes": 19.0,
-      "firstAnswerSeconds": 205.76
-     },
-     {
-      "model": "GPT-6 Astra (xhigh)",
-      "url": "https://artificialanalysis.ai/zh/models/gpt-6-astra-xhigh",
-      "provider": "OpenAI",
-      "score": 55.0,
-      "contextTokens": 1000000,
-      "costUSD": 3.66,
-      "durationMinutes": 9.4,
-      "firstAnswerSeconds": 103.41
-     },
-     {
-      "model": "GPT-6 Astra (high)",
-      "url": "https://artificialanalysis.ai/zh/models/gpt-6-astra-high",
-      "provider": "OpenAI",
-      "score": 55.0,
-      "contextTokens": 1000000,
-      "costUSD": 3.24,
-      "durationMinutes": 8.1,
-      "firstAnswerSeconds": 40.64
-     },
-     {
-      "model": "GPT-6.1 Sol (max)",
-      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-sol",
-      "provider": "OpenAI",
-      "score": 55.0,
-      "contextTokens": 1000000,
-      "costUSD": 1.27,
-      "durationMinutes": 21.2,
-      "firstAnswerSeconds": 165.13
-     },
-     {
-      "model": "Claude Sonnet 5.5 (max)",
-      "url": "https://artificialanalysis.ai/zh/models/claude-sonnet-5-5",
-      "provider": "Anthropic",
-      "score": 55.0,
-      "contextTokens": 1000000,
-      "costUSD": 10.02,
-      "durationMinutes": 30.7,
-      "firstAnswerSeconds": 253.79
-     },
-     {
-      "model": "Gemini 4 Carbon (low)",
-      "url": "https://artificialanalysis.ai/zh/models/gemini-4-carbon-low",
-      "provider": "Google",
-      "score": 54.0,
-      "contextTokens": 1000000,
-      "costUSD": 7.19,
-      "durationMinutes": 46.6,
-      "firstAnswerSeconds": 8.01
-     },
-     {
-      "model": "GPT-6.1 Sol (xhigh)",
-      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-sol-xhigh",
-      "provider": "OpenAI",
-      "score": 52.0,
-      "contextTokens": 1000000,
-      "costUSD": 0.76,
-      "durationMinutes": 9.1,
-      "firstAnswerSeconds": 69.8
-     },
-     {
-      "model": "Claude Opus 5.5 (high)",
-      "url": "https://artificialanalysis.ai/zh/models/claude-opus-5-5-high",
-      "provider": "Anthropic",
-      "score": 52.0,
-      "contextTokens": 1000000,
-      "costUSD": 3.46,
-      "durationMinutes": 9.1,
-      "firstAnswerSeconds": 32.05
-     },
-     {
-      "model": "GPT-6 Astra (medium)",
-      "url": "https://artificialanalysis.ai/zh/models/gpt-6-astra-medium",
-      "provider": "OpenAI",
-      "score": 52.0,
-      "contextTokens": 1000000,
-      "costUSD": 2.73,
-      "durationMinutes": 5.9,
-      "firstAnswerSeconds": 6.46
-     },
-     {
-      "model": "GPT-6.1 Terra (max)",
-      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-terra",
-      "provider": "OpenAI",
-      "score": 51.0,
-      "contextTokens": 1000000,
-      "costUSD": 0.96,
-      "durationMinutes": 13.1,
-      "firstAnswerSeconds": 158.68
-     },
-     {
-      "model": "Gemini 4 Argon (high)",
-      "url": "https://artificialanalysis.ai/zh/models/gemini-4-argon",
-      "provider": "Google",
-      "score": 50.0,
-      "contextTokens": 1000000,
-      "costUSD": 9.95,
-      "durationMinutes": 26.2,
-      "firstAnswerSeconds": 40.39
-     },
-     {
-      "model": "GPT-6.1 Sol (high)",
-      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-sol-high",
-      "provider": "OpenAI",
-      "score": 50.0,
-      "contextTokens": 1000000,
-      "costUSD": 0.59,
-      "durationMinutes": 6.6,
-      "firstAnswerSeconds": 37.82
-     },
-     {
-      "model": "Muse Wonder Full (max)",
-      "url": "https://artificialanalysis.ai/zh/models/muse-wonder-full",
-      "provider": "Meta",
-      "score": 50.0,
-      "contextTokens": 1000000,
-      "costUSD": null,
-      "durationMinutes": null,
-      "firstAnswerSeconds": null
-     },
-     {
-      "model": "Claude Fable 5.1 (xhigh)",
-      "url": "https://artificialanalysis.ai/zh/models/claude-fable-5-1-xhigh",
-      "provider": "Anthropic",
-      "score": 50.0,
-      "contextTokens": 1000000,
-      "costUSD": 10.85,
-      "durationMinutes": 18.6,
-      "firstAnswerSeconds": 58.5
-     },
-     {
-      "model": "Claude Sonnet 5.5 (xhigh)",
-      "url": "https://artificialanalysis.ai/zh/models/claude-sonnet-5-5-xhigh",
-      "provider": "Anthropic",
-      "score": 50.0,
-      "contextTokens": 1000000,
-      "costUSD": 4.09,
-      "durationMinutes": 14.7,
-      "firstAnswerSeconds": 30.96
-     },
-     {
-      "model": "Claude Fable 5.1 (max)",
-      "url": "https://artificialanalysis.ai/zh/models/claude-fable-5-1",
-      "provider": "Anthropic",
-      "score": 49.0,
-      "contextTokens": 1000000,
-      "costUSD": 12.99,
-      "durationMinutes": 22.2,
-      "firstAnswerSeconds": 160.14
-     },
-     {
-      "model": "Claude Opus 5.5 (medium)",
-      "url": "https://artificialanalysis.ai/zh/models/claude-opus-5-5-medium",
-      "provider": "Anthropic",
-      "score": 48.0,
-      "contextTokens": 1000000,
-      "costUSD": 2.45,
-      "durationMinutes": 6.6,
-      "firstAnswerSeconds": 18.34
-     },
-     {
-      "model": "Claude Fable 5.1 (high)",
-      "url": "https://artificialanalysis.ai/zh/models/claude-fable-5-1-high",
-      "provider": "Anthropic",
-      "score": 47.0,
-      "contextTokens": 1000000,
-      "costUSD": 7.54,
-      "durationMinutes": 12.6,
-      "firstAnswerSeconds": 15.29
-     },
-     {
-      "model": "Kimi K3.1 Pro",
-      "url": "https://artificialanalysis.ai/zh/models/kimi-k3-1-pro",
-      "provider": "Kimi",
-      "score": 46.0,
-      "contextTokens": 1000000,
-      "costUSD": 3.68,
-      "durationMinutes": 36.0,
-      "firstAnswerSeconds": 149.26
-     },
-     {
-      "model": "GPT-6.1 Sol (medium)",
-      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-sol-medium",
-      "provider": "OpenAI",
-      "score": 46.0,
-      "contextTokens": 1000000,
-      "costUSD": 0.36,
-      "durationMinutes": 3.9,
-      "firstAnswerSeconds": 6.3
-     },
-     {
-      "model": "GPT-6.1 Terra (xhigh)",
-      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-terra-xhigh",
-      "provider": "OpenAI",
-      "score": 45.0,
-      "contextTokens": 1000000,
-      "costUSD": 0.4,
-      "durationMinutes": 5.9,
-      "firstAnswerSeconds": 32.43
-     },
-     {
-      "model": "Muse Wonder (max)",
-      "url": "https://artificialanalysis.ai/zh/models/muse-wonder",
-      "provider": "Meta",
-      "score": 44.0,
-      "contextTokens": 1000000,
-      "costUSD": 6.95,
-      "durationMinutes": 12.1,
-      "firstAnswerSeconds": 20.24
-     },
-     {
-      "model": "GPT-6 Astra (low)",
-      "url": "https://artificialanalysis.ai/zh/models/gpt-6-astra-low",
-      "provider": "OpenAI",
-      "score": 43.0,
-      "contextTokens": 1000000,
-      "costUSD": 1.42,
-      "durationMinutes": 3.2,
-      "firstAnswerSeconds": 4.0
-     },
-     {
-      "model": "Claude Fable 5.1 (medium)",
-      "url": "https://artificialanalysis.ai/zh/models/claude-fable-5-1-medium",
-      "provider": "Anthropic",
-      "score": 43.0,
-      "contextTokens": 1000000,
-      "costUSD": 5.56,
-      "durationMinutes": 9.4,
-      "firstAnswerSeconds": 8.73
-     },
-     {
-      "model": "GPT-6.1 Terra (high)",
-      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-terra-high",
-      "provider": "OpenAI",
-      "score": 42.0,
-      "contextTokens": 1000000,
-      "costUSD": 0.26,
-      "durationMinutes": 3.8,
-      "firstAnswerSeconds": 10.74
-     },
-     {
-      "model": "Claude Sonnet 5.5 (high)",
-      "url": "https://artificialanalysis.ai/zh/models/claude-sonnet-5-5-high",
-      "provider": "Anthropic",
-      "score": 42.0,
-      "contextTokens": 1000000,
-      "costUSD": 1.64,
-      "durationMinutes": 6.8,
-      "firstAnswerSeconds": 12.84
-     }
-    ]
-   }
+   "icon": "/static/tools/ai-icons/84bc579e6fb8100c7d3c.webp"
   }
  ]
 }

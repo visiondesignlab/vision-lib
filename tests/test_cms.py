@@ -159,6 +159,53 @@ class CMSTests(unittest.TestCase):
         self.assertEqual(len(store.load_cases()),1)
         self.assertTrue(store.load_cases()[0]['review_log'])
 
+    def test_video_migration_checks_peers_and_keeps_unpublished_revisions_private(self):
+        self.login()
+        peer = self.create(type='video', source={'url':'https://x.com/author/status/123'})
+        c = self.create(type='showcase', source={'url':'https://twitter.com/user/status/123?s=20'})
+        c = self.action(self.action(c,'submit'),'approve')
+        _, c, _ = self.req('/api/admin/cases/'+c['id'], {'_version':c['_version'],'title':'Unreleased title'}, method='PUT')
+        def plan(row, target):
+            return {'items':[{'id':row['id'],'_version':row['_version']}], 'target':target}
+        path = '/api/admin/video-migration'
+        move = plan(c,'video')
+        self.assertEqual(self.req(path,move,auth=False)[0],401)
+        checked = self.req(path,move)[1]['conflicts']
+        self.assertIn('同一原帖',checked[c['id']][0]['reasons'])
+        self.assertEqual(checked[c['id']][0]['id'],peer['id'])
+        apply = dict(move, apply=True, category='营销产品')
+        self.assertEqual(self.req(path,apply)[0],409)
+        self.assertEqual(self.req(path,dict(apply,confirmed=checked))[0],200)
+        self.assertEqual(self.req(path,dict(apply,confirmed=checked))[0],409)
+        live = self.req('/api/cases/'+c['id'],auth=False)[1]
+        self.assertEqual((live['type'],live['title'],live['category']),('video','First version','营销产品'))
+        revised = self.req('/api/admin/cases/'+c['id'])[1]
+        self.assertEqual((revised['type'],revised['title'],revised['status']),('video','Unreleased title','draft'))
+        self.assertEqual(revised['review_log'][-1]['action'],'migrate')
+        back = plan(revised,'showcase')
+        self.assertEqual(self.req(path,dict(back,apply=True,category='AI'))[0],200)
+        self.assertEqual(self.req('/api/cases/'+c['id'],auth=False)[1]['type'],'showcase')
+
+    def test_video_migration_batch_is_atomic_and_rechecks_new_duplicates(self):
+        self.login()
+        first=self.create(type='video',title='One',source={'url':'https://example.org/watch?v=a'})
+        second=self.create(type='video',title='Two',source={'url':'https://example.org/watch?v=b'})
+        path='/api/admin/video-migration'
+        items=[{'id':c['id'],'_version':c['_version']} for c in [first,second]]
+        payload={'items':items,'target':'showcase'}
+        self.assertEqual(self.req(path,payload)[1]['conflicts'],{})
+        new=self.create(type='showcase',title='Other title',source={'url':'https://example.org/watch?v=a&utm_source=x'})
+        apply=dict(payload,apply=True,category='AI')
+        self.assertEqual(self.req(path,apply)[0],409)
+        self.assertEqual([c['type'] for c in store.load_cases()],['video','video','showcase'])
+        conflicts=self.req(path,payload)[1]['conflicts']
+        self.assertEqual(list(conflicts),[first['id']])
+        self.assertEqual(conflicts[first['id']][0]['id'],new['id'])
+        stale=[items[0],dict(items[1],_version=-1)]
+        self.assertEqual(self.req(path,dict(apply,items=stale,confirmed=conflicts))[0],409)
+        self.assertEqual(self.req(path,dict(apply,confirmed=conflicts))[1]['moved'],2)
+        self.assertEqual(self.req('/api/cases',auth=False)[1]['cases'],[])
+
     def upload_image(self, color):
         buf=io.BytesIO()
         Image.new('RGB',(48,32),color).save(buf,format='PNG')

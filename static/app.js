@@ -352,11 +352,37 @@ ${vid ? "视频地址：" + vid + "\n" : ""}原帖 / 来源：${c.source?.url ||
 }
 
 /* ---------------- data */
+let summaryRequest, currentSection = '', adminTotals = null, loadSequence = 0;
+function showStats() {
+  const stats = $("#stats");
+  if (currentSection === 'review' && adminSession && adminTotals) {
+    stats.textContent = `管理库共 ${adminTotals.total} 条 · 已发布 ${adminTotals.published} 条 · 待审核 ${adminTotals.pending} 条`;
+    return;
+  }
+  if (!casesLoaded) { stats.textContent = ''; return; }
+  const counts = new Map();
+  for (const c of CASES) counts.set(c.type, (counts.get(c.type) || 0) + 1);
+  const groups = Object.entries(TABS).filter(([key])=>counts.has(key)).map(([key, tab])=>tab.name+' '+counts.get(key));
+  stats.textContent = [`已发布 ${CASES.length} 条`, ...groups].join(' · ');
+}
+function showSectionSummary(tab, title) {
+  currentSection = tab;
+  $("#about-title").textContent = title;
+  const description = $("#about-description");
+  description.textContent = TABS[tab]?.sub || '';
+  if (!TABS[tab]) {
+    summaryRequest ||= import(sitePath('/static/guide.js')).then(module=>module.loadGuide()).catch(()=>{ summaryRequest=null;return {}; });
+    summaryRequest.then(content=>{
+      if (currentSection===tab) description.textContent=content[tab]?.summary || '';
+    });
+  }
+  showStats();
+}
 async function load() {
-  const j = await api("/api/cases"); CASES = j.cases; casesLoaded = true;
-  const counts = {}; CASES.forEach(c => counts[c.type] = (counts[c.type] || 0) + 1);
-  $("#stats").textContent = `已收录 ${CASES.length} 条 · 视频案例 ${counts.video || 0} · 灵感库 ${counts.showcase || 0} · Skill 仓库 ${counts.skill_repo || 0}`;
-
+  const seq = ++loadSequence;
+  const j = await api("/api/cases");
+  if(seq!==loadSequence) return;
+  CASES = j.cases; casesLoaded = true; showStats();
 }
 
 /* ---------------- router */
@@ -384,7 +410,9 @@ document.addEventListener("click", e => {
   const a = e.target.closest("a[data-link],a[data-nav]");
   if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || a.target || a.hasAttribute("download")) return;
   if (new URL(a.href).origin !== location.origin) return;
-  e.preventDefault(); nav(a.getAttribute("href"));
+  e.preventDefault();
+  if (a.closest('.model-tabs') && a.hasAttribute('aria-current') && !new URL(location.href).searchParams.has('q')) return;
+  nav(a.getAttribute("href"));
 });
 window.addEventListener("popstate", () => {
   if (restoringHistory) { restoringHistory = false; return; }
@@ -404,7 +432,11 @@ window.addEventListener("popstate", () => {
 function setNav(tab) { document.querySelectorAll(".nav a[data-tab]").forEach(a => {
   const selected = a.dataset.tab === tab;
   a.classList.toggle("on", selected);
-  if (selected) a.setAttribute("aria-current", "page");
+  if (selected) {
+    a.setAttribute("aria-current", "page");
+    const text = [...a.childNodes].filter(n=>n.nodeType===Node.TEXT_NODE).map(n=>n.textContent).join('').trim();
+    showSectionSummary(tab, text);
+  }
   else a.removeAttribute("aria-current");
 }); }
 
@@ -423,7 +455,8 @@ function setAdminSession(signedIn) {
     entry.title = adminSession ? "退出管理员模式，继续浏览" : "登录管理员账号";
     entry.onclick = e => { if (adminSession) { e.preventDefault(); e.stopPropagation(); logoutAdmin(); } };
   }
-  syncAdminControls();
+  if (!signedIn) adminTotals=null;
+  showStats(); syncAdminControls();
 }
 function onSessionChange(signedIn) {
   ++authRevision;
@@ -471,10 +504,18 @@ function syncAdminControls() {
     if (c) $(".phead", overlay)?.insertAdjacentHTML("afterend", `<div class="content-admin-toolbar detail-admin-tools" data-admin-control aria-label="内容管理操作"><a class="pill-btn shadow" data-link href="/cms/edit/${esc(c.id)}">编辑内容</a><a class="pill-btn shadow" data-link href="/cms/content?type=${encodeURIComponent(c.type)}">管理本栏目</a></div>`);
   }
 }
-if (authChannel) authChannel.onmessage = refreshAdminSession;
+if (authChannel) authChannel.onmessage = e => {
+  if(e.data==='content') { load().catch(()=>{}); cmsView?.refreshCounts(); }
+  else refreshAdminSession();
+};
 window.addEventListener("focus", refreshAdminSession);
-document.addEventListener("visibilitychange", () => { if (!document.hidden) refreshAdminSession(); });
+document.addEventListener("visibilitychange", () => {
+  if (document.hidden) return;
+  refreshAdminSession();
+  if (!staticMode) { load().catch(()=>{}); cmsView?.refreshCounts(); }
+});
 function refreshPublicContent() {
+  authChannel?.postMessage('content');
   load().then(() => {
     if (!isCMSRoute() && !isSlicerRoute() && !isBrandAssetsRoute()) render();
   }).catch(() => toast("内容已更新，浏览列表暂时未能刷新，请稍后重试"));
@@ -494,7 +535,7 @@ function renderCMS() {
   app.innerHTML = '<div class="empty" role="status">正在打开内容工作台…</div>';
   if (cmsLoading) return;
   cmsLoading = import(sitePath("/static/cms.js")).then(({createCMS}) => {
-    cmsView = createCMS({navigate: nav, replaceURL, onContentChange: refreshPublicContent, onSessionChange});
+    cmsView = createCMS({navigate: nav, replaceURL, onContentChange: refreshPublicContent, onSessionChange, onCounts: counts=>{adminTotals=counts;showStats();}});
     if (isCMSRoute()) {
       app.replaceChildren(cmsView.element);
       cmsView.render();
@@ -569,6 +610,23 @@ function renderBrandAssets() {
   }).finally(() => { brandAssetsLoading = null; });
 }
 
+const isDirectoryTool = () => ['/tools/ai-nav', '/tools/ai-models'].includes(routePath());
+let modelsRequest = 0;
+async function renderModelBoards() {
+  const seq = ++modelsRequest;
+  setNav('ai-models'); app.dataset.view = 'tool:ai-models';
+  document.title = 'AI 大模型 · Vision Lab';
+  try {
+    const module = await import(sitePath('/static/tools/ai-models.js'));
+    const dataset = await module.loadModels();
+    if (seq !== modelsRequest || routePath() !== '/tools/ai-models') return;
+    app.replaceChildren(module.modelsPage(dataset, replaceURL));
+  } catch {
+    if (seq !== modelsRequest || routePath() !== '/tools/ai-models') return;
+    app.innerHTML = '<div class="empty"><b>模型排行榜加载失败</b><button type="button" class="pill-btn shadow">重新加载</button></div>';
+    $('button', app).onclick = renderModelBoards;
+  }
+}
 let directoryRequest = 0;
 async function renderDirectory() {
   const seq = ++directoryRequest;
@@ -602,6 +660,11 @@ function render() {
   if (isBrandAssetsRoute() && u.searchParams.get("section") === "brand-skills") return nav("/?tab=brand_skill", true);
   if (isBrandAssetsRoute()) { closeDetail(); return renderBrandAssets(); }
   brandAssetsView?.deactivate();
+  if (p === '/tools/ai-nav' && u.searchParams.get('category') === 'model-rankings') {
+    u.searchParams.delete('category');
+    return nav('/tools/ai-models' + u.search, true);
+  }
+  if (p === '/tools/ai-models') { closeDetail(); return renderModelBoards(); }
   if (p === '/tools/ai-nav') { closeDetail(); return renderDirectory(); }
   if (isGuideRoute()) { closeDetail(); return renderGuidePage(); }
   if (isSlicerRoute()) { closeDetail(); return renderImageSlicer(); }
@@ -619,6 +682,7 @@ function render() {
 
 /* ---------------- grid */
 function catsFor(tab, list) {
+  if (tab === 'video') return [...new Set([...TABS.video.cats, ...list.map(c=>c.category).filter(Boolean)])];
   if (TABS[tab].cats) return TABS[tab].cats;
   const cnt = {}; list.forEach(c => cnt[c.category] = (cnt[c.category] || 0) + 1);
   return ["全部"].concat(Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a]).slice(0, 9));
@@ -646,11 +710,23 @@ function cardHTML(c) {
   const label = c.type === "showcase" ? (c.brand || "") + " · " + c.title : c.title;
   const target = selectedTarget();
   const tr = c.type === "showcase" ? `<span class="pill-btn" data-act="bd" title="${esc(target.hint)}">${esc(targetButtonLabel(target, "一键拉片", "复制拉片 Prompt"))}</span>` : (c.prompt ? `<span class="pill-btn" data-act="use">使用</span>` : "");
-  return `<div class="card-item"><a class="card" href="${sitePath("/c/" + esc(c.id))}" data-link data-id="${esc(c.id)}">
-    <span class="m" style="aspect-ratio:${aspect}"><img loading="lazy" decoding="async" src="${esc(m.thumbnail || sitePath("/static/cms-placeholder.svg"))}" alt="${esc(c.title)}">${playback ? `<video muted loop playsinline preload="none" data-src="${esc(playback)}" aria-hidden="true" tabindex="-1"></video>` : ""}</span>
-    ${c.featured ? `<span class="badge">推荐</span>` : ""}
+  const isRepo = c.type === "skill_repo";
+  const controls = `${c.featured ? '<span class="badge">推荐</span>' : ""}
     <span class="tr">${tr}</span>
-    <span class="ov">${avatarOf(c)}<span class="ttl">${esc(label)}</span><span class="go">${ICON.go}</span></span></a></div>`;
+    <span class="ov">${avatarOf(c)}${isRepo ? "" : `<span class="ttl">${esc(label)}</span>`}<span class="go">${ICON.go}</span></span>`;
+  return `<div class="card-item"><a class="card${isRepo ? " repo-card" : ""}" href="${sitePath("/c/" + esc(c.id))}" data-link data-id="${esc(c.id)}">
+    <span class="m" style="aspect-ratio:${aspect}"><img loading="lazy" decoding="async" src="${esc(m.thumbnail || sitePath("/static/cms-placeholder.svg"))}" alt="${esc(c.title)}">${playback ? `<video muted loop playsinline preload="none" data-src="${esc(playback)}" aria-hidden="true" tabindex="-1"></video>` : ""}${isRepo ? controls : ""}</span>
+    ${isRepo ? repoCaption(c) : controls}</a></div>`;
+}
+
+function repoCaption(c) {
+  const source = c.source || {};
+  const name = source.repo || (source.url || "").match(/^https?:\/\/(?:www\.)?github\.com\/([^/?#]+\/[^/?#]+)/i)?.[1] || c.title;
+  const summary = c.subtitle || c.description?.split("\n")[0];
+  const stars = source.metrics?.stars;
+  const count = Number.isFinite(stars) ? `<span class="repo-stars" title="GitHub Stars"><span aria-hidden="true">☆</span> ${stars.toLocaleString("en-US")}</span>` : "";
+  return `<span class="repo-caption"><strong>${esc(name)}</strong>${summary ? `<span class="repo-summary">${esc(summary)}</span>` : ""}
+    <span class="repo-meta"><span>${esc(c.category || "")}</span>${count}</span></span>`;
 }
 function skillDownload(c) {
   const zip = c.assets?.find(asset => asset.url?.endsWith(".zip"));
@@ -878,7 +954,7 @@ function openDetail(id) {
         ${useButton(() => breakdownPrompt(c), "一键拉片", "复制拉片 Prompt")}
         <details class="prompt-preview"><summary>查看拉片提示词</summary><div class="prompt">${esc(breakdownPrompt(c))}</div></details></div>
       ${c.tags?.length ? `<div class="sec"><h4>标签</h4><div class="tags">${c.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div></div>` : ""}
-      ${c.related ? `<div class="sec"><h4>想复现这支？</h4><a class="pill-btn grey" href="${sitePath("/c/" + esc(c.related))}" data-link>看视频案例：复现 Prompt 和步骤 →</a></div>` : ""}`;
+      ${c.related && CASES.some(peer=>peer.id===c.related && peer.type==='video') ? `<div class="sec"><h4>想复现这支？</h4><a class="pill-btn grey" href="${sitePath("/c/" + esc(c.related))}" data-link>看视频案例：复现 Prompt 和步骤 →</a></div>` : ""}`;
   } else {
     const sk = (c.skills || []).map(k => `<a class="tag mono" href="${esc(k.url)}" target="_blank" rel="noopener">${esc(k.repo || k.name)}</a>`).join("");
     body = `${c.description ? `<div class="sec"><h4>内容介绍</h4><div style="white-space:pre-wrap;line-height:1.55">${esc(c.description)}</div></div>` : ""}${c.media?.images?.length > 1 ? `<div class="sec"><h4>图片</h4><div class="tags">${c.media.images.map((url, i) => `<a class="tag" href="${esc(url)}" target="_blank" rel="noopener">图片 ${i + 1} ↗</a>`).join("")}</div></div>` : ""}<div class="sec"><h4>示例请求 <button class="pill-btn shadow" id="cp">复制</button></h4><div class="hint">点「使用」会把它预填到 agent 的输入框（不会自动发送）。</div><div class="prompt">${esc(casePrompt(c))}</div></div>
@@ -926,9 +1002,9 @@ document.addEventListener("keydown", e => {
 
 
 if (staticMode) document.querySelectorAll('a[href$="/review"]').forEach(a => a.remove());
-if (isCMSRoute() || isGuideRoute() || routePath() === '/tools/ai-nav' || routePath() === '/static/README.html' || isSlicerRoute() || isBrandAssetsRoute()) render();
-Promise.all([load(), refreshAdminSession()]).then(() => { if (!isCMSRoute() && routePath() !== '/tools/ai-nav') render(); }).catch(e => {
-  if (isCMSRoute() || routePath() === '/tools/ai-nav') return;
+if (isCMSRoute() || isGuideRoute() || isDirectoryTool() || routePath() === '/static/README.html' || isSlicerRoute() || isBrandAssetsRoute()) render();
+Promise.all([load(), refreshAdminSession()]).then(() => { if (!isCMSRoute() && !isDirectoryTool()) render(); }).catch(e => {
+  if (isCMSRoute() || isDirectoryTool()) return;
   if (isGuideRoute() || isSlicerRoute() || isBrandAssetsRoute()) return render();
   app.innerHTML = `<div class="empty"><b>加载失败</b>${esc(e.message)}</div>`;
 });
