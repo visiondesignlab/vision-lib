@@ -101,8 +101,10 @@ body.detail-open .side{visibility:hidden}
 .stage{flex:1;min-width:0;position:relative;display:grid;place-items:center;background:rgba(255,255,255,.72);backdrop-filter:blur(14px) saturate(.6);padding:40px;cursor:zoom-out;overflow:hidden;overscroll-behavior:none}
 .stage .frame{--frame-radius:8px;max-width:100%;max-height:calc(100vh - 80px);border-radius:var(--frame-radius);overflow:hidden;isolation:isolate;box-shadow:0 20px 60px -10px rgba(0,0,0,.35),0 0 0 .5px var(--line);background:#000;cursor:default}
 .stage video,.stage img{display:block;max-width:100%;max-height:calc(100vh - 80px)}
-/* Clip the video and native controls on their own layer; the frame retains its shadow. */
-.stage .frame>video{border-radius:inherit;clip-path:inset(0 round var(--frame-radius))}
+/* Use one rounded clip for the video and native controls. Overlapping rounded
+   clips expose the wrapper's black background along antialiased corner pixels. */
+.stage .frame:has(>video){overflow:visible;background:transparent;box-shadow:0 20px 60px -10px rgba(0,0,0,.35)}
+.stage .frame>video{border-radius:0;clip-path:inset(0 round var(--frame-radius))}
 .stage .frame>video:fullscreen{border-radius:0;clip-path:none}
 /* Chromium's native fade curve at half opacity; controls retain full opacity. */
 .stage video::-webkit-media-controls-panel{background-image:linear-gradient(
