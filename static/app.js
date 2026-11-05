@@ -227,8 +227,21 @@ function useButton(promptFn, label = "使用", copyLabel = "复制 Prompt") {
   });
   return `<span class="split" id="${id}" data-use-label="${esc(label)}" data-copy-label="${esc(copyLabel)}"><button type="button" class="pill-btn dark main" title="${esc(cur.hint)}">${esc(targetButtonLabel(cur, label, copyLabel))}</button><button type="button" class="pill-btn dark caret" aria-label="选择目标">${ICON.caret}</button></span>`;
 }
+function hasCaseAction(c) {
+  return c.type === "video" || (c.type !== "showcase" && Boolean(c.prompt));
+}
 function casePrompt(c) {
   let p = c.prompt || "";
+  if (c.type === "video" && !p.trim()) {
+    const video = abs(c.media?.video || c.media?.remote_video);
+    p = [
+      `请参考《${c.title}》，帮我制作一支类似的 AI 视频。`,
+      c.subtitle || c.description || "",
+      video ? "参考视频：" + video : "",
+      "案例详情：" + abs("/c/" + c.id),
+      "请先查看原片，拆解镜头、节奏和声音，再给出可执行的制作步骤和逐镜头生成提示词。若无法读取原片，请先让我上传视频。开始生成前，请与我确认主题、素材和目标时长。"
+    ].filter(Boolean).join("\n");
+  }
   if (c.type === "brand_skill") p = p.replace("/brand_skills/", abs("/brand_skills/"));
   const ref = c.source?.url ? `\n\n参考案例：${c.title}（${c.source.url}）` : "";
   return p + ref;
@@ -720,7 +733,7 @@ function cardHTML(c) {
   const playback = m.video || m.preview || "";
   const label = c.type === "showcase" ? (c.brand || "") + " · " + c.title : c.title;
   const target = selectedTarget();
-  const tr = c.type === "showcase" ? `<span class="pill-btn" data-act="bd" title="${esc(target.hint)}">${esc(targetButtonLabel(target, "一键拉片", "复制拉片 Prompt"))}</span>` : (c.prompt ? `<span class="pill-btn" data-act="use">使用</span>` : "");
+  const tr = c.type === "showcase" ? `<span class="pill-btn" data-act="bd" title="${esc(target.hint)}">${esc(targetButtonLabel(target, "一键拉片", "复制拉片 Prompt"))}</span>` : (hasCaseAction(c) ? `<span class="pill-btn" data-act="use">使用</span>` : "");
   const isRepo = c.type === "skill_repo";
   const controls = `${c.featured ? '<span class="badge">推荐</span>' : ""}
     <span class="tr">${tr}</span>
@@ -1011,7 +1024,7 @@ function openDetail(id) {
   overlay.innerHTML = `<div class="panel">
     <div class="ptop"><a class="ibtn" href="${sitePath(back)}" data-link title="关闭" aria-label="关闭详情">${ICON.x}</a><span class="sp"></span>
       ${prev ? `<a class="ibtn" href="${sitePath("/c/" + esc(prev.id))}" data-link title="上一条" aria-label="上一条">${ICON.l}</a>` : ""}${next ? `<a class="ibtn" href="${sitePath("/c/" + esc(next.id))}" data-link title="下一条" aria-label="下一条">${ICON.r}</a>` : ""}
-      ${!isShow && c.prompt ? useButton(() => casePrompt(c)) : ""}</div>
+      ${hasCaseAction(c) ? useButton(() => casePrompt(c)) : ""}</div>
     <div class="phead">${avatarOf(c).replace('class="av"', 'class="av round"')}<div class="cat">${esc(TABS[c.type]?.name || "")} · ${esc(c.category)}</div>
       <h3>${esc(c.title)}</h3><p>${esc(isShow ? (c.description || c.subtitle) : c.subtitle)}</p>
       <div class="when">${esc((s.date || "").slice(0, 10))}${c.version && !isShow ? (isBrandRepo ? " · " : " · v") + esc(c.version) : ""} ${isShow ? "" : trust}</div></div>

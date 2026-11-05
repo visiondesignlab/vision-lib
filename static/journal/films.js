@@ -1,6 +1,7 @@
 const {path, icon} = window.VisionSite;
 const localFilms = new Map([['ff6ZvCfHJrM', 'doom-burger.mp4']]);
 const scripts = new Map();
+const initialVolume = 0.5;
 
 // Third-party APIs are loaded only when a film comes into view or the reader chooses to play.
 function sdk(name) {
@@ -37,7 +38,7 @@ function describe(url) {
     if (id) return {kind:'vimeo',id};
   }
   if (u.hostname === 'framerate.tv' && /^\/embed\/[\w-]+$/.test(u.pathname)) {
-    u.searchParams.set('autoplay','1'); u.searchParams.set('muted','1');
+    u.searchParams.set('autoplay','0'); u.searchParams.set('muted','0');
     return {kind:'framerate',url:u.href};
   }
 }
@@ -63,15 +64,16 @@ function mountFilm(figure, signal) {
   if (film.native) {
     native = document.createElement('video');
     native.src = film.native; native.poster = poster.src; native.preload = 'none';
-    native.controls = true; native.muted = native.defaultMuted = native.playsInline = true;
+    native.controls = true; native.playsInline = true; native.volume = initialVolume;
     native.setAttribute('aria-label', title); region.prepend(native); poster.hidden = true; play.hidden = true;
     native.addEventListener('error', () => { native.hidden = true; poster.hidden = false; error(); }, {signal});
   }
   function stop() {
-    if (native) { native.pause(); native.muted = true; }
+    native?.pause();
     const old = active; active = null;
     if (old) {
       clearTimeout(old.timer);
+      old.removeListener?.();
       old.mount.remove(); // Removing the frame stops its audio even if the provider is unresponsive.
       if (old.player?.destroy) Promise.resolve().then(()=>old.player.destroy()).catch(()=>{});
     }
@@ -85,7 +87,6 @@ function mountFilm(figure, signal) {
   async function start() {
     if (document.hidden || active || failed || signal.aborted) return;
     if (native) {
-      native.muted = true;
       native.play().catch(()=>{}); // Native controls remain available if autoplay is disabled.
       return;
     }
@@ -110,24 +111,50 @@ function mountFilm(figure, signal) {
     current.timer = setTimeout(unavailable,16000);
     try {
       if (film.kind === 'framerate') {
-        embed(film.url).onload = unveil;
+        const frame = embed(film.url);
+        const origin = new URL(film.url).origin;
+        const send = (method, value) => frame.contentWindow.postMessage(
+          JSON.stringify({context:'player.js', version:'1.0', method, value}), origin);
+        // Framerate uses the Player.js bridge and may announce readiness more than once.
+        function onReady(event) {
+          if (event.origin !== origin || event.source !== frame.contentWindow || !live()) return;
+          let message = event.data;
+          if (typeof message === 'string') {
+            try { message = JSON.parse(message); } catch { return; }
+          }
+          if (message?.context !== 'player.js' || message.event !== 'ready') return;
+          current.removeListener();
+          send('setVolume', initialVolume * 100);
+          send('unmute');
+          send('play');
+          unveil();
+        }
+        current.removeListener = () => window.removeEventListener('message', onReady);
+        window.addEventListener('message', onReady);
+        frame.onload = () => { if (live()) send('addEventListener', 'ready'); };
       } else if (film.kind === 'youtube') {
         const Player = await sdk('youtube');
         if (!live()) return;
-        const params = new URLSearchParams({enablejsapi:'1',origin:location.origin,playsinline:'1',mute:'1',autoplay:'1',rel:'0'});
+        const params = new URLSearchParams({enablejsapi:'1',origin:location.origin,playsinline:'1',autoplay:'0',rel:'0'});
         const frame = embed('https://www.youtube.com/embed/' + film.id + '?' + params);
         current.player = new Player(frame, {
-          events:{onReady:e=>{ if (live()) { e.target.mute(); e.target.playVideo(); unveil(); } },
+          events:{onReady:e=>{ if (live()) { e.target.setVolume(initialVolume * 100); e.target.unMute(); e.target.playVideo(); unveil(); } },
             onError:unavailable, onAutoplayBlocked:unveil}});
       } else {
         const Player = await sdk('vimeo');
         if (!live()) return;
-        const frame = embed('https://player.vimeo.com/video/' + film.id + '?muted=1&autoplay=1&playsinline=1&dnt=1');
+        const frame = embed('https://player.vimeo.com/video/' + film.id + '?muted=0&autoplay=0&playsinline=1&dnt=1');
         const player = current.player = new Player(frame);
-        player.on('error', unavailable);
+        player.on('error', event => {
+          if (event?.name === 'NotAllowedError' || event?.method === 'setVolume') return;
+          unavailable();
+        });
         await player.ready();
         if (!live()) return;
-        unveil(); await player.setMuted(true);
+        unveil();
+        await player.setVolume(initialVolume).catch(()=>{}); // Some mobile players use hardware volume.
+        if (!live()) return;
+        await player.setMuted(false);
         if (live()) await player.play().catch(e=>{ if (e.name !== 'NotAllowedError') unavailable(); });
       }
     } catch { unavailable(); }

@@ -64,5 +64,8 @@
   .journal-grid .journal-caption{padding:0}
   .journal-grid .journal-caption h2{margin:5px 0 0}
   .journal-grid .journal-caption p{display:none}
-  .journal-toolbar .pill-btn{min-height:44px}
+}
+@media(pointer:coarse){
+  .journal-toolbar .pill-btn{position:relative}
+  .journal-toolbar .pill-btn::after{content:"";position:absolute;inset:-8px 0}
 }

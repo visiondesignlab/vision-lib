@@ -139,6 +139,36 @@ def verify(base, pw, width):
         page.get_by_role("menuitemradio", name="最新", exact=True).click()
         expect(page.locator(".card").first).to_have_attribute("data-id", "skill-New")
         expect(page.get_by_role("button", name="排序")).to_have_text("最新")
+        go("/journal/")
+        page.locator('.journal-card[href$="vol=14"]').click()
+        back = page.get_by_role("link", name="全部期刊", exact=True)
+        expect(back).to_be_visible()
+        assert back.bounding_box()["height"] == 28
+        film = page.locator(".journal-film video")
+        assert film.evaluate("v=>v.volume === 0.5 && !v.muted")
+        film.scroll_into_view_if_needed()
+        page.wait_for_function("document.querySelector('.journal-film video').currentTime > 0.05")
+        old_film = film.element_handle()
+        back.click()
+        expect(page.locator(".journal-latest")).to_be_visible()
+        assert old_film.evaluate("v=>v.paused && !v.isConnected")
+        # Migrated videos can have no authored prompt. They must still offer a usable handoff.
+        go("/c/transfer-%s-0" % width)
+        handoff = page.locator("#overlay > .ptop .split")
+        expect(handoff.locator(".main")).to_have_text("使用 · Cursor")
+        prompt = page.locator("#overlay .prompt").first.inner_text()
+        assert "Clip 0" in prompt and "/web.mp4" in prompt and "逐镜头" in prompt
+        if width == 390:
+            tag = page.locator("#overlay .tags a.tag").first
+            assert tag.evaluate("""el=>{
+                const range = new Range(); range.selectNodeContents(el);
+                const text = range.getBoundingClientRect(), chip = el.getBoundingClientRect();
+                return Math.abs(text.x + text.width / 2 - chip.x - chip.width / 2) <= 1 &&
+                       Math.abs(text.y + text.height / 2 - chip.y - chip.height / 2) <= 2;
+            }""")
+        handoff.locator(".caret").click()
+        expect(page.get_by_role("menuitemradio", name="Codex", exact=True)).to_be_visible()
+        page.keyboard.press("Escape")
         if width == 390:
             go("/c/qa-showcase")
             page.locator("#overlay .split .caret").click()
