@@ -1,0 +1,86 @@
+{
+ "entries": [
+  {
+   "id": "8634d05bd7d9212edb12",
+   "category": "smart7",
+   "name": "Figma Design",
+   "url": "https://www.figma.com/design/",
+   "description": "协作设计界面、维护组件库并制作交互原型",
+   "icon": "/static/tools/ai-icons/bd0eda7181d4a12bf332.webp"
+  },
+  {
+   "id": "97151e8ffda01ac6e930",
+   "category": "smart7",
+   "name": "Figma Make",
+   "url": "https://www.figma.com/make/",
+   "description": "用提示词或 Figma 设计稿生成可运行的交互原型",
+   "icon": "/static/tools/ai-icons/bd0eda7181d4a12bf332.webp"
+  },
+  {
+   "id": "4366ef6df06438316109",
+   "category": "smart7",
+   "name": "pen.dev",
+   "url": "https://www.pen.dev/",
+   "description": "原 Pencil；在可编辑画布上与 AI 一起设计界面",
+   "icon": "/static/tools/ai-icons/4d1cedaead28bf399735.webp"
+  },
+  {
+   "id": "ad27fd69a5318d5f601d",
+   "category": "smart7",
+   "name": "Paper",
+   "url": "https://paper.design/",
+   "description": "在同一张画布中连接界面设计、代码与 AI 工具",
+   "icon": "/static/tools/ai-icons/8893417c3e0faf50f404.webp"
+  },
+  {
+   "id": "5bb19014c4a415882a16",
+   "category": "smart7",
+   "name": "Framer",
+   "url": "https://www.framer.com/",
+   "description": "用设计助手搭建响应式网站，并直接发布",
+   "icon": "/static/tools/ai-icons/d0c15727d4b5d8ec204b.webp"
+  },
+  {
+   "id": "c535a51edca9854a52bf",
+   "category": "smart7",
+   "name": "Claude Design",
+   "url": "https://claude.com/product/design",
+   "description": "通过对话制作界面原型，按反馈修改设计",
+   "icon": "/static/tools/ai-icons/7e9ed04704b056d903f8.webp"
+  },
+  {
+   "id": "040e72eb97d1e6d21c9d",
+   "category": "smart7",
+   "name": "v0",
+   "url": "https://v0.app/",
+   "description": "通过描述生成前端界面，预览并迭代可运行的原型",
+   "icon": "/static/tools/ai-icons/9db4e7d4a76029cf5781.webp"
+  },
+  {
+   "id": "a08b8ae0b0e39945706a",
+   "category": "smart7",
+   "name": "Magic Patterns",
+   "url": "https://www.magicpatterns.com/",
+   "description": "用 AI 生成产品界面，在画布上比较与迭代原型",
+   "icon": "/static/tools/ai-icons/f25c1672298e1191d3ea.webp"
+  },
+  {
+   "id": "988649c2250e826c90bc",
+   "category": "smart7",
+   "name": "Stitch",
+   "url": "https://stitch.withgoogle.com/",
+   "description": "用文字或参考图生成可编辑的界面",
+   "icon": "/static/tools/ai-icons/db2ee90315c17b67d78b.webp"
+  },
+  {
+   "id": "fdc5535da491d84f0ffa",
+   "icon": "/static/tools/ai-icons/7e9ed04704b056d903f8.webp"
+  },
+  {
+   "id": "caee1ac8e20924a827ba",
+   "previousIds": [
+    "ec0c854bc1db52246bbe"
+   ]
+  }
+ ]
+}

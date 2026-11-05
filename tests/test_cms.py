@@ -96,7 +96,7 @@ class CMSTests(unittest.TestCase):
     def test_public_and_cms_routes_share_the_same_shell(self):
         code, shell, _ = self.req('/?tab=video', auth=False)
         self.assertEqual(code, 200)
-        for path in ('/review', '/review/', '/cms', '/cms/content', '/cms/new', '/cms/settings'):
+        for path in ('/review', '/review/', '/cms', '/cms/content', '/cms/new', '/cms/settings', '/guide', '/static/README.html'):
             code, body, _ = self.req(path, auth=False)
             self.assertEqual(code, 200)
             self.assertEqual(body, shell, path)
@@ -165,6 +165,103 @@ class CMSTests(unittest.TestCase):
         code,data,_=self.req('/api/admin/uploads',method='POST',raw=buf.getvalue(),headers={'Content-Type':'application/octet-stream','X-Upload-Kind':'cover','X-File-Name':'cover.png'})
         self.assertEqual(code,201,data)
         return data['url']
+
+    def test_legacy_delete_requires_archive_auth_and_current_version(self):
+        self.login()
+        c = self.create(source={'url': 'https://x.com/test/status/1234567890'})
+        path = '/api/admin/cases/' + c['id'] + '/delete'
+        def remove(item, **kwargs):
+            return self.req(path, {'_version': item['_version']}, **kwargs)[0]
+        self.assertEqual(remove(c, auth=False), 401)
+        self.assertEqual(remove(c, headers={'X-CSRF-Token': ''}), 403)
+        self.assertEqual(remove(c, headers={'Origin': 'https://other.example'}), 403)
+        self.assertEqual(remove(c), 409)  # Draft
+        c = self.action(c, 'submit')
+        self.assertEqual(remove(c), 409)  # Pending
+        c = self.action(c, 'reject', note='Needs changes')
+        self.assertEqual(remove(c), 409)  # Rejected
+        c = self.action(self.action(c, 'submit'), 'approve')
+        self.assertEqual(remove(c), 409)  # Published
+        _, revision, _ = self.req('/api/admin/cases/' + c['id'],
+                                  {'title': 'Unapproved revision', '_version': c['_version']}, method='PUT')
+        self.assertEqual(remove(revision), 409)  # Live removal needs explicit confirmation
+        archived = self.action(revision, 'unpublish')
+        self.assertEqual(remove(revision), 409)  # Stale version
+        self.assertEqual(remove(archived), 200)
+        self.assertEqual(remove(archived), 404)
+        self.assertEqual(self.req('/api/admin/cases/' + c['id'])[0], 404)
+        self.assertEqual(self.req('/api/cases/' + c['id'], auth=False)[0], 404)
+        self.assertEqual(self.req('/api/admin/cases')[1]['cases'], [])
+        self.assertIn('x.com/status/1234567890', store.known_urls())
+
+    def test_direct_delete_confirms_live_versions_and_private_drafts(self):
+        self.login()
+        for status in ('draft', 'pending', 'rejected', 'published', 'revision'):
+            with self.subTest(status=status):
+                c = self.create()
+                if status != 'draft':
+                    c = self.action(c, 'submit')
+                if status == 'rejected':
+                    c = self.action(c, 'reject', note='Needs changes')
+                if status in ('published', 'revision'):
+                    c = self.action(c, 'approve')
+                if status == 'revision':
+                    _, c, _ = self.req('/api/admin/cases/' + c['id'], {'title':'New title', '_version':c['_version']}, method='PUT')
+                path = '/api/admin/cases/' + c['id'] + '/delete'
+                payload = {'_version':c['_version'], 'confirm_delete':True}
+                if c['live_status'] == 'published':
+                    self.assertEqual(self.req(path, payload)[0], 409)
+                    self.assertEqual(self.req('/api/cases/' + c['id'], auth=False)[0], 200)
+                    payload['remove_live'] = True
+                self.assertEqual(self.req(path, payload)[0], 200)
+                self.assertEqual(self.req('/api/cases/' + c['id'], auth=False)[0], 404)
+
+    def test_ai_directory_admin_public_version_and_reference_integrity(self):
+        admin, public = '/api/admin/ai-directory', '/api/ai-directory'
+        code, db, _ = self.req(public, auth=False)
+        self.assertEqual(code, 200)
+        self.assertNotIn('version', db)
+        self.assertEqual(self.req(admin, auth=False)[0], 401)
+        self.login()
+        initial = self.req(admin)[1]
+        add = {'kind':'category', 'action':'save', 'name':'AI测试', 'version':initial['version']}
+        self.assertEqual(self.req(admin, add, headers={'X-CSRF-Token':''})[0], 403)
+        code, db, _ = self.req(admin, add)
+        self.assertEqual(code, 200)
+        cat = db['categories'][-1]
+        self.assertEqual(cat['name'], 'AI 测试')
+        self.assertEqual(self.req(admin, add)[0], 409)
+        item = {'kind':'entry','action':'save','name':'Demo工具','url':'javascript:alert(1)','category':cat['id'],'version':db['version']}
+        self.assertEqual(self.req(admin,item)[0], 400)
+        item['url']='https://example.com/demo'
+        code, db, _ = self.req(admin, item)
+        self.assertEqual(code, 200)
+        eid = db['entries'][-1]['id']
+        self.assertEqual(self.req(admin, {'kind':'category','action':'delete','id':cat['id'],'version':db['version']})[0], 409)
+        code, db, _ = self.req(admin, {'kind':'entry','action':'feature','id':eid,'featured':True,'version':db['version']})
+        self.assertEqual(code, 200)
+        self.assertTrue(self.req(public,auth=False)[1]['entries'][-1]['featured'])
+        for kind, target in [('entry',eid),('category',cat['id'])]:
+            code, db, _ = self.req(admin, {'kind':kind,'action':'delete','id':target,'version':db['version']})
+            self.assertEqual(code, 200)
+        self.assertNotIn(eid, [x['id'] for x in self.req(public,auth=False)[1]['entries']])
+
+    def test_delete_does_not_remove_shared_media_or_concurrently_resubmitted_content(self):
+        self.login()
+        cover = self.upload_image('green')
+        first = self.create(type='graphic', media={'kind':'image', 'thumbnail':cover})
+        other = self.create(type='graphic', media={'kind':'image', 'thumbnail':cover})
+        first = self.action(self.action(first, 'submit'), 'approve')
+        other = self.action(self.action(other, 'submit'), 'approve')
+        archived = self.action(first, 'unpublish')
+        path = '/api/admin/cases/' + first['id'] + '/delete'
+        pending = self.action(archived, 'submit')
+        self.assertEqual(self.req(path, {'_version':archived['_version']})[0], 409)
+        self.assertEqual(self.req(path, {'_version':pending['_version']})[0], 409)
+        archived = self.action(self.action(pending, 'approve'), 'unpublish')
+        self.assertEqual(self.req(path, {'_version':archived['_version']})[0], 200)
+        self.assertEqual(self.req(cover, auth=False)[0], 200)
+        self.assertEqual([c['id'] for c in store.load_cases()], [other['id']])
 
     def test_media_draft_revision_and_archived_access(self):
         self.login()

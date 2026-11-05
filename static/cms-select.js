@@ -69,6 +69,7 @@ function enhanceSelect(select, label, field = false) {
     select.value = value; select.dispatchEvent(new Event("change", {bubbles: true}));
     document.getElementById(trigger.id)?.focus({preventScroll: true});
   }, {align: field ? "start" : "end", matchWidth: field});
+  return update;
 }
 document.addEventListener("pointerdown", e => {
   if (activeMenu && !activeMenu.menu.contains(e.target) && !activeMenu.trigger.contains(e.target)) closeMenu();

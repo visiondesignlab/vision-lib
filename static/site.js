@@ -11,5 +11,13 @@
     if (base && (value === base || value.startsWith(base + '/'))) value = value.slice(base.length);
     return value.replace(/\/$/, '') || '/';
   }
-  window.VisionSite = Object.freeze({path, routePath, staticMode: config.staticMode === true});
+  function videoPlayer(src, poster) {
+    const surface = document.createElement('div'), video = document.createElement('video');
+    surface.className = 'video-surface';
+    video.src = src; video.poster = poster || path('/static/cms-placeholder.svg');
+    for (const attr of ['controls', 'autoplay', 'muted', 'loop', 'playsinline']) video.setAttribute(attr, '');
+    surface.append(video);
+    return surface.outerHTML;
+  }
+  window.VisionSite = Object.freeze({path, routePath, videoPlayer, staticMode: config.staticMode === true});
 })();

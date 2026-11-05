@@ -18,8 +18,10 @@ Pages 使用静态 JSON，图片切图和 AI 提示词跳转在浏览器中运�
 python3 -m pip install -r requirements.txt
 python3 scripts/export_pages_snapshot.py
 python3 -m unittest discover -s tests -p 'test_*.py'
+python3 tests/browser_routes.py   # 先安装 Playwright 和 Chromium，见 README
 python3 scripts/build_pages.py --base-path /vision-lib
-git add static scripts tests docs publish .github .gitignore README.md
+git add -u
+git add static scripts tests docs publish catalog .github ai_directory.py
 git diff --cached --stat
 git commit -m "Update Vision Lib published content"
 git push origin main

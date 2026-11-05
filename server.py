@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Launch 案例库 web server (stdlib only).  python3 server.py [--port 8787] [--host 0.0.0.0]"""
+"""Vision Lab web server (stdlib only).  python3 server.py [--port 8787] [--host 0.0.0.0]"""
 import argparse, hmac, json, mimetypes, os, re, sys, traceback
 from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs, unquote
 import store
+import ai_directory
 import cms_auth
 import cms_content as cms
 from cms_upload import upload
@@ -12,6 +13,19 @@ STATIC = os.path.join(store.ROOT, "static")
 SERVE_DIRS = {"static": STATIC, "media": store.MEDIA, "brand_skills": os.path.join(store.ROOT, "brand_skills")}
 mimetypes.add_type("text/markdown; charset=utf-8", ".md")
 mimetypes.add_type("video/mp4", ".mp4")
+
+
+def heat(case):
+    def number(value):
+        try:
+            return float(value or 0)
+        except (TypeError, ValueError):
+            return 0
+    if case.get("heat") is not None:
+        return number(case["heat"])
+    metrics = case.get("source", {}).get("metrics") or {}
+    return number(metrics.get("views", metrics.get("post_views"))) + 50 * (
+        number(metrics.get("likes", metrics.get("post_likes"))) + number(metrics.get("stars")))
 
 
 def public_view(c):
@@ -168,10 +182,14 @@ class H(BaseHTTPRequestHandler):
     def api(self, method, p, q):
         if re.match(r"^/api/cases/[\w.-]+/breakdown/?$", p):
             return self.send_json({"error": "在线拉片已取消，请在案例详情中选择自己的 AI 工具", "code": "online_breakdown_removed"}, 410)
+        if p == "/api/ai-directory" and method == "GET":
+            return self.send_json(ai_directory.public_view(ai_directory.load()))
         m = re.match(r"^/api/cases/([\w.-]+)$", p)
         if p == "/api/cases" and method == "GET":
             cs = [public_view(c) for c in store.load_cases() if c.get("status") == "published"]
-            return self.send_json({"cases": cs, "generated_at": store.now_iso()})
+            videos = sorted((c for c in cs if c.get("type") == "video"), key=heat, reverse=True)
+            return self.send_json({"cases": videos + [c for c in cs if c.get("type") != "video"],
+                                   "generated_at": store.now_iso(), "heat_formula": "views + likes*50"})
         if m and method == "GET":
             c = self.find(m.group(1))
             if not c or (c.get("status") != "published" and not self.is_admin()):
@@ -207,6 +225,11 @@ class H(BaseHTTPRequestHandler):
                 if os.path.exists(initial):
                     os.unlink(initial)
                 return self.send_json({"ok": True}, headers={"Set-Cookie": cms_auth.cookie_header(max_age=0)})
+            if p == "/api/admin/ai-directory":
+                if method == "GET":
+                    return self.send_json(ai_directory.load())
+                if method == "POST":
+                    return self.send_json(ai_directory.change(self.body()))
             if p == "/api/admin/uploads" and method == "POST":
                 return self.send_json(upload(self), 201)
             if p == "/api/admin/cases":
@@ -218,7 +241,7 @@ class H(BaseHTTPRequestHandler):
                     cs = [c for c in cs if st == "all" or c.get("status") == st]
                     cs.sort(key=lambda c: c.get("updated_at", c.get("added_at", "")), reverse=True)
                     return self.send_json({"cases": cs})
-            m2 = re.fullmatch(r"/api/admin/cases/([\w.-]+)(?:/(submit|approve|reject|unpublish))?", p)
+            m2 = re.fullmatch(r"/api/admin/cases/([\w.-]+)(?:/(submit|approve|reject|unpublish|delete))?", p)
             if m2:
                 cid, action = m2.groups()
                 if method == "GET" and not action:
@@ -230,6 +253,10 @@ class H(BaseHTTPRequestHandler):
 
 
 
+class SiteServer(ThreadingHTTPServer):
+    request_queue_size = 128
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--port", type=int, default=int(os.environ.get("PORT", 8787)))
@@ -237,8 +264,9 @@ def main():
     a = ap.parse_args()
     store.admin_token()
     cms_auth.ensure_password()
-    print(f"Launch 案例库 on http://{a.host}:{a.port}  CMS: /review", flush=True)
-    ThreadingHTTPServer((a.host, a.port), H).serve_forever()
+    print(f"Vision Lab on http://{a.host}:{a.port}  CMS: /review", flush=True)
+    with SiteServer((a.host, a.port), H) as server:
+        server.serve_forever()
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-/* Vision Lib — vanilla JS SPA */
+/* Vision Lab — vanilla JS SPA */
 (() => {
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -7,7 +7,9 @@ const {path: sitePath, routePath, staticMode} = window.VisionSite;
 const mobileLayout = matchMedia("(max-width: 900px)"), reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 const touchLayout = matchMedia("(hover: none) and (pointer: coarse)");
 let navOpen = false, navAnimation = null, detailExit = null;
-let CASES = [], STATE = {tab: "video", cat: "全部", q: "", sort: "new"};
+let CASES = [], casesLoaded = false, STATE = {tab: "video", cat: "全部", q: "", sort: "hot"};
+const tabSort = new Map();
+let adminSession = false, authRevision = 0, authReady = false;
 const TABS = {
   video: {name: "视频案例", sub: "好的 launch / 宣传视频，附复现 Prompt、步骤和依赖的 Skill", cats: ["全部", "动效特效", "社交短视频", "营销产品", "电影感叙事"]},
   showcase: {name: "灵感库", sub: "产品发布、广告片、预告。选一支好片，一键交给自己的 AI 拉片", cats: null},
@@ -91,6 +93,7 @@ function enhanceSelect(select, label, field = false) {
     select.value = value; select.dispatchEvent(new Event("change", {bubbles: true}));
     document.getElementById(trigger.id)?.focus({preventScroll: true});
   }, {align: field ? "start" : "end", matchWidth: field});
+  return update;
 }
 document.addEventListener("pointerdown", e => {
   if (activeMenu && !activeMenu.menu.contains(e.target) && !activeMenu.trigger.contains(e.target)) closeMenu();
@@ -101,7 +104,12 @@ document.addEventListener("focusin", e => {
 window.addEventListener("resize", positionMenu);
 window.visualViewport?.addEventListener("resize", positionMenu);
 window.addEventListener("scroll", e => {
-  if (activeMenu && !activeMenu.menu.contains(e.target)) closeMenu();
+  if (!activeMenu || activeMenu.menu.contains(e.target)) return;
+  // Focusing a mobile control can finish scrolling after the menu opens.
+  // Follow the trigger while it is on screen instead of discarding the user's choice.
+  const r = activeMenu.trigger.getBoundingClientRect();
+  if (r.bottom <= 0 || r.top >= innerHeight) closeMenu();
+  else positionMenu();
 }, true);
 document.addEventListener("keydown", e => {
   if (!activeMenu) return;
@@ -256,7 +264,7 @@ document.addEventListener("error", e => {
   if (e.target.matches?.(".av img")) e.target.closest(".av").hidden = true;
 }, true);
 function caseDate(c) { return (c.source?.date || c.added_at || "").slice(0, 16); }
-function popularity(c) { const m = c.source?.metrics || {}; return m.views || m.post_views || 0 + (m.stars || 0) * 50; }
+function popularity(c) { const m = c.source?.metrics || {}; return Number(c.heat ?? ((Number(m.views ?? m.post_views) || 0) + 50 * ((Number(m.likes ?? m.post_likes) || 0) + (Number(m.stars) || 0)))) || 0; }
 function api(path, opt = {}) {
   const h = Object.assign({"Content-Type": "application/json"}, opt.headers || {});
   // CMS authentication uses HttpOnly sessions.
@@ -345,7 +353,7 @@ ${vid ? "视频地址：" + vid + "\n" : ""}原帖 / 来源：${c.source?.url ||
 
 /* ---------------- data */
 async function load() {
-  const j = await api("/api/cases"); CASES = j.cases;
+  const j = await api("/api/cases"); CASES = j.cases; casesLoaded = true;
   const counts = {}; CASES.forEach(c => counts[c.type] = (counts[c.type] || 0) + 1);
   $("#stats").textContent = `已收录 ${CASES.length} 条 · 视频案例 ${counts.video || 0} · 灵感库 ${counts.showcase || 0} · Skill 仓库 ${counts.skill_repo || 0}`;
 
@@ -403,6 +411,69 @@ function setNav(tab) { document.querySelectorAll(".nav a[data-tab]").forEach(a =
 // CMS is a view within this shell: the sidebar/document never remount on entry.
 let cmsView = null, cmsLoading = null;
 const isCMSRoute = () => /^\/(?:review\/?|cms(?:\/.*)?)$/.test(routePath());
+const authChannel = !staticMode && typeof BroadcastChannel !== "undefined" ? new BroadcastChannel("vision-admin-session") : null;
+function setAdminSession(signedIn) {
+  signedIn = !staticMode && !!signedIn;
+  if (authReady && adminSession === signedIn) return;
+  authReady = true; adminSession = signedIn;
+  document.body.classList.toggle("admin-mode", adminSession);
+  const entry = $("#reviewBtn");
+  if (entry) {
+    entry.textContent = adminSession ? "退出管理" : "管理员登录";
+    entry.title = adminSession ? "退出管理员模式，继续浏览" : "登录管理员账号";
+    entry.onclick = e => { if (adminSession) { e.preventDefault(); e.stopPropagation(); logoutAdmin(); } };
+  }
+  syncAdminControls();
+}
+function onSessionChange(signedIn) {
+  ++authRevision;
+  const changed = adminSession !== !!signedIn;
+  setAdminSession(signedIn);
+  if (changed) authChannel?.postMessage("changed");
+}
+async function refreshAdminSession() {
+  if (staticMode) return;
+  const revision = ++authRevision;
+  try {
+    const response = await fetch("/api/auth/session", {credentials:"same-origin", cache:"no-store"});
+    if (revision === authRevision && (response.ok || response.status === 401)) setAdminSession(response.ok);
+  } catch (_) { /* A connection failure does not change the server's session. */ }
+}
+async function logoutAdmin() {
+  if (cmsView && !cmsView.canLeave()) return;
+  try {
+    const session = await api("/api/auth/session");
+    await api("/api/auth/logout", {method:"POST", headers:{"X-CSRF-Token":session.csrf}, body:"{}"});
+    onSessionChange(false);
+    cmsView?.prepareNavigation();
+    if (isCMSRoute()) nav("/?tab=video");
+    toast("已退出管理，仍可浏览公开内容");
+  } catch (error) {
+    if (error.status === 401) onSessionChange(false);
+    else toast(error.message);
+  }
+}
+function syncAdminControls() {
+  document.querySelectorAll("[data-admin-control]").forEach(el => el.remove());
+  if (!adminSession) return;
+  if (app.dataset.view === 'tool:ai-nav') {
+    $('.ai-directory-head', app)?.insertAdjacentHTML('beforeend', '<a data-link data-admin-control class="pill-btn shadow" href="/cms/ai-nav">管理 AI 导航</a>');
+  }
+  if (app.dataset.view?.startsWith("grid:")) {
+    $(".head", app)?.insertAdjacentHTML("afterend", `<div class="content-admin-toolbar" data-admin-control aria-label="栏目管理"><span>管理员模式</span><a class="pill-btn shadow" href="/cms/new?type=${encodeURIComponent(STATE.tab)}" data-link>＋ 新建内容</a><a class="pill-btn shadow" href="/cms/content?type=${encodeURIComponent(STATE.tab)}" data-link>管理本栏目</a></div>`);
+    app.querySelectorAll(".card-item").forEach(item => {
+      const card = $(".card", item);
+      item.insertAdjacentHTML("beforeend", `<a class="card-manage" data-admin-control data-link href="/cms/edit/${esc(card.dataset.id)}" aria-label="编辑：${esc($("img", card)?.alt || "内容")}">编辑</a>`);
+    });
+  }
+  if (!overlay.hidden) {
+    const id = routePath().match(/^\/c\/([\w.-]+)/)?.[1], c = CASES.find(c => c.id === id);
+    if (c) $(".phead", overlay)?.insertAdjacentHTML("afterend", `<div class="content-admin-toolbar detail-admin-tools" data-admin-control aria-label="内容管理操作"><a class="pill-btn shadow" data-link href="/cms/edit/${esc(c.id)}">编辑内容</a><a class="pill-btn shadow" data-link href="/cms/content?type=${encodeURIComponent(c.type)}">管理本栏目</a></div>`);
+  }
+}
+if (authChannel) authChannel.onmessage = refreshAdminSession;
+window.addEventListener("focus", refreshAdminSession);
+document.addEventListener("visibilitychange", () => { if (!document.hidden) refreshAdminSession(); });
 function refreshPublicContent() {
   load().then(() => {
     if (!isCMSRoute() && !isSlicerRoute() && !isBrandAssetsRoute()) render();
@@ -423,7 +494,7 @@ function renderCMS() {
   app.innerHTML = '<div class="empty" role="status">正在打开内容工作台…</div>';
   if (cmsLoading) return;
   cmsLoading = import(sitePath("/static/cms.js")).then(({createCMS}) => {
-    cmsView = createCMS({navigate: nav, replaceURL, onContentChange: refreshPublicContent});
+    cmsView = createCMS({navigate: nav, replaceURL, onContentChange: refreshPublicContent, onSessionChange});
     if (isCMSRoute()) {
       app.replaceChildren(cmsView.element);
       cmsView.render();
@@ -433,6 +504,25 @@ function renderCMS() {
     app.innerHTML = '<div class="empty"><b>内容管理加载失败</b><button type="button" class="pill-btn shadow" id="retryCMS">重新加载</button></div>';
     $("#retryCMS").onclick = renderCMS;
   }).finally(() => { cmsLoading = null; });
+}
+
+let guideSequence = 0;
+const isGuideRoute = () => routePath() === '/guide';
+function renderGuidePage() {
+  app.dataset.view = 'guide';setNav('guide');
+  const seq = ++guideSequence;
+  app.innerHTML = '<div class="empty" role="status">正在打开使用说明…</div>';
+  import(sitePath('/static/guide.js')).then(async module => {
+    const content = await module.loadGuide();
+    if (!isGuideRoute() || seq !== guideSequence) return;
+    const element = module.renderGuide({content,types:TABS,cases:CASES,targets:TARGETS,casesLoaded});
+    app.replaceChildren(element);
+    module.updateGuideAssets(element);
+  }).catch(() => {
+    if (!isGuideRoute() || seq !== guideSequence) return;
+    app.innerHTML = '<div class="empty"><b>使用说明暂时无法加载</b><button class="pill-btn shadow" id="retryGuide">重新加载</button></div>';
+    $('#retryGuide').onclick = renderGuidePage;
+  });
 }
 
 // Keep the tool's DOM and local files alive when browsing other sections.
@@ -479,18 +569,41 @@ function renderBrandAssets() {
   }).finally(() => { brandAssetsLoading = null; });
 }
 
+let directoryRequest = 0;
+async function renderDirectory() {
+  const seq = ++directoryRequest;
+  setNav('ai-nav'); app.dataset.view = 'tool:ai-nav';
+  document.title = 'AI 导航 · Vision Lab';
+  app.innerHTML = '<div class="empty" role="status">正在打开 AI 导航…</div>';
+  try {
+    const [module, response] = await Promise.all([import(sitePath('/static/tools/ai-nav.js')),
+      fetch(staticMode ? sitePath('/public/ai-directory.json') : '/api/ai-directory')]);
+    if (!response.ok) throw new Error('读取目录失败');
+    const db = await response.json();
+    if (seq !== directoryRequest || routePath() !== '/tools/ai-nav') return;
+    app.replaceChildren(module.directory(db, replaceURL, enhanceSelect));
+    syncAdminControls();
+  } catch {
+    if (seq !== directoryRequest || routePath() !== '/tools/ai-nav') return;
+    app.innerHTML = '<div class="empty"><b>AI 导航暂时无法加载</b><button class="pill-btn shadow" type="button">重试</button></div>';
+    $('button', app).onclick = renderDirectory;
+  }
+}
 function render() {
   closeMenu();
   if (navOpen) setMobileNav(false, false);
   const u = new URL(location.href), p = routePath(u.pathname);
   app.classList.toggle("cms-view", isCMSRoute());
-  document.title = isCMSRoute() ? "内容管理 · Vision Lib" : "Vision Lib";
+  document.title = isCMSRoute() ? "内容管理 · Vision Lab" : isGuideRoute() ? "使用说明 · Vision Lab" : "Vision Lab";
   if (!isCMSRoute()) cmsView?.deactivate();
   else { brandAssetsView?.deactivate(); closeDetail(); return renderCMS(); }
   let m;
+  if (p === '/static/README.html') return nav('/guide', true);
   if (isBrandAssetsRoute() && u.searchParams.get("section") === "brand-skills") return nav("/?tab=brand_skill", true);
   if (isBrandAssetsRoute()) { closeDetail(); return renderBrandAssets(); }
   brandAssetsView?.deactivate();
+  if (p === '/tools/ai-nav') { closeDetail(); return renderDirectory(); }
+  if (isGuideRoute()) { closeDetail(); return renderGuidePage(); }
   if (isSlicerRoute()) { closeDetail(); return renderImageSlicer(); }
   if ((m = p.match(/^\/c\/([\w.-]+)\/breakdown\/?$/))) return nav(`/c/${m[1]}`, true);
   if ((m = p.match(/^\/c\/([\w.-]+)$/))) {
@@ -517,6 +630,7 @@ function filtered() {
   else if (STATE.cat !== "全部") l = l.filter(c => c.category === STATE.cat || (c.tags || []).includes(STATE.cat));
   if (q) l = l.filter(c => [c.title, c.subtitle, c.brand, c.category, c.source?.author, c.source?.repo, (c.tags || []).join(" "), c.description].join(" ").toLowerCase().includes(q));
   if (STATE.tab === "skill_repo" && STATE.sort === "new") l.sort((a, b) => (b.featured - a.featured) || ((a.rank || 999) - (b.rank || 999)));
+  else if (STATE.tab === "skill_repo" && STATE.sort === "latest") l.sort((a, b) => (b.added_at || b.source?.date || "").localeCompare(a.added_at || a.source?.date || ""));
   else if (STATE.sort === "hot") l.sort((a, b) => popularity(b) - popularity(a));
   else l.sort((a, b) => (b.featured - a.featured) || caseDate(b).localeCompare(caseDate(a)));
   return l;
@@ -531,13 +645,14 @@ function cardHTML(c) {
   const label = c.type === "showcase" ? (c.brand || "") + " · " + c.title : c.title;
   const target = selectedTarget();
   const tr = c.type === "showcase" ? `<span class="pill-btn" data-act="bd" title="${esc(target.hint)}">${esc(targetButtonLabel(target, "一键拉片", "复制拉片 Prompt"))}</span>` : (c.prompt ? `<span class="pill-btn" data-act="use">使用</span>` : "");
-  return `<a class="card" href="${sitePath("/c/" + esc(c.id))}" data-link data-id="${esc(c.id)}">
+  return `<div class="card-item"><a class="card" href="${sitePath("/c/" + esc(c.id))}" data-link data-id="${esc(c.id)}">
     <span class="m" style="aspect-ratio:${aspect}"><img loading="lazy" decoding="async" src="${esc(m.thumbnail || sitePath("/static/cms-placeholder.svg"))}" alt="${esc(c.title)}">${playback ? `<video muted loop playsinline preload="none" data-src="${esc(playback)}" aria-hidden="true" tabindex="-1"></video>` : ""}</span>
     ${c.featured ? `<span class="badge">推荐</span>` : ""}
     <span class="tr">${tr}</span>
-    <span class="ov">${avatarOf(c)}<span class="ttl">${esc(label)}</span><span class="go">${ICON.go}</span></span></a>`;
+    <span class="ov">${avatarOf(c)}<span class="ttl">${esc(label)}</span><span class="go">${ICON.go}</span></span></a></div>`;
 }
 function renderGrid() {
+  STATE.sort = tabSort.get(STATE.tab) || (STATE.tab === "video" ? "hot" : "new");
   closeMenu();
   const T = TABS[STATE.tab] || TABS.video; setNav(STATE.tab);
   app.dataset.view = "grid:" + STATE.tab;
@@ -546,11 +661,12 @@ function renderGrid() {
   app.innerHTML = `<div class="head"><h1>${T.name}</h1><span class="sub">${T.sub}</span>
       <div class="right"><input class="search" id="q" type="search" aria-label="搜索标题、品牌、标签" placeholder="搜索标题、品牌、标签" value="${esc(STATE.q)}"></div></div>
     <div class="bar"><div class="chips" role="group" aria-label="分类筛选">${cats.map(k => `<button class="chip ${k === STATE.cat ? "on" : ""}" aria-pressed="${k === STATE.cat}" data-cat="${esc(k)}">${esc(k)}</button>`).join("")}</div>
-      <div class="right"><select class="pill-btn shadow" id="sort"><option value="new">${STATE.tab === "skill_repo" ? "按排名" : "最新"}</option><option value="hot">${STATE.tab === "skill_repo" ? "按热度" : "最热"}</option></select></div></div>
+      <div class="right"><select class="pill-btn shadow" id="sort"><option value="new">${STATE.tab === "skill_repo" ? "按排名" : "最新"}</option>${STATE.tab === "skill_repo" ? '<option value="latest">最新</option>' : ''}<option value="hot">${STATE.tab === "skill_repo" ? "按热度" : "最热"}</option></select></div></div>
     ${list.length ? `<div class="grid">${list.map(cardHTML).join("")}</div>` :
       `<div class="empty"><b>${all.length ? "没有匹配的条目" : "这里还没有内容"}</b>${all.length ? "换个关键词或分类试试" : STATE.tab === "graphic" ? "在内容管理平台提交平面作品，审核发布后会出现在这里。" : "审核通过的条目会出现在这里。"}</div>`}`;
   $("#sort").value = STATE.sort;
-  $("#sort").onchange = e => { STATE.sort = e.target.value; renderGrid(); };
+  syncAdminControls();
+  $("#sort").onchange = e => { tabSort.set(STATE.tab, e.target.value); renderGrid(); };
   enhanceSelect($("#sort"), "排序");
   const chips = $(".bar .chips");
   app.querySelectorAll(".chip").forEach(b => b.onclick = () => { const left = chips.scrollLeft; const u = new URL(location.href); u.searchParams.set("tab", STATE.tab); u.searchParams.set("cat", b.dataset.cat); replaceURL(u); STATE.cat = b.dataset.cat; renderGrid(); $(".bar .chips").scrollLeft = left; $(".chip.on")?.focus({preventScroll:true}); });
@@ -657,7 +773,7 @@ function metricsRows(c) {
 }
 function stageHTML(c) {
   const m = c.media || {};
-  if (m.video) return `<div class="frame"><video src="${esc(m.video)}" controls autoplay loop muted playsinline poster="${esc(m.thumbnail || sitePath("/static/cms-placeholder.svg"))}"></video></div>`;
+  if (m.video) return `<div class="frame video-frame">${window.VisionSite.videoPlayer(m.video, m.thumbnail)}</div>`;
   if (m.images && m.images.length) return `<div class="frame"><img src="${esc(m.images[0])}"></div>`;
   return `<div class="frame"><img src="${esc(m.thumbnail || sitePath("/static/cms-placeholder.svg"))}"></div>${c.source?.url ? `<div class="ext">${link(c.source.url, "打开原链接")}</div>` : ""}`;
 }
@@ -709,6 +825,7 @@ function openDetail(id) {
     ${body}</div>
     <div class="stage">${stageHTML(c)}</div>`;
   prepareDetail();
+  syncAdminControls();
   $(".ptop a.ibtn", overlay)?.focus({preventScroll: true});
   $(".stage", overlay).addEventListener("click", e => { if (e.target.classList.contains("stage")) nav(back); });
   const cp = $("#cp"); if (cp) cp.onclick = async () => toast((await copyText(casePrompt(c))) ? "已复制，粘贴即可" : "复制失败");
@@ -721,10 +838,10 @@ document.addEventListener("keydown", e => {
 
 
 if (staticMode) document.querySelectorAll('a[href$="/review"]').forEach(a => a.remove());
-if (isCMSRoute() || isSlicerRoute() || isBrandAssetsRoute()) render();
-load().then(() => { if (!isCMSRoute()) render(); }).catch(e => {
-  if (isCMSRoute()) return;
-  if (isSlicerRoute() || isBrandAssetsRoute()) return render();
+if (isCMSRoute() || isGuideRoute() || routePath() === '/tools/ai-nav' || routePath() === '/static/README.html' || isSlicerRoute() || isBrandAssetsRoute()) render();
+Promise.all([load(), refreshAdminSession()]).then(() => { if (!isCMSRoute() && routePath() !== '/tools/ai-nav') render(); }).catch(e => {
+  if (isCMSRoute() || routePath() === '/tools/ai-nav') return;
+  if (isGuideRoute() || isSlicerRoute() || isBrandAssetsRoute()) return render();
   app.innerHTML = `<div class="empty"><b>加载失败</b>${esc(e.message)}</div>`;
 });
 })();

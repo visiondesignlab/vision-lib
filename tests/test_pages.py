@@ -30,6 +30,7 @@ class PagesTests(unittest.TestCase):
             'media/unpublished.png': 'PRIVATE_MEDIA',
             'publish/media/approved.png': 'PUBLIC_MEDIA',
             'publish/large-assets.json': '[]',
+            'catalog/ai-directory.json': '{"categories":[],"entries":[]}',
             'docs/pages-guide.md': 'Public instructions',
         }
         for name, content in files.items():
@@ -63,7 +64,10 @@ class PagesTests(unittest.TestCase):
         data = json.loads((self.output / 'public/cases.json').read_text())
         self.assertEqual(data['cases'][0]['media']['thumbnail'], '/vision-lib/media/approved.png')
         self.assertIn('/vision-lib/static/media-controls.svg#half', (self.output / 'static/style.css').read_text())
-        self.assertIn("fetch('/vision-lib/static/README.md')", (self.output / 'static/README.html').read_text())
+        self.assertEqual((self.output / 'tools/ai-nav/index.html').read_text(), shell)
+        self.assertEqual(json.loads((self.output / 'public/ai-directory.json').read_text()), {'categories': [], 'entries': []})
+        self.assertEqual((self.output / 'guide/index.html').read_text(), shell)
+        self.assertEqual((self.output / 'static/README.html').read_text(), shell)
 
     def test_unpublished_and_internal_fields_rejected(self):
         for mutation in ({'status': 'draft'}, {'notes': 'PRIVATE_NOTE'}, {'revision': {}}):

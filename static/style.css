@@ -36,7 +36,8 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .about b{font-weight:500;display:block;margin-bottom:6px}
 .about p{margin:6px 0;color:var(--fg2)}
 .about>p:first-of-type{padding-bottom:16px}
-.foot{display:flex;justify-content:space-between;color:var(--fg2);margin-top:20px}
+.foot{display:flex;flex-direction:column;align-items:flex-start;gap:12px;color:var(--fg2);margin-top:20px}
+.foot>span,.foot>a{white-space:nowrap;flex-shrink:0}
 /* ---------- controls */
 .pill-btn{height:28px;padding:0 12px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;background:var(--bg);white-space:nowrap;letter-spacing:-.04px}
 .shadow{box-shadow:var(--ring)}
@@ -50,7 +51,7 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .chip .n{opacity:.6;margin-left:4px;font-size:12px}
 .search{height:28px;border-radius:999px;border:0;box-shadow:var(--ring);padding:0 12px 0 28px;width:200px;font:inherit;outline:none;
   background:#fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="%23999" stroke-width="2"><circle cx="6" cy="6" r="4.5"/><path d="M9.5 9.5L13 13"/></svg>') 10px 50% no-repeat}
-.search:focus{box-shadow:0 0 0 1.5px var(--fg)}
+input.search:focus{outline:1px solid var(--fg2);outline-offset:-1px;box-shadow:none}
 select[hidden]{display:none}
 .select-trigger{gap:2px;padding:0 4px 0 12px;transition:background-color .12s cubic-bezier(.2,0,0,1)}
 .select-trigger svg{flex:none;width:16px;height:16px;margin-left:4px;color:var(--fg2)}
@@ -67,6 +68,16 @@ main{margin-left:var(--side);padding:16px 16px 80px}
 .bar .right{margin-left:auto;display:flex;gap:8px}
 /* ---------- masonry grid */
 .grid{columns:4 260px;column-gap:var(--gap)}
+.card-item{position:relative;break-inside:avoid;margin-bottom:var(--gap)}
+.card-item .card{margin-bottom:0}
+.content-admin-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;color:var(--fg2)}
+.content-admin-toolbar>span{font-size:12px;margin-right:auto}
+.detail-admin-tools{margin:0 0 24px}
+.card-manage{position:absolute;top:8px;left:8px;z-index:2;display:inline-flex;align-items:center;justify-content:center;min-height:28px;padding:0 12px;border-radius:999px;background:var(--bg);color:var(--fg);font-size:12px;box-shadow:var(--ring)}
+.card-manage:hover{background:var(--bg2)}
+.card-manage:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.admin-mode .card .badge{top:44px}
+@media (hover:none) and (pointer:coarse){.card-manage{min-height:44px;padding:0 16px}.admin-mode .card .badge{top:60px}.content-admin-toolbar .pill-btn{min-height:44px}}
 .card{break-inside:avoid;margin-bottom:var(--gap);display:block;position:relative;border-radius:8px;overflow:hidden;background:var(--bg2);
   box-shadow:0 0 0 .5px var(--line);cursor:pointer;transform:translateZ(0)}
 .card .m{position:relative;width:100%;display:block}
@@ -96,24 +107,25 @@ body.modal-open{position:fixed;top:var(--locked-scroll-y,0);width:100%;padding-r
 body.detail-open .side{visibility:hidden}
 #overlay{position:fixed;inset:0;z-index:40;display:flex;overscroll-behavior:none}
 #overlay[hidden]{display:none}
-.panel{width:480px;flex:none;background:#fff;height:100%;overflow:auto;overscroll-behavior:contain;padding:0 20px 40px;box-shadow:1px 0 0 var(--line);animation:slide .22s ease-out}
+#overlay>.panel{width:480px;flex:none;background:#fff;height:100%;overflow:auto;overscroll-behavior:contain;padding:0 20px 40px;box-shadow:1px 0 0 var(--line);animation:slide .22s ease-out}
 @keyframes slide{from{transform:translateX(-16px);opacity:0}}
 .stage{flex:1;min-width:0;position:relative;display:grid;place-items:center;background:rgba(255,255,255,.72);backdrop-filter:blur(14px) saturate(.6);padding:40px;cursor:zoom-out;overflow:hidden;overscroll-behavior:none}
 .stage .frame{--frame-radius:8px;max-width:100%;max-height:calc(100vh - 80px);border-radius:var(--frame-radius);overflow:hidden;isolation:isolate;box-shadow:0 20px 60px -10px rgba(0,0,0,.35),0 0 0 .5px var(--line);background:#000;cursor:default}
 .stage video,.stage img{display:block;max-width:100%;max-height:calc(100vh - 80px)}
-/* Use one rounded clip for the video and native controls. Overlapping rounded
-   clips expose the wrapper's black background along antialiased corner pixels. */
-.stage .frame:has(>video){overflow:visible;background:transparent;box-shadow:0 20px 60px -10px rgba(0,0,0,.35)}
-.stage .frame>video{border-radius:0;clip-path:inset(0 round var(--frame-radius))}
-.stage .frame>video:fullscreen{border-radius:0;clip-path:none}
+/* The masked inner surface clips the composited video and native controls
+   together. Keep the outer shadow outside that single transparent clipping box. */
+.stage .video-frame{overflow:visible;background:transparent;box-shadow:0 20px 60px -10px rgba(0,0,0,.35)}
+.video-surface{border-radius:inherit;overflow:hidden;isolation:isolate;transform:translateZ(0);-webkit-mask-image:linear-gradient(#fff,#fff);mask-image:linear-gradient(#fff,#fff)}
+.video-surface>video{border-radius:0;clip-path:none}
+.video-surface>video:fullscreen{border-radius:0;clip-path:none}
 /* Chromium's native fade curve at half opacity; controls retain full opacity. */
-.stage video::-webkit-media-controls-panel{background-image:linear-gradient(
+.video-surface>video::-webkit-media-controls-panel{background-image:linear-gradient(
   rgba(0,0,0,0) 0%,rgba(0,0,0,.005) 8.1%,rgba(0,0,0,.0235) 15.5%,rgba(0,0,0,.053) 22.5%,
   rgba(0,0,0,.088) 29%,rgba(0,0,0,.13) 35.3%,rgba(0,0,0,.1765) 41.2%,rgba(0,0,0,.225) 47.1%,
   rgba(0,0,0,.275) 52.9%,rgba(0,0,0,.3235) 58.8%,rgba(0,0,0,.37) 64.7%,rgba(0,0,0,.412) 71%,
   rgba(0,0,0,.447) 77.5%,rgba(0,0,0,.4765) 84.5%,rgba(0,0,0,.495) 91.9%,rgba(0,0,0,.5) 100%)}
 /* Remove the internal track's black shadow without clipping its thumb or hit area. */
-.stage video::-webkit-media-controls-timeline{filter:url("media-controls.svg#timeline-no-shadow")}
+.video-surface>video::-webkit-media-controls-timeline{filter:url("media-controls.svg#timeline-no-shadow")}
 .stage .ext{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:var(--fg2);font-size:12px}
 .ptop{display:flex;gap:8px;align-items:center;position:sticky;top:0;background:#fff;padding:16px 20px 10px;margin:0 -20px;z-index:2}
 .ibtn{width:28px;height:28px;border-radius:50%;background:var(--chip);display:grid;place-items:center;color:var(--fg2)}
@@ -163,7 +175,7 @@ a.tag:hover{color:var(--fg)}
 .menu-check{display:flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:auto;flex:none}
 .menu hr{border:0;border-top:1px solid var(--line);margin:4px 0}
 @keyframes menu-in{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:scale(1)}}
-@media (prefers-reduced-motion:reduce){.menu,.panel{animation:none}}
+@media (prefers-reduced-motion:reduce){.menu,#overlay>.panel{animation:none}}
 #toast{position:fixed;left:50%;bottom:28px;transform:translateX(-50%);background:var(--fg);color:#fff;padding:10px 16px;border-radius:999px;z-index:90;box-shadow:0 8px 24px rgba(0,0,0,.2);max-width:80vw}
 .prompt-preview{margin-top:12px}
 .prompt-preview summary{color:var(--fg2);cursor:pointer}
@@ -189,4 +201,4 @@ a.tag:hover{color:var(--fg)}
 .modal textarea{min-height:90px;resize:vertical;line-height:1.5}
 .modal .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .modal .acts{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
-@media (max-width:900px){:root{--side:0px}.side{display:none}#overlay{left:0;flex-direction:column-reverse}.panel{width:100%;height:auto;flex:1}.stage{flex:none;height:45vh}.rvi{grid-template-columns:1fr}}
+@media (max-width:900px){:root{--side:0px}.side{display:none}#overlay{left:0;flex-direction:column-reverse}#overlay>.panel{width:100%;height:auto;flex:1}.stage{flex:none;height:45vh}.rvi{grid-template-columns:1fr}}

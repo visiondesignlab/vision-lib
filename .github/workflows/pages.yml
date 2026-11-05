@@ -1,4 +1,4 @@
-name: Publish Vision Lib
+name: Publish Vision Lab
 
 on:
   push:
@@ -30,6 +30,11 @@ jobs:
           fi
       - name: Run backend and export regression tests
         run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Check desktop and mobile routes in Chromium
+        run: |
+          python -m pip install playwright
+          python -m playwright install --with-deps chromium
+          python tests/browser_routes.py
       - name: Build public site
         run: python scripts/build_pages.py --base-path /vision-lib
       - uses: actions/upload-pages-artifact@v4

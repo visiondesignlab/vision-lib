@@ -1,6 +1,6 @@
-# Vision Lib（caselib）
+# Vision Lab（caselib）
 
-团队内部的 launch / 宣传视频案例库。GitHub Pages 发布与更新见 [部署说明](docs/github-pages.md)。两种内容：
+团队内部的 launch / 宣传视频案例库。GitHub Pages 发布与更新见 [部署说明](docs/github-pages.md)。包含以下内容：
 
 | 类型 | 标签页 | 内容 |
 | --- | --- | --- |
@@ -11,11 +11,24 @@
 
 视觉风格参照 recent.design（Inter 13px、灰阶 oklch、药丸按钮、左侧纯文字导航、瀑布流卡片），详情面板的信息结构参照 Open Design。
 
+## 站内使用说明
+
+侧栏「使用说明」在 `/guide` 打开，复用当前导航与内容区，不新开标签页。旧 `/static/README.html` 地址也进入相同页面。本 README 保留开发与维护信息，不再直接展示给普通用户。
+
+- 分组、名称、顺序和链接读取当前主导航；栏目简介与 AI 工具选项读取运行中的应用配置，内容数量读取公开内容数据，品牌分类、文件数、版本与字重读取品牌资产清单。
+- 操作步骤维护在 `static/guide-content.json`。每次功能流程变化必须同步修改，新增或移除导航时由 `tests/test_guide.py` 检查说明覆盖，避免指南停留在旧版。
+- GitHub Pages 同样生成 `/guide` 与旧说明地址；指南会按照公开站点实际显示的导航生成，不展示本机 CMS 的管理入口。
+
+## 视频案例和 AI 导航
+视频案例默认按热度降序，使用已收录的热度值，缺省时按浏览数 + 50 ×（点赞数 + 仓库星数）计算。其他栏目保持各自的默认排序。
+
+工具分组的「AI 导航」支持分类、搜索、管理员推荐与本机收藏；管理密码登录后可以在内容管理的「AI 导航」维护分类和入口。目录在本机读取 `data/ai-directory.json`，静态发布使用公开快照。
+
 ## 运行
 
 ```bash
-cd /workspace/caselib
-python3 server.py --port 8787          # 只用 Python 标准库；媒体入库时需要 ffmpeg（转码 / 缩略图）
+cd caselib  # 从 Vision Design Platform v2 项目目录进入
+python3 server.py --host 127.0.0.1 --port 8787          # 只用 Python 标准库；媒体入库时需要 ffmpeg（转码 / 缩略图）
 # 打开 http://localhost:8787
 ```
 
@@ -36,7 +49,7 @@ python3 server.py --port 8787          # 只用 Python 标准库；媒体入库�
 
 侧栏「资产 → 品牌资产」，地址 `/assets/brand`。界面沿用平台的字体、灰阶、药丸按钮、导航和卡片样式；分类由 URL 参数 `section` 保存，可直接打开、刷新和前后导航。
 
-2026-11-04 从本机 `http://localhost:5174/` 对应的 `Vision Design Platform/public/brand-assets` 导入已有内容：品牌规范 PDF 1 份、单 Logo 3 组、组合 Logo 24 组、App Logo 2 组、MiSans 字重 10 个，共 70 个文件。产品素材、产品界面保留源站的空分类状态；品牌 Skill 统一使用「浏览」分组下的现有入口。
+2026-11-04 从本机 `http://localhost:5174/` 对应的 `Vision Design Platform/public/brand-assets` 导入已有内容：品牌规范 PDF 1 份、单 Logo 3 组、组合 Logo 24 组、App Logo 2 组、MiSans 字重 10 个，共 70 个文件。产品素材、产品界面保留源站的空分类状态；品牌 Skill 统一使用「资产」分组下的现有入口。
 
 - 品牌规范支持完整 PDF 预览、版本信息和下载；视觉资产支持分类、搜索、平铺/列表以及 SVG、PNG、PDF 原文件下载。
 - 图片大图使用平台详情弹窗，支持左右切换、放大/缩小、拖拽和适应窗口；切换图片后恢复初始视图。
@@ -49,20 +62,21 @@ python3 server.py --port 8787          # 只用 Python 标准库；媒体入库�
 
 ## 内容管理平台（CMS）
 
-从站点「审核」进入 `/review`，输入管理密码后进入独立 CMS（也支持 `/cms`）。界面直接使用本站 `static/style.css` 的字体、颜色、侧栏、药丸按钮与下拉菜单。
+从侧栏底部「管理员登录」或「管理 → 内容管理」进入 `/review`，输入管理密码后进入 CMS（也支持 `/cms`）。它与其他栏目共用同一个页面路由和侧栏，切换时只替换右侧内容；界面直接使用本站字体、颜色、药丸按钮与下拉菜单。
 
 - 首次启动自动生成密码，保存在本机 `data/cms_initial_password.txt`（权限 600）；认证文件 `data/cms_password.json` 只存加盐 scrypt 哈希。也可在首次启动时用 `CASELIB_CMS_INITIAL_PASSWORD` 指定初始密码。
 - 登录后可以在「账号设置」修改密码（至少 12 个字符）。修改后删除初始密码文件并注销全部会话。浏览器使用 12 小时有效的 HttpOnly / SameSite Cookie，不在 localStorage 保存密码或 token。退出会注销当前会话；服务重启需要重新登录。
 - 「新建内容」支持视频案例、灵感库、平面、品牌 Skill、Skill 仓库。可以填写标题、分类、介绍、来源、Prompt、操作步骤、工具、版本与标签，上传封面、图片、视频和 MD / TXT / PDF 附件。
 - 流程：**保存草稿 → 提交审核 → 审核并发布**。普通用户仅能访问已发布内容与关联的站内素材；草稿、审核意见、内部备注与未审核的修改不对外展示。
 - 已发布内容再次编辑会保存独立修订稿，原版仍正常展示；新修订审核通过后才替换线上版本。退回时填写原因，修改后可再次提交；下架后前台隐藏，CMS 内保留内容。
+- 已下架内容可从列表或编辑页删除，确认后从内容库移除，平台内无法恢复。后端检查登录、CSRF、已下架状态与当前 `_version`，已发布内容和其他状态不可删除。删除的来源进入去重记录，避免自动采集重新加入；保留媒体文件以免损坏其他内容共用的素材。
 - 「我的内容」展示在 CMS 中创建的条目；「全部内容」也包括既有和自动收录的条目。列表支持状态、类型、搜索与滚动加载，每条内容保留操作记录。
 - 图片支持 JPG / PNG / WebP，单个最多 20 MB；视频支持 MP4 / MOV / WebM，最多 200 MB，自动生成转码、封面与预览；附件单个最多 20 MB。未保存的上传文件会保留在媒体目录，但不能被匿名访问。
 - 仍保留 `X-Admin-Token` 供已有本机脚本调用；token 来自 `data/admin_token.txt` 或 `CASELIB_ADMIN_TOKEN`，网页不再使用它。编辑和状态操作需传入返回的 `_version`，过期修改返回 409，防止覆盖其他人的更新。
 - 若部署到 HTTPS，设置 `CASELIB_COOKIE_SECURE=1`。当前配置运行在本机 127.0.0.1。
 - 运行隔离测试时可设置 `CASELIB_DATA_DIR` / `CASELIB_MEDIA_DIR`，不会影响正式案例和素材。
 
-API：`POST /api/auth/login`、`GET /api/auth/session`、`POST /api/auth/logout|password`；`GET/POST /api/admin/cases`、`GET/PUT /api/admin/cases/<id>`、`POST /api/admin/cases/<id>/submit|approve|reject|unpublish`、`POST /api/admin/uploads`。浏览器写请求需携带登录返回的 `X-CSRF-Token`。
+API：`POST /api/auth/login`、`GET /api/auth/session`、`POST /api/auth/logout|password`；`GET/POST /api/admin/cases`、`GET/PUT /api/admin/cases/<id>`、`POST /api/admin/cases/<id>/submit|approve|reject|unpublish|delete`、`POST /api/admin/uploads`。浏览器写请求需携带登录返回的 `X-CSRF-Token`。
 
 ## 每日 ingest（给定时任务调用）
 
@@ -156,3 +170,5 @@ bash /workspace/caselib/run_daily.sh
 /workspace/pwvenv/bin/python tests/e2e.py http://localhost:8787   # 无头浏览器：列表、详情、使用菜单、拉片跳转、前台只读检查，截图存 screens/
 ```
 `tests/e2e.py` 只做前台浏览回归，不发布或拒绝真实内容。CMS 的浏览器操作应使用独立的临时数据目录。
+
+首次安装浏览器测试依赖：`python3 -m pip install playwright`，然后 `python3 -m playwright install chromium`。运行 `python3 tests/browser_routes.py` 会启动临时服务器，检查桌面和移动端的密码登录、管理工作台、卡片编辑、Skill 排序、AI 导航以及使用说明。在已安装 Chrome 的 Mac 上也可以用 `BROWSER_CHANNEL=chrome python3 tests/browser_routes.py`。

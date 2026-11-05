@@ -4,6 +4,8 @@ The review entry opens a password-protected view inside the shared site shell. C
 
 Controls: dashboard counts; status/type/search filters; content table with automatic incremental loading on scroll; new/edit form (metadata, source, cover/video/image uploads, prompt, steps, tags, assets); private preview; submit/approve/reject/unpublish actions; review history; password settings and logout.
 
+Archived content also exposes Delete in the list and editor, with a title-specific confirmation. The server accepts deletion only for a currently archived record and its current version, after authentication/CSRF checks. It removes the record atomically, retains shared media, and remembers source URLs to prevent recurring import. Unit/HTTP tests perform deletion only in temporary stores; live browser checks inspect and cancel the confirmation without deleting real content.
+
 UI must strictly match the existing site: load `static/style.css` directly and reuse its tokens, logo/sidebar structure, typography, pills and dropdown interaction. No separate dashboard visual identity.
 
 Implementation: `cms_auth.py`, `cms_content.py`, `server.py`, `store.py`, `static/cms.{html,css,js}` and public entry links. Authentication uses a password hash, expiring HttpOnly sessions, CSRF checks and rate limits. Public APIs and local media delivery exclude unpublished revisions. No database replacement or external deployment required.
@@ -24,3 +26,9 @@ Validation: isolated temporary JSON/media stores for HTTP authentication, workfl
 - Primary navigation is owned by the shared `index.html` shell. CMS login and authenticated screens mount inside `#app` through the same router as public tabs; the sidebar is never fetched, copied, replaced, or reloaded. CMS-only destinations and logout live in the content area’s secondary navigation. `cms.html` is a compatibility symlink to the same entry document. CMS styles are scoped to its view, pending renders are invalidated on exit, and the router protects unsaved edits for links and browser history.
 
 - Shared-router verification: 14 isolated regression tests pass. Live CMS/public routes return the same entry document. Browser checks confirm one unchanged document loader and sidebar DOM node across six CMS/public tab switches; CMS filters and preview work, canceling a primary-link or browser-back navigation retains unsaved edits, and ordinary back/forward restores the intended view. No content was saved or published during these navigation checks.
+
+### 批量处理与 AI 导航
+
+在内容列表中可全选当前筛选结果（包括尚未滚动加载的行）。批量操作逐项检查当前状态与版本；执行前列出实际处理的标题，退回需填写原因。更换筛选条件会清除选择。
+
+“AI 导航”二级页管理分类与工具入口；保存立即更新本机目录，非空分类须移走或删除所有入口后才能删除。初始数据来自 `catalog/ai-directory.json`，首次管理变更后使用数据目录中的副本。运行既有 Pages 快照导出与构建步骤，会把当前公开目录同步到静态站。

@@ -65,7 +65,7 @@ def build(output, base):
             raise ValueError('Invalid or duplicate case ID')
         ids.add(cid)
     # Never copy the private store, logs, backups, CMS code or arbitrary media.
-    excluded = {'README.md', 'cms.js', 'cms-select.js', 'cms.html', '.DS_Store'}
+    excluded = {'README.md', 'cms.js', 'cms-select.js', 'cms-directory.js', 'cms.html', '.DS_Store'}
     shutil.copytree(ROOT / 'static', output / 'static', ignore=lambda d, names: set(names) & excluded)
     for directory in ('media', 'brand_skills'):
         if (ROOT / 'publish' / directory).exists():
@@ -93,23 +93,28 @@ def build(output, base):
     (output / 'index.html').write_text(shell)
     (output / '404.html').write_text(shell)
     (output / 'static/index.html').unlink()
-    for route in ['tools/image-slicer', 'assets/brand', 'review', 'cms', *('c/' + cid for cid in sorted(ids))]:
+    for route in ['tools/ai-nav', 'tools/image-slicer', 'assets/brand', 'review', 'cms', 'guide', *('c/' + cid for cid in sorted(ids))]:
         target = output / route / 'index.html'
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(shell)
     public = output / 'public'
     public.mkdir()
     (public / 'cases.json').write_text(json.dumps(prefix(snapshot, base), ensure_ascii=False, separators=(',', ':')))
+    catalog = ROOT / 'publish/ai-directory.json'
+    if not catalog.exists():
+        catalog = ROOT / 'catalog/ai-directory.json'
+    db = json.loads(catalog.read_text())
+    (public / 'ai-directory.json').write_text(json.dumps({key: db[key] for key in ('categories', 'entries')}, ensure_ascii=False))
     guide = (ROOT / 'docs/pages-guide.md').read_text()
     (output / 'static/README.md').write_text(guide)
-    # The manual does not load the SPA runtime.
+    # Legacy bookmarks use the same shell; the router canonicalizes to /guide.
     manual = output / 'static/README.html'
-    manual.write_text(manual.read_text().replace("fetch('/static/README.md')", "fetch('" + base + "/static/README.md')"))
+    manual.write_text(shell)
     (output / '.nojekyll').touch()
     total = sum(p.stat().st_size for p in output.rglob('*') if p.is_file())
     if total >= 1024 ** 3:
         raise ValueError(f'Pages output exceeds 1 GiB: {total} bytes')
-    report = {'cases': len(cases), 'basePath': base, 'bytes': total, 'routes': len(ids) + 4}
+    report = {'cases': len(cases), 'basePath': base, 'bytes': total, 'routes': len(ids) + 6}
     (output / 'build-info.json').write_text(json.dumps(report, indent=2))
     print(json.dumps(report))
     return report

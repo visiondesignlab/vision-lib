@@ -158,7 +158,21 @@ def change(cid, action, payload):
         note = payload.get('note', '')
         if not isinstance(note, str) or len(note) > 2000:
             raise ContentError('审核意见最多 2000 字')
-        if action == 'edit':
+        if action == 'delete':
+            if c['status'] != 'archived' and payload.get('confirm_delete') is not True:
+                raise ContentError('请确认永久删除这条内容', 409)
+            if c['status'] == 'published' and payload.get('remove_live') is not True:
+                raise ContentError('此内容仍在公开展示，请确认下架并删除。', 409)
+            # Keep deleted sources out of recurring collection. Shared media is
+            # retained: another published item may still reference those files.
+            rejected = store.load_rejected()
+            for version in (c, current):
+                source = version.get('source') or {}
+                rejected.extend(store.norm_url(u) for u in (source.get('url'), source.get('via_url')) if u)
+            store.save_rejected(rejected)
+            store.save_cases([item for item in cases if item['id'] != cid])
+            return {'ok': True, 'id': cid}
+        elif action == 'edit':
             patch = validate(payload)
             # Preserve source metrics maintained by background collection.
             if 'source' in patch:

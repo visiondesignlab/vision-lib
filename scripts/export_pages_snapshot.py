@@ -9,6 +9,7 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+import ai_directory
 import cms_content
 import store
 
@@ -42,6 +43,7 @@ def main():
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(source, target)
     (staging / 'cases.json').write_text(json.dumps({'cases': cases}, ensure_ascii=False, indent=1) + '\n')
+    (staging / 'ai-directory.json').write_text(json.dumps(ai_directory.public_view(ai_directory.load()), ensure_ascii=False, indent=1) + '\n')
     large = []
     for source in sorted((ROOT / 'static').rglob('*')):
         if not source.is_file() or source.stat().st_size < 80_000_000:

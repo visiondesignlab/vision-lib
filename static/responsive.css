@@ -33,7 +33,7 @@ button,a{touch-action:manipulation}
 #overlay>.panel{grid-column:1;grid-row:2;min-height:0;animation:none}
 #overlay>.stage{grid-column:2;grid-row:1 / -1;min-height:0}
 .stage .frame,.stage video,.stage img{max-height:calc(100dvh - 80px)}
-.stage .frame>video:fullscreen{max-height:none;width:100%;height:100%;object-fit:contain}
+.stage video:fullscreen{max-height:none;width:100%;height:100%;object-fit:contain}
 .ptop .split{flex:none}
 .panel .sec:last-child{padding-bottom:16px}
 .cms-body .dialog{animation:surface-in var(--motion-base) var(--ease-out)}
@@ -64,14 +64,13 @@ html:has(dialog[open]){overflow:hidden}
   .nav-open .side{visibility:visible;opacity:1;filter:none;pointer-events:auto;transition-delay:0s}
   .side-top{height:44px;flex:none;gap:12px;position:sticky;top:0;background:#fff;z-index:1}
   .side-top .logo{margin-right:auto;font-size:14px}
-  .side-top #reviewBtn{margin-left:auto}
   .nav{margin:24px 0 32px}
   .nav h2{font-size:13px;margin:24px 0 8px}
   .nav a{height:44px;font-size:18px;width:100%;padding-right:16px}
   .nav a.on::after{margin-left:auto}
   .side-bottom{padding-top:0;flex:none}
   .side .about>p:first-of-type{padding-bottom:4px}
-  .foot{font-size:12px;align-items:center;gap:16px}
+  .foot{font-size:12px;align-items:flex-start;gap:12px}
   .foot a{display:grid;place-items:center;min-height:44px}
   body.detail-open .mobile-header{visibility:hidden}
   main{margin-left:0;padding:20px max(16px,env(safe-area-inset-right)) max(48px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));min-width:0}
@@ -108,7 +107,7 @@ html:has(dialog[open]){overflow:hidden}
   #overlay>.stage{order:1;flex:none;height:auto;min-height:160px;padding:8px max(16px,env(safe-area-inset-right)) 20px max(16px,env(safe-area-inset-left));background:var(--bg);backdrop-filter:none;cursor:default;overflow:hidden}
   #overlay>.panel{order:2;flex:none;width:100%;height:auto;min-height:0;overflow:visible;padding:0 20px max(40px,env(safe-area-inset-bottom));box-shadow:none}
   .stage .frame{max-width:100%;width:100%;max-height:55svh;box-shadow:var(--ring)}
-  .stage .frame:has(>video){box-shadow:none}
+  .stage .video-frame{box-shadow:none}
   .stage video,.stage img{width:100%;max-height:55svh;object-fit:contain}
   .stage .ext{position:static;transform:none;font-size:13px;margin:16px 0 0;text-align:center}
   .phead{padding-top:12px}

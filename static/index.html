@@ -3,26 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Vision Lib</title>
+<title>Vision Lab</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/static/style.css">
 <link rel="stylesheet" href="/static/tools/image-slicer.css">
+<link rel="stylesheet" href="/static/tools/ai-nav.css">
+<link rel="stylesheet" href="/static/tools/ai-icon-atlas.css">
 <link rel="stylesheet" href="/static/assets/brand-assets.css">
 <link rel="stylesheet" href="/static/cms.css">
+<link rel="stylesheet" href="/static/guide.css">
 <link rel="stylesheet" href="/static/responsive.css">
 <link rel="icon" type="image/png" href="/static/vision-design-logo.png">
 </head>
 <body>
 <a class="skip-link" href="#app">跳到内容</a>
 <header class="mobile-header">
-  <a href="/" class="logo" data-link aria-label="Vision Lib 首页"><img src="/static/vision-design-logo.png" alt=""><span>Vision Lib</span></a>
+  <a href="/" class="logo" data-link aria-label="Vision Lab 首页"><img src="/static/vision-design-logo.png" alt=""><span>Vision Lab</span></a>
   <button type="button" class="nav-toggle" id="openNav" aria-label="打开主导航" aria-controls="primaryNav" aria-expanded="false"><span></span><span></span></button>
 </header>
 <aside class="side">
   <div class="side-top">
-    <a href="/" class="logo" data-link aria-label="Vision Lib"><img src="/static/vision-design-logo.png" alt="vision design"><span>Vision Lib</span></a>
-    <a href="/review" class="pill-btn shadow" id="reviewBtn" data-link>审核</a>
+    <a href="/" class="logo" data-link aria-label="Vision Lab"><img src="/static/vision-design-logo.png" alt="vision design"><span>Vision Lab</span></a>
     <button type="button" class="nav-toggle nav-close" id="closeNav" aria-label="关闭主导航"><span></span><span></span></button>
   </div>
   <nav class="nav" id="primaryNav" aria-label="主导航">
@@ -32,12 +34,14 @@
     <a href="/?tab=graphic" data-link data-tab="graphic">平面</a>
     <a href="/?tab=skill_repo" data-link data-tab="skill_repo">Skill 仓库</a>
     <h2>工具</h2>
+    <a href="/tools/ai-nav" data-link data-tab="ai-nav">AI 导航</a>
     <a href="/tools/image-slicer" data-link data-tab="image-slicer">图片切图</a>
-    <a href="/review" data-link data-tab="review">内容管理 <span class="count" id="pendingCount"></span></a>
-    <a href="/static/README.html" target="_blank">使用说明</a>
     <h2>资产</h2>
     <a href="/assets/brand" data-link data-tab="brand-assets">品牌资产</a>
     <a href="/?tab=brand_skill" data-link data-tab="brand_skill">品牌 Skill</a>
+    <h2>管理</h2>
+    <a href="/review" data-link data-tab="review">内容管理 <span class="count" id="pendingCount"></span></a>
+    <a href="/guide" data-link data-tab="guide">使用说明</a>
   </nav>
   <div class="side-bottom">
     <div class="about">
@@ -45,7 +49,7 @@
       <p>团队内部案例库：每条视频案例都带复现 Prompt、步骤和依赖的 Skill；灵感库支持一键打开自己的 AI 拉片。</p>
       <p class="muted" id="stats"></p>
     </div>
-    <div class="foot"><span>© 2026 vision design 团队</span><a href="/review" data-link>审核</a></div>
+    <div class="foot"><span>© 2026 vision design 团队</span><a href="/review" class="pill-btn shadow" id="reviewBtn" data-link>管理员登录</a></div>
   </div>
 </aside>
 <main id="app"></main>
