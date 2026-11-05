@@ -2908,21 +2908,303 @@
     "rows": [
      {
       "model": "Gemini 4 Carbon (high)",
+      "url": "https://artificialanalysis.ai/zh/models/gemini-4-carbon",
       "provider": "Google",
-      "score": 60,
-      "url": "https://artificialanalysis.ai/zh/models/gemini-4-carbon"
+      "score": 60.0,
+      "contextTokens": 1000000,
+      "costUSD": 7.76,
+      "durationMinutes": 30.3,
+      "firstAnswerSeconds": 65.94
      },
      {
       "model": "Claude Opus 5.5 (max)",
+      "url": "https://artificialanalysis.ai/zh/models/claude-opus-5-5",
       "provider": "Anthropic",
-      "score": 59,
-      "url": "https://artificialanalysis.ai/zh/models/claude-opus-5-5"
+      "score": 59.0,
+      "contextTokens": 1000000,
+      "costUSD": 10.04,
+      "durationMinutes": 26.2,
+      "firstAnswerSeconds": 342.98
      },
      {
       "model": "Gemini 4 Carbon (medium)",
+      "url": "https://artificialanalysis.ai/zh/models/gemini-4-carbon-medium",
       "provider": "Google",
-      "score": 58,
-      "url": "https://artificialanalysis.ai/zh/models/gemini-4-carbon-medium"
+      "score": 58.0,
+      "contextTokens": 1000000,
+      "costUSD": 6.59,
+      "durationMinutes": 22.8,
+      "firstAnswerSeconds": 22.24
+     },
+     {
+      "model": "Claude Opus 5.5 (xhigh)",
+      "url": "https://artificialanalysis.ai/zh/models/claude-opus-5-5-xhigh",
+      "provider": "Anthropic",
+      "score": 57.0,
+      "contextTokens": 1000000,
+      "costUSD": 6.05,
+      "durationMinutes": 16.0,
+      "firstAnswerSeconds": 67.16
+     },
+     {
+      "model": "GPT-6 Astra (max)",
+      "url": "https://artificialanalysis.ai/zh/models/gpt-6-astra",
+      "provider": "OpenAI",
+      "score": 57.0,
+      "contextTokens": 1000000,
+      "costUSD": 6.24,
+      "durationMinutes": 19.0,
+      "firstAnswerSeconds": 205.76
+     },
+     {
+      "model": "GPT-6 Astra (xhigh)",
+      "url": "https://artificialanalysis.ai/zh/models/gpt-6-astra-xhigh",
+      "provider": "OpenAI",
+      "score": 55.0,
+      "contextTokens": 1000000,
+      "costUSD": 3.66,
+      "durationMinutes": 9.4,
+      "firstAnswerSeconds": 103.41
+     },
+     {
+      "model": "GPT-6 Astra (high)",
+      "url": "https://artificialanalysis.ai/zh/models/gpt-6-astra-high",
+      "provider": "OpenAI",
+      "score": 55.0,
+      "contextTokens": 1000000,
+      "costUSD": 3.24,
+      "durationMinutes": 8.1,
+      "firstAnswerSeconds": 40.64
+     },
+     {
+      "model": "GPT-6.1 Sol (max)",
+      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-sol",
+      "provider": "OpenAI",
+      "score": 55.0,
+      "contextTokens": 1000000,
+      "costUSD": 1.27,
+      "durationMinutes": 21.2,
+      "firstAnswerSeconds": 165.13
+     },
+     {
+      "model": "Claude Sonnet 5.5 (max)",
+      "url": "https://artificialanalysis.ai/zh/models/claude-sonnet-5-5",
+      "provider": "Anthropic",
+      "score": 55.0,
+      "contextTokens": 1000000,
+      "costUSD": 10.02,
+      "durationMinutes": 30.7,
+      "firstAnswerSeconds": 253.79
+     },
+     {
+      "model": "Gemini 4 Carbon (low)",
+      "url": "https://artificialanalysis.ai/zh/models/gemini-4-carbon-low",
+      "provider": "Google",
+      "score": 54.0,
+      "contextTokens": 1000000,
+      "costUSD": 7.19,
+      "durationMinutes": 46.6,
+      "firstAnswerSeconds": 8.01
+     },
+     {
+      "model": "GPT-6.1 Sol (xhigh)",
+      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-sol-xhigh",
+      "provider": "OpenAI",
+      "score": 52.0,
+      "contextTokens": 1000000,
+      "costUSD": 0.76,
+      "durationMinutes": 9.1,
+      "firstAnswerSeconds": 69.8
+     },
+     {
+      "model": "Claude Opus 5.5 (high)",
+      "url": "https://artificialanalysis.ai/zh/models/claude-opus-5-5-high",
+      "provider": "Anthropic",
+      "score": 52.0,
+      "contextTokens": 1000000,
+      "costUSD": 3.46,
+      "durationMinutes": 9.1,
+      "firstAnswerSeconds": 32.05
+     },
+     {
+      "model": "GPT-6 Astra (medium)",
+      "url": "https://artificialanalysis.ai/zh/models/gpt-6-astra-medium",
+      "provider": "OpenAI",
+      "score": 52.0,
+      "contextTokens": 1000000,
+      "costUSD": 2.73,
+      "durationMinutes": 5.9,
+      "firstAnswerSeconds": 6.46
+     },
+     {
+      "model": "GPT-6.1 Terra (max)",
+      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-terra",
+      "provider": "OpenAI",
+      "score": 51.0,
+      "contextTokens": 1000000,
+      "costUSD": 0.96,
+      "durationMinutes": 13.1,
+      "firstAnswerSeconds": 158.68
+     },
+     {
+      "model": "Gemini 4 Argon (high)",
+      "url": "https://artificialanalysis.ai/zh/models/gemini-4-argon",
+      "provider": "Google",
+      "score": 50.0,
+      "contextTokens": 1000000,
+      "costUSD": 9.95,
+      "durationMinutes": 26.2,
+      "firstAnswerSeconds": 40.39
+     },
+     {
+      "model": "GPT-6.1 Sol (high)",
+      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-sol-high",
+      "provider": "OpenAI",
+      "score": 50.0,
+      "contextTokens": 1000000,
+      "costUSD": 0.59,
+      "durationMinutes": 6.6,
+      "firstAnswerSeconds": 37.82
+     },
+     {
+      "model": "Muse Wonder Full (max)",
+      "url": "https://artificialanalysis.ai/zh/models/muse-wonder-full",
+      "provider": "Meta",
+      "score": 50.0,
+      "contextTokens": 1000000,
+      "costUSD": null,
+      "durationMinutes": null,
+      "firstAnswerSeconds": null
+     },
+     {
+      "model": "Claude Fable 5.1 (xhigh)",
+      "url": "https://artificialanalysis.ai/zh/models/claude-fable-5-1-xhigh",
+      "provider": "Anthropic",
+      "score": 50.0,
+      "contextTokens": 1000000,
+      "costUSD": 10.85,
+      "durationMinutes": 18.6,
+      "firstAnswerSeconds": 58.5
+     },
+     {
+      "model": "Claude Sonnet 5.5 (xhigh)",
+      "url": "https://artificialanalysis.ai/zh/models/claude-sonnet-5-5-xhigh",
+      "provider": "Anthropic",
+      "score": 50.0,
+      "contextTokens": 1000000,
+      "costUSD": 4.09,
+      "durationMinutes": 14.7,
+      "firstAnswerSeconds": 30.96
+     },
+     {
+      "model": "Claude Fable 5.1 (max)",
+      "url": "https://artificialanalysis.ai/zh/models/claude-fable-5-1",
+      "provider": "Anthropic",
+      "score": 49.0,
+      "contextTokens": 1000000,
+      "costUSD": 12.99,
+      "durationMinutes": 22.2,
+      "firstAnswerSeconds": 160.14
+     },
+     {
+      "model": "Claude Opus 5.5 (medium)",
+      "url": "https://artificialanalysis.ai/zh/models/claude-opus-5-5-medium",
+      "provider": "Anthropic",
+      "score": 48.0,
+      "contextTokens": 1000000,
+      "costUSD": 2.45,
+      "durationMinutes": 6.6,
+      "firstAnswerSeconds": 18.34
+     },
+     {
+      "model": "Claude Fable 5.1 (high)",
+      "url": "https://artificialanalysis.ai/zh/models/claude-fable-5-1-high",
+      "provider": "Anthropic",
+      "score": 47.0,
+      "contextTokens": 1000000,
+      "costUSD": 7.54,
+      "durationMinutes": 12.6,
+      "firstAnswerSeconds": 15.29
+     },
+     {
+      "model": "Kimi K3.1 Pro",
+      "url": "https://artificialanalysis.ai/zh/models/kimi-k3-1-pro",
+      "provider": "Kimi",
+      "score": 46.0,
+      "contextTokens": 1000000,
+      "costUSD": 3.68,
+      "durationMinutes": 36.0,
+      "firstAnswerSeconds": 149.26
+     },
+     {
+      "model": "GPT-6.1 Sol (medium)",
+      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-sol-medium",
+      "provider": "OpenAI",
+      "score": 46.0,
+      "contextTokens": 1000000,
+      "costUSD": 0.36,
+      "durationMinutes": 3.9,
+      "firstAnswerSeconds": 6.3
+     },
+     {
+      "model": "GPT-6.1 Terra (xhigh)",
+      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-terra-xhigh",
+      "provider": "OpenAI",
+      "score": 45.0,
+      "contextTokens": 1000000,
+      "costUSD": 0.4,
+      "durationMinutes": 5.9,
+      "firstAnswerSeconds": 32.43
+     },
+     {
+      "model": "Muse Wonder (max)",
+      "url": "https://artificialanalysis.ai/zh/models/muse-wonder",
+      "provider": "Meta",
+      "score": 44.0,
+      "contextTokens": 1000000,
+      "costUSD": 6.95,
+      "durationMinutes": 12.1,
+      "firstAnswerSeconds": 20.24
+     },
+     {
+      "model": "GPT-6 Astra (low)",
+      "url": "https://artificialanalysis.ai/zh/models/gpt-6-astra-low",
+      "provider": "OpenAI",
+      "score": 43.0,
+      "contextTokens": 1000000,
+      "costUSD": 1.42,
+      "durationMinutes": 3.2,
+      "firstAnswerSeconds": 4.0
+     },
+     {
+      "model": "Claude Fable 5.1 (medium)",
+      "url": "https://artificialanalysis.ai/zh/models/claude-fable-5-1-medium",
+      "provider": "Anthropic",
+      "score": 43.0,
+      "contextTokens": 1000000,
+      "costUSD": 5.56,
+      "durationMinutes": 9.4,
+      "firstAnswerSeconds": 8.73
+     },
+     {
+      "model": "GPT-6.1 Terra (high)",
+      "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-terra-high",
+      "provider": "OpenAI",
+      "score": 42.0,
+      "contextTokens": 1000000,
+      "costUSD": 0.26,
+      "durationMinutes": 3.8,
+      "firstAnswerSeconds": 10.74
+     },
+     {
+      "model": "Claude Sonnet 5.5 (high)",
+      "url": "https://artificialanalysis.ai/zh/models/claude-sonnet-5-5-high",
+      "provider": "Anthropic",
+      "score": 42.0,
+      "contextTokens": 1000000,
+      "costUSD": 1.64,
+      "durationMinutes": 6.8,
+      "firstAnswerSeconds": 12.84
      }
     ]
    }

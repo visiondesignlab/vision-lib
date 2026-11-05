@@ -24,13 +24,54 @@ function iconHTML(icon) {
   return icon ? `<span class="ai-icon" aria-hidden="true"><img loading="lazy" alt="" src="${esc(path(icon))}"></span>` : '';
 }
 
-function rankingPreview(entry) {
+const rankColumns = [
+  {key:'rank', label:'排名'}, {key:'model', label:'模型'},
+  {key:'contextTokens', label:'上下文窗口', unit:'Tokens', descending:true},
+  {key:'provider', label:'开发商'},
+  {key:'score', label:'Artificial Analysis Intelligence Index', descending:true},
+  {key:'costUSD', label:'每任务成本', unit:'美元'},
+  {key:'durationMinutes', label:'每任务耗时', unit:'分钟'},
+  {key:'firstAnswerSeconds', label:'首个答案 Token', unit:'秒'},
+];
+const rankCollator = new Intl.Collator('zh-CN', {numeric:true});
+const tokenCount = new Intl.NumberFormat('en', {notation:'compact', maximumFractionDigits:2});
+
+function rankHeading(column, sort, rowspan = 1) {
+  const state = sort.key === column.key ? ` aria-sort="${sort.direction}"` : '';
+  const unit = column.unit ? `<small>${column.unit}</small>` : '';
+  return `<th scope="col" rowspan="${rowspan}" data-column="${column.key}"${state}><button type="button" data-rank-sort="${column.key}"><span>${column.label}${unit}</span><i aria-hidden="true"></i></button></th>`;
+}
+
+function rankMetric(key, value) {
+  if (value == null) return '<span aria-label="暂无数据">—</span>';
+  switch (key) {
+    case 'contextTokens': return tokenCount.format(value);
+    case 'costUSD': return '$' + value.toFixed(2);
+    case 'durationMinutes': return value.toFixed(1);
+    case 'firstAnswerSeconds': return value.toFixed(2);
+    default: return esc(value);
+  }
+}
+
+function rankBody(ranking, sort, term) {
+  const all = ranking.rows.map((model, i) => ({...model, rank:i + 1}));
+  const matches = term ? all.filter(row => searchText(row.model + ' ' + row.provider).includes(term)) : all;
+  const rows = matches.length ? matches : all;
+  rows.sort((a, b) => {
+    const left = a[sort.key], right = b[sort.key];
+    if (left == null || right == null) return (left == null) - (right == null) || a.rank - b.rank;
+    const order = typeof left === 'string' ? rankCollator.compare(left, right) : left - right;
+    return (sort.direction === 'descending' ? -order : order) || a.rank - b.rank;
+  });
+  return rows.map(row => `<tr><td>${row.rank}</td><th scope="row"><a href="${esc(row.url)}" target="_blank" rel="noopener noreferrer">${esc(row.model)}</a></th>${rankColumns.slice(2).map(({key})=>`<td>${rankMetric(key, row[key])}</td>`).join('')}</tr>`).join('');
+}
+
+function rankingPreview(entry, sort, term) {
   const ranking = entry.ranking;
   if (!ranking?.rows?.length) return '';
-  const rows = ranking.rows.map((row, index) => `<tr><td>${index + 1}</td><th scope="row"><a href="${esc(row.url)}" target="_blank" rel="noopener noreferrer">${esc(row.model)}</a></th><td>${esc(row.provider)}</td><td>${esc(row.score)}</td></tr>`).join('');
-  return `<div class="ai-ranking"><div class="ai-ranking-head"><h3>智能指数前 ${ranking.rows.length} 名</h3><time datetime="${esc(ranking.date)}">${esc(ranking.date)} 快照</time></div>
-    <table aria-label="Artificial Analysis 智能指数排名"><thead><tr><th scope="col">排名</th><th scope="col">模型</th><th scope="col">开发商</th><th scope="col">智能指数</th></tr></thead><tbody>${rows}</tbody></table>
-    <a class="ai-ranking-source" href="${esc(entry.url)}" target="_blank" rel="noopener noreferrer">查看 Artificial Analysis 完整榜单 ↗</a></div>`;
+  const groups = [['功能', 2], ['智能', 1], ['价格', 1], ['速度', 1], ['延迟', 1]];
+  return `<div class="ai-ranking" data-ranking="${esc(entry.id)}"><div class="ai-ranking-head"><h3>智能指数前 ${ranking.rows.length} 名</h3><time datetime="${esc(ranking.date)}">${esc(ranking.date)} 快照</time><a class="ai-ranking-source" href="${esc(entry.url)}" target="_blank" rel="noopener noreferrer">Artificial Analysis 完整榜单 ↗</a></div>
+    <div class="ai-ranking-scroll" role="region" tabindex="0" aria-label="模型排行，可横向滚动"><table aria-label="Artificial Analysis 智能指数排名"><thead><tr>${rankColumns.slice(0,2).map(col=>rankHeading(col, sort, 2)).join('')}${groups.map(([label, span])=>`<th scope="colgroup" colspan="${span}">${label}</th>`).join('')}</tr><tr>${rankColumns.slice(2).map(col=>rankHeading(col, sort)).join('')}</tr></thead><tbody>${rankBody(ranking, sort, term)}</tbody></table></div></div>`;
 }
 
 export function directory({categories, entries}, replaceURL, enhanceSelect) {
@@ -38,6 +79,7 @@ export function directory({categories, entries}, replaceURL, enhanceSelect) {
   const el = document.createElement('section');
   el.className = 'ai-directory';
   const params = new URL(location.href).searchParams;
+  let rankSort = {key:'score', direction:'descending'};
   let category = categories.some(c => c.id === params.get('category')) ? params.get('category') : '';
   const filters = [{id:'', name:'全部分类'}, ...categories];
   el.innerHTML = `<header class="ai-directory-head"><h1>AI 导航</h1><span>${categories.length} 个分类 · ${entries.length} 个入口</span></header>
@@ -69,7 +111,7 @@ export function directory({categories, entries}, replaceURL, enhanceSelect) {
     const ids=favorites(aliases), saved=new Set(ids), shown=new Map(), sections=[];
     function group(key,name,rows){
       const ranking = rows.find(row => row.category === key && row.ranking);
-      return rows.length?`<section data-section="${esc(key)}"><h2>${esc(name)} <small>${rows.length}</small></h2>${ranking ? rankingPreview(ranking) : ''}<div class="ai-links">${rows.map(x=>card(x,saved)).join('')}</div></section>`:'';
+      return rows.length?`<section data-section="${esc(key)}"><h2>${esc(name)}${ranking ? '' : ` <small>${rows.length}</small>`}</h2>${ranking ? rankingPreview(ranking, rankSort, term) : ''}<div class="ai-links">${rows.map(x=>card(x,saved)).join('')}</div></section>`:'';
     }
     for (const c of categories) {
       if (category && c.id !== category) continue;
@@ -87,6 +129,18 @@ export function directory({categories, entries}, replaceURL, enhanceSelect) {
   el.addEventListener('error', e => { if (e.target.matches('.ai-icon img')) e.target.remove(); }, true);
   el.addEventListener('favoriteschange',()=>render(false));
   el.addEventListener('click',e=>{
+    const button = e.target.closest('[data-rank-sort]');
+    if (button) {
+      const column = rankColumns.find(c => c.key === button.dataset.rankSort);
+      const region = button.closest('[data-ranking]');
+      const entry = entries.find(row => row.id === region.dataset.ranking);
+      const descending = rankSort.key === column.key ? rankSort.direction === 'ascending' : column.descending;
+      rankSort = {key:column.key, direction:descending ? 'descending' : 'ascending'};
+      region.querySelector('[aria-sort]')?.removeAttribute('aria-sort');
+      button.closest('th').setAttribute('aria-sort', rankSort.direction);
+      region.querySelector('tbody').innerHTML = rankBody(entry.ranking, rankSort, searchText(q.value.trim()));
+      return;
+    }
     const b=e.target.closest('[data-favorite]');if(!b)return;
     const id=b.dataset.favorite, section=b.closest('[data-section]').dataset.section, ids=favorites(aliases);
     const next=ids.includes(id)?ids.filter(x=>x!==id):[id,...ids];
