@@ -802,7 +802,12 @@ function stageHTML(c) {
 function brandSkillDetails(c) {
   const repo = c.brand_repository, source = c.source;
   const steps = items => `<ol class="steps">${items.map(item => `<li>${esc(item)}</li>`).join("")}</ol>`;
+  const deck = c.assets?.find(asset => asset.url?.endsWith(".pptx"));
+  const deckControls = deck ? `<section class="sec skill-deck-controls"><h4>PPT 内容示例 <span class="n">${repo.samples.length} 页</span></h4>
+    <label for="skillSlideJump">跳至页面</label><select id="skillSlideJump">${repo.samples.map((sample, i) => `<option value="${i}">${i + 1} · ${esc(sample.label)}</option>`).join("")}</select>
+    <a class="pill-btn shadow" href="${esc(deck.url)}" download>下载可编辑 PPTX</a></section>` : "";
   return `<div class="skill-links"><a class="pill-btn dark" href="${esc(source.url)}" target="_blank" rel="noopener">查看仓库</a>${skillDownload(c)}</div>
+    ${deckControls}
     <section class="sec"><h4>介绍</h4><p>${esc(c.description)}</p></section>
     <section class="sec"><h4>安装方法</h4>${steps(repo.installation)}
       ${repo.install_command ? `<div class="skill-command"><code>${esc(repo.install_command)}</code><button type="button" class="pill-btn shadow" data-copy-install>复制命令</button></div>` : ""}</section>
@@ -816,11 +821,13 @@ function brandSkillDetails(c) {
 }
 function bindSkillSample(samples) {
   const figure = $(".skill-sample", overlay);
+  const jump = $("#skillSlideJump", overlay);
   const image = $("img", figure), caption = $('[role="status"]', figure);
   const prev = $("[data-sample-prev]", figure), next = $("[data-sample-next]", figure);
   let index = 0;
   function show(position) {
     index = position;
+    if (jump) jump.value = String(index);
     const sample = samples[index];
     image.src = sample.url; image.alt = sample.label;
     caption.textContent = samples.length > 1 ? `${sample.label} · ${index + 1} / ${samples.length}` : sample.label;
@@ -829,6 +836,7 @@ function bindSkillSample(samples) {
   }
   if (prev) prev.onclick = () => show(index - 1);
   if (next) next.onclick = () => show(index + 1);
+  if (jump) jump.onchange = () => show(Number(jump.value));
   if (samples.length > 1) {
     let start;
     figure.addEventListener("pointerdown", e => {

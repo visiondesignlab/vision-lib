@@ -23,6 +23,10 @@
       [
         "PPTX 导出说明",
         "references/export-formats.md"
+      ],
+      [
+        "全版式示例说明",
+        "examples/viaim-brand-ppt-test-30p/README.md"
       ]
     ],
     "examples": [],
@@ -32,25 +36,8 @@
       "PPTX",
       "演示文稿"
     ],
-    "local_examples": [
-      [
-        "第 1 页 · 封面",
-        "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-01.png"
-      ],
-      [
-        "第 7 页 · 数据图表",
-        "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-07.png"
-      ],
-      [
-        "第 18 页 · 三层系统",
-        "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-18.png"
-      ],
-      [
-        "第 29 页 · 品牌宣言",
-        "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-29.png"
-      ]
-    ],
-    "sample_source": "viaim 品牌演示系统 · 30 页示例稿"
+    "sample_source": "viaim 品牌演示系统 · PPT 内容示例",
+    "presentation": "examples/viaim-brand-ppt-test-30p/viaim-brand-ppt-test-30p-editable.pptx"
   },
   {
     "repo": "visiondesignlab/viaim-social-card-skill",
@@ -75,8 +62,8 @@
         "README.md"
       ],
       [
-        "示例 HTML 源码",
-        "examples/viaim-brand-demo/index.html"
+        "品牌配色与 Logo 规范",
+        "references/viaim-brand-system.md"
       ]
     ],
     "examples": [

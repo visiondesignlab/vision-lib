@@ -1118,230 +1118,6 @@
   },
   {
    "type": "video",
-   "category": "电影感叙事",
-   "title": "Memelord",
-   "subtitle": "AI 生成叙事片 · 107s · 16:9",
-   "media": {
-    "kind": "video",
-    "video": "/media/bench-1971211680664388053/web.mp4",
-    "preview": "/media/bench-1971211680664388053/preview.mp4",
-    "thumbnail": "/media/bench-1971211680664388053/thumb.jpg",
-    "images": [],
-    "specs": {
-     "duration_s": 107.3,
-     "resolution": "1280×720"
-    }
-   },
-   "source": {
-    "platform": "X",
-    "author": "@iamjasonlevin",
-    "author_url": "https://x.com/iamjasonlevin",
-    "url": "https://x.com/iamjasonlevin/status/1971211680664388053",
-    "metrics": {
-     "views": 1167382,
-     "likes": 1465,
-     "reposts": 82,
-     "bookmarks": 677,
-     "replies": 320
-    },
-    "metrics_fetched_at": "2026-11-05",
-    "date": "2025-09-25 21:54（北京时间）",
-    "post_text": "ANNOUNCEMENT:\n\nI raised $3 million to make memes.\n\nYes, seriously.\n\nMemes make millions.\n\nWelcome to the new https://t.co/2oO8zR7FkB https://t.co/n4BIs24ifA",
-    "note": "",
-    "avatar": "/media/avatars/1f5ed6e2d261308c2ec0.jpg",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2031345810432999424/keN_Tu4o_normal.jpg"
-   },
-   "prompt": "参考「Memelord」这支 launch 视频（AI 生成叙事片，107s · 16:9）的做法，为 {产品} 的 {功能} 做一支同类型的视频。\n\n要学的核心手法：作者自述 $300 做完；先造一个「主角」再生成各场景。\n\n请先输出：\n1. 一句话核心信息 + 3 个备选 hook（首帧就是 hook）。\n2. 带时长的镜头表：每个镜头写清画面、文案（两行标题 + 一句说明）、声音、时长；第 10 秒前必须看到产品在工作。\n3. 用哪种做法实现（代码动效 / 实拍 / AI 生成 / 3D），每个镜头需要的素材清单。\n镜头表经我确认后，再一次只做一个场景；导出 MP4（H.264 + AAC，1080p，30fps），另出一版 4:5 竖版。",
-   "how_to": [
-    "产品负责人自己写脚本。",
-    "先用图像模型（Nano Banana / GPT Image）出首帧，再用 Veo / Kling / Seedance 做视频，控制力更强。",
-    "先造一个固定「主角」形象，再生成各场景，保持一致。",
-    "用首尾帧控制转场；创意方向别写太死，模糊方向有时更有效。",
-    "产品 demo 不能埋太深：第 10 秒内要看到产品。"
-   ],
-   "skills": [
-    {
-     "name": "Higgsfield Skills",
-     "repo": "higgsfield-ai/skills",
-     "url": "https://github.com/higgsfield-ai/skills"
-    },
-    {
-     "name": "seedance2-skill",
-     "repo": "dexhunter/seedance2-skill",
-     "url": "https://github.com/dexhunter/seedance2-skill"
-    }
-   ],
-   "tools": [],
-   "assets": [
-    {
-     "name": "原片 MP4（站内转码）",
-     "url": "/media/bench-1971211680664388053/web.mp4"
-    }
-   ],
-   "tags": [
-    "标杆案例",
-    "AI 生成叙事片"
-   ],
-   "featured": false,
-   "trust": "社区",
-   "status": "published",
-   "version": "1.0.0",
-   "added_at": "2026-11-04T16:13:22+08:00",
-   "updated_at": "2026-11-04T18:21:13+08:00",
-   "seed": true,
-   "id": "bench-1971211680664388053",
-   "analysis": "可学的点：作者自述 $300 做完；先造一个「主角」再生成各场景（出自《X 产品 Launch Video 制作手册》§3 标杆案例库）",
-   "heat": 1240632
-  },
-  {
-   "type": "video",
-   "category": "电影感叙事",
-   "title": "Whop GTA 风格片",
-   "subtitle": "几乎全 AI · —",
-   "media": {
-    "kind": "video",
-    "video": "/media/bench-1947636878158565795/web.mp4",
-    "preview": "/media/bench-1947636878158565795/preview.mp4",
-    "thumbnail": "/media/bench-1947636878158565795/thumb.jpg",
-    "images": [],
-    "specs": {
-     "duration_s": 26.0,
-     "resolution": "1280×720"
-    }
-   },
-   "source": {
-    "platform": "X",
-    "author": "@beechinour",
-    "author_url": "https://x.com/beechinour",
-    "url": "https://x.com/beechinour/status/1947636878158565795",
-    "metrics": {
-     "views": 86759,
-     "likes": 922,
-     "reposts": 35,
-     "bookmarks": 834,
-     "replies": 862
-    },
-    "metrics_fetched_at": "2026-11-05",
-    "date": "2025-07-22 20:36（北京时间）",
-    "post_text": "I just made a full walkthrough on how I made this GTA style launch video for Whop (almost) completely with AI\n\n- the exact tools I used to recreate characters\n- context profiles, prompts, and upscaling\n- my overall approach and how it came together\n\nif you want the full guide, reply “gta” and I’ll DM it to you (must be following)",
-    "note": "",
-    "avatar": "/media/avatars/2734a32808071afbb1e1.jpg",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/1939776625538711553/3fE5abyC_normal.jpg"
-   },
-   "prompt": "参考「Whop GTA 风格片」这支 launch 视频（几乎全 AI，—）的做法，为 {产品} 的 {功能} 做一支同类型的视频。\n\n要学的核心手法：角色重建、context profile、提示词、超分全流程（教程帖）。\n\n请先输出：\n1. 一句话核心信息 + 3 个备选 hook（首帧就是 hook）。\n2. 带时长的镜头表：每个镜头写清画面、文案（两行标题 + 一句说明）、声音、时长；第 10 秒前必须看到产品在工作。\n3. 用哪种做法实现（代码动效 / 实拍 / AI 生成 / 3D），每个镜头需要的素材清单。\n镜头表经我确认后，再一次只做一个场景；导出 MP4（H.264 + AAC，1080p，30fps），另出一版 4:5 竖版。",
-   "how_to": [
-    "产品负责人自己写脚本。",
-    "先用图像模型（Nano Banana / GPT Image）出首帧，再用 Veo / Kling / Seedance 做视频，控制力更强。",
-    "先造一个固定「主角」形象，再生成各场景，保持一致。",
-    "用首尾帧控制转场；创意方向别写太死，模糊方向有时更有效。",
-    "产品 demo 不能埋太深：第 10 秒内要看到产品。"
-   ],
-   "skills": [
-    {
-     "name": "Higgsfield Skills",
-     "repo": "higgsfield-ai/skills",
-     "url": "https://github.com/higgsfield-ai/skills"
-    },
-    {
-     "name": "seedance2-skill",
-     "repo": "dexhunter/seedance2-skill",
-     "url": "https://github.com/dexhunter/seedance2-skill"
-    }
-   ],
-   "tools": [],
-   "assets": [
-    {
-     "name": "原片 MP4（站内转码）",
-     "url": "/media/bench-1947636878158565795/web.mp4"
-    }
-   ],
-   "tags": [
-    "标杆案例",
-    "几乎全 AI"
-   ],
-   "featured": false,
-   "trust": "社区",
-   "status": "published",
-   "version": "1.0.0",
-   "added_at": "2026-11-04T16:13:22+08:00",
-   "updated_at": "2026-11-04T18:21:14+08:00",
-   "seed": true,
-   "id": "bench-1947636878158565795",
-   "analysis": "可学的点：角色重建、context profile、提示词、超分全流程（教程帖）（出自《X 产品 Launch Video 制作手册》§3 标杆案例库）",
-   "heat": 132859
-  },
-  {
-   "type": "video",
-   "category": "动效特效",
-   "title": "Marmar App",
-   "subtitle": "3D 渲染 + 实拍 + 文字 · —",
-   "media": {
-    "kind": "video",
-    "video": "/media/bench-2092175528396493189/web.mp4",
-    "preview": "/media/bench-2092175528396493189/preview.mp4",
-    "thumbnail": "/media/bench-2092175528396493189/thumb.jpg",
-    "images": [],
-    "specs": {
-     "duration_s": 38.2,
-     "resolution": "1280×720"
-    }
-   },
-   "source": {
-    "platform": "X",
-    "author": "@tomiwebstr",
-    "author_url": "https://x.com/tomiwebstr",
-    "url": "https://x.com/tomiwebstr/status/2092175528396493189",
-    "metrics": {
-     "views": 26976,
-     "likes": 472,
-     "reposts": 100,
-     "bookmarks": 113,
-     "replies": 50
-    },
-    "metrics_fetched_at": "2026-11-05",
-    "date": "2026-08-25 17:01（北京时间）",
-    "post_text": "Launch video for @Marmarapp’s new mobile app, made by me! 🩺💚\n\nTools: After effects, blender, &amp; premiere pro. https://t.co/c5sMm4fXhR",
-    "note": "",
-    "avatar": "/media/avatars/104a30b28212dad696c7.jpg",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2117689085233872897/GjmHrjqC_normal.jpg"
-   },
-   "prompt": "参考「Marmar App」这支 launch 视频（3D 渲染 + 实拍 + 文字，—）的做法，为 {产品} 的 {功能} 做一支同类型的视频。\n\n要学的核心手法：工具：After Effects + Blender + Premiere。\n\n请先输出：\n1. 一句话核心信息 + 3 个备选 hook（首帧就是 hook）。\n2. 带时长的镜头表：每个镜头写清画面、文案（两行标题 + 一句说明）、声音、时长；第 10 秒前必须看到产品在工作。\n3. 用哪种做法实现（代码动效 / 实拍 / AI 生成 / 3D），每个镜头需要的素材清单。\n镜头表经我确认后，再一次只做一个场景；导出 MP4（H.264 + AAC，1080p，30fps），另出一版 4:5 竖版。",
-   "how_to": [
-    "Blender 做设备 / 3D 场景，AE 做文字和合成，Premiere 剪辑。",
-    "没有 3D 能力时：先出 contact sheet，再用 AI 视频的首尾帧做过渡。",
-    "每个镜头只讲一件事，3–5 秒。"
-   ],
-   "skills": [
-    {
-     "name": "Higgsfield Skills",
-     "repo": "higgsfield-ai/skills",
-     "url": "https://github.com/higgsfield-ai/skills"
-    }
-   ],
-   "tools": [],
-   "assets": [
-    {
-     "name": "原片 MP4（站内转码）",
-     "url": "/media/bench-2092175528396493189/web.mp4"
-    }
-   ],
-   "tags": [
-    "标杆案例",
-    "3D 渲染 + 实拍 + 文字"
-   ],
-   "featured": false,
-   "trust": "社区",
-   "status": "published",
-   "version": "1.0.0",
-   "added_at": "2026-11-04T16:13:22+08:00",
-   "updated_at": "2026-11-04T18:21:14+08:00",
-   "seed": true,
-   "id": "bench-2092175528396493189",
-   "analysis": "可学的点：工具：After Effects + Blender + Premiere（出自《X 产品 Launch Video 制作手册》§3 标杆案例库）",
-   "heat": 50576
-  },
-  {
-   "type": "video",
    "category": "营销产品",
    "title": "Cursor Automations",
    "subtitle": "UI 演示 + 团队口播 · 95s · 16:9",
@@ -2126,63 +1902,6 @@
    "format": "功能短片",
    "related": "bench-2080353769565348142",
    "heat": 74131
-  },
-  {
-   "type": "showcase",
-   "category": "消费",
-   "title": "Dia Sidebar",
-   "subtitle": "Dia · 1280×720 · 39.8s",
-   "media": {
-    "kind": "video",
-    "video": "/media/bench-1942213709088149719/web.mp4",
-    "preview": "/media/bench-1942213709088149719/preview.mp4",
-    "thumbnail": "/media/bench-1942213709088149719/thumb.jpg",
-    "images": [],
-    "specs": {
-     "duration_s": 39.8,
-     "resolution": "1280×720"
-    }
-   },
-   "source": {
-    "platform": "X",
-    "author": "@diabrowser",
-    "author_url": "https://x.com/diabrowser",
-    "url": "https://x.com/diabrowser/status/1942213709088149719",
-    "metrics": {
-     "views": 543660,
-     "likes": 2422,
-     "reposts": 151,
-     "bookmarks": 331,
-     "replies": 374
-    },
-    "metrics_fetched_at": "2026-11-05",
-    "date": "2025-07-07 21:26（北京时间）",
-    "post_text": "Sidebar is here\n\n(Sound on 🔊) https://t.co/ujg302Z4sg",
-    "avatar": "/media/avatars/179632fd6676ed638011.jpg",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2103472878125457408/JgVG6mXB_normal.jpg"
-   },
-   "prompt": "",
-   "how_to": [],
-   "skills": [],
-   "tools": [],
-   "assets": [],
-   "tags": [
-    "消费",
-    "功能短片",
-    "Dia"
-   ],
-   "featured": false,
-   "trust": "社区",
-   "status": "published",
-   "version": "1.0.0",
-   "added_at": "2026-11-04T16:13:26+08:00",
-   "updated_at": "2026-11-04T18:21:11+08:00",
-   "seed": true,
-   "id": "show-1942213709088149719",
-   "brand": "Dia",
-   "format": "功能短片",
-   "related": "bench-1942213709088149719",
-   "heat": 664760
   },
   {
    "type": "showcase",
@@ -6216,60 +5935,6 @@
   {
    "type": "showcase",
    "category": "AI",
-   "title": "GitOps for 5G Core",
-   "subtitle": "Automates 5G network software updates",
-   "media": {
-    "kind": "video",
-    "video": "/media/lvg-73971a99/web.mp4",
-    "preview": "/media/lvg-73971a99/preview.mp4",
-    "thumbnail": "/media/lvg-73971a99/thumb.jpg",
-    "images": [],
-    "specs": {
-     "duration_s": 30.7,
-     "resolution": "1080×1920"
-    }
-   },
-   "source": {
-    "platform": "X",
-    "author": "@ericsson",
-    "author_url": "https://x.com/ericsson",
-    "url": "https://x.com/ericsson/status/2117534812290335109",
-    "video_source_url": "https://x.com/ericsson/status/2117534812290335109",
-    "brand_site": "http://www.ericsson.com",
-    "date": "2026-11-03 16:30（北京时间）",
-    "avatar": "/media/avatars/e27d3ad58cc2b67b127e.jpg",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2038877902104915968/8j8z9Bb5_normal.jpg",
-    "metrics": {
-     "likes": 22,
-     "replies": 3
-    },
-    "metrics_fetched_at": "2026-11-04T18:23:07+08:00"
-   },
-   "prompt": "",
-   "how_to": [],
-   "skills": [],
-   "tools": [],
-   "assets": [],
-   "tags": [
-    "AI",
-    "开发者工具",
-    "硬科技"
-   ],
-   "featured": false,
-   "trust": "社区",
-   "status": "published",
-   "version": "1.0.0",
-   "added_at": "2026-11-04T16:14:23+08:00",
-   "updated_at": "2026-11-04T18:23:15+08:00",
-   "ingested_by": "ingest.py",
-   "id": "lvg-73971a99",
-   "brand": "Ericsson",
-   "description": "Ericsson is introducing GitOps tools that let operators declare the desired configuration and software state of cloud-native 5G Core networks. Automated reconciliation then keeps the live network aligned with that declared state for lifecycle and configuration management.",
-   "lvg_id": "73971a99-2439-4d81-b86b-12867215f3b5"
-  },
-  {
-   "type": "showcase",
-   "category": "AI",
    "title": "Idol MLX Port",
    "subtitle": "Turns one photo into a 3D model",
    "media": {
@@ -6641,60 +6306,6 @@
    "brand": "Runway",
    "description": "Runway launched a plugin for Cursor that equips the coding agent with the tools and knowledge needed to integrate its media generation API. Developers describe the desired feature and the agent builds the corresponding code.",
    "lvg_id": "9e6d5eaa-340a-49f5-b4b7-1de4a1560917"
-  },
-  {
-   "type": "showcase",
-   "category": "AI",
-   "title": "Terminus Notes",
-   "subtitle": "Free notes pages like Notion",
-   "media": {
-    "kind": "video",
-    "video": "/media/lvg-26347a3b/web.mp4",
-    "preview": "/media/lvg-26347a3b/preview.mp4",
-    "thumbnail": "/media/lvg-26347a3b/thumb.jpg",
-    "images": [],
-    "specs": {
-     "duration_s": 45.1,
-     "resolution": "1920×1080"
-    }
-   },
-   "source": {
-    "platform": "X",
-    "author": "@WinstonGu_",
-    "author_url": "https://x.com/WinstonGu_",
-    "url": "https://x.com/WinstonGu_/status/2117336804705927410",
-    "video_source_url": "https://x.com/WinstonGu_/status/2117336804705927410",
-    "brand_site": "https://www.terminus.build",
-    "date": "2026-11-03 03:23（北京时间）",
-    "avatar": "/media/avatars/cf75663578a9ec5139e3.jpg",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2066009023221211136/8_20QuWH_normal.jpg",
-    "metrics": {
-     "likes": 4548,
-     "replies": 261
-    },
-    "metrics_fetched_at": "2026-11-04T18:23:40+08:00"
-   },
-   "prompt": "",
-   "how_to": [],
-   "skills": [],
-   "tools": [],
-   "assets": [],
-   "tags": [
-    "AI",
-    "消费",
-    "效率"
-   ],
-   "featured": false,
-   "trust": "社区",
-   "status": "published",
-   "version": "1.0.0",
-   "added_at": "2026-11-04T16:14:24+08:00",
-   "updated_at": "2026-11-04T18:23:51+08:00",
-   "ingested_by": "ingest.py",
-   "id": "lvg-26347a3b",
-   "brand": "Terminus Intelligence",
-   "description": "Terminus Notes is a free open-source notes application offering page-based editing and organization. It lets users export all their data freely and connect their own AI models without any usage credits.",
-   "lvg_id": "26347a3b-9817-488c-89c5-fae67f971bb6"
   },
   {
    "type": "showcase",
@@ -7342,60 +6953,6 @@
   {
    "type": "showcase",
    "category": "AI",
-   "title": "Membase",
-   "subtitle": "Shared memory for all your AI tools",
-   "media": {
-    "kind": "video",
-    "video": "/media/lvg-1e4af51d/web.mp4",
-    "preview": "/media/lvg-1e4af51d/preview.mp4",
-    "thumbnail": "/media/lvg-1e4af51d/thumb.jpg",
-    "images": [],
-    "specs": {
-     "duration_s": 77.1,
-     "resolution": "1920×1080"
-    }
-   },
-   "source": {
-    "platform": "X",
-    "author": "@Unibase_AI",
-    "author_url": "https://x.com/Unibase_AI",
-    "url": "https://x.com/Unibase_AI/status/2117140634675052678",
-    "video_source_url": "https://x.com/Unibase_AI/status/2117140634675052678",
-    "brand_site": "http://unibase.com",
-    "date": "2026-11-02 14:23（北京时间）",
-    "avatar": "/media/avatars/13289a4b83659ef3c5fb.jpg",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2084116246170308608/t5-4ajK__normal.jpg",
-    "metrics": {
-     "likes": 27,
-     "replies": 44
-    },
-    "metrics_fetched_at": "2026-11-04T18:25:38+08:00"
-   },
-   "prompt": "",
-   "how_to": [],
-   "skills": [],
-   "tools": [],
-   "assets": [],
-   "tags": [
-    "AI",
-    "Agent",
-    "开发者工具"
-   ],
-   "featured": false,
-   "trust": "社区",
-   "status": "published",
-   "version": "1.0.0",
-   "added_at": "2026-11-04T16:14:26+08:00",
-   "updated_at": "2026-11-04T18:25:52+08:00",
-   "ingested_by": "ingest.py",
-   "id": "lvg-1e4af51d",
-   "brand": "Unibase 😊 Memory for AI agents",
-   "description": "Membase is a shared memory service that stores context so multiple AI agents and tools can access the same information. Coding assistants and chat models connect through an SDK or MCP without repeated explanations.",
-   "lvg_id": "1e4af51d-8785-4103-a167-4b8cf93b4e62"
-  },
-  {
-   "type": "showcase",
-   "category": "AI",
    "title": "Gojiberry Lead Database",
    "subtitle": "Finds people ready to buy right now",
    "media": {
@@ -7445,60 +7002,6 @@
    "brand": "Gojiberry AI",
    "description": "This is a large lead database containing over 800 million records with special data points. AI agents can search it to locate suitable prospects and detect signals that indicate the best moment to make contact.",
    "lvg_id": "383f938d-a744-4a25-8b31-f64942c90ed7"
-  },
-  {
-   "type": "showcase",
-   "category": "AI",
-   "title": "Fastlane 2.0",
-   "subtitle": "Makes ads from your site and runs them",
-   "media": {
-    "kind": "video",
-    "video": "/media/lvg-fe4d1376/web.mp4",
-    "preview": "/media/lvg-fe4d1376/preview.mp4",
-    "thumbnail": "/media/lvg-fe4d1376/thumb.jpg",
-    "images": [],
-    "specs": {
-     "duration_s": 87.9,
-     "resolution": "1920×1080"
-    }
-   },
-   "source": {
-    "platform": "X",
-    "author": "@jock_ferguson",
-    "author_url": "https://x.com/jock_ferguson",
-    "url": "https://x.com/jock_ferguson/status/2117097426502963366",
-    "video_source_url": "https://x.com/jock_ferguson/status/2117097426502963366",
-    "brand_site": "http://usefastlane.ai",
-    "date": "2026-11-02 11:32（北京时间）",
-    "avatar": "/media/avatars/d83ac921cc2267ee2819.jpg",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2059106682316419072/1EwLPqBH_normal.jpg",
-    "metrics": {
-     "likes": 718,
-     "replies": 256
-    },
-    "metrics_fetched_at": "2026-11-04T18:25:52+08:00"
-   },
-   "prompt": "",
-   "how_to": [],
-   "skills": [],
-   "tools": [],
-   "assets": [],
-   "tags": [
-    "AI",
-    "Agent",
-    "视频图像生成"
-   ],
-   "featured": false,
-   "trust": "社区",
-   "status": "published",
-   "version": "1.0.0",
-   "added_at": "2026-11-04T16:14:27+08:00",
-   "updated_at": "2026-11-04T18:26:14+08:00",
-   "ingested_by": "ingest.py",
-   "id": "lvg-fe4d1376",
-   "brand": "Fastlane",
-   "description": "Fastlane 2.0 is an AI marketing tool that analyzes a brand website and market trends to produce diverse ad creatives, publishes them across paid and organic channels, and refines future ads from campaign results.",
-   "lvg_id": "fe4d1376-1e12-4ec7-adf7-4cea042922b9"
   },
   {
    "type": "showcase",
@@ -9383,6 +8886,11 @@
      "version": "b4fe857",
      "date": "2026-11-05",
      "note": "同步 GitHub 仓库版本。"
+    },
+    {
+     "version": "a2947fa",
+     "date": "2026-11-05",
+     "note": "同步 GitHub 仓库版本。"
     }
    ],
    "id": "brand-viaim-brand-ppt-skill",
@@ -9405,15 +8913,41 @@
     "PPTX",
     "演示文稿"
    ],
-   "version": "b4fe857",
+   "version": "a2947fa",
    "media": {
     "kind": "image",
-    "thumbnail": "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-01.png",
+    "thumbnail": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-01.webp",
     "images": [
-     "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-01.png",
-     "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-07.png",
-     "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-18.png",
-     "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-29.png"
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-01.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-02.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-03.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-04.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-05.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-06.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-07.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-08.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-09.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-10.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-11.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-12.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-13.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-14.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-15.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-16.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-17.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-18.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-19.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-20.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-21.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-22.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-23.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-24.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-25.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-26.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-27.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-28.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-29.webp",
+     "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-30.webp"
     ]
    },
    "source": {
@@ -9429,11 +8963,15 @@
    "assets": [
     {
      "name": "Skill 安装包",
-     "url": "/media/brand-viaim-brand-ppt-skill/b4fe857e60faa59c42a8410a02e8b67902cb8758/viaim-brand-ppt-skill.zip"
+     "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/viaim-brand-ppt-skill.zip"
+    },
+    {
+     "name": "下载示例 PPTX",
+     "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/viaim-brand-ppt-test-30p-editable.pptx"
     }
    ],
    "brand_repository": {
-    "sha": "b4fe857e60faa59c42a8410a02e8b67902cb8758",
+    "sha": "a2947fa70fec5d8f0b3fb2aa6362de888eb58c15",
     "branch": "main",
     "license": "AGPL-3.0",
     "installation": [
@@ -9443,40 +8981,148 @@
     "install_command": "",
     "samples": [
      {
-      "label": "第 1 页 · 封面",
-      "url": "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-01.png"
+      "label": "30 页，看完一套品牌演示系统",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-01.webp"
      },
      {
-      "label": "第 7 页 · 数据图表",
-      "url": "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-07.png"
+      "label": "第 2 页",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-02.webp"
      },
      {
-      "label": "第 18 页 · 三层系统",
-      "url": "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-18.png"
+      "label": "从单页输出，到完整演示系统",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-03.webp"
      },
      {
-      "label": "第 29 页 · 品牌宣言",
-      "url": "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-29.png"
+      "label": "版式不是装饰。它决定观众如何理解数据。",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-04.webp"
+     },
+     {
+      "label": "一套 Skill，覆盖六种制作动作",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-05.webp"
+     },
+     {
+      "label": "先定义，再生成，最后验收",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-06.webp"
+     },
+     {
+      "label": "一次 30 页生成，时间花在哪里",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-07.webp"
+     },
+     {
+      "label": "测试稿的六个验收维度",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-08.webp"
+     },
+     {
+      "label": "从自由拼版，到登记式生成",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-09.webp"
+     },
+     {
+      "label": "少一点自由拼装。多一点可复用秩序。",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-10.webp"
+     },
+     {
+      "label": "先问：这页要证明什么？再选：哪种骨架最诚实？",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-11.webp"
+     },
+     {
+      "label": "从一句需求，到可演示的网页 PPT",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-12.webp"
+     },
+     {
+      "label": "一页只做一件清楚的事",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-13.webp"
+     },
+     {
+      "label": "让品牌保持一致的三股力量",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-14.webp"
+     },
+     {
+      "label": "每次截图，都是下一轮输入",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-15.webp"
+     },
+     {
+      "label": "内容进入版式前，先被分成十二类",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-16.webp"
+     },
+     {
+      "label": "生成前，先记住这六条小规则",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-17.webp"
+     },
+     {
+      "label": "一份内容，通过三层系统交付",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-18.webp"
+     },
+     {
+      "label": "为什么现在需要品牌化演示 Skill",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-19.webp"
+     },
+     {
+      "label": "最终交付，不只有一个 HTML",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-20.webp"
+     },
+     {
+      "label": "一次完整验收，留下五行可读结果",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-21.webp"
+     },
+     {
+      "label": "品牌演示规格表",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-22.webp"
+     },
+     {
+      "label": "第 23 页",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-23.webp"
+     },
+     {
+      "label": "三个城市，一条内容交付链",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-24.webp"
+     },
+     {
+      "label": "四张截图，展示四种信息密度",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-25.webp"
+     },
+     {
+      "label": "六张小图，只突出一个焦点",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-26.webp"
+     },
+     {
+      "label": "深色主视觉，仍然保持同一网格",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-27.webp"
+     },
+     {
+      "label": "打开现场之前，先走完五个检查点",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-28.webp"
+     },
+     {
+      "label": "五色建立秩序，橙色发出信号。白字把话说清。",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-29.webp"
+     },
+     {
+      "label": "让系统守住品牌。让内容继续向前。",
+      "url": "/media/brand-viaim-brand-ppt-skill/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/presentation/slide-30.webp"
      }
     ],
     "cover_count": 1,
-    "sample_source": "viaim 品牌演示系统 · 30 页示例稿",
+    "sample_source": "viaim 品牌演示系统 · PPT 内容示例",
     "docs": [
      {
       "name": "Skill 文档",
-      "url": "https://github.com/visiondesignlab/viaim-brand-ppt-skill/blob/b4fe857e60faa59c42a8410a02e8b67902cb8758/SKILL.md"
+      "url": "https://github.com/visiondesignlab/viaim-brand-ppt-skill/blob/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/SKILL.md"
      },
      {
       "name": "快速上手",
-      "url": "https://github.com/visiondesignlab/viaim-brand-ppt-skill/blob/b4fe857e60faa59c42a8410a02e8b67902cb8758/QUICKSTART.md"
+      "url": "https://github.com/visiondesignlab/viaim-brand-ppt-skill/blob/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/QUICKSTART.md"
      },
      {
       "name": "PPTX 导出说明",
-      "url": "https://github.com/visiondesignlab/viaim-brand-ppt-skill/blob/b4fe857e60faa59c42a8410a02e8b67902cb8758/references/export-formats.md"
+      "url": "https://github.com/visiondesignlab/viaim-brand-ppt-skill/blob/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/references/export-formats.md"
+     },
+     {
+      "name": "全版式示例说明",
+      "url": "https://github.com/visiondesignlab/viaim-brand-ppt-skill/blob/a2947fa70fec5d8f0b3fb2aa6362de888eb58c15/examples/viaim-brand-ppt-test-30p/README.md"
      }
     ]
    },
-   "updated_at": "2026-11-05T16:38:31+08:00"
+   "updated_at": "2026-11-05T17:10:47+08:00"
   },
   {
    "status": "published",
@@ -9484,6 +9130,11 @@
    "changelog": [
     {
      "version": "d98c1bd",
+     "date": "2026-11-05",
+     "note": "同步 GitHub 仓库版本。"
+    },
+    {
+     "version": "3ce0016",
      "date": "2026-11-05",
      "note": "同步 GitHub 仓库版本。"
     }
@@ -9508,15 +9159,15 @@
     "社交图文",
     "Live Photo"
    ],
-   "version": "d98c1bd",
+   "version": "3ce0016",
    "media": {
     "kind": "image",
-    "thumbnail": "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-1.png",
+    "thumbnail": "/media/brand-viaim-social-card-skill/3ce001645e64fe03ee767c5a85080cc47514e079/sample-1.png",
     "images": [
-     "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-1.png",
-     "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-2.png",
-     "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-3.png",
-     "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-4.png"
+     "/media/brand-viaim-social-card-skill/3ce001645e64fe03ee767c5a85080cc47514e079/sample-1.png",
+     "/media/brand-viaim-social-card-skill/3ce001645e64fe03ee767c5a85080cc47514e079/sample-2.png",
+     "/media/brand-viaim-social-card-skill/3ce001645e64fe03ee767c5a85080cc47514e079/sample-3.png",
+     "/media/brand-viaim-social-card-skill/3ce001645e64fe03ee767c5a85080cc47514e079/sample-4.png"
     ]
    },
    "source": {
@@ -9532,11 +9183,11 @@
    "assets": [
     {
      "name": "Skill 安装包",
-     "url": "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/viaim-social-card-skill.zip"
+     "url": "/media/brand-viaim-social-card-skill/3ce001645e64fe03ee767c5a85080cc47514e079/viaim-social-card-skill.zip"
     }
    ],
    "brand_repository": {
-    "sha": "d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572",
+    "sha": "3ce001645e64fe03ee767c5a85080cc47514e079",
     "branch": "main",
     "license": "AGPL-3.0",
     "installation": [
@@ -9547,19 +9198,19 @@
     "samples": [
      {
       "label": "品牌封面",
-      "url": "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-1.png"
+      "url": "/media/brand-viaim-social-card-skill/3ce001645e64fe03ee767c5a85080cc47514e079/sample-1.png"
      },
      {
       "label": "信息流",
-      "url": "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-2.png"
+      "url": "/media/brand-viaim-social-card-skill/3ce001645e64fe03ee767c5a85080cc47514e079/sample-2.png"
      },
      {
       "label": "五色系统",
-      "url": "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-3.png"
+      "url": "/media/brand-viaim-social-card-skill/3ce001645e64fe03ee767c5a85080cc47514e079/sample-3.png"
      },
      {
       "label": "深色收尾",
-      "url": "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-4.png"
+      "url": "/media/brand-viaim-social-card-skill/3ce001645e64fe03ee767c5a85080cc47514e079/sample-4.png"
      }
     ],
     "cover_count": 2,
@@ -9567,19 +9218,19 @@
     "docs": [
      {
       "name": "Skill 文档",
-      "url": "https://github.com/visiondesignlab/viaim-social-card-skill/blob/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/SKILL.md"
+      "url": "https://github.com/visiondesignlab/viaim-social-card-skill/blob/3ce001645e64fe03ee767c5a85080cc47514e079/SKILL.md"
      },
      {
       "name": "安装与使用",
-      "url": "https://github.com/visiondesignlab/viaim-social-card-skill/blob/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/README.md"
+      "url": "https://github.com/visiondesignlab/viaim-social-card-skill/blob/3ce001645e64fe03ee767c5a85080cc47514e079/README.md"
      },
      {
-      "name": "示例 HTML 源码",
-      "url": "https://github.com/visiondesignlab/viaim-social-card-skill/blob/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/examples/viaim-brand-demo/index.html"
+      "name": "品牌配色与 Logo 规范",
+      "url": "https://github.com/visiondesignlab/viaim-social-card-skill/blob/3ce001645e64fe03ee767c5a85080cc47514e079/references/viaim-brand-system.md"
      }
     ]
    },
-   "updated_at": "2026-11-05T16:38:31+08:00"
+   "updated_at": "2026-11-05T17:09:38+08:00"
   }
  ]
 }

@@ -139,7 +139,7 @@ bash /workspace/caselib/run_daily.sh
 
 ## 手动加一个品牌 Skill
 
-GitHub 来源的 Skill 维护在 `catalog/brand-skill-sources.json`。添加仓库及其安装说明、示例路径后，运行 `python3 scripts/sync_brand_skills.py`。同步读取各公开仓库默认分支的实际提交，更新同一条记录，并打包包含 `SKILL.md`、脚本、素材与许可证的安装 ZIP。PPT 示例选自 viaim 品牌演示系统样稿的第 1、7、18、29 页，卡片示例使用仓库的四张 PNG。同步后按本地验证与 Pages 发布流程更新公开站点。
+GitHub 来源的 Skill 维护在 `catalog/brand-skill-sources.json`。添加仓库及其安装说明、示例路径后，运行 `python3 scripts/sync_brand_skills.py`。同步读取各公开仓库默认分支的实际提交，更新同一条记录，并打包包含 `SKILL.md`、脚本、素材与许可证的安装 ZIP。配置 `presentation` 时，同步工具使用 LibreOffice（`soffice`）、Poppler（`pdftoppm`）和 Pillow 从仓库 PPTX 生成全套逐页预览，并提供源文件下载。卡片示例直接读取配置的仓库 PNG。同步后按本地验证与 Pages 发布流程更新公开站点。
 
 1. 新建 `brand_skills/<slug>/SKILL.md`（frontmatter 写 `name`、`description`、`version`），可以参考 `brand_skills/launch-video-spec/SKILL.md`。
 2. 在 `data/cases.json` 里加一条（或先用 /review 的编辑功能改一条已有的）：

@@ -11,6 +11,9 @@
 .skill-card-actions,.skill-links,.skill-docs{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
 .skill-card-actions{padding:0 16px 16px}
 .skill-links{justify-content:center;margin:10px 0 18px}
+.skill-deck-controls label{display:block;color:var(--fg2);font-size:12px;margin-bottom:6px}
+.skill-deck-controls select{width:100%;min-height:34px;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);font:inherit}
+.skill-deck-controls a{margin-top:10px}
 .skill-docs{margin-top:12px;gap:8px 14px}
 .skill-docs a{color:var(--fg2);text-decoration:underline;text-underline-offset:3px}
 .skill-command{margin-top:10px;padding:12px;border-radius:8px;background:var(--bg2)}

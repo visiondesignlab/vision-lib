@@ -9,6 +9,7 @@ import subprocess
 import sys
 import tempfile
 import zipfile
+from brand_presentation import presentation_assets
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -44,6 +45,7 @@ def fetch_skill(spec):
     folder = Path(store.MEDIA) / cid / sha
     prefix = f'/media/{cid}/{sha}/'
     samples = []
+    assets = [{'name':'Skill 安装包', 'url':prefix + f'{slug}.zip'}]
     archive = github(f'repos/{repository}/zipball/{sha}')
     with zipfile.ZipFile(io.BytesIO(archive)) as source:
         files = {}
@@ -69,6 +71,13 @@ def fetch_skill(spec):
             filename = f'sample-{index}{PurePosixPath(relative).suffix}'
             write_asset(folder / filename, source.read(files[relative]))
             samples.append({'label': label, 'url': prefix + filename})
+        if spec.get('presentation'):
+            path = spec['presentation']
+            if path not in files:
+                raise ValueError(f'{repository}@{sha[:7]} is missing its PPT example: {path}')
+            slides, download = presentation_assets(source.read(files[path]), path, folder, prefix)
+            samples.extend(slides)
+            assets.append(download)
     for label, public_path in spec.get('local_examples', []):
         path = (ROOT / public_path.lstrip('/')).resolve()
         if not path.is_relative_to(ROOT / 'static/assets/brand-skill-examples') or not path.is_file():
@@ -82,7 +91,7 @@ def fetch_skill(spec):
         'version': sha[:7], 'media': {'kind':'image', 'thumbnail': samples[0]['url'], 'images':[s['url'] for s in samples]},
         'source': {'platform':'GitHub', 'author':meta['owner']['login'], 'repo':repository, 'url':url, 'date':date,
                    'metrics':{'stars':meta['stargazers_count']}},
-        'assets':[{'name':'Skill 安装包', 'url':prefix + f'{slug}.zip'}],
+        'assets':assets,
         'brand_repository': {'sha':sha, 'branch':branch, 'license':(meta['license'] or {}).get('spdx_id') or '未标注',
                              'installation':spec['installation'], 'install_command':spec.get('install_command',''), 'samples':samples,
                              'cover_count':spec.get('cover_count', 1), 'sample_source':spec.get('sample_source',''),
