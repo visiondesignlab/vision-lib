@@ -55,7 +55,7 @@ html:has(dialog[open]){overflow:hidden}
   .mobile-header{display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:30;min-height:calc(var(--mobile-head) + env(safe-area-inset-top));padding:calc(10px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 10px max(16px,env(safe-area-inset-left));background:rgba(255,255,255,.95);backdrop-filter:blur(12px)}
   .mobile-header .logo{font-size:14px;min-height:44px}
   .nav-toggle{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:44px;height:44px;padding:10px;border-radius:50%;color:var(--fg2)}
-  .nav-toggle span{width:20px;height:1.5px;border-radius:1px;background:currentColor}
+  .nav-toggle span{width:20px;height:2px;border-radius:1px;background:currentColor}
   .nav-toggle:active{background:var(--chip)}
   .nav-close{position:relative;flex:none}
   .nav-close span{position:absolute;transform:rotate(45deg)}

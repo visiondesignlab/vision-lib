@@ -525,12 +525,14 @@ function cardHTML(c) {
   const m = c.media || {};
   const dimensions = String(m.specs?.resolution || "").match(/^(\d+)\s*[×x]\s*(\d+)$/);
   const aspect = dimensions ? `${Number(dimensions[1])}/${Number(dimensions[2])}` : c.type === "skill_repo" ? "2/1" : "16/9";
-  const prev = m.preview || m.video || "";
+  // Reuse the detail video's quality; the 480px preview blurs on dense displays.
+  // playPreview still loads on demand and limits touch playback to two cards.
+  const playback = m.video || m.preview || "";
   const label = c.type === "showcase" ? (c.brand || "") + " · " + c.title : c.title;
   const target = selectedTarget();
   const tr = c.type === "showcase" ? `<span class="pill-btn" data-act="bd" title="${esc(target.hint)}">${esc(targetButtonLabel(target, "一键拉片", "复制拉片 Prompt"))}</span>` : (c.prompt ? `<span class="pill-btn" data-act="use">使用</span>` : "");
   return `<a class="card" href="${sitePath("/c/" + esc(c.id))}" data-link data-id="${esc(c.id)}">
-    <span class="m" style="aspect-ratio:${aspect}"><img loading="lazy" decoding="async" src="${esc(m.thumbnail || sitePath("/static/cms-placeholder.svg"))}" alt="${esc(c.title)}">${prev ? `<video muted loop playsinline preload="none" data-src="${esc(prev)}" aria-hidden="true" tabindex="-1"></video>` : ""}</span>
+    <span class="m" style="aspect-ratio:${aspect}"><img loading="lazy" decoding="async" src="${esc(m.thumbnail || sitePath("/static/cms-placeholder.svg"))}" alt="${esc(c.title)}">${playback ? `<video muted loop playsinline preload="none" data-src="${esc(playback)}" aria-hidden="true" tabindex="-1"></video>` : ""}</span>
     ${c.featured ? `<span class="badge">推荐</span>` : ""}
     <span class="tr">${tr}</span>
     <span class="ov">${avatarOf(c)}<span class="ttl">${esc(label)}</span><span class="go">${ICON.go}</span></span></a>`;
