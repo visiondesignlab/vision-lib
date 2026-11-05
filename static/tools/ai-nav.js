@@ -24,6 +24,15 @@ function iconHTML(icon) {
   return icon ? `<span class="ai-icon" aria-hidden="true"><img loading="lazy" alt="" src="${esc(path(icon))}"></span>` : '';
 }
 
+function rankingPreview(entry) {
+  const ranking = entry.ranking;
+  if (!ranking?.rows?.length) return '';
+  const rows = ranking.rows.map((row, index) => `<tr><td>${index + 1}</td><th scope="row"><a href="${esc(row.url)}" target="_blank" rel="noopener noreferrer">${esc(row.model)}</a></th><td>${esc(row.provider)}</td><td>${esc(row.score)}</td></tr>`).join('');
+  return `<div class="ai-ranking"><div class="ai-ranking-head"><h3>智能指数前 ${ranking.rows.length} 名</h3><time datetime="${esc(ranking.date)}">${esc(ranking.date)} 快照</time></div>
+    <table aria-label="Artificial Analysis 智能指数排名"><thead><tr><th scope="col">排名</th><th scope="col">模型</th><th scope="col">开发商</th><th scope="col">智能指数</th></tr></thead><tbody>${rows}</tbody></table>
+    <a class="ai-ranking-source" href="${esc(entry.url)}" target="_blank" rel="noopener noreferrer">查看 Artificial Analysis 完整榜单 ↗</a></div>`;
+}
+
 export function directory({categories, entries}, replaceURL, enhanceSelect) {
   const aliases = new Map(entries.flatMap(row=>(row.previousIds || []).map(id=>[id,row.id])));
   const el = document.createElement('section');
@@ -59,11 +68,12 @@ export function directory({categories, entries}, replaceURL, enhanceSelect) {
     for (const b of rail.children) b.setAttribute('aria-pressed', String(b.dataset.category === category));
     const ids=favorites(aliases), saved=new Set(ids), shown=new Map(), sections=[];
     function group(key,name,rows){
-      return rows.length?`<section data-section="${esc(key)}"><h2>${esc(name)} <small>${rows.length}</small></h2><div class="ai-links">${rows.map(x=>card(x,saved)).join('')}</div></section>`:'';
+      const ranking = rows.find(row => row.category === key && row.ranking);
+      return rows.length?`<section data-section="${esc(key)}"><h2>${esc(name)} <small>${rows.length}</small></h2>${ranking ? rankingPreview(ranking) : ''}<div class="ai-links">${rows.map(x=>card(x,saved)).join('')}</div></section>`:'';
     }
     for (const c of categories) {
       if (category && c.id !== category) continue;
-      const rows = entries.filter(x => x.category === c.id && (!term || searchText([x.name, x.url, x.description, c.name].join(' ')).includes(term)));
+      const rows = entries.filter(x => x.category === c.id && (!term || searchText([x.name, x.url, x.description, c.name, ...(x.aliases || []), ...(x.ranking?.rows || []).map(row => row.model + ' ' + row.provider)].join(' ')).includes(term)));
       for(const x of rows)shown.set(x.id,x);
       if(rows.length)sections.push(group(c.id,c.name,rows));
     }

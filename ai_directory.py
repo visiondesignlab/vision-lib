@@ -39,6 +39,18 @@ def string(data, key, maximum, required=False):
     return value.strip()
 
 
+def update_heat(item, data):
+    if 'heat' not in data:
+        return
+    value = data['heat']
+    if value is None or value == '':
+        item.pop('heat', None)
+    elif type(value) is int and 0 <= value <= 2**31 - 1:
+        item['heat'] = value
+    else:
+        raise ContentError('热度分需为非负整数')
+
+
 def change(data):
     with store.locked():
         db = load()
@@ -80,10 +92,14 @@ def change(data):
                 icon = string(data, 'icon', 4096)
                 if icon != item.get('icon', ''):
                     safe_url(icon)
+                update_heat(item, data)
                 item.update(name=name, category=category, url=url, icon=icon,
                             description=spaced(string(data, 'description', 500)))
             if new_item:
                 rows.append(item)
+        if kind == 'entry' and action == 'save':
+            order = {group['id']: i for i, group in enumerate(groups)}
+            entries.sort(key=lambda row: (order[row['category']], -row.get('heat', -1)))
         db['version'] = data['version'] + 1
         store._write(str(Path(store.DATA) / 'ai-directory.json'), db)
         return db

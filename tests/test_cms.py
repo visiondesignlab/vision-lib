@@ -246,6 +246,36 @@ class CMSTests(unittest.TestCase):
             self.assertEqual(code, 200)
         self.assertNotIn(eid, [x['id'] for x in self.req(public,auth=False)[1]['entries']])
 
+    def test_directory_heat_sort_is_stable_and_optional(self):
+        self.login()
+        route = '/api/admin/ai-directory'
+        state = self.req(route)[1]
+
+        def save(**fields):
+            nonlocal state
+            code, result, _ = self.req(route, dict(kind='entry', action='save',
+                                                   version=state['version'], **fields))
+            if code == 200:
+                state = result
+            return code
+
+        category = state['categories'][0]['id']
+        records = []
+        for n, heat in enumerate((40, 90, 40, None)):
+            row = dict(name=f'Rank fixture {n}', category=category,
+                       url=f'https://example.org/rank/{n}', heat=heat)
+            self.assertEqual(save(**row), 200)
+            records.append(next(r for r in state['entries'] if r['name'] == row['name']))
+        def order():
+            return [e['name'] for e in state['entries'] if e['name'].startswith('Rank fixture')]
+        self.assertEqual(order(), [records[n]['name'] for n in (1, 0, 2, 3)])
+        edited = {k: records[1][k] for k in ('name', 'url', 'category', 'id')}
+        self.assertEqual(save(**edited), 200)
+        self.assertEqual(order()[0], edited['name'])
+        self.assertEqual(save(**edited, heat=-1), 400)
+        self.assertEqual(save(**edited, heat=None), 200)
+        self.assertEqual(order()[:2], [records[n]['name'] for n in (0, 2)])
+
     def test_delete_does_not_remove_shared_media_or_concurrently_resubmitted_content(self):
         self.login()
         cover = self.upload_image('green')

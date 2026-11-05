@@ -71,120 +71,21 @@
   {
    "id": "aitools",
    "name": "AI 工具合集"
+  },
+  {
+   "id": "model-rankings",
+   "name": "AI 大模型"
   }
  ],
  "entries": [
   {
-   "id": "8634d05bd7d9212edb12",
-   "category": "smart7",
-   "name": "Figma Design",
-   "url": "https://www.figma.com/design/",
-   "description": "协作设计界面、维护组件库并制作交互原型",
-   "icon": "/static/tools/ai-icons/bd0eda7181d4a12bf332.webp"
-  },
-  {
-   "id": "97151e8ffda01ac6e930",
-   "category": "smart7",
-   "name": "Figma Make",
-   "url": "https://www.figma.com/make/",
-   "description": "用提示词或 Figma 设计稿生成可运行的交互原型",
-   "icon": "/static/tools/ai-icons/bd0eda7181d4a12bf332.webp"
-  },
-  {
-   "id": "4366ef6df06438316109",
-   "category": "smart7",
-   "name": "pen.dev",
-   "url": "https://www.pen.dev/",
-   "description": "原 Pencil；在可编辑画布上与 AI 一起设计界面",
-   "icon": "/static/tools/ai-icons/4d1cedaead28bf399735.webp"
-  },
-  {
-   "id": "ad27fd69a5318d5f601d",
-   "category": "smart7",
-   "name": "Paper",
-   "url": "https://paper.design/",
-   "description": "在同一张画布中连接界面设计、代码与 AI 工具",
-   "icon": "/static/tools/ai-icons/8893417c3e0faf50f404.webp"
-  },
-  {
-   "id": "5bb19014c4a415882a16",
-   "category": "smart7",
-   "name": "Framer",
-   "url": "https://www.framer.com/",
-   "description": "用设计助手搭建响应式网站，并直接发布",
-   "icon": "/static/tools/ai-icons/d0c15727d4b5d8ec204b.webp"
-  },
-  {
-   "id": "c535a51edca9854a52bf",
-   "category": "smart7",
-   "name": "Claude Design",
-   "url": "https://claude.com/product/design",
-   "description": "通过对话制作界面原型，按反馈修改设计",
-   "icon": "/static/tools/ai-icons/7e9ed04704b056d903f8.webp"
-  },
-  {
-   "id": "040e72eb97d1e6d21c9d",
-   "category": "smart7",
-   "name": "v0",
-   "url": "https://v0.app/",
-   "description": "通过描述生成前端界面，预览并迭代可运行的原型",
-   "icon": "/static/tools/ai-icons/9db4e7d4a76029cf5781.webp"
-  },
-  {
-   "id": "a08b8ae0b0e39945706a",
-   "category": "smart7",
-   "name": "Magic Patterns",
-   "url": "https://www.magicpatterns.com/",
-   "description": "用 AI 生成产品界面，在画布上比较与迭代原型",
-   "icon": "/static/tools/ai-icons/f25c1672298e1191d3ea.webp"
-  },
-  {
-   "id": "988649c2250e826c90bc",
-   "category": "smart7",
-   "name": "Stitch",
-   "url": "https://stitch.withgoogle.com/",
-   "description": "用文字或参考图生成可编辑的界面",
-   "icon": "/static/tools/ai-icons/db2ee90315c17b67d78b.webp"
-  },
-  {
-   "id": "a5025254d167d6a17ddf",
+   "id": "20ca46b81242bb138464",
    "category": "aiagent",
-   "name": "扣子",
-   "url": "https://www.coze.cn/overview",
-   "description": "搭建可调用插件的智能体",
-   "icon": "/static/tools/ai-icons/80ff4b30e674d48efcc0.webp"
-  },
-  {
-   "id": "5644d4754f67636a2fc9",
-   "category": "aiagent",
-   "name": "Manus",
-   "url": "https://manus.im/app",
-   "description": "用通用智能体执行任务",
-   "icon": "/static/tools/ai-icons/e800b16f8f4d23880ddf.webp"
-  },
-  {
-   "id": "37b9779c39cb9f1172f4",
-   "category": "aiagent",
-   "name": "Skywork",
-   "url": "https://skywork.ai/",
-   "description": "生成文档和多媒体内容",
-   "icon": "/static/tools/ai-icons/758b9d0241f329f5d57b.webp"
-  },
-  {
-   "id": "fcd943f08b99d0cac424",
-   "category": "aiagent",
-   "name": "星辰 Agent",
-   "url": "https://agent.xfyun.cn/",
-   "description": "搭建企业智能体",
-   "icon": "/static/tools/ai-icons/5536ca7bd7fd7f1db155.webp"
-  },
-  {
-   "id": "b69884f65475e5eb224b",
-   "category": "aiagent",
-   "name": "Lovart",
-   "url": "https://www.lovart.ai/",
-   "description": "和设计智能体协作",
-   "icon": "/static/tools/ai-icons/2fe2c1df2327da1b7451.webp"
+   "name": "Lovable",
+   "description": "用自然语言生成全栈应用",
+   "url": "https://lovable.dev/",
+   "icon": "/static/tools/ai-icons/4fe7d0f77ce54a505a0b.webp",
+   "heat": 34679
   },
   {
    "id": "9dd271517e6fa3fa069e",
@@ -192,87 +93,105 @@
    "name": "MiniMax Agent",
    "url": "https://agent.minimax.io/",
    "description": "交给智能体执行多步任务",
-   "icon": "/static/tools/ai-icons/ae9a0c9792c45a8f1db4.webp"
+   "icon": "/static/tools/ai-icons/ae9a0c9792c45a8f1db4.webp",
+   "heat": 5330
   },
   {
-   "id": "64b4e5450dcac4516abc",
-   "category": "skills",
-   "name": "Skills.sh",
-   "url": "https://skills.sh/",
-   "description": "查找和安装 Agent Skills",
-   "icon": "/static/tools/ai-icons/e0c8a61d4e449c2a6fb6.webp"
+   "id": "b4890299de2dc41ece9e",
+   "category": "aiagent",
+   "name": "Devin",
+   "description": "自主软件工程智能体",
+   "url": "https://devin.ai/",
+   "icon": "/static/tools/ai-icons/7320a34e8fad822eb0af.webp",
+   "heat": 4681
   },
   {
-   "id": "d8c4362786c235b2c492",
-   "category": "skills",
-   "name": "Skillsmp",
-   "url": "https://skillsmp.com/",
-   "description": "搜索开源技能",
-   "icon": "/static/tools/ai-icons/b87a677c8a56ec26caad.webp"
+   "id": "5644d4754f67636a2fc9",
+   "category": "aiagent",
+   "name": "Manus",
+   "url": "https://manus.im/app",
+   "description": "用通用智能体执行任务",
+   "icon": "/static/tools/ai-icons/af0f62f0a712ea490ac4.webp",
+   "heat": 1761
   },
   {
-   "id": "d9ed9597061627f31475",
-   "category": "skills",
-   "name": "Skillstore",
-   "url": "https://skillstore.io/zh-hans",
-   "description": "浏览技能商店",
-   "icon": "/static/tools/ai-icons/ad5f7746c9c1ff02e473.webp"
+   "id": "333d8cccf4f8c1813095",
+   "category": "aiagent",
+   "name": "Replit Agent",
+   "description": "在 Replit 中用智能体构建应用",
+   "url": "https://replit.com/",
+   "icon": "/static/tools/ai-icons/7622b80d77c26c1e4d08.webp",
+   "heat": 491
   },
   {
-   "id": "6f339c1e91481b3841cc",
-   "category": "skills",
-   "name": "Agent Skills",
-   "url": "https://agent-skills.md/",
-   "description": "查找可复用技能",
-   "icon": "/static/tools/ai-icons/afefbd20941c579a44e7.webp"
+   "id": "b69884f65475e5eb224b",
+   "category": "aiagent",
+   "name": "Lovart",
+   "url": "https://www.lovart.ai/",
+   "description": "和设计智能体协作",
+   "icon": "/static/tools/ai-icons/2fe2c1df2327da1b7451.webp",
+   "heat": 80
   },
   {
-   "id": "8f9a434cc07236a1197a",
-   "category": "skills",
-   "name": "Skills Directory",
-   "url": "https://www.skillsdirectory.com/",
-   "description": "查看社区推荐的技能",
-   "icon": "/static/tools/ai-icons/7083b06a50d3377c27bb.webp"
+   "id": "fcd943f08b99d0cac424",
+   "category": "aiagent",
+   "name": "星辰 Agent",
+   "url": "https://agent.xfyun.cn/",
+   "description": "搭建企业智能体",
+   "icon": "/static/tools/ai-icons/5536ca7bd7fd7f1db155.webp",
+   "heat": 50
   },
   {
-   "id": "36f55daa764e14b27699",
-   "category": "skills",
-   "name": "AgentSkills",
-   "url": "https://agentskills.me/",
-   "description": "浏览第三方技能",
-   "icon": "/static/tools/ai-icons/8f77ebf1339be63a981f.webp"
+   "id": "37b9779c39cb9f1172f4",
+   "category": "aiagent",
+   "name": "Skywork",
+   "url": "https://skywork.ai/",
+   "description": "生成文档和多媒体内容",
+   "icon": "/static/tools/ai-icons/758b9d0241f329f5d57b.webp",
+   "heat": 9
   },
   {
-   "id": "ffb52cce52e3880bf34b",
-   "category": "skills",
-   "name": "SkillHub",
-   "url": "https://skillhub.tencent.com/",
-   "description": "查看腾讯技能目录",
-   "icon": "/static/tools/ai-icons/ee3b97df7a835cbcb6a3.webp"
+   "id": "15b11d7a85784a60683b",
+   "category": "aiagent",
+   "name": "Muse",
+   "description": "用 Meta 的个人智能体安排日程、查找资料并执行任务",
+   "url": "https://muse.ai/",
+   "icon": "/static/tools/ai-icons/b7bab0ba412e8daea829.webp"
   },
   {
-   "id": "2678c0c3b01062d5d28c",
-   "category": "skills",
-   "name": "AI Templates",
-   "url": "https://www.aitmpl.com/skills",
-   "description": "复用智能体模板",
-   "icon": "/static/tools/ai-icons/9b617148ca83a5810c6d.webp"
+   "id": "7fe59353c34f061a1ee2",
+   "category": "aiagent",
+   "name": "Grok Bot",
+   "description": "把跨应用任务交给 Grok Bot 在其云端电脑中执行",
+   "url": "https://x.ai/bot",
+   "icon": "/static/tools/ai-icons/68e18893dbf149b07cf7.webp"
   },
   {
-   "id": "f82a10d6564cfea2d528",
-   "category": "skills",
-   "name": "Clawhub",
-   "url": "https://clawhub.ai/",
-   "description": "查找 OpenClaw 技能",
-   "icon": "/static/tools/ai-icons/d7f52f706abd5590c3a8.webp"
+   "id": "f6c97f7c5a1634dc7c09",
+   "category": "aiagent",
+   "name": "Comet",
+   "description": "用 Perplexity 的 AI 浏览器研究网页和处理任务",
+   "url": "https://www.perplexity.ai/comet",
+   "icon": "/static/tools/ai-icons/cf95d6704d6a056eef11.webp"
   },
   {
-   "id": "986e5735d46efa0a60a8",
-   "category": "skills",
-   "name": "Skillbox",
-   "url": "https://skill-box.zwtj.site/",
-   "description": "管理智能体技能",
-   "icon": "/static/tools/ai-icons/2222f9a9eb5238f76612.webp"
+   "id": "decfa965748012d00cd3",
+   "category": "aiagent",
+   "name": "AutoClaw",
+   "description": "使用智谱桌面智能体执行任务、连接工具",
+   "url": "https://autoclaw.zhipuai.cn/",
+   "icon": "/static/tools/ai-icons/703888cf7af904aa843c.webp"
+  },
+  {
+   "id": "020459f856e2a0e31efd",
+   "category": "aiagent",
+   "name": "Hermes Agent",
+   "description": "使用 Nous Research 的开源智能体处理持续任务",
+   "url": "https://hermes-agent.nousresearch.com/",
+   "icon": "/static/tools/ai-icons/178d2b306b7cf5b4aa3b.webp",
+   "aliases": [
+    "Hermes"
+   ]
   },
   {
    "id": "e85d592f44f2b8b007b1",
@@ -280,7 +199,26 @@
    "name": "Anthropics Skills",
    "url": "https://github.com/anthropics/skills",
    "description": "浏览 Anthropic 示例仓库",
-   "icon": "/static/tools/ai-icons/b74ac7220635585456c1.webp"
+   "icon": "/static/tools/ai-icons/b74ac7220635585456c1.webp",
+   "heat": 250
+  },
+  {
+   "id": "64b4e5450dcac4516abc",
+   "category": "skills",
+   "name": "Skills.sh",
+   "url": "https://skills.sh/",
+   "description": "查找和安装 Agent Skills",
+   "icon": "/static/tools/ai-icons/e0c8a61d4e449c2a6fb6.webp",
+   "heat": 200
+  },
+  {
+   "id": "f82a10d6564cfea2d528",
+   "category": "skills",
+   "name": "Clawhub",
+   "url": "https://clawhub.ai/",
+   "description": "查找 OpenClaw 技能",
+   "icon": "/static/tools/ai-icons/d7f52f706abd5590c3a8.webp",
+   "heat": 100
   },
   {
    "id": "a0dc9e787cdc0d562d29",
@@ -288,23 +226,80 @@
    "name": "Awesome",
    "url": "https://github.com/JackyST0/awesome-agent-skills?tab=readme-ov-file",
    "description": "社区维护的技能清单",
-   "icon": "/static/tools/ai-icons/c3a1317f1949d9577f0b.webp"
+   "icon": "/static/tools/ai-icons/c3a1317f1949d9577f0b.webp",
+   "heat": 80
   },
   {
-   "id": "cdb5e0da28c858c641ab",
-   "category": "smart",
-   "name": "Nano Banana",
-   "url": "https://aistudio.google.com/prompts/new_chat",
-   "description": "用文字或参考图生成图像",
-   "icon": "/static/tools/ai-icons/b1a69332d035c3bfde37.webp"
+   "id": "6f339c1e91481b3841cc",
+   "category": "skills",
+   "name": "Agent Skills",
+   "url": "https://agent-skills.md/",
+   "description": "查找可复用技能",
+   "icon": "/static/tools/ai-icons/afefbd20941c579a44e7.webp",
+   "heat": 60
   },
   {
-   "id": "1ba2fbd991a86046609c",
-   "category": "smart",
-   "name": "Flux.1",
-   "url": "https://www.uisdc.com/flux-1",
-   "description": "了解 FLUX 图像模型",
-   "icon": "/static/tools/ai-icons/0c60a6e171bd3c6cd641.webp"
+   "id": "ffb52cce52e3880bf34b",
+   "category": "skills",
+   "name": "SkillHub",
+   "url": "https://skillhub.tencent.com/",
+   "description": "查看腾讯技能目录",
+   "icon": "/static/tools/ai-icons/ee3b97df7a835cbcb6a3.webp",
+   "heat": 40
+  },
+  {
+   "id": "8f9a434cc07236a1197a",
+   "category": "skills",
+   "name": "Skills Directory",
+   "url": "https://www.skillsdirectory.com/",
+   "description": "查看社区推荐的技能",
+   "icon": "/static/tools/ai-icons/7083b06a50d3377c27bb.webp",
+   "heat": 40
+  },
+  {
+   "id": "d8c4362786c235b2c492",
+   "category": "skills",
+   "name": "Skillsmp",
+   "url": "https://skillsmp.com/",
+   "description": "搜索开源技能",
+   "icon": "/static/tools/ai-icons/b87a677c8a56ec26caad.webp",
+   "heat": 40
+  },
+  {
+   "id": "d9ed9597061627f31475",
+   "category": "skills",
+   "name": "Skillstore",
+   "url": "https://skillstore.io/zh-hans",
+   "description": "浏览技能商店",
+   "icon": "/static/tools/ai-icons/ad5f7746c9c1ff02e473.webp",
+   "heat": 40
+  },
+  {
+   "id": "2678c0c3b01062d5d28c",
+   "category": "skills",
+   "name": "AI Templates",
+   "url": "https://www.aitmpl.com/skills",
+   "description": "复用智能体模板",
+   "icon": "/static/tools/ai-icons/9b617148ca83a5810c6d.webp",
+   "heat": 30
+  },
+  {
+   "id": "36f55daa764e14b27699",
+   "category": "skills",
+   "name": "AgentSkills",
+   "url": "https://agentskills.me/",
+   "description": "浏览第三方技能",
+   "icon": "/static/tools/ai-icons/8f77ebf1339be63a981f.webp",
+   "heat": 30
+  },
+  {
+   "id": "986e5735d46efa0a60a8",
+   "category": "skills",
+   "name": "Skillbox",
+   "url": "https://skill-box.zwtj.site/",
+   "description": "管理智能体技能",
+   "icon": "/static/tools/ai-icons/2222f9a9eb5238f76612.webp",
+   "heat": 20
   },
   {
    "id": "c387773359a6aa2fbbe5",
@@ -312,87 +307,26 @@
    "name": "Midjourney",
    "url": "https://www.midjourney.com/",
    "description": "用提示词生成图像",
-   "icon": "/static/tools/ai-icons/a4dd845505fdcc3f8d36.webp"
-  },
-  {
-   "id": "06097ae27b2b467fa323",
-   "category": "smart",
-   "name": "Stable Diffusion",
-   "url": "https://www.uisdc.com/stable-diffusion",
-   "description": "了解扩散模型与工作流",
-   "icon": "/static/tools/ai-icons/16424c96641fecc78249.webp"
-  },
-  {
-   "id": "c66fc93e5b336b6ce53f",
-   "category": "smart",
-   "name": "Civitai",
-   "url": "https://civitai.com/",
-   "description": "发现社区绘画模型",
-   "icon": "/static/tools/ai-icons/e9a40dd919697a24f200.webp"
-  },
-  {
-   "id": "904e0a86d67e637db4d2",
-   "category": "smart",
-   "name": "AI 绘画专题",
-   "url": "https://www.uisdc.com/tag/ai%E7%BB%98%E7%94%BB",
-   "description": "阅读 AI 绘画专题",
-   "icon": "/static/tools/ai-icons/2f821a4647a1200f1b0b.webp"
-  },
-  {
-   "id": "d65cb66e6e6fee3ee669",
-   "category": "smart",
-   "name": "NijiJourney",
-   "url": "https://nijijourney.com/zh/",
-   "description": "生成动漫风格图像",
-   "icon": "/static/tools/ai-icons/01fe63ee761eb0b616c2.webp"
-  },
-  {
-   "id": "fd8f16330bfab7282c44",
-   "category": "smart",
-   "name": "Dreamlike.art",
-   "url": "https://www.uisdc.com/dreamlike-art",
-   "description": "在线生成图像",
-   "icon": "/static/tools/ai-icons/e681c6959d1fcdff1e92.webp"
-  },
-  {
-   "id": "58a60a05cdfe154cf1fe",
-   "category": "smart",
-   "name": "NightCafe",
-   "url": "https://creator.nightcafe.studio/",
-   "description": "尝试不同艺术风格",
-   "icon": "/static/tools/ai-icons/7f85ae1dda68414cd66a.webp"
+   "icon": "/static/tools/ai-icons/a4dd845505fdcc3f8d36.webp",
+   "heat": 14089
   },
   {
    "id": "efaae802cc6467b6296a",
    "category": "smart",
-   "name": "DALL·E2",
-   "url": "https://openai.com/research/dall-e",
-   "description": "了解 DALL·E 图像生成",
-   "icon": "/static/tools/ai-icons/e926d6b3931214f89e50.webp"
+   "name": "DALL·E / GPT Image",
+   "url": "https://chatgpt.com/",
+   "description": "ChatGPT 内生成与编辑图像",
+   "icon": "/static/tools/ai-icons/642e5f3d577e66f08458.webp",
+   "heat": 10256
   },
   {
-   "id": "917c1d499645998d33bc",
+   "id": "1ba2fbd991a86046609c",
    "category": "smart",
-   "name": "Hugging Face",
-   "url": "https://huggingface.co/",
-   "description": "查找开源模型",
-   "icon": "/static/tools/ai-icons/0c02a055ac6c266658a7.webp"
-  },
-  {
-   "id": "2d4920e896f3810bac8f",
-   "category": "smart",
-   "name": "Dreamup",
-   "url": "https://www.dreamup.com/",
-   "description": "在 DeviantArt 创作图像",
-   "icon": "/static/tools/ai-icons/823377b0bf368afc2e86.webp"
-  },
-  {
-   "id": "dc8a0fb9b97e3c261738",
-   "category": "smart",
-   "name": "Lexica",
-   "url": "https://lexica.art/",
-   "description": "按图像搜索绘画提示词",
-   "icon": "/static/tools/ai-icons/ff58e6bd02e91db1b845.webp"
+   "name": "FLUX",
+   "url": "https://blackforestlabs.ai/",
+   "description": "了解 FLUX 图像模型",
+   "icon": "/static/tools/ai-icons/d56f995f373c24afc847.webp",
+   "heat": 7368
   },
   {
    "id": "3be34d7c30be51ab24a6",
@@ -400,31 +334,26 @@
    "name": "Leonardo",
    "url": "https://leonardo.ai/",
    "description": "训练模型与创作素材",
-   "icon": "/static/tools/ai-icons/b2cdb5c31364596a49ab.webp"
+   "icon": "/static/tools/ai-icons/b2cdb5c31364596a49ab.webp",
+   "heat": 6364
   },
   {
-   "id": "ddfe66f36c7fef1c9143",
+   "id": "917c1d499645998d33bc",
    "category": "smart",
-   "name": "DreamStudio",
-   "url": "https://www.uisdc.com/dreamstudio",
-   "description": "使用扩散模型生图",
-   "icon": "/static/tools/ai-icons/101cbd9358c3443abfd4.webp"
+   "name": "Hugging Face",
+   "url": "https://huggingface.co/",
+   "description": "查找开源模型",
+   "icon": "/static/tools/ai-icons/18309bb2674782cd0f2d.webp",
+   "heat": 5000
   },
   {
-   "id": "27b1db47888f868322b1",
+   "id": "06097ae27b2b467fa323",
    "category": "smart",
-   "name": "liblib 哩布哩布",
-   "url": "https://www.liblib.art/",
-   "description": "查找模型和工作流",
-   "icon": "/static/tools/ai-icons/25de795eb598014ed361.webp"
-  },
-  {
-   "id": "cb5df399c4c394fda9cf",
-   "category": "smart",
-   "name": "Fooocus",
-   "url": "https://www.uisdc.com/fooocus-2-0",
-   "description": "使用 Fooocus 绘画",
-   "icon": "/static/tools/ai-icons/21a3645c48fa9ba9d35c.webp"
+   "name": "Stable Diffusion",
+   "url": "https://stability.ai/stable-image",
+   "description": "了解扩散模型与工作流",
+   "icon": "/static/tools/ai-icons/16424c96641fecc78249.webp",
+   "heat": 2279
   },
   {
    "id": "db08756ece04ad075f67",
@@ -432,7 +361,8 @@
    "name": "Adobe Firefly",
    "url": "https://firefly.adobe.com/",
    "description": "使用 Adobe 生成式工具",
-   "icon": "/static/tools/ai-icons/3707c306d5cb6c14d53a.webp"
+   "icon": "/static/tools/ai-icons/3707c306d5cb6c14d53a.webp",
+   "heat": 1687
   },
   {
    "id": "56f445f113e2807ebb67",
@@ -440,63 +370,26 @@
    "name": "CanvaAi",
    "url": "https://www.canva.cn/",
    "description": "在 Canva 中生成图像",
-   "icon": "/static/tools/ai-icons/0553b4a08fed3869ed3e.webp"
+   "icon": "/static/tools/ai-icons/0553b4a08fed3869ed3e.webp",
+   "heat": 800
   },
   {
-   "id": "c97e12e9638ef78b9518",
+   "id": "d688340d1b45ed5ad2c2",
    "category": "smart",
-   "name": "TensorArt",
-   "url": "https://tensor.art/",
-   "description": "浏览绘画模型社区",
-   "icon": "/static/tools/ai-icons/f6204c9b9b497de5fab7.webp"
+   "name": "Ideogram",
+   "description": "擅长文字排版的图像生成",
+   "url": "https://ideogram.ai/",
+   "icon": "/static/tools/ai-icons/5ebf4ea5173a28b6c420.webp",
+   "heat": 660
   },
   {
-   "id": "76fd008c3cd3859e3577",
+   "id": "c66fc93e5b336b6ce53f",
    "category": "smart",
-   "name": "无界 AI",
-   "url": "https://www.wujieai.com/",
-   "description": "分享 AI 画作",
-   "icon": "/static/tools/ai-icons/b56145ce3a60e07f0b2e.webp"
-  },
-  {
-   "id": "b9f052193edfefd8777b",
-   "category": "smart",
-   "name": "Whisk",
-   "url": "https://labs.google/fx/zh/tools/whisk",
-   "description": "组合参考图探索画面",
-   "icon": "/static/tools/ai-icons/7e364dd8a7d304c5f7c1.webp"
-  },
-  {
-   "id": "86be224a991820a65766",
-   "category": "smart",
-   "name": "Bing Image Creator",
-   "url": "https://cn.bing.com/create",
-   "description": "在 Bing 中生成图像",
-   "icon": "/static/tools/ai-icons/051bc222f5ba566afda6.webp"
-  },
-  {
-   "id": "1438eee788ccb3d68dd5",
-   "category": "smart",
-   "name": "OpenArt",
-   "url": "https://openart.ai/home",
-   "description": "训练自定义图像模型",
-   "icon": "/static/tools/ai-icons/49325f3f9bdc4707fc86.webp"
-  },
-  {
-   "id": "83be2f5ba8d82035e05b",
-   "category": "smart",
-   "name": "illostration",
-   "url": "https://www.illostration.com/",
-   "description": "制作风格化插画",
-   "icon": "/static/tools/ai-icons/9760a3536faa15b7b7b0.webp"
-  },
-  {
-   "id": "f0ada8ffa57e56070044",
-   "category": "smart",
-   "name": "AISEO ART",
-   "url": "https://art.aiseo.ai/",
-   "description": "按风格生成图像",
-   "icon": "/static/tools/ai-icons/8e32d96a6aa45d7691af.webp"
+   "name": "Civitai",
+   "url": "https://civitai.com/",
+   "description": "发现社区绘画模型",
+   "icon": "/static/tools/ai-icons/e9a40dd919697a24f200.webp",
+   "heat": 400
   },
   {
    "id": "09b123f54737c00e85fd",
@@ -504,7 +397,98 @@
    "name": "Imagine with Meta",
    "url": "https://imagine.meta.com/",
    "description": "使用 Meta 图像生成",
-   "icon": "/static/tools/ai-icons/17b52e93252628ca2787.webp"
+   "icon": "/static/tools/ai-icons/17b52e93252628ca2787.webp",
+   "heat": 400
+  },
+  {
+   "id": "d65cb66e6e6fee3ee669",
+   "category": "smart",
+   "name": "NijiJourney",
+   "url": "https://nijijourney.com/zh/",
+   "description": "生成动漫风格图像",
+   "icon": "/static/tools/ai-icons/01fe63ee761eb0b616c2.webp",
+   "heat": 300
+  },
+  {
+   "id": "ddfe66f36c7fef1c9143",
+   "category": "smart",
+   "name": "DreamStudio",
+   "url": "https://dreamstudio.ai/",
+   "description": "使用扩散模型生图",
+   "icon": "/static/tools/ai-icons/101cbd9358c3443abfd4.webp",
+   "heat": 285
+  },
+  {
+   "id": "86be224a991820a65766",
+   "category": "smart",
+   "name": "Bing Image Creator",
+   "url": "https://cn.bing.com/create",
+   "description": "在 Bing 中生成图像",
+   "icon": "/static/tools/ai-icons/051bc222f5ba566afda6.webp",
+   "heat": 200
+  },
+  {
+   "id": "cdb5e0da28c858c641ab",
+   "category": "smart",
+   "name": "Nano Banana",
+   "url": "https://aistudio.google.com/prompts/new_chat",
+   "description": "用文字或参考图生成图像",
+   "icon": "/static/tools/ai-icons/b1a69332d035c3bfde37.webp",
+   "heat": 200
+  },
+  {
+   "id": "1438eee788ccb3d68dd5",
+   "category": "smart",
+   "name": "OpenArt",
+   "url": "https://openart.ai/home",
+   "description": "训练自定义图像模型",
+   "icon": "/static/tools/ai-icons/49325f3f9bdc4707fc86.webp",
+   "heat": 180
+  },
+  {
+   "id": "b9f052193edfefd8777b",
+   "category": "smart",
+   "name": "Whisk",
+   "url": "https://labs.google/fx/zh/tools/whisk",
+   "description": "组合参考图探索画面",
+   "icon": "/static/tools/ai-icons/7e364dd8a7d304c5f7c1.webp",
+   "heat": 150
+  },
+  {
+   "id": "27b1db47888f868322b1",
+   "category": "smart",
+   "name": "liblib 哩布哩布",
+   "url": "https://www.liblib.art/",
+   "description": "查找模型和工作流",
+   "icon": "/static/tools/ai-icons/25de795eb598014ed361.webp",
+   "heat": 150
+  },
+  {
+   "id": "76fd008c3cd3859e3577",
+   "category": "smart",
+   "name": "无界 AI",
+   "url": "https://www.wujieai.com/",
+   "description": "分享 AI 画作",
+   "icon": "/static/tools/ai-icons/b56145ce3a60e07f0b2e.webp",
+   "heat": 120
+  },
+  {
+   "id": "c97e12e9638ef78b9518",
+   "category": "smart",
+   "name": "TensorArt",
+   "url": "https://tensor.art/",
+   "description": "浏览绘画模型社区",
+   "icon": "/static/tools/ai-icons/f6204c9b9b497de5fab7.webp",
+   "heat": 100
+  },
+  {
+   "id": "58a60a05cdfe154cf1fe",
+   "category": "smart",
+   "name": "NightCafe",
+   "url": "https://creator.nightcafe.studio/",
+   "description": "尝试不同艺术风格",
+   "icon": "/static/tools/ai-icons/7f85ae1dda68414cd66a.webp",
+   "heat": 80
   },
   {
    "id": "79a038ef2fba7a2584bf",
@@ -512,15 +496,17 @@
    "name": "星流 AI",
    "url": "https://www.xingliu.art/",
    "description": "生成高清视觉素材",
-   "icon": "/static/tools/ai-icons/63aa8bfccdd6e253e2c4.webp"
+   "icon": "/static/tools/ai-icons/63aa8bfccdd6e253e2c4.webp",
+   "heat": 80
   },
   {
-   "id": "8e861210a3acfa527cfb",
+   "id": "dc8a0fb9b97e3c261738",
    "category": "smart",
-   "name": "Pikzels",
-   "url": "https://pikzels.com/",
-   "description": "设计视频缩略图",
-   "icon": "/static/tools/ai-icons/0aeb6e2d28fc540f15bc.webp"
+   "name": "Lexica",
+   "url": "https://lexica.art/",
+   "description": "按图像搜索绘画提示词",
+   "icon": "/static/tools/ai-icons/ff58e6bd02e91db1b845.webp",
+   "heat": 60
   },
   {
    "id": "3e5b672e8e80c917ef28",
@@ -528,15 +514,53 @@
    "name": "Artbreeder",
    "url": "https://www.artbreeder.com/browse",
    "description": "混合和演化图像",
-   "icon": "/static/tools/ai-icons/4741fdb9f44796d95319.webp"
+   "icon": "/static/tools/ai-icons/4741fdb9f44796d95319.webp",
+   "heat": 40
   },
   {
-   "id": "68be5b3c0ca9a35da63a",
-   "category": "smart2",
-   "name": "DeepSeek",
-   "url": "https://www.deepseek.com/",
-   "description": "对话、代码与推理",
-   "icon": "/static/tools/ai-icons/0ce0b2e41a0f18116273.webp"
+   "id": "8e861210a3acfa527cfb",
+   "category": "smart",
+   "name": "Pikzels",
+   "url": "https://pikzels.com/",
+   "description": "设计视频缩略图",
+   "icon": "/static/tools/ai-icons/0aeb6e2d28fc540f15bc.webp",
+   "heat": 40
+  },
+  {
+   "id": "2d4920e896f3810bac8f",
+   "category": "smart",
+   "name": "Dreamup",
+   "url": "https://www.dreamup.com/",
+   "description": "在 DeviantArt 创作图像",
+   "icon": "/static/tools/ai-icons/823377b0bf368afc2e86.webp",
+   "heat": 30
+  },
+  {
+   "id": "83be2f5ba8d82035e05b",
+   "category": "smart",
+   "name": "illostration",
+   "url": "https://www.illostration.com/",
+   "description": "制作风格化插画",
+   "icon": "/static/tools/ai-icons/9760a3536faa15b7b7b0.webp",
+   "heat": 30
+  },
+  {
+   "id": "f0ada8ffa57e56070044",
+   "category": "smart",
+   "name": "AISEO ART",
+   "url": "https://art.aiseo.ai/",
+   "description": "按风格生成图像",
+   "icon": "/static/tools/ai-icons/8e32d96a6aa45d7691af.webp",
+   "heat": 20
+  },
+  {
+   "id": "cb5df399c4c394fda9cf",
+   "category": "smart",
+   "name": "Fooocus",
+   "url": "https://github.com/lllyasviel/Fooocus",
+   "description": "使用 Fooocus 绘画",
+   "icon": "/static/tools/ai-icons/21a3645c48fa9ba9d35c.webp",
+   "heat": 10
   },
   {
    "id": "c5fc3b029a24b1b5071d",
@@ -544,66 +568,8 @@
    "name": "ChatGPT",
    "url": "https://chat.openai.com",
    "description": "写作和问答助手",
-   "icon": "/static/tools/ai-icons/bc81649f3a8db0be4d47.webp"
-  },
-  {
-   "id": "caee1ac8e20924a827ba",
-   "category": "smart2",
-   "name": "Gemini",
-   "url": "https://gemini.google.com/app",
-   "description": "使用 Google 多模态助手",
-   "icon": "/static/tools/ai-icons/3480a85a3646a2fe1f53.webp",
-   "previousIds": [
-    "ec0c854bc1db52246bbe"
-   ]
-  },
-  {
-   "id": "b2c33f645a89d6aa6e59",
-   "category": "smart2",
-   "name": "文心一言",
-   "url": "https://yiyan.baidu.com/?utm_source=uisdc",
-   "description": "与百度文心对话",
-   "icon": "/static/tools/ai-icons/d459173e69c030a838ea.webp"
-  },
-  {
-   "id": "65c0824e49696b09dda3",
-   "category": "smart2",
-   "name": "NewBing",
-   "url": "https://www.bing.com/new",
-   "description": "通过 Bing 搜索与问答",
-   "icon": "/static/tools/ai-icons/3aa1c7c62ed6b790a882.webp"
-  },
-  {
-   "id": "404a8b36ca126b6aeb79",
-   "category": "smart2",
-   "name": "Anthropic",
-   "url": "https://www.anthropic.com/",
-   "description": "了解 Claude 产品和研究",
-   "icon": "/static/tools/ai-icons/774f53745a8ea783d755.webp"
-  },
-  {
-   "id": "533ea708c08b87f7b40a",
-   "category": "smart2",
-   "name": "Grok AI",
-   "url": "https://grok.com/",
-   "description": "使用 Grok 问答",
-   "icon": "/static/tools/ai-icons/00dad36914954b8fef76.webp"
-  },
-  {
-   "id": "303971e8a8980da8cdde",
-   "category": "smart2",
-   "name": "千问",
-   "url": "https://www.qianwen.com/",
-   "description": "使用通义千问助手",
-   "icon": "/static/tools/ai-icons/9eaa68a9f076b0884cb0.webp"
-  },
-  {
-   "id": "9532f6b22ffbf40ee108",
-   "category": "smart2",
-   "name": "Kimi.ai",
-   "url": "https://kimi.moonshot.cn/",
-   "description": "阅读长文档并提问",
-   "icon": "/static/tools/ai-icons/72270bdd3ccf9e361489.webp"
+   "icon": "/static/tools/ai-icons/1281b27a86430cc1ac64.webp",
+   "heat": 596573
   },
   {
    "id": "fdc5535da491d84f0ffa",
@@ -611,7 +577,117 @@
    "name": "Claude",
    "url": "https://claude.com/product/overview",
    "description": "分析文档与协助写作",
-   "icon": "/static/tools/ai-icons/7e9ed04704b056d903f8.webp"
+   "icon": "/static/tools/ai-icons/1bfad6877e10d12eac07.webp",
+   "heat": 154696
+  },
+  {
+   "id": "68be5b3c0ca9a35da63a",
+   "category": "smart2",
+   "name": "DeepSeek",
+   "url": "https://www.deepseek.com/",
+   "description": "对话、代码与推理",
+   "icon": "/static/tools/ai-icons/ea8747923a2d0ff19fd9.webp",
+   "aliases": [
+    "深度求索"
+   ],
+   "heat": 89893
+  },
+  {
+   "id": "533ea708c08b87f7b40a",
+   "category": "smart2",
+   "name": "Grok AI",
+   "url": "https://grok.com/",
+   "description": "使用 Grok 问答",
+   "icon": "/static/tools/ai-icons/08330a9b982a54c9068c.webp",
+   "aliases": [
+    "Grok"
+   ],
+   "heat": 80000
+  },
+  {
+   "id": "caee1ac8e20924a827ba",
+   "category": "smart2",
+   "name": "Gemini",
+   "url": "https://gemini.google.com/app",
+   "description": "使用 Google 多模态助手",
+   "icon": "/static/tools/ai-icons/2254cadef3e6080c73b8.webp",
+   "previousIds": [
+    "ec0c854bc1db52246bbe"
+   ],
+   "heat": 58307
+  },
+  {
+   "id": "303971e8a8980da8cdde",
+   "category": "smart2",
+   "name": "千问",
+   "url": "https://www.qianwen.com/",
+   "description": "使用通义千问助手",
+   "icon": "/static/tools/ai-icons/29b574acdfd3a7fc842a.webp",
+   "aliases": [
+    "Qwen",
+    "通义千问"
+   ],
+   "heat": 36293
+  },
+  {
+   "id": "9532f6b22ffbf40ee108",
+   "category": "smart2",
+   "name": "Kimi.ai",
+   "url": "https://kimi.moonshot.cn/",
+   "description": "阅读长文档并提问",
+   "icon": "/static/tools/ai-icons/19b1f4f36ca790ec0dc4.webp",
+   "aliases": [
+    "Kimi"
+   ],
+   "heat": 9655
+  },
+  {
+   "id": "c2b866e1493def437c0e",
+   "category": "smart2",
+   "name": "扣子 / Coze",
+   "description": "搭建对话与工作流智能体",
+   "url": "https://www.coze.com/",
+   "icon": "/static/tools/ai-icons/e44570812098f58d12c6.webp",
+   "heat": 7138
+  },
+  {
+   "id": "6b35b6735224b104e047",
+   "category": "smart2",
+   "name": "Perplexity",
+   "description": "带引用的 AI 搜索问答",
+   "url": "https://www.perplexity.ai/",
+   "icon": "/static/tools/ai-icons/60d19d257f00a4ff9d74.webp",
+   "heat": 6846
+  },
+  {
+   "id": "65c0824e49696b09dda3",
+   "category": "smart2",
+   "name": "Microsoft Copilot",
+   "url": "https://copilot.microsoft.com/",
+   "description": "搜索与办公助手（原 New Bing）",
+   "icon": "/static/tools/ai-icons/8b4dbeffb7d28ef666ab.webp",
+   "aliases": [
+    "NewBing"
+   ],
+   "heat": 2117
+  },
+  {
+   "id": "0863af989ce86015044f",
+   "category": "smart2",
+   "name": "Poe",
+   "description": "聚合多模型对话",
+   "url": "https://poe.com/",
+   "icon": "/static/tools/ai-icons/c302d5c5d88ca5c6957a.webp",
+   "heat": 1621
+  },
+  {
+   "id": "b2c33f645a89d6aa6e59",
+   "category": "smart2",
+   "name": "文心一言",
+   "url": "https://yiyan.baidu.com/?utm_source=uisdc",
+   "description": "与百度文心对话",
+   "icon": "/static/tools/ai-icons/d459173e69c030a838ea.webp",
+   "heat": 343
   },
   {
    "id": "97c606429975141b1885",
@@ -619,119 +695,30 @@
    "name": "腾讯元宝",
    "url": "https://yuanbao.tencent.com/",
    "description": "使用腾讯智能助手",
-   "icon": "/static/tools/ai-icons/895803ca1705c23ca1ea.webp"
+   "icon": "/static/tools/ai-icons/895803ca1705c23ca1ea.webp",
+   "heat": 260
   },
   {
-   "id": "054cd447366a39e06bac",
-   "category": "smart4",
-   "name": "Snack Prompt",
-   "url": "https://snackprompt.com/",
-   "description": "探索社区提示词",
-   "icon": "/static/tools/ai-icons/761831ab15f7dab443bd.webp"
+   "id": "52c79bfcd5626d22d84c",
+   "category": "smart2",
+   "name": "Z.ai · GLM",
+   "description": "使用智谱 GLM 模型对话、推理和处理文件",
+   "url": "https://chat.z.ai/",
+   "icon": "/static/tools/ai-icons/b95c15fe2f30401a5ec9.webp",
+   "aliases": [
+    "Z-GLM",
+    "ZGLM",
+    "智谱",
+    "智谱 GLM"
+   ]
   },
   {
-   "id": "1e5922ddf0dbb09701cb",
-   "category": "smart4",
-   "name": "Midlibrary",
-   "url": "https://midlibrary.io/",
-   "description": "查找 Midjourney 风格参考",
-   "icon": "/static/tools/ai-icons/85fa0acdce5174d9c08b.webp"
-  },
-  {
-   "id": "cb79a076092054fb42dc",
-   "category": "smart4",
-   "name": "Promptalot",
-   "url": "https://promptalot.com/",
-   "description": "辅助编写 MJ 提示词",
-   "icon": "/static/tools/ai-icons/2a3929716927770b4bcb.webp"
-  },
-  {
-   "id": "3c3789d5637e20d3f17d",
-   "category": "smart4",
-   "name": "Prompt Hunt",
-   "url": "https://www.prompthunt.com/explore",
-   "description": "按主题浏览绘画指令",
-   "icon": "/static/tools/ai-icons/658ef5dbd661b0a3b299.webp"
-  },
-  {
-   "id": "b542d9603fa058c55f56",
-   "category": "smart4",
-   "name": "PromptBase",
-   "url": "https://promptbase.com/",
-   "description": "浏览提示词市场",
-   "icon": "/static/tools/ai-icons/4b754f3376ec313eefcd.webp"
-  },
-  {
-   "id": "f800cc645b0d24257602",
-   "category": "smart4",
-   "name": "MJ Prompt Tool",
-   "url": "https://prompt.noonshot.com/",
-   "description": "构建 Midjourney 绘画指令",
-   "icon": "/static/tools/ai-icons/c86f86dcda59ff407c62.webp"
-  },
-  {
-   "id": "975d3b6b5d4bedf581b0",
-   "category": "smart4",
-   "name": "Flowgpt",
-   "url": "https://flowgpt.com/",
-   "description": "发现与分享对话提示词",
-   "icon": "/static/tools/ai-icons/86378f53b5df293e9143.webp"
-  },
-  {
-   "id": "5f86f0fa2c2756ea0fa4",
-   "category": "smart4",
-   "name": "Learning Prompt",
-   "url": "https://learningprompt.wiki/",
-   "description": "学习提示词写法",
-   "icon": "/static/tools/ai-icons/452b5678af44d8588392.webp"
-  },
-  {
-   "id": "62c8aa4ebf897cb37ee0",
-   "category": "smart4",
-   "name": "PromptHero",
-   "url": "https://prompthero.com/",
-   "description": "查找绘画提示词示例",
-   "icon": "/static/tools/ai-icons/5768ab331cb840f3aa64.webp"
-  },
-  {
-   "id": "15465273e89165043a3a",
-   "category": "smart4",
-   "name": "AIWIND",
-   "url": "https://www.aiwind.org/",
-   "description": "探索多模态创作指令",
-   "icon": "/static/tools/ai-icons/177532a1bddad60db48a.webp"
-  },
-  {
-   "id": "d3e3834fc1c9c1a3449f",
-   "category": "smart4",
-   "name": "PromptoMania",
-   "url": "https://promptomania.com/",
-   "description": "构建绘画提示词",
-   "icon": "/static/tools/ai-icons/8f272026e31780be0e7d.webp"
-  },
-  {
-   "id": "6ccb4d6ffaa839f4f437",
-   "category": "smart4",
-   "name": "LIB.KALOS.ART",
-   "url": "https://lib.kalos.art/",
-   "description": "研究艺术风格与流派",
-   "icon": "/static/tools/ai-icons/a9401bef9a7ccdbb1437.webp"
-  },
-  {
-   "id": "177d7841ccbf8fc94c6b",
-   "category": "smart4",
-   "name": "PublicPrompts",
-   "url": "https://publicprompts.art/",
-   "description": "参考模型与画面风格",
-   "icon": "/static/tools/ai-icons/0c3bafaf7dad7dc287ec.webp"
-  },
-  {
-   "id": "9e7946af56ca4ea49e69",
-   "category": "smart4",
-   "name": "Catjourney",
-   "url": "https://catjourney.life/",
-   "description": "浏览 MJ 风格参考",
-   "icon": "/static/tools/ai-icons/b1f9e899e80056d2f647.webp"
+   "id": "5bbd2dd019a9cb5bca39",
+   "category": "smart2",
+   "name": "Xiaomi MiMo",
+   "description": "了解并使用小米 MiMo 大模型",
+   "url": "https://mimo.xiaomi.com/",
+   "icon": "/static/tools/ai-icons/6f7dcc46bf7f4ce26975.webp"
   },
   {
    "id": "ee2af4ce5f35c266e5be",
@@ -739,7 +726,134 @@
    "name": "Openart",
    "url": "https://openart.ai/home",
    "description": "查找图像创作指令",
-   "icon": "/static/tools/ai-icons/1c133be5e177bcb22849.webp"
+   "icon": "/static/tools/ai-icons/1c133be5e177bcb22849.webp",
+   "heat": 50
+  },
+  {
+   "id": "b542d9603fa058c55f56",
+   "category": "smart4",
+   "name": "PromptBase",
+   "url": "https://promptbase.com/",
+   "description": "浏览提示词市场",
+   "icon": "/static/tools/ai-icons/4b754f3376ec313eefcd.webp",
+   "heat": 40
+  },
+  {
+   "id": "1e5922ddf0dbb09701cb",
+   "category": "smart4",
+   "name": "Midlibrary",
+   "url": "https://midlibrary.io/",
+   "description": "查找 Midjourney 风格参考",
+   "icon": "/static/tools/ai-icons/85fa0acdce5174d9c08b.webp",
+   "heat": 30
+  },
+  {
+   "id": "975d3b6b5d4bedf581b0",
+   "category": "smart4",
+   "name": "Flowgpt",
+   "url": "https://flowgpt.com/",
+   "description": "发现与分享对话提示词",
+   "icon": "/static/tools/ai-icons/86378f53b5df293e9143.webp",
+   "heat": 30
+  },
+  {
+   "id": "054cd447366a39e06bac",
+   "category": "smart4",
+   "name": "Snack Prompt",
+   "url": "https://snackprompt.com/",
+   "description": "探索社区提示词",
+   "icon": "/static/tools/ai-icons/761831ab15f7dab443bd.webp",
+   "heat": 20
+  },
+  {
+   "id": "62c8aa4ebf897cb37ee0",
+   "category": "smart4",
+   "name": "PromptHero",
+   "url": "https://prompthero.com/",
+   "description": "查找绘画提示词示例",
+   "icon": "/static/tools/ai-icons/5768ab331cb840f3aa64.webp",
+   "heat": 20
+  },
+  {
+   "id": "cb79a076092054fb42dc",
+   "category": "smart4",
+   "name": "Promptalot",
+   "url": "https://promptalot.com/",
+   "description": "辅助编写 MJ 提示词",
+   "icon": "/static/tools/ai-icons/2a3929716927770b4bcb.webp",
+   "heat": 10
+  },
+  {
+   "id": "3c3789d5637e20d3f17d",
+   "category": "smart4",
+   "name": "Prompt Hunt",
+   "url": "https://www.prompthunt.com/explore",
+   "description": "按主题浏览绘画指令",
+   "icon": "/static/tools/ai-icons/658ef5dbd661b0a3b299.webp",
+   "heat": 10
+  },
+  {
+   "id": "f800cc645b0d24257602",
+   "category": "smart4",
+   "name": "MJ Prompt Tool",
+   "url": "https://prompt.noonshot.com/",
+   "description": "构建 Midjourney 绘画指令",
+   "icon": "/static/tools/ai-icons/c86f86dcda59ff407c62.webp",
+   "heat": 10
+  },
+  {
+   "id": "5f86f0fa2c2756ea0fa4",
+   "category": "smart4",
+   "name": "Learning Prompt",
+   "url": "https://learningprompt.wiki/",
+   "description": "学习提示词写法",
+   "icon": "/static/tools/ai-icons/452b5678af44d8588392.webp",
+   "heat": 10
+  },
+  {
+   "id": "15465273e89165043a3a",
+   "category": "smart4",
+   "name": "AIWIND",
+   "url": "https://www.aiwind.org/",
+   "description": "探索多模态创作指令",
+   "icon": "/static/tools/ai-icons/177532a1bddad60db48a.webp",
+   "heat": 10
+  },
+  {
+   "id": "d3e3834fc1c9c1a3449f",
+   "category": "smart4",
+   "name": "PromptoMania",
+   "url": "https://promptomania.com/",
+   "description": "构建绘画提示词",
+   "icon": "/static/tools/ai-icons/8f272026e31780be0e7d.webp",
+   "heat": 10
+  },
+  {
+   "id": "6ccb4d6ffaa839f4f437",
+   "category": "smart4",
+   "name": "LIB.KALOS.ART",
+   "url": "https://lib.kalos.art/",
+   "description": "研究艺术风格与流派",
+   "icon": "/static/tools/ai-icons/a9401bef9a7ccdbb1437.webp",
+   "heat": 10
+  },
+  {
+   "id": "177d7841ccbf8fc94c6b",
+   "category": "smart4",
+   "name": "PublicPrompts",
+   "url": "https://publicprompts.art/",
+   "description": "参考模型与画面风格",
+   "icon": "/static/tools/ai-icons/0c3bafaf7dad7dc287ec.webp",
+   "heat": 10
+  },
+  {
+   "id": "9e7946af56ca4ea49e69",
+   "category": "smart4",
+   "name": "Catjourney",
+   "url": "https://catjourney.life/",
+   "description": "浏览 MJ 风格参考",
+   "icon": "/static/tools/ai-icons/b1f9e899e80056d2f647.webp",
+   "heat": 10
   },
   {
    "id": "555226bd28678f065060",
@@ -747,7 +861,8 @@
    "name": "Content at scale",
    "url": "https://contentatscale.ai/ai-prompt-library/",
    "description": "查找写作与对话模板",
-   "icon": "/static/tools/ai-icons/59b4f2bcbd8297e5fcf1.webp"
+   "icon": "/static/tools/ai-icons/59b4f2bcbd8297e5fcf1.webp",
+   "heat": 10
   },
   {
    "id": "81424d3b3da7e63c41f8",
@@ -755,7 +870,8 @@
    "name": "AI Valley",
    "url": "https://aivalley.ai/prompt/",
    "description": "浏览工具与提示词目录",
-   "icon": "/static/tools/ai-icons/6ab3db7e7d3ac36a6fb2.webp"
+   "icon": "/static/tools/ai-icons/6ab3db7e7d3ac36a6fb2.webp",
+   "heat": 10
   },
   {
    "id": "76e6b1f4f7fe0d7d7286",
@@ -763,31 +879,17 @@
    "name": "Krea",
    "url": "https://www.krea.ai/",
    "description": "生成和增强图像",
-   "icon": "/static/tools/ai-icons/adf59d236230c607ec38.webp"
+   "icon": "/static/tools/ai-icons/adf59d236230c607ec38.webp",
+   "heat": 500
   },
   {
-   "id": "687cae44bc8c8f1ee0a2",
+   "id": "7f7eb3748a4c65d67547",
    "category": "smart9",
-   "name": "Booltool",
-   "url": "https://booltool.boolv.tech/home",
-   "description": "在线编辑与修整图片",
-   "icon": "/static/tools/ai-icons/585e9ca3a96433ce7834.webp"
-  },
-  {
-   "id": "d489ccf86474affc0c9c",
-   "category": "smart9",
-   "name": "Arc Lab",
-   "url": "https://arc.tencent.com/zh/ai-demos/faceRestoration",
-   "description": "体验腾讯图像研究工具",
-   "icon": "/static/tools/ai-icons/9c5c46800dec13e1ee7f.webp"
-  },
-  {
-   "id": "2a6168877320ba15eeb6",
-   "category": "smart9",
-   "name": "PicWish",
-   "url": "https://picwish.com/",
-   "description": "处理抠图和图像格式",
-   "icon": "/static/tools/ai-icons/6a0ddfaabc414f5552be.webp"
+   "name": "Remove.bg",
+   "description": "一键抠图去背景",
+   "url": "https://www.remove.bg/",
+   "icon": "/static/tools/ai-icons/d2a0eda3b5817b30e9b2.webp",
+   "heat": 174
   },
   {
    "id": "06484c35766f09b0d89f",
@@ -795,79 +897,8 @@
    "name": "Upscayl",
    "url": "https://www.upscayl.org/",
    "description": "放大位图并增强细节",
-   "icon": "/static/tools/ai-icons/7fb1c99d5bfef5d3076f.webp"
-  },
-  {
-   "id": "d42f59eaa5dd3eb70d69",
-   "category": "smart9",
-   "name": "Palette",
-   "url": "https://palette.fm/",
-   "description": "为黑白照片上色",
-   "icon": "/static/tools/ai-icons/9002c3e16e92ce38dc7c.webp"
-  },
-  {
-   "id": "238868112c1f435297d1",
-   "category": "smart9",
-   "name": "Restorephoto",
-   "url": "https://www.restorephotos.io/",
-   "description": "修复老照片人像",
-   "icon": "/static/tools/ai-icons/6412e81990bc99d8c269.webp"
-  },
-  {
-   "id": "6f01d86fbee77a99cc87",
-   "category": "smart9",
-   "name": "美图 AI 开放平台",
-   "url": "https://ai.meitu.com/index/",
-   "description": "使用美图影像接口",
-   "icon": "/static/tools/ai-icons/8aecf224a82644bb36d7.webp"
-  },
-  {
-   "id": "5339c77e3455a3865fd6",
-   "category": "smart9",
-   "name": "MagicStudio",
-   "url": "https://magicstudio.com/zh",
-   "description": "在线处理与编辑图片",
-   "icon": "/static/tools/ai-icons/0a7765b6f2abb7e5695e.webp"
-  },
-  {
-   "id": "3263372e5c4fb491ccec",
-   "category": "smart9",
-   "name": "CG Faces",
-   "url": "https://cgfaces.com/en",
-   "description": "查找合成人像素材",
-   "icon": "/static/tools/ai-icons/1bc89202126e0851dd8d.webp"
-  },
-  {
-   "id": "2654c2f1f800d3cdd57b",
-   "category": "smart9",
-   "name": "Designify",
-   "url": "https://www.designify.com/",
-   "description": "抠图与商品图合成",
-   "icon": "/static/tools/ai-icons/aa7b9153ac5a5997b23e.webp"
-  },
-  {
-   "id": "9183fb75b3274fb8e36c",
-   "category": "smart9",
-   "name": "美图云修",
-   "url": "https://yunxiu.meitu.com/home/",
-   "description": "商业人像后期",
-   "icon": "/static/tools/ai-icons/ab85ab881f4f3003808b.webp"
-  },
-  {
-   "id": "323a72ca84f3847c1ec2",
-   "category": "smart9",
-   "name": "Hama",
-   "url": "https://www.hama.app/zh",
-   "description": "擦除画面中的物体",
-   "icon": "/static/tools/ai-icons/a0d9f7e0d3a2703db63b.webp"
-  },
-  {
-   "id": "cfe5a4f5c87cb8bdf36f",
-   "category": "smart9",
-   "name": "BgSub",
-   "url": "https://bgsub.cn/webapp/",
-   "description": "替换图片背景",
-   "icon": "/static/tools/ai-icons/44ed2647c25d2be1a8ee.webp"
+   "icon": "/static/tools/ai-icons/7fb1c99d5bfef5d3076f.webp",
+   "heat": 150
   },
   {
    "id": "6d04464cf7cc79a9715b",
@@ -875,31 +906,26 @@
    "name": "Vectorizer",
    "url": "https://vectorizer.ai/",
    "description": "把位图转成矢量图",
-   "icon": "/static/tools/ai-icons/23ae69c6fb7f7c8b61ce.webp"
+   "icon": "/static/tools/ai-icons/23ae69c6fb7f7c8b61ce.webp",
+   "heat": 130
   },
   {
-   "id": "9c8c269a41103e84080a",
+   "id": "2a6168877320ba15eeb6",
    "category": "smart9",
-   "name": "清图",
-   "url": "https://qingtu.cn/",
-   "description": "在线修复画质",
-   "icon": "/static/tools/ai-icons/34fe825124d034176500.webp"
+   "name": "PicWish",
+   "url": "https://picwish.com/",
+   "description": "处理抠图和图像格式",
+   "icon": "/static/tools/ai-icons/6a0ddfaabc414f5552be.webp",
+   "heat": 80
   },
   {
-   "id": "4131cbc68520e3b99362",
+   "id": "5339c77e3455a3865fd6",
    "category": "smart9",
-   "name": "Pixian AI",
-   "url": "https://pixian.ai/",
-   "description": "分离主体与背景",
-   "icon": "/static/tools/ai-icons/c2d5825cabd320e1e1de.webp"
-  },
-  {
-   "id": "6df0011de00f91c547f4",
-   "category": "smart9",
-   "name": "Tracejourney",
-   "url": "https://www.tracejourney.com/",
-   "description": "转换图像为矢量素材",
-   "icon": "/static/tools/ai-icons/61d6b25fe0759f352760.webp"
+   "name": "MagicStudio",
+   "url": "https://magicstudio.com/zh",
+   "description": "在线处理与编辑图片",
+   "icon": "/static/tools/ai-icons/0a7765b6f2abb7e5695e.webp",
+   "heat": 60
   },
   {
    "id": "1f6c79ff6a4d2d838147",
@@ -907,7 +933,8 @@
    "name": "像素蛋糕",
    "url": "https://www.pixcakeai.com/",
    "description": "摄影人像修图",
-   "icon": "/static/tools/ai-icons/6101529d6b6c1ab13df3.webp"
+   "icon": "/static/tools/ai-icons/6101529d6b6c1ab13df3.webp",
+   "heat": 60
   },
   {
    "id": "1899571b3d9453ab9837",
@@ -915,15 +942,98 @@
    "name": "Clipdrop",
    "url": "https://clipdrop.co/",
    "description": "编辑照片和光影",
-   "icon": "/static/tools/ai-icons/ec1c69cf3ad20f10ec9a.webp"
+   "icon": "/static/tools/ai-icons/ec1c69cf3ad20f10ec9a.webp",
+   "heat": 53
   },
   {
-   "id": "f8db43afd2bf85a67fab",
+   "id": "9183fb75b3274fb8e36c",
    "category": "smart9",
-   "name": "Toolkit",
-   "url": "https://boolpic.fun/background-remover",
-   "description": "使用图像处理工具集",
-   "icon": "/static/tools/ai-icons/a1c1508f2936ecd9fdf7.webp"
+   "name": "美图云修",
+   "url": "https://yunxiu.meitu.com/home/",
+   "description": "商业人像后期",
+   "icon": "/static/tools/ai-icons/ab85ab881f4f3003808b.webp",
+   "heat": 50
+  },
+  {
+   "id": "323a72ca84f3847c1ec2",
+   "category": "smart9",
+   "name": "Hama",
+   "url": "https://www.hama.app/zh",
+   "description": "擦除画面中的物体",
+   "icon": "/static/tools/ai-icons/a0d9f7e0d3a2703db63b.webp",
+   "heat": 40
+  },
+  {
+   "id": "d42f59eaa5dd3eb70d69",
+   "category": "smart9",
+   "name": "Palette",
+   "url": "https://palette.fm/",
+   "description": "为黑白照片上色",
+   "icon": "/static/tools/ai-icons/9002c3e16e92ce38dc7c.webp",
+   "heat": 40
+  },
+  {
+   "id": "4131cbc68520e3b99362",
+   "category": "smart9",
+   "name": "Pixian AI",
+   "url": "https://pixian.ai/",
+   "description": "分离主体与背景",
+   "icon": "/static/tools/ai-icons/c2d5825cabd320e1e1de.webp",
+   "heat": 40
+  },
+  {
+   "id": "9c8c269a41103e84080a",
+   "category": "smart9",
+   "name": "清图",
+   "url": "https://qingtu.cn/",
+   "description": "在线修复画质",
+   "icon": "/static/tools/ai-icons/34fe825124d034176500.webp",
+   "heat": 40
+  },
+  {
+   "id": "6f01d86fbee77a99cc87",
+   "category": "smart9",
+   "name": "美图 AI 开放平台",
+   "url": "https://ai.meitu.com/index/",
+   "description": "使用美图影像接口",
+   "icon": "/static/tools/ai-icons/8aecf224a82644bb36d7.webp",
+   "heat": 40
+  },
+  {
+   "id": "d489ccf86474affc0c9c",
+   "category": "smart9",
+   "name": "Arc Lab",
+   "url": "https://arc.tencent.com/zh/ai-demos/faceRestoration",
+   "description": "体验腾讯图像研究工具",
+   "icon": "/static/tools/ai-icons/9c5c46800dec13e1ee7f.webp",
+   "heat": 30
+  },
+  {
+   "id": "cfe5a4f5c87cb8bdf36f",
+   "category": "smart9",
+   "name": "BgSub",
+   "url": "https://bgsub.cn/webapp/",
+   "description": "替换图片背景",
+   "icon": "/static/tools/ai-icons/44ed2647c25d2be1a8ee.webp",
+   "heat": 30
+  },
+  {
+   "id": "687cae44bc8c8f1ee0a2",
+   "category": "smart9",
+   "name": "Booltool",
+   "url": "https://booltool.boolv.tech/home",
+   "description": "在线编辑与修整图片",
+   "icon": "/static/tools/ai-icons/585e9ca3a96433ce7834.webp",
+   "heat": 30
+  },
+  {
+   "id": "2654c2f1f800d3cdd57b",
+   "category": "smart9",
+   "name": "Designify",
+   "url": "https://www.designify.com/",
+   "description": "抠图与商品图合成",
+   "icon": "/static/tools/ai-icons/aa7b9153ac5a5997b23e.webp",
+   "heat": 30
   },
   {
    "id": "c1863c1a9d1f967ee2ef",
@@ -931,7 +1041,8 @@
    "name": "Inpaint-web",
    "url": "https://inpaintweb.lxfater.com/",
    "description": "涂抹并修补图像",
-   "icon": "/static/tools/ai-icons/eb6cc4d2a661fc3b1eb2.webp"
+   "icon": "/static/tools/ai-icons/eb6cc4d2a661fc3b1eb2.webp",
+   "heat": 30
   },
   {
    "id": "8c6da70636eb99d51d47",
@@ -939,7 +1050,26 @@
    "name": "Blend",
    "url": "https://www.blendnow.com/",
    "description": "移除背景与制作海报",
-   "icon": "/static/tools/ai-icons/541a8f0edbc300a7aa6d.webp"
+   "icon": "/static/tools/ai-icons/541a8f0edbc300a7aa6d.webp",
+   "heat": 20
+  },
+  {
+   "id": "3263372e5c4fb491ccec",
+   "category": "smart9",
+   "name": "CG Faces",
+   "url": "https://cgfaces.com/en",
+   "description": "查找合成人像素材",
+   "icon": "/static/tools/ai-icons/1bc89202126e0851dd8d.webp",
+   "heat": 20
+  },
+  {
+   "id": "238868112c1f435297d1",
+   "category": "smart9",
+   "name": "Restorephoto",
+   "url": "https://www.restorephotos.io/",
+   "description": "修复老照片人像",
+   "icon": "/static/tools/ai-icons/6412e81990bc99d8c269.webp",
+   "heat": 20
   },
   {
    "id": "4480317067d4b9226883",
@@ -947,15 +1077,116 @@
    "name": "TinyEraser",
    "url": "https://www.tinyeraser.com/zh",
    "description": "快速去除背景",
-   "icon": "/static/tools/ai-icons/a562fbbb74a389dbc5ce.webp"
+   "icon": "/static/tools/ai-icons/a562fbbb74a389dbc5ce.webp",
+   "heat": 20
   },
   {
-   "id": "f0ea69b202eca67eb0bf",
+   "id": "f8db43afd2bf85a67fab",
+   "category": "smart9",
+   "name": "Toolkit",
+   "url": "https://boolpic.fun/background-remover",
+   "description": "使用图像处理工具集",
+   "icon": "/static/tools/ai-icons/a1c1508f2936ecd9fdf7.webp",
+   "heat": 20
+  },
+  {
+   "id": "6df0011de00f91c547f4",
+   "category": "smart9",
+   "name": "Tracejourney",
+   "url": "https://www.tracejourney.com/",
+   "description": "转换图像为矢量素材",
+   "icon": "/static/tools/ai-icons/61d6b25fe0759f352760.webp",
+   "heat": 20
+  },
+  {
+   "id": "8634d05bd7d9212edb12",
    "category": "smart7",
-   "name": "Creatie.ai",
-   "url": "https://creatie.ai/",
-   "description": "生成与编辑 UI 方案",
-   "icon": "/static/tools/ai-icons/546b28489fb559fe3738.webp"
+   "name": "Figma Design",
+   "url": "https://www.figma.com/design/",
+   "description": "协作设计界面、维护组件库并制作交互原型",
+   "icon": "/static/tools/ai-icons/bd0eda7181d4a12bf332.webp",
+   "heat": 4530
+  },
+  {
+   "id": "97151e8ffda01ac6e930",
+   "category": "smart7",
+   "name": "Figma Make",
+   "url": "https://www.figma.com/make/",
+   "description": "用提示词或 Figma 设计稿生成可运行的交互原型",
+   "icon": "/static/tools/ai-icons/bd0eda7181d4a12bf332.webp",
+   "heat": 2000
+  },
+  {
+   "id": "5bb19014c4a415882a16",
+   "category": "smart7",
+   "name": "Framer",
+   "url": "https://www.framer.com/",
+   "description": "用设计助手搭建响应式网站，并直接发布",
+   "icon": "/static/tools/ai-icons/d0c15727d4b5d8ec204b.webp",
+   "heat": 800
+  },
+  {
+   "id": "532750972176f94eda88",
+   "category": "smart7",
+   "name": "Relume",
+   "description": "AI 生成网站线框与 sitemap",
+   "url": "https://www.relume.io/",
+   "icon": "/static/tools/ai-icons/1f609fd6c25a0cd3d834.webp",
+   "heat": 800
+  },
+  {
+   "id": "c535a51edca9854a52bf",
+   "category": "smart7",
+   "name": "Claude Design",
+   "url": "https://claude.com/product/design",
+   "description": "通过对话制作界面原型，按反馈修改设计",
+   "icon": "/static/tools/ai-icons/7e9ed04704b056d903f8.webp",
+   "heat": 600
+  },
+  {
+   "id": "988649c2250e826c90bc",
+   "category": "smart7",
+   "name": "Stitch",
+   "url": "https://stitch.withgoogle.com/",
+   "description": "用文字或参考图生成可编辑的界面",
+   "icon": "/static/tools/ai-icons/db2ee90315c17b67d78b.webp",
+   "heat": 400
+  },
+  {
+   "id": "4366ef6df06438316109",
+   "category": "smart7",
+   "name": "pen.dev",
+   "url": "https://www.pen.dev/",
+   "description": "原 Pencil；在可编辑画布上与 AI 一起设计界面",
+   "icon": "/static/tools/ai-icons/4d1cedaead28bf399735.webp",
+   "heat": 300
+  },
+  {
+   "id": "040e72eb97d1e6d21c9d",
+   "category": "smart7",
+   "name": "v0",
+   "url": "https://v0.app/",
+   "description": "通过描述生成前端界面，预览并迭代可运行的原型",
+   "icon": "/static/tools/ai-icons/9db4e7d4a76029cf5781.webp",
+   "heat": 282
+  },
+  {
+   "id": "ad27fd69a5318d5f601d",
+   "category": "smart7",
+   "name": "Paper",
+   "url": "https://paper.design/",
+   "description": "在同一张画布中连接界面设计、代码与 AI 工具",
+   "icon": "/static/tools/ai-icons/8893417c3e0faf50f404.webp",
+   "heat": 200
+  },
+  {
+   "id": "a08b8ae0b0e39945706a",
+   "category": "smart7",
+   "name": "Magic Patterns",
+   "url": "https://www.magicpatterns.com/",
+   "description": "用 AI 生成产品界面，在画布上比较与迭代原型",
+   "icon": "/static/tools/ai-icons/f25c1672298e1191d3ea.webp",
+   "heat": 150
   },
   {
    "id": "1544d468aeb555d7445f",
@@ -963,39 +1194,17 @@
    "name": "Uizard",
    "url": "https://uizard.io/autodesigner/",
    "description": "从草图生成多屏原型",
-   "icon": "/static/tools/ai-icons/5b14e1cead396a47bb5a.webp"
+   "icon": "/static/tools/ai-icons/5b14e1cead396a47bb5a.webp",
+   "heat": 100
   },
   {
-   "id": "613f8cf5d0ddd2ffd4b7",
+   "id": "f0ea69b202eca67eb0bf",
    "category": "smart7",
-   "name": "Superflow",
-   "url": "https://www.usesuperflow.com/",
-   "description": "协作评审网页设计",
-   "icon": "/static/tools/ai-icons/6c1e92d84fefd7ed7794.webp"
-  },
-  {
-   "id": "ec33ee4c1ce595d6d03a",
-   "category": "smart7",
-   "name": "Noya",
-   "url": "https://www.noya.io/",
-   "description": "将线框转成界面稿",
-   "icon": "/static/tools/ai-icons/4fb7f2a4069dbb7b60e1.webp"
-  },
-  {
-   "id": "874f8bf6f27e84436b8c",
-   "category": "smart7",
-   "name": "Readdy",
-   "url": "https://readdy.ai/",
-   "description": "用描述生成网站",
-   "icon": "/static/tools/ai-icons/ff8f2039049a88cb8202.webp"
-  },
-  {
-   "id": "c3a3519e44b9c49df42e",
-   "category": "smart7",
-   "name": "Appicons AI",
-   "url": "https://appicons.ai/",
-   "description": "生成应用图标",
-   "icon": "/static/tools/ai-icons/68c94a4d5f1d09049955.webp"
+   "name": "Creatie.ai",
+   "url": "https://creatie.ai/",
+   "description": "生成与编辑 UI 方案",
+   "icon": "/static/tools/ai-icons/546b28489fb559fe3738.webp",
+   "heat": 80
   },
   {
    "id": "1f347a11c8346e57b274",
@@ -1003,7 +1212,8 @@
    "name": "Dora AI",
    "url": "https://www.dora.run/ai",
    "description": "制作交互式网站",
-   "icon": "/static/tools/ai-icons/8cc661a639a4eb43a7d9.webp"
+   "icon": "/static/tools/ai-icons/8cc661a639a4eb43a7d9.webp",
+   "heat": 80
   },
   {
    "id": "8ec6f12c90fe8da1c233",
@@ -1011,23 +1221,26 @@
    "name": "Makereal Tldraw",
    "url": "https://github.com/tldraw/make-real",
    "description": "用草图生成交互界面",
-   "icon": "/static/tools/ai-icons/0b295c2a5f28a32320f4.webp"
+   "icon": "/static/tools/ai-icons/0b295c2a5f28a32320f4.webp",
+   "heat": 60
   },
   {
-   "id": "28e5a38785c310ad6c7b",
+   "id": "874f8bf6f27e84436b8c",
    "category": "smart7",
-   "name": "UI Sketcher",
-   "url": "https://github.com/pAIrprogio/vscode-ui-sketcher",
-   "description": "从界面草图生成代码",
-   "icon": "/static/tools/ai-icons/6210bc283d8b0c1b4172.webp"
+   "name": "Readdy",
+   "url": "https://readdy.ai/",
+   "description": "用描述生成网站",
+   "icon": "/static/tools/ai-icons/ff8f2039049a88cb8202.webp",
+   "heat": 60
   },
   {
-   "id": "d8e4d2a3532ef70ef789",
+   "id": "613f8cf5d0ddd2ffd4b7",
    "category": "smart7",
-   "name": "QoQo",
-   "url": "https://qoqo.ai/index.html",
-   "description": "创建用户旅程图",
-   "icon": "/static/tools/ai-icons/09ff020ee58e0cbe3e85.webp"
+   "name": "Superflow",
+   "url": "https://www.usesuperflow.com/",
+   "description": "协作评审网页设计",
+   "icon": "/static/tools/ai-icons/6c1e92d84fefd7ed7794.webp",
+   "heat": 50
   },
   {
    "id": "794020a3821a0711f47d",
@@ -1035,127 +1248,53 @@
    "name": "Visily",
    "url": "https://www.visily.ai/",
    "description": "从线框开始制作原型",
-   "icon": "/static/tools/ai-icons/726adcf313e7a024ad2a.webp"
+   "icon": "/static/tools/ai-icons/726adcf313e7a024ad2a.webp",
+   "heat": 50
   },
   {
-   "id": "9fe7f1d1938d0bad65d8",
-   "category": "smart8",
-   "name": "PLUG AI",
-   "url": "https://hp.package-ai.jp/",
-   "description": "评估与生成包装设计",
-   "icon": "/static/tools/ai-icons/d9d57fbb7c1257ddb148.webp"
+   "id": "c3a3519e44b9c49df42e",
+   "category": "smart7",
+   "name": "Appicons AI",
+   "url": "https://appicons.ai/",
+   "description": "生成应用图标",
+   "icon": "/static/tools/ai-icons/68c94a4d5f1d09049955.webp",
+   "heat": 40
   },
   {
-   "id": "6ed54791a18646c6e13f",
-   "category": "smart8",
-   "name": "Huemint",
-   "url": "https://huemint.com/brand-intersection/",
-   "description": "为版式生成配色",
-   "icon": "/static/tools/ai-icons/a0609a2d38e695d5e49f.webp"
+   "id": "ec33ee4c1ce595d6d03a",
+   "category": "smart7",
+   "name": "Noya",
+   "url": "https://www.noya.io/",
+   "description": "将线框转成界面稿",
+   "icon": "/static/tools/ai-icons/4fb7f2a4069dbb7b60e1.webp",
+   "heat": 40
   },
   {
-   "id": "6c258bf55bc8d7ac25be",
-   "category": "smart8",
-   "name": "Looka",
-   "url": "https://looka.com/",
-   "description": "设计标志与品牌标识",
-   "icon": "/static/tools/ai-icons/40a74c1869bd115e4336.webp"
+   "id": "d8e4d2a3532ef70ef789",
+   "category": "smart7",
+   "name": "QoQo",
+   "url": "https://qoqo.ai/index.html",
+   "description": "创建用户旅程图",
+   "icon": "/static/tools/ai-icons/09ff020ee58e0cbe3e85.webp",
+   "heat": 30
   },
   {
-   "id": "06d2f799dbd5089b03c8",
-   "category": "smart8",
-   "name": "标小智",
-   "url": "https://www.logosc.cn/",
-   "description": "制作中文品牌标志",
-   "icon": "/static/tools/ai-icons/17c33cc899e8f184f2b6.webp"
+   "id": "28e5a38785c310ad6c7b",
+   "category": "smart7",
+   "name": "UI Sketcher",
+   "url": "https://github.com/pAIrprogio/vscode-ui-sketcher",
+   "description": "从界面草图生成代码",
+   "icon": "/static/tools/ai-icons/6210bc283d8b0c1b4172.webp",
+   "heat": 30
   },
   {
-   "id": "d31e7f1c5bbe9576e158",
+   "id": "57a5effe03bd0b97391b",
    "category": "smart8",
-   "name": "Daft Art",
-   "url": "https://www.daftart.ai/",
-   "description": "生成音乐封面",
-   "icon": "/static/tools/ai-icons/1bbe9e0fb2013563cfa7.webp"
-  },
-  {
-   "id": "c855ee296b70ca8569d1",
-   "category": "smart8",
-   "name": "Palette",
-   "url": "https://palette.tone-row.com/",
-   "description": "建立界面调色板",
-   "icon": "/static/tools/ai-icons/a2303e2305b77c350a22.webp"
-  },
-  {
-   "id": "a1b1b41b8470a9c74af9",
-   "category": "smart8",
-   "name": "字体家 AI 神笔",
-   "url": "https://ai.zitijia.com/?referer=81657",
-   "description": "设计中文字形",
-   "icon": "/static/tools/ai-icons/9882d34b4a283b414ea1.webp"
-  },
-  {
-   "id": "db2661c13441e30488b6",
-   "category": "smart8",
-   "name": "Vectorize",
-   "url": "https://vectorizer.ai/",
-   "description": "将位图描摹为矢量",
-   "icon": "/static/tools/ai-icons/ac965fb4cdc76493af06.webp"
-  },
-  {
-   "id": "905c3264e8278a43e824",
-   "category": "smart8",
-   "name": "Microsoft Designer",
-   "url": "https://designer.microsoft.com/",
-   "description": "制作社交图与平面素材",
-   "icon": "/static/tools/ai-icons/7645518f084afb6ec911.webp"
-  },
-  {
-   "id": "213041895dd0bbbe6341",
-   "category": "smart8",
-   "name": "BrandMark",
-   "url": "https://brandmark.io/",
-   "description": "创建品牌标志",
-   "icon": "/static/tools/ai-icons/2e3236e1cffee2d3f545.webp"
-  },
-  {
-   "id": "54144bce54139110ea33",
-   "category": "smart8",
-   "name": "AIcolors",
-   "url": "https://aicolors.co/",
-   "description": "根据文字描述生成配色",
-   "icon": "/static/tools/ai-icons/b9130b981c459b6aeb56.webp"
-  },
-  {
-   "id": "8ceedf2334d2982b91dd",
-   "category": "smart8",
-   "name": "Getimg",
-   "url": "https://getimg.ai/",
-   "description": "生成和编辑平面图像",
-   "icon": "/static/tools/ai-icons/6655e1f6cfd57b49f92f.webp"
-  },
-  {
-   "id": "36f92f7a6ddd431483c0",
-   "category": "smart8",
-   "name": "ImgCreator",
-   "url": "https://imgcreator.ai/",
-   "description": "制作海报与场景背景",
-   "icon": "/static/tools/ai-icons/1d74c66262215ec06046.webp"
-  },
-  {
-   "id": "a8cbb137bf3d276ab84f",
-   "category": "smart8",
-   "name": "AIDesign",
-   "url": "https://ailogo.qq.com/guide/brandname",
-   "description": "腾讯标志设计工具",
-   "icon": "/static/tools/ai-icons/55a9493fdb598da0da81.webp"
-  },
-  {
-   "id": "4317b1f4bdb453acb5fe",
-   "category": "smart8",
-   "name": "ImageCreator",
-   "url": "https://imagecreator.alkaidvision.com/",
-   "description": "在 Photoshop 中生成图像",
-   "icon": "/static/tools/ai-icons/78d832b8c32aefddded9.webp"
+   "name": "Beautiful.ai",
+   "description": "智能演示与版式设计",
+   "url": "https://www.beautiful.ai/",
+   "icon": "/static/tools/ai-icons/6f3880d7d4f10af27dae.webp",
+   "heat": 700
   },
   {
    "id": "14b486ebfa5b3bbec63f",
@@ -1163,7 +1302,44 @@
    "name": "Recraft",
    "url": "https://app.recraft.ai/community",
    "description": "创作矢量插图",
-   "icon": "/static/tools/ai-icons/1100d3772c6dd5de2ea3.webp"
+   "icon": "/static/tools/ai-icons/1100d3772c6dd5de2ea3.webp",
+   "heat": 242
+  },
+  {
+   "id": "db2661c13441e30488b6",
+   "category": "smart8",
+   "name": "Vectorize",
+   "url": "https://vectorizer.ai/",
+   "description": "将位图描摹为矢量",
+   "icon": "/static/tools/ai-icons/ac965fb4cdc76493af06.webp",
+   "heat": 130
+  },
+  {
+   "id": "c855ee296b70ca8569d1",
+   "category": "smart8",
+   "name": "Palette",
+   "url": "https://palette.tone-row.com/",
+   "description": "建立界面调色板",
+   "icon": "/static/tools/ai-icons/a2303e2305b77c350a22.webp",
+   "heat": 40
+  },
+  {
+   "id": "a8cbb137bf3d276ab84f",
+   "category": "smart8",
+   "name": "AIDesign",
+   "url": "https://ailogo.qq.com/guide/brandname",
+   "description": "腾讯标志设计工具",
+   "icon": "/static/tools/ai-icons/55a9493fdb598da0da81.webp",
+   "heat": 10
+  },
+  {
+   "id": "54144bce54139110ea33",
+   "category": "smart8",
+   "name": "AIcolors",
+   "url": "https://aicolors.co/",
+   "description": "根据文字描述生成配色",
+   "icon": "/static/tools/ai-icons/b9130b981c459b6aeb56.webp",
+   "heat": 10
   },
   {
    "id": "c088e785a3b6e8dcd9a6",
@@ -1171,7 +1347,26 @@
    "name": "Alpaca",
    "url": "https://www.alpacaml.com/",
    "description": "在修图流程中使用扩散模型",
-   "icon": "/static/tools/ai-icons/5529148cd52265f553c7.webp"
+   "icon": "/static/tools/ai-icons/5529148cd52265f553c7.webp",
+   "heat": 10
+  },
+  {
+   "id": "213041895dd0bbbe6341",
+   "category": "smart8",
+   "name": "BrandMark",
+   "url": "https://brandmark.io/",
+   "description": "创建品牌标志",
+   "icon": "/static/tools/ai-icons/2e3236e1cffee2d3f545.webp",
+   "heat": 10
+  },
+  {
+   "id": "d31e7f1c5bbe9576e158",
+   "category": "smart8",
+   "name": "Daft Art",
+   "url": "https://www.daftart.ai/",
+   "description": "生成音乐封面",
+   "icon": "/static/tools/ai-icons/1bbe9e0fb2013563cfa7.webp",
+   "heat": 10
   },
   {
    "id": "a380507848255dfbfc4a",
@@ -1179,15 +1374,89 @@
    "name": "Flair AI",
    "url": "https://flair.ai/",
    "description": "生成产品摄影场景",
-   "icon": "/static/tools/ai-icons/1c7a2c405b0a8220a0b0.webp"
+   "icon": "/static/tools/ai-icons/1c7a2c405b0a8220a0b0.webp",
+   "heat": 10
   },
   {
-   "id": "6a1a8821e483e7187daf",
-   "category": "smart6",
-   "name": "字语未来",
-   "url": "https://getgetai.com/workstation?from=youshe",
-   "description": "中文内容创作",
-   "icon": "/static/tools/ai-icons/6554c380e7daca1ed2ae.webp"
+   "id": "8ceedf2334d2982b91dd",
+   "category": "smart8",
+   "name": "Getimg",
+   "url": "https://getimg.ai/",
+   "description": "生成和编辑平面图像",
+   "icon": "/static/tools/ai-icons/6655e1f6cfd57b49f92f.webp",
+   "heat": 10
+  },
+  {
+   "id": "6ed54791a18646c6e13f",
+   "category": "smart8",
+   "name": "Huemint",
+   "url": "https://huemint.com/brand-intersection/",
+   "description": "为版式生成配色",
+   "icon": "/static/tools/ai-icons/a0609a2d38e695d5e49f.webp",
+   "heat": 10
+  },
+  {
+   "id": "4317b1f4bdb453acb5fe",
+   "category": "smart8",
+   "name": "ImageCreator",
+   "url": "https://imagecreator.alkaidvision.com/",
+   "description": "在 Photoshop 中生成图像",
+   "icon": "/static/tools/ai-icons/78d832b8c32aefddded9.webp",
+   "heat": 10
+  },
+  {
+   "id": "36f92f7a6ddd431483c0",
+   "category": "smart8",
+   "name": "ImgCreator",
+   "url": "https://imgcreator.ai/",
+   "description": "制作海报与场景背景",
+   "icon": "/static/tools/ai-icons/1d74c66262215ec06046.webp",
+   "heat": 10
+  },
+  {
+   "id": "6c258bf55bc8d7ac25be",
+   "category": "smart8",
+   "name": "Looka",
+   "url": "https://looka.com/",
+   "description": "设计标志与品牌标识",
+   "icon": "/static/tools/ai-icons/40a74c1869bd115e4336.webp",
+   "heat": 10
+  },
+  {
+   "id": "905c3264e8278a43e824",
+   "category": "smart8",
+   "name": "Microsoft Designer",
+   "url": "https://designer.microsoft.com/",
+   "description": "制作社交图与平面素材",
+   "icon": "/static/tools/ai-icons/7645518f084afb6ec911.webp",
+   "heat": 10
+  },
+  {
+   "id": "9fe7f1d1938d0bad65d8",
+   "category": "smart8",
+   "name": "PLUG AI",
+   "url": "https://hp.package-ai.jp/",
+   "description": "评估与生成包装设计",
+   "icon": "/static/tools/ai-icons/d9d57fbb7c1257ddb148.webp",
+   "heat": 10
+  },
+  {
+   "id": "a1b1b41b8470a9c74af9",
+   "category": "smart8",
+   "name": "字体家 AI 神笔",
+   "url": "https://ai.zitijia.com/?referer=81657",
+   "description": "设计中文字形",
+   "icon": "/static/tools/ai-icons/9882d34b4a283b414ea1.webp",
+   "heat": 10
+  },
+  {
+   "id": "06d2f799dbd5089b03c8",
+   "category": "smart8",
+   "name": "标小智",
+   "url": "https://www.logosc.cn/",
+   "description": "制作中文品牌标志",
+   "icon": "/static/tools/ai-icons/17c33cc899e8f184f2b6.webp",
+   "heat": 10
   },
   {
    "id": "a89d5c194ce192fbb705",
@@ -1195,175 +1464,11 @@
    "name": "Notion AI",
    "url": "https://www.notion.so/product/ai",
    "description": "在笔记中起草与改写",
-   "icon": "/static/tools/ai-icons/4ac18b0a754dc0fe0bb2.webp"
-  },
-  {
-   "id": "dd8aa7c25f7e7b6e6b47",
-   "category": "smart6",
-   "name": "火山写作",
-   "url": "https://www.writingo.net/home",
-   "description": "润色英文表达",
-   "icon": "/static/tools/ai-icons/018a7910e77b8cefd032.webp"
-  },
-  {
-   "id": "7e8caed4b1e01e0cdaf7",
-   "category": "smart6",
-   "name": "Writesonic",
-   "url": "https://writesonic.com/",
-   "description": "生成文章与搜索资料",
-   "icon": "/static/tools/ai-icons/00a8355d12b3b6c9d566.webp"
-  },
-  {
-   "id": "e925120503ae2a85c52d",
-   "category": "smart6",
-   "name": "Jasper AI",
-   "url": "https://www.jasper.ai/",
-   "description": "撰写品牌营销内容",
-   "icon": "/static/tools/ai-icons/bdf65afc97164a757666.webp"
-  },
-  {
-   "id": "68fb6c63303ac71e0d39",
-   "category": "smart6",
-   "name": "秘塔 AI 搜索",
-   "url": "https://metaso.cn/",
-   "description": "检索资料并阅读来源",
-   "icon": "/static/tools/ai-icons/702d2b02da70200e59f9.webp"
-  },
-  {
-   "id": "99a861b826752d819a4e",
-   "category": "smart6",
-   "name": "秘塔写作猫",
-   "url": "https://www.xiezuocat.com/",
-   "description": "中文校对与写作",
-   "icon": "/static/tools/ai-icons/9f125e9bcc9f0aed61f7.webp"
-  },
-  {
-   "id": "054979add84902bb6610",
-   "category": "smart6",
-   "name": "毕业宝 AI 论文降重",
-   "url": "https://sourl.cn/SYitzC",
-   "description": "编辑学术论文表述",
-   "icon": "/static/tools/ai-icons/05de4c0d658de42799f4.webp"
-  },
-  {
-   "id": "3e75ecb3c20e18c31261",
-   "category": "smart6",
-   "name": "Copy AI",
-   "url": "https://www.copy.ai/",
-   "description": "起草社交媒体文案",
-   "icon": "/static/tools/ai-icons/17fbd3c7160803731b35.webp"
-  },
-  {
-   "id": "ceba11a762655deb625e",
-   "category": "smart6",
-   "name": "editGPT",
-   "url": "https://www.editgpt.app/",
-   "description": "审阅英文修改",
-   "icon": "/static/tools/ai-icons/68fddcff8475c7a2ad24.webp"
-  },
-  {
-   "id": "890d262caabf54185696",
-   "category": "smart6",
-   "name": "据意查句",
-   "url": "https://wantquotes.net/",
-   "description": "按语义查找例句",
-   "icon": "/static/tools/ai-icons/1e24c38fcca6bd5d92e6.webp"
-  },
-  {
-   "id": "9f96c40ce8a709f1fc29",
-   "category": "smart6",
-   "name": "MagicPen",
-   "url": "https://magickpen.com/",
-   "description": "起草英文内容",
-   "icon": "/static/tools/ai-icons/f708572ce7861c03ad0a.webp"
-  },
-  {
-   "id": "ba135d1e77e170949dce",
-   "category": "smart6",
-   "name": "Novelist AI",
-   "url": "https://novelistai.com/",
-   "description": "辅助创作小说",
-   "icon": "/static/tools/ai-icons/39c4cebae3833a76bc60.webp"
-  },
-  {
-   "id": "ee5401d5cba891d93c35",
-   "category": "smart6",
-   "name": "jenni",
-   "url": "https://jenni.ai/",
-   "description": "协作撰写文稿",
-   "icon": "/static/tools/ai-icons/09c47a026b34b49ad6c9.webp"
-  },
-  {
-   "id": "c9c455337f1aa0fdb8a9",
-   "category": "smart6",
-   "name": "Effidit 写作助手",
-   "url": "https://effidit.qq.com/",
-   "description": "辅助中文写作",
-   "icon": "/static/tools/ai-icons/773820c6b58036b8c503.webp"
-  },
-  {
-   "id": "8d50d9f8614920485031",
-   "category": "smart6",
-   "name": "Bearly",
-   "url": "https://bearly.ai/",
-   "description": "阅读与总结英文文档",
-   "icon": "/static/tools/ai-icons/423701ed57f4066ba44a.webp"
-  },
-  {
-   "id": "d216140b599c44b77849",
-   "category": "smart6",
-   "name": "爱改写",
-   "url": "https://www.aigaixie.com/",
-   "description": "改写研究文本",
-   "icon": "/static/tools/ai-icons/4293e28a8019bc7c76f5.webp"
-  },
-  {
-   "id": "daae38b69573f0c784f3",
-   "category": "smart6",
-   "name": "QuillBot",
-   "url": "https://quillbot.com/",
-   "description": "改写句子和校对",
-   "icon": "/static/tools/ai-icons/985b7cb88bc813f650c6.webp"
-  },
-  {
-   "id": "34f640d1e0108e4b9fbe",
-   "category": "smart6",
-   "name": "新华妙笔",
-   "url": "https://miaobi.xinhuaskl.com/",
-   "description": "学习公文写作",
-   "icon": "/static/tools/ai-icons/e47da241e87dd710ad6d.webp"
-  },
-  {
-   "id": "390a022e39b9f7e3ba4b",
-   "category": "smart6",
-   "name": "悉语",
-   "url": "https://chuangyi.taobao.com/pages/aiCopy",
-   "description": "撰写电商营销文案",
-   "icon": "/static/tools/ai-icons/4c8021d8ff5c10ed4772.webp"
-  },
-  {
-   "id": "f708bc2a562bdd4fc0a1",
-   "category": "smart6",
-   "name": "Paperpal",
-   "url": "https://www.editage.cn/paperpal",
-   "description": "校对学术英文",
-   "icon": "/static/tools/ai-icons/cdd5cf5ac22e3f108bf5.webp"
-  },
-  {
-   "id": "1131f35f52d6cd7592e4",
-   "category": "smart6",
-   "name": "NovelAI",
-   "url": "https://novelai.net/",
-   "description": "创作虚构故事",
-   "icon": "/static/tools/ai-icons/03c17209134137d31af1.webp"
-  },
-  {
-   "id": "6aff1ddae6c119499601",
-   "category": "smart6",
-   "name": "爱创作",
-   "url": "https://ai.zaker.cn/",
-   "description": "制作多种形式的内容",
-   "icon": "/static/tools/ai-icons/71f4aa49e384f1b3be4b.webp"
+   "icon": "/static/tools/ai-icons/11656e379eb4b5f3fbd3.webp",
+   "aliases": [
+    "Notion"
+   ],
+   "heat": 3850
   },
   {
    "id": "b28be6c642927de663c0",
@@ -1371,119 +1476,227 @@
    "name": "Grammarly.",
    "url": "https://www.grammarly.com",
    "description": "校对语法和语气",
-   "icon": "/static/tools/ai-icons/44a361fcb81a54bb5fe5.webp"
+   "icon": "/static/tools/ai-icons/44a361fcb81a54bb5fe5.webp",
+   "heat": 2000
   },
   {
-   "id": "b4fafbb227ed32759ec5",
-   "category": "smart10",
-   "name": "Stable Audio",
-   "url": "https://www.stableaudio.com/",
-   "description": "用描述生成音乐",
-   "icon": "/static/tools/ai-icons/5b2237f2a94a8e1cfb63.webp"
+   "id": "e925120503ae2a85c52d",
+   "category": "smart6",
+   "name": "Jasper AI",
+   "url": "https://www.jasper.ai/",
+   "description": "撰写品牌营销内容",
+   "icon": "/static/tools/ai-icons/bdf65afc97164a757666.webp",
+   "aliases": [
+    "Jasper"
+   ],
+   "heat": 800
   },
   {
-   "id": "b9df058ece5e3d34a0ef",
-   "category": "smart10",
-   "name": "蝉妈妈",
-   "url": "https://www.chanmama.com/?uisdc",
-   "description": "分析短视频与直播数据",
-   "icon": "/static/tools/ai-icons/fe186d5a8acf3bbc8c12.webp"
+   "id": "7e8caed4b1e01e0cdaf7",
+   "category": "smart6",
+   "name": "Writesonic",
+   "url": "https://writesonic.com/",
+   "description": "生成文章与搜索资料",
+   "icon": "/static/tools/ai-icons/00a8355d12b3b6c9d566.webp",
+   "heat": 500
   },
   {
-   "id": "9546566f4a668caf06d8",
-   "category": "smart10",
-   "name": "SAM Audio",
-   "url": "https://ai.meta.com/research/samaudio/",
-   "description": "根据提示分离声音",
-   "icon": "/static/tools/ai-icons/a4cdbb2188e9b2fa43b8.webp"
+   "id": "daae38b69573f0c784f3",
+   "category": "smart6",
+   "name": "QuillBot",
+   "url": "https://quillbot.com/",
+   "description": "改写句子和校对",
+   "icon": "/static/tools/ai-icons/985b7cb88bc813f650c6.webp",
+   "heat": 400
   },
   {
-   "id": "9f1333623fedf45ca2cb",
-   "category": "smart10",
-   "name": "Akool",
-   "url": "https://akool.com/zh-cn",
-   "description": "制作个性化视频",
-   "icon": "/static/tools/ai-icons/87ebc55a029380e3d591.webp"
+   "id": "3e75ecb3c20e18c31261",
+   "category": "smart6",
+   "name": "Copy AI",
+   "url": "https://www.copy.ai/",
+   "description": "起草社交媒体文案",
+   "icon": "/static/tools/ai-icons/17fbd3c7160803731b35.webp",
+   "heat": 300
   },
   {
-   "id": "b36872a8a97812f3a2e9",
-   "category": "smart10",
-   "name": "Runway",
-   "url": "https://www.uisdc.com/runway",
-   "description": "生成与编辑视频",
-   "icon": "/static/tools/ai-icons/beb62ae610534c107528.webp"
+   "id": "1131f35f52d6cd7592e4",
+   "category": "smart6",
+   "name": "NovelAI",
+   "url": "https://novelai.net/",
+   "description": "创作虚构故事",
+   "icon": "/static/tools/ai-icons/03c17209134137d31af1.webp",
+   "heat": 200
   },
   {
-   "id": "4fac30ccd6407b9883e1",
-   "category": "smart10",
-   "name": "网易天音",
-   "url": "https://tianyin.163.com/",
-   "description": "辅助作曲与编曲",
-   "icon": "/static/tools/ai-icons/014a255207183034853f.webp"
+   "id": "68fb6c63303ac71e0d39",
+   "category": "smart6",
+   "name": "秘塔 AI 搜索",
+   "url": "https://metaso.cn/",
+   "description": "检索资料并阅读来源",
+   "icon": "/static/tools/ai-icons/702d2b02da70200e59f9.webp",
+   "heat": 200
   },
   {
-   "id": "6295e736ef0d91924b04",
-   "category": "smart10",
-   "name": "Wonder Studio",
-   "url": "https://wonderdynamics.com/",
-   "description": "把真人表演转为 CG",
-   "icon": "/static/tools/ai-icons/899d2d7f91ece51bc2bd.webp"
+   "id": "99a861b826752d819a4e",
+   "category": "smart6",
+   "name": "秘塔写作猫",
+   "url": "https://www.xiezuocat.com/",
+   "description": "中文校对与写作",
+   "icon": "/static/tools/ai-icons/9f125e9bcc9f0aed61f7.webp",
+   "heat": 150
   },
   {
-   "id": "25afc9059a526d070698",
-   "category": "smart10",
-   "name": "Heygen",
-   "url": "https://www.heygen.com",
-   "description": "制作数字人讲解视频",
-   "icon": "/static/tools/ai-icons/7c554153580632a325de.webp"
+   "id": "ee5401d5cba891d93c35",
+   "category": "smart6",
+   "name": "jenni",
+   "url": "https://jenni.ai/",
+   "description": "协作撰写文稿",
+   "icon": "/static/tools/ai-icons/09c47a026b34b49ad6c9.webp",
+   "heat": 100
   },
   {
-   "id": "274cf62a8df021541cb1",
-   "category": "smart10",
-   "name": "TTSMAKER",
-   "url": "https://ttsmaker.cn/",
-   "description": "将文本转换成语音",
-   "icon": "/static/tools/ai-icons/3d357c9fb4a0060e59e4.webp"
+   "id": "f708bc2a562bdd4fc0a1",
+   "category": "smart6",
+   "name": "Paperpal",
+   "url": "https://www.editage.cn/paperpal",
+   "description": "校对学术英文",
+   "icon": "/static/tools/ai-icons/cdd5cf5ac22e3f108bf5.webp",
+   "heat": 80
   },
   {
-   "id": "9d9a84ba1dc8d6a03c33",
-   "category": "smart10",
-   "name": "BibiGPT",
-   "url": "https://b.jimmylv.cn/",
-   "description": "整理音视频重点",
-   "icon": "/static/tools/ai-icons/6a112f6e040dc80d7bf1.webp"
+   "id": "6a1a8821e483e7187daf",
+   "category": "smart6",
+   "name": "字语未来",
+   "url": "https://getgetai.com/workstation?from=youshe",
+   "description": "中文内容创作",
+   "icon": "/static/tools/ai-icons/6554c380e7daca1ed2ae.webp",
+   "heat": 80
   },
   {
-   "id": "ab9126b327c36123bf13",
-   "category": "smart10",
-   "name": "BeatBot",
-   "url": "https://beatbot.fm/",
-   "description": "生成音乐片段",
-   "icon": "/static/tools/ai-icons/b5a673369b20102c8361.webp"
+   "id": "dd8aa7c25f7e7b6e6b47",
+   "category": "smart6",
+   "name": "火山写作",
+   "url": "https://www.writingo.net/home",
+   "description": "润色英文表达",
+   "icon": "/static/tools/ai-icons/018a7910e77b8cefd032.webp",
+   "heat": 60
   },
   {
-   "id": "f2d0cf3a2a1a23f09c65",
-   "category": "smart10",
-   "name": "Spotiguess",
-   "url": "https://spotiguess.com/",
-   "description": "音乐听辨练习",
-   "icon": "/static/tools/ai-icons/68e2f0d7633c5c03caa0.webp"
+   "id": "34f640d1e0108e4b9fbe",
+   "category": "smart6",
+   "name": "新华妙笔",
+   "url": "https://miaobi.xinhuaskl.com/",
+   "description": "学习公文写作",
+   "icon": "/static/tools/ai-icons/e47da241e87dd710ad6d.webp",
+   "heat": 50
   },
   {
-   "id": "a80949a0225338b580b3",
-   "category": "smart10",
-   "name": "Genmo",
-   "url": "https://www.genmo.ai/",
-   "description": "根据文字编辑视频",
-   "icon": "/static/tools/ai-icons/89534f6f44d017cd4b38.webp"
+   "id": "8d50d9f8614920485031",
+   "category": "smart6",
+   "name": "Bearly",
+   "url": "https://bearly.ai/",
+   "description": "阅读与总结英文文档",
+   "icon": "/static/tools/ai-icons/423701ed57f4066ba44a.webp",
+   "heat": 40
   },
   {
-   "id": "b5f536f6d981de21edbd",
+   "id": "c9c455337f1aa0fdb8a9",
+   "category": "smart6",
+   "name": "Effidit 写作助手",
+   "url": "https://effidit.qq.com/",
+   "description": "辅助中文写作",
+   "icon": "/static/tools/ai-icons/773820c6b58036b8c503.webp",
+   "heat": 40
+  },
+  {
+   "id": "ba135d1e77e170949dce",
+   "category": "smart6",
+   "name": "Novelist AI",
+   "url": "https://novelistai.com/",
+   "description": "辅助创作小说",
+   "icon": "/static/tools/ai-icons/39c4cebae3833a76bc60.webp",
+   "heat": 40
+  },
+  {
+   "id": "390a022e39b9f7e3ba4b",
+   "category": "smart6",
+   "name": "悉语",
+   "url": "https://chuangyi.taobao.com/pages/aiCopy",
+   "description": "撰写电商营销文案",
+   "icon": "/static/tools/ai-icons/4c8021d8ff5c10ed4772.webp",
+   "heat": 40
+  },
+  {
+   "id": "6aff1ddae6c119499601",
+   "category": "smart6",
+   "name": "爱创作",
+   "url": "https://ai.zaker.cn/",
+   "description": "制作多种形式的内容",
+   "icon": "/static/tools/ai-icons/71f4aa49e384f1b3be4b.webp",
+   "heat": 40
+  },
+  {
+   "id": "d216140b599c44b77849",
+   "category": "smart6",
+   "name": "爱改写",
+   "url": "https://www.aigaixie.com/",
+   "description": "改写研究文本",
+   "icon": "/static/tools/ai-icons/4293e28a8019bc7c76f5.webp",
+   "heat": 40
+  },
+  {
+   "id": "9f96c40ce8a709f1fc29",
+   "category": "smart6",
+   "name": "MagicPen",
+   "url": "https://magickpen.com/",
+   "description": "起草英文内容",
+   "icon": "/static/tools/ai-icons/f708572ce7861c03ad0a.webp",
+   "heat": 30
+  },
+  {
+   "id": "ceba11a762655deb625e",
+   "category": "smart6",
+   "name": "editGPT",
+   "url": "https://www.editgpt.app/",
+   "description": "审阅英文修改",
+   "icon": "/static/tools/ai-icons/68fddcff8475c7a2ad24.webp",
+   "heat": 30
+  },
+  {
+   "id": "890d262caabf54185696",
+   "category": "smart6",
+   "name": "据意查句",
+   "url": "https://wantquotes.net/",
+   "description": "按语义查找例句",
+   "icon": "/static/tools/ai-icons/1e24c38fcca6bd5d92e6.webp",
+   "heat": 30
+  },
+  {
+   "id": "95f5492b983b59aefc53",
    "category": "smart10",
-   "name": "Mubert",
-   "url": "https://mubert.com/",
-   "description": "生成背景音乐",
-   "icon": "/static/tools/ai-icons/96a97d58bd06123842d7.webp"
+   "name": "Suno",
+   "description": "用文字生成歌曲",
+   "url": "https://suno.com/",
+   "icon": "/static/tools/ai-icons/8155aa47a5a7a57c53bb.webp",
+   "heat": 24537
+  },
+  {
+   "id": "c762000e0214644c3d56",
+   "category": "smart10",
+   "name": "ElevenLabs",
+   "description": "高拟真语音合成与配音",
+   "url": "https://elevenlabs.io/",
+   "icon": "/static/tools/ai-icons/87a986a37a34b91f2345.webp",
+   "heat": 15598
+  },
+  {
+   "id": "15b048bbb37827248c32",
+   "category": "smart10",
+   "name": "Kling",
+   "description": "可灵：文本/图像生成视频",
+   "url": "https://klingai.com/",
+   "icon": "/static/tools/ai-icons/7bb9ff753677f69bf092.webp",
+   "heat": 5198
   },
   {
    "id": "ff59d5023d22550ed1c2",
@@ -1491,7 +1704,93 @@
    "name": "剪映专业版",
    "url": "https://www.capcut.cn/",
    "description": "剪辑、字幕和配音",
-   "icon": "/static/tools/ai-icons/17fa2526bd0c69dfb699.webp"
+   "icon": "/static/tools/ai-icons/17fa2526bd0c69dfb699.webp",
+   "heat": 5000
+  },
+  {
+   "id": "fe6b3d3d036d6d71b821",
+   "category": "smart10",
+   "name": "Hailuo / 海螺",
+   "description": "MiniMax 海螺视频生成",
+   "url": "https://hailuoai.com/",
+   "icon": "/static/tools/ai-icons/1cdfb0b20c75c80e23fc.webp",
+   "aliases": [
+    "Hailuo",
+    "海螺 AI"
+   ],
+   "heat": 3369
+  },
+  {
+   "id": "25afc9059a526d070698",
+   "category": "smart10",
+   "name": "Heygen",
+   "url": "https://www.heygen.com",
+   "description": "制作数字人讲解视频",
+   "icon": "/static/tools/ai-icons/7c554153580632a325de.webp",
+   "heat": 3080
+  },
+  {
+   "id": "0a828b049f37cc98209d",
+   "category": "smart10",
+   "name": "Pika",
+   "description": "AI 视频生成与编辑",
+   "url": "https://pika.art/",
+   "icon": "/static/tools/ai-icons/22e6ccde1c2a77a30fb0.webp",
+   "heat": 2000
+  },
+  {
+   "id": "b36872a8a97812f3a2e9",
+   "category": "smart10",
+   "name": "Runway",
+   "url": "https://runwayml.com/",
+   "description": "生成与编辑视频",
+   "icon": "/static/tools/ai-icons/beb62ae610534c107528.webp",
+   "heat": 1279
+  },
+  {
+   "id": "514b20824c7fd0ea5a1d",
+   "category": "smart10",
+   "name": "Luma Dream Machine",
+   "description": "Luma 视频与世界模型生成",
+   "url": "https://lumalabs.ai/dream-machine",
+   "icon": "/static/tools/ai-icons/ecf5f2ff1a8459b6c64c.webp",
+   "heat": 1090
+  },
+  {
+   "id": "23dc9830364861129e31",
+   "category": "smart10",
+   "name": "Sora",
+   "description": "OpenAI 视频生成",
+   "url": "https://openai.com/sora",
+   "icon": "/static/tools/ai-icons/94e172b20ea11cf80cff.webp",
+   "heat": 432
+  },
+  {
+   "id": "0d2e9c40c5cdcdaa9f56",
+   "category": "smart10",
+   "name": "Vidu",
+   "description": "生数科技视频生成",
+   "url": "https://www.vidu.com/",
+   "icon": "/static/tools/ai-icons/87bf2ee0a93c124fb0d3.webp",
+   "heat": 370
+  },
+  {
+   "id": "16e3542201e7b450a8fa",
+   "category": "smart10",
+   "name": "Udio",
+   "description": "AI 音乐生成",
+   "url": "https://www.udio.com/",
+   "icon": "/static/tools/ai-icons/9bc993b49d604661c90e.webp",
+   "heat": 285
+  },
+  {
+   "id": "b4fafbb227ed32759ec5",
+   "category": "smart10",
+   "name": "Stable Audio",
+   "url": "https://www.stableaudio.com/",
+   "description": "用描述生成音乐",
+   "icon": "/static/tools/ai-icons/5b2237f2a94a8e1cfb63.webp",
+   "heat": 200
   },
   {
    "id": "119124cdb7b184b40883",
@@ -1499,15 +1798,8 @@
    "name": "Play",
    "url": "https://play.ht/",
    "description": "生成语音旁白",
-   "icon": "/static/tools/ai-icons/ff3c17256ea6889799f7.webp"
-  },
-  {
-   "id": "cfcb5c3319de294c117c",
-   "category": "smart10",
-   "name": "Soundraw",
-   "url": "https://soundraw.io/",
-   "description": "制作配乐",
-   "icon": "/static/tools/ai-icons/32a789f220534b92e0ca.webp"
+   "icon": "/static/tools/ai-icons/ff3c17256ea6889799f7.webp",
+   "heat": 150
   },
   {
    "id": "e6ce8349f5febb6c4ffb",
@@ -1515,39 +1807,17 @@
    "name": "Fliki",
    "url": "https://fliki.ai/",
    "description": "把文稿转为视频",
-   "icon": "/static/tools/ai-icons/a2d90b8dc870bb447f60.webp"
+   "icon": "/static/tools/ai-icons/a2d90b8dc870bb447f60.webp",
+   "heat": 120
   },
   {
-   "id": "211773cab1ca906f4444",
+   "id": "9f1333623fedf45ca2cb",
    "category": "smart10",
-   "name": "uberduck",
-   "url": "https://uberduck.ai/",
-   "description": "合成语音与人声",
-   "icon": "/static/tools/ai-icons/e320fa5ed2ca5b90c1b9.webp"
-  },
-  {
-   "id": "c4b896a13e1f1d25b2dc",
-   "category": "smart10",
-   "name": "腾讯智影",
-   "url": "https://zenvideo.qq.com/",
-   "description": "云端视频创作",
-   "icon": "/static/tools/ai-icons/14da44c95561838adbc9.webp"
-  },
-  {
-   "id": "0d3aadfe33742edcfc61",
-   "category": "smart10",
-   "name": "Unscreen",
-   "url": "https://www.unscreen.com/",
-   "description": "分离视频背景",
-   "icon": "/static/tools/ai-icons/47dacaf3ca442684af81.webp"
-  },
-  {
-   "id": "b7928b17fb34a23f5325",
-   "category": "smart10",
-   "name": "Audo Studio",
-   "url": "https://audo.ai/",
-   "description": "清理录音噪声",
-   "icon": "/static/tools/ai-icons/415874a963f26e32d1ff.webp"
+   "name": "Akool",
+   "url": "https://akool.com/zh-cn",
+   "description": "制作个性化视频",
+   "icon": "/static/tools/ai-icons/87ebc55a029380e3d591.webp",
+   "heat": 100
   },
   {
    "id": "7d1a033f0d8405636995",
@@ -1555,7 +1825,62 @@
    "name": "Clipchamp",
    "url": "https://clipchamp.com/zh-hans/",
    "description": "编辑视频与旁白",
-   "icon": "/static/tools/ai-icons/dd936af38063b8d7260a.webp"
+   "icon": "/static/tools/ai-icons/dd936af38063b8d7260a.webp",
+   "heat": 100
+  },
+  {
+   "id": "9546566f4a668caf06d8",
+   "category": "smart10",
+   "name": "SAM Audio",
+   "url": "https://ai.meta.com/research/samaudio/",
+   "description": "根据提示分离声音",
+   "icon": "/static/tools/ai-icons/a4cdbb2188e9b2fa43b8.webp",
+   "heat": 100
+  },
+  {
+   "id": "cfcb5c3319de294c117c",
+   "category": "smart10",
+   "name": "Soundraw",
+   "url": "https://soundraw.io/",
+   "description": "制作配乐",
+   "icon": "/static/tools/ai-icons/32a789f220534b92e0ca.webp",
+   "heat": 80
+  },
+  {
+   "id": "6295e736ef0d91924b04",
+   "category": "smart10",
+   "name": "Wonder Studio",
+   "url": "https://wonderdynamics.com/",
+   "description": "把真人表演转为 CG",
+   "icon": "/static/tools/ai-icons/899d2d7f91ece51bc2bd.webp",
+   "heat": 80
+  },
+  {
+   "id": "c4b896a13e1f1d25b2dc",
+   "category": "smart10",
+   "name": "腾讯智影",
+   "url": "https://zenvideo.qq.com/",
+   "description": "云端视频创作",
+   "icon": "/static/tools/ai-icons/14da44c95561838adbc9.webp",
+   "heat": 80
+  },
+  {
+   "id": "b9df058ece5e3d34a0ef",
+   "category": "smart10",
+   "name": "蝉妈妈",
+   "url": "https://www.chanmama.com/?uisdc",
+   "description": "分析短视频与直播数据",
+   "icon": "/static/tools/ai-icons/fe186d5a8acf3bbc8c12.webp",
+   "heat": 80
+  },
+  {
+   "id": "b5f536f6d981de21edbd",
+   "category": "smart10",
+   "name": "Mubert",
+   "url": "https://mubert.com/",
+   "description": "生成背景音乐",
+   "icon": "/static/tools/ai-icons/96a97d58bd06123842d7.webp",
+   "heat": 60
   },
   {
    "id": "dad805aad22087f35660",
@@ -1563,55 +1888,62 @@
    "name": "Rask",
    "url": "https://zh.rask.ai/",
    "description": "翻译和配音视频",
-   "icon": "/static/tools/ai-icons/8faf55776b3363e822bb.webp"
+   "icon": "/static/tools/ai-icons/8faf55776b3363e822bb.webp",
+   "heat": 60
   },
   {
-   "id": "77e424173efce376eea5",
-   "category": "smart5",
-   "name": "Text to Skybox",
-   "url": "https://skybox.blockadelabs.com/",
-   "description": "生成全景环境贴图",
-   "icon": "/static/tools/ai-icons/736deec4afe846ab3dbc.webp"
+   "id": "4fac30ccd6407b9883e1",
+   "category": "smart10",
+   "name": "网易天音",
+   "url": "https://tianyin.163.com/",
+   "description": "辅助作曲与编曲",
+   "icon": "/static/tools/ai-icons/014a255207183034853f.webp",
+   "heat": 60
   },
   {
-   "id": "38c14a49612b6d6b840a",
-   "category": "smart5",
-   "name": "Poly",
-   "url": "https://withpoly.com/browse/textures",
-   "description": "用文字生成材质",
-   "icon": "/static/tools/ai-icons/89e5ea9d111e190fa46e.webp"
+   "id": "9d9a84ba1dc8d6a03c33",
+   "category": "smart10",
+   "name": "BibiGPT",
+   "url": "https://b.jimmylv.cn/",
+   "description": "整理音视频重点",
+   "icon": "/static/tools/ai-icons/6a112f6e040dc80d7bf1.webp",
+   "heat": 50
   },
   {
-   "id": "a90b1dbd0aec41b04339",
-   "category": "smart5",
-   "name": "Ponzu",
-   "url": "https://www.ponzu.gg/",
-   "description": "生成无缝纹理",
-   "icon": "/static/tools/ai-icons/29d6d9b004a58cb3b66a.webp"
+   "id": "274cf62a8df021541cb1",
+   "category": "smart10",
+   "name": "TTSMAKER",
+   "url": "https://ttsmaker.cn/",
+   "description": "将文本转换成语音",
+   "icon": "/static/tools/ai-icons/3d357c9fb4a0060e59e4.webp",
+   "heat": 40
   },
   {
-   "id": "c5249b82a8f578205b09",
-   "category": "smart5",
-   "name": "Sloyd",
-   "url": "https://www.sloyd.ai/",
-   "description": "制作游戏模型",
-   "icon": "/static/tools/ai-icons/a09d7e439e6f8ab2d087.webp"
+   "id": "0d3aadfe33742edcfc61",
+   "category": "smart10",
+   "name": "Unscreen",
+   "url": "https://www.unscreen.com/",
+   "description": "分离视频背景",
+   "icon": "/static/tools/ai-icons/47dacaf3ca442684af81.webp",
+   "heat": 40
   },
   {
-   "id": "7d12dbff86f2252c406d",
-   "category": "smart5",
-   "name": "Plasmo",
-   "url": "https://www.plasmo.ai/",
-   "description": "从草图构建模型",
-   "icon": "/static/tools/ai-icons/2aa9edcd48070e73ac70.webp"
+   "id": "b7928b17fb34a23f5325",
+   "category": "smart10",
+   "name": "Audo Studio",
+   "url": "https://audo.ai/",
+   "description": "清理录音噪声",
+   "icon": "/static/tools/ai-icons/415874a963f26e32d1ff.webp",
+   "heat": 30
   },
   {
-   "id": "2910ad224b84167d8e29",
-   "category": "smart5",
-   "name": "Cascadeur",
-   "url": "https://cascadeur.com/",
-   "description": "编辑角色关键帧",
-   "icon": "/static/tools/ai-icons/a4cb658fdbb2cc2338c3.webp"
+   "id": "ab9126b327c36123bf13",
+   "category": "smart10",
+   "name": "BeatBot",
+   "url": "https://beatbot.fm/",
+   "description": "生成音乐片段",
+   "icon": "/static/tools/ai-icons/b5a673369b20102c8361.webp",
+   "heat": 30
   },
   {
    "id": "b1f059e50279fff60522",
@@ -1619,7 +1951,26 @@
    "name": "Luma Labs",
    "url": "https://lumalabs.ai/",
    "description": "从实拍素材重建场景",
-   "icon": "/static/tools/ai-icons/ac3369c1426531232fdb.webp"
+   "icon": "/static/tools/ai-icons/ac3369c1426531232fdb.webp",
+   "heat": 400
+  },
+  {
+   "id": "2910ad224b84167d8e29",
+   "category": "smart5",
+   "name": "Cascadeur",
+   "url": "https://cascadeur.com/",
+   "description": "编辑角色关键帧",
+   "icon": "/static/tools/ai-icons/a4cb658fdbb2cc2338c3.webp",
+   "heat": 80
+  },
+  {
+   "id": "77e424173efce376eea5",
+   "category": "smart5",
+   "name": "Text to Skybox",
+   "url": "https://skybox.blockadelabs.com/",
+   "description": "生成全景环境贴图",
+   "icon": "/static/tools/ai-icons/736deec4afe846ab3dbc.webp",
+   "heat": 50
   },
   {
    "id": "22828d6897e33c87095e",
@@ -1627,7 +1978,8 @@
    "name": "KAEDIM",
    "url": "https://www.kaedim3d.com/",
    "description": "生成模型和纹理",
-   "icon": "/static/tools/ai-icons/4e4ba9f2357a84b7e913.webp"
+   "icon": "/static/tools/ai-icons/4e4ba9f2357a84b7e913.webp",
+   "heat": 40
   },
   {
    "id": "e57dd5e38a2046b49544",
@@ -1635,23 +1987,26 @@
    "name": "Plask",
    "url": "https://plask.ai/",
    "description": "从视频提取角色动作",
-   "icon": "/static/tools/ai-icons/eb31ce819fb39c0ae423.webp"
+   "icon": "/static/tools/ai-icons/eb31ce819fb39c0ae423.webp",
+   "heat": 40
   },
   {
-   "id": "21ca716dc37d07d11854",
+   "id": "38c14a49612b6d6b840a",
    "category": "smart5",
-   "name": "DreamFusion",
-   "url": "https://dreamfusion3d.github.io/",
-   "description": "探索文本生成 3D",
-   "icon": "/static/tools/ai-icons/df5e4978fc0b955775fc.webp"
+   "name": "Poly",
+   "url": "https://withpoly.com/browse/textures",
+   "description": "用文字生成材质",
+   "icon": "/static/tools/ai-icons/89e5ea9d111e190fa46e.webp",
+   "heat": 40
   },
   {
-   "id": "4423453e5f69bd248827",
+   "id": "c5249b82a8f578205b09",
    "category": "smart5",
-   "name": "GET3D",
-   "url": "https://nv-tlabs.github.io/GET3D/",
-   "description": "了解 NVIDIA 模型生成研究",
-   "icon": "/static/tools/ai-icons/90051ec8bba6546ce46c.webp"
+   "name": "Sloyd",
+   "url": "https://www.sloyd.ai/",
+   "description": "制作游戏模型",
+   "icon": "/static/tools/ai-icons/a09d7e439e6f8ab2d087.webp",
+   "heat": 40
   },
   {
    "id": "afc5064eaf7c1d603c2d",
@@ -1659,23 +2014,44 @@
    "name": "3DFY AI",
    "url": "https://3dfy.ai/",
    "description": "创建三维素材",
-   "icon": "/static/tools/ai-icons/68cab194f3ffdb13548d.webp"
+   "icon": "/static/tools/ai-icons/68cab194f3ffdb13548d.webp",
+   "heat": 30
   },
   {
-   "id": "eff429a673fa8aed8aca",
-   "category": "study",
-   "name": "AIGC 创意视觉提升班",
-   "url": "https://www.uisdc.com/ai-course",
-   "description": "学习 AIGC 视觉创作",
-   "icon": "/static/tools/ai-icons/5b8903d332110a2594cf.webp"
+   "id": "21ca716dc37d07d11854",
+   "category": "smart5",
+   "name": "DreamFusion",
+   "url": "https://dreamfusion3d.github.io/",
+   "description": "探索文本生成 3D",
+   "icon": "/static/tools/ai-icons/df5e4978fc0b955775fc.webp",
+   "heat": 30
   },
   {
-   "id": "d0c448139d905ce9575a",
-   "category": "study",
-   "name": "Udacity AI 学院",
-   "url": "https://www.udacity.com",
-   "description": "学习人工智能课程",
-   "icon": "/static/tools/ai-icons/caf59ef9c437d6a5f294.webp"
+   "id": "4423453e5f69bd248827",
+   "category": "smart5",
+   "name": "GET3D",
+   "url": "https://nv-tlabs.github.io/GET3D/",
+   "description": "了解 NVIDIA 模型生成研究",
+   "icon": "/static/tools/ai-icons/90051ec8bba6546ce46c.webp",
+   "heat": 20
+  },
+  {
+   "id": "7d12dbff86f2252c406d",
+   "category": "smart5",
+   "name": "Plasmo",
+   "url": "https://www.plasmo.ai/",
+   "description": "从草图构建模型",
+   "icon": "/static/tools/ai-icons/2aa9edcd48070e73ac70.webp",
+   "heat": 20
+  },
+  {
+   "id": "a90b1dbd0aec41b04339",
+   "category": "smart5",
+   "name": "Ponzu",
+   "url": "https://www.ponzu.gg/",
+   "description": "生成无缝纹理",
+   "icon": "/static/tools/ai-icons/29d6d9b004a58cb3b66a.webp",
+   "heat": 20
   },
   {
    "id": "cfc8de63627b934c6eef",
@@ -1683,23 +2059,8 @@
    "name": "kaggle",
    "url": "https://www.kaggle.com/",
    "description": "参与数据科学练习",
-   "icon": "/static/tools/ai-icons/5f5a1825aeea11a68f42.webp"
-  },
-  {
-   "id": "fa4cd4d9e8311cea1646",
-   "category": "study",
-   "name": "ML For Beginners",
-   "url": "https://microsoft.github.io/ML-For-Beginners/#/",
-   "description": "学习机器学习基础",
-   "icon": "/static/tools/ai-icons/758b5ff3da556b4cb8ce.webp"
-  },
-  {
-   "id": "db90acba0a8e608bebf0",
-   "category": "study",
-   "name": "Deeplearning",
-   "url": "https://www.deeplearning.ai/",
-   "description": "学习深度学习",
-   "icon": "/static/tools/ai-icons/93f4e1f68ecfd708cf12.webp"
+   "icon": "/static/tools/ai-icons/5f5a1825aeea11a68f42.webp",
+   "heat": 800
   },
   {
    "id": "402ecdaa24e12ea813de",
@@ -1707,15 +2068,8 @@
    "name": "Coursera",
    "url": "https://www.coursera.org/collections/best-machine-learning-ai",
    "description": "查找 AI 公开课",
-   "icon": "/static/tools/ai-icons/419b38ed98b885764971.webp"
-  },
-  {
-   "id": "614d62418f135b9e9a82",
-   "category": "study",
-   "name": "Fast AI",
-   "url": "https://www.fast.ai/",
-   "description": "实践深度学习课程",
-   "icon": "/static/tools/ai-icons/24be477938687bfa2add.webp"
+   "icon": "/static/tools/ai-icons/419b38ed98b885764971.webp",
+   "heat": 600
   },
   {
    "id": "dfdd370e8775fcd7526f",
@@ -1723,7 +2077,53 @@
    "name": "Google AI",
    "url": "https://ai.google/",
    "description": "浏览 Google 学习资源",
-   "icon": "/static/tools/ai-icons/4c09de9e272610996d79.webp"
+   "icon": "/static/tools/ai-icons/4c09de9e272610996d79.webp",
+   "heat": 500
+  },
+  {
+   "id": "db90acba0a8e608bebf0",
+   "category": "study",
+   "name": "Deeplearning",
+   "url": "https://www.deeplearning.ai/",
+   "description": "学习深度学习",
+   "icon": "/static/tools/ai-icons/93f4e1f68ecfd708cf12.webp",
+   "heat": 400
+  },
+  {
+   "id": "614d62418f135b9e9a82",
+   "category": "study",
+   "name": "Fast AI",
+   "url": "https://www.fast.ai/",
+   "description": "实践深度学习课程",
+   "icon": "/static/tools/ai-icons/24be477938687bfa2add.webp",
+   "heat": 200
+  },
+  {
+   "id": "d0c448139d905ce9575a",
+   "category": "study",
+   "name": "Udacity AI 学院",
+   "url": "https://www.udacity.com",
+   "description": "学习人工智能课程",
+   "icon": "/static/tools/ai-icons/caf59ef9c437d6a5f294.webp",
+   "heat": 100
+  },
+  {
+   "id": "eff429a673fa8aed8aca",
+   "category": "study",
+   "name": "AIGC 创意视觉提升班",
+   "url": "https://www.uisdc.com/ai-course",
+   "description": "学习 AIGC 视觉创作",
+   "icon": "/static/tools/ai-icons/5b8903d332110a2594cf.webp",
+   "heat": 10
+  },
+  {
+   "id": "fa4cd4d9e8311cea1646",
+   "category": "study",
+   "name": "ML For Beginners",
+   "url": "https://microsoft.github.io/ML-For-Beginners/#/",
+   "description": "学习机器学习基础",
+   "icon": "/static/tools/ai-icons/758b5ff3da556b4cb8ce.webp",
+   "heat": 10
   },
   {
    "id": "2a4817f5abea1c8ee33b",
@@ -1731,7 +2131,8 @@
    "name": "神经网络入门",
    "url": "https://brilliant.org/courses/intro-neural-networks/",
    "description": "学习神经网络原理",
-   "icon": "/static/tools/ai-icons/1209e0eb97d843a83417.webp"
+   "icon": "/static/tools/ai-icons/1209e0eb97d843a83417.webp",
+   "heat": 10
   },
   {
    "id": "66ce70eb493b693ef15e",
@@ -1739,7 +2140,8 @@
    "name": "阿里云 AI 学习路线",
    "url": "https://developer.aliyun.com/learning/roadmap/ai",
    "description": "学习阿里云 AI 课程",
-   "icon": "/static/tools/ai-icons/14baa42287f2e61a6c92.webp"
+   "icon": "/static/tools/ai-icons/14baa42287f2e61a6c92.webp",
+   "heat": 10
   },
   {
    "id": "2d8e8c2e1c8d29e1650e",
@@ -1747,7 +2149,8 @@
    "name": "Elements of AI",
    "url": "https://www.elementsofai.com/",
    "description": "了解人工智能基础",
-   "icon": "/static/tools/ai-icons/9458938d5384984e386b.webp"
+   "icon": "/static/tools/ai-icons/9458938d5384984e386b.webp",
+   "heat": 10
   },
   {
    "id": "8c49b3837b39b40b4708",
@@ -1755,95 +2158,39 @@
    "name": "AI 大课堂",
    "url": "https://www.aidaxue.com/",
    "description": "学习讯飞 AI 课程",
-   "icon": "/static/tools/ai-icons/de5064a9429c778c435b.webp"
+   "icon": "/static/tools/ai-icons/de5064a9429c778c435b.webp",
+   "heat": 10
+  },
+  {
+   "id": "b034664c4080a7e43fa3",
+   "category": "gadget",
+   "name": "NotebookLM",
+   "description": "用资料库做笔记与播客式总结",
+   "url": "https://notebooklm.google.com/",
+   "icon": "/static/tools/ai-icons/2c3d988a2a63b6f3e73f.webp",
+   "aliases": [
+    "Notebook LLM",
+    "Notebook LM"
+   ],
+   "heat": 6259
   },
   {
    "id": "7fd3e5c0c1c2b933685d",
    "category": "gadget",
    "name": "Microsoft 365 Copilot",
-   "url": "https://blogs.microsoft.com/blog/2023/03/16/introducing-microsoft-365-copilot-your-copilot-for-work/",
+   "url": "https://www.microsoft.com/microsoft-365/copilot",
    "description": "在办公文档中使用 Copilot",
-   "icon": "/static/tools/ai-icons/b509af5f648b26076121.webp"
+   "icon": "/static/tools/ai-icons/b509af5f648b26076121.webp",
+   "heat": 1500
   },
   {
-   "id": "e42a63a89e6d49f796a7",
+   "id": "8eb45733030e94333cd7",
    "category": "gadget",
-   "name": "Tome",
-   "url": "https://tome.app/",
-   "description": "制作演示文稿",
-   "icon": "/static/tools/ai-icons/d3b6a25523fe1c30ec6b.webp"
-  },
-  {
-   "id": "1a5efe78e9676972a25f",
-   "category": "gadget",
-   "name": "Glimmer Ai",
-   "url": "https://glimmerai.tech/",
-   "description": "生成演示页",
-   "icon": "/static/tools/ai-icons/f31947bcf28cf759dc3c.webp"
-  },
-  {
-   "id": "456a79e1d5fdde69b4b8",
-   "category": "gadget",
-   "name": "PandaGPT",
-   "url": "https://www.pandagpt.io/",
-   "description": "通过问答阅读文档",
-   "icon": "/static/tools/ai-icons/2f2cb8f85fcefab11239.webp"
-  },
-  {
-   "id": "155486332afba560440d",
-   "category": "gadget",
-   "name": "WordAi",
-   "url": "https://wordai.com/",
-   "description": "改写文字材料",
-   "icon": "/static/tools/ai-icons/a56a644fa3b6986af99e.webp"
-  },
-  {
-   "id": "b0bc035bb17c9cfd0244",
-   "category": "gadget",
-   "name": "Timely",
-   "url": "https://timelyapp.com/",
-   "description": "记录工作时间",
-   "icon": "/static/tools/ai-icons/a3e0aeb293d534c79a1b.webp"
-  },
-  {
-   "id": "ee75be03332805ca9c87",
-   "category": "gadget",
-   "name": "酷表 ChatExcel",
-   "url": "https://chatexcel.com/",
-   "description": "用对话操作表格",
-   "icon": "/static/tools/ai-icons/ee50d3b39688fc546044.webp"
-  },
-  {
-   "id": "047a06a21eb2865c1c65",
-   "category": "gadget",
-   "name": "Prezo",
-   "url": "https://prezo.ai/",
-   "description": "创建演示幻灯片",
-   "icon": "/static/tools/ai-icons/f6d0dbfa4f74f4a106a1.webp"
-  },
-  {
-   "id": "1f3e3e548656a09e2101",
-   "category": "gadget",
-   "name": "Taskade",
-   "url": "https://www.taskade.com/",
-   "description": "规划任务和思维导图",
-   "icon": "/static/tools/ai-icons/554a57a038e2b1597b80.webp"
-  },
-  {
-   "id": "6a4020d9f5493d55c93d",
-   "category": "gadget",
-   "name": "Rossum.ai",
-   "url": "https://rossum.ai/",
-   "description": "提取业务文档信息",
-   "icon": "/static/tools/ai-icons/02adf6cf6588adfc0d82.webp"
-  },
-  {
-   "id": "37b77306f7aea49da7d1",
-   "category": "gadget",
-   "name": "Otter AI",
-   "url": "https://otter.ai/",
-   "description": "整理会议笔记",
-   "icon": "/static/tools/ai-icons/bb0af91cbaae1d3ad720.webp"
+   "name": "Gamma",
+   "description": "用 AI 快速生成演示文稿",
+   "url": "https://gamma.app/",
+   "icon": "/static/tools/ai-icons/c9d938d4280918a22b75.webp",
+   "heat": 1437
   },
   {
    "id": "fda45df085b012ad08aa",
@@ -1851,55 +2198,146 @@
    "name": "Zapier AI",
    "url": "https://zapier.com/ai",
    "description": "连接应用并自动化流程",
-   "icon": "/static/tools/ai-icons/fd36b35b67460a0d2d01.webp"
+   "icon": "/static/tools/ai-icons/fd36b35b67460a0d2d01.webp",
+   "heat": 800
   },
   {
-   "id": "c5590ae9c57dc3865085",
-   "category": "translate",
-   "name": "Deepl 翻译器",
-   "url": "https://www.deepl.com/translator",
-   "description": "翻译文本与文档",
-   "icon": "/static/tools/ai-icons/e5cfa8f640d1f5327124.webp"
+   "id": "e42a63a89e6d49f796a7",
+   "category": "gadget",
+   "name": "Tome",
+   "url": "https://tome.app/",
+   "description": "制作演示文稿",
+   "icon": "/static/tools/ai-icons/d3b6a25523fe1c30ec6b.webp",
+   "heat": 692
   },
   {
-   "id": "dbce42d95179ea9534a0",
-   "category": "translate",
-   "name": "必应翻译",
-   "url": "https://cn.bing.com/translator/",
-   "description": "使用微软文本翻译",
-   "icon": "/static/tools/ai-icons/0b696a8267a1d48bf4fa.webp"
+   "id": "37b77306f7aea49da7d1",
+   "category": "gadget",
+   "name": "Otter AI",
+   "url": "https://otter.ai/",
+   "description": "整理会议笔记",
+   "icon": "/static/tools/ai-icons/bb0af91cbaae1d3ad720.webp",
+   "heat": 600
   },
   {
-   "id": "8490f2dcde9a3722ed04",
-   "category": "translate",
-   "name": "TranSmart",
-   "url": "https://transmart.qq.com/zh-CN/index",
-   "description": "腾讯辅助翻译",
-   "icon": "/static/tools/ai-icons/d2c2fa6b460bb4e70959.webp"
+   "id": "ee75be03332805ca9c87",
+   "category": "gadget",
+   "name": "酷表 ChatExcel",
+   "url": "https://chatexcel.com/",
+   "description": "用对话操作表格",
+   "icon": "/static/tools/ai-icons/ee50d3b39688fc546044.webp",
+   "heat": 80
   },
   {
-   "id": "f46640bd5ab9627450d2",
-   "category": "translate",
-   "name": "有道翻译",
-   "url": "https://fanyi.youdao.com/index.html#/",
-   "description": "查词与翻译",
-   "icon": "/static/tools/ai-icons/dcf1a4fda77f65deb536.webp"
+   "id": "1f3e3e548656a09e2101",
+   "category": "gadget",
+   "name": "Taskade",
+   "url": "https://www.taskade.com/",
+   "description": "规划任务和思维导图",
+   "icon": "/static/tools/ai-icons/554a57a038e2b1597b80.webp",
+   "heat": 60
   },
   {
-   "id": "3f3373b18876413f2712",
-   "category": "translate",
-   "name": "阿里翻译",
-   "url": "https://translate.alibaba.com",
-   "description": "使用阿里机器翻译",
-   "icon": "/static/tools/ai-icons/a52d5d9efffa99193d14.webp"
+   "id": "1a5efe78e9676972a25f",
+   "category": "gadget",
+   "name": "Glimmer Ai",
+   "url": "https://glimmerai.tech/",
+   "description": "生成演示页",
+   "icon": "/static/tools/ai-icons/f31947bcf28cf759dc3c.webp",
+   "heat": 40
   },
   {
-   "id": "ebd59aa620c7680f60af",
-   "category": "translate",
-   "name": "秘塔 AI 翻译",
-   "url": "https://law.metaso.cn/",
-   "description": "处理专业术语",
-   "icon": "/static/tools/ai-icons/7217e3185b47e13e7ad4.webp"
+   "id": "047a06a21eb2865c1c65",
+   "category": "gadget",
+   "name": "Prezo",
+   "url": "https://prezo.ai/",
+   "description": "创建演示幻灯片",
+   "icon": "/static/tools/ai-icons/f6d0dbfa4f74f4a106a1.webp",
+   "heat": 40
+  },
+  {
+   "id": "6a4020d9f5493d55c93d",
+   "category": "gadget",
+   "name": "Rossum.ai",
+   "url": "https://rossum.ai/",
+   "description": "提取业务文档信息",
+   "icon": "/static/tools/ai-icons/02adf6cf6588adfc0d82.webp",
+   "heat": 40
+  },
+  {
+   "id": "b0bc035bb17c9cfd0244",
+   "category": "gadget",
+   "name": "Timely",
+   "url": "https://timelyapp.com/",
+   "description": "记录工作时间",
+   "icon": "/static/tools/ai-icons/a3e0aeb293d534c79a1b.webp",
+   "heat": 40
+  },
+  {
+   "id": "456a79e1d5fdde69b4b8",
+   "category": "gadget",
+   "name": "PandaGPT",
+   "url": "https://www.pandagpt.io/",
+   "description": "通过问答阅读文档",
+   "icon": "/static/tools/ai-icons/2f2cb8f85fcefab11239.webp",
+   "heat": 30
+  },
+  {
+   "id": "155486332afba560440d",
+   "category": "gadget",
+   "name": "WordAi",
+   "url": "https://wordai.com/",
+   "description": "改写文字材料",
+   "icon": "/static/tools/ai-icons/a56a644fa3b6986af99e.webp",
+   "heat": 30
+  },
+  {
+   "id": "6be67ee00e18611447ae",
+   "category": "gadget",
+   "name": "WorkBuddy",
+   "description": "用腾讯桌面智能体处理办公任务和文件",
+   "url": "https://cloud.tencent.com/product/workbuddy",
+   "icon": "/static/tools/ai-icons/6c0ac19e21b6e54025ec.webp"
+  },
+  {
+   "id": "c98510d56f30cd00d3d1",
+   "category": "gadget",
+   "name": "豆包工作",
+   "description": "用豆包规划任务，整理资料并生成工作成果",
+   "url": "https://www.doubao.com/work",
+   "icon": "/static/tools/ai-icons/273535a9ee706bfddcb6.webp"
+  },
+  {
+   "id": "756ab09678aef1e89e16",
+   "category": "gadget",
+   "name": "千问办公",
+   "description": "用千问制作文档、表格和演示文稿",
+   "url": "https://qwenwork.cn/",
+   "icon": "/static/tools/ai-icons/ba1f3ef716a2a4ef3a78.webp",
+   "aliases": [
+    "QwenWork",
+    "Qwen Work"
+   ]
+  },
+  {
+   "id": "478343f20d946f084787",
+   "category": "gadget",
+   "name": "Apple Intelligence",
+   "description": "查看 Apple 设备上的写作、图像和智能辅助功能",
+   "url": "https://www.apple.com/apple-intelligence/",
+   "icon": "/static/tools/ai-icons/02a311ec2d3390eb865a.webp",
+   "aliases": [
+    "Apple Intelligent",
+    "苹果智能"
+   ]
+  },
+  {
+   "id": "7ad12c7fbcf6f815b1fd",
+   "category": "gadget",
+   "name": "Glean",
+   "description": "跨企业应用搜索资料，使用工作助手和智能体",
+   "url": "https://www.glean.com/",
+   "icon": "/static/tools/ai-icons/17ffb3e7441e7f81ab27.webp"
   },
   {
    "id": "43e3fca791fd6aa6fd29",
@@ -1907,15 +2345,26 @@
    "name": "Google 翻译",
    "url": "https://translate.google.com/",
    "description": "使用 Google 翻译",
-   "icon": "/static/tools/ai-icons/266cf4c8801a08f15029.webp"
+   "icon": "/static/tools/ai-icons/266cf4c8801a08f15029.webp",
+   "heat": 2000
   },
   {
-   "id": "e7c8a0a7c12dd8536084",
+   "id": "c5590ae9c57dc3865085",
    "category": "translate",
-   "name": "讯飞智能翻译",
-   "url": "https://fanyi.xfyun.cn/console/trans/text",
-   "description": "使用讯飞翻译",
-   "icon": "/static/tools/ai-icons/115858dcddcefd401366.webp"
+   "name": "Deepl 翻译器",
+   "url": "https://www.deepl.com/translator",
+   "description": "翻译文本与文档",
+   "icon": "/static/tools/ai-icons/e5cfa8f640d1f5327124.webp",
+   "heat": 1500
+  },
+  {
+   "id": "f46640bd5ab9627450d2",
+   "category": "translate",
+   "name": "有道翻译",
+   "url": "https://fanyi.youdao.com/index.html#/",
+   "description": "查词与翻译",
+   "icon": "/static/tools/ai-icons/dcf1a4fda77f65deb536.webp",
+   "heat": 200
   },
   {
    "id": "a2cf998b7e33cc224f5f",
@@ -1923,7 +2372,17 @@
    "name": "百度翻译",
    "url": "https://fanyi.baidu.com/",
    "description": "使用百度多语翻译",
-   "icon": "/static/tools/ai-icons/a84bdde6766383dc1b72.webp"
+   "icon": "/static/tools/ai-icons/a84bdde6766383dc1b72.webp",
+   "heat": 150
+  },
+  {
+   "id": "dbce42d95179ea9534a0",
+   "category": "translate",
+   "name": "必应翻译",
+   "url": "https://cn.bing.com/translator/",
+   "description": "使用微软文本翻译",
+   "icon": "/static/tools/ai-icons/0b696a8267a1d48bf4fa.webp",
+   "heat": 80
   },
   {
    "id": "e5969fcafd932347f90c",
@@ -1931,7 +2390,35 @@
    "name": "彩云小译",
    "url": "https://fanyi.caiyunapp.com/#/",
    "description": "双语对照翻译",
-   "icon": "/static/tools/ai-icons/8dd1519477aad4fcf5d1.webp"
+   "icon": "/static/tools/ai-icons/8dd1519477aad4fcf5d1.webp",
+   "heat": 60
+  },
+  {
+   "id": "e7c8a0a7c12dd8536084",
+   "category": "translate",
+   "name": "讯飞智能翻译",
+   "url": "https://fanyi.xfyun.cn/console/trans/text",
+   "description": "使用讯飞翻译",
+   "icon": "/static/tools/ai-icons/115858dcddcefd401366.webp",
+   "heat": 50
+  },
+  {
+   "id": "3f3373b18876413f2712",
+   "category": "translate",
+   "name": "阿里翻译",
+   "url": "https://translate.alibaba.com",
+   "description": "使用阿里机器翻译",
+   "icon": "/static/tools/ai-icons/a52d5d9efffa99193d14.webp",
+   "heat": 50
+  },
+  {
+   "id": "8490f2dcde9a3722ed04",
+   "category": "translate",
+   "name": "TranSmart",
+   "url": "https://transmart.qq.com/zh-CN/index",
+   "description": "腾讯辅助翻译",
+   "icon": "/static/tools/ai-icons/d2c2fa6b460bb4e70959.webp",
+   "heat": 40
   },
   {
    "id": "39b81ed9eed46fc3785b",
@@ -1939,7 +2426,17 @@
    "name": "搜狗翻译",
    "url": "https://fanyi.sogou.com/text",
    "description": "查词和文本互译",
-   "icon": "/static/tools/ai-icons/d581ae044d2c90ce2d1e.webp"
+   "icon": "/static/tools/ai-icons/d581ae044d2c90ce2d1e.webp",
+   "heat": 40
+  },
+  {
+   "id": "ebd59aa620c7680f60af",
+   "category": "translate",
+   "name": "秘塔 AI 翻译",
+   "url": "https://law.metaso.cn/",
+   "description": "处理专业术语",
+   "icon": "/static/tools/ai-icons/7217e3185b47e13e7ad4.webp",
+   "heat": 40
   },
   {
    "id": "6c39040205c9b7c2c2bd",
@@ -1947,15 +2444,17 @@
    "name": "Lufe AI",
    "url": "https://www.lufe.ai/zh",
    "description": "识别并翻译图片文字",
-   "icon": "/static/tools/ai-icons/b81f279d6b440fdcb87f.webp"
+   "icon": "/static/tools/ai-icons/b81f279d6b440fdcb87f.webp",
+   "heat": 30
   },
   {
-   "id": "7f733b94078e4e11bc25",
+   "id": "0f14115d33804bf2d793",
    "category": "program",
-   "name": "GitHub Copilot",
-   "url": "https://github.com/features/copilot",
-   "description": "编写代码与自动补全",
-   "icon": "/static/tools/ai-icons/ed95a30006698704338d.webp"
+   "name": "Claude Code",
+   "description": "终端与仓库级 AI 编程代理",
+   "url": "https://claude.com/product/claude-code",
+   "icon": "/static/tools/ai-icons/584bbf7071b5556a7a23.webp",
+   "heat": 178694
   },
   {
    "id": "b3b22821b9dc199f86cf",
@@ -1963,63 +2462,50 @@
    "name": "Cursor",
    "url": "https://cursor.com/",
    "description": "在编辑器中使用 AI",
-   "icon": "/static/tools/ai-icons/3fa44ce33315635fb663.webp"
+   "icon": "/static/tools/ai-icons/9564703d7dd7cee0e241.webp",
+   "heat": 18093
+  },
+  {
+   "id": "5fb35cd8546241cf9215",
+   "category": "program",
+   "name": "OpenAI Codex",
+   "description": "OpenAI 编程代理（ChatGPT Codex）",
+   "url": "https://chatgpt.com/codex",
+   "icon": "/static/tools/ai-icons/e684fbf79f82081607b0.webp",
+   "aliases": [
+    "Codex"
+   ],
+   "heat": 6679
+  },
+  {
+   "id": "7f733b94078e4e11bc25",
+   "category": "program",
+   "name": "GitHub Copilot",
+   "url": "https://github.com/features/copilot",
+   "description": "编写代码与自动补全",
+   "icon": "/static/tools/ai-icons/c1e0dca15490d27b4a95.webp",
+   "heat": 3810
+  },
+  {
+   "id": "cb900609ba28a5112fab",
+   "category": "program",
+   "name": "Bolt.new",
+   "description": "浏览器内一句话生成全栈应用",
+   "url": "https://bolt.new/",
+   "icon": "/static/tools/ai-icons/a4b77e800811f5971790.webp",
+   "heat": 404
   },
   {
    "id": "93387a082e474dc4e533",
    "category": "program",
-   "name": "Codeium",
-   "url": "https://codeium.com/",
-   "description": "辅助代码补全",
-   "icon": "/static/tools/ai-icons/9c1d18df8da3e66c0d52.webp"
-  },
-  {
-   "id": "2489bc2ace1ef417fdac",
-   "category": "program",
-   "name": "CodiumAI",
-   "url": "https://www.codium.ai/",
-   "description": "协助代码检查",
-   "icon": "/static/tools/ai-icons/696e8def937044dd26bb.webp"
-  },
-  {
-   "id": "a9c210b184cf87f4e814",
-   "category": "program",
-   "name": "JamGPT",
-   "url": "https://jam.dev/jamgpt",
-   "description": "排查程序问题",
-   "icon": "/static/tools/ai-icons/b8553c58b1f2abd4bb07.webp"
-  },
-  {
-   "id": "6e62b7d410fc54161eb4",
-   "category": "program",
-   "name": "Hocoos",
-   "url": "https://hocoos.com/",
-   "description": "制作无代码网站",
-   "icon": "/static/tools/ai-icons/8efe2a207e5dc06fe330.webp"
-  },
-  {
-   "id": "66b5d35a1ce7964b7fe5",
-   "category": "program",
-   "name": "AskCodi",
-   "url": "https://www.askcodi.com/",
-   "description": "使用编程问答助手",
-   "icon": "/static/tools/ai-icons/8e7ee03e417acfc20364.webp"
-  },
-  {
-   "id": "419ba3c1a5205edc84d8",
-   "category": "program",
-   "name": "Fronty",
-   "url": "https://fronty.com/",
-   "description": "从设计图生成网页代码",
-   "icon": "/static/tools/ai-icons/30d842001f021dcc5494.webp"
-  },
-  {
-   "id": "21a6f3630d1942a95920",
-   "category": "program",
-   "name": "Conductor",
-   "url": "https://www.conductor.build/",
-   "description": "并行执行编程任务",
-   "icon": "/static/tools/ai-icons/7fe9b73af83a57a4e3df.webp"
+   "name": "Windsurf",
+   "url": "https://windsurf.com/",
+   "description": "原 Codeium 演进的 AI IDE（现属 Cognition 生态）",
+   "icon": "/static/tools/ai-icons/78909704ea89fc759a2d.webp",
+   "aliases": [
+    "Codeium"
+   ],
+   "heat": 318
   },
   {
    "id": "663fe8361be4d1c4f4e8",
@@ -2027,63 +2513,83 @@
    "name": "Warp",
    "url": "https://www.warp.dev/",
    "description": "在终端中使用 AI",
-   "icon": "/static/tools/ai-icons/9e9f9f6f40fc4c5ca028.webp"
+   "icon": "/static/tools/ai-icons/9e9f9f6f40fc4c5ca028.webp",
+   "heat": 171
   },
   {
-   "id": "28ccb41039e1fcf3bc8d",
+   "id": "2489bc2ace1ef417fdac",
    "category": "program",
-   "name": "MarsX",
-   "url": "https://www.marsx.dev/",
-   "description": "搭建微型应用",
-   "icon": "/static/tools/ai-icons/99bbc53a4fc74d2d8134.webp"
+   "name": "Qodo",
+   "url": "https://www.qodo.ai/",
+   "description": "代码质量与测试（原 CodiumAI）",
+   "icon": "/static/tools/ai-icons/540404e736a22a22dfc0.webp",
+   "aliases": [
+    "CodiumAI"
+   ],
+   "heat": 109
   },
   {
-   "id": "363347b69c0d47bc330f",
+   "id": "21a6f3630d1942a95920",
    "category": "program",
-   "name": "Theculturedao",
-   "url": "https://www.theculturedao.com/",
-   "description": "探索生成式娱乐项目",
-   "icon": "/static/tools/ai-icons/df5272395ac9d63855e0.webp"
+   "name": "Conductor",
+   "url": "https://www.conductor.build/",
+   "description": "并行执行编程任务",
+   "icon": "/static/tools/ai-icons/7fe9b73af83a57a4e3df.webp",
+   "heat": 50
   },
   {
-   "id": "6e40d0843122247e43a6",
+   "id": "cbb05fc902b17ef5c5cd",
    "category": "program",
-   "name": "Ludo AI",
-   "url": "https://ludo.ai/",
-   "description": "辅助游戏创意设计",
-   "icon": "/static/tools/ai-icons/554a94712d31eecf3d92.webp"
+   "name": "Amp",
+   "description": "用编程智能体开发、测试和审查代码",
+   "url": "https://ampcode.com/",
+   "icon": "/static/tools/ai-icons/42e1a5c148cebf6f73a8.webp"
   },
   {
-   "id": "c9f831b793e6913d514b",
+   "id": "c601e9aa4d5185fc44f3",
    "category": "program",
-   "name": "AI Dungeon",
-   "url": "https://play.aidungeon.io/main/home",
-   "description": "体验交互式文字冒险",
-   "icon": "/static/tools/ai-icons/0631cb522256ff58dab9.webp"
+   "name": "Google Antigravity",
+   "description": "在编辑器、终端和浏览器之间协作开发软件",
+   "url": "https://antigravity.google/",
+   "icon": "/static/tools/ai-icons/69a223e7de6b15bb2bd6.webp"
   },
   {
-   "id": "9b2501d41d1dce010018",
+   "id": "bf46d5a1019a23ea5f95",
    "category": "program",
-   "name": "Charisma",
-   "url": "https://charisma.ai/",
-   "description": "设计交互式虚拟角色",
-   "icon": "/static/tools/ai-icons/0a077cae692a2fc8745e.webp"
+   "name": "Qoder",
+   "description": "用 Qoder 的编程智能体理解、修改和验证代码",
+   "url": "https://qoder.cn/",
+   "icon": "/static/tools/ai-icons/11745c00e7631e2f14aa.webp",
+   "aliases": [
+    "Qcoder"
+   ]
   },
   {
-   "id": "a8f704beafb372e10a84",
+   "id": "8488408ffd9760e90ecd",
    "category": "program",
-   "name": "Hidden Door",
-   "url": "https://www.hiddendoor.co/",
-   "description": "探索叙事互动游戏",
-   "icon": "/static/tools/ai-icons/d997b7633a1c9c76eeaf.webp"
+   "name": "OpenCode",
+   "description": "在终端或桌面使用开源编程智能体",
+   "url": "https://opencode.ai/",
+   "icon": "/static/tools/ai-icons/7ee380c249de9b19a1e8.webp",
+   "aliases": [
+    "OpenCoder"
+   ]
   },
   {
-   "id": "6c83dfd1fcf480deed3d",
+   "id": "59c82dcf7868481009af",
    "category": "program",
-   "name": "Latitude",
-   "url": "https://latitude.io/",
-   "description": "探索 AI 互动体验",
-   "icon": "/static/tools/ai-icons/63046f584790ca32da34.webp"
+   "name": "Fireworks AI",
+   "description": "通过 API 部署和调用生成式 AI 模型",
+   "url": "https://fireworks.ai/",
+   "icon": "/static/tools/ai-icons/f19653d8a704ecd36f15.webp"
+  },
+  {
+   "id": "3949da0870b96369e837",
+   "category": "program",
+   "name": "Pi",
+   "description": "使用可扩展的终端编程智能体",
+   "url": "https://pi.dev/",
+   "icon": "/static/tools/ai-icons/a6e42f698de891b6130e.webp"
   },
   {
    "id": "3a59027068dbf60a9cc0",
@@ -2091,7 +2597,8 @@
    "name": "中科院",
    "url": "http://www.ia.cas.cn/",
    "description": "研究机构主页",
-   "icon": "/static/tools/ai-icons/fca024cbb0daa298f9e6.webp"
+   "icon": "/static/tools/ai-icons/fca024cbb0daa298f9e6.webp",
+   "heat": 10
   },
   {
    "id": "4aad9f0917aee0916e54",
@@ -2099,7 +2606,8 @@
    "name": "北大人工智能研究院",
    "url": "http://www.ai.pku.edu.cn/",
    "description": "北京大学人工智能研究",
-   "icon": "/static/tools/ai-icons/82312192ae734a4dd7f4.webp"
+   "icon": "/static/tools/ai-icons/82312192ae734a4dd7f4.webp",
+   "heat": 10
   },
   {
    "id": "128348ab1f5f39ae242b",
@@ -2107,7 +2615,8 @@
    "name": "清华人工智能研究院",
    "url": "https://ml.cs.tsinghua.edu.cn/thuai/#/",
    "description": "清华大学人工智能研究",
-   "icon": "/static/tools/ai-icons/a94974215299ef50abf3.webp"
+   "icon": "/static/tools/ai-icons/a94974215299ef50abf3.webp",
+   "heat": 10
   },
   {
    "id": "c90b5581a03d364b2d6a",
@@ -2115,7 +2624,8 @@
    "name": "复旦人工智能研究院",
    "url": "https://ai3.fudan.edu.cn/",
    "description": "复旦大学人工智能研究",
-   "icon": "/static/tools/ai-icons/7e3d16ccf35dae6b0e09.webp"
+   "icon": "/static/tools/ai-icons/7e3d16ccf35dae6b0e09.webp",
+   "heat": 10
   },
   {
    "id": "bf7982bf7be8a0504118",
@@ -2123,7 +2633,8 @@
    "name": "交大人工智能研究院",
    "url": "https://ai.sjtu.edu.cn/",
    "description": "上海交通大学人工智能研究",
-   "icon": "/static/tools/ai-icons/7f4cea5336cc0e46a0c8.webp"
+   "icon": "/static/tools/ai-icons/7f4cea5336cc0e46a0c8.webp",
+   "heat": 10
   },
   {
    "id": "672161f14c4511bb01aa",
@@ -2131,7 +2642,8 @@
    "name": "北京通用人工智能研究院",
    "url": "https://www.mybigai.ac.cn/",
    "description": "通用人工智能研究",
-   "icon": "/static/tools/ai-icons/7d6965413aaca3c27bf3.webp"
+   "icon": "/static/tools/ai-icons/7d6965413aaca3c27bf3.webp",
+   "heat": 10
   },
   {
    "id": "9f1e84bd23e06f0b8abb",
@@ -2139,7 +2651,8 @@
    "name": "腾讯 AI 实验室",
    "url": "https://ai.tencent.com/ailab/zh/index",
    "description": "腾讯人工智能研究",
-   "icon": "/static/tools/ai-icons/2b736906ecb1d0eba25d.webp"
+   "icon": "/static/tools/ai-icons/2b736906ecb1d0eba25d.webp",
+   "heat": 10
   },
   {
    "id": "e6ea90d57c640f478c6f",
@@ -2147,7 +2660,8 @@
    "name": "达摩院",
    "url": "https://damo.alibaba.com/",
    "description": "阿里巴巴研究机构",
-   "icon": "/static/tools/ai-icons/3bad48b6059ffc746cb3.webp"
+   "icon": "/static/tools/ai-icons/3bad48b6059ffc746cb3.webp",
+   "heat": 10
   },
   {
    "id": "d1d270a430396421fea9",
@@ -2155,7 +2669,8 @@
    "name": "北京智源人工智能研究院",
    "url": "https://www.baai.ac.cn/",
    "description": "智源研究动态",
-   "icon": "/static/tools/ai-icons/bb65a02cf28dbde503d4.webp"
+   "icon": "/static/tools/ai-icons/bb65a02cf28dbde503d4.webp",
+   "heat": 10
   },
   {
    "id": "b0ff1d863995c88fbb50",
@@ -2163,7 +2678,8 @@
    "name": "360 智脑",
    "url": "https://ai.360.cn/",
    "description": "浏览 360 AI 研发",
-   "icon": "/static/tools/ai-icons/11b3c8aa681387de6fa4.webp"
+   "icon": "/static/tools/ai-icons/11b3c8aa681387de6fa4.webp",
+   "heat": 10
   },
   {
    "id": "ece4828857739457219b",
@@ -2171,7 +2687,8 @@
    "name": "网易伏羲",
    "url": "https://fuxi.163.com/",
    "description": "网易智能技术",
-   "icon": "/static/tools/ai-icons/5899420b2177366100c2.webp"
+   "icon": "/static/tools/ai-icons/5899420b2177366100c2.webp",
+   "heat": 10
   },
   {
    "id": "1d8c22ab5a528042edb5",
@@ -2179,7 +2696,43 @@
    "name": "HiAI",
    "url": "https://developer.huawei.com/consumer/cn/hiai/",
    "description": "华为 AI 开发平台",
-   "icon": "/static/tools/ai-icons/cfc48b2e380a3a274691.webp"
+   "icon": "/static/tools/ai-icons/cfc48b2e380a3a274691.webp",
+   "heat": 10
+  },
+  {
+   "id": "6516db0ddf9833e1bf90",
+   "category": "institution",
+   "name": "Mistral AI",
+   "description": "查找 Mistral 的模型、对话产品和开发服务",
+   "url": "https://mistral.ai/",
+   "icon": "/static/tools/ai-icons/300379459d111c6cad19.webp"
+  },
+  {
+   "id": "63ea9a6856bfc68401a8",
+   "category": "institution",
+   "name": "Cohere",
+   "description": "查找面向企业的语言模型、检索与重排服务",
+   "url": "https://cohere.com/",
+   "icon": "/static/tools/ai-icons/73b7387434ef164ac42b.webp"
+  },
+  {
+   "id": "b0c981e01af05dab77e0",
+   "category": "institution",
+   "name": "MiniMax",
+   "description": "探索 MiniMax 的语言、音频与视频生成工具",
+   "url": "https://www.minimax.io/",
+   "icon": "/static/tools/ai-icons/007c316b9cf1e982ccd3.webp"
+  },
+  {
+   "id": "6ff14ad78c69d4fb74d3",
+   "category": "institution",
+   "name": "Stability AI",
+   "description": "了解 Stability AI 的图像、音频及视频生成模型",
+   "url": "https://stability.ai/",
+   "icon": "/static/tools/ai-icons/aa60c16a3261bdb3b905.webp",
+   "aliases": [
+    "stability.ai"
+   ]
   },
   {
    "id": "d322243cba3affaee7be",
@@ -2187,7 +2740,8 @@
    "name": "Simon 的白日梦",
    "url": "https://weibo.com/u/1948301550",
    "description": "关注建筑与生成艺术",
-   "icon": "/static/tools/ai-icons/e3349632de6f000f3aa9.webp"
+   "icon": "/static/tools/ai-icons/e3349632de6f000f3aa9.webp",
+   "heat": 10
   },
   {
    "id": "5fbbc32371ce1e528314",
@@ -2195,7 +2749,8 @@
    "name": "Simon_阿文",
    "url": "https://weibo.com/u/1757693565",
    "description": "关注创作工具分享",
-   "icon": "/static/tools/ai-icons/17914201eb92de8fa87f.webp"
+   "icon": "/static/tools/ai-icons/17914201eb92de8fa87f.webp",
+   "heat": 10
   },
   {
    "id": "30d66bf4d387e2c7ca6d",
@@ -2203,7 +2758,8 @@
    "name": "言川 Artie",
    "url": "https://www.uisdc.com/u/702947/publish/all",
    "description": "关注 AI 设计实践",
-   "icon": "/static/tools/ai-icons/40f34dfc03d6e9694210.webp"
+   "icon": "/static/tools/ai-icons/40f34dfc03d6e9694210.webp",
+   "heat": 10
   },
   {
    "id": "7d4383353b494c0b9231",
@@ -2211,7 +2767,8 @@
    "name": "木遥",
    "url": "https://weibo.com/u/1644684112",
    "description": "关注生成式技术讨论",
-   "icon": "/static/tools/ai-icons/56370f8969d30cb0124d.webp"
+   "icon": "/static/tools/ai-icons/56370f8969d30cb0124d.webp",
+   "heat": 10
   },
   {
    "id": "c86d45f9ab58a9efbd2d",
@@ -2219,7 +2776,8 @@
    "name": "宝玉 xp",
    "url": "https://weibo.com/u/1727858283",
    "description": "关注技术文章与译介",
-   "icon": "/static/tools/ai-icons/899dd1e7c9acd7e14151.webp"
+   "icon": "/static/tools/ai-icons/899dd1e7c9acd7e14151.webp",
+   "heat": 10
   },
   {
    "id": "9046b620b692a5c8e21b",
@@ -2227,7 +2785,8 @@
    "name": "海辛 Hyacinth",
    "url": "https://weibo.com/u/1309158107",
    "description": "关注实验影像创作",
-   "icon": "/static/tools/ai-icons/3f93cb76e87302f2ea2a.webp"
+   "icon": "/static/tools/ai-icons/3f93cb76e87302f2ea2a.webp",
+   "heat": 10
   },
   {
    "id": "e2853551e7ba18f21a73",
@@ -2235,7 +2794,8 @@
    "name": "互联网的那点事",
    "url": "https://weibo.com/u/1627825392",
    "description": "关注互联网与科技动态",
-   "icon": "/static/tools/ai-icons/0a22cafad9f76dffcc23.webp"
+   "icon": "/static/tools/ai-icons/0a22cafad9f76dffcc23.webp",
+   "heat": 10
   },
   {
    "id": "3436591780016ab37676",
@@ -2243,7 +2803,8 @@
    "name": "Barret 李靖",
    "url": "https://weibo.com/u/1812166904",
    "description": "关注开发与技术分享",
-   "icon": "/static/tools/ai-icons/40e6136e979f0f2547be.webp"
+   "icon": "/static/tools/ai-icons/40e6136e979f0f2547be.webp",
+   "heat": 10
   },
   {
    "id": "17385b50e5fab2a9e995",
@@ -2251,7 +2812,8 @@
    "name": "量子位",
    "url": "https://weibo.com/u/6105753431",
    "description": "阅读人工智能资讯",
-   "icon": "/static/tools/ai-icons/41e390f8ffa6234bc653.webp"
+   "icon": "/static/tools/ai-icons/41e390f8ffa6234bc653.webp",
+   "heat": 10
   },
   {
    "id": "15d622b0bce615ce1f3b",
@@ -2259,7 +2821,8 @@
    "name": "刘群",
    "url": "https://weibo.com/u/1917491813",
    "description": "了解机器翻译研究",
-   "icon": "/static/tools/ai-icons/ce5092c3d75bc77e4870.webp"
+   "icon": "/static/tools/ai-icons/ce5092c3d75bc77e4870.webp",
+   "heat": 10
   },
   {
    "id": "c4636271ab25caf6f23c",
@@ -2267,7 +2830,8 @@
    "name": "陈怡然-杜克大学",
    "url": "https://weibo.com/2199733231",
    "description": "了解计算机工程研究",
-   "icon": "/static/tools/ai-icons/1df6c3ce06af4bc41c44.webp"
+   "icon": "/static/tools/ai-icons/1df6c3ce06af4bc41c44.webp",
+   "heat": 10
   },
   {
    "id": "058a7ec6cba8b9b70c22",
@@ -2275,7 +2839,8 @@
    "name": "拉面 daybreak",
    "url": "https://weibo.com/u/1646432771",
    "description": "关注插画与玩具设计",
-   "icon": "/static/tools/ai-icons/67a595647845404a32e8.webp"
+   "icon": "/static/tools/ai-icons/67a595647845404a32e8.webp",
+   "heat": 10
   },
   {
    "id": "960a82b59ed5e86a0ba3",
@@ -2283,7 +2848,8 @@
    "name": "Powerfulai",
    "url": "https://www.powerfulai.tools/",
    "description": "浏览人工智能工具目录",
-   "icon": "/static/tools/ai-icons/5263c8a68dc09605ad23.webp"
+   "icon": "/static/tools/ai-icons/5263c8a68dc09605ad23.webp",
+   "heat": 10
   },
   {
    "id": "a34d0ede415d9f73c4b9",
@@ -2291,7 +2857,8 @@
    "name": "Stackradar.co",
    "url": "https://www.stackradar.co/",
    "description": "发现技术工具",
-   "icon": "/static/tools/ai-icons/b3bcf905547d12f87fec.webp"
+   "icon": "/static/tools/ai-icons/b3bcf905547d12f87fec.webp",
+   "heat": 10
   },
   {
    "id": "252b790ba0a4f2ae2923",
@@ -2299,7 +2866,8 @@
    "name": "Toolfolio",
    "url": "https://toolfolio.io/",
    "description": "查找创作者工具",
-   "icon": "/static/tools/ai-icons/1db22c2f462137ca60ad.webp"
+   "icon": "/static/tools/ai-icons/1db22c2f462137ca60ad.webp",
+   "heat": 10
   },
   {
    "id": "3c20efd67e6c4eff5492",
@@ -2307,7 +2875,8 @@
    "name": "Toolscout",
    "url": "https://toolscout.ai/",
    "description": "搜索 AI 工具",
-   "icon": "/static/tools/ai-icons/1d0a00cc97fa03cc4b4d.webp"
+   "icon": "/static/tools/ai-icons/1d0a00cc97fa03cc4b4d.webp",
+   "heat": 10
   },
   {
    "id": "e317d56d2d52d2e90960",
@@ -2315,7 +2884,8 @@
    "name": "Saasaitools",
    "url": "https://saasaitools.com/",
    "description": "浏览 AI 应用与资讯",
-   "icon": "/static/tools/ai-icons/082a35e3702982f5f9f5.webp"
+   "icon": "/static/tools/ai-icons/082a35e3702982f5f9f5.webp",
+   "heat": 10
   },
   {
    "id": "6ed5a7c2826e2c744124",
@@ -2323,7 +2893,39 @@
    "name": "Topai",
    "url": "https://topai.tools/",
    "description": "发现新工具",
-   "icon": "/static/tools/ai-icons/63912c196e229476b678.webp"
+   "icon": "/static/tools/ai-icons/63912c196e229476b678.webp",
+   "heat": 10
+  },
+  {
+   "id": "0355be3442069c329ec9",
+   "category": "model-rankings",
+   "name": "Artificial Analysis",
+   "description": "查看大语言模型智能指数排名，比较价格、速度与上下文窗口",
+   "url": "https://artificialanalysis.ai/zh/leaderboards/models",
+   "icon": "/static/tools/ai-icons/84bc579e6fb8100c7d3c.webp",
+   "ranking": {
+    "date": "2026-11-05",
+    "rows": [
+     {
+      "model": "Gemini 4 Carbon (high)",
+      "provider": "Google",
+      "score": 60,
+      "url": "https://artificialanalysis.ai/zh/models/gemini-4-carbon"
+     },
+     {
+      "model": "Claude Opus 5.5 (max)",
+      "provider": "Anthropic",
+      "score": 59,
+      "url": "https://artificialanalysis.ai/zh/models/claude-opus-5-5"
+     },
+     {
+      "model": "Gemini 4 Carbon (medium)",
+      "provider": "Google",
+      "score": 58,
+      "url": "https://artificialanalysis.ai/zh/models/gemini-4-carbon-medium"
+     }
+    ]
+   }
   }
  ]
 }

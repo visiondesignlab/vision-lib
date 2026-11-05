@@ -41,3 +41,16 @@
 .ai-favorite[aria-pressed=true]{color:var(--fg)}
 .ai-favorite[aria-pressed=true] svg{fill:currentColor}
 @media (pointer:coarse){.ai-favorite{width:44px;height:44px;right:0;top:0}.ai-link{padding-right:45px}}
+
+.ai-ranking { border:1px solid var(--line); border-radius:10px; padding:16px; margin:0 0 10px; }
+.ai-ranking-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; margin-bottom:12px; }
+.ai-ranking-head h3 { font-size:14px; font-weight:600; }
+.ai-ranking time,.ai-ranking-source { color:var(--fg2); font-size:12px; }
+.ai-ranking table { width:100%; border-collapse:collapse; text-align:left; font-variant-numeric:tabular-nums; }
+.ai-ranking th,.ai-ranking td { padding:8px 6px; border-bottom:1px solid var(--line); }
+.ai-ranking thead th { font-size:12px; font-weight:400; color:var(--fg2); white-space:nowrap; }
+.ai-ranking tbody th { font-weight:500; overflow-wrap:anywhere; }
+.ai-ranking td:last-child,.ai-ranking th:last-child { text-align:right; }
+.ai-ranking-source { display:inline-block; margin-top:12px; }
+.ai-ranking a:hover { text-decoration:underline; }
+@media(max-width:600px){.ai-ranking{padding:12px}.ai-ranking th,.ai-ranking td{padding:8px 3px}.ai-ranking-head{justify-content:space-between}}

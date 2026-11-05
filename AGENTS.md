@@ -22,3 +22,8 @@
 
 - Merge selected source changes. Do not replace this working tree or its private CMS data with an older project copy, Pages build, seed or export.
 - For changes to the shared shell, test the password gate at /review, the three custom sorting options at /?tab=skill_repo, /guide, and /tools/ai-nav in a browser. Run tests/browser_routes.py with its disposable store before publishing; never test mutation or deletion on the real catalog.
+
+# Publish from the verified local site
+
+- For every site change, first run it in this project at http://127.0.0.1:8787 and verify the affected pages and data in a browser.
+- Export the public snapshot from that verified local state, check that it matches the public local API, then push to GitHub Pages. Confirm the deployment and check the same behavior and data at the public URL.

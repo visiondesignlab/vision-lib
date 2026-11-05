@@ -65,6 +65,7 @@ export function directoryManager(main, db, {esc, dialog, post, toast, markBusy, 
       <label class="field"><span>分类</span><select name="category" required>${db.categories.map(c=>`<option value="${esc(c.id)}" ${c.id===(item?.category||cat)?'selected':''}>${esc(c.name)}</option>`).join('')}</select></label>
       ${field('url','目标网址',item?.url,'required type="url" placeholder="https://…"')}
       ${field('description','用途简介',item?.description,'maxlength="500"')}
+      ${field('heat','热度分（选填）',item?.heat,'type="number" min="0" max="2147483647" step="1"')}
       ${field('icon','图标地址（选填）',item?.icon,'placeholder="https://…"')}`);
     const d=dialog(`<form><h2>${title}</h2>${html}<div class="error" role="alert"></div><div class="dialog-actions"><button type="button" class="btn" data-close>取消</button><button type="submit" class="btn ${remove?'danger':'primary'}">${remove?'确认删除':'保存并生效'}</button></div></form>`);
     d.addEventListener('input',()=>markDirty(true));
@@ -76,6 +77,7 @@ export function directoryManager(main, db, {esc, dialog, post, toast, markBusy, 
       d.dataset.working='true';d.querySelectorAll('button').forEach(b=>b.disabled=true);
       try {
         const payload=Object.fromEntries(new FormData(form));
+        if ('heat' in payload) payload.heat = payload.heat === '' ? null : Number(payload.heat);
         db=await post('/api/admin/ai-directory',{...payload,id:item?.id,kind,action:remove?'delete':'save',version:db.version});
         markDirty(false);d.close();draw();toast(remove?'已从导航删除':'已保存，导航已更新');
       }catch(err){
