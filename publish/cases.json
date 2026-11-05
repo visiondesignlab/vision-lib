@@ -8760,6 +8760,81 @@
    "description": "Replit for Government lets public servants describe mission needs so AI builds working apps, dashboards, and tools, subject to organizational review and security controls.",
    "lvg_id": "e17f4131-ba9a-4643-b987-6668e98c6b18",
    "published_at": "2026-11-04T18:58:45+08:00"
+  },
+  {
+   "id": "cms-31ab79a073a240ce",
+   "type": "skill_repo",
+   "title": "rea-video｜逐镜拆解与视频复刻规划",
+   "category": "自动剪辑",
+   "status": "published",
+   "source": {
+    "platform": "GitHub",
+    "author": "JuneYaooo",
+    "author_url": "https://github.com/JuneYaooo",
+    "url": "https://github.com/JuneYaooo/rea-video",
+    "date": "2026-10-30"
+   },
+   "media": {
+    "kind": "image",
+    "thumbnail": "/media/cms-assets-9b6f6d307a4e423fa4190fe2cbd4eb63/image.jpg",
+    "images": [],
+    "specs": {
+     "resolution": "1200×600"
+    }
+   },
+   "added_at": "2026-11-05T10:27:22+08:00",
+   "subtitle": "拆解参考视频的画面、字幕、剪辑与声音，输出逐镜报告和复刻路线。",
+   "description": "rea-video 是面向 Claude Code、Codex 等 AI 助手的视频分析 CLI 与 Skill。它把参考视频分成镜头，结合画面、文件信息及声音线索分析实拍、AI 生成、3D 动画、代码动效和录屏等制作方式。\n\n报告覆盖镜头时间线、字幕与花字、后期包装、剪辑节奏和音轨，并为不同镜头整理拍摄方案、生成提示词或代码制作思路。适合产品宣传片研究、短视频拉片和复刻前的素材规划。\n\n需要 Python 3.10+ 和 ffmpeg；多模态模型可选。拆解报告是主要产物，完整重制仍需按镜头准备素材、拍摄或接入其他生成工具。制作方式判断应结合画面复核，压缩视频和低置信镜头尤其需要检查。",
+   "tags": [
+    "视频拆解",
+    "拉片",
+    "视频复刻",
+    "镜头分析",
+    "剪辑节奏",
+    "字幕分析",
+    "Claude Code",
+    "Codex"
+   ],
+   "prompt": "请阅读 https://github.com/JuneYaooo/rea-video 的 README 和 skills/rea-video/SKILL.md，检查 Python 3.10+、ffmpeg 及 CLI 环境，按官方说明完成所需安装。\n\n用 rea-video 拆解我的参考视频：{本地视频路径}。先输出镜头时间线，再分析画面制作方式、字幕与包装、剪辑节奏、人声、配乐和音效；逐镜复核不确定的判断，并把观察证据和推测分开。\n\n交付 HTML 报告、镜头表和复刻规划，列出需要准备的原始素材，以及各镜头适合实拍、AI 生成或代码制作的路线。多模态模型未配置时，采用可用的本地分析与看图复核流程，并说明分析范围。",
+   "how_to": [
+    "在 Claude Code、Codex 等可执行命令的 AI 助手中打开仓库，阅读 README 与 skills/rea-video/SKILL.md。",
+    "检查 Python 3.10+、ffmpeg，按官方文档安装 CLI；用 `rea-video --help` 确认入口可用。",
+    "提供本地视频路径，运行 `rea-video decompose ref.mp4 -o out/ref`；需要模型辅助时按文档配置多模态接口。",
+    "查看镜头截图和音轨，按 Skill 的 review / apply-review 流程复核低置信判断。",
+    "打开 `out/ref/report.html`，根据报告准备素材，并按实拍、生成或代码路线推进制作。"
+   ],
+   "tools": [
+    "Python 3.10+",
+    "ffmpeg",
+    "Claude Code / Codex",
+    "多模态模型（可选）"
+   ],
+   "skills": [
+    {
+     "name": "rea-video",
+     "repo": "JuneYaooo/rea-video",
+     "url": "https://github.com/JuneYaooo/rea-video/tree/main/skills/rea-video"
+    }
+   ],
+   "assets": [
+    {
+     "name": "README · 项目介绍",
+     "url": "https://github.com/JuneYaooo/rea-video#readme"
+    },
+    {
+     "name": "CLI · 安装与命令",
+     "url": "https://github.com/JuneYaooo/rea-video/blob/main/docs/cli.md"
+    },
+    {
+     "name": "复刻流程说明",
+     "url": "https://github.com/JuneYaooo/rea-video/blob/main/docs/replicate.md"
+    }
+   ],
+   "trust": "社区",
+   "featured": false,
+   "version": "0.1.0",
+   "updated_at": "2026-11-05T10:27:22+08:00",
+   "published_at": "2026-11-05T10:27:22+08:00"
   }
  ]
 }
