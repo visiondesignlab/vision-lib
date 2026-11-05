@@ -15,6 +15,7 @@ Pages 使用静态 JSON，图片切图和 AI 提示词跳转在浏览器中运�
 先在本地完成审核，再执行：
 
 ```sh
+python3 -m pip install -r requirements.txt
 python3 scripts/export_pages_snapshot.py
 python3 -m unittest discover -s tests -p 'test_*.py'
 python3 scripts/build_pages.py --base-path /vision-lib
