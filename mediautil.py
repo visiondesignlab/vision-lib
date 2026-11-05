@@ -2,8 +2,13 @@
 import json, os, shutil, ssl, subprocess, tempfile, urllib.request
 from store import MEDIA
 
-FFMPEG = shutil.which("ffmpeg") or "ffmpeg"
-FFPROBE = shutil.which("ffprobe") or "ffprobe"
+def media_binary(name):
+    # launchd starts with a minimal PATH even when Homebrew is installed.
+    return shutil.which(name) or shutil.which(name, path='/opt/homebrew/bin:/usr/local/bin') or name
+
+
+FFMPEG = media_binary("ffmpeg")
+FFPROBE = media_binary("ffprobe")
 YTDLP = shutil.which("yt-dlp") or os.path.expanduser("~/.local/bin/yt-dlp")
 UA = "Mozilla/5.0 (caselib ingest)"
 

@@ -1,10 +1,6 @@
 const sitePath = window.VisionSite.path;
 /* Shared, local image/PDF reader. Zoom is relative to the fitted view. */
-const icons = {
-  minus: '<path d="M2.5 6h7"/>', plus: '<path d="M2.5 6h7M6 2.5v7"/>',
-  previous: '<path d="m7.5 2.5-3.5 3.5 3.5 3.5"/>', next: '<path d="m4.5 2.5 3.5 3.5-3.5 3.5"/>',
-};
-const icon = name => `<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">${icons[name]}</svg>`;
+const {icon} = window.VisionSite;
 const button = (action, label, glyph) => `<button type="button" class="ibtn" data-viewer-action="${action}" title="${label}" aria-label="${label}">${icon(glyph)}</button>`;
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 

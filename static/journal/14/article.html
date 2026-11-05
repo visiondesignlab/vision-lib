@@ -1,0 +1,69 @@
+
+<header>
+<h1>Vol.14 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-11-05 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天这批更新都碰到了“真活儿”里最贵的部分：视频要按秒烧 credits，工作流重复一次可能就多跑一份账，硬件外壳画得出来也不代表工厂装得上。会生成已经不稀奇了，接下来该看的是边界有没有写在明面上，失败时能不能退，重复动作会不会被拦住。</p>
+<p class="mixed-script">另外一个信号也很清楚：agent 正从独立聊天框钻进 Xcode、Spline 评论和 CAD/ECAD 流程。入口越来越顺，审核痕迹和现场上下文就不能再靠人脑补。</p>
+<h2>● Products</h2>
+<h3>Generative Remove in Premiere beta<a class="source-url" href="https://community.adobe.com/announcements-732/now-in-beta-generative-remove-in-premiere-1654360" rel="noopener noreferrer" target="_blank">https://community.adobe.com/announcements-732/now-in-beta-generative-remove-in-premiere-1654360</a></h3>
+<figure><img alt="Premiere 在 Program Monitor 里直接追踪遮罩并移除镜头前的摄影机" decoding="async" height="2007" loading="lazy" src="01.jpg" width="2809"/><figcaption>Premiere 在 Program Monitor 里直接追踪遮罩并移除镜头前的摄影机</figcaption></figure>
+<p class="mixed-script">Premiere beta 新增 Generative Remove：先给不想要的物体画 mask、跟踪，再让云端只补选区。原片不动，可以重算、改 mask 或退回；多个干扰物也能拆成多个 mask 一次处理。整段最好一次生成，官方自己也提醒，切成几段分别补，接缝前后可能长得不一样。</p>
+<figure><img alt="Generative Remove 当前限制包括最长 10 秒、最高 1080p、30fps 和每秒 40 credits" decoding="async" height="824" loading="lazy" src="02.png" width="1430"/><figcaption>Generative Remove 当前限制包括最长 10 秒、最高 1080p、30fps 和每秒 40 credits</figcaption></figure>
+<p class="mixed-script">别被“AI 擦除”四个字带跑。当前只收 480p–1080p SDR、最高 30fps、最长 10 秒；HDR、10-bit 和 Team Projects 都还不行，费用是每秒 40 credits。满十秒就是 400 credits，mask 追丢再来一次又是一份。这个 beta 先拿穿帮杆、路人和小面积反射去试，别拿长镜头当橡皮擦。</p>
+<h3>Illustrator beta 31.1.49<a class="source-url" href="https://community.adobe.com/announcements-654/beta-build-31-1-49-release-notes-1654265" rel="noopener noreferrer" target="_blank">https://community.adobe.com/announcements-654/beta-build-31-1-49-release-notes-1654265</a></h3>
+<p class="mixed-script">这一版同时塞进两件很不一样的东西。Icon Sheets 能用一段英文生成一套风格统一的图标，每个结果都是独立图层里的可编辑矢量；可以追同一枚图标的变体，也能拿现成图标做 style reference。注意，目前只认英文。</p>
+<p class="mixed-script">另一半反而更耐用：Bitmap Rasterize 终于不只剩黑白一刀切，Threshold、Pattern Dither、Diffusion Dither、Halftone Screen 都能选，前景、背景和透明也能自己定。批量图标还没实测，先不夸一致性；位图网屏这块倒是马上能进海报、包装和网页质感试验。</p>
+<h2>● Design Engineering</h2>
+<h3>Spline 3D Comments<a class="source-url" href="https://spline.design/changelog" rel="noopener noreferrer" target="_blank">https://spline.design/changelog</a></h3>
+<figure><img alt="Spline 把评论 pin、场景视角和 Agent 放进同一张 3D 编辑界面" decoding="async" height="1080" loading="lazy" src="03.webp" width="1920"/><figcaption>Spline 把评论 pin、场景视角和 Agent 放进同一张 3D 编辑界面</figcaption></figure>
+<p class="mixed-script">Spline 重做了 3D 评论：有面板、未读、resolve / reopen 和 pin 预览。更狠的一步是，评论线程里可以直接 Ask AI；Agent 改完文件，会切回留言人的 camera 检查，再在原线程回复。你不明确叫它 resolve，它不会替人把问题关掉。评论也能通过 MCP 读写。</p>
+<p class="mixed-script">这已经不是“在 3D 文件上贴便签”，而是把评论变成可执行工单。最关键的不是 Agent 会改模型，是它带着留言人的视角去验收。做空间界面、动效和复杂画布时，camera、selection、状态都该跟着反馈一起交接，少一个都容易答非所问。</p>
+<h3>Workflow SDK adds idempotent starts<a class="source-url" href="https://vercel.com/changelog/atomic-start-hooks-in-the-workflow-sdk" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/atomic-start-hooks-in-the-workflow-sdk</a></h3>
+<figure><img alt="Vercel Workflow SDK 为工作流启动补上幂等入口" decoding="async" height="1256" loading="lazy" src="04.png" width="2400"/><figcaption>Vercel Workflow SDK 为工作流启动补上幂等入口</figcaption></figure>
+<p class="mixed-script">Vercel Workflow SDK 的 <code>start()</code> 现在能在同一步里接纳 run 并占住 hook token。相同 token 再来一次会抛 <code>HookConflictError</code>，不会偷偷多开一条；早到的 payload 会排队按顺序交付。业务里的 order ID、invoice ID、import ID 都能直接当这把锁，<code>experimental_minRetention</code> 还能让流程结束后继续拒绝迟到的重复请求。</p>
+<p class="mixed-script">这条看着像后端小修，其实很适合 agent 工作流。用户双击、Webhook 重送、网络重试，最怕的不是报错，是成功两次。升级到 <code>workflow</code> 5.4.0 后，先给“生成一份资产”“发布一次内容”“扣一次额度”这类动作都补上业务 token；比事后清重复记录便宜多了。</p>
+<h3>Smoother Layer Control interaction in After Effects<a class="source-url" href="https://community.adobe.com/announcements-532/smoother-layer-control-interaction-in-after-effects-1653984" rel="noopener noreferrer" target="_blank">https://community.adobe.com/announcements-532/smoother-layer-control-interaction-in-after-effects-1653984</a></h3>
+<p class="mixed-script">After Effects beta 27.1.0.028 在重算 layer controls、mask outline 和 shape interaction，目标是拖形状、对齐文字时少一点粘手；最终输出不该变，Adobe 还做了像素比对。官方也说得保守：简单 comp 原本就快，不一定看得出差别。</p>
+<p class="mixed-script">评论区马上有人拿 RTX 3090Ti 和 M1 Ultra 试了，beta 与 release 都没看出明显区别，复杂 shape 仍然拖不动；Adobe 随后索要工程、屏幕录像和完整机器信息。这条先留在观察名单，不写成“性能问题解决了”。软件流畅度最终还是要拿真实 comp 说话，发布视频不是交付边界。</p>
+<h2>● AI Coding</h2>
+<h3>GitHub Copilot in Xcode’s Coding Assistant<a class="source-url" href="https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-04-github-copilot-is-now-available-in-xcodes-coding-assistant/</a></h3>
+<figure><img alt="GitHub Copilot 已进入 Xcode 原生 Coding Assistant 的 Agent 列表" decoding="async" height="1086" loading="lazy" src="05.png" width="1448"/><figcaption>GitHub Copilot 已进入 Xcode 原生 Coding Assistant 的 Agent 列表</figcaption></figure>
+<p class="mixed-script">GitHub Copilot 进入 Xcode 27.3 beta 自带的 Coding Assistant，目前是 public preview，要求 macOS Tahoe 26.6 或更高，所有 Copilot 套餐都能用。原来的 Copilot for Xcode 扩展没有消失，这是两条独立路径。</p>
+<p class="mixed-script">原生入口省掉扩展来回抢焦点，也让会话更靠近工程、Build 和 Xcode 自己的上下文。代价是团队又多了一种接入方式。要试就固定同一个项目、同一组任务，把原生 Agent 和旧扩展的 diff、编译成功率、引用文件范围摆在一起；“看起来更像 Xcode”不等于改得更稳。</p>
+<h2>● Case Study</h2>
+<h3>Accelerating engineering for the physical world<a class="source-url" href="https://openai.com/index/accelerating-engineering-for-the-physical-world/" rel="noopener noreferrer" target="_blank">https://openai.com/index/accelerating-engineering-for-the-physical-world/</a></h3>
+<p class="mixed-script">OpenAI 用 Astra 做了一台能连 Codex 对话的设备：GPT-6 负责功能、外壳、PCB、UI 和软件整合，两个人把它当 side project，不到一周完成设计，代工厂不到一个月做出一小批样机。CAD、制造图、仿真、ECAD 和跨专业 review，已经都在 agent 的射程里了。</p>
+<p class="mixed-script">真正该划线的是后面那句：进制造仍然来回 review 了几轮，因为模型没有稳定吃透产线限制、公差和装配细节。这个案例不证明“硬件可以无人设计”，它证明 agent 能很快把问题推到专业审查面前。产品设计要准备的不是更长的 prompt，而是材料、工艺、公差、BOM、可制造性和版本变更这些能被检查的真值源。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>KFC × Avengers: Doomsday「Doom Burger」<a class="source-url" href="https://www.stashmedia.tv/tom-noakes-black-kite-deliver-the-doom-burger-for-kfc/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/tom-noakes-black-kite-deliver-the-doom-burger-for-kfc/</a></h3>
+<figure data-film-source="https://www.youtube.com/watch?v=ff6ZvCfHJrM"><img alt="Doom Burger 用一块老式点餐牌把 KFC 的轻松语气钉进末日城市" decoding="async" height="801" loading="lazy" src="06.jpg" width="1920"/><figcaption>Doom Burger 用一块老式点餐牌把 KFC 的轻松语气钉进末日城市</figcaption></figure>
+<p class="mixed-script">视频：YouTube 原片<a class="source-url" href="https://www.youtube.com/watch?v=ff6ZvCfHJrM" rel="noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=ff6ZvCfHJrM</a>｜来源：Stash 制作解析<a class="source-url" href="https://www.stashmedia.tv/tom-noakes-black-kite-deliver-the-doom-burger-for-kfc/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/tom-noakes-black-kite-deliver-the-doom-burger-for-kfc/</a></p>
+<p class="mixed-script">Business Club 导演 Tom Noakes、Black Kite 和 Mother 给 KFC ×《Avengers: Doomsday》做了一分钟的末日片。开头先让车从一块傻乎乎的汉堡点餐牌旁边滑过去，镜头越抬越高，城市裂成深坑，Doctor Doom 站在边缘。大世界观已经立住，片子却没急着摆英雄，转身去看那些还在营业的破店、乱飞的招牌和撞成一团的黄色外卖车。</p>
+<p class="mixed-script">画面最妙的是两套语气一直顶着：一边是灰绿天空、巨大断层、火球和蓝色飞行器，另一边是廉价霓虹、披萨店血浆、卡通吉祥物和夸张商品字。前半段用慢推、仰角和广角规模感，后半段越剪越碎，事故像连续的视觉笑点；最后不解释世界，只把一座完好的 KFC 放在废墟中央，再切黑色面包的 Doom Burger。产品是笑话的句号，不是硬插的 packshot。</p>
+<p class="mixed-script">这条适合拿来拆“借 IP 但不被 IP 吃掉”的方法：品牌只抓自己的红、白、餐厅轮廓和食物特写，Marvel 负责尺度和威胁感，中间靠一串环境 gag 缝起来。做产品发布片也能照着练一次——先定两种互相打架的情绪，再让每个镜头同时服务其中一边，别把所谓反差只留给最后一句文案。</p>
+<h2>● Stash 最新内容观察</h2>
+<p class="mixed-script">过去 24 小时真正新增的只有两条，旧 conference 和昨天的 Levi’s 不返场凑数。</p>
+<ul>
+<li>Tom Noakes &amp; Black Kite Deliver the Doom Burger for KFC<a class="source-url" href="https://www.stashmedia.tv/tom-noakes-black-kite-deliver-the-doom-burger-for-kfc/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/tom-noakes-black-kite-deliver-the-doom-burger-for-kfc/</a>｜VFX / brand film：<strong>已升级为今日主卡</strong>。末日尺度靠环境建立，品牌笑点藏在招牌、外卖车和餐厅里，IP 没把产品挤出画面。</li>
+<li>Alt Western: BUCK Opens Bass X Machina on Netflix<a class="source-url" href="https://www.stashmedia.tv/alt-western-buck-opens-bass-x-machina-on-netflix/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/alt-western-buck-opens-bass-x-machina-on-netflix/</a>｜title sequence / graphic motion：宣传画式剪影、受限红白蓝和机械碎片拼成一套“现代西部片”语法。值得盯 logo 怎么从同一套图形里长出来，不是片尾再贴一次名字。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Premiere Generative Remove 的失败是否扣完整 credits；复杂反射、遮挡和长镜头接缝到底能不能用。</li>
+<li>Illustrator Icon Sheets 的跨轮次一致性、描边规范和英文 prompt 之外的语言边界。</li>
+<li>Spline Agent 改动后的版本记录、权限、camera 校验和评论线程审计。</li>
+<li>Xcode 原生 Copilot 与旧扩展在同一工程里的上下文范围、diff 和 Build 成功率。</li>
+<li>Workflow SDK 的 token 冲突、结束后保留时间和重复 payload 回读。</li>
+<li>Astra 进入 CAD / ECAD 后，制造约束、公差和装配信息怎么变成可检查的真值源。</li>
+<li>Stash 下一条带制作 breakdown 的新片；Doom Burger 和 Bass X Machina 已登记，不连续重复。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日主题：Premiere Generative Remove、Illustrator Icon Sheets 与 Bitmap Rasterize、Spline 3D Comments、Workflow SDK 幂等启动、After Effects layer controls、Copilot in Xcode、OpenAI physical-world engineering。</li>
+<li>今日视频：KFC × Avengers: Doomsday「Doom Burger」；Stash、YouTube <code>ff6ZvCfHJrM</code> 与 60 秒原片抽帧已核。</li>
+<li>今日 Stash：Doom Burger 升级主卡；BUCK <code>Bass X Machina</code> 轻观察。最近 feed 只有这两条新内容，因此没有把 Motion Plus、Motion North、Levi’s、Flora、BFG 和 Crown Royal 再搬一遍。</li>
+<li>继续避免：11 月 4 日的 Figma prototype connections / GitHub clone、Framer Convert、Vercel Security Review / CI / doctor、Zapier Marketing OS、Copilot in JetBrains Air、Dependabot APM，以及 Levi’s <code>Let’s Get Fuzzy</code>。没有新的实测、价格、权限、失败成本或制作 breakdown，不换标题重发。</li>
+</ul>
+<p class="mixed-script verification">核验说明：Adobe、GitHub、Vercel、Spline、OpenAI 与 Stash 官方页面于 2026-11-05 回读。正文 6 张配图原始宽度为 1430–2809px，并逐张目视检查；一张 640px Premiere 动图因不达标已剔除。Doom Burger 60 秒原片已下载并按 5 秒间隔抽帧检查；飞书发布将保留 Stash 与 YouTube 的 Preview View，不插单独视频封面。</p>

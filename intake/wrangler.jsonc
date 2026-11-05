@@ -1,0 +1,8 @@
+{
+  "name": "vision-lab-submissions",
+  "main": "worker.js",
+  "compatibility_date": "2025-09-01",
+  "vars": { "SITE_ORIGIN": "https://visiondesignlab.github.io" },
+  "durable_objects": { "bindings": [{ "name": "INBOX", "class_name": "Inbox" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Inbox"] }]
+}

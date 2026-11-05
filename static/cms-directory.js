@@ -1,13 +1,14 @@
+const {icon} = window.VisionSite;
 /* The directory publishes on save; case review and drafts live in their own workflow. */
 export function directoryManager(main, db, {esc, dialog, post, toast, markBusy, markDirty, reload}) {
   const $ = (s, el=main) => el.querySelector(s);
   let tab='entry', cat='', search='', limit=40, observer=null, frame=0;
-  main.innerHTML = `<div class="page-head"><div><h1>AI 导航</h1><p>管理工具入口与分类，保存后对本机访客生效。</p></div><a href="/tools/ai-nav" data-link class="btn">查看导航 ↗</a></div>
+  main.innerHTML = `<div class="page-head"><div><h1>AI 导航</h1><p>管理工具入口与分类，保存后对本机访客生效。</p></div><a href="/tools/ai-nav" data-link class="btn">查看导航 ${icon('external')}</a></div>
     <section class="panel"><div class="filters"><div class="tabs"><button class="tab" data-tab="entry">工具入口</button><button class="tab" data-tab="category">分类管理</button></div><button class="btn primary" data-new></button></div>
     <div class="filters"><span data-directory-filter><select id="directory-filter" aria-label="筛选目录分类"></select></span><div class="search"><input type="search" aria-label="搜索目录" placeholder="搜索名称、简介或网址"></div></div>
     <div class="directory-list"></div><div class="load-status"></div></section>`;
   const filter = $('select'), results = $('.directory-list');
-  const refreshFilter = window.CMSSelect.enhance(filter,'筛选目录分类');
+  const refreshFilter = window.VisionMenu.enhanceSelect(filter,'筛选目录分类');
   function filtered() {
     const q = search.trim().toLowerCase();
     return tab==='category' ? db.categories.filter(c=>c.name.toLowerCase().includes(q)) :
@@ -16,7 +17,7 @@ export function directoryManager(main, db, {esc, dialog, post, toast, markBusy, 
   function draw() {
     const rows = filtered(), isGroup = tab==='category';
     main.querySelectorAll('[data-tab]').forEach(b=>{b.classList.toggle('on',b.dataset.tab===tab);b.setAttribute('aria-pressed',String(b.dataset.tab===tab));});
-    $('[data-new]').textContent = isGroup?'＋ 新建分类':'＋ 新建入口';
+    $('[data-new]').innerHTML = `${icon('plus')} ${isGroup?'新建分类':'新建入口'}`;
     $('[data-directory-filter]').hidden=isGroup;
     filter.innerHTML='<option value="">全部分类</option>'+db.categories.map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join('');
     filter.value=cat;refreshFilter();
@@ -26,7 +27,7 @@ export function directoryManager(main, db, {esc, dialog, post, toast, markBusy, 
   function rowHTML(x){
       const isGroup=tab==='category', groups=new Map(db.categories.map(c=>[c.id,c.name]));
       const note=isGroup?`${db.entries.filter(e=>e.category===x.id).length} 个入口`:groups.get(x.category);
-      return `<div class="directory-row" data-id="${esc(x.id)}"><div><strong>${esc(x.name)}</strong><span class="hint">${esc(note)}${!isGroup && x.description?' · '+esc(x.description):''}</span>${isGroup?'':`<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.url)} ↗</a>`}</div><div class="row-actions">${isGroup?'':`<button class="btn small" data-feature aria-pressed="${!!x.featured}">${x.featured?'已推荐':'推荐'}</button>`}<button class="btn small" data-edit>编辑</button><button class="btn small danger" data-delete>删除</button></div></div>`;
+      return `<div class="directory-row" data-id="${esc(x.id)}"><div><strong>${esc(x.name)}</strong><span class="hint">${esc(note)}${!isGroup && x.description?' · '+esc(x.description):''}</span>${isGroup?'':`<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(x.url)} ${icon('external')}</a>`}</div><div class="row-actions">${isGroup?'':`<button class="btn small" data-feature aria-pressed="${!!x.featured}">${x.featured?'已推荐':'推荐'}</button>`}<button class="btn small" data-edit>编辑</button><button class="btn small danger" data-delete>删除</button></div></div>`;
   }
   const sentinel=$('.load-status');
   function progress(rows){
@@ -71,7 +72,7 @@ export function directoryManager(main, db, {esc, dialog, post, toast, markBusy, 
     d.addEventListener('input',()=>markDirty(true));
     d.addEventListener('close',()=>markDirty(false),{once:true});
     const form=$('form',d);
-    if(form.elements.category) window.CMSSelect.enhance(form.elements.category,'选择入口分类',true);
+    if(form.elements.category) window.VisionMenu.enhanceSelect(form.elements.category,'选择入口分类',true);
     form.onsubmit=async e=>{
       e.preventDefault();if(!markBusy(true))return;
       d.dataset.working='true';d.querySelectorAll('button').forEach(b=>b.disabled=true);

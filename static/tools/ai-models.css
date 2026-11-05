@@ -20,8 +20,6 @@
  .models-header { gap:8px; flex-wrap:wrap; }
  .models-tools { margin:14px 0 12px; gap:12px; }
  .models-tools .ai-search { flex:1 1 200px; }
- .model-tabs a { padding:0 14px; }
- .models-tools input { min-height:44px; font-size:16px; }
 }
 .ai-ranking { min-width:0; border:1px solid var(--line); border-radius:10px; margin:0 0 10px; overflow:hidden; }
 .ai-ranking-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; padding:14px 16px; }
@@ -39,9 +37,6 @@
 .ai-ranking th button>span { white-space:nowrap; }
 .ai-ranking th[data-column="score"] { width:1%; }
 .ai-ranking th small { display:block; color:var(--fg2); font-size:11px; }
-.ai-ranking th button i::before { content:'↕'; color:var(--fg2); font-style:normal; }
-.ai-ranking th[aria-sort="descending"] i::before { content:'↓'; color:var(--fg); }
-.ai-ranking th[aria-sort="ascending"] i::before { content:'↑'; color:var(--fg); }
 .ai-ranking th button:hover { background:var(--chip); }
 .ai-ranking tbody th { font-weight:500; min-width:166px; }
 .rank-identity { display:inline-flex; align-items:center; gap:8px; vertical-align:middle; }

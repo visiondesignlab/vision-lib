@@ -1,3 +1,4 @@
+const {icon} = window.VisionSite;
 /* Adapted from the local Assets 切图 tool; files stay in the browser. */
 import "../vendor/jszip.min.js";
 
@@ -22,7 +23,7 @@ root.innerHTML = `
       <div class="slicer-section-title"><h2>图片</h2><span class="muted" id="fileCount">未选择</span></div>
       <label class="slicer-dropzone" id="dropzone">
         <input id="fileInput" type="file" accept="image/*" multiple aria-label="选择图片（可多选）">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 5-5 4 4 4-6 5 7"/></svg>
+        ${icon('upload')}
         <b id="filePrompt">点击选择，或拖入图片</b>
         <span>支持 PNG、JPG、WebP 等图片格式</span>
       </label>
@@ -67,7 +68,7 @@ root.innerHTML = `
         <div class="slicer-section-title"><h2 id="resultTitle">处理结果 <span class="tag" id="sliceCount">0 张</span></h2><button id="downloadZipBtn" type="button" class="pill-btn shadow" disabled>下载全部 ZIP</button></div>
         <div id="status" class="slicer-status" role="status" aria-live="polite">选择图片并设置尺寸，点击“开始切图”。</div>
         <div id="resultEmpty" class="slicer-empty">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><rect x="8" y="4" width="24" height="32" rx="3"/><path d="M8 16h24M8 25h24" stroke-dasharray="3 3"/><path d="m15 11 3-3 4 4 3-2"/></svg>
+          ${icon('crop')}
           <b>把一张长图，变成刚好的尺寸</b>
           <span>切片预览与下载会显示在这里</span>
         </div>
@@ -140,7 +141,7 @@ function updateFileSummary() {
     info.append(name, size);
     const remove = document.createElement("button");
     remove.type = "button"; remove.className = "slicer-file-remove";
-    remove.textContent = "×"; remove.title = "取消选择";
+    remove.innerHTML = icon("close"); remove.title = "取消选择";
     remove.setAttribute("aria-label", `取消选择 ${file.name}`);
     remove.disabled = busy;
     remove.addEventListener("click", () => {
@@ -467,7 +468,7 @@ function renderManualCuts() {
     const removeBtn = document.createElement("button");
     removeBtn.type = "button";
     removeBtn.className = "cut-remove";
-    removeBtn.textContent = "×";
+    removeBtn.innerHTML = icon("close");
     removeBtn.setAttribute("aria-label", `删除 Y ${cut}px 切线`);
     removeBtn.addEventListener("click", (event) => {
       event.stopPropagation();
@@ -487,7 +488,7 @@ function renderManualCuts() {
     const chipRemove = document.createElement("button");
     chipRemove.type = "button";
     chipRemove.className = "chip-remove";
-    chipRemove.textContent = "×";
+    chipRemove.innerHTML = icon("close");
     chipRemove.setAttribute("aria-label", `删除 Y ${cut}px 切线`);
     chipRemove.addEventListener("click", () => removeManualCut(cut));
     chip.append(chipText, chipRemove);

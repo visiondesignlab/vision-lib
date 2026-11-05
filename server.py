@@ -8,6 +8,7 @@ import ai_directory
 import cms_auth
 import cms_content as cms
 import cms_migration
+import submissions
 from cms_upload import upload
 
 STATIC = os.path.join(store.ROOT, "static")
@@ -183,6 +184,10 @@ class H(BaseHTTPRequestHandler):
     def api(self, method, p, q):
         if re.match(r"^/api/cases/[\w.-]+/breakdown/?$", p):
             return self.send_json({"error": "在线拉片已取消，请在案例详情中选择自己的 AI 工具", "code": "online_breakdown_removed"}, 410)
+        if p == "/api/submissions" and method == "POST":
+            if not self.same_origin():
+                return self.send_json({"error":"请求来源无效"}, 403)
+            return self.send_json(submissions.receive(self.body()), 201)
         if p == "/api/ai-directory" and method == "GET":
             return self.send_json(ai_directory.public_view(ai_directory.load()))
         m = re.match(r"^/api/cases/([\w.-]+)$", p)
@@ -226,6 +231,13 @@ class H(BaseHTTPRequestHandler):
                 if os.path.exists(initial):
                     os.unlink(initial)
                 return self.send_json({"ok": True}, headers={"Set-Cookie": cms_auth.cookie_header(max_age=0)})
+            if p == "/api/admin/submissions" and method == "GET":
+                return self.send_json(submissions.listing())
+            if p == "/api/admin/submissions/sync" and method == "POST":
+                return self.send_json(submissions.sync())
+            submission = re.fullmatch(r"/api/admin/submissions/([0-9a-f]{32})", p)
+            if submission and method == "POST":
+                return self.send_json(submissions.review(submission[1], self.body()))
             if p == "/api/admin/ai-directory":
                 if method == "GET":
                     return self.send_json(ai_directory.load())
@@ -271,6 +283,7 @@ def main():
     cms_auth.ensure_password()
     print(f"Vision Lab on http://{a.host}:{a.port}  CMS: /review", flush=True)
     with SiteServer((a.host, a.port), H) as server:
+        submissions.start()
         server.serve_forever()
 
 

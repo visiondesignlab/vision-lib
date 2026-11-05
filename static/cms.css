@@ -7,7 +7,7 @@
 .cms-body a,.cms-body button{color:inherit}
 .cms-body .hint{color:var(--fg2);font-size:12px;line-height:1.6}
 .cms-body button:disabled{opacity:.5;cursor:default}
-.cms-body button:focus-visible,.cms-body a:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.cms-body :where(button:not(.select-trigger,[role=menuitemradio]),a):focus-visible{outline:2px solid var(--fg);outline-offset:3px}
 .cms-body .side .about p{margin:6px 0}
 .cms-body .foot button{padding:0;color:var(--fg2)}
 .cms-body .workspace{margin-left:0}
@@ -20,7 +20,7 @@
 .cms-body .btn.primary:hover{background:oklch(28% 0 0)}
 .cms-body .btn.small{height:24px;padding:0 10px;font-size:12px}
 .cms-body .btn.ghost{box-shadow:none;background:var(--chip)}
-.cms-body .btn.danger{color:oklch(55% .2 25)}
+.cms-body .btn.danger{color:var(--danger)}
 .cms-body .page-head{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:28px;margin-bottom:24px}
 .cms-body .page-head>div:first-child{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .cms-body .page-head h1{font-size:16px;font-weight:500;letter-spacing:0}
@@ -46,7 +46,7 @@
 .cms-body input:not([type=checkbox]):not([type=file]),.cms-body textarea,.cms-body select{font:inherit;color:var(--fg);background:var(--bg);border:0;box-shadow:0 0 0 1px var(--line);border-radius:8px;padding:8px 10px;width:100%;min-width:0}
 .cms-body input:not([type=checkbox]):focus,.cms-body textarea:focus{outline:1.5px solid var(--fg);outline-offset:0}
 .cms-body input::placeholder,.cms-body textarea::placeholder{color:var(--fg3)}
-.cms-body .search input{height:28px;border-radius:999px;padding:0 12px 0 28px;box-shadow:var(--ring);background:#fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" stroke="%23999" stroke-width="2"><circle cx="6" cy="6" r="4.5"/><path d="M9.5 9.5L13 13"/></svg>') 10px 50% no-repeat}
+.cms-body .search input{height:28px;border-radius:999px;padding:0 12px 0 28px;box-shadow:var(--ring);background:#fff url("/static/icons/search.svg") 10px 50% / 1.15em no-repeat}
 .cms-body .table-wrap{overflow:auto}
 .cms-body table{width:100%;border-collapse:collapse;text-align:left;white-space:nowrap}
 .cms-body th{font-size:12px;font-weight:400;color:var(--fg2);background:var(--bg2);padding:10px 16px;border-bottom:1px solid var(--line)}
@@ -54,7 +54,7 @@
 .cms-body tr:last-child td{border-bottom:0}
 .cms-body tbody tr:hover{background:var(--bg2)}
 .cms-body .title-cell{display:flex;align-items:center;gap:12px;min-width:220px}
-.cms-body .thumb{width:72px;height:48px;border-radius:8px;flex:none;overflow:hidden;background:var(--bg2)}
+.cms-body .thumb{border:1px solid var(--line);width:72px;height:48px;border-radius:8px;flex:none;overflow:hidden;background:var(--bg2)}
 .cms-body .thumb img{width:100%;height:100%;object-fit:cover}
 .cms-body .title-text{max-width:280px}
 .cms-body .title-text button{padding:0;display:block;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;text-align:left}
@@ -78,7 +78,8 @@
 .cms-body .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .cms-body .check-field{display:flex;gap:6px;align-items:center;margin-top:18px}
 .cms-body input[type=checkbox]{accent-color:var(--fg)}
-.cms-body .field-trigger{width:100%;box-shadow:0 0 0 1px var(--line);border-radius:8px;padding:8px 10px;min-height:34px;display:flex;align-items:center;justify-content:space-between;text-align:left}
+.cms-body .editor-type-field{min-width:0}
+.cms-body .editor-type-field #editor-migrate{margin-top:12px}
 .cms-body .editor-side{position:sticky;top:16px;display:flex;flex-direction:column;gap:20px}
 .cms-body .preview-media{aspect-ratio:16/10;background:var(--bg2);display:grid;place-items:center;color:var(--fg3);overflow:hidden;border-radius:8px;margin:16px 0}
 .cms-body .preview-media:has(.video-surface){background:transparent;overflow:visible}
@@ -106,7 +107,7 @@
 .cms-body .error,.cms-body .editor-error{color:oklch(55% .2 25);font-size:12px;line-height:1.6}
 .cms-body .editor-error:not(:empty){padding:12px;background:var(--bg2);border-radius:8px;margin-bottom:20px}
 .cms-body .login-main{min-height:100vh;margin:0;padding:16px 16px 80px}
-.cms-body .login-form{width:100%;max-width:400px;margin:120px auto 60px;padding:28px;border:1px solid var(--line);border-radius:12px}
+.cms-body .login-form,.submission-page .submission-form{width:100%;max-width:400px;margin:120px auto 60px;padding:28px;border:1px solid var(--line);border-radius:12px}
 .cms-body .login-form h2{font-size:16px;font-weight:500;margin-bottom:10px}
 .cms-body .login-form>p{font-size:13px;color:var(--fg2);line-height:1.6}
 .cms-body .login-form .field{margin-top:24px}
@@ -142,7 +143,7 @@
 .cms-body .editor-side{position:static}
 .cms-body .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
 .cms-body .page-head{flex-wrap:wrap;gap:14px}
-.cms-body .login-form{margin-top:80px}}
+.cms-body .login-form,.submission-page .submission-form{margin-top:80px}}
 @media(max-width:600px){
 .cms-body .row2{grid-template-columns:1fr;gap:0}
 .cms-body .section{padding:16px}
@@ -156,16 +157,15 @@
 .cms-body .load-status{line-height:1.6}
 .cms-body .mobile-cms-nav{gap:12px;font-size:12px}
 .cms-body .dialog{padding:20px}
-.cms-body .login-form{margin:72px auto 40px;padding:20px}
+.cms-body .login-form,.submission-page .submission-form{margin:72px auto 40px;padding:20px}
 .cms-body td{padding:12px}
 .cms-body .title-text{max-width:180px}}
 
 /* Keep compact control text centered independently of the surrounding body line height. */
-.cms-body .btn,.cms-body .pill-btn,.cms-body .tab,.cms-body .select-trigger,.cms-body .menu button{line-height:1;vertical-align:middle}
+.cms-body .btn,.cms-body .pill-btn,.cms-body .tab{line-height:1;vertical-align:middle}
 .cms-body .row-actions{align-items:center}
 /* Balance the font's half-pixel visual offset inside fixed-height pills. */
 .cms-body .badge,.cms-body .btn,.cms-body .btn.small,.cms-body .tab,.cms-body .pill-btn:not(.select-trigger){padding-top:1px}
-.cms-body .select-trigger>span:first-child,.cms-body .menu button>span:first-child{padding-top:1px}
 
 /* CMS-specific destinations remain available as secondary navigation. */
 .cms-body .cms-subnav{display:flex;align-items:center;gap:16px;padding:16px;border-bottom:1px solid var(--line);min-height:60px}
@@ -206,3 +206,24 @@
 .cms-body .duplicate-info ul,.cms-body .batch-items ul{padding-inline-start:16px}
 .cms-body .duplicate-info a,.cms-body .batch-items a{text-decoration:underline}
 .cms-body .duplicate-label{margin-inline-start:8px;font-weight:500;cursor:inherit}
+
+.cms-body .migration-picker{margin-top:16px;overflow:hidden;border:1px solid var(--line);border-radius:8px}
+.cms-body .migration-pick-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 12px;background:var(--bg2);border-bottom:1px solid var(--line)}
+.cms-body .migration-pick-head label,.cms-body .migration-row{display:flex;align-items:center;gap:10px;cursor:pointer}
+.cms-body .migration-pick-head [data-count],.cms-body .migration-row small{color:var(--fg2);font-size:12px}
+.cms-body .migration-list{padding:0;margin:0;list-style:none;overflow:auto;max-height:min(36vh,360px);overscroll-behavior:contain}
+.cms-body .migration-list>li+li{border-top:1px solid var(--line)}
+.cms-body .migration-row{padding:8px 12px;min-height:44px}
+.cms-body .migration-row>span{display:grid;gap:2px;min-width:0;overflow-wrap:anywhere}
+.cms-body .migration-row strong{font-weight:500}
+.cms-body .migration-list .duplicate-info{margin:0 12px 8px 36px}
+.cms-body .migration-list .duplicate-info summary{width:fit-content}
+.cms-body .migration-list .duplicate-info li{margin-block:4px;overflow-wrap:anywhere}
+
+.cms-body #tag-library-trigger{margin-top:8px}
+
+.cms-body .submission-list{margin-top:12px;border:1px solid var(--line);border-radius:8px}
+.cms-body .submission-list article{padding:14px 16px;display:grid;gap:6px;justify-items:start;overflow-wrap:anywhere}
+.cms-body .submission-list article+article{border-top:1px solid var(--line)}
+.cms-body .submission-list article>div{display:flex;align-items:center;gap:8px}
+.cms-body .submission-list small{color:var(--fg2)}

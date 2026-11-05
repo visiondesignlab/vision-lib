@@ -1,3 +1,4 @@
+const {icon} = window.VisionSite;
 import {toolSearch} from './tool-search.js';
 const {path} = window.VisionSite;
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
@@ -46,7 +47,7 @@ export function directory({categories, entries}, replaceURL, enhanceSelect) {
   rail.innerHTML = filters.map(c => `<button type="button" data-category="${esc(c.id)}">${esc(c.name)}</button>`).join('');
   function card(x, saved){
     const checked=saved.has(x.id);
-    return `<div class="ai-card"><a class="ai-link" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${iconHTML(x.icon)}<span class="ai-link-text"><strong>${esc(x.name)}</strong><span>${esc(x.description || host(x.url))}</span></span></a><button type="button" class="ai-favorite" data-favorite="${esc(x.id)}" aria-label="${checked?'取消收藏':'收藏'}：${esc(x.name)}" aria-pressed="${checked}" title="${checked?'取消收藏':'收藏'}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.5 4.5 1 6.3L12 17.5l-5.6 2.9 1-6.3-4.5-4.5 6.3-.9Z"/></svg></button></div>`;
+    return `<div class="ai-card"><a class="ai-link" href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${iconHTML(x.icon)}<span class="ai-link-text"><strong>${esc(x.name)}</strong><span>${esc(x.description || host(x.url))}</span></span></a><button type="button" class="ai-favorite" data-favorite="${esc(x.id)}" aria-label="${checked?'取消收藏':'收藏'}：${esc(x.name)}" aria-pressed="${checked}" title="${checked?'取消收藏':'收藏'}">${icon('star')}</button></div>`;
   }
   function render(syncURL) {
     const term = searchText(q.value.trim());

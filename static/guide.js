@@ -1,3 +1,4 @@
+const {icon} = window.VisionSite;
 /* User-facing instructions use the live navigation, public content and asset manifest. */
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 const {path: sitePath, staticMode} = window.VisionSite;
@@ -30,7 +31,7 @@ export function renderGuide({content, types, cases, targets, casesLoaded}) {
     <div class="guide-intro"><p>从左侧选择栏目，内容会在当前页面打开。手机端可通过顶部菜单切换。</p><span class="muted">${casesLoaded ? `当前可浏览 ${cases.length} 条已发布内容` : '浏览、工具与资产的使用指南'}</span></div>
     ${groups.map(group => `<section class="guide-group" aria-label="${esc(group.name)}"><h2>${esc(group.name)}</h2><div class="guide-items">${group.items.map(item => {
       const help = content[item.id] || {}, steps = staticMode && help.publicSteps ? help.publicSteps : help.steps || [];
-      return `<article class="guide-item" data-guide="${esc(item.id)}"><div class="guide-item-heading"><h3><a href="${esc(item.href)}" data-link>${esc(item.title)}<span aria-hidden="true">↗</span></a></h3>${types[item.id] && casesLoaded ? `<span class="guide-count">${count(item.id)} 条已发布</span>` : ''}</div>
+      return `<article class="guide-item" data-guide="${esc(item.id)}"><div class="guide-item-heading"><h3><a href="${esc(item.href)}" data-link>${esc(item.title)}<span aria-hidden="true">${icon('external')}</span></a></h3>${types[item.id] && casesLoaded ? `<span class="guide-count">${count(item.id)} 条已发布</span>` : ''}</div>
         <p class="guide-summary">${esc(types[item.id]?.sub || help.summary || `进入${item.title}查看当前功能。`)}</p>
         ${steps.length ? `<ol>${steps.map(step=>`<li>${esc(step)}</li>`).join('')}</ol>` : ''}
         ${help.note ? `<p class="guide-note">${esc(help.note)}</p>` : ''}

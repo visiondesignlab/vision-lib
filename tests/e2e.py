@@ -21,7 +21,7 @@ with sync_playwright() as p:
     pg.reload(wait_until="domcontentloaded")
     pg.get_by_role("heading", name="常见问题", exact=True).wait_for()
     pg.go_back(wait_until="domcontentloaded")
-    pg.get_by_role("heading", name="视频案例", exact=True).wait_for()
+    pg.get_by_role("heading", name="AI 视频案例", exact=True).wait_for()
     pg.locator(".card").first.hover(); pg.wait_for_timeout(1500)
     pg.screenshot(path=f"{S}/01-gallery-video.png")
     pg.goto(BASE + "/?tab=showcase", wait_until="domcontentloaded"); pg.wait_for_selector(".card")

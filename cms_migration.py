@@ -6,7 +6,7 @@ from urllib.parse import parse_qsl, urlencode, urlsplit
 from cms_content import ContentError, admin_view, record
 import store
 
-SECTIONS = {'video': '视频案例', 'showcase': '灵感库'}
+SECTIONS = {'video': 'AI 视频案例', 'showcase': '灵感库'}
 
 
 def video_identity(url):

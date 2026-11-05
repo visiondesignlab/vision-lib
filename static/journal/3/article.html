@@ -1,0 +1,65 @@
+
+<header>
+<h1>Vol.3 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-10-25 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天没有什么炸裂更新，反而都是些用了以后少骂两句人的小东西：Linear 给 Loop 接上 Slack、GitHub 和 Figma，Webflow 重新收拾容器，Chrome 给 <code>position-area</code> 做了个可视化编辑器，GitHub 也终于不再把自定义工具全塞进 <code>other</code>。</p>
+<p>共同点很朴素：事情做完以后，至少还能看明白是谁触发的、改了什么、用了什么。比再来一个“万能生成器”实在。</p>
+<h2>● Products</h2>
+<h3>More ways to run and share Loops<a class="source-url" href="https://linear.app/changelog/2026-10-22-slack-and-github-loops" rel="noopener noreferrer" target="_blank">https://linear.app/changelog/2026-10-22-slack-and-github-loops</a></h3>
+<figure><img alt="Linear Loops 可由 GitHub 合并事件触发" decoding="async" height="1080" loading="lazy" src="01.avif" width="1920"/><figcaption>Linear Loops 可由 GitHub 合并事件触发</figcaption></figure>
+<p class="mixed-script">Linear 给 Loops 加了 Slack、GitHub 触发器、模板和三档推理强度；Linear Agent 现在还能读写 Figma，从 frame 生成实现要求，或根据 issue 起一版设计提案。Cursor Origin 同步也补上了。</p>
+<p>这次确实比“项目管理里放个聊天框”像样。只是 Figma 写回、版本回退和多人冲突都还没实测，先不替它吹自动化；这三件事过不了，演示再顺也只是演示。</p>
+<h3>Box element and expanded tag selectors<a class="source-url" href="https://webflow.com/updates/box-element-and-expanded-tag-selectors" rel="noopener noreferrer" target="_blank">https://webflow.com/updates/box-element-and-expanded-tag-selectors</a></h3>
+<figure><img alt="Webflow Box element 与语义标签选择器" decoding="async" height="720" loading="lazy" src="02.jpg" width="1280"/><figcaption>Webflow Box element 与语义标签选择器</figcaption></figure>
+<p class="mixed-script">Webflow 用一个 Box 收掉 Div、Section、Container、Columns、Grid、V Flex 和 H Flex，同一个元素可以改成 <code>section</code>、<code>nav</code>、<code>main</code>、<code>article</code>、<code>aside</code> 等语义标签，还补了 19 个全局 tag selectors。Designer API、MCP 都能操作，Free 计划也能用。</p>
+<p class="mixed-script">更新不性感，但很实用。Box 也救不了乱套的 DOM——以前一层层套 Div 的人，换个新名字还是会继续套。</p>
+<h2>● Design Engineering</h2>
+<h3>New in DevTools - November 2026<a class="source-url" href="https://developer.chrome.com/blog/new-in-devtools-november-2026" rel="noopener noreferrer" target="_blank">https://developer.chrome.com/blog/new-in-devtools-november-2026</a></h3>
+<figure><img alt="Chrome DevTools 2026 年 11 月更新" decoding="async" height="459" loading="lazy" src="03.jpg" width="816"/><figcaption>Chrome DevTools 2026 年 11 月更新</figcaption></figure>
+<p class="mixed-script">DevTools 给 CSS Anchor Positioning 的 <code>position-area</code> 加了图形化网格，横纵轴、<code>self</code> keyword 和隐式 anchor 都能直接点。做浮层终于不用对着一串值猜九宫格了。小更新，我很喜欢。</p>
+<h3>Atelier UI: Mixing WebGL and the DOM in a React UI Library<a class="source-url" href="https://tympanus.net/codrops/2026/10/21/atelier-ui-webgl-dom/" rel="noopener noreferrer" target="_blank">https://tympanus.net/codrops/2026/10/21/atelier-ui-webgl-dom/</a></h3>
+<p class="mixed-script">Atelier UI 把 WebGL text、image、scene 拆成可复制组件，通过一个全局 React Three Fiber Canvas 统一渲染；真实 DOM 仍留在页面里，只把视觉投到 WebGL 平面。滚动由 Motion 统一驱动 Lenis 与 Canvas，避免两个 frame loop 互相追赶。</p>
+<p class="mixed-script">网页特效教程最烦的是只教效果，不管残局。这篇把残局也写了：DOM 文本继续负责搜索和辅助技术，位置只在需要时重算，父级有 transform 才逐帧 reflow，reduced motion 直接退成淡入淡出。</p>
+<p>Shader 可以晚点抄，这几条先抄。移动端和低端 GPU 还没实测。</p>
+<h3>Custom skills, agents, and MCP servers in usage metrics API<a class="source-url" href="https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-10-22-custom-skills-agents-and-mcp-servers-in-usage-metrics-api/</a></h3>
+<figure><img alt="GitHub Copilot usage metrics API 新增自定义工具维度" decoding="async" height="1260" loading="lazy" src="04.jpg" width="2400"/><figcaption>GitHub Copilot usage metrics API 新增自定义工具维度</figcaption></figure>
+<p class="mixed-script">Copilot usage metrics API 现在会单列 custom skills、agents、MCP servers、slash commands 和 plugins，每类最多 25 项，不再统统归到 <code>other</code>。</p>
+<p>用来清理没人碰的入口很合适。GitHub 自己也提醒，客户端遥测可能少算；谁拿调用次数做绩效，谁就会收获一堆为了数字而调用的工具。</p>
+<h3>Send feedback from the Vercel MCP<a class="source-url" href="https://vercel.com/changelog/send-feedback-from-vercel-mcp" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/send-feedback-from-vercel-mcp</a></h3>
+<p class="mixed-script">Vercel MCP 新增 <code>submit_feedback</code>，能把 task、expected、actual 和 type 一起送回 Vercel；需要登录，而且必须由用户明确发起。功能很小，边界写得比不少“大功能”清楚。</p>
+<h2>● Design Systems</h2>
+<h3>Ontario Design System 2.11.1 Release<a class="source-url" href="https://designsystem.ontario.ca/docs/documentation/explore/release-notes.html" rel="noopener noreferrer" target="_blank">https://designsystem.ontario.ca/docs/documentation/explore/release-notes.html</a></h3>
+<p class="mixed-script">2.11.1 只做了一件事：把 global styles npm package 升到 9.2.2，修复 2.11.0 带来的样式破损。前一版刚公开 Combobox 设计，代码还没跟上。</p>
+<p>这就是设计系统的日常，一边发新组件，一边修全局样式。升级前看 release notes，别只看版本号。</p>
+<h3>DWP Design System 5.1.1<a class="source-url" href="https://design-system.dwp.gov.uk/about/latest-updates" rel="noopener noreferrer" target="_blank">https://design-system.dwp.gov.uk/about/latest-updates</a></h3>
+<p class="mixed-script">DWP 修了 Welsh language toggle 在 axe-core 4.14 里触发的 Label in Name 问题，并计划退役自家组件，改用 GOV.UK 版本。能合上游就合上游，给一个语言切换器长期背两套测试债才是真的贵。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Together<a class="source-url" href="https://www.stashmedia.tv/mind-body-get-it-together-in-kim-soobins-new-short-film/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/mind-body-get-it-together-in-kim-soobins-new-short-film/</a></h3>
+<figure data-film-source="https://player.vimeo.com/video/1234299289?title=0&amp;byline=0&amp;portrait=0"><img alt="《Together》用纸板场景与红色气球讲身体和念头的关系" decoding="async" height="1080" loading="lazy" src="05.jpg" width="1920"/><figcaption>《Together》用纸板场景与红色气球讲身体和念头的关系</figcaption></figure>
+<p>原片播放器<a class="source-url" href="https://player.vimeo.com/video/1234299289?title=0&amp;byline=0&amp;portrait=0" rel="noopener noreferrer" target="_blank">https://player.vimeo.com/video/1234299289?title=0&amp;byline=0&amp;portrait=0</a></p>
+<p class="mixed-script">Kim Soobin 把 mind 变成一只红色气球，body 留在纸板搭的现实里。气球鼓起来、瘪下去、到处乱撞，情绪根本不用解释；镜头像翻立体书，横着看生活，往里钻念头。</p>
+<p>这是今天我最喜欢的一条。纸板、气球、红色，东西少得可怜，但每一样都在讲同一件事。很多产品片输就输在概念还没找到，材质、粒子、3D 镜头已经堆满了。</p>
+<h2>● Stash 最新内容观察</h2>
+<p>今天 API 没有新片，硬凑没意思。留三个位置做去重：</p>
+<ul>
+<li>Together — Kim Soobin<a class="source-url" href="https://www.stashmedia.tv/mind-body-get-it-together-in-kim-soobins-new-short-film/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/mind-body-get-it-together-in-kim-soobins-new-short-film/</a>｜短片 / stop-motion 质感：今天主卡。</li>
+<li>Optical Arts brings hygiene to life for Dyson<a class="source-url" href="https://www.stashmedia.tv/optical-arts-brings-hygiene-to-life-for-dyson/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/optical-arts-brings-hygiene-to-life-for-dyson/</a>｜产品 CG：10 月 24 日已经写过，微观清洁镜头依然值得回看。</li>
+<li>We Love Pitching Part 22<a class="source-url" href="https://www.stashmedia.tv/we-love-pitching-design-production-part-22/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/we-love-pitching-design-production-part-22/</a>｜pitch / motion development：也是昨天的内容，不再展开。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Linear 写回 Figma 后怎么回退、怎么处理多人冲突，这比“能写”重要。</li>
+<li>Webflow Box 到真实旧站里，到底能少几层嵌套。</li>
+<li>Atelier UI 的移动端和低端 GPU 表现。没跑过，不猜。</li>
+<li>Stash 10 月 23 日之后的新片。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日新增：Linear Loops、Webflow Box、DevTools <code>position-area</code> 编辑器、Atelier UI、GitHub 自定义工具使用统计、Vercel MCP 反馈、Ontario DS 2.11.1、DWP 5.1.1。</li>
+<li>今日视频：Kim Soobin《Together》；10 月 24 日只在 Stash 轻量观察出现，今天首次做完整拆解。</li>
+<li>Stash 已覆盖：Dyson / Optical Arts（10 月 24 日主卡）、We Love Pitching Part 22（10 月 24 日）、FutureDeluxe / Verizon 与 Ordinary Folk / Distance（10 月 23 日）、Microsoft Foundry 与 Query（10 月 22 日）。</li>
+<li>刻意跳过：已经连续覆盖过的 ProtoPie MCP、Spline MCP / ChatGPT、Chrome <code>get_css_styles</code> 与 Apple creative assets；本期不换标题再讲一遍。</li>
+</ul>
+<p class="mixed-script verification">核验说明：Linear、Webflow、Chrome、GitHub、Vercel、Ontario 与 DWP 官方页面，Codrops 教程，Stash WordPress API、文章页及 Vimeo player 于 2026-10-25 回读。未进行 Linear Figma 写回、Webflow 旧站迁移、Atelier UI 性能和 GitHub 遥测完整性实测。全部嵌入图均下载并核验原始像素，宽度不低于 816px。</p>

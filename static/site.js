@@ -11,13 +11,29 @@
     if (base && (value === base || value.startsWith(base + '/'))) value = value.slice(base.length);
     return value.replace(/\/$/, '') || '/';
   }
-  function videoPlayer(src, poster) {
-    const surface = document.createElement('div'), video = document.createElement('video');
-    surface.className = 'video-surface';
-    video.src = src; video.poster = poster || path('/static/cms-placeholder.svg');
-    for (const attr of ['controls', 'autoplay', 'muted', 'loop', 'playsinline']) video.setAttribute(attr, '');
-    surface.append(video);
-    return surface.outerHTML;
+  function icon(name) {
+    return `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><use href="${path('/static/icons/hugeicons.svg')}#${name}"></use></svg>`;
   }
-  window.VisionSite = Object.freeze({path, routePath, videoPlayer, staticMode: config.staticMode === true});
+  function videoPlayer(src, poster, {detail=false}={}) {
+    // Set media attributes inside an inert template. Only the mounted player can load or play.
+    const template=document.createElement('template');
+    template.innerHTML='<div class="video-surface"><video controls loop playsinline></video></div>';
+    const video=template.content.querySelector('video');
+    video.setAttribute('src',src);
+    video.setAttribute('poster',poster || path('/static/cms-placeholder.svg'));
+    if(!detail) {
+      video.setAttribute('autoplay','');
+      video.setAttribute('muted','');
+    }
+    return template.innerHTML;
+  }
+  function releaseVideo(video) {
+    video.muted=true;
+    video.pause();
+    video.loop=false;
+    video.autoplay=false;
+    video.removeAttribute('src');
+    video.load();
+  }
+  window.VisionSite = Object.freeze({path, routePath, icon, videoPlayer, releaseVideo, staticMode: config.staticMode === true});
 })();

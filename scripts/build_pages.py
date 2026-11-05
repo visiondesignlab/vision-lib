@@ -3,6 +3,8 @@
 import argparse
 import hashlib
 import json
+import os
+from urllib.parse import urlsplit
 from pathlib import Path
 import re
 import shutil
@@ -65,7 +67,7 @@ def build(output, base):
             raise ValueError('Invalid or duplicate case ID')
         ids.add(cid)
     # Never copy the private store, logs, backups, CMS code or arbitrary media.
-    excluded = {'README.md', 'cms.js', 'cms-select.js', 'cms-directory.js', 'cms.html', '.DS_Store'}
+    excluded = {'README.md', 'cms.js', 'cms-directory.js', 'cms-submissions.js', 'cms.html', '.DS_Store'}
     shutil.copytree(ROOT / 'static', output / 'static', ignore=lambda d, names: set(names) & excluded)
     for directory in ('media', 'brand_skills'):
         if (ROOT / 'publish' / directory).exists():
@@ -88,12 +90,17 @@ def build(output, base):
         if target.suffix in ('.css', '.html'):
             target.write_text(rebase_text(target.read_text(), base))
     shell = (output / 'static/index.html').read_text()
-    config = json.dumps({'staticMode': True, 'basePath': base}, ensure_ascii=False)
+    intake = os.getenv('VISION_INTAKE_URL','').strip().rstrip('/')
+    if intake and (urlsplit(intake).scheme!='https' or not urlsplit(intake).hostname or
+                   urlsplit(intake).username or urlsplit(intake).password or urlsplit(intake).query or urlsplit(intake).fragment):
+        raise ValueError('VISION_INTAKE_URL must be a public HTTPS service URL')
+    config = json.dumps({'staticMode': True, 'basePath': base, 'intakeUrl':intake}, ensure_ascii=False)
     shell = shell.replace('<script src=', '<script>window.VISION_CONFIG = ' + config + ';</script>\n<script src=', 1)
     (output / 'index.html').write_text(shell)
     (output / '404.html').write_text(shell)
     (output / 'static/index.html').unlink()
-    for route in ['tools/ai-nav', 'tools/ai-models', 'tools/image-slicer', 'assets/brand', 'assets/design', 'review', 'cms', 'guide', *('c/' + cid for cid in sorted(ids))]:
+    routes = ['tools/ai-nav', 'tools/ai-models', 'tools/image-slicer', 'assets/brand', 'assets/design', 'review', 'cms', 'guide', 'submit', 'journal', *('c/' + cid for cid in sorted(ids))]
+    for route in routes:
         target = output / route / 'index.html'
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(shell)
@@ -114,7 +121,7 @@ def build(output, base):
     total = sum(p.stat().st_size for p in output.rglob('*') if p.is_file())
     if total >= 1024 ** 3:
         raise ValueError(f'Pages output exceeds 1 GiB: {total} bytes')
-    report = {'cases': len(cases), 'basePath': base, 'bytes': total, 'routes': len(ids) + 8}
+    report = {'cases': len(cases), 'basePath': base, 'bytes': total, 'routes': len(routes)}
     (output / 'build-info.json').write_text(json.dumps(report, indent=2))
     print(json.dumps(report))
     return report

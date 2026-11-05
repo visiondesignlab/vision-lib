@@ -1,3 +1,4 @@
+import {submissionPage,analysisSection} from "./submissions.js";
 /* Vision Lab — vanilla JS SPA */
 (() => {
 const $ = (s, el = document) => el.querySelector(s);
@@ -7,123 +8,21 @@ const {path: sitePath, routePath, staticMode} = window.VisionSite;
 const mobileLayout = matchMedia("(max-width: 900px)"), reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 const touchLayout = matchMedia("(hover: none) and (pointer: coarse)");
 let navOpen = false, navAnimation = null, detailExit = null;
-let CASES = [], casesLoaded = false, STATE = {tab: "video", cat: "全部", q: "", sort: "hot"};
+let CASES = [], casesLoaded = false, STATE = {tab: "video", cat: "全部", tag:"", q: "", sort: "hot"};
 const tabSort = new Map();
 let adminSession = false, authRevision = 0, authReady = false;
 const TABS = {
-  video: {name: "视频案例", sub: "好的 launch / 宣传视频，附复现 Prompt、步骤和依赖的 Skill", cats: ["全部", "动效特效", "社交短视频", "营销产品", "电影感叙事"]},
+  video: {name: "AI 视频案例", sub: "好的 launch / 宣传视频，附复现 Prompt、步骤和依赖的 Skill", cats: ["全部", "动效特效", "社交短视频", "营销产品", "电影感叙事"]},
   showcase: {name: "灵感库", sub: "产品发布、广告片、预告。选一支好片，一键交给自己的 AI 拉片", cats: null},
-  graphic: {name: "平面", sub: "海报、发布图、社交图卡", cats: ["全部"]},
+  graphic: {name: "平面视觉", sub: "海报、发布图、社交图卡", cats: ["全部"]},
   brand_skill: {name: "品牌 Skill", sub: "团队长期维护、带版本的规范和 Skill", cats: ["全部"]},
   skill_repo: {name: "Skill 仓库", sub: "做视频用的 agent skill 仓库（Top 50 + 每日新增）", cats: ["全部", "推荐", "代码动效", "AI 生成", "自动剪辑", "口播/解说", "提示词", "发布/字幕", "合集索引"]},
 };
-const ICON = {
-  go: '<svg viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="1.4"><path d="M3.5 8.5l5-5M4.5 3.5h4v4"/></svg>',
-  x: '<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3l6 6M9 3l-6 6"/></svg>',
-  l: '<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7.5 2.5L4 6l3.5 3.5"/></svg>',
-  r: '<svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 2.5L8 6 4.5 9.5"/></svg>',
-  caret: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m8 10 4 4 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-  check: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="m4.75 12.78 5.25 6.47 9.25-14.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
-};
+const {icon} = window.VisionSite;
+const ICON = {go:icon('external'), x:icon('close'), l:icon('previous'), r:icon('next'),
+  caret:icon('caret'), check:icon('check')};
 
-/* ---------------- shared menus */
-let activeMenu = null, menuSequence = 0;
-function closeMenu(restoreFocus = false) {
-  if (!activeMenu) return;
-  const {trigger, menu} = activeMenu;
-  activeMenu = null;
-  trigger.setAttribute("aria-expanded", "false");
-  menu.remove();
-  if (restoreFocus && trigger.isConnected) trigger.focus({preventScroll: true});
-}
-function positionMenu() {
-  if (!activeMenu) return;
-  const {trigger, menu, align, matchWidth} = activeMenu;
-  if (!trigger.isConnected) return closeMenu();
-  const r = trigger.getBoundingClientRect(), edge = 8, gap = 6;
-  const viewport = window.visualViewport, width = viewport?.width || innerWidth;
-  const top = viewport?.offsetTop || 0, bottom = top + (viewport?.height || innerHeight);
-  menu.style.maxWidth = `${width - edge * 2}px`;
-  menu.style.minWidth = `${Math.min(Math.max(150, matchWidth ? r.width : 0), width - edge * 2)}px`;
-  menu.style.maxHeight = `${bottom - top - edge * 2}px`;
-  const height = menu.offsetHeight, below = bottom - r.bottom - gap - edge, above = r.top - top - gap - edge;
-  const up = height > below && above > below;
-  menu.dataset.side = up ? "top" : "bottom";
-  menu.style.maxHeight = `${Math.max(0, up ? above : below)}px`;
-  menu.style.left = `${Math.max(edge, Math.min(align === "start" ? r.left : r.right - menu.offsetWidth, width - menu.offsetWidth - edge))}px`;
-  menu.style.top = `${Math.max(top + edge, up ? r.top - gap - menu.offsetHeight : r.bottom + gap)}px`;
-}
-function bindMenu(trigger, items, choose, {align = "end", matchWidth = false} = {}) {
-  trigger.id ||= `menu-trigger-${++menuSequence}`;
-  trigger.setAttribute("aria-haspopup", "menu");
-  trigger.setAttribute("aria-expanded", "false");
-  trigger.setAttribute("aria-controls", `${trigger.id}-menu`);
-  function open(focusLast = false) {
-    closeMenu();
-    const menu = document.createElement("div");
-    menu.id = `${trigger.id}-menu`; menu.className = "menu";
-    menu.setAttribute("role", "menu"); menu.setAttribute("aria-labelledby", trigger.id);
-    menu.innerHTML = items().map(item => `${item.separator ? '<hr role="separator">' : ""}<button type="button" role="menuitemradio" aria-checked="${!!item.selected}" tabindex="-1" data-value="${esc(item.value)}" ${item.disabled ? "disabled" : ""}><span>${esc(item.label)}</span><span class="menu-check" aria-hidden="true">${item.selected ? ICON.check : ""}</span></button>`).join("");
-    ($(".modal") || (!overlay.hidden ? overlay : document.body)).appendChild(menu);
-    activeMenu = {trigger, menu, align, matchWidth};
-    trigger.setAttribute("aria-expanded", "true");
-    positionMenu();
-    menu.querySelectorAll("button").forEach(button => {
-      button.addEventListener("pointermove", e => { if (e.pointerType === "mouse") button.focus({preventScroll: true}); });
-      button.onclick = () => { const value = button.dataset.value; closeMenu(true); choose(value); };
-    });
-    const buttons = [...menu.querySelectorAll("button:not(:disabled)")];
-    (focusLast ? buttons.at(-1) : buttons[0])?.focus({preventScroll: true});
-  }
-  trigger.onclick = () => activeMenu?.trigger === trigger ? closeMenu(true) : open();
-  trigger.onkeydown = e => {
-    if (e.key === "ArrowDown" || e.key === "ArrowUp") { e.preventDefault(); open(e.key === "ArrowUp"); }
-  };
-}
-function enhanceSelect(select, label, field = false) {
-  const trigger = document.createElement("button");
-  trigger.type = "button"; trigger.id = `${select.id || select.name}-trigger`;
-  trigger.className = field ? "select-trigger field-trigger" : "pill-btn shadow select-trigger";
-  trigger.setAttribute("aria-label", label);
-  select.hidden = true;
-  select.after(trigger);
-  const update = () => { trigger.innerHTML = `<span>${esc(select.selectedOptions[0]?.textContent || "")}</span>${ICON.caret}`; };
-  select.addEventListener("change", update); update();
-  bindMenu(trigger, () => [...select.options].map(o => ({value: o.value, label: o.text, selected: o.selected, disabled: o.disabled})), value => {
-    select.value = value; select.dispatchEvent(new Event("change", {bubbles: true}));
-    document.getElementById(trigger.id)?.focus({preventScroll: true});
-  }, {align: field ? "start" : "end", matchWidth: field});
-  return update;
-}
-document.addEventListener("pointerdown", e => {
-  if (activeMenu && !activeMenu.menu.contains(e.target) && !activeMenu.trigger.contains(e.target)) closeMenu();
-}, true);
-document.addEventListener("focusin", e => {
-  if (activeMenu && !activeMenu.menu.contains(e.target) && !activeMenu.trigger.contains(e.target)) closeMenu();
-});
-window.addEventListener("resize", positionMenu);
-window.visualViewport?.addEventListener("resize", positionMenu);
-window.addEventListener("scroll", e => {
-  if (!activeMenu || activeMenu.menu.contains(e.target)) return;
-  // Focusing a mobile control can finish scrolling after the menu opens.
-  // Follow the trigger while it is on screen instead of discarding the user's choice.
-  const r = activeMenu.trigger.getBoundingClientRect();
-  if (r.bottom <= 0 || r.top >= innerHeight) closeMenu();
-  else positionMenu();
-}, true);
-document.addEventListener("keydown", e => {
-  if (!activeMenu) return;
-  if (e.key === "Escape") { e.preventDefault(); e.stopImmediatePropagation(); return closeMenu(true); }
-  if (e.key === "Tab") { closeMenu(true); return; }
-  const buttons = [...activeMenu.menu.querySelectorAll("button:not(:disabled)")];
-  const index = buttons.indexOf(document.activeElement);
-  let next;
-  if (e.key === "ArrowDown") next = (index + 1) % buttons.length;
-  if (e.key === "ArrowUp") next = (index - 1 + buttons.length) % buttons.length;
-  if (e.key === "Home") next = 0;
-  if (e.key === "End") next = buttons.length - 1;
-  if (next != null) { e.preventDefault(); e.stopImmediatePropagation(); buttons[next]?.focus(); }
-}, true);
+const {bindMenu, enhanceSelect, closeMenu} = window.VisionMenu;
 
 /* ---------------- modal background and focus */
 let lockedScroll = null, detailFocus = null, detailCleanup = null;
@@ -151,7 +50,7 @@ function syncModalState() {
 }
 document.addEventListener("keydown", e => {
   const scope = $(".modal") || (!overlay.hidden ? overlay : navOpen ? $(".side") : null);
-  if (!scope || e.key !== "Tab") return;
+  if (document.querySelector("dialog[open]") || !scope || e.key !== "Tab") return;
   const nodes = [...scope.querySelectorAll('a[href],button,input,textarea,select,[tabindex="0"]')].filter(el => !el.disabled && el.getClientRects().length);
   const first = nodes[0], last = nodes.at(-1);
   if (e.shiftKey && (document.activeElement === first || !scope.contains(document.activeElement))) { e.preventDefault(); last?.focus(); }
@@ -195,7 +94,11 @@ const previewObserver = new IntersectionObserver(entries => {
 }, {threshold:[0,.3,.65,.9]});
 function stopPreview(card) { $("video",card)?.pause(); card.classList.remove("playing"); }
 function playPreview(card) {
-  const video = $("video",card); if (!video || !video.paused) return;
+  const video = $("video",card);
+  if (!video || !card.isConnected || document.hidden || !overlay.hidden || navOpen) return;
+  video.muted = true;
+  video.volume = 0;
+  if (!video.paused) return;
   if (!video.src) video.src = video.dataset.src;
   video.play().then(() => { if (card.isConnected && !video.paused) card.classList.add("playing"); }).catch(() => {});
 }
@@ -352,7 +255,7 @@ ${vid ? "视频地址：" + vid + "\n" : ""}原帖 / 来源：${c.source?.url ||
 }
 
 /* ---------------- data */
-let summaryRequest, currentSection = '', adminTotals = null, loadSequence = 0;
+let summaryRequest, currentSection = '', adminTotals = null, latestCasesLoad = null;
 function showStats() {
   const stats = $("#stats");
   if (currentSection === 'review' && adminSession && adminTotals) {
@@ -378,11 +281,16 @@ function showSectionSummary(tab, title) {
   }
   showStats();
 }
-async function load() {
-  const seq = ++loadSequence;
-  const j = await api("/api/cases");
-  if(seq!==loadSequence) return;
-  CASES = j.cases; casesLoaded = true; showStats();
+function load() {
+  const request = api("/api/cases").then(data => {
+    // Navigation after a write must see the latest data, even if another tab also triggers a refresh.
+    if (request !== latestCasesLoad) return latestCasesLoad;
+    CASES = data.cases;
+    casesLoaded = true;
+    showStats();
+  });
+  latestCasesLoad = request;
+  return request;
 }
 
 /* ---------------- router */
@@ -493,7 +401,7 @@ function syncAdminControls() {
     $('.ai-directory-head', app)?.insertAdjacentHTML('beforeend', '<a data-link data-admin-control class="pill-btn shadow" href="/cms/ai-nav">管理 AI 导航</a>');
   }
   if (app.dataset.view?.startsWith("grid:")) {
-    $(".head", app)?.insertAdjacentHTML("afterend", `<div class="content-admin-toolbar" data-admin-control aria-label="栏目管理"><span>管理员模式</span><a class="pill-btn shadow" href="/cms/new?type=${encodeURIComponent(STATE.tab)}" data-link>＋ 新建内容</a><a class="pill-btn shadow" href="/cms/content?type=${encodeURIComponent(STATE.tab)}" data-link>管理本栏目</a></div>`);
+    $(".head", app)?.insertAdjacentHTML("afterend", `<div class="content-admin-toolbar" data-admin-control aria-label="栏目管理"><span>管理员模式</span><a class="pill-btn shadow" href="/cms/new?type=${encodeURIComponent(STATE.tab)}" data-link>${icon('plus')} 新建内容</a><a class="pill-btn shadow" href="/cms/content?type=${encodeURIComponent(STATE.tab)}" data-link>管理本栏目</a></div>`);
     app.querySelectorAll(".card-item").forEach(item => {
       const card = $(".card", item);
       item.insertAdjacentHTML("beforeend", `<a class="card-manage" data-admin-control data-link href="/cms/edit/${esc(card.dataset.id)}" aria-label="编辑：${esc($("img", card)?.alt || "内容")}">编辑</a>`);
@@ -501,7 +409,25 @@ function syncAdminControls() {
   }
   if (!overlay.hidden) {
     const id = routePath().match(/^\/c\/([\w.-]+)/)?.[1], c = CASES.find(c => c.id === id);
-    if (c) $(".phead", overlay)?.insertAdjacentHTML("afterend", `<div class="content-admin-toolbar detail-admin-tools" data-admin-control aria-label="内容管理操作"><a class="pill-btn shadow" data-link href="/cms/edit/${esc(c.id)}">编辑内容</a><a class="pill-btn shadow" data-link href="/cms/content?type=${encodeURIComponent(c.type)}">管理本栏目</a></div>`);
+    if (!c) return;
+    const target = {video:'灵感库',showcase:TABS.video.name}[c.type];
+    overlay.insertAdjacentHTML("beforeend", `<div class="content-admin-toolbar detail-admin-tools" data-admin-control aria-label="内容管理操作">
+      <a class="pill-btn shadow" data-link href="/cms/edit/${esc(c.id)}">编辑内容</a>${target?`<button class="pill-btn shadow" data-quick="migrate">迁移到「${target}」</button>`:''}
+      <button class="pill-btn shadow" data-quick="unpublish">下架</button>
+      <button class="pill-btn shadow" data-quick="delete">下架并删除</button>
+      <a class="pill-btn shadow" data-link href="/cms/content?type=${encodeURIComponent(c.type)}">管理本栏目</a></div>`);
+    for(const button of overlay.querySelectorAll('[data-quick]')) button.onclick=async()=>{
+      const current=()=>adminSession && !overlay.hidden && routePath()==='/c/'+id;
+      button.disabled=true;
+      try {
+        const cms=await loadCMS();
+        if(current()) {
+          $('.stage video',overlay)?.pause();
+          await cms.quickAction(id,button.dataset.quick,current);
+        }
+      } catch(err) { toast(err.message || '管理操作暂时不可用'); }
+      finally { button.disabled=false; }
+    };
   }
 }
 if (authChannel) authChannel.onmessage = e => {
@@ -516,7 +442,17 @@ document.addEventListener("visibilitychange", () => {
 });
 function refreshPublicContent() {
   authChannel?.postMessage('content');
+  const detail=routePath().match(/^\/c\/([\w.-]+)$/);
+  const sourceTab=STATE.tab;
+  const order=detail ? filtered().map(c=>c.id) : [];
+  const index=detail ? order.indexOf(detail[1]) : -1;
   load().then(() => {
+    if(detail && routePath()==='/c/'+detail[1] && !CASES.some(c=>c.id===detail[1] && c.type===sourceTab)) {
+      const visible=new Set(filtered().map(c=>c.id));
+      const neighbor=index<0 ? null : [...order.slice(index+1),...order.slice(0,index).reverse()].find(id=>visible.has(id));
+      const back=$('.ptop a[aria-label="关闭详情"]',overlay)?.href || sitePath('/?tab='+STATE.tab);
+      return nav(neighbor ? '/c/'+neighbor : back,true);
+    }
     if (!isCMSRoute() && !isSlicerRoute() && !isBrandAssetsRoute()) render();
   }).catch(() => toast("内容已更新，浏览列表暂时未能刷新，请稍后重试"));
 }
@@ -533,18 +469,19 @@ function renderCMS() {
     return cmsView.render();
   }
   app.innerHTML = '<div class="empty" role="status">正在打开内容工作台…</div>';
-  if (cmsLoading) return;
-  cmsLoading = import(sitePath("/static/cms.js")).then(({createCMS}) => {
-    cmsView = createCMS({navigate: nav, replaceURL, onContentChange: refreshPublicContent, onSessionChange, onCounts: counts=>{adminTotals=counts;showStats();}});
-    if (isCMSRoute()) {
-      app.replaceChildren(cmsView.element);
-      cmsView.render();
-    }
-  }).catch(() => {
+  return loadCMS().then(()=>{ if(isCMSRoute()) renderCMS(); }).catch(()=>{
     if (!isCMSRoute()) return;
-    app.innerHTML = '<div class="empty"><b>内容管理加载失败</b><button type="button" class="pill-btn shadow" id="retryCMS">重新加载</button></div>';
-    $("#retryCMS").onclick = renderCMS;
-  }).finally(() => { cmsLoading = null; });
+    app.innerHTML='<div class="empty"><b>内容管理加载失败</b><button class="pill-btn shadow">重新加载</button></div>';
+    $('button',app).onclick=renderCMS;
+  });
+}
+function loadCMS(){
+  if (!cmsLoading) cmsLoading=import(sitePath('/static/cms.js')).then(({createCMS})=>{
+    cmsView=createCMS({navigate:nav,replaceURL,onContentChange:refreshPublicContent,onSessionChange,
+      onCounts:counts=>{adminTotals=counts;showStats();}});
+    return cmsView;
+  }).catch(err=>{cmsLoading=null;throw err;});
+  return cmsLoading;
 }
 
 let guideSequence = 0;
@@ -588,6 +525,27 @@ function renderImageSlicer() {
 let brandAssetsView = null, brandAssetsLoading = null;
 const isBrandAssetsRoute = () => /^\/assets\/brand\/?$/.test(routePath());
 const isDesignAssetsRoute = () => routePath() === '/assets/design';
+const isJournalRoute = () => routePath() === '/journal';
+let journalController;
+async function renderJournalPage(volume) {
+  journalController?.abort();
+  const controller = journalController = new AbortController();
+  setNav('journal');
+  app.dataset.view = 'journal';
+  document.title = '有点意思 · Vision Lab';
+  const view = document.createElement('div');
+  view.className = 'journal-view';
+  view.textContent = '正在读取日刊…';
+  app.replaceChildren(view);
+  try {
+    const module = await import(sitePath('/static/journal/journal.js'));
+    await module.renderJournal(view, volume, controller.signal);
+  } catch {
+    if (!view.isConnected) return;
+    view.innerHTML = '<div class="empty"><b>日刊暂时无法加载</b><button type="button" class="pill-btn shadow">重试</button></div>';
+    view.querySelector('button').onclick = () => renderJournalPage(volume);
+  }
+}
 let designAssetsRequest = 0;
 async function renderDesignAssetPage() {
   app.dataset.view = 'assets:design';
@@ -665,6 +623,8 @@ async function renderDirectory() {
   }
 }
 function render() {
+  journalController?.abort();
+  for(const d of document.querySelectorAll('[data-case-dialog] dialog[open]')) d.close();
   closeMenu();
   if (navOpen) setMobileNav(false, false);
   const u = new URL(location.href), p = routePath(u.pathname);
@@ -677,6 +637,7 @@ function render() {
   if (isBrandAssetsRoute() && u.searchParams.get("section") === "brand-skills") return nav("/?tab=brand_skill", true);
   if (isBrandAssetsRoute()) { closeDetail(); return renderBrandAssets(); }
   brandAssetsView?.deactivate();
+  if (isJournalRoute()) { closeDetail(); return renderJournalPage(u.searchParams.get('vol')); }
   if (isDesignAssetsRoute()) { closeDetail(); return renderDesignAssetPage(); }
   if (p === '/tools/ai-nav' && u.searchParams.get('category') === 'model-rankings') {
     u.searchParams.delete('category');
@@ -684,32 +645,64 @@ function render() {
   }
   if (p === '/tools/ai-models') { closeDetail(); return renderModelBoards(); }
   if (p === '/tools/ai-nav') { closeDetail(); return renderDirectory(); }
+  if (p === '/submit') {
+    closeDetail(); setNav('submit'); showSectionSummary('submit','提交作品'); document.title='提交作品 · Vision Lab';
+    if (app.dataset.view!=='submit') { app.dataset.view='submit'; app.replaceChildren(submissionPage()); }
+    return;
+  }
   if (isGuideRoute()) { closeDetail(); return renderGuidePage(); }
   if (isSlicerRoute()) { closeDetail(); return renderImageSlicer(); }
   if ((m = p.match(/^\/c\/([\w.-]+)\/breakdown\/?$/))) return nav(`/c/${m[1]}`, true);
   if ((m = p.match(/^\/c\/([\w.-]+)$/))) {
     const c = CASES.find(x => x.id === m[1]);
-    if (c && (!app.dataset.view || app.dataset.view !== "grid:" + c.type)) { STATE.tab = c.type; renderGrid(); }
+    if (c && (!app.dataset.view || app.dataset.view !== "grid:" + c.type)) { if(STATE.tab!==c.type){STATE.cat="全部";STATE.tag="";} STATE.tab = c.type; renderGrid(); }
     return openDetail(m[1]);
   }
   closeDetail();
   STATE.tab = TABS[u.searchParams.get("tab")] ? u.searchParams.get("tab") : "video";
   STATE.cat = u.searchParams.get("cat") || "全部";
+  STATE.tag = u.searchParams.get("tag") || "";
+  // Keep older links that used the category parameter for a tag.
+  const rows=CASES.filter(c=>c.type===STATE.tab);
+  if(!STATE.tag && !catsFor(STATE.tab,rows).includes(STATE.cat) && rows.some(c=>c.tags?.includes(STATE.cat))){
+    STATE.tag=STATE.cat;STATE.cat='全部';u.searchParams.delete('cat');u.searchParams.set('tag',STATE.tag);replaceURL(u);
+  }
   renderGrid();
 }
 
 /* ---------------- grid */
 function catsFor(tab, list) {
-  if (tab === 'video') return [...new Set([...TABS.video.cats, ...list.map(c=>c.category).filter(Boolean)])];
-  if (TABS[tab].cats) return TABS[tab].cats;
-  const cnt = {}; list.forEach(c => cnt[c.category] = (cnt[c.category] || 0) + 1);
-  return ["全部"].concat(Object.keys(cnt).sort((a, b) => cnt[b] - cnt[a]).slice(0, 9));
+  const counts=new Map();
+  for(const c of list) if(c.category) counts.set(c.category,(counts.get(c.category)||0)+1);
+  const preferred=(TABS[tab].cats || []).filter(name=>counts.has(name));
+  const ordered=[...counts.keys()].sort((a,b)=>counts.get(b)-counts.get(a)||a.localeCompare(b,'zh-CN'));
+  const featured=tab==='skill_repo' && list.some(c=>c.featured) ? ['推荐'] : [];
+  return [...new Set(['全部',...featured,...preferred,...ordered])];
+}
+function inCategory(c) {
+  if(STATE.cat==='推荐')return c.featured;
+  return STATE.cat==='全部' || c.category===STATE.cat;
+}
+function tagFilter(cases) {
+  const counts=new Map();
+  for(const c of cases.filter(inCategory)) for(const tag of new Set(c.tags || [])) {
+    counts.set(tag,(counts.get(tag)||0)+1);
+  }
+  if (STATE.tag && !counts.has(STATE.tag))counts.set(STATE.tag,0);
+  if (!counts.size)return '';
+  const sorted=[...counts].sort(([a,n],[b,m])=>m-n || a.localeCompare(b,'zh-CN'));
+  return `<select id="case-tag" aria-label="筛选标签"><option value="">全部标签</option>${sorted.map(([tag,n])=>`<option value="${esc(tag)}"${tag===STATE.tag?' selected':''}>${esc(tag)}（${n}）</option>`).join('')}</select>`;
+}
+function tagSection(c) {
+  if(!c.tags?.length)return '';
+  return `<div class="sec"><h4>标签</h4><div class="tags">${c.tags.map(tag=>{
+    const url=sitePath('/?'+new URLSearchParams({tab:c.type,tag}));
+    return `<a class="tag" href="${esc(url)}" data-link>${esc(tag)}</a>`;
+  }).join('')}</div></div>`;
 }
 function filtered() {
   const q = STATE.q.trim().toLowerCase();
-  let l = CASES.filter(c => c.type === STATE.tab);
-  if (STATE.cat === "推荐") l = l.filter(c => c.featured);
-  else if (STATE.cat !== "全部") l = l.filter(c => c.category === STATE.cat || (c.tags || []).includes(STATE.cat));
+  let l = CASES.filter(c=>c.type===STATE.tab && inCategory(c) && (!STATE.tag || (c.tags || []).includes(STATE.tag)));
   if (q) l = l.filter(c => [c.title, c.subtitle, c.brand, c.category, c.source?.author, c.source?.repo, (c.tags || []).join(" "), c.description].join(" ").toLowerCase().includes(q));
   if (STATE.tab === "skill_repo" && STATE.sort === "new") l.sort((a, b) => (b.featured - a.featured) || ((a.rank || 999) - (b.rank || 999)));
   else if (STATE.tab === "skill_repo" && STATE.sort === "latest") l.sort((a, b) => (b.added_at || b.source?.date || "").localeCompare(a.added_at || a.source?.date || ""));
@@ -742,7 +735,7 @@ function repoCaption(c) {
   const name = source.repo || (source.url || "").match(/^https?:\/\/(?:www\.)?github\.com\/([^/?#]+\/[^/?#]+)/i)?.[1] || c.title;
   const summary = c.subtitle || c.description?.split("\n")[0];
   const stars = source.metrics?.stars;
-  const count = Number.isFinite(stars) ? `<span class="repo-stars" title="GitHub Stars"><span aria-hidden="true">☆</span> ${stars.toLocaleString("en-US")}</span>` : "";
+  const count = Number.isFinite(stars) ? `<span class="repo-stars" title="GitHub Stars"><span aria-hidden="true">${icon('star')}</span> ${stars.toLocaleString("en-US")}</span>` : "";
   return `<span class="repo-caption"><strong>${esc(name)}</strong>${summary ? `<span class="repo-summary">${esc(summary)}</span>` : ""}
     <span class="repo-meta"><span>${esc(c.category || "")}</span>${count}</span></span>`;
 }
@@ -770,15 +763,25 @@ function renderGrid() {
   app.innerHTML = `<div class="head"><h1>${T.name}</h1><span class="sub">${T.sub}</span>
       <div class="right"><input class="search" id="q" type="search" aria-label="搜索标题、品牌、标签" placeholder="搜索标题、品牌、标签" value="${esc(STATE.q)}"></div></div>
     <div class="bar"><div class="chips" role="group" aria-label="分类筛选">${cats.map(k => `<button class="chip ${k === STATE.cat ? "on" : ""}" aria-pressed="${k === STATE.cat}" data-cat="${esc(k)}">${esc(k)}</button>`).join("")}</div>
-      <div class="right"><select class="pill-btn shadow" id="sort"><option value="new">${STATE.tab === "skill_repo" ? "按排名" : "最新"}</option>${STATE.tab === "skill_repo" ? '<option value="latest">最新</option>' : ''}<option value="hot">${STATE.tab === "skill_repo" ? "按热度" : "最热"}</option></select></div></div>
+      <div class="right">${tagFilter(all)}<select class="pill-btn shadow" id="sort"><option value="new">${STATE.tab === "skill_repo" ? "按排名" : "最新"}</option>${STATE.tab === "skill_repo" ? '<option value="latest">最新</option>' : ''}<option value="hot">${STATE.tab === "skill_repo" ? "按热度" : "最热"}</option></select></div></div>
     ${list.length ? `<div class="grid${STATE.tab === "brand_skill" ? " brand-skills-grid" : ""}">${list.map(cardHTML).join("")}</div>` :
       `<div class="empty"><b>${all.length ? "没有匹配的条目" : "这里还没有内容"}</b>${all.length ? "换个关键词或分类试试" : STATE.tab === "graphic" ? "在内容管理平台提交平面作品，审核发布后会出现在这里。" : "审核通过的条目会出现在这里。"}</div>`}`;
   $("#sort").value = STATE.sort;
   syncAdminControls();
   $("#sort").onchange = e => { tabSort.set(STATE.tab, e.target.value); renderGrid(); };
   enhanceSelect($("#sort"), "排序");
+  const tag=$("#case-tag");
+  if(tag){
+    enhanceSelect(tag,"筛选标签");
+    tag.onchange=()=>{
+      STATE.tag=tag.value;
+      const url=new URL(location.href);
+      if(STATE.tag)url.searchParams.set("tag",STATE.tag);else url.searchParams.delete("tag");
+      replaceURL(url);renderGrid();$("#case-tag-trigger")?.focus({preventScroll:true});
+    };
+  }
   const chips = $(".bar .chips");
-  app.querySelectorAll(".chip").forEach(b => b.onclick = () => { const left = chips.scrollLeft; const u = new URL(location.href); u.searchParams.set("tab", STATE.tab); u.searchParams.set("cat", b.dataset.cat); replaceURL(u); STATE.cat = b.dataset.cat; renderGrid(); $(".bar .chips").scrollLeft = left; $(".chip.on")?.focus({preventScroll:true}); });
+  app.querySelectorAll(".chip").forEach(b => b.onclick = () => { const left = chips.scrollLeft; const u = new URL(location.href); u.searchParams.set("tab", STATE.tab); u.searchParams.set("cat", b.dataset.cat); u.searchParams.delete("tag"); STATE.tag=""; replaceURL(u); STATE.cat = b.dataset.cat; renderGrid(); $(".bar .chips").scrollLeft = left; $(".chip.on")?.focus({preventScroll:true}); });
   const q = $("#q"); let searchTimer;
   q.oninput = () => { clearTimeout(searchTimer); searchTimer = setTimeout(() => { if (!q.isConnected || q.matches(":focus") && q.dataset.composing) return; STATE.q = q.value; const pos = q.selectionStart; renderGrid(); const n = $("#q"); n.focus({preventScroll:true}); n.setSelectionRange(pos, pos); },180); };
   q.oncompositionstart = () => { q.dataset.composing = "true"; };
@@ -799,8 +802,15 @@ function renderGrid() {
 }
 
 /* ---------------- detail */
+function silenceDetail() {
+  const player=$('.stage video',overlay);
+  if (player) { player.pause(); player.muted=true; }
+}
+window.addEventListener('pagehide',()=>{ silenceDetail(); app.querySelectorAll('.card video').forEach(v=>v.pause()); });
+document.addEventListener('visibilitychange',()=>{ if(document.hidden) $('.stage video',overlay)?.pause(); });
 function closeDetail({immediate = false} = {}) {
   if (overlay.hidden) return;
+  silenceDetail();
   if (!immediate && !reducedMotion.matches) {
     if (detailExit) return;
     overlay.inert = true;
@@ -889,7 +899,7 @@ function stageHTML(c) {
     </div><figcaption><span>${esc(c.brand_repository.sample_source)}</span><span role="status"></span></figcaption></figure>`;
   }
   const m = c.media || {};
-  if (m.video) return `<div class="frame video-frame">${window.VisionSite.videoPlayer(m.video, m.thumbnail)}</div>`;
+  if (m.video) return `<div class="frame video-frame">${window.VisionSite.videoPlayer(m.video, m.thumbnail, {detail:true})}</div>`;
   if (m.images && m.images.length) return `<div class="frame"><img src="${esc(m.images[0])}"></div>`;
   return `<div class="frame"><img src="${esc(m.thumbnail || sitePath("/static/cms-placeholder.svg"))}"></div>${c.source?.url ? `<div class="ext">${link(c.source.url, "打开原链接")}</div>` : ""}`;
 }
@@ -916,12 +926,13 @@ function brandSkillDetails(c) {
 function bindSkillSample(samples) {
   const figure = $(".skill-sample", overlay);
   const jump = $("#skillSlideJump", overlay);
+  const updateJump = jump && enhanceSelect(jump, "跳至页面", true);
   const image = $("img", figure), caption = $('[role="status"]', figure);
   const prev = $("[data-sample-prev]", figure), next = $("[data-sample-next]", figure);
   let index = 0;
   function show(position) {
     index = position;
-    if (jump) jump.value = String(index);
+    if (jump) { jump.value = String(index); updateJump(); }
     const sample = samples[index];
     image.src = sample.url; image.alt = sample.label;
     caption.textContent = samples.length > 1 ? `${sample.label} · ${index + 1} / ${samples.length}` : sample.label;
@@ -946,6 +957,14 @@ function bindSkillSample(samples) {
   }
   show(0);
 }
+function videoShortcuts(c,prev,next) {
+  if(!['video','showcase'].includes(c.type))return '';
+  const keys=[['Esc','关闭']];
+  if(prev)keys.push(['←','上一条']);
+  if(next)keys.push(['→','下一条']);
+  if(c.media?.video)keys.push(['空格','播放 / 暂停'],['M','静音']);
+  return `<div class="video-shortcuts" aria-label="快捷键">${keys.map(([key,label])=>`<span><kbd>${key}</kbd> ${label}</span>`).join('')}</div>`;
+}
 function openDetail(id) {
   cancelDetailExit();
   detailCleanup?.(); detailCleanup = null;
@@ -958,24 +977,27 @@ function openDetail(id) {
   if (!c) { overlay.innerHTML = `<div class="panel"><div class="ptop"><a class="ibtn" href="/" data-link aria-label="关闭">${ICON.x}</a></div><div class="empty"><b>找不到这条案例</b>可能还在审核中或已下架。</div></div><div class="stage"></div>`; prepareDetail(); $(".ptop a", overlay).focus({preventScroll: true}); return; }
   const sib = filtered(), idx = sib.findIndex(x => x.id === id);
   const prev = sib[idx - 1], next = sib[idx + 1];
-  const back = `/?tab=${c.type}${STATE.cat !== "全部" ? "&cat=" + encodeURIComponent(STATE.cat) : ""}`;
+  const backParams=new URLSearchParams({tab:c.type});
+  if(STATE.cat!=="全部")backParams.set("cat",STATE.cat);
+  if(STATE.tag)backParams.set("tag",STATE.tag);
+  const back='/?'+backParams;
   const s = c.source || {};
   const isShow = c.type === "showcase";
   const isBrandRepo = c.type === "brand_skill" && c.brand_repository;
   const trust = `<span class="trust ${c.trust === "官方" ? "" : "c"}">${esc(c.trust || "社区")}</span>`;
   let body = "";
   if (isBrandRepo) {
-    body = brandSkillDetails(c);
+    body = brandSkillDetails(c)+tagSection(c);
   } else if (isShow) {
     body = `<div class="kv">${row("品牌", esc(c.brand))}${row("作者", link(s.author_url, s.author))}${row("来源平台", esc(s.platform))}${row("发布时间", esc(s.date))}${row("分类", esc(c.category))}${row("片型", esc(c.format))}${row("规格", esc(c.media?.specs ? c.media.specs.resolution + " · " + c.media.specs.duration_s + "s" : ""))}${metricsRows(c)}${row("原帖", link(s.url))}</div>
       <div class="sec"><h4>拉片</h4><div class="hint">打开自己电脑上的 AI，预填视频链接和拉片提示词，由你确认发送。</div>
         ${useButton(() => breakdownPrompt(c), "一键拉片", "复制拉片 Prompt")}
-        <details class="prompt-preview"><summary>查看拉片提示词</summary><div class="prompt">${esc(breakdownPrompt(c))}</div></details></div>
-      ${c.tags?.length ? `<div class="sec"><h4>标签</h4><div class="tags">${c.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div></div>` : ""}
-      ${c.related && CASES.some(peer=>peer.id===c.related && peer.type==='video') ? `<div class="sec"><h4>想复现这支？</h4><a class="pill-btn grey" href="${sitePath("/c/" + esc(c.related))}" data-link>看视频案例：复现 Prompt 和步骤 →</a></div>` : ""}`;
+        <details class="prompt-preview" open><summary>查看拉片提示词</summary><div class="prompt">${esc(breakdownPrompt(c))}</div></details></div>
+      ${tagSection(c)}
+      ${c.related && CASES.some(peer=>peer.id===c.related && peer.type==='video') ? `<div class="sec"><h4>想复现这支？</h4><a class="pill-btn grey" href="${sitePath("/c/" + esc(c.related))}" data-link>查看 AI 视频案例：复现 Prompt 和步骤 ${icon('forward')}</a></div>` : ""}`;
   } else {
     const sk = (c.skills || []).map(k => `<a class="tag mono" href="${esc(k.url)}" target="_blank" rel="noopener">${esc(k.repo || k.name)}</a>`).join("");
-    body = `${c.description ? `<div class="sec"><h4>内容介绍</h4><div style="white-space:pre-wrap;line-height:1.55">${esc(c.description)}</div></div>` : ""}${c.media?.images?.length > 1 ? `<div class="sec"><h4>图片</h4><div class="tags">${c.media.images.map((url, i) => `<a class="tag" href="${esc(url)}" target="_blank" rel="noopener">图片 ${i + 1} ↗</a>`).join("")}</div></div>` : ""}<div class="sec"><h4>示例请求 <button class="pill-btn shadow" id="cp">复制</button></h4><div class="hint">点「使用」会把它预填到 agent 的输入框（不会自动发送）。</div><div class="prompt">${esc(casePrompt(c))}</div></div>
+    body = `${c.description ? `<div class="sec"><h4>内容介绍</h4><div style="white-space:pre-wrap;line-height:1.55">${esc(c.description)}</div></div>` : ""}${c.media?.images?.length > 1 ? `<div class="sec"><h4>图片</h4><div class="tags">${c.media.images.map((url, i) => `<a class="tag" href="${esc(url)}" target="_blank" rel="noopener">图片 ${i + 1} ${icon('external')}</a>`).join("")}</div></div>` : ""}<div class="sec"><h4>示例请求 <button class="pill-btn shadow" id="cp">复制</button></h4><div class="hint">点「使用」会把它预填到 agent 的输入框（不会自动发送）。</div><div class="prompt">${esc(casePrompt(c))}</div></div>
       ${c.analysis ? `<div class="sec"><h4>拆解</h4><div style="line-height:1.55">${esc(c.analysis)}</div></div>` : ""}
       ${c.how_to?.length ? `<div class="sec"><h4>怎么用 <span class="n">${c.how_to.length}</span></h4><ol class="steps">${c.how_to.map(h => `<li>${esc(h).replace(/`([^`]+)`/g, "<code>$1</code>")}</li>`).join("")}</ol></div>` : ""}
       ${sk ? `<div class="sec"><h4>依赖的 Skill <span class="n">${c.skills.length}</span></h4><div class="tags">${sk}</div></div>` : ""}
@@ -983,7 +1005,7 @@ function openDetail(id) {
       ${c.assets?.length ? `<div class="sec"><h4>资产 <span class="n">${c.assets.length}</span></h4><div class="tags">${c.assets.map(a => `<a class="tag mono" href="${esc(a.url)}" target="_blank">${esc(a.name)}</a>`).join("")}</div></div>` : ""}
       ${c.changelog?.length ? `<div class="sec"><h4>版本记录</h4><div class="kv">${c.changelog.map(v => row("v" + esc(v.version) + " · " + esc(v.date), esc(v.note))).join("")}</div></div>` : ""}
       <div class="sec"><h4>来源</h4><div class="kv">${row("平台", esc(s.platform))}${row("作者", link(s.author_url, s.author))}${row("链接", link(s.url))}${row("推荐帖", s.x_post ? link(s.x_post, s.x_author || "X") : "")}${row("日期", esc(s.date))}${metricsRows(c)}${row("备注", esc(s.note))}${row("版本", "v" + esc(c.version))}${row("信任", trust)}${row("收录时间", esc((c.added_at || "").slice(0, 10)))}${row("ID", `<code>${esc(c.id)}</code>`)}</div></div>
-      ${c.tags?.length ? `<div class="sec"><h4>标签</h4><div class="tags">${c.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div></div>` : ""}`;
+      ${tagSection(c)}`;
   }
   overlay.hidden = false;
   overlay.innerHTML = `<div class="panel">
@@ -995,7 +1017,15 @@ function openDetail(id) {
       <div class="when">${esc((s.date || "").slice(0, 10))}${c.version && !isShow ? (isBrandRepo ? " · " : " · v") + esc(c.version) : ""} ${isShow ? "" : trust}</div></div>
     ${!isShow && !isBrandRepo ? `<div class="kv">${metricsRows(c)}</div>` : ""}
     ${body}</div>
-    <div class="stage">${stageHTML(c)}</div>`;
+    <div class="stage">${stageHTML(c)}${videoShortcuts(c,prev,next)}</div>`;
+  const player=$('.stage video',overlay);
+  if (player) {
+    player.volume=0.5;
+    player.muted=false;
+    detailCleanup=()=>window.VisionSite.releaseVideo(player);
+    // Direct links may require a user gesture; native controls remain available.
+    if(!document.hidden) player.play().catch(()=>{});
+  }
   prepareDetail();
   syncAdminControls();
   if (isBrandRepo) {
@@ -1005,10 +1035,27 @@ function openDetail(id) {
   }
   $(".ptop a.ibtn", overlay)?.focus({preventScroll: true});
   $(".stage", overlay).addEventListener("click", e => { if (e.target.classList.contains("stage")) nav(back); });
+  if(c.type==='video' && c.shot_analysis) {
+    const panel=$('.panel',overlay);
+    const steps=[...panel.querySelectorAll('h4')].find(el=>el.textContent.includes('怎么用'));
+    if(steps)steps.firstChild.textContent='AI 复现建议 ';
+    const header=$('.phead',panel);
+    header.insertAdjacentHTML('afterend',analysisSection(c.shot_analysis));
+  }
   const cp = $("#cp"); if (cp) cp.onclick = async () => toast((await copyText(casePrompt(c))) ? "已复制，粘贴即可" : "复制失败");
 }
 document.addEventListener("keydown", e => {
-  if (overlay.hidden || activeMenu || $(".modal") || e.target.closest("input,textarea,select,video,[contenteditable=true]")) return;
+  if (overlay.hidden || window.VisionMenu.active || document.querySelector("dialog[open]") || $(".modal") || e.isComposing || e.altKey || e.ctrlKey || e.metaKey || e.target.closest("input,textarea,select,[contenteditable=true]") || document.fullscreenElement) return;
+  const player=$('.stage video',overlay);
+  if(player && (e.code==='Space' || e.key.toLowerCase()==='m') && !e.target.closest('button,summary,video')) {
+    e.preventDefault();
+    if(e.repeat)return;
+    if(e.code==='Space') {
+      if(player.paused) player.play().catch(()=>{}); else player.pause();
+    } else player.muted=!player.muted;
+    return;
+  }
+  if(e.target.closest('video') && e.key!=='Escape')return;
   if (!e.altKey && !e.metaKey && !e.ctrlKey && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
     const direction = e.key === "ArrowLeft" ? "prev" : "next";
     const sampleButton = $(`[data-sample-${direction}]`, overlay);
@@ -1020,9 +1067,9 @@ document.addEventListener("keydown", e => {
 
 
 if (staticMode) document.querySelectorAll('a[href$="/review"]').forEach(a => a.remove());
-if (isCMSRoute() || isGuideRoute() || isDirectoryTool() || routePath() === '/static/README.html' || isSlicerRoute() || isBrandAssetsRoute() || isDesignAssetsRoute()) render();
-Promise.all([load(), refreshAdminSession()]).then(() => { if (!isCMSRoute() && !isDirectoryTool() && !isDesignAssetsRoute()) render(); }).catch(e => {
-  if (isCMSRoute() || isDirectoryTool()) return;
+if (routePath()==='/submit' || isCMSRoute() || isGuideRoute() || isDirectoryTool() || routePath() === '/static/README.html' || isSlicerRoute() || isBrandAssetsRoute() || isDesignAssetsRoute() || isJournalRoute()) render();
+Promise.all([load(), refreshAdminSession()]).then(() => { if (!isCMSRoute() && !isDirectoryTool() && !isDesignAssetsRoute() && !isJournalRoute()) render(); }).catch(e => {
+  if (isCMSRoute() || isDirectoryTool() || isJournalRoute()) return;
   if (isGuideRoute() || isSlicerRoute() || isBrandAssetsRoute() || isDesignAssetsRoute()) return render();
   app.innerHTML = `<div class="empty"><b>加载失败</b>${esc(e.message)}</div>`;
 });

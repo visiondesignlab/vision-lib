@@ -1,0 +1,67 @@
+
+<header>
+<h1>Vol.9 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-10-31 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">GitHub 把 Projects、Memory、Dreaming 和 computer use 一口气塞进 Copilot；Vercel 一边重算缓存容量与价格，一边给常驻进程补健康检查；Altia 则把嵌入式 UI 改写成一份 AI 能读、硬件能跑的描述。表面是几拨更新，底下都在补同一件事：一段自动化工作得有上下文，得活着，出问题还得能收回来。</p>
+<p>这比继续秀一次性生成更重要。团队现在该问的不是“AI 能不能做”，而是它记住了什么、花了多少钱、在哪块硬件上跑，以及坏了以后谁负责重启。</p>
+<h2>● AI Coding</h2>
+<h3>GitHub Copilot app, Universe releases<a class="source-url" href="https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-10-28-github-copilot-app-universe-releases/</a></h3>
+<figure><img alt="GitHub Copilot app 把项目、上下文和多 agent 结果放进同一个工作面" decoding="async" height="1260" loading="lazy" src="01.jpg" width="2400"/><figcaption>GitHub Copilot app 把项目、上下文和多 agent 结果放进同一个工作面</figcaption></figure>
+<p class="mixed-script">Copilot Projects 进入 public preview。一个项目可以同时吃仓库、设计稿、Slack 线程和会议笔记，再按任务拉起多个 agent，最后把 PR 等结果交回来；重复工作还能设成 project automation。GitHub 顺手把 Figma、Slack、图片生成和桌面 computer use 也接进来了。</p>
+<p class="mixed-script">这里最该盯的不是“能点鼠标”，而是它终于承认工作很少只活在一个 repo 里。computer use 仍需逐次批准，组织管理员可以关掉，macOS 还要 Accessibility 与 Screen Recording 权限——这几行小字比演示视频重要。还没实测桌面控制，先别全员打开；先挑一条跨 Figma、浏览器和仓库的真实流程，看批准次数会不会把效率吃回去。</p>
+<h3>GitHub intelligence<a class="source-url" href="https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-10-28-github-intelligence-puts-your-code-context-and-history-to-work/</a></h3>
+<figure><img alt="GitHub Intelligence 用 Memory 和 Dreaming 持续整理个人与仓库上下文" decoding="async" height="1260" loading="lazy" src="02.jpg" width="2400"/><figcaption>GitHub Intelligence 用 Memory 和 Dreaming 持续整理个人与仓库上下文</figcaption></figure>
+<p class="mixed-script">Copilot Memory 已在付费套餐 GA，个人偏好与仓库约定可以跨 App、CLI、VS Code、云端 agent、Slack 和 Teams 继续用。Dreaming 还在 opt-in preview：它会回看过去的工作，增删 memory，并把 skills 或 instructions 的改动做成 PR；每次 dream run 都会消耗 AI credits。</p>
+<p class="mixed-script">这套名字有点玄，权限逻辑倒是清楚：私人的记忆可以直接整理，写进仓库的规则必须过 PR。好用与否先不吹，至少它给“agent 越用越懂团队”加了一道可审查的门。真要开，第一周只看三件事：它记错了什么、谁能删、为了整理记忆花了多少 credits。</p>
+<h2>● Products</h2>
+<h3>Altia BluePrint<a class="source-url" href="https://altia.com/2026/10/27/altia-opens-early-access-to-blueprint-describe-an-embedded-ui-and-see-it-running-instantly/" rel="noopener noreferrer" target="_blank">https://altia.com/2026/10/27/altia-opens-early-access-to-blueprint-describe-an-embedded-ui-and-see-it-running-instantly/</a></h3>
+<figure><img alt="Altia BluePrint 用可读描述生成嵌入式 UI，并在开发机与目标硬件实时预览" decoding="async" height="900" loading="lazy" src="03.png" width="1440"/><figcaption>Altia BluePrint 用可读描述生成嵌入式 UI，并在开发机与目标硬件实时预览</figcaption></figure>
+<p class="mixed-script">BluePrint 开始 early access。它把嵌入式界面写成可读描述，AI 负责改这份描述，Viewer 立即在 Windows、Linux、macOS 或目标硬件上显示结果，生产代码最后交给 Altia DeepScreen 生成。</p>
+<p class="mixed-script">这条路比“AI 帮车机画个概念图”踏实得多：描述、预览、目标硬件和生产代码没有被剪成四段演示。嵌入式 UI 最贵的是每次改动后的上机确认，BluePrint 真能省下多少，要看复杂状态和硬件差异，不看首屏生成速度。还没拿到 early access，先记住它的交付链，不替实际稳定性下结论。</p>
+<h2>● Resources</h2>
+<h3>Designeer<a class="source-url" href="https://designeer.org/" rel="noopener noreferrer" target="_blank">https://designeer.org/</a></h3>
+<figure><img alt="Designeer 用悬停动效预览整理设计工程工具，而不是只列 logo" decoding="async" height="900" loading="lazy" src="04.png" width="1440"/><figcaption>Designeer 用悬停动效预览整理设计工程工具，而不是只列 logo</figcaption></figure>
+<p class="mixed-script">Designeer 收了 422 个工具、17 个分类和 132 位 design engineer。每张卡不是一枚 logo，悬停后会播放官网短录屏；预览只在 hover 或选中时加载，搜索还能用 <code>⌘ K</code> 或 <code>/</code> 直接唤起。</p>
+<p>设计工具索引最常见的毛病，是看完一百个名字仍不知道它们长什么样。这个站把“先看两秒再决定要不要点开”做成了核心功能，筛选成本一下就下来了。数量不算夸张，信息密度反而刚好；可以直接拿来补团队的设计工程雷达。</p>
+<h2>● Design Engineering</h2>
+<h3>Data Cache is moving to Runtime Cache<a class="source-url" href="https://vercel.com/changelog/data-cache-is-moving-to-runtime-cache" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/data-cache-is-moving-to-runtime-cache</a></h3>
+<figure><img alt="Vercel 将 Data Cache 并入 Runtime Cache，并重新计算容量与费用" decoding="async" height="1256" loading="lazy" src="05.png" width="2400"/><figcaption>Vercel 将 Data Cache 并入 Runtime Cache，并重新计算容量与费用</figcaption></figure>
+<p class="mixed-script">Vercel 的 Data Cache 退出 beta，迁进 Runtime Cache，Next.js 的 <code>fetch</code> cache 与 <code>unstable_cache</code> 不用改代码。Pro 每个项目、每个环境拿到原 team pool 的 8 倍空间，Enterprise 是 10 倍；代价也写得很明白：原本不计费的读写会开始按 Runtime Cache 收钱，起步价是每百万 read units 0.40 美元、每百万 write units 4 美元，地区不同还会变。</p>
+<p class="mixed-script">这不是一次无痛改名。新团队从 10 月 30 日默认启用，老 Hobby 团队 11 月 29 日迁移，Pro 等通知；提前 opt in 会立刻进入新价格。先去 Observability 看真实读写，再决定要不要让 Vercel Agent 优化，别被“8 倍容量”催着按下迁移。</p>
+<h3>Add liveness checks to your Daemons<a class="source-url" href="https://vercel.com/changelog/add-liveness-checks-to-your-daemons" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/add-liveness-checks-to-your-daemons</a></h3>
+<figure><img alt="Vercel Daemons 通过 HTTP liveness probe 发现假活进程并自动重启" decoding="async" height="1256" loading="lazy" src="06.jpg" width="2400"/><figcaption>Vercel Daemons 通过 HTTP liveness probe 发现假活进程并自动重启</figcaption></figure>
+<p class="mixed-script">Vercel Daemons 现在能配 HTTP liveness probe。平台会定期请求健康端点，失败就重启 container，专门收拾那种“进程还在，事情早就不干了”的假活状态。</p>
+<p class="mixed-script">常驻 agent、队列 worker、转码进程都需要这一层。<code>process running</code> 从来不等于 <code>product working</code>；健康端点至少要能回答依赖是否可用、队列是否推进、最近一次成功工作是什么时候，别只返回一个永远 200 的自我安慰。</p>
+<h3>WebKit Features for Safari 27.2<a class="source-url" href="https://webkit.org/blog/18515/webkit-features-for-safari-27-2/" rel="noopener noreferrer" target="_blank">https://webkit.org/blog/18515/webkit-features-for-safari-27-2/</a></h3>
+<p class="mixed-script">Safari 27.2 给 Customizable Select 补了 <code>::field-content</code>，可以单独控制选中项在按钮里的文字样式；大的 picker 会用 safe alignment 留在视口内。Grid Lanes 的 <code>flow-tolerance</code> 也正式改名为 <code>fit-tolerance</code>，旧名字暂时还能用，但已经是 deprecated alias。</p>
+<p class="mixed-script"><code>fit-tolerance</code> 默认 1em，调高后能让连续项目更愿意落在相邻列，键盘 Tab 时焦点不必为了几像素高度差在页面两边跳。这类更新没有发布会气质，却正好提醒前端：视觉排布和可访问性不是两张检查表，它们会在同一个 CSS 数值里撞上。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Porsche「The Long Way to “I Do”」— Em Cooper × Tonic DNA<a class="source-url" href="https://www.stashmedia.tv/em-cooper-tonic-dna-paint-a-true-romance-for-porsche/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/em-cooper-tonic-dna-paint-a-true-romance-for-porsche/</a></h3>
+<figure data-film-source="https://vimeo.com/1241253326"><img alt="Em Cooper 用不断重画的油画表面讲述一对夫妻修复 Porsche 912 的故事" decoding="async" height="1080" loading="lazy" src="07.jpg" width="1920"/><figcaption>Em Cooper 用不断重画的油画表面讲述一对夫妻修复 Porsche 912 的故事</figcaption></figure>
+<p class="mixed-script">视频：Vimeo 原片<a class="source-url" href="https://vimeo.com/1241253326" rel="noopener noreferrer" target="_blank">https://vimeo.com/1241253326</a>｜来源：Stash 文章<a class="source-url" href="https://www.stashmedia.tv/em-cooper-tonic-dna-paint-a-true-romance-for-porsche/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/em-cooper-tonic-dna-paint-a-true-romance-for-porsche/</a></p>
+<p class="mixed-script">片子讲的是 Jeff 和 Molly Stockwell 一起修复一辆 1966 Porsche 912，再从洛杉矶开到旧金山结婚的真事。Em Cooper 没把它拍成一条工整的复古汽车广告，而是在同一张油画表面上不停覆盖、刮掉、重画：公路变成人脸，车身被下一笔吞掉，前一个记忆没有消失干净，又被后一个记忆压在下面。</p>
+<p>它最妙的地方，是转场不负责“带我们去下一镜”，而是直接模拟记忆怎么变形。做产品片也能借这招：别把每个状态切成孤岛，先找一个能被持续改写的共同材质、轮廓或光源，再让功能变化发生在同一块表面上。下一次做四个产品状态的 storyboard，可以先禁用硬切，只用覆盖、擦除和形变把它们串起来，看看叙事会不会更像一件完整的东西。</p>
+<h2>● Stash 最新内容观察</h2>
+<ul>
+<li>Porsche「The Long Way to “I Do”」<a class="source-url" href="https://www.stashmedia.tv/em-cooper-tonic-dna-paint-a-true-romance-for-porsche/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/em-cooper-tonic-dna-paint-a-true-romance-for-porsche/</a>｜animated oil painting / brand film：<strong>已升级为今日主卡</strong>。油画的残影不是装饰，正好拿来表现记忆会覆盖、也会留下痕迹。</li>
+<li>We Love Pitching: Chronicles of a Necessary Mess – Part 23<a class="source-url" href="https://www.stashmedia.tv/we-love-pitching-chronicles-of-a-necessary-mess-part-23/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/we-love-pitching-chronicles-of-a-necessary-mess-part-23/</a>｜pitching / production practice：这一篇换到赢家视角谈 pitch，值得拿来检查提案里哪些成本被双方默契地藏起来了。</li>
+<li>Bill Plympton × Average Friends<a class="source-url" href="https://www.stashmedia.tv/animation-icon-bill-plympton-is-back-with-a-trippy-music-video-for-average-friends/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/animation-icon-bill-plympton-is-back-with-a-trippy-music-video-for-average-friends/</a>｜hand-drawn / music video：10 月 30 日主卡，不重写。继续记住它把每句旋律做成一个视觉笑话的办法。</li>
+<li>Lumbre × Mega Chile<a class="source-url" href="https://www.stashmedia.tv/fun-color-in-style-lumbre-keeps-it-mega-for-mega-chile/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/fun-color-in-style-lumbre-keeps-it-mega-for-mega-chile/</a>｜broadcast package / 2D × 3D：近期已观察。重点仍是一个 logo 如何拆成能覆盖频道、App 和信息图的几何语法。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Copilot Dreaming 的实际 memory 变更、删除入口和 credits 消耗；“自动整理”不能只看成功案例。</li>
+<li>Runtime Cache 迁移后的真实账单与命中率；容量增加不等于读写更省。</li>
+<li>Altia BluePrint 在目标硬件上的复杂状态、字体与输入性能；截图里的 live preview 还不是量产证明。</li>
+<li>Stash 10 月 31 日之后的新片；Porsche、Average Friends 已登记，不连续复述。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日主题：Copilot Projects / computer use、GitHub Memory / Dreaming、Altia BluePrint、Designeer、Vercel Runtime Cache、Daemon liveness、Safari 27.2。</li>
+<li>今日视频：Porsche「The Long Way to “I Do”」；主来源为 Stash 落地页与 Vimeo <code>1241253326</code>。</li>
+<li>今日 Stash：Porsche 主卡；We Love Pitching Part 23 新增轻观察；Average Friends、Mega Chile 只作已覆盖边界。</li>
+<li>继续避免：10 月 30 日的 Copilot Fusion、Enterprise Copilot 计费、Flatbread、Vercel fx adapter、Webflow agent presence / slot defaults、Enclave、Vercel Connect、AI bot rules、Vercel Flags；除非出现真实项目、价格变化、权限边界或制作 breakdown，不换一套形容词重发。</li>
+</ul>
+<p class="mixed-script verification">核验说明：GitHub、Vercel、WebKit、Altia、Designeer 与 Stash 官方页面于 2026-10-31 回读。正文嵌图原始宽度为 1440–2400px，并逐张目视检查。Porsche 的 Vimeo player URL 预检返回 401，飞书按规则使用 1920px Stash 制作视觉降级，同时保留 Stash 与 Vimeo 原片链接。</p>

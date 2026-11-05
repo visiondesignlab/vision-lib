@@ -1,0 +1,80 @@
+[
+  {
+    "volume": 14,
+    "date": "2026-11-05",
+    "headline": "Generative Remove in Premiere beta",
+    "intro": "今天这批更新都碰到了“真活儿”里最贵的部分：视频要按秒烧 credits，工作流重复一次可能就多跑一份账，硬件外壳画得出来也不代表工厂装得上。会生成已经不稀奇了，接下来该看的是边界有没有写在明面上，失败时能不能退，重复动作会不会被拦住。"
+  },
+  {
+    "volume": 13,
+    "date": "2026-11-04",
+    "headline": "Your prototype connections, now context for code layers",
+    "intro": "今天没有哪条更新是“看完立刻改行业”的大新闻，倒是有一批很像真活儿：Figma 开始把画布关系交给 code layer，Framer 把实验条件放进可编程漏斗，Vercel 和 GitHub 则继续给 agent 补权限、诊断和依赖更新。"
+  },
+  {
+    "volume": 12,
+    "date": "2026-11-03",
+    "headline": "Export shaders at higher resolutions and bring them into code layers",
+    "intro": "今天这批更新都在收拾“工作流中间那一段”。Figma 让 shader 不只停在画布里，Framer 让 agent 一边写程序一边改文档，Vercel 则把部署、feature flag 和 sandbox 的状态往人能看懂、也能分享的界面里搬。"
+  },
+  {
+    "volume": 11,
+    "date": "2026-11-02",
+    "headline": "Supernova Agent",
+    "intro": "周日的新东西不算多，线索倒很集中：agent 开始有自己的身份、默认插件、审批模式和账单了。Supernova 把它放进设计系统，GitHub 则一口气补权限、组织身份和企业策略。以后评估 agent，别只问它会不会干活，还得问清楚它以谁的名义干、默认带了什么、谁点头、钱算谁的。"
+  },
+  {
+    "volume": 10,
+    "date": "2026-11-01",
+    "headline": "Connect Google Drive to the Figma agent",
+    "intro": "今天不缺新品，缺的是边界。Figma 把 Drive 里的研究和内部 Weave 工具拉进 agent，Framer 公开了一套从 Slack 报错到分支审阅的做法，Apple 又把手指正式带回 Mac。放在一起看，生成已经不是最难的部分；上下文从哪来、谁能发布、改完怎么验，才是团队接下来真正要补的东西。"
+  },
+  {
+    "volume": 9,
+    "date": "2026-10-31",
+    "headline": "GitHub Copilot app, Universe releases",
+    "intro": "GitHub 把 Projects、Memory、Dreaming 和 computer use 一口气塞进 Copilot；Vercel 一边重算缓存容量与价格，一边给常驻进程补健康检查；Altia 则把嵌入式 UI 改写成一份 AI 能读、硬件能跑的描述。表面是几拨更新，底下都在补同一件事：一段自动化工作得有上下文，得活着，出问题还得能收回来。"
+  },
+  {
+    "volume": 8,
+    "date": "2026-10-30",
+    "headline": "GitHub Copilot Fusion",
+    "intro": "今天最有意思的，不是 agent 又会了什么，而是它终于开始交代自己在哪里干活、能碰什么、花谁的钱。Webflow 把 agent 的“在场”做进画布；Vercel 把模型请求留在 host，把文件和 shell 关进 sandbox；GitHub 则把自动选模型背后的计费写到了台面上。"
+  },
+  {
+    "volume": 7,
+    "date": "2026-10-29",
+    "headline": "Replica",
+    "intro": "GitHub 昨晚一口气把原型、图片、研究稿和自动化都塞回了仓库。不是又造了一个万能画布，而是让设计产物开始跟着 issue、分支和项目一起活着——这条路比单独开一个 AI 设计网站靠谱得多。"
+  },
+  {
+    "volume": 6,
+    "date": "2026-10-28",
+    "headline": "Figma：生成式插件和 Shader 终于能回版本",
+    "intro": "这一轮更新终于不再比谁更会生成，而是开始处理生成之后那堆麻烦事：版本怎么退、同事怎么一起改、钱到底花在哪、东西上线后有没有真的被 AI 读走。Figma 给生成式插件补版本历史，Framer 把多人光标塞进 CMS，Canva 则直接接收 Claude 产出的 HTML，都是在争夺“草稿之后”的控制权。"
+  },
+  {
+    "volume": 5,
+    "date": "2026-10-27",
+    "headline": "Access video and image models from Figma Weave via the Figma MCP",
+    "intro": "今天几条更新看着很散，实际上都在补同一件事：让 agent 不只会“生成”，还知道资产放哪、额度怎么算、系统现在什么状态。"
+  },
+  {
+    "volume": 4,
+    "date": "2026-10-26",
+    "headline": "Figma plugin, now both ways",
+    "intro": "今天没什么“十倍效率”可写，倒是几件小更新终于把设计上下文接起来了：Figma 能往外吐DESIGN.md，画布评论能直接交给 agent，界面规范也能塞进AGENTS.md。"
+  },
+  {
+    "volume": 3,
+    "date": "2026-10-25",
+    "headline": "More ways to run and share Loops",
+    "intro": "今天没有什么炸裂更新，反而都是些用了以后少骂两句人的小东西：Linear 给 Loop 接上 Slack、GitHub 和 Figma，Webflow 重新收拾容器，Chrome 给position-area做了个可视化编辑器，GitHub 也终于不再把自定义工具全塞进other。"
+  },
+  {
+    "volume": 2,
+    "date": "2026-10-24",
+    "headline": "Framer MCP",
+    "intro": "今天几条更新都在补控制面。Figma 把新设备规格和企业权限塞回正式入口，Vercel 把预算、缓存和支付密钥做成可以查询、限制、轮换的状态，GitHub 则继续收拾代码评审里那些每天都要忍的小摩擦。它们没有生成一张更漂亮的图，却直接决定团队能不能把 AI、发布和审查交给更多人。判断工具成熟度时，接下来要多问一句：失控之前，系统有没有把成本、权限和边界摆到台面上。"
+  }
+]

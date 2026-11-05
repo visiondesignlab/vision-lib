@@ -1,0 +1,66 @@
+
+<header>
+<h1>Vol.10 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-11-01 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天不缺新品，缺的是边界。Figma 把 Drive 里的研究和内部 Weave 工具拉进 agent，Framer 公开了一套从 Slack 报错到分支审阅的做法，Apple 又把手指正式带回 Mac。放在一起看，生成已经不是最难的部分；上下文从哪来、谁能发布、改完怎么验，才是团队接下来真正要补的东西。</p>
+<p class="mixed-script">Canva Brush 给了速度和成本数字，但还没实测，先不替它欢呼。OpenAI 那条统一 robots.txt 信号也只是未来几个月会支持，不是今天就能抄进配置。周末消息不算多，反而适合把“已发布”和“准备发布”分清楚。</p>
+<h2>● Figma AI</h2>
+<h3>Connect Google Drive to the Figma agent<a class="source-url" href="https://www.figma.com/release-notes/" rel="noopener noreferrer" target="_blank">https://www.figma.com/release-notes/</a></h3>
+<figure><img alt="Figma agent 可读取 Google Drive 里的研究、数据与素材，并在文件内创建 Drive 内容" decoding="async" height="786" loading="lazy" src="01.png" width="2640"/><figcaption>Figma agent 可读取 Google Drive 里的研究、数据与素材，并在文件内创建 Drive 内容</figcaption></figure>
+<p class="mixed-script">Google Drive connector 已开放给所有 Figma 套餐，包括 Starter。它不只负责把图片拖进画布：agent 和 Figma Make 可以总结研究、引用真实数据、取用现有素材，也能在不离开文件的情况下创建新的 Drive 文件。</p>
+<p>这一下把 Drive 从“交付物仓库”变成了生成时的上下文。问题也随之变了：agent 读到的是哪一版研究、继承了谁的权限、最终引用的数据能不能追溯。先接一份只读研究文档跑通，比一上来把整个团队盘交给它靠谱。</p>
+<h3>Internal publishing for Weave tools<a class="source-url" href="https://www.figma.com/release-notes/" rel="noopener noreferrer" target="_blank">https://www.figma.com/release-notes/</a></h3>
+<figure><img alt="Figma Weave 工具可在组织内部发布，并集中出现在 Tools 标签页" decoding="async" height="918" loading="lazy" src="02.png" width="2640"/><figcaption>Figma Weave 工具可在组织内部发布，并集中出现在 Tools 标签页</figcaption></figure>
+<p class="mixed-script">Organization 和 Enterprise 现在可以把 Weave 工具只发布给组织内部，成员会在 Figma 的 Tools 标签页里看到它们。Starter 和 Professional 不在这次范围里。</p>
+<p class="mixed-script">内部小工具一旦能被全组织发现，就不能再按“谁写的谁维护”糊弄过去。至少得有 owner、版本、数据边界和回滚方式，不然 Tools 标签页很快会变成另一个没人敢删的插件坟场。这个更新不花哨，但它把 AI 工具真正推到了内部产品管理这一步。</p>
+<h2>● Case Study</h2>
+<h3>How our team uses Framer MCP<a class="source-url" href="https://www.framer.com/blog/how-we-use-framer-mcp/" rel="noopener noreferrer" target="_blank">https://www.framer.com/blog/how-we-use-framer-mcp/</a></h3>
+<figure><img alt="Framer 团队公开如何把 MCP agent 接进设计、内容与发布流程" decoding="async" height="800" loading="lazy" src="03.jpg" width="1400"/><figcaption>Framer 团队公开如何把 MCP agent 接进设计、内容与发布流程</figcaption></figure>
+<p class="mixed-script">Framer 自己公开了几条 MCP 流程：同事在 Slack 报一处文案问题，agent 会先找出受影响的页面，在分支里改完，再交给人审；站点迁移交给专用 skills；内容团队还会拿 Ahrefs、Search Console 和 CMS 数据一起改客户案例与 SEO 文案。</p>
+<p class="mixed-script">标题写的是 MCP，真正有用的是那条工作纪律：<strong>先定位、进分支、再审阅，不直接碰线上。</strong> 一次小文案能牵出三个页面，正好说明网站维护不是“把字换掉”这么简单。案例来自 Framer 自己，不算第三方证明；但作为 agent 如何进生产流程的范本，它比十段自动生成 landing page 的演示都诚实。</p>
+<h2>● Products</h2>
+<h3>Canva Brush<a class="source-url" href="https://www.canva.com/newsroom/news/canva-brush/" rel="noopener noreferrer" target="_blank">https://www.canva.com/newsroom/news/canva-brush/</a></h3>
+<figure><img alt="Canva Brush 用视觉语言模型理解并局部修改可编辑设计" decoding="async" height="489" loading="lazy" src="04.png" width="1600"/><figcaption>Canva Brush 用视觉语言模型理解并局部修改可编辑设计</figcaption></figure>
+<p class="mixed-script">Canva 把 Brush 定义成能理解设计语义的视觉语言模型，目标不是吐出一张扁平图片，而是在原设计里改局部、保持元素可编辑。官方称新版本比上一代 agent 快 69%、成本低 46%，目前由 Canva Pro 支持；Brand Kit、附件理解和重图片任务还在后续计划里。</p>
+<p>这些数字都来自 Canva，暂时只能当发布方口径。它真正值得试的是“只改我圈出来的东西，别碰其他地方”——这比再生成一张海报难得多，也更接近日常返工。可以拿一份 20 页 deck 做压力测试：改同一个数字、替一组产品图、保持网格和字号不漂，跑完再谈能不能进团队流程。</p>
+<h3>Touch on Mac<a class="source-url" href="https://developer.apple.com/touch-on-mac/" rel="noopener noreferrer" target="_blank">https://developer.apple.com/touch-on-mac/</a></h3>
+<figure><img alt="Apple 为支持触控的 Mac 补充界面、手势与输入适配指南" decoding="async" height="630" loading="lazy" src="05.jpg" width="1200"/><figcaption>Apple 为支持触控的 Mac 补充界面、手势与输入适配指南</figcaption></figure>
+<p class="mixed-script">Apple 新增 Touch on Mac 设计与开发指引：扩大难点中的点击目标，使用系统 gesture recognizer，保留指针和键盘路径，并为没有 hover 的状态准备替代入口。原生控件会随触控环境扩展，自己画的控件则得自己负责。</p>
+<p class="mixed-script">这不等于把 Mac App 全部吹成巨型 iPad。真正要清账的是那些只在 hover 才出现、只用右键才找得到、命中区刚好卡在鼠标精度上的旧交互。同一块界面最好让手指、触控板、鼠标和键盘轮流走一遍；四种输入都能完成任务，尺寸才算调对。</p>
+<h2>● Design Engineering</h2>
+<h3>Making it easier for websites to express AI training preferences<a class="source-url" href="https://openai.com/index/helping-websites-express-ai-training-preferences" rel="noopener noreferrer" target="_blank">https://openai.com/index/helping-websites-express-ai-training-preferences</a></h3>
+<p class="mixed-script">OpenAI 表示会和其他参与方一起遵守一条共享的 robots.txt 信号，让网站运营者表达是否愿意把内容用于 AI 训练。原有 crawler 控制仍然有效，新信号的具体支持要等未来几个月。</p>
+<p>所以现在别急着猜一条指令写进生产环境；它还不是已经落地的标准。更现实的准备，是把“哪些内容允许搜索抓取、哪些允许训练、谁有权改变”放进站点发布清单。过去这事只归 SEO，现在它已经是内容授权和品牌治理的一部分。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Brickland × Polestar Prime Package<a class="source-url" href="https://www.stashmedia.tv/brickland-blurs-the-line-for-polestars-prime-package/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/brickland-blurs-the-line-for-polestars-prime-package/</a></h3>
+<figure data-film-source="https://vimeo.com/1220163076"><img alt="Polestar 车身在流动表面与橙色线条中显形，来自 Brickland 的 Prime Package" decoding="async" height="1080" loading="lazy" src="06.jpg" width="1920"/><figcaption>Polestar 车身在流动表面与橙色线条中显形，来自 Brickland 的 Prime Package</figcaption></figure>
+<p class="mixed-script">视频：Vimeo 原片<a class="source-url" href="https://vimeo.com/1220163076" rel="noopener noreferrer" target="_blank">https://vimeo.com/1220163076</a>｜来源：Stash 文章<a class="source-url" href="https://www.stashmedia.tv/brickland-blurs-the-line-for-polestars-prime-package/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/brickland-blurs-the-line-for-polestars-prime-package/</a></p>
+<p class="mixed-script">Stash 周末没有更新，我回头补了这条 10 月 12 日的 Polestar Prime Package。Brickland 从“白纸上画下一条线”出发，把那根线继续推成车身、流体和色块；车不是被摆在背景前展示，而是在同一块表面里不断显形、拉伸、扫过、消散。</p>
+<p class="mixed-script">从制作说明看，团队用了大量 Houdini，同时先用静帧序列做 art direction，再把被选中的形态推进成定制 setup。这个顺序很值得抄：先挑对轮廓和节奏，再做程序化系统，别让技术测试替你决定审美。</p>
+<p class="mixed-script">产品片也可以只选一个“视觉动词”。Polestar 这里是流动和显形；做数字产品，可以把它换成折叠、聚拢或解锁，再用 flow map、噪声和遮罩位移做一条 hero 转场，同时准备 reduced-motion 的静态替代。一个动词贯穿到底，通常比十种特效轮番上阵更像品牌。</p>
+<h2>● Stash 最新内容观察</h2>
+<p>Stash 首页与 API 截至 11 月 1 日仍停在 10 月 30 日，周末没有新文章。下面四条只登记状态，不把旧内容换一套形容词重发。</p>
+<ul>
+<li>Porsche「The Long Way to “I Do”」<a class="source-url" href="https://www.stashmedia.tv/em-cooper-tonic-dna-paint-a-true-romance-for-porsche/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/em-cooper-tonic-dna-paint-a-true-romance-for-porsche/</a>｜animated oil painting / brand film：10 月 31 日主卡。继续保留“同一表面不断重画”的转场方法，不重复展开。</li>
+<li>We Love Pitching: Chronicles of a Necessary Mess – Part 23<a class="source-url" href="https://www.stashmedia.tv/we-love-pitching-chronicles-of-a-necessary-mess-part-23/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/we-love-pitching-chronicles-of-a-necessary-mess-part-23/</a>｜pitching / production practice：昨天已观察。对提案最有用的提醒仍是把被双方藏起来的返工成本说清楚。</li>
+<li>Bill Plympton × Average Friends<a class="source-url" href="https://www.stashmedia.tv/animation-icon-bill-plympton-is-back-with-a-trippy-music-video-for-average-friends/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/animation-icon-bill-plympton-is-back-with-a-trippy-music-video-for-average-friends/</a>｜hand-drawn / music video：10 月 30 日主卡。逐句做视觉笑话的方法已登记，不连续复述。</li>
+<li>Lumbre × Mega Chile<a class="source-url" href="https://www.stashmedia.tv/fun-color-in-style-lumbre-keeps-it-mega-for-mega-chile/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/fun-color-in-style-lumbre-keeps-it-mega-for-mega-chile/</a>｜broadcast package / 2D × 3D：近期已观察。继续看它如何把 logo 几何扩展到频道、App 与信息图，不另起一张旧卡。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Google Drive connector 的权限继承与引用追溯；“能读”不等于“该读”。</li>
+<li>Weave 内部工具是否会补 owner、版本、使用量和下线机制；只有发布入口还不够。</li>
+<li>Canva Brush 在多页文件里的局部修改稳定性，以及失败时是否照样消耗额度。</li>
+<li>Touch on Mac 的真实设备适配案例；重点看 hover、右键与紧凑工具栏怎么改。</li>
+<li>Stash 11 月 1 日之后的新片；Porsche、Average Friends 与 Mega Chile 已登记，不重复铺陈。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日主题：Figma Google Drive connector、Weave 内部发布、Framer MCP 团队流程、Canva Brush、Apple Touch on Mac、OpenAI AI training preference signal。</li>
+<li>今日视频：Brickland × Polestar Prime Package；主来源为 Stash 与 Vimeo <code>1220163076</code>。</li>
+<li>今日 Stash：没有周末新稿；Porsche、We Love Pitching Part 23、Average Friends、Mega Chile 仅作状态回读。</li>
+<li>继续避免：10 月 31 日的 Copilot Projects / computer use、GitHub Memory / Dreaming、Altia BluePrint、Designeer、Vercel Runtime Cache、Daemon liveness、Safari 27.2；除非出现实测、价格变化、权限边界或新的制作 breakdown，不重发。</li>
+</ul>
+<p class="mixed-script verification">核验说明：Figma、Framer、Canva、Apple、OpenAI 与 Stash 官方页面于 2026-11-01 回读。正文嵌图原始宽度为 1200–2640px，并逐张目视检查。Polestar 的 Vimeo player URL 预检返回 401，飞书按规则使用 1920px Stash 制作视觉降级，同时保留 Stash 与 Vimeo 原片链接。</p>

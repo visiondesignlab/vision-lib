@@ -87,7 +87,6 @@
   .image-slicer .head .sub{display:none}
   .image-slicer .bar{align-items:flex-start;flex-direction:column;gap:12px}
   .image-slicer .slicer-mode-hint{margin-left:0;font-size:12px}
-  .slicer-dropzone{min-height:130px}
   .slicer-result-panel{min-height:360px}
   .slicer-empty{min-height:240px}
   .image-slicer .thumbs{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}

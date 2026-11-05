@@ -18,7 +18,7 @@ LOCK = os.path.join(DATA, ".lock")
 TOKEN_FILE = os.path.join(DATA, "admin_token.txt")
 CST = timezone(timedelta(hours=8))
 
-TYPES = {"video": "视频", "graphic": "平面", "brand_skill": "品牌 Skill", "skill_repo": "Skill 仓库"}
+TYPES = {"video": "视频", "graphic": "平面视觉", "brand_skill": "品牌 Skill", "skill_repo": "Skill 仓库"}
 STATUSES = ("draft", "pending", "published", "rejected", "archived")
 
 

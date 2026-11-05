@@ -1,12 +1,15 @@
+const {icon} = window.VisionSite;
 /* Vision CMS — authenticated content view within the shared Vision Lib shell. */
-import './cms-select.js';
+import './menu.js';
+import {analysisSection} from './submissions.js';
+import {submissionManager} from './cms-submissions.js';
 import {directoryManager} from './cms-directory.js';
 export function createCMS({navigate, replaceURL, onContentChange, onCounts, onSessionChange = () => {}}) {
 const root = document.createElement('div');
 root.id = 'cms';root.className = 'cms-body';
 const $ = (s, el = root) => el.querySelector(s);
 const esc = v => String(v ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-const TYPES = {video:'视频案例',showcase:'灵感库',graphic:'平面',brand_skill:'品牌 Skill',skill_repo:'Skill 仓库'};
+const TYPES = {video:'AI 视频案例',showcase:'灵感库',graphic:'平面视觉',brand_skill:'品牌 Skill',skill_repo:'Skill 仓库'};
 const STATUS = {all:'全部内容',draft:'草稿',pending:'待审核',published:'已发布',rejected:'已退回',archived:'已下架'};
 const ACTION = {migrate:'迁移栏目',create:'创建内容',edit:'保存草稿',submit:'提交审核',approve:'审核通过并发布',reject:'退回修改',unpublish:'下架内容'};
 let csrf = '', cases = [], dirty = false, busy = false, routeId = 0, active = false;
@@ -37,7 +40,7 @@ window.addEventListener('beforeunload',e=>{if(active&&(dirty||busy)){e.preventDe
 function deactivate(){
   if(!active)return;
   active=false;++routeId;dirty=false;csrf='';cases=[];
-  stopTableLoading();window.CMSSelect.close();
+  stopTableLoading();window.VisionMenu.closeMenu();
   root.querySelectorAll('dialog').forEach(d=>d.close());
   root.replaceChildren();
 }
@@ -49,7 +52,7 @@ function login(){
 }
 function shell(active, crumb){
   const pending=cases.filter(c=>c.status==='pending').length;
-  root.innerHTML=`<div class="workspace"><header class="cms-subnav"><span class="muted">内容管理</span><nav aria-label="CMS 二级导航">${[['overview','/cms','工作台'],['content','/cms/content','全部内容'],['mine','/cms/content?owner=mine','我的内容'],['review','/cms/content?status=pending','审核队列'],['ai-nav','/cms/ai-nav','AI 导航'],['settings','/cms/settings','账号设置']].map(([key,url,title])=>`<a class="chip ${active===key?'on':''}" ${active===key?'aria-current="page"':''} data-nav href="${url}">${title}${key==='review'&&pending?`<span class="n">${pending}</span>`:''}</a>`).join('')}</nav><button class="btn small" id="cms-logout">退出登录</button></header><div class="main" id="main"></div></div>`;
+  root.innerHTML=`<div class="workspace"><header class="cms-subnav"><span class="muted">内容管理</span><nav aria-label="CMS 二级导航">${[['overview','/cms','工作台'],['content','/cms/content','全部内容'],['mine','/cms/content?owner=mine','我的内容'],['review','/cms/content?status=pending','审核队列'],['submissions','/cms/submissions','作品投稿'],['ai-nav','/cms/ai-nav','AI 导航'],['settings','/cms/settings','账号设置']].map(([key,url,title])=>`<a class="chip ${active===key?'on':''}" ${active===key?'aria-current="page"':''} data-nav href="${url}">${title}${key==='review'&&pending?`<span class="n">${pending}</span>`:''}</a>`).join('')}</nav><button class="btn small" id="cms-logout">退出登录</button></header><div class="main" id="main"></div></div>`;
   $('#cms-logout').onclick=async()=>{if(!leave())return;busy=true;try{await post('/api/auth/logout');dirty=false;login();}catch(err){toast(err.message);}finally{busy=false;}};
 }
 
@@ -64,9 +67,18 @@ async function refreshCounts(){
 }
 async function render(){
   if(!active)return;
-  stopTableLoading();window.CMSSelect.close();const seq=++routeId;
+  stopTableLoading();window.VisionMenu.closeMenu();const seq=++routeId;
   try{
     const session=await api('/api/auth/session');if(seq!==routeId)return;csrf=session.csrf;onSessionChange(true);
+    if(location.pathname==='/cms/submissions'){
+      shell('submissions','作品投稿');
+      stopDirectory=submissionManager($('#main'),{api,post,esc,dialog,toast,upload:async file=>{
+        const response=await fetch('/api/admin/uploads',{method:'POST',headers:{'Content-Type':'application/octet-stream',
+          'X-Upload-Kind':'video','X-File-Name':encodeURIComponent(file.name),'X-CSRF-Token':csrf},body:file});
+        const result=await response.json();if(!response.ok)throw Error(result.error||'上传失败');return result;
+      }});
+      refreshCounts();return;
+    }
     if(location.pathname==='/cms/ai-nav'){
       const db=await api('/api/admin/ai-directory');if(seq!==routeId)return;
       refreshCounts();shell('ai-nav','AI 导航');stopDirectory=directoryManager($('#main'),db,{esc,dialog,post,toast,reload:render,
@@ -86,10 +98,10 @@ async function render(){
     root.innerHTML=`<div class="empty"><h3>工作台暂时无法加载</h3><p>${esc(err.message)}</p><button class="btn" id="retry">重新加载</button></div>`;$('#retry').onclick=render;
   }
 }
-function empty(title,description,create=false){return `<div class="empty"><div class="empty-icon" aria-hidden="true">▤</div><h3>${esc(title)}</h3><p>${esc(description)}</p>${create?'<a data-nav href="/cms/new" class="btn primary">＋ 新建内容</a>':''}</div>`;}
+function empty(title,description,create=false){return `<div class="empty"><div class="empty-icon" aria-hidden="true">${icon('inbox')}</div><h3>${esc(title)}</h3><p>${esc(description)}</p>${create?`<a data-nav href="/cms/new" class="btn primary">${icon('plus')} 新建内容</a>`:''}</div>`;}
 function overview(){
   const count=st=>cases.filter(c=>c.status===st).length;
-  $('#main').innerHTML=`<div class="page-head"><div><div class="eyebrow">YOUR CONTENT, AT A GLANCE</div><h1>内容工作台</h1><p>管理草稿、审核和已发布内容。</p></div><a class="btn primary" href="/cms/new" data-nav>＋ 新建内容</a></div><div class="stats">${[['draft','草稿箱','继续完善你的创作'],['pending','等待审核','确认后发布到前台'],['published','已发布','用户正在浏览的内容'],['rejected','退回修改','完善后可再次提交']].map(([st,label,hint])=>`<a data-nav href="/cms/content?status=${st}" class="stat ${st}"><span class="label">${label}<span aria-hidden="true">↗</span></span><strong>${st==='published'?cases.filter(c=>c.live_status==='published').length:count(st)}</strong><span class="hint">${hint}</span></a>`).join('')}</div><section class="panel"><div class="panel-heading"><div><h2>最近更新</h2><p>最近保存与审核的内容</p></div><a class="btn small" data-nav href="/cms/content">全部内容 →</a></div><div id="table"></div></section>`;
+  $('#main').innerHTML=`<div class="page-head"><div><div class="eyebrow">YOUR CONTENT, AT A GLANCE</div><h1>内容工作台</h1><p>管理草稿、审核和已发布内容。</p></div><a class="btn primary" href="/cms/new" data-nav>${icon('plus')} 新建内容</a></div><div class="stats">${[['draft','草稿箱','继续完善你的创作'],['pending','等待审核','确认后发布到前台'],['published','已发布','用户正在浏览的内容'],['rejected','退回修改','完善后可再次提交']].map(([st,label,hint])=>`<a data-nav href="/cms/content?status=${st}" class="stat ${st}"><span class="label">${label}<span aria-hidden="true">${icon('external')}</span></span><strong>${st==='published'?cases.filter(c=>c.live_status==='published').length:count(st)}</strong><span class="hint">${hint}</span></a>`).join('')}</div><section class="panel"><div class="panel-heading"><div><h2>最近更新</h2><p>最近保存与审核的内容</p></div><a class="btn small" data-nav href="/cms/content">全部内容 ${icon('forward')}</a></div><div id="table"></div></section>`;
   renderTable(cases.slice(0,8),false);
 }
 function contentPage(){
@@ -97,10 +109,10 @@ function contentPage(){
   const requestedType=url.searchParams.get('type');
   if(requestedType)filter.type=TYPES[requestedType]?requestedType:'all';
   const pool=mine?cases.filter(c=>c.origin==='cms'):cases;
-  $('#main').innerHTML=`<div class="page-head"><div><div class="eyebrow">CONTENT LIBRARY</div><h1>${mine?'我的内容':status==='pending'?'审核队列':'全部内容'}</h1><p>${mine?'在 CMS 中创建的内容，草稿、审核和发布都在这里。':'统一管理作品、灵感与 Skill，查看每一条内容的发布进度。'}</p></div><a class="btn primary" data-nav href="/cms/new">＋ 新建内容</a></div><section class="panel"><div class="filters"><div class="tabs" role="group" aria-label="内容状态">${Object.entries(STATUS).map(([key,label])=>`<button class="tab ${status===key?'on':''}" aria-pressed="${status===key}" data-status="${key}">${key==='all'?'全部':label}<span>${key==='all'?pool.length:pool.filter(c=>key==='published'?c.live_status==='published':c.status===key).length}</span></button>`).join('')}</div></div><div class="filters"><span class="muted">内容类型</span><select id="type-filter" aria-label="筛选内容类型"><option value="all">全部类型</option>${Object.entries(TYPES).map(([key,title])=>`<option value="${key}" ${filter.type===key?'selected':''}>${title}</option>`).join('')}</select><div class="search"><input type="search" id="search" aria-label="搜索内容" placeholder="搜索标题、作者、标签…" value="${esc(filter.q)}"></div></div><div id="table"></div></section>`;
+  $('#main').innerHTML=`<div class="page-head"><div><div class="eyebrow">CONTENT LIBRARY</div><h1>${mine?'我的内容':status==='pending'?'审核队列':'全部内容'}</h1><p>${mine?'在 CMS 中创建的内容，草稿、审核和发布都在这里。':'统一管理作品、灵感与 Skill，查看每一条内容的发布进度。'}</p></div><a class="btn primary" data-nav href="/cms/new">${icon('plus')} 新建内容</a></div><section class="panel"><div class="filters"><div class="tabs" role="group" aria-label="内容状态">${Object.entries(STATUS).map(([key,label])=>`<button class="tab ${status===key?'on':''}" aria-pressed="${status===key}" data-status="${key}">${key==='all'?'全部':label}<span>${key==='all'?pool.length:pool.filter(c=>key==='published'?c.live_status==='published':c.status===key).length}</span></button>`).join('')}</div></div><div class="filters"><span class="muted">内容类型</span><select id="type-filter" aria-label="筛选内容类型"><option value="all">全部类型</option>${Object.entries(TYPES).map(([key,title])=>`<option value="${key}" ${filter.type===key?'selected':''}>${title}</option>`).join('')}</select><div class="search"><input type="search" id="search" aria-label="搜索内容" placeholder="搜索标题、作者、标签…" value="${esc(filter.q)}"></div></div><div id="table"></div></section>`;
   root.querySelectorAll('[data-status]').forEach(b=>b.onclick=()=>{url.searchParams.set('status',b.dataset.status);replaceURL(url);contentPage();});
   $('#type-filter').onchange=e=>{filter.type=e.target.value;url.searchParams.set('type',filter.type);replaceURL(url);list();};
-  window.CMSSelect.enhance($('#type-filter'),'筛选内容类型');
+  window.VisionMenu.enhanceSelect($('#type-filter'),'筛选内容类型');
   $('#search').oninput=e=>{filter.q=e.target.value;list();};
   function list(){const q=filter.q.trim().toLowerCase();const rows=pool.filter(c=>(status==='all'||(status==='published'?c.live_status==='published':c.status===status))&&(filter.type==='all'||c.type===filter.type)&&(!q||[c.title,c.category,c.source?.author,...(c.tags||[])].join(' ').toLowerCase().includes(q)));renderTable(rows,true);}
   list();
@@ -113,10 +125,11 @@ const operations = {
   delete: ['删除', c => !!c.id]
 };
 const transferTargets = {video:'showcase',showcase:'video'};
+const moveLabel = target => `迁移到${target==='video'?' ':''}${TYPES[target]}`;
 function tableRow(c, selectable){
   const target=transferTargets[c.type];
   const matches=c.duplicates?.length ? `<details class="duplicate-info"><summary>疑似重复（${c.duplicates.length}）</summary><ul>${duplicateList(c.duplicates)}</ul></details>` : '';
-  const move=target ? `<button class="btn small" data-action="migrate">迁移到${TYPES[target]}</button>` : '';
+  const move=target ? `<button class="btn small" data-action="migrate">${moveLabel(target)}</button>` : '';
   return `<tr data-id="${esc(c.id)}"><td><div class="title-cell">${selectable?`<label class="row-select"><input type="checkbox" data-select-id="${esc(c.id)}" aria-label="选择：${esc(c.title)}"></label>`: ''}<span class="thumb"><img src="${esc(c.media?.thumbnail||'/static/cms-placeholder.svg')}" alt="" loading="lazy"></span><div class="title-text"><button data-action="edit">${esc(c.title||'未命名内容')}</button><small>${esc(c.source?.author||'团队创作')} ${c.origin==='cms'?'· 我的内容':''}</small>${matches}</div></div></td><td data-label="类型 / 分类">${TYPES[c.type]||esc(c.type)}<div class="hint" style="font-size:10px;margin-top:5px">${esc(c.category||'未分类')}</div></td><td data-label="状态">${badge(c)}${c.has_revision?'<div class="hint" style="font-size:10px;margin-top:5px">线上版本保持已发布</div>':''}</td><td class="muted" data-label="最近更新" style="font-size:11px">${esc(date(c.updated_at||c.added_at))}</td><td><div class="row-actions"><button class="btn small" data-action="preview">预览</button><button class="btn small" data-action="edit">编辑</button>${move}${Object.entries(operations).filter(([, [, allowed]])=>allowed(c)).map(([kind,[label]])=>`<button class="btn small ${kind==='approve'?'primary':['reject','delete'].includes(kind)?'danger':''}" data-action="${kind}">${kind==='delete' && c.live_status==='published'?'下架并删除':label}</button>`).join('')}</div></td></tr>`;
 }
 function renderTable(list,scrollLoad){
@@ -154,7 +167,7 @@ function renderTable(list,scrollLoad){
       return `<button class="btn small ${kind==='delete'?'danger':''}" data-batch="${kind}" ${n?'':'disabled'}>${label}（${n}）</button>`;
     }).join('') + Object.entries(transferTargets).map(([from,to])=>{
       const count=picked.filter(c=>c.type===from).length;
-      return count ? `<button class="btn small" data-move="${to}">迁移到${TYPES[to]}（${count}）</button>` : '';
+      return count ? `<button class="btn small" data-move="${to}">${moveLabel(to)}（${count}）</button>` : '';
     }).join(''):'';
   }
   if(scrollLoad)table.onchange=e=>{
@@ -202,13 +215,15 @@ function renderTable(list,scrollLoad){
   observer.observe(sentinel);
 }
 
-function dialog(html){const d=document.createElement('dialog');d.className='dialog';d.innerHTML=html;root.append(d);d.addEventListener('close',()=>d.remove());d.addEventListener('cancel',e=>{if(d.dataset.working)e.preventDefault();});d.addEventListener('click',e=>{if(e.target===d&&!d.dataset.working){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}});d.showModal();d.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>d.close());return d;}
+function dialog(html){const d=document.createElement('dialog');d.className='dialog';d.innerHTML=html;let host=root;
+  if(!root.isConnected){host=document.createElement('div');host.className='cms-body';host.dataset.caseDialog='';document.body.append(host);}
+  host.append(d);d.addEventListener('close',()=>{d.querySelectorAll('video').forEach(window.VisionSite.releaseVideo);d.remove();if(host!==root)host.remove();});d.addEventListener('cancel',e=>{if(d.dataset.working)e.preventDefault();});d.addEventListener('click',e=>{if(e.target===d&&!d.dataset.working){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();}});d.showModal();d.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>d.close());return d;}
 function mediaHTML(c){const m=c.media||{};return m.video?window.VisionSite.videoPlayer(m.video,m.thumbnail):`<img src="${esc(m.thumbnail||m.images?.[0]||'/static/cms-placeholder.svg')}" alt="${esc(c.title||'内容封面')}">`;}
-function preview(c){dialog(`<div style="display:flex;justify-content:space-between;align-items:center"><span class="eyebrow">CONTENT PREVIEW · 仅管理员可见</span><button type="button" class="btn ghost preview-close" data-close aria-label="关闭预览"><svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="m4 4 8 8m0-8-8 8"/></svg></button></div><div class="preview-media">${mediaHTML(c)}</div>${badge(c)}<h2 style="margin-top:14px">${esc(c.title||'未命名内容')}</h2><p>${esc(c.subtitle||'')}</p>${c.description?`<p style="white-space:pre-wrap">${esc(c.description)}</p>`:''}${c.prompt?`<h3 style="font-size:13px;margin-top:22px">示例 Prompt</h3><pre>${esc(c.prompt)}</pre>`:''}${c.how_to?.length?`<ol>${c.how_to.map(x=>`<li style="padding:6px 0;line-height:1.7">${esc(x)}</li>`).join('')}</ol>`:''}${c.assets?.length?`<div class="asset-list">${c.assets.map(x=>`<div class="asset-row"><a href="${esc(x.url)}" target="_blank" rel="noopener">↗ ${esc(x.name)}</a></div>`).join('')}</div>`:''}${c.source?.url?`<p>来源：<a href="${esc(c.source.url)}" target="_blank" rel="noopener">${esc(c.source.author||c.source.url)} ↗</a></p>`:''}<div class="dialog-actions"><button class="btn" data-close>关闭预览</button></div>`);}
+function preview(c){dialog(`<div style="display:flex;justify-content:space-between;align-items:center"><span class="eyebrow">CONTENT PREVIEW · 仅管理员可见</span><button type="button" class="btn ghost preview-close" data-close aria-label="关闭预览">${icon('close')}</button></div><div class="preview-media">${mediaHTML(c)}</div>${badge(c)}${c.type==='video'?analysisSection(c.shot_analysis):''}<h2 style="margin-top:14px">${esc(c.title||'未命名内容')}</h2><p>${esc(c.subtitle||'')}</p>${c.description?`<p style="white-space:pre-wrap">${esc(c.description)}</p>`:''}${c.prompt?`<h3 style="font-size:13px;margin-top:22px">示例 Prompt</h3><pre>${esc(c.prompt)}</pre>`:''}${c.how_to?.length?`<ol>${c.how_to.map(x=>`<li style="padding:6px 0;line-height:1.7">${esc(x)}</li>`).join('')}</ol>`:''}${c.assets?.length?`<div class="asset-list">${c.assets.map(x=>`<div class="asset-row"><a href="${esc(x.url)}" target="_blank" rel="noopener">${icon('external')} ${esc(x.name)}</a></div>`).join('')}</div>`:''}${c.source?.url?`<p>来源：<a href="${esc(c.source.url)}" target="_blank" rel="noopener">${esc(c.source.author||c.source.url)} ${icon('external')}</a></p>`:''}<div class="dialog-actions"><button class="btn" data-close>关闭预览</button></div>`);}
 function duplicateList(peers) {
-  return peers.map(p => `<li><a href="/cms/edit/${encodeURIComponent(p.id)}">${esc(p.title)} ↗</a> · ${esc(TYPES[p.type])} · ${esc(p.reasons.join('、'))}</li>`).join('');
+  return peers.map(p => `<li><a href="/cms/edit/${encodeURIComponent(p.id)}">${esc(p.title)} ${icon('external')}</a> · ${esc(TYPES[p.type])} · ${esc(p.reasons.join('、'))}</li>`).join('');
 }
-async function migrate(rows, target, skipped=0) {
+async function migrate(rows, target, skipped=0, current=()=>active) {
   if (busy || !rows.length) return;
   const request = {target, items:rows.map(c => ({id:c.id, _version:c._version || 0}))};
   const sourceURL = '/api/admin/video-migration';
@@ -217,22 +232,94 @@ async function migrate(rows, target, skipped=0) {
   try { ({conflicts} = await post(sourceURL, request)); }
   catch (err) { toast(err.message); return; }
   finally { busy=false; }
-  if (!active) return;
-  const categories = [...new Set(cases.filter(c=>c.type===target).map(c=>c.category).filter(Boolean))].sort();
-  const initial = rows.every(c=>c.category===rows[0].category) && categories.includes(rows[0].category) ? rows[0].category : '';
-  const duplicates = Object.keys(conflicts).length;
-  const d=dialog(`<form><h2>迁移到${TYPES[target]}</h2><p>${rows.length} 条内容将移动到目标栏目，沿用原链接和发布状态。${skipped?`另有 ${skipped} 条不适用，已跳过。`:''}</p><ul class="batch-items">${rows.map(c=>`<li>${esc(c.title)}${conflicts[c.id]?`<strong class="duplicate-label">疑似重复</strong><ul>${duplicateList(conflicts[c.id])}</ul>`:''}</li>`).join('')}</ul><label class="field"><span>目标分类</span><input name="category" list="migration-categories" value="${esc(initial)}" required maxlength="500" placeholder="选择或输入分类"></label><datalist id="migration-categories">${categories.map(name=>`<option value="${esc(name)}"></option>`).join('')}</datalist>${duplicates?`<label class="check-field"><input type="checkbox" required> 已核对 ${duplicates} 条疑似重复内容，保留各条记录并迁移</label>`:''}<div class="error" role="alert"></div><div class="dialog-actions"><button type="button" class="btn" data-close>取消</button><button class="btn primary" type="submit">确认迁移</button></div></form>`);
-  $('form',d).onsubmit=async event=>{
-    event.preventDefault();
-    if(busy)return;
-    busy=true;d.dataset.working='true';
-    for(const b of d.querySelectorAll('button')) b.disabled=true;
-    try {
-      const result=await post(sourceURL,{...request,apply:true,confirmed:conflicts,category:$('[name=category]',d).value});
-      d.close();onContentChange();await render();toast(`已迁移 ${result.moved} 条到${TYPES[target]}`);
-    } catch(err) { $('.error',d).textContent=err.message; }
-    finally { busy=false;delete d.dataset.working;for(const b of d.querySelectorAll('button')) b.disabled=false; }
+  if (!current()) return;
+  const categories = new Set(cases.filter(c=>c.type===target && c.category).map(c=>c.category));
+  categories.delete('待分类');
+  const initial = rows.every(c=>c.category===rows[0].category) && categories.has(rows[0].category) ? rows[0].category : '待分类';
+  const options = ['待分类', ...[...categories].sort()].map(name=>
+    `<option value="${esc(name)}"${name===initial?' selected':''}>${esc(name)}</option>`).join('');
+  const d=dialog(`<form>
+    <h2>${moveLabel(target)}</h2>
+    <p>所选内容沿用原链接和发布状态。${skipped?`已跳过 ${skipped} 条不适用的内容。`:''}</p>
+    <div class="migration-picker">
+      <div class="migration-pick-head"><label><input type="checkbox" data-pick-all checked>全选</label><span data-count role="status"></span></div>
+      <ul class="migration-list" aria-label="迁移内容">${rows.map(c=>`<li>
+        <label class="migration-row"><input type="checkbox" data-pick="${esc(c.id)}" checked>
+          <span><strong>${esc(c.title || '未命名内容')}</strong><small>${esc([c.category,STATUS[c.status]].filter(Boolean).join(' · '))}</small></span>
+        </label>
+        ${conflicts[c.id]?`<details class="duplicate-info" data-matches><summary>疑似重复</summary><ul></ul></details>`:''}
+      </li>`).join('')}</ul>
+    </div>
+    <div class="field"><span>目标分类</span><select name="category">${options}<option value="">自定义分类…</option></select></div>
+    <label class="field" hidden><span>新分类名称</span><input name="customCategory" maxlength="500" disabled></label>
+    <label class="check-field" hidden><input type="checkbox" name="acknowledge"><span></span></label>
+    <div class="error" role="alert"></div>
+    <div class="dialog-actions"><button type="button" class="btn" data-close>取消</button><button class="btn primary" type="submit">确认迁移</button></div>
+  </form>`);
+  const form=$('form',d), category=form.elements.category, custom=form.elements.customCategory;
+  window.VisionMenu.enhanceSelect(category,'目标分类',true);
+  category.onchange=()=>{
+    custom.disabled=!!category.value;
+    custom.closest('label').hidden=custom.disabled;
+    custom.required=!category.value;
+    if(custom.required) queueMicrotask(()=>custom.focus());
   };
+  const master=$('[data-pick-all]',form), checks=[...form.querySelectorAll('[data-pick]')];
+  const candidates=new Set(rows.map(c=>c.id)), ack=form.elements.acknowledge, submit=$('[type=submit]',form);
+  let selected, confirmed;
+  function syncPicks() {
+    selected=new Set(checks.filter(box=>box.checked).map(box=>box.dataset.pick));
+    confirmed={};
+    for(const box of checks) {
+      const id=box.dataset.pick, details=$('[data-matches]',box.closest('li'));
+      if(!details) continue;
+      const peers=(conflicts[id] || []).filter(peer=>!candidates.has(peer.id) || selected.has(peer.id));
+      details.hidden=!box.checked || !peers.length;
+      if(!details.hidden) {
+        confirmed[id]=peers;
+        $('ul',details).innerHTML=duplicateList(peers);
+      }
+    }
+    master.checked=selected.size===checks.length;
+    master.indeterminate=selected.size>0 && !master.checked;
+    $('[data-count]',form).textContent=`已选 ${selected.size} / ${checks.length} 条`;
+    const count=Object.keys(confirmed).length;
+    ack.closest('label').hidden=!count;
+    ack.required=!!count;
+    ack.checked=false;
+    ack.nextElementSibling.textContent=`已核对 ${count} 条疑似重复内容，保留各条记录并迁移`;
+    submit.disabled=!selected.size;
+  }
+  $('.migration-picker',form).onchange=e=>{
+    if(e.target===master) for(const box of checks) box.checked=master.checked;
+    syncPicks();
+  };
+  syncPicks();
+  form.onsubmit=async event=>{
+    event.preventDefault();
+    if(busy || !selected.size)return;
+    const items=request.items.filter(item=>selected.has(item.id));
+    const payload={target,items,apply:true,confirmed,category:category.value || custom.value.trim()};
+    busy=true;d.dataset.working='true';form.inert=true;
+    try {
+      const result=await post(sourceURL,payload);
+      d.close();onContentChange();await render();toast(`已迁移 ${result.moved} 条至「${TYPES[target]}」`);
+    } catch(err) { $('.error',d).textContent=err.message; }
+    finally { busy=false;delete d.dataset.working;form.inert=false; }
+  };
+}
+async function quickAction(id,kind,current) {
+  if(busy || !current()) return;
+  busy=true;
+  let c;
+  try {
+    const [session,data]=await Promise.all([api('/api/auth/session'),api('/api/admin/cases?status=all')]);
+    if(!current())return;
+    csrf=session.csrf;cases=data.cases;c=cases.find(row=>row.id===id);
+    if(!c || c.live_status!=='published')throw new Error('作品状态已更新，请刷新页面。');
+  } finally {busy=false;}
+  if(kind==='migrate' && transferTargets[c.type])return migrate([c],transferTargets[c.type],0,current);
+  if(kind==='delete'||kind==='unpublish')action(c,kind);
 }
 function action(c,kind){
   const live=c.live_status==='published';
@@ -278,16 +365,36 @@ function editor(original){
   const requestedType=new URL(location.href).searchParams.get('type');
   let c=structuredClone(original||{type:TYPES[requestedType]?requestedType:'video',status:'draft',title:'',category:'',source:{platform:'原创',author:'vision design'},media:{},assets:[],tags:[],how_to:[],tools:[],trust:'社区'});
   let media=structuredClone(c.media||{}),assets=structuredClone(c.assets||[]),uploading=0;
-  $('#main').innerHTML=`<form id="editor"><div class="page-head"><div><a data-nav href="/cms/content" class="hint">← 返回内容库</a><h1>${c.id?'编辑内容':'新建内容'}</h1><p>${c.live_status==='published'?'修改将保存为新草稿，审核通过后更新线上版本。':'先保存你的创作，再提交审核。'}</p></div><div class="head-actions"><span class="hint" id="save-state">${c.id?'已保存':'尚未保存'}</span><button type="button" class="btn" id="preview">预览</button><button type="submit" class="btn" id="save">保存草稿</button><button type="button" class="btn primary" id="submit">保存并提交审核</button></div></div><div class="editor-error" id="editor-error" role="alert"></div><div class="editor"><div class="editor-main"><section class="section"><h2>基本信息</h2><p>清晰的标题与分类，让用户更容易发现你的内容。</p><div class="row2"><label class="field"><span>内容类型 *</span><select name="type">${Object.entries(TYPES).filter(([k])=>!original || k!==transferTargets[original.type]).map(([k,v])=>`<option value="${k}" ${c.type===k?'selected':''}>${v}</option>`).join('')}</select></label>${field('category','分类 *',c.category,'例如：营销产品、动效特效、品牌规范')}</div>${original && transferTargets[c.type]?`<button type="button" class="btn small" id="editor-migrate">迁移到${TYPES[transferTargets[c.type]]}</button>`:''}${field('title','标题 *',c.title,'给内容一个简洁、准确的标题')}${field('subtitle','一句话介绍',c.subtitle,'这条内容有什么值得关注的地方？')}${area('description','内容介绍',c.description,'描述作品背景、思路或适用场景。',4)}<div class="row2">${field('brand','品牌',c.brand,'例如：viaim')}${field('tags','标签',c.tags?.join('，'),'用逗号分隔')}</div></section><section class="section"><h2>作品与素材</h2><p>上传图片、视频或 Skill 文档。素材随内容一同发布。</p><div class="upload-area"><div class="upload-buttons"><button type="button" class="btn small" data-upload="cover">＋ 上传封面</button><button type="button" class="btn small" data-upload="image">＋ 上传图片</button><button type="button" class="btn small" data-upload="video">＋ 上传视频</button><button type="button" class="btn small" data-upload="attachment">＋ 添加附件</button></div><p>图片 JPG / PNG / WebP · 视频 MP4 / MOV / WebM（200 MB 内）<br>附件 MD / TXT / PDF · 图片与附件单个 20 MB 内</p><div id="upload-status" class="uploads-status" role="status"></div></div>${field('thumbnail','封面链接',media.thumbnail,'上传后自动填写，也可填写 https:// 链接')}${field('video','视频链接',media.video,'上传后自动填写，也可填写可直接播放的视频链接')}<div class="asset-list" id="assets"></div></section><section class="section"><h2>创作方法</h2><p>让别人不仅看到作品，也能理解和复用你的方法。</p>${area('prompt','示例 Prompt',c.prompt,'填写可复制使用的完整提示词。',7)}${area('how_to','操作步骤',c.how_to?.join('\n'),'每行一步，按操作顺序填写。',4)}${field('tools','使用工具',c.tools?.join('，'),'例如：Figma，Codex，After Effects')}${area('analysis','作品拆解',c.analysis,'记录创作要点、画面设计与实现思路。',4)}</section><section class="section"><h2>来源信息</h2><p>原创作品可以直接填写作者；引用作品请保留来源。</p><div class="row2">${field('author','作者',c.source?.author,'作者或团队名称')}${field('platform','来源平台',c.source?.platform,'原创、X、GitHub…')}</div>${field('source_url','来源链接',c.source?.url,'https://')}${field('author_url','作者主页',c.source?.author_url,'https://')}<div class="row2">${field('source_date','作品日期',c.source?.date?.slice(0,10)||'','','date')}${field('version','版本',c.version,'例如：1.0.0')}</div><label class="check-field"><input name="featured" type="checkbox" ${c.featured?'checked':''}> 在前台标为推荐内容</label>${area('notes','内部备注 · 仅管理员可见',c.notes,'记录需要关注的问题，不会展示给普通用户。',3)}</section></div><aside class="editor-side"><section class="section"><h2>内容预览</h2><div class="preview-media" id="mini-media"></div><div class="preview-title" id="mini-title"></div><div class="preview-desc" id="mini-desc"></div><div class="status-line"><span class="muted">当前状态</span>${badge(c)}</div>${c.live_status==='published'?'<div class="notice">已有线上版本。新的修改审核通过后才会替换，用户仍可浏览原版本。</div>':'<div class="notice">草稿和待审核内容仅管理员可见。确认发布后，将出现在前台对应栏目。</div>'}${c.id?`<button type="button" class="btn danger full" id="editor-delete">${c.live_status==='published'?'下架并删除':'删除内容'}</button>`:''}${c.status==='pending'?'<button type="button" class="btn primary full" id="editor-approve">审核并发布</button><button type="button" class="btn full" id="editor-reject">退回修改</button>':''}${c.live_status==='published'?`<button type="button" class="btn full danger" id="editor-unpublish">下架内容</button><a class="btn full" href="/c/${esc(c.id)}" target="_blank" rel="noopener">查看线上版本 ↗</a>`:''}</section><section class="section"><h2>操作记录</h2>${c.review_log?.length?`<ul class="log">${[...c.review_log].reverse().slice(0,8).map(log=>`<li>${ACTION[log.action]||esc(log.action)}<time>${esc(date(log.at))}</time>${log.note?`<p>${esc(log.note)}</p>`:''}</li>`).join('')}</ul>`:'<p style="margin:16px 0 0">保存内容后，这里会记录每次提交与审核。</p>'}</section></aside></div></form>`;
+  $('#main').innerHTML=`<form id="editor"><div class="page-head"><div><a data-nav href="/cms/content" class="hint">${icon('back')} 返回内容库</a><h1>${c.id?'编辑内容':'新建内容'}</h1><p>${c.live_status==='published'?'修改将保存为新草稿，审核通过后更新线上版本。':'先保存你的创作，再提交审核。'}</p></div><div class="head-actions"><span class="hint" id="save-state">${c.id?'已保存':'尚未保存'}</span><button type="button" class="btn" id="preview">预览</button><button type="submit" class="btn" id="save">保存草稿</button><button type="button" class="btn primary" id="submit">保存并提交审核</button></div></div><div class="editor-error" id="editor-error" role="alert"></div><div class="editor"><div class="editor-main"><section class="section"><h2>基本信息</h2><p>清晰的标题与分类，让用户更容易发现你的内容。</p><div class="row2"><div class="editor-type-field"><label class="field"><span>内容类型 *</span><select name="type">${Object.entries(TYPES).filter(([k])=>!original || k!==transferTargets[original.type]).map(([k,v])=>`<option value="${k}" ${c.type===k?'selected':''}>${v}</option>`).join('')}</select></label>${original && transferTargets[c.type]?`<button type="button" class="btn small" id="editor-migrate">${moveLabel(transferTargets[c.type])}</button>`:''}</div>${field('category','分类 *',c.category,'例如：营销产品、动效特效、品牌规范')}</div>${field('title','标题 *',c.title,'给内容一个简洁、准确的标题')}${field('subtitle','一句话介绍',c.subtitle,'这条内容有什么值得关注的地方？')}${area('description','内容介绍',c.description,'描述作品背景、思路或适用场景。',4)}<div class="row2">${field('brand','品牌',c.brand,'例如：viaim')}<div>${field('tags','标签',c.tags?.join('，'),'用逗号分隔')}<select id="tag-library" aria-label="添加已有标签" hidden></select></div></div></section><section class="section"><h2>作品与素材</h2><p>上传图片、视频或 Skill 文档。素材随内容一同发布。</p><div class="upload-area"><div class="upload-buttons"><button type="button" class="btn small" data-upload="cover">${icon('plus')} 上传封面</button><button type="button" class="btn small" data-upload="image">${icon('plus')} 上传图片</button><button type="button" class="btn small" data-upload="video">${icon('plus')} 上传视频</button><button type="button" class="btn small" data-upload="attachment">${icon('plus')} 添加附件</button></div><p>图片 JPG / PNG / WebP · 视频 MP4 / MOV / WebM（200 MB 内）<br>附件 MD / TXT / PDF · 图片与附件单个 20 MB 内</p><div id="upload-status" class="uploads-status" role="status"></div></div>${field('thumbnail','封面链接',media.thumbnail,'上传后自动填写，也可填写 https:// 链接')}${field('video','视频链接',media.video,'上传后自动填写，也可填写可直接播放的视频链接')}<div class="asset-list" id="assets"></div></section><section class="section"><h2>创作方法</h2><p>让别人不仅看到作品，也能理解和复用你的方法。</p>${area('prompt','示例 Prompt',c.prompt,'填写可复制使用的完整提示词。',7)}${area('how_to','操作步骤',c.how_to?.join('\n'),'每行一步，按操作顺序填写。',4)}${field('tools','使用工具',c.tools?.join('，'),'例如：Figma，Codex，After Effects')}${area('analysis','作品拆解',c.analysis,'记录创作要点、画面设计与实现思路。',4)}</section><section class="section"><h2>来源信息</h2><p>原创作品可以直接填写作者；引用作品请保留来源。</p><div class="row2">${field('author','作者',c.source?.author,'作者或团队名称')}${field('platform','来源平台',c.source?.platform,'原创、X、GitHub…')}</div>${field('source_url','来源链接',c.source?.url,'https://')}${field('author_url','作者主页',c.source?.author_url,'https://')}<div class="row2">${field('source_date','作品日期',c.source?.date?.slice(0,10)||'','','date')}${field('version','版本',c.version,'例如：1.0.0')}</div><label class="check-field"><input name="featured" type="checkbox" ${c.featured?'checked':''}> 在前台标为推荐内容</label>${area('notes','内部备注 · 仅管理员可见',c.notes,'记录需要关注的问题，不会展示给普通用户。',3)}</section></div><aside class="editor-side"><section class="section"><h2>内容预览</h2><div class="preview-media" id="mini-media"></div><div class="preview-title" id="mini-title"></div><div class="preview-desc" id="mini-desc"></div><div class="status-line"><span class="muted">当前状态</span>${badge(c)}</div>${c.live_status==='published'?'<div class="notice">已有线上版本。新的修改审核通过后才会替换，用户仍可浏览原版本。</div>':'<div class="notice">草稿和待审核内容仅管理员可见。确认发布后，将出现在前台对应栏目。</div>'}${c.id?`<button type="button" class="btn danger full" id="editor-delete">${c.live_status==='published'?'下架并删除':'删除内容'}</button>`:''}${c.status==='pending'?'<button type="button" class="btn primary full" id="editor-approve">审核并发布</button><button type="button" class="btn full" id="editor-reject">退回修改</button>':''}${c.live_status==='published'?`<button type="button" class="btn full danger" id="editor-unpublish">下架内容</button><a class="btn full" href="/c/${esc(c.id)}" target="_blank" rel="noopener">查看线上版本 ${icon('external')}</a>`:''}</section><section class="section"><h2>操作记录</h2>${c.review_log?.length?`<ul class="log">${[...c.review_log].reverse().slice(0,8).map(log=>`<li>${ACTION[log.action]||esc(log.action)}<time>${esc(date(log.at))}</time>${log.note?`<p>${esc(log.note)}</p>`:''}</li>`).join('')}</ul>`:'<p style="margin:16px 0 0">保存内容后，这里会记录每次提交与审核。</p>'}</section></aside></div></form>`;
   const move=$('#editor-migrate');
   if(move)move.onclick=()=>dirty?toast('请先保存编辑，再迁移栏目'):migrate([original],transferTargets[original.type]);
   const form=$('#editor'),val=name=>form.elements.namedItem(name)?.value||'';
   const unpublish=$('#editor-unpublish');if(unpublish)unpublish.onclick=()=>{if(leave())action(c,'unpublish');};
-  function collect(){const copy={...media,thumbnail:val('thumbnail').trim(),video:val('video').trim()};if(copy.video!==media.video){copy.preview='';delete copy.specs;}copy.kind=copy.video?'video':copy.images?.length?'images':'image';return {type:val('type'),category:val('category'),title:val('title'),subtitle:val('subtitle'),description:val('description'),brand:val('brand'),tags:val('tags').split(/[,，]/).map(s=>s.trim()).filter(Boolean),prompt:val('prompt'),how_to:val('how_to').split('\n').map(s=>s.trim()).filter(Boolean),tools:val('tools').split(/[,，]/).map(s=>s.trim()).filter(Boolean),analysis:val('analysis'),notes:val('notes'),version:val('version'),featured:form.elements.namedItem('featured').checked,source:{author:val('author'),platform:val('platform'),url:val('source_url'),author_url:val('author_url'),date:val('source_date')},media:copy,assets};}
+  function collect(){const copy={...media,thumbnail:val('thumbnail').trim(),video:val('video').trim()};if(copy.video!==media.video){copy.preview='';delete copy.specs;}copy.kind=copy.video?'video':copy.images?.length?'images':'image';return {type:val('type'),category:val('category'),title:val('title'),subtitle:val('subtitle'),description:val('description'),brand:val('brand'),tags:[...new Set(val('tags').split(/[,，]/).map(s=>s.trim()).filter(Boolean))],prompt:val('prompt'),how_to:val('how_to').split('\n').map(s=>s.trim()).filter(Boolean),tools:val('tools').split(/[,，]/).map(s=>s.trim()).filter(Boolean),analysis:val('analysis'),notes:val('notes'),version:val('version'),featured:form.elements.namedItem('featured').checked,source:{author:val('author'),platform:val('platform'),url:val('source_url'),author_url:val('author_url'),date:val('source_date')},media:copy,assets};}
   function smallPreview(){const v=collect();$('#mini-media').innerHTML=v.media.thumbnail?`<img src="${esc(v.media.thumbnail)}" alt="内容封面">`:'封面预览';$('#mini-title').textContent=v.title||'内容标题';$('#mini-desc').textContent=v.subtitle||'一句话介绍会显示在这里';}
   function mark(){dirty=true;$('#save-state').textContent='有未保存的修改';smallPreview();}
-  function assetList(){const images=media.images||[];$('#assets').innerHTML=images.map((u,i)=>`<div class="asset-row"><span>图片 ${i+1}</span><a href="${esc(u)}" target="_blank" rel="noopener">查看图片 ↗</a><button type="button" data-remove-image="${i}" aria-label="移除图片 ${i+1}">移除</button></div>`).join('')+assets.map((a,i)=>`<div class="asset-row"><span>附件</span><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.name)}</a><button type="button" data-remove="${i}" aria-label="移除附件 ${esc(a.name)}">移除</button></div>`).join('');$('#assets').querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{assets.splice(Number(b.dataset.remove),1);mark();assetList();});$('#assets').querySelectorAll('[data-remove-image]').forEach(b=>b.onclick=()=>{const removed=media.images.splice(Number(b.dataset.removeImage),1)[0];if(val('thumbnail')===removed)form.elements.namedItem('thumbnail').value=media.images[0]||'';mark();assetList();});}
-  form.addEventListener('input',mark);form.addEventListener('change',mark);window.CMSSelect.enhance(form.elements.namedItem('type'),'内容类型',true);smallPreview();assetList();
+  function assetList(){const images=media.images||[];$('#assets').innerHTML=images.map((u,i)=>`<div class="asset-row"><span>图片 ${i+1}</span><a href="${esc(u)}" target="_blank" rel="noopener">查看图片 ${icon('external')}</a><button type="button" data-remove-image="${i}" aria-label="移除图片 ${i+1}">移除</button></div>`).join('')+assets.map((a,i)=>`<div class="asset-row"><span>附件</span><a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.name)}</a><button type="button" data-remove="${i}" aria-label="移除附件 ${esc(a.name)}">移除</button></div>`).join('');$('#assets').querySelectorAll('[data-remove]').forEach(b=>b.onclick=()=>{assets.splice(Number(b.dataset.remove),1);mark();assetList();});$('#assets').querySelectorAll('[data-remove-image]').forEach(b=>b.onclick=()=>{const removed=media.images.splice(Number(b.dataset.removeImage),1)[0];if(val('thumbnail')===removed)form.elements.namedItem('thumbnail').value=media.images[0]||'';mark();assetList();});}
+  const library=$('#tag-library',form);
+  let updateTagMenu;
+  function refreshTagMenu() {
+    const existing=new Set(val('tags').split(/[,，]/).map(tag=>tag.trim()));
+    const vocabulary=new Set(cases.filter(row=>row.type===val('type')).flatMap(row=>row.tags||[]));
+    library.innerHTML='<option value="" disabled selected>添加已有标签</option>'+
+      [...vocabulary].filter(tag=>!existing.has(tag)).sort((a,b)=>a.localeCompare(b,'zh-CN')).map(tag=>`<option value="${esc(tag)}">${esc(tag)}</option>`).join('');
+    updateTagMenu?.();
+    if(updateTagMenu) library.nextElementSibling.hidden=library.options.length<2;
+  }
+  refreshTagMenu();
+  updateTagMenu=window.VisionMenu.enhanceSelect(library,'添加已有标签');
+  refreshTagMenu();
+  library.onchange=()=>{
+    const tags=form.elements.tags;
+    tags.value=[...new Set([...tags.value.split(/[,，]/).map(tag=>tag.trim()).filter(Boolean),library.value])].join('，');
+    tags.dispatchEvent(new Event('input',{bubbles:true}));
+  };
+  form.elements.tags.addEventListener('input',refreshTagMenu);
+  form.elements.type.addEventListener('change',refreshTagMenu);
+  form.addEventListener('input',mark);form.addEventListener('change',mark);window.VisionMenu.enhanceSelect(form.elements.namedItem('type'),'内容类型',true);smallPreview();assetList();
   $('#preview').onclick=()=>preview({...c,...collect()});
   async function save(submit){
     if(busy||uploading)return;
@@ -317,5 +424,5 @@ function settings(){
   const form=$('.settings');for(const input of form.querySelectorAll('input')){input.required=true;input.maxLength=256;input.autocomplete=input.name==='current'?'current-password':'new-password';if(input.name!=='current')input.minLength=12;}
   form.onsubmit=async e=>{e.preventDefault();const values=new FormData(form);if(values.get('next')!==values.get('confirm'))return $('.error',form).textContent='两次输入的新密码不一致';if(busy)return;busy=true;const b=$('[type=submit]',form);b.disabled=true;try{await post('/api/auth/password',{current_password:values.get('current'),new_password:values.get('next')});toast('密码已更新，请重新登录');login();}catch(err){$('.error',form).textContent=err.message;}finally{busy=false;b.disabled=false;}};
 }
-return {element:root,refreshCounts,render:()=>{active=true;return render();},deactivate,canLeave:()=>!active||leave(),prepareNavigation:()=>{dirty=false;}};
+return {element:root,quickAction,refreshCounts,render:()=>{active=true;return render();},deactivate,canLeave:()=>!active||leave(),prepareNavigation:()=>{dirty=false;}};
 }

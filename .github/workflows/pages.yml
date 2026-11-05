@@ -36,6 +36,8 @@ jobs:
           python -m playwright install --with-deps chromium
           python tests/browser_routes.py
       - name: Build public site
+        env:
+          VISION_INTAKE_URL: ${{ vars.VISION_INTAKE_URL }}
         run: python scripts/build_pages.py --base-path /vision-lib
       - uses: actions/upload-pages-artifact@v4
         with:

@@ -1,3 +1,4 @@
+const {icon} = window.VisionSite;
 /* viaim's existing public library, presented in Vision Lib's shared UI. */
 import {createImageViewer, createPDFViewer} from './asset-viewer.js';
 const sitePath = window.VisionSite.path;
@@ -35,7 +36,7 @@ export async function createBrandAssets({openPreview}) {
     else if (section.id === "company-intro") renderCompanyIntros(url);
     else if (section.id === "visual-assets") renderLogos(url);
     else if (section.id === "font-packages") renderFonts(url);
-    else $("#brandContent").innerHTML = `<div class="brand-empty"><span class="brand-empty-mark" aria-hidden="true">＋</span><h2>暂无${esc(section.name)}</h2><p>此分类尚未收录内容。</p></div>`;
+    else $("#brandContent").innerHTML = `<div class="brand-empty"><span class="brand-empty-mark" aria-hidden="true">${icon('plus')}</span><h2>暂无${esc(section.name)}</h2><p>此分类尚未收录内容。</p></div>`;
   }
 
   function renderGuidelines() {

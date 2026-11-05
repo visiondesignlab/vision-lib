@@ -16,8 +16,9 @@ import base64, json, os, re, shutil, subprocess, sys, time, urllib.request
 import numpy as np
 from PIL import Image
 import store
+import mediautil
 
-FFMPEG = shutil.which("ffmpeg") or "ffmpeg"
+FFMPEG = mediautil.FFMPEG
 TESS = shutil.which("tesseract")
 VERSION = 1
 
@@ -80,7 +81,7 @@ def load_cached(case):
 
 # ------------------------------------------------------------------ video
 def duration(path):
-    out = _run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path]).stdout
+    out = _run([mediautil.FFPROBE, "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path]).stdout
     return float(out.strip() or 0)
 
 
@@ -124,8 +125,13 @@ def detect_shots(path, dur):
         if len(fr) > k + 2:
             dl = np.abs(fr[k:] - fr[:-k]).mean(axis=(1, 2))
             med2, mad2 = np.median(dl), np.median(np.abs(dl - np.median(dl))) + 1e-4
+            # The wide difference window also peaks just before a hard cut.
+            # Prefer its measured frame boundary over the midpoint of the window.
+            hard_cuts = tuple(cuts)
             for i in _peaks(dl, max(0.028, med2 + 4 * mad2), int(fps * 1.5)):
-                cuts.append((i + k / 2) / fps)
+                midpoint = (i + k / 2) / fps
+                if all(abs(midpoint - hard) >= 0.5 for hard in hard_cuts):
+                    cuts.append(midpoint)
     pts, last = [0.0], 0.0
     for c in sorted(cuts):
         if c - last >= 0.5 and dur - c >= 0.3:

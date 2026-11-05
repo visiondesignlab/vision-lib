@@ -1,1 +1,5 @@
 Pillow==12.2.0
+beautifulsoup4>=4.12,<5
+numpy>=1.26,<3
+yt-dlp>=2025.1.0
+certifi

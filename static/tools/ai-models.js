@@ -1,3 +1,4 @@
+const {icon} = window.VisionSite;
 import {toolSearch} from './tool-search.js';
 const {path} = window.VisionSite;
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -72,7 +73,7 @@ function cell(row, column, logos) {
 function header(col, rowspan=1) {
   const title=col.title ? ` title="${esc(col.title)}"` : '';
   const unit=col.unit ? `<small>${esc(col.unit)}</small>` : '';
-  return `<th scope="col" rowspan="${rowspan}" data-column="${col.key}"><button type="button" data-rank-sort="${col.key}"${title}><span>${col.label}${unit}</span><i aria-hidden="true"></i></button></th>`;
+  return `<th scope="col" rowspan="${rowspan}" data-column="${col.key}"><button type="button" data-rank-sort="${col.key}"${title}><span>${col.label}${unit}</span>${icon('sort')}</button></th>`;
 }
 function tableHead(cols) {
   const groups=[];
@@ -104,7 +105,7 @@ export function modelsPage(dataset, replaceURL) {
     const href=path('/tools/ai-models')+(key==='language'?'':'?type='+key);
     return `<a data-link href="${href}"${key===mode?' aria-current="page"':''}>${label}</a>`;
   }).join('');
-  page.innerHTML=`<header class="models-header"><h1>AI 大模型</h1><span>${dataset.date} 快照</span><a href="${esc(board.source)}" target="_blank" rel="noopener noreferrer">Artificial Analysis ↗</a></header>
+  page.innerHTML=`<header class="models-header"><h1>AI 大模型</h1><span>${dataset.date} 快照</span><a href="${esc(board.source)}" target="_blank" rel="noopener noreferrer">Artificial Analysis ${icon('external')}</a></header>
     <div class="models-tools"><nav class="model-tabs" aria-label="榜单类型">${tabLinks}</nav><div data-search-slot></div></div>
     <div class="ai-ranking"><div class="ai-ranking-head"><h2>${modes[mode][1]}</h2><span class="models-count" role="status"></span></div>
     <div class="ai-ranking-scroll" role="region" tabindex="0" aria-label="模型排行，可上下或左右滚动"><table aria-label="${modes[mode][1]}"><thead>${tableHead(cols)}</thead><tbody></tbody></table></div></div>`;
@@ -121,8 +122,14 @@ export function modelsPage(dataset, replaceURL) {
     const rows=sortRows(original.filter(r=>normalize(r.model+' '+r.provider).includes(q)),sort);
     page.querySelector('.models-count').textContent=q?`${rows.length} / ${original.length} 个模型`:`${original.length} 个模型`;
     page.querySelector('tbody').innerHTML=rows.map(row=>`<tr>${cols.map(col=>col.key==='model'?`<th scope="row">${cell(row,col,dataset.providerLogos)}</th>`:`<td data-key="${col.key}">${cell(row,col,dataset.providerLogos)}</td>`).join('')}</tr>`).join('') || `<tr><td colspan="${cols.length}" class="models-empty">没有匹配的模型</td></tr>`;
-    page.querySelector('th[aria-sort]')?.removeAttribute('aria-sort');
-    page.querySelector(`th[data-column="${sort.key}"]`).setAttribute('aria-sort',sort.direction);
+    const last=page.querySelector('th[aria-sort]');
+    if(last) {
+      last.removeAttribute('aria-sort');
+      last.querySelector('.ui-icon').outerHTML=icon('sort');
+    }
+    const active=page.querySelector(`th[data-column="${sort.key}"]`);
+    active.setAttribute('aria-sort',sort.direction);
+    active.querySelector('.ui-icon').outerHTML=icon(sort.direction==='ascending'?'up':'down');
   }
   page.querySelector('thead').addEventListener('click',event=>{
     const button=event.target.closest('[data-rank-sort]');

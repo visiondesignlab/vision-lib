@@ -1,0 +1,66 @@
+
+<header>
+<h1>Vol.5 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-10-27 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p>今天几条更新看着很散，实际上都在补同一件事：让 agent 不只会“生成”，还知道资产放哪、额度怎么算、系统现在什么状态。</p>
+<p class="mixed-script">Figma 把 Weave 模型接进 MCP，Framer 允许 agent 整理资产，Supernova 和 Vercel 则把设计系统与运行指标搬到首页。画布继续变聪明不稀奇，真正有用的是这些入口终于开始认账——认 credits、认权限，也认上线后的数据。</p>
+<h2>● Figma AI</h2>
+<h3>Access video and image models from Figma Weave via the Figma MCP<a class="source-url" href="https://www.figma.com/release-notes/" rel="noopener noreferrer" target="_blank">https://www.figma.com/release-notes/</a></h3>
+<p class="mixed-script">Figma 10 月 26 日的更新把 Weave 里的图像和视频模型接进了 Figma MCP。Seedance、Kling、Nano Banana 这类模型可以从外部 agent 调用，但前提是连接 Weave 账户，消耗的也是 Weave credits。</p>
+<p>这不是“Figma 里又多一个生成按钮”，而是把画布外的 agent 接到同一份生成额度和资产上下文里。额度归谁、成片回哪、失败是否扣费，接下来都得写进团队的工作流。还没实测，先不替它保证回流资产的命名和版本关系。</p>
+<h2>● Products</h2>
+<h3>Asset Panel Refresh<a class="source-url" href="https://www.framer.com/updates" rel="noopener noreferrer" target="_blank">https://www.framer.com/updates</a></h3>
+<figure><img alt="Framer 刷新后的 Assets 面板" decoding="async" height="900" loading="lazy" src="01.png" width="1600"/><figcaption>Framer 刷新后的 Assets 面板</figcaption></figure>
+<p class="mixed-script">Framer 把 Components、Colors、Text Styles、Code Overrides 和 Vectors 从固定分区里放出来，现在可以混着收进自己的文件夹。Framer Agents 也拿到了整理和管理这些资产的入口。</p>
+<p>这个改动很小，但比“AI 自动做网站”更接近真实项目。资产面板一旦不再按类型硬切，团队就能按页面、品牌或交付阶段组织；代价是命名和移动规则必须先定，不然 agent 只会把乱七八糟整理成另一种乱七八糟。</p>
+<h3>Introducing Canva Craft<a class="source-url" href="https://www.canva.com/newsroom/news/canva-craft/" rel="noopener noreferrer" target="_blank">https://www.canva.com/newsroom/news/canva-craft/</a></h3>
+<figure><img alt="Canva Craft 展示的多种生成图像" decoding="async" height="1080" loading="lazy" src="02.png" width="1920"/><figcaption>Canva Craft 展示的多种生成图像</figcaption></figure>
+<p class="mixed-script">Canva 发布了自己的图像基础模型 Craft，支持任意宽高比的 2K 输出、30 多种比例和 55 种语言。Canva 说它会先规划构图再渲染，公开 API 已上线，Canva MCP 还在路上；目前向全球用户开放。</p>
+<p>官方把自家研究排名写得很高，那个先当厂商说法看。更现实的信号是：Canva 不想只做模型集市，它要控制“提示词—构图—可编辑资产”这条链。等 MCP 真开放后，再看它交回来的到底是扁平图，还是能继续拆的设计对象。</p>
+<h2>● Design Systems</h2>
+<h3>Overview page redesign<a class="source-url" href="https://learn.supernova.io/latest/releases/october-2026/overview-page-redesign-NzP3hMDQ" rel="noopener noreferrer" target="_blank">https://learn.supernova.io/latest/releases/october-2026/overview-page-redesign-NzP3hMDQ</a></h3>
+<figure><img alt="Supernova 设计系统总览" decoding="async" height="500" loading="lazy" src="03.png" width="1000"/><figcaption>Supernova 设计系统总览</figcaption></figure>
+<p class="mixed-script">Supernova 重做了 Overview：首页现在能看到文档、MCP 读写量、已连接的设计系统数据、同步状态和 pipelines，还能直接从这里启动 Agent。</p>
+<p>设计系统后台最怕首页只剩欢迎语和三个大按钮。读写次数、同步状态、流水线结果摆在一起，才像一个有人值班的系统。唯一欠缺的是“这次写入改了什么”——用量能告诉你 agent 很忙，不能告诉你它有没有把系统弄坏。</p>
+<h2>● Design Engineering</h2>
+<h3>Customizable widgets for project cards<a class="source-url" href="https://vercel.com/changelog/customizable-widgets-for-project-cards" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/customizable-widgets-for-project-cards</a></h3>
+<figure><img alt="Vercel 项目卡片可切换运行指标" decoding="async" height="942" loading="lazy" src="04.png" width="1800"/><figcaption>Vercel 项目卡片可切换运行指标</figcaption></figure>
+<p class="mixed-script">Vercel 的项目卡片现在可以各自选择指标：Firewall 放行 / 拒绝、Observability 告警、Edge / Function / Error、Speed Insights 的 RES / LCP / CLS，或 Web Analytics 的访客和 page views。选择会跟着项目跨设备保存，没启用的能力也能从卡片里直接开。</p>
+<p>仪表盘终于不用所有项目长成一张脸。营销站看访客，交易链路看错误，重交互页面盯 LCP / CLS——项目卡片本身就能说明“这东西上线后最怕什么”。</p>
+<h3>Create custom monitors in Vercel Observability<a class="source-url" href="https://vercel.com/changelog/create-custom-monitors-in-vercel-observability" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/create-custom-monitors-in-vercel-observability</a></h3>
+<figure><img alt="Vercel Observability 自定义监控" decoding="async" height="1256" loading="lazy" src="05.png" width="2400"/><figcaption>Vercel Observability 自定义监控</figcaption></figure>
+<p class="mixed-script">Vercel 自定义监控可以盯单个指标、比率、异常或固定阈值，也支持时间窗、筛选和分组；JSON 与 <code>vercel monitors add</code> 都能创建。通知可走邮件、Slack、Inbox、push 和 webhook。功能面向开启 Observability Plus 的 Pro / Enterprise，扫描价格写明是每 GB 0.0035 美元。</p>
+<p class="mixed-script">同一天上线的 Vercel Agent 还会在告警发出前回查日志和指标；每个 billing cycle 含 10 次调查，超出另计费。这个组合很实用，也很容易花冤枉钱：先挑两条真正会叫醒人的路径试，别把每个红点都升级成一场 AI 调查。</p>
+<h3>Rive Runtime updates — October 1, 2026<a class="source-url" href="https://community.rive.app/c/announcements/rive-runtime-updates-october-1-2026" rel="noopener noreferrer" target="_blank">https://community.rive.app/c/announcements/rive-runtime-updates-october-1-2026</a></h3>
+<p class="mixed-script">Rive 这轮 Runtime 更新把 React Native 0.5 推到 GA，Apple ARM64 runtime 从 6.18 MiB 降到 4.60 MiB，Android stripped ARM64 从 6.17 MB 降到 5.19 MB；Web 端也补了 focus、文字和键盘输入的基础能力。</p>
+<p class="mixed-script">动效工具的“能播”只是第一关。包体、输入、焦点和跨端行为开始一起补，Rive 才更像可进产品主流程的 UI runtime，而不是 hero 区里那段昂贵动画。数字来自官方公告，还没拿真实项目比安装包，先不把压缩幅度直接算成业务收益。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>K/DA “Firestarter” — Fortiche<a class="source-url" href="https://www.stashmedia.tv/back-from-the-dead-fortiche-drops-new-k-da-firestarter-music-video-for-lol/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/back-from-the-dead-fortiche-drops-new-k-da-firestarter-music-video-for-lol/</a></h3>
+<figure data-film-source="https://www.youtube.com/watch?v=Mmw-PpWhKFg"><img alt="K/DA Firestarter 由 Fortiche 制作" decoding="async" height="1440" loading="lazy" src="06.jpg" width="2560"/><figcaption>K/DA Firestarter 由 Fortiche 制作</figcaption></figure>
+<p class="mixed-script">视频：官方原片<a class="source-url" href="https://www.youtube.com/watch?v=Mmw-PpWhKFg" rel="noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=Mmw-PpWhKFg</a>｜制作花絮<a class="source-url" href="https://www.youtube.com/watch?v=0VVpF3Ctmm8" rel="noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=0VVpF3Ctmm8</a></p>
+<p class="mixed-script">K/DA 隔了八年回归，Fortiche 这次把人物身份、编舞和长镜头绑得很紧。Stash 列出的导演是 Marietta Ren，分镜由 Benjamin Warnitz 与 Joséphine Meis 完成，舞蹈是 Sean Bankhead；制作花絮专门讲了角色身份、专业编舞、长镜头、灯光与 VFX 节奏。</p>
+<p>片子没有靠不停切景撑热闹，而是让动作接管镜头：人物走位决定画面重心，灯光和特效跟着节拍把空间重新分层。做产品 hero video 可以偷这一招——先让交互状态和镜头路径连续，再加粒子和转场；否则就是五秒一个新宇宙，信息一条没记住。还没逐帧拉片，今天先把完整制作方法收进来，不硬夸某个镜头的技术细节。</p>
+<h2>● Stash 最新内容观察</h2>
+<ul>
+<li>K/DA “Firestarter”<a class="source-url" href="https://www.stashmedia.tv/back-from-the-dead-fortiche-drops-new-k-da-firestarter-music-video-for-lol/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/back-from-the-dead-fortiche-drops-new-k-da-firestarter-music-video-for-lol/</a>｜character animation / music video：已升级为今日主卡。编舞、镜头和 VFX 没有各演各的，三件事一起推人物。</li>
+<li>“Finish It” for The Terry Fox Foundation<a class="source-url" href="https://www.stashmedia.tv/adrian-villagomez-mathematic-finish-it-for-the-terry-fox-foundation/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/adrian-villagomez-mathematic-finish-it-for-the-terry-fox-foundation/</a>｜CG / brand film：昨天已做主卡，今天不重复拆。继续留意它如何用尺度变化讲人物遗产。</li>
+<li>Optical Arts for Dyson Clean+Wash<a class="source-url" href="https://www.stashmedia.tv/optical-arts-drops-the-mops-like-dominos-for-dyson/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/optical-arts-drops-the-mops-like-dominos-for-dyson/</a>｜product film / CG：已覆盖。它把功能列表换成连续动作，适合继续当产品片节奏参考。</li>
+<li>We Love Pitching — Part 22<a class="source-url" href="https://www.stashmedia.tv/we-love-pitching-chronicles-of-a-necessary-mess-part-22/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/we-love-pitching-chronicles-of-a-necessary-mess-part-22/</a>｜pitch / process：已覆盖。值得留下的问题不是该不该 pitch，而是投入是否真的换来更好的信息和交流。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Figma MCP 调 Weave 后，生成资产如何命名、回流和计费，尤其是失败是否扣 credits。</li>
+<li>Framer Agents 移动资产时有没有历史记录、冲突提示和可回退点。</li>
+<li>Vercel Agent 的额外调查价格，以及一条告警从监控到 webhook 的真实延迟。</li>
+<li>Stash 10 月 27 日之后的新片；旧片只保留索引，不再换标题重写。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日新增：Figma Weave via MCP、Framer Asset Panel Refresh、Canva Craft、Supernova Overview、Vercel 项目卡片 widgets、自定义 monitors / 告警调查、Rive Runtime 更新。</li>
+<li>今日视频：Fortiche《K/DA Firestarter》；《Finish It》、Dyson Clean+Wash、We Love Pitching Part 22 只做轻量回看。</li>
+<li>已覆盖不重写：DesignMD、DS Manager comments、Vercel Web Interface Guidelines、Varve、Webflow Campaigns、GitHub Apps enterprise installations、SwiftUI toolbar / reorder APIs；Linear Loops、Webflow Box、Chrome <code>position-area</code>、Atelier UI、GitHub usage metrics、Ontario / DWP Design System。</li>
+<li>边界：Figma Weave MCP、Framer Agents、Supernova Overview、Vercel monitors、Canva Craft 和 Rive Runtime 均未做完整生产实测；价格、额度和包体数字只采用官方已写明部分。</li>
+</ul>
+<p class="mixed-script verification">核验说明：Figma、Framer、Canva、Supernova、Vercel、Rive 与 Stash 官方页面于 2026-10-27 回读。嵌入图片已下载检查，原始宽度为 1000–2560px；视频静态图只用于 Markdown 与公众号 HTML，飞书视频小节改用 Preview View，不重复插封面。</p>

@@ -53,53 +53,39 @@ html:has(dialog[open]){overflow:hidden}
   :root{--side:0px}
   html{scroll-padding-top:calc(var(--mobile-head) + env(safe-area-inset-top) + 12px)}
   .mobile-header{display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:30;min-height:calc(var(--mobile-head) + env(safe-area-inset-top));padding:calc(10px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 10px max(16px,env(safe-area-inset-left));background:rgba(255,255,255,.95);backdrop-filter:blur(12px)}
-  .mobile-header .logo{font-size:14px;min-height:44px}
   .nav-toggle{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:44px;height:44px;padding:10px;border-radius:50%;color:var(--fg2)}
-  .nav-toggle span{width:20px;height:2px;border-radius:1px;background:currentColor}
   .nav-toggle:active{background:var(--chip)}
   .nav-close{position:relative;flex:none}
-  .nav-close span{position:absolute;transform:rotate(45deg)}
-  .nav-close span+span{transform:rotate(-45deg)}
   .side{display:flex;inset:0;width:100%;height:100vh;height:100dvh;padding:calc(10px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));z-index:60;background:#fff;visibility:hidden;opacity:0;filter:blur(4px);pointer-events:none;transition:opacity var(--motion-base) var(--ease-out),filter var(--motion-base) var(--ease-out),visibility 0s var(--motion-base)}
   .nav-open .side{visibility:visible;opacity:1;filter:none;pointer-events:auto;transition-delay:0s}
   .side-top{height:44px;flex:none;gap:12px;position:sticky;top:0;background:#fff;z-index:1}
-  .side-top .logo{margin-right:auto;font-size:14px}
+  .side-top .logo{margin-right:auto}
   .nav{margin:24px 0 32px}
   .nav h2{font-size:13px;margin:24px 0 8px}
-  .nav a{height:44px;font-size:18px;width:100%;padding-right:16px}
+  .nav a{width:100%}
   .nav a.on::after{margin-left:auto}
   .side-bottom{padding-top:0;flex:none}
   .side .about>p:first-of-type{padding-bottom:4px}
-  .foot{font-size:12px;align-items:flex-start;gap:12px}
-  .foot a{display:grid;place-items:center;min-height:44px}
+  .foot{align-items:flex-start;gap:12px}
   body.detail-open .mobile-header{visibility:hidden}
   main{margin-left:0;padding:20px max(16px,env(safe-area-inset-right)) max(48px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));min-width:0}
   .head{height:auto;display:flex;flex-wrap:wrap;gap:6px 12px}
-  .head h1{font-size:18px;line-height:1.4}
   .head .sub{margin-left:0;flex-basis:100%;white-space:normal;line-height:1.6;overflow:visible;order:2}
   .head .right{margin-left:auto;flex:none;max-width:100%}
   #app[data-view^="grid:"]>.head .right{order:3;width:100%;margin-top:12px}
-  .search{font-size:16px;height:44px;width:100%;padding-left:34px;background-position:12px 50%}
+  .search{width:100%}
   .bar{gap:12px;margin:20px 0 16px;align-items:center}
   .bar>.chips{flex:1;flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;padding:3px 0;scroll-padding-inline:4px;mask-image:linear-gradient(to right,#000 calc(100% - 8px),transparent)}
   .bar>.chips::-webkit-scrollbar{display:none}
-  .chip{height:40px;flex:none;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+  .chip{flex:none;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
   .bar .right{margin-left:0}
-  .pill-btn{min-height:40px;height:auto;justify-content:center}
-  .split{height:44px;max-width:100%}
-  .split .pill-btn{height:44px;min-width:0}
-  .split .caret{min-width:44px}
+  .pill-btn{justify-content:center}
+  .split{max-width:100%}
+  .split .pill-btn{min-width:0}
   .split .main{overflow:hidden;text-overflow:ellipsis;display:block}
-  .ibtn{width:44px;height:44px;flex:none}
-  .ibtn svg{width:16px;height:16px}
-  .menu{max-width:calc(100vw - 16px);border-radius:12px}
-  .menu button{height:44px;padding:8px 12px}
-  .menu-check{margin-left:auto}
+  .ibtn{flex:none}
   .grid{columns:2;column-gap:var(--gap)}
   .card .tr{display:none}
-  .card .go{width:28px;height:28px}
-  .card .ov{padding:10px}
-  .card .av{width:28px;height:28px}
   .card .ttl{display:none}
   .empty{padding:56px 8px;line-height:1.7}
   #overlay{display:flex;flex-direction:column;background:var(--bg);overflow-y:auto;overflow-x:hidden;scroll-padding-top:76px}
@@ -109,45 +95,35 @@ html:has(dialog[open]){overflow:hidden}
   .stage .frame{max-width:100%;width:100%;max-height:55svh;box-shadow:var(--ring)}
   .stage .video-frame{box-shadow:none}
   .stage video,.stage img{width:100%;max-height:55svh;object-fit:contain}
-  .stage .ext{position:static;transform:none;font-size:13px;margin:16px 0 0;text-align:center}
+  .stage .ext{position:static;transform:none;margin:16px 0 0;text-align:center}
   .phead{padding-top:12px}
-  .phead h3{font-size:16px;line-height:1.5}
   .phead p{max-width:480px;line-height:1.65}
   .kv .row{padding:10px 0;line-height:1.6}
   .kv .row>span:last-child{min-width:0;overflow-wrap:anywhere;word-break:normal}
   .sec{margin-top:28px}
   .sec h4{min-height:28px;flex-wrap:wrap}
-  .sec h4 .pill-btn{height:40px;min-height:40px}
   .sec .hint{line-height:1.65}
-  .prompt{max-height:360px;overflow-x:hidden;overflow-wrap:anywhere;font-size:13px;line-height:1.7}
-  .prompt-preview summary{min-height:44px;display:list-item;align-content:center}
-  .tag{max-width:100%;height:auto;min-height:28px;white-space:normal;overflow-wrap:anywhere;line-height:1.5;padding:5px 10px}
-  .tags a.tag{min-height:40px;display:inline-flex;align-items:center}
+  .prompt{max-height:360px;overflow-x:hidden;overflow-wrap:anywhere}
+  .prompt-preview summary{display:list-item;align-content:center}
+  .tag{max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.5}
   #toast{max-width:calc(100vw - 32px);width:max-content;bottom:calc(16px + env(safe-area-inset-bottom));border-radius:16px;line-height:1.6}
   .modal form{max-height:calc(100dvh - 32px);padding:20px;width:calc(100% - 32px)}
-  .modal input[type=text],.modal textarea,.modal .field-trigger{font-size:16px;min-height:44px}
   .modal .acts{flex-wrap:wrap}
-  /* Management uses the same header and touch sizes; rows become content cards. */
+  /* Management rows stack while controls retain their desktop metrics. */
   .cms-body .workspace .main,.cms-body .login-main{padding:20px 16px 48px;min-height:0}
-  .cms-body .login-form{margin:48px auto;max-width:400px}
-  .cms-body .login-form h2{font-size:20px}
-  .cms-body .btn,.cms-body .btn.small,.cms-body .tab{height:44px;min-height:44px;font-size:13px}
-  .cms-body .field-trigger{min-height:44px}
-  .cms-body input:not([type=checkbox]):not([type=file]),.cms-body textarea,.cms-body select{font-size:16px;min-height:44px}
+  .cms-body .login-form,.submission-page .submission-form{margin:48px auto;max-width:400px}
   .cms-body .search{width:100%}
-  .cms-body .search input{height:44px}
   .cms-body .page-head{align-items:flex-start}
-  .cms-body .page-head h1{font-size:18px}
   .cms-body .head-actions{width:100%;gap:8px}
   .cms-body #save-state{width:100%}
-  .cms-body .head-actions .btn{flex:1;min-width:0;padding-inline:8px;white-space:normal;line-height:1.3;text-align:center}
+  .cms-body .head-actions .btn{flex:1;min-width:0;white-space:normal;line-height:1.3;text-align:center}
   .cms-body #editor{padding-bottom:100px}
   .cms-body #editor .head-actions{position:fixed;left:0;right:0;bottom:0;width:auto;display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:6px 8px;z-index:25;padding:10px max(16px,env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-top:1px solid var(--line)}
-  .cms-body #editor #save-state{grid-column:1 / -1;font-size:11px}
+  .cms-body #editor #save-state{grid-column:1 / -1}
   .cms-body .cms-subnav{padding:8px 16px 16px;gap:8px;flex-wrap:nowrap;align-items:center}
   .cms-body .cms-subnav nav{flex:1;min-width:0;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
   .cms-body .cms-subnav .chip{flex:none}
-  .cms-body .cms-subnav>button{width:64px;min-width:64px;height:44px;white-space:nowrap;font-size:12px;padding:0 8px;box-shadow:none}
+  .cms-body .cms-subnav>button{white-space:nowrap}
   .cms-body .filters .tabs{width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
   .cms-body .tabs .tab{flex:none}
   .cms-body .table-wrap{overflow:visible}
@@ -159,34 +135,25 @@ html:has(dialog[open]){overflow:hidden}
   .cms-body td[data-label]::before{content:attr(data-label);display:block;font-size:11px;color:var(--fg2);margin-bottom:5px}
   .cms-body .title-cell{min-width:0;align-items:flex-start}
   .cms-body .title-text{max-width:none;min-width:0;flex:1}
-  .cms-body .title-text button{white-space:normal;overflow-wrap:anywhere;line-height:1.6;min-height:44px}
+  .cms-body .title-text button{white-space:normal;overflow-wrap:anywhere;line-height:1.6}
   .cms-body .row-actions{flex-wrap:wrap;gap:8px}
-  .cms-body .row-actions .btn{flex:1}
   .cms-body .dialog{max-height:calc(100dvh - 32px);width:calc(100vw - 24px);padding:20px 16px;animation:surface-in var(--motion-base) var(--ease-out)}
   .cms-body .dialog::backdrop{animation:backdrop-in var(--motion-base) var(--ease-out)}
   .cms-body .dialog-actions{flex-wrap:wrap}
   .cms-body .asset-row{flex-wrap:wrap}
   .cms-body .asset-row a{min-width:0}
-  .cms-body .asset-row button{min-height:44px}
-  .cms-body .check-field{min-height:44px}
   body:has(#editor) #toast{bottom:calc(108px + env(safe-area-inset-bottom))}
   /* Asset readers keep their own scroll/zoom surface inside the sheet. */
   #overlay>.brand-viewer-stage{height:56svh;min-height:300px;padding:8px 12px 16px}
   .asset-viewer-toolbar{border-radius:16px;padding:6px;gap:6px}
   .asset-zoom-controls,.asset-page-controls{gap:4px}
-  .asset-page-controls input{height:44px;font-size:16px}
   .asset-pdf-pages{padding:12px;gap:12px}
   .brand-toolbar{gap:12px}
   .brand-subnav{width:100%;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;gap:16px}
-  .brand-subnav a{flex:none;white-space:nowrap;min-height:44px}
+  .brand-subnav a{flex:none;white-space:nowrap}
   .brand-assets .head .sub,.image-slicer .head .sub{display:block}
-  .brand-format-links .pill-btn{min-height:40px}
-  .brand-font-list nav a,.brand-document-options a{min-height:48px}
-  .brand-font-editor textarea,.slicer-input input{font-size:16px;min-height:44px}
   .image-slicer .manual-tools{gap:8px}
   .image-slicer .manual-tools>.field{flex-basis:100%}
-  .image-slicer .cut-remove,.image-slicer .chip-remove{width:32px;height:32px}
-  .slicer-file-remove{width:40px;height:40px}
   .image-slicer .preview-scroll{max-height:55svh;touch-action:pan-y}
 }
 @media(max-width:760px){
@@ -200,24 +167,20 @@ html:has(dialog[open]){overflow:hidden}
   .image-slicer .bar{align-items:stretch;gap:8px}
   .image-slicer .slicer-mode-hint{font-size:12px;line-height:1.5}
   .slicer-section-title{flex-wrap:wrap}
-  .slicer-actions .pill-btn{flex:1}
   .brand-toolbar-right .search{width:auto;flex:1;min-width:0}
   .brand-view-switch{flex:none}
-  .brand-preview-text{font-size:26px}
   .brand-logo-gallery[data-view=list] .brand-logo-card{grid-template-columns:88px minmax(0,1fr)}
   .brand-logo-gallery[data-view=list] .brand-format-links{gap:6px;padding:0 12px 12px}
   .brand-logo-copy{padding:12px}
-  .brand-font-samples strong{max-width:100%;font-size:min(8vw,48px)!important}
-  .cms-body .login-form{margin:32px auto}
+  .cms-body .login-form,.submission-page .submission-form{margin:32px auto}
 }
 @media(max-width:360px){
   main{padding-inline:12px}
   #overlay>.ptop{padding-inline:12px;gap:6px}
   #overlay>.panel{padding-inline:16px}
-  .ptop .split .main{max-width:calc(100vw - 240px);padding-inline:10px;font-size:12px}
+  .ptop .split .main{max-width:calc(100vw - 240px)}
   .bar{gap:8px}
   .asset-zoom-value{min-width:32px}
-  .asset-viewer-toolbar .pill-btn{padding-inline:8px}
 }
 @media(max-width:900px) and (max-height:500px) and (orientation:landscape){
   #overlay{display:grid;grid-template-columns:1.15fr 1fr;grid-template-rows:auto minmax(0,1fr);overflow:hidden}
@@ -231,4 +194,15 @@ html:has(dialog[open]){overflow:hidden}
 @keyframes backdrop-in{from{opacity:0}to{opacity:1}}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* Keep management outside the scrollable detail panel. The row grows if buttons wrap. */
+#overlay:has(>.detail-admin-tools){grid-template-rows:auto minmax(0,1fr) auto}
+#overlay>.detail-admin-tools{grid-column:1;grid-row:3;align-self:stretch;z-index:5;flex:none;margin:0;padding:10px 20px max(10px,env(safe-area-inset-bottom));border-top:1px solid var(--line);background:var(--bg)}
+@media(max-width:900px){
+  #overlay>.detail-admin-tools{position:sticky;bottom:0;order:3;padding-inline:max(16px,env(safe-area-inset-left)) max(16px,env(safe-area-inset-right))}
+}
+@media(max-width:900px) and (max-height:500px) and (orientation:landscape){
+  #overlay>.detail-admin-tools{grid-column:2;position:static}
+  #overlay:has(>.detail-admin-tools)>.stage{grid-row:2 / 4}
 }

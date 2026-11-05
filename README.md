@@ -4,7 +4,7 @@
 
 | 类型 | 标签页 | 内容 |
 | --- | --- | --- |
-| 视频案例 `video`、平面 `graphic` | 视频案例 / 平面 | 可复现的好例子：复现 Prompt、步骤、依赖的 Skill、工具、资产，带「使用」按钮 |
+| AI 视频案例 `video`、平面 `graphic` | AI 视频案例 / 平面 | 可复现的好例子：复现 Prompt、步骤、依赖的 Skill、工具、资产，带「使用」按钮 |
 | 品牌 Skill `brand_skill` | 品牌 Skill | 团队长期维护、带版本号的规范 / Skill（SKILL.md） |
 | Skill 仓库 `skill_repo` | Skill 仓库 | 做视频用的 agent skill 仓库（手册 Top 50 + 每日 GitHub 新增） |
 | 灵感库 `showcase` | 灵感库 | 纯展示：只看片，只存标题、品牌、来源、日期、数据、分类；每条可「一键拉片」，打开用户自己的 AI 并预填提示词 |
@@ -19,12 +19,22 @@
 - 操作步骤维护在 `static/guide-content.json`。每次功能流程变化必须同步修改，新增或移除导航时由 `tests/test_guide.py` 检查说明覆盖，避免指南停留在旧版。
 - GitHub Pages 同样生成 `/guide` 与旧说明地址；指南会按照公开站点实际显示的导航生成，不展示本机 CMS 的管理入口。
 
-## 视频案例和 AI 导航
-视频案例默认按热度降序，使用已收录的热度值，缺省时按浏览数 + 50 ×（点赞数 + 仓库星数）计算。其他栏目保持各自的默认排序。
+## AI 视频案例和 AI 导航
+AI 视频案例默认按热度降序，使用已收录的热度值，缺省时按浏览数 + 50 ×（点赞数 + 仓库星数）计算。其他栏目保持各自的默认排序。
 
 工具分组的「AI 导航」支持分类、搜索、管理员推荐与本机收藏；管理密码登录后可以在内容管理的「AI 导航」维护分类和入口。目录在本机读取 `data/ai-directory.json`，静态发布使用公开快照。
 
 一级入口「AI 大模型」位于 `/tools/ai-models`。更新时从 Artificial Analysis 保存语言智能指数、文生图、文生视频（含音频）与文本转语音（提供商原生音色）的中文榜单页面，再运行 `python3 scripts/update_model_ranking.py --language language.html --image image.html --video video.html --speech speech.html --as-of YYYY-MM-DD`（需要 beautifulsoup4 和 Pillow）。四榜各取最多 50 个已排名模型。先在本地检查四个标签、数据和日期，确认后发布同一份快照。
+
+## 「有点意思」日刊
+
+浏览入口是 `/journal`；每一期都有可直接访问的 `/journal?vol=N` 地址。新增日刊后，在 caselib 下执行：
+
+```sh
+python3 scripts/import_journal.py "../../Design Reports/Vision Design 设计日报/daily"
+```
+
+导入器只读取正式命名的 `Vol.N 有点意思 A Little Something.html`，沿用原刊期号、日期、正文和配图，在 `static/journal/` 更新目录及阅读页；不会修改日报源文件或 CMS 记录。
 
 ## 运行
 
@@ -68,7 +78,7 @@ python3 server.py --host 127.0.0.1 --port 8787          # 只用 Python 标准�
 
 - 首次启动自动生成密码，保存在本机 `data/cms_initial_password.txt`（权限 600）；认证文件 `data/cms_password.json` 只存加盐 scrypt 哈希。也可在首次启动时用 `CASELIB_CMS_INITIAL_PASSWORD` 指定初始密码。
 - 登录后可以在「账号设置」修改密码（至少 12 个字符）。修改后删除初始密码文件并注销全部会话。浏览器使用 12 小时有效的 HttpOnly / SameSite Cookie，不在 localStorage 保存密码或 token。退出会注销当前会话；服务重启需要重新登录。
-- 「新建内容」支持视频案例、灵感库、平面、品牌 Skill、Skill 仓库。可以填写标题、分类、介绍、来源、Prompt、操作步骤、工具、版本与标签，上传封面、图片、视频和 MD / TXT / PDF 附件。
+- 「新建内容」支持 AI 视频案例、灵感库、平面、品牌 Skill、Skill 仓库。可以填写标题、分类、介绍、来源、Prompt、操作步骤、工具、版本与标签，上传封面、图片、视频和 MD / TXT / PDF 附件。
 - 流程：**保存草稿 → 提交审核 → 审核并发布**。普通用户仅能访问已发布内容与关联的站内素材；草稿、审核意见、内部备注与未审核的修改不对外展示。
 - 已发布内容再次编辑会保存独立修订稿，原版仍正常展示；新修订审核通过后才替换线上版本。退回时填写原因，修改后可再次提交；下架后前台隐藏，CMS 内保留内容。
 - 已下架内容可从列表或编辑页删除，确认后从内容库移除，平台内无法恢复。后端检查登录、CSRF、已下架状态与当前 `_version`，已发布内容和其他状态不可删除。删除的来源进入去重记录，避免自动采集重新加入；保留媒体文件以免损坏其他内容共用的素材。
@@ -100,7 +110,7 @@ bash /workspace/caselib/run_daily.sh
 
 ```json
 {"items": [
-  {"type": "case",                      // case = 视频案例（带复现方法）；showcase = 灵感库（纯展示）
+  {"type": "case",                      // case = AI 视频案例（带复现方法）；showcase = 灵感库（纯展示）
    "url": "https://x.com/<user>/status/<id>",
    "author": "@user", "title": "可选", "brand": "可选（showcase 用）",
    "text": "帖子正文", "date": "2026-11-03",
@@ -176,3 +186,5 @@ GitHub 来源的 Skill 维护在 `catalog/brand-skill-sources.json`。添加仓�
 `tests/e2e.py` 只做前台浏览回归，不发布或拒绝真实内容。CMS 的浏览器操作应使用独立的临时数据目录。
 
 首次安装浏览器测试依赖：`python3 -m pip install playwright`，然后 `python3 -m playwright install chromium`。运行 `python3 tests/browser_routes.py` 会启动临时服务器，检查桌面和移动端的密码登录、管理工作台、卡片编辑、Skill 排序、AI 导航以及使用说明。在已安装 Chrome 的 Mac 上也可以用 `BROWSER_CHANNEL=chrome python3 tests/browser_routes.py`。
+
+匿名链接投稿的收件服务、本地同步和媒体处理设置见 [私密投稿](docs/submissions.md)。

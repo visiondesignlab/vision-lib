@@ -13,6 +13,7 @@ from brand_presentation import presentation_assets
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from case_tags import suggested_tags
 import store
 
 
@@ -85,7 +86,7 @@ def fetch_skill(spec):
         samples.append({'label': label, 'url': public_path})
     if not samples:
         raise ValueError(f'{repository} needs a published example.')
-    return {
+    result = {
         'id': cid, 'type': 'brand_skill', 'brand': 'viaim', 'trust': '官方',
         **{key: spec[key] for key in ('title','category','subtitle','description','prompt','how_to','tags')},
         'version': sha[:7], 'media': {'kind':'image', 'thumbnail': samples[0]['url'], 'images':[s['url'] for s in samples]},
@@ -97,6 +98,8 @@ def fetch_skill(spec):
                              'cover_count':spec.get('cover_count', 1), 'sample_source':spec.get('sample_source',''),
                              'docs':[{'name':label,'url':f'{url}/blob/{sha}/{path}'} for label,path in [('Skill 文档','SKILL.md'), *spec['docs']]]},
     }
+    result['tags'] = suggested_tags(result)
+    return result
 
 
 def main():

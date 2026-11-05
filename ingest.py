@@ -29,6 +29,7 @@ Exit code 0 on success; prints a one-line JSON summary at the end (for the sched
 import argparse, glob, html, json, os, re, shutil, sys, time, urllib.parse, urllib.request, urllib.robotparser
 from datetime import datetime, timezone
 import store, mediautil, xsource
+from case_tags import suggested_tags
 
 UA = "LaunchCaseLib-ingest/1.0 (+internal team gallery; polite crawler)"
 LVG = "https://launchvideos.gallery"
@@ -56,6 +57,7 @@ def base_record(**kw):
                skills=[], tools=[], assets=[], tags=[], featured=False, trust="社区", status="pending",
                version="1.0.0", added_at=store.now_iso(), updated_at=store.now_iso(), ingested_by="ingest.py")
     rec.update(kw)
+    rec["tags"] = suggested_tags(rec)
     return rec
 
 
@@ -102,7 +104,7 @@ def src_github(known, limit):
                 prompt=f"把 {repo} 安装为这个 coding agent 的 skill：克隆 {u} ，阅读 README，把整个文件夹放进 skills 目录。然后按 README 的示例做一支 30 秒产品 launch 视频，先给我镜头表确认。",
                 how_to=["审核时先打开仓库确认与视频制作相关，再补充用途、分类和步骤。"],
                 skills=[{"name": repo.split("/")[1], "repo": repo, "url": u}],
-                tags=["GitHub 搜索", q] + (it.get("topics") or [])[:5]))
+                tags=(it.get("topics") or [])[:5]))
             if len(out) >= limit:
                 return out
         time.sleep(7 if not tok else 1)  # unauthenticated search: 10 req/min

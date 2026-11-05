@@ -1,0 +1,74 @@
+
+<header>
+<h1>Vol.8 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-10-30 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天最有意思的，不是 agent 又会了什么，而是它终于开始交代自己在哪里干活、能碰什么、花谁的钱。Webflow 把 agent 的“在场”做进画布；Vercel 把模型请求留在 host，把文件和 shell 关进 sandbox；GitHub 则把自动选模型背后的计费写到了台面上。</p>
+<p>这些更新看起来分散，其实都在补同一块：执行过程要能被人看见，权限边界要能被人理解，账单也不能等月底再解释。能力已经够多了，现在更缺的是一套不让团队心里发虚的控制面。</p>
+<h2>● AI Coding</h2>
+<h3>GitHub Copilot Fusion<a class="source-url" href="https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-10-28-route-and-orchestrate-models-with-github-copilot-fusion</a></h3>
+<p class="mixed-script">Copilot Fusion 已正式开放给所有 Copilot 套餐。它不再让人手动挑单一模型，而是按 Standard、High、Max 三档努力程度，在 Single、Cascade、Critique 三种流程里调度多个模型。管理员仍能限制它可用的模型，也能把某一档 Fusion 设为默认。</p>
+<p>这里有个容易被“自动选模型”四个字盖住的细节：每个被调用的模型都按各自标准费率计费，付费套餐目前只是限时打七折。省掉的是选择成本，不是模型成本。团队真要把它设成默认，先看一周真实任务的模型构成和 AI credits，再决定哪一档适合日常使用。</p>
+<h3>GitHub Enterprise now includes access to GitHub Copilot<a class="source-url" href="https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-10-28-github-enterprise-now-includes-access-to-github-copilot</a></h3>
+<p class="mixed-script">GitHub Enterprise 现在可以把 Copilot 权限直接带给每个 licensed user；没有 Enterprise 席位的人，也能用每月 10 美元的 Copilot Standalone 接入同一套能力。听起来像“包含”，但每席没有附送 AI credits，第一次请求就开始吃企业预算。</p>
+<p class="mixed-script">预算见底后，代码补全和 next edit suggestion 还在，Chat、code review 和 cloud agent 会停。这种拆法很诚实：权限、用量和功能降级是三件事。以后做 AI 套餐页，别再用一个“已开通”把它们揉成一团。</p>
+<h3>Flatbread<a class="source-url" href="https://flatbread.io" rel="noopener noreferrer" target="_blank">https://flatbread.io</a></h3>
+<figure><img alt="Flatbread 把完整 agent 运行记录做成一条可分享链接" decoding="async" height="630" loading="lazy" src="01.png" width="1200"/><figcaption>Flatbread 把完整 agent 运行记录做成一条可分享链接</figcaption></figure>
+<p class="mixed-script">Flatbread 把一次 Claude Code、Codex 或 Cursor 会话整理成一个链接：用户问了什么、agent 试过什么、哪里坏了、怎么修好的，以及最后的 diff，都在一页里。敏感信息先在本机清理，上传前还要人工确认；另一个 agent 也能从这条记录继续跑。</p>
+<p>难得的不是“分享会话”，而是它没把失败步骤删掉。团队评审最需要看的，往往正是 agent 走过哪条弯路、为什么后来改了方向。还没拿真实项目试过，先不替它背书；但这个产品定义比“贴一张成功截图”靠谱多了。</p>
+<h3>The fx adapter now runs the harness on the host<a class="source-url" href="https://vercel.com/changelog/fx-harness-adapter-now-separates-host-and-sandbox" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/fx-harness-adapter-now-separates-host-and-sandbox</a></h3>
+<figure><img alt="Vercel fx adapter 将 harness 留在 host，把文件与 shell 操作隔离到 sandbox" decoding="async" height="2520" loading="lazy" src="02.png" width="4800"/><figcaption>Vercel fx adapter 将 harness 留在 host，把文件与 shell 操作隔离到 sandbox</figcaption></figure>
+<p class="mixed-script">Vercel 重写了 AI SDK 的 fx adapter：harness 和模型请求跑在应用进程，文件系统与 shell 操作留在 sandbox，模型凭证也不再进入 agent 执行命令的环境。新版还补了内置工具过滤、执行中追加指令、结构化输出、图片结果和跨 host 恢复会话。</p>
+<p class="mixed-script">这比“全都塞进沙箱”更像一条能维护的边界：凭证归 host，危险动作归 sandbox，人还能在中途改口。设计 agent 控制面时，至少要把这三层分开画，不要只放一个笼统的 Allow all tools。</p>
+<h2>● Design Systems</h2>
+<h3>Agent presence on the canvas<a class="source-url" href="https://webflow.com/updates/agent-presence-on-the-canvas" rel="noopener noreferrer" target="_blank">https://webflow.com/updates/agent-presence-on-the-canvas</a></h3>
+<p class="mixed-script">Webflow 以前已经能在 activity log 里追溯 agent 改了什么，现在又把 agent 的实时位置放进画布，显示方式和队友 presence 一样。通过 Webflow MCP 接入的 agent 在哪里工作，其他人能当场看见；这项能力面向所有用户，不额外收费。</p>
+<p>光标当然不能解决冲突，但它补上了关键的一秒：改动还没发生时，人就知道“这里有人在动”。协作产品如果只做事后日志，用户看到的是事故报告；presence 才是正在施工的路障。</p>
+<h3>Component slot defaults<a class="source-url" href="https://webflow.com/updates/component-slot-defaults" rel="noopener noreferrer" target="_blank">https://webflow.com/updates/component-slot-defaults</a></h3>
+<p>Webflow 的组件 slot 现在可以预装一个默认组件。主卡片里把按钮设为默认，之后新放入页面的卡片就自带按钮；主组件更新默认值时，仍在使用该默认值的实例会跟着更新，营销同学也可以替换、清空或一键复原。</p>
+<p class="mixed-script">空 slot 对设计师是自由，对接手的人常常只是“不知道该放什么”。默认值把推荐用法直接塞进组件，而不是塞进另一页规范文档。它和 slot restriction、show / hide control 一起看，才是一套能交给非设计师使用的组件边界。</p>
+<h2>● Products</h2>
+<h3>Enclave<a class="source-url" href="https://enclavepro.space" rel="noopener noreferrer" target="_blank">https://enclavepro.space</a></h3>
+<figure><img alt="Enclave 把会议、音乐和 agent 状态收进 MacBook 刘海区域" decoding="async" height="630" loading="lazy" src="03.jpg" width="1200"/><figcaption>Enclave 把会议、音乐和 agent 状态收进 MacBook 刘海区域</figcaption></figure>
+<p class="mixed-script">Enclave 把 MacBook 刘海做成一个随用随开的状态台。音乐、会议、下载已经够热闹，它还接了 Claude Code、Codex、Cursor、GitHub 和 Vercel：agent 等审批、测试结束、部署失败，都能在这里冒一下，再安静收回去。官网写明免费版可长期用，Pro 是一次性 5 美元，处理尽量留在本机。</p>
+<p>往刘海里塞“所有东西”很容易变成新的通知中心，但 agent 等人批准这件事确实适合放这里：它短、紧急、处理完就消失。还没实测权限和误触，先记产品取舍，不急着夸执行质量。</p>
+<h3>Vercel Connect adds webhook triggers for more providers<a class="source-url" href="https://vercel.com/changelog/vercel-connect-adds-webhook-triggers-for-more-providers" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-connect-adds-webhook-triggers-for-more-providers</a></h3>
+<p class="mixed-script">Vercel Connect 新增 Resend、X、Twilio、Notion 和 Telegram webhook triggers。它负责验证请求、处理 provider heartbeat 和 verification challenge，再把事件转给项目 endpoint；Resend 与 Telegram 可以自动注册，其他三家还得回 provider 后台完成设置。事件进来后，Observability 里能直接看 live log。</p>
+<p class="mixed-script">这不是最性感的更新，却会直接缩短交互原型的接线时间。邮件到达、Telegram 消息、Notion 更新都能变成产品状态，不必每次先写一层 webhook 胶水。省下来的不是代码量，是“这个原型到底能不能接真实事件”的等待。</p>
+<h2>● Design Engineering</h2>
+<h3>Control AI crawlers and assistants separately in Vercel Firewall<a class="source-url" href="https://vercel.com/changelog/block-ai-crawlers-and-assistants-independently-with-managed-rules" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/block-ai-crawlers-and-assistants-independently-with-managed-rules</a></h3>
+<p class="mixed-script">Vercel Firewall 现在把 AI crawlers 和 AI assistants 分开管：前者收集内容做索引或训练，后者在用户发起搜索、提问时临时取页面。两类 bot 可以分别 log 或 block，改动还能先用 <code>vercel firewall diff</code> 检查再发布；所有套餐都能用。</p>
+<p>“允许 AI / 禁止 AI”这个开关早就不够了。内容团队可能不愿意被批量抓去训练，却希望用户通过助手找到自己的文档。策略页里最好直接列出对象、用途、动作和最后更新时间，别让品牌、法务和工程各自维护一份猜测。</p>
+<h3>Vercel Flags starts 7x faster<a class="source-url" href="https://vercel.com/changelog/vercel-flags-starts-7x-faster-and-no-longer-extends-function-duration" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-flags-starts-7x-faster-and-no-longer-extends-function-duration</a></h3>
+<figure><img alt="Vercel Flags 冷启动初始化缩短，并停止延长 function duration" decoding="async" height="1256" loading="lazy" src="04.png" width="2400"/><figcaption>Vercel Flags 冷启动初始化缩短，并停止延长 function duration</figcaption></figure>
+<p class="mixed-script">Vercel Flags 把 flag datafile 跟部署一起打包，函数启动时先在本地读版本，不再为确认最新 revision 多等一次网络。官方内部测试里，p75 冷启动初始化从 70ms 以上降到 10ms，冷热调用的 p99 flag read 低于 1ms。usage reporting 也不再靠 <code>waitUntil</code> 拖住函数时长。</p>
+<p class="mixed-script">实验开关最烦的不是慢到不能用，而是每次只多几十毫秒，最后没人敢查它。这个更新把“观察实验”从请求尾巴上挪开了。数据来自官方内部测试，真实收益还得看自己的 runtime 和地区；升级到 <code>@flags-sdk/vercel</code> 1.5.3 后再量一次，别拿 7x 当通用承诺。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Average Friends「u know i luv u」— Bill Plympton<a class="source-url" href="https://www.stashmedia.tv/animation-icon-bill-plympton-is-back-with-a-trippy-music-video-for-average-friends/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/animation-icon-bill-plympton-is-back-with-a-trippy-music-video-for-average-friends/</a></h3>
+<figure data-film-source="https://www.youtube.com/watch?v=Xe3Jt8d2xnU"><img alt="Bill Plympton 用手绘变形和重复队列制作 Average Friends 音乐视频" decoding="async" height="1080" loading="lazy" src="05.jpg" width="1920"/><figcaption>Bill Plympton 用手绘变形和重复队列制作 Average Friends 音乐视频</figcaption></figure>
+<p class="mixed-script">视频：YouTube 原片<a class="source-url" href="https://www.youtube.com/watch?v=Xe3Jt8d2xnU" rel="noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=Xe3Jt8d2xnU</a>｜来源：Stash 文章<a class="source-url" href="https://www.stashmedia.tv/animation-icon-bill-plympton-is-back-with-a-trippy-music-video-for-average-friends/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/animation-icon-bill-plympton-is-back-with-a-trippy-music-video-for-average-friends/</a></p>
+<p class="mixed-script">Bill Plympton 八十岁了，画面还是一眼就认得出来：铅笔线会抖，颜色不填满，人物随时能被拉成长蛇、嘴唇、眼球和一排重复的队列。这支片由 Kickstarter 支持，并在 2026 Woodstock Film Festival 首映，没有试图把手绘修得像矢量动画一样干净。</p>
+<p>真正好看的地方，是每次变形都踩着歌曲的短句发生：一段旋律不是配一组装饰，而是触发一个视觉笑话。做产品动效也能借这个方法——先给一个状态配一个动作规则，再让规则在不同对象上变形；别从“这一屏加什么特效”开始。</p>
+<h2>● Stash 最新内容观察</h2>
+<ul>
+<li>Bill Plympton × Average Friends<a class="source-url" href="https://www.stashmedia.tv/animation-icon-bill-plympton-is-back-with-a-trippy-music-video-for-average-friends/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/animation-icon-bill-plympton-is-back-with-a-trippy-music-video-for-average-friends/</a>｜hand-drawn / music video：<strong>已升级为今日主卡</strong>。手绘的不稳定不是瑕疵，而是节奏和幽默的发动机。</li>
+<li>Lumbre × Mega Chile<a class="source-url" href="https://www.stashmedia.tv/fun-color-in-style-lumbre-keeps-it-mega-for-mega-chile/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/fun-color-in-style-lumbre-keeps-it-mega-for-mega-chile/</a>｜broadcast package / 2D × 3D：10 月 29 日已观察。一个 logo 拆成几何语法后，才有资格覆盖频道、App、社媒和信息图。</li>
+<li>Someform Studio × Hyperice × Nike Hyperslide<a class="source-url" href="https://www.stashmedia.tv/someform-studio-slips-into-the-hyperslide-for-hyperice-nike/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/someform-studio-slips-into-the-hyperslide-for-hyperice-nike/</a>｜product launch / CG：10 月 29 日主卡，不再重写。缓震、振动和加热分别有自己的运动，不靠字幕讲功能。</li>
+<li>Spot Studio × Felipe Pantone × Etnia Barcelona<a class="source-url" href="https://www.stashmedia.tv/art-eyewear-collide-in-spot-studios-new-film-for-felipe-pantone-x-etnia-barcelona/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/art-eyewear-collide-in-spot-studios-new-film-for-felipe-pantone-x-etnia-barcelona/</a>｜product film / art collaboration：10 月 28 日主卡。继续等制作方放镜片、铰链和 glitch 合成 breakdown。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Copilot Fusion 在真实团队里的模型构成、AI credits 和失败回退，别只看官方 benchmark。</li>
+<li>Webflow agent presence 有没有冲突提示、锁定范围和撤回入口；“看见”之后还要能处理。</li>
+<li>Flatbread 的私有链接、团队权限和 redaction 边界；失败记录能不能安全地留下来。</li>
+<li>Stash 10 月 30 日之后的新片；Average Friends 已登记，不连续复述。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日主题：Copilot Fusion、GitHub Enterprise Copilot 计费、Flatbread、Vercel fx adapter、Webflow agent presence、component slot defaults、Enclave、Vercel Connect triggers、Vercel AI bot rules、Vercel Flags 性能。</li>
+<li>今日视频：Bill Plympton × Average Friends「u know i luv u」；主来源为 Stash 落地页与 YouTube <code>Xe3Jt8d2xnU</code>。</li>
+<li>今日 Stash：Average Friends 主卡；Mega Chile、Hyperslide、Spot Studio 只作近期已覆盖边界。</li>
+<li>继续避免：10 月 29 日的 GitHub Replica、Copilot 图片生成、Issue artifacts、Adobe Firefly 管理控制、OpenStitch、BeatDesign、Copilot Automations、Firefox 159、Hyperslide；除非出现真实项目、价格变化、权限边界或制作 breakdown，不换一套形容词重发。</li>
+</ul>
+<p class="mixed-script verification">核验说明：GitHub、Webflow、Vercel、Flatbread、Enclave 与 Stash 官方页面于 2026-10-30 回读。正文嵌图原始宽度为 1200–4800px，并逐张目视检查；主视频为 YouTube 原片，飞书发布使用 URL Preview，不插入独立封面图。</p>

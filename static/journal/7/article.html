@@ -1,0 +1,69 @@
+
+<header>
+<h1>Vol.7 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-10-29 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">GitHub 昨晚一口气把原型、图片、研究稿和自动化都塞回了仓库。不是又造了一个万能画布，而是让设计产物开始跟着 issue、分支和项目一起活着——这条路比单独开一个 AI 设计网站靠谱得多。</p>
+<p class="mixed-script">但热闹归热闹，账还是要看。Copilot 生成图片单独扣 AI credits，Replica 要先喂团队组件，OpenStitch 想跑得像样还得准备本地模型。今天真正该拿走的，不是“AI 也会做设计了”，而是三件更具体的事：结果能不能继续编辑、上下文能不能留住、钱和权限有没有闸门。</p>
+<h2>● AI Design</h2>
+<h3>Replica<a class="source-url" href="https://github.blog/changelog/2026-10-28-introducing-replica-an-open-source-ai-prototyping-tool/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-10-28-introducing-replica-an-open-source-ai-prototyping-tool/</a></h3>
+<figure><img alt="GitHub Design 开源的 Replica 原型工具" decoding="async" height="1260" loading="lazy" src="01.jpg" width="2400"/><figcaption>GitHub Design 开源的 Replica 原型工具</figcaption></figure>
+<p class="mixed-script">GitHub Design 把内部原型工具 Replica 开源了，MIT 许可。它不是白纸生页面：先读团队已有的组件、模式和文档，再从 Copilot 对话里长出可交互原型；本地能跑，也可以自托管 Replica Hub 给同事看和评论。</p>
+<p>这方向我认。通用生成器最大的问题，从来不是首屏不够漂亮，而是根本不认识你们家的按钮、表格和权限逻辑。Replica 把“设计系统由谁定义”留给设计师，把快速拼原型交给全团队，分工比一句 prompt 包打天下清醒得多。还没实测，先盯两个地方：旧组件升级后原型会不会一起漂，以及生成结果到底有多少是可维护代码。</p>
+<h3>Generate and edit images directly in Copilot<a class="source-url" href="https://github.blog/changelog/2026-10-28-generate-and-edit-images-directly-in-copilot/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-10-28-generate-and-edit-images-directly-in-copilot/</a></h3>
+<figure><img alt="Copilot 在项目里直接生成和编辑图片" decoding="async" height="1260" loading="lazy" src="02.jpg" width="2400"/><figcaption>Copilot 在项目里直接生成和编辑图片</figcaption></figure>
+<p class="mixed-script">Copilot App、VS Code 和 CLI 现在都能在对话里生成或修改图片，底层是 GPT Image 2.5 Flare。结果会在当前会话预览，并直接存进项目。公测覆盖 Pro、Pro+、Business 和 Enterprise，但图片 tokens 单独计入 AI credits；“Made with AI” 水印可选，而且默认关闭。</p>
+<p>省掉来回搬图当然好，默认不加水印却有点欠考虑。仓库里的 placeholder、营销图和最终资产会很快混在一起，靠文件名猜来源迟早翻车。真要接进团队流程，先给生成目录、授权记录和人工确认加规矩，别等图片已经进发布分支才追问是谁做的。</p>
+<h2>● Design Workflow</h2>
+<h3>Issue artifacts<a class="source-url" href="https://github.blog/changelog/2026-10-28-issue-artifacts-are-now-in-public-preview/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-10-28-issue-artifacts-are-now-in-public-preview/</a></h3>
+<figure><img alt="GitHub issue 里挂载 Markdown、链接和 HTML artifact" decoding="async" height="1260" loading="lazy" src="03.png" width="2400"/><figcaption>GitHub issue 里挂载 Markdown、链接和 HTML artifact</figcaption></figure>
+<p class="mixed-script">GitHub issue 终于不只剩评论串了。公开预览里的 artifacts 可以挂 Markdown、外部链接和 HTML，HTML 还能在渲染结果与源码之间切换；计划、研究、流程图、交互 demo 都能跟着 issue 留版本。CLI 也配了 create、edit、view、download 等完整命令。</p>
+<p>设计交付最容易丢的，正是那些“讨论过但没进稿”的东西。把原型、决策和研究贴回任务现场，比再建一份叫“最终最终版”的文档强。唯一要克制的是别把每个 agent 输出都存进去——能改变实现和验收的留下，思维过程垃圾不要永久收藏。</p>
+<h3>Firefly AI Assistants 组织级开关<a class="source-url" href="https://community.adobe.com/announcements-623/admins-control-access-to-firefly-ai-assistants-in-your-organization-1653035" rel="noopener noreferrer" target="_blank">https://community.adobe.com/announcements-623/admins-control-access-to-firefly-ai-assistants-in-your-organization-1653035</a></h3>
+<p class="mixed-script">Adobe 给 Enterprise CCE 4/5 管理员加了组织级开关，可以停掉 Firefly-powered AI assistants，又不影响 Photoshop、Express 等产品本身继续用。这里有个容易看漏的边界：关 assistant 不等于关生成式 AI，Firefly 模型和第三方模型还要去各自的 model controls 管。</p>
+<p class="mixed-script">一个总开关听起来很省心，实际是两层权限。安全评审如果只问“AI 助手关了没有”，答案可能完全错误。采购和 IT 该把 assistant、生成模型、可读内容范围分开登记，不然表面封了门，窗户还开着。</p>
+<h2>● Products</h2>
+<h3>OpenStitch<a class="source-url" href="https://github.com/heldernoid/openstitch" rel="noopener noreferrer" target="_blank">https://github.com/heldernoid/openstitch</a></h3>
+<p class="mixed-script">OpenStitch 是个本地跑的开源 UI 工具：文字、截图或手绘线框都能转成 HTML，画布里能连页面流程，Play Mode 可以直接点，导出带 DESIGN.md 和逐屏代码。它还内置 50 多套设计系统，默认用 Ollama，本地生成不必上云。</p>
+<p class="mixed-script">先别被“本地”两个字哄住。README 推荐的 Qwen3 Coder 30B 就要 19GB，截图转 UI 想要最佳效果，推荐视觉模型更是 80GB；项目目前没有认证，作者明确写着不要把端口暴露到公网。32 stars、4 次提交，像一台很有意思的试验机，不是今天就能给全公司装的 Figma 替代品。</p>
+<h3>BeatDesign v0.2.5<a class="source-url" href="https://github.com/BeatAPI/BeatDesign" rel="noopener noreferrer" target="_blank">https://github.com/BeatAPI/BeatDesign</a></h3>
+<figure><img alt="BeatDesign 把生成画布、资产和时间线放在同一项目" decoding="async" height="887" loading="lazy" src="04.jpg" width="1774"/><figcaption>BeatDesign 把生成画布、资产和时间线放在同一项目</figcaption></figure>
+<p class="mixed-script">BeatDesign 把 AI 图片、视频生成、无限画布和时间线放在同一个本地项目里。生成结果不是聊天记录里的死图，而会变成 Canvas、Editor 和 MCP 共用的 Asset；Codex、Claude Code、Cursor 都能操作同一份项目。v0.2.5 还补了 generation version 对齐、音频增益和浏览器 MP4 导出。</p>
+<p class="mixed-script">这个“共用资产”比又一个生成模型更值钱。很多 AI 视频工具的问题不是不会出片，是每次出片都把上一轮上下文扔掉。BeatDesign 至少在认真修生产链条。不过内置生成走 BeatAPI，本地导入、剪辑和导出才不需要 key；别把 local-first 写成全程免费。还没实测，先不替它吹稳定性。</p>
+<h2>● Design Engineering</h2>
+<h3>Copilot Automations：终于能给 AI 花费上限<a class="source-url" href="https://github.blog/changelog/2026-10-28-new-tools-triggers-and-cost-controls-for-copilot-automations/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-10-28-new-tools-triggers-and-cost-controls-for-copilot-automations/</a></h3>
+<p class="mixed-script">Copilot Automations 新增外部 API 触发、24 个 GitHub 事件、20 个工具、自定义 MCP 和链式运行。更实际的是 AI credits 能按每次、每天、每周或每月设限；到线后，当前运行会停，后续运行等周期重置。</p>
+<p class="mixed-script">这才像能放进团队的自动化。没有预算上限的 agent，不叫自动化，叫月末惊喜。视觉回归、截图归档、issue 分流这类任务都可以接，但先把单次上限和失败回读写好——尤其不要让一个坏 selector 触发一整夜自我修复。</p>
+<h3>Firefox 159：scroll-driven animations 默认开启<a class="source-url" href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/159" rel="noopener noreferrer" target="_blank">https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Releases/159</a></h3>
+<p class="mixed-script">Firefox 159 已默认启用 scroll-driven animations，滚动进度可以直接驱动动画，不再非得用一套监听器和 <code>requestAnimationFrame</code> 搭时间轴。旧的 masonry 实验语法则被移除，后续走 grid lanes。</p>
+<p class="mixed-script">对产品页来说，这是个很实在的兼容性节点。能用 CSS 做的滚动效果，就少养一点 JavaScript；但“浏览器支持”不等于“手机上该铺满动画”。先挑一个现在靠 scroll listener 驱动的段落重写，顺便把 <code>prefers-reduced-motion</code> 和低端机退化一起补上。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Someform Studio × Hyperice × Nike Hyperslide<a class="source-url" href="https://www.stashmedia.tv/someform-studio-slips-into-the-hyperslide-for-hyperice-nike/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/someform-studio-slips-into-the-hyperslide-for-hyperice-nike/</a></h3>
+<figure data-film-source="https://player.vimeo.com/video/1239323189"><img alt="Hyperice × Nike Hyperslide 用暖红光表现加热功能" decoding="async" height="1080" loading="lazy" src="05.jpg" width="1920"/><figcaption>Hyperice × Nike Hyperslide 用暖红光表现加热功能</figcaption></figure>
+<p class="mixed-script">视频：Vimeo 原片播放器<a class="source-url" href="https://player.vimeo.com/video/1239323189" rel="noopener noreferrer" target="_blank">https://player.vimeo.com/video/1239323189</a>｜制作：Someform Studio<a class="source-url" href="https://someform.studio/" rel="noopener noreferrer" target="_blank">https://someform.studio/</a></p>
+<p class="mixed-script">Hyperslide 把 Nike Air Zoom 缓震和 Hyperice 的加热、振动塞进一双恢复拖鞋。Someform 没拿三个功能做 PPT，而是给它们各找了一个动作：软球承托缓震，细密脉冲表现振动，暖红光从鞋面内部慢慢透出来。整支片子的沙色基调很安静，红光只在功能启动时出现，所以那一下真的像“热起来了”，不是随便加的科技霓虹。</p>
+<p>更聪明的是镜头一直贴着产品结构走。圆形 Pod、织物、气垫和鞋底沟槽都变成转场依据，抽象段落没有离开物件。做功能型硬件片可以直接抄这个原则：每个卖点先找一个可感知的物理隐喻，再决定材质、运动和声音；别先选一套炫技风格，再逼产品去配合它。网页上也一样，三段功能无需三个小视频，一套产品模型配三种状态就够。</p>
+<h2>● Stash 最新内容观察</h2>
+<ul>
+<li>Someform Studio × Hyperice × Nike Hyperslide<a class="source-url" href="https://www.stashmedia.tv/someform-studio-slips-into-the-hyperslide-for-hyperice-nike/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/someform-studio-slips-into-the-hyperslide-for-hyperice-nike/</a>｜product launch / CG：已升级为今日主卡。缓震、振动和加热都被翻译成可感知的运动，不靠字幕硬讲。</li>
+<li>Lumbre Keeps it Mega for Mega Chile<a class="source-url" href="https://www.stashmedia.tv/fun-color-in-style-lumbre-keeps-it-mega-for-mega-chile/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/fun-color-in-style-lumbre-keeps-it-mega-for-mega-chile/</a>｜broadcast package / 2D × 3D：把 Mega 标志拆成药丸、拱形、圆和半圆，再铺到频道、App、社媒和信息图里。适合看“一个 logo 怎么长成整套动态语法”。</li>
+<li>Spot Studio × Felipe Pantone × Etnia Barcelona<a class="source-url" href="https://www.stashmedia.tv/art-eyewear-collide-in-spot-studios-new-film-for-felipe-pantone-x-etnia-barcelona/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/art-eyewear-collide-in-spot-studios-new-film-for-felipe-pantone-x-etnia-barcelona/</a>｜product film / art collaboration：10 月 28 日已做主卡，今天不再重写。继续留意制作方会不会放镜片、铰链和 glitch 合成 breakdown。</li>
+<li>K/DA “Firestarter”<a class="source-url" href="https://www.stashmedia.tv/back-from-the-dead-fortiche-drops-new-k-da-firestarter-music-video-for-lol/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/back-from-the-dead-fortiche-drops-new-k-da-firestarter-music-video-for-lol/</a>｜character animation / music video：10 月 27 日已覆盖。角色编舞和长镜头仍值得看，但不拿旧片撑今天的数量。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Replica 对自有组件的映射方式：是读代码、Storybook，还是另建一层描述；组件升级后如何追踪。</li>
+<li>Copilot 生成图片进仓库后的来源标记、许可记录与企业水印策略。</li>
+<li>GitHub issue artifact 的 HTML sandbox、安全边界和设计评审注释能力。</li>
+<li>OpenStitch / BeatDesign 有没有真实项目、安装包和较长流程的稳定性反馈。</li>
+<li>Stash 10 月 29 日之后的新片；Hyperslide 与 Mega Chile 已登记，不连续滚动复述。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日新增：GitHub Replica、Copilot 项目内生成图片、Issue artifacts、Adobe Firefly AI Assistant 管理开关、OpenStitch、BeatDesign v0.2.5、Copilot Automations 成本上限、Firefox 159 scroll-driven animations。</li>
+<li>今日视频：Someform Studio × Hyperice × Nike Hyperslide；主来源为 Stash 落地页与 Vimeo player <code>1239323189</code>。</li>
+<li>今日 Stash：Hyperslide 主卡、Mega Chile 新增观察；Spot Studio 与 K/DA 只作近期已覆盖边界。</li>
+<li>继续避免：Figma 生成式插件版本历史、Canva × Claude Design、Framer CMS 多人光标、MakeAFont 1.0、Plane Propel、Vercel Agent 降本、Vercel AI traffic、Spot Studio × Felipe Pantone、K/DA《Firestarter》；除非价格、权限、真实项目或制作 breakdown 有新证据，不换一套形容词重发。</li>
+</ul>
+<p class="mixed-script verification">核验说明：GitHub、Adobe、OpenStitch、BeatDesign、MDN 与 Stash 官方页面于 2026-10-29 回读。正文嵌图原始宽度为 1774–2400px；OpenStitch 动图虽为 800px，细字仍偏糊，已主动省略。Hyperslide 的 Vimeo player 返回 200，飞书仍以回读到的 Preview / iframe 块为准；如果用户界面阻断，再按规则降级为 Stash 1920px 静态图。</p>

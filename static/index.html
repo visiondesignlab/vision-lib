@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="/static/assets/brand-skills.css">
 <link rel="stylesheet" href="/static/cms.css">
 <link rel="stylesheet" href="/static/guide.css">
+<link rel="stylesheet" href="/static/journal/journal.css">
 <link rel="stylesheet" href="/static/responsive.css">
 <link rel="icon" type="image/png" href="/static/vision-design-logo.png">
 </head>
@@ -22,18 +23,19 @@
 <a class="skip-link" href="#app">跳到内容</a>
 <header class="mobile-header">
   <a href="/" class="logo" data-link aria-label="Vision Lab 首页"><img src="/static/vision-design-logo.png" alt=""><span>Vision Lab</span></a>
-  <button type="button" class="nav-toggle" id="openNav" aria-label="打开主导航" aria-controls="primaryNav" aria-expanded="false"><span></span><span></span></button>
+  <button type="button" class="nav-toggle" id="openNav" aria-label="打开主导航" aria-controls="primaryNav" aria-expanded="false"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/static/icons/hugeicons.svg#menu"></use></svg></button>
 </header>
 <aside class="side">
   <div class="side-top">
     <a href="/" class="logo" data-link aria-label="Vision Lab"><img src="/static/vision-design-logo.png" alt="vision design"><span>Vision Lab</span></a>
-    <button type="button" class="nav-toggle nav-close" id="closeNav" aria-label="关闭主导航"><span></span><span></span></button>
+    <button type="button" class="nav-toggle nav-close" id="closeNav" aria-label="关闭主导航"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="/static/icons/hugeicons.svg#close"></use></svg></button>
   </div>
   <nav class="nav" id="primaryNav" aria-label="主导航">
     <h2>浏览</h2>
-    <a href="/?tab=video" data-link data-tab="video">视频案例</a>
+    <a href="/?tab=video" data-link data-tab="video">AI 视频案例</a>
     <a href="/?tab=showcase" data-link data-tab="showcase">灵感库 <em class="new">new</em></a>
-    <a href="/?tab=graphic" data-link data-tab="graphic">平面</a>
+    <a href="/journal" data-link data-tab="journal">有点意思</a>
+    <a href="/?tab=graphic" data-link data-tab="graphic">平面视觉</a>
     <a href="/?tab=skill_repo" data-link data-tab="skill_repo">Skill 仓库</a>
     <h2>工具</h2>
     <a href="/tools/ai-nav" data-link data-tab="ai-nav">AI 导航</a>
@@ -53,13 +55,16 @@
       <p id="about-description"></p>
       <p class="muted" id="stats"></p>
     </div>
-    <div class="foot"><span>© 2026 vision design 团队</span><a href="/review" class="pill-btn shadow" id="reviewBtn" data-link>管理员登录</a></div>
+    <div class="foot"><span>© 2026 vision design 团队</span>
+      <div class="foot-actions"><a class="pill-btn shadow submission-entry" href="/submit" data-link>提交作品</a><a href="/review" class="pill-btn shadow" id="reviewBtn" data-link>管理员登录</a></div>
+    </div>
   </div>
 </aside>
 <main id="app"></main>
 <div id="overlay" hidden></div>
 <div id="toast" hidden></div>
 <script src="/static/site.js"></script>
-<script src="/static/app.js"></script>
+<script src="/static/menu.js"></script>
+<script type="module" src="/static/app.js"></script>
 </body>
 </html>

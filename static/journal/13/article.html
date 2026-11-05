@@ -1,0 +1,75 @@
+
+<header>
+<h1>Vol.13 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-11-04 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天没有哪条更新是“看完立刻改行业”的大新闻，倒是有一批很像真活儿：Figma 开始把画布关系交给 code layer，Framer 把实验条件放进可编程漏斗，Vercel 和 GitHub 则继续给 agent 补权限、诊断和依赖更新。</p>
+<p class="mixed-script">共同点很朴素。AI 已经能写、能改、能跑，下一轮麻烦都在上下文有没有带全、失败后去哪找、每次自动动作要花多少钱。产品团队现在该盯的不是演示有多快，而是这些中间状态终于有没有地方落。</p>
+<h2>● Figma AI</h2>
+<h3>Your prototype connections, now context for code layers<a class="source-url" href="https://www.figma.com/release-notes/" rel="noopener noreferrer" target="_blank">https://www.figma.com/release-notes/</a></h3>
+<p class="mixed-script">Figma 的 code layer Agent 现在会读原型连线和 interaction，再决定组件怎么响应点击、悬停与页面跳转。过去从设计稿生成代码，最容易丢的恰好不是颜色和圆角，而是“按下去以后发生什么”；这次终于把那层关系也塞进上下文。</p>
+<p class="mixed-script">Code layers 仍在 open beta。先拿一段包含 overlay、back、条件分支的真实原型测，不要只测一个按钮跳下一页。连线能被看见不等于状态机能被还原，差别就在复杂交互一上来之后。</p>
+<h3>Clone connected GitHub repositories into Figma by default<a class="source-url" href="https://www.figma.com/release-notes/?title=close-connected-github-repositories" rel="noopener noreferrer" target="_blank">https://www.figma.com/release-notes/?title=close-connected-github-repositories</a></h3>
+<p class="mixed-script">新连接到 Figma 的 GitHub 仓库，现在默认允许被 clone；管理员可以按仓库关掉，已经存在的连接不会被改。它覆盖所有套餐，等于把“画布里的 agent 能不能拿到真实代码”从隐藏设置提到了默认路径。</p>
+<p class="mixed-script">默认开启很顺，但权限边界也跟着往前挪了一步。设计系统、营销站和 demo 仓库可以吃这份便利，带客户数据、内部脚本或敏感配置的仓库最好别顺手连。这里不是设计师多一个按钮，而是代码资产多了一个入口。</p>
+<h2>● Products</h2>
+<h3>Framer Convert Update<a class="source-url" href="https://www.framer.com/updates/convert-update" rel="noopener noreferrer" target="_blank">https://www.framer.com/updates/convert-update</a></h3>
+<p class="mixed-script">Framer Convert 的 Agent 已经能创建、编辑和分析 funnel 与 A/B test，也能改 trigger；overlay trigger 还可以按国家和地区触发。过去要在面板里点来点去的实验设置，开始能被一段任务描述批量搭出来。</p>
+<p class="mixed-script">这会让增长实验快很多，也会让“谁改了哪组流量条件”更难靠肉眼追。还没实测，先不下结论。真要用，第一轮就把命名、受众、默认 variant 和停止条件写成模板，否则 Agent 只是帮团队更快造出一堆没人敢删的实验。</p>
+<h2>● Design Engineering</h2>
+<h3>Vercel Security Review enters public beta<a class="source-url" href="https://vercel.com/changelog/vercel-security-review-public-beta" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-security-review-public-beta</a></h3>
+<figure><img alt="Vercel Security Review 把漏洞、严重等级、受影响分支与修复入口放在同一张团队视图里" decoding="async" height="1890" loading="lazy" src="01.jpg" width="3600"/><figcaption>Vercel Security Review 把漏洞、严重等级、受影响分支与修复入口放在同一张团队视图里</figcaption></figure>
+<p class="mixed-script">Vercel Security Review 面向 Pro 和 Enterprise 开放 beta。连接 GitHub 后，每次 push——包括 direct push 和 force push——都会触发源码审查；发现项会带项目、环境、分支、commit、严重等级和修复建议，也可以交给 Vercel Agent 开 PR。PR 仍要人批准，它不替你 merge。</p>
+<p class="mixed-script">边界要看清：这是源码 review，不是运行时监控，也不是渗透测试。11 月 10 日前免费，之后按模型 provider token rate，再加 Vercel 每百万 token 0.25 美元计费。每次 push 都跑一次，碎提交会直接变成账单。先给一个中等体量仓库跑一周，看看误报、平均 token 和单次修复成本，再决定要不要全团队铺开。</p>
+<h3>Vercel CI no longer requires a linked Vercel project<a class="source-url" href="https://vercel.com/changelog/vercel-ci-no-longer-requires-a-linked-vercel-project" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-ci-no-longer-requires-a-linked-vercel-project</a></h3>
+<p class="mixed-script">Vercel CI 现在可以直接跑私有 GitHub 仓库，不必先创建一个空 Vercel project。前提是 GitHub App 已获该仓库权限、账号已连接，操作者对仓库有 write 或 admin 权限。公开仓库和其他 Git provider 暂时还不支持。</p>
+<p class="mixed-script">这条不炫，但很适合设计工程里的截图回归、文档构建、token lint 这类任务：它们需要 CI，不一定需要一次 deployment。少一个“为了跑脚本而存在”的空项目，控制台会干净很多。</p>
+<h3><code>vercel doctor</code> diagnoses setup problems without changing anything<a class="source-url" href="https://vercel.com/changelog/vercel-cli-now-diagnoses-setup-problems-with-vercel-doctor" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-cli-now-diagnoses-setup-problems-with-vercel-doctor</a></h3>
+<p class="mixed-script"><code>vercel doctor</code> 会检查 CLI 版本、登录与 team、project link、<code>vercel.json</code> 和当前 incident，结果分成 OK、Warning、Failed、Skipped。它不要求先登录或 link，也不会替你做这两件事；<code>--json</code> 会给结构化状态和建议命令。</p>
+<p class="mixed-script">这种“只诊断，不擅自修”很适合 agent 接管。下一步不是让 agent 遇错就重装一遍，而是先读 <code>doctor --json</code>，只处理失败项，把改了什么留在日志里。终于不用拿一串模糊报错猜当前机器缺哪一步。</p>
+<h2>● Case Study</h2>
+<h3>How Zapier turns ideas into working software in hours with Vercel<a class="source-url" href="https://vercel.com/blog/how-zapier-turns-ideas-into-working-software-in-hours-with-vercel" rel="noopener noreferrer" target="_blank">https://vercel.com/blog/how-zapier-turns-ideas-into-working-software-in-hours-with-vercel</a></h3>
+<figure><img alt="Zapier Marketing OS 把六十多位营销同事的每日信息收进共享 brief" decoding="async" height="1844" loading="lazy" src="02.png" width="2560"/><figcaption>Zapier Marketing OS 把六十多位营销同事的每日信息收进共享 brief</figcaption></figure>
+<p class="mixed-script">这是一篇 Vercel 自家案例，数字先按供应商口径看。Zapier 团队用 Vercel 做内部工具：合作伙伴 demo 从几周压到两小时内，三款内部应用的第一版各用一天；Marketing OS 给六十多位营销同事汇总 daily brief，一个月里还跑了 330 万个 sandbox。</p>
+<p class="mixed-script">比“几小时做个应用”更有意思的是共享界面。团队没有给每个人塞一个新聊天框，而是把零散 agent 结果收进一张大家每天会看的 brief。内部 AI 产品如果没有共同入口、权限和可回看的状态，生成再快也只是私人脚本。</p>
+<h2>● AI Coding</h2>
+<h3>GitHub Copilot is now available in JetBrains Air<a class="source-url" href="https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air</a></h3>
+<figure><img alt="GitHub Copilot 在 JetBrains Air 里提供本地与云端任务、并行 session 和上下文 review" decoding="async" height="941" loading="lazy" src="03.png" width="1672"/><figcaption>GitHub Copilot 在 JetBrains Air 里提供本地与云端任务、并行 session 和上下文 review</figcaption></figure>
+<p class="mixed-script">GitHub Copilot 通过 ACP 进入 JetBrains Air，可以跑本地或云端任务、并行 session，也能在上下文里 review。云端任务每次进一台新的 Docker VM，经由代理联网，不继承上一轮状态；费用走 Copilot 订阅，不吃 JetBrains credits。</p>
+<p class="mixed-script">有个管理缺口别漏掉：Air 的 governance 和 analytics 看不到 Copilot 用量，管理员也不能在 Air 里给 Copilot 设预算。对个人是无感接入，对企业却是两套账本。上线前先决定使用数据去 GitHub 还是 JetBrains 看，别等月底才发现没人能解释并行 session 花到哪。</p>
+<h3>Dependabot version updates support Agent Package Manager<a class="source-url" href="https://github.blog/changelog/2026-11-03-dependabot-version-updates-support-agent-package-manager" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-03-dependabot-version-updates-support-agent-package-manager</a></h3>
+<figure><img alt="Dependabot 会根据 apm.yml 更新 Agent Package Manager 的 skill、prompt 和 instruction 依赖" decoding="async" height="630" loading="lazy" src="04.jpg" width="1200"/><figcaption>Dependabot 会根据 apm.yml 更新 Agent Package Manager 的 skill、prompt 和 instruction 依赖</figcaption></figure>
+<p class="mixed-script">Dependabot 现在能更新 Agent Package Manager 的 git 依赖。仓库里有 <code>apm.yml</code>，它就会开 PR 更新 skill、prompt 和 instruction，并重建 <code>apm.lock.yaml</code>。这是 version update，不是 security update；github.com 全套餐 GA，GHES 3.24 稍后跟进。</p>
+<p class="mixed-script">Agent 资产总算开始像代码依赖一样有版本和升级入口。不过 prompt 变了没有 semver 能替你兜底。PR 里除了看 diff，还得跑一组固定任务，至少比较输出结构、权限动作和失败方式。自动升级可以省人肉追版本，不能省回归。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Blinkink × Levi’s「Let’s Get Fuzzy」<a class="source-url" href="https://www.stashmedia.tv/blinkink-gets-fuzzy-at-a-cabin-in-the-woods-for-levis/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/blinkink-gets-fuzzy-at-a-cabin-in-the-woods-for-levis/</a></h3>
+<figure data-film-source="https://vimeo.com/1242832881"><img alt="Blinkink 用毛毡、针织和定格动画，把林中小屋恐怖片拧成 Levi’s 的节日毛衣广告" decoding="async" height="1080" loading="lazy" src="05.jpg" width="1920"/><figcaption>Blinkink 用毛毡、针织和定格动画，把林中小屋恐怖片拧成 Levi’s 的节日毛衣广告</figcaption></figure>
+<p class="mixed-script">视频：Vimeo 原片<a class="source-url" href="https://vimeo.com/1242832881" rel="noopener noreferrer" target="_blank">https://vimeo.com/1242832881</a>｜来源：Stash 制作解析<a class="source-url" href="https://www.stashmedia.tv/blinkink-gets-fuzzy-at-a-cabin-in-the-woods-for-levis/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/blinkink-gets-fuzzy-at-a-cabin-in-the-woods-for-levis/</a></p>
+<p class="mixed-script">Blinkink 导演组合 Stevie Gee 和 Essy May 先写了 14 版脚本，最后留下一个很笨、也很管用的故事：五个朋友躲进雪山小屋，以为门外是怪物；闯进来的 Yeti 其实只是冷，穿上 Levi’s 毛衣就安静了。六人搭建组做了六个半星期、两千多个小时，三座不同尺度的小屋和四百棵手工树才撑起这一分钟。</p>
+<p class="mixed-script">片子拿恐怖片的灯光和机位开场：冰洞、夜路、木屋里红绿串灯，角色先挤成一团，镜头才把 Yeti 推到脸前。后半段没有突然切成亮堂堂的商品片，毛衣仍留在同一套阴冷青色和暖橙火光里，只用夸张表情、狗和一件针织衫把威胁卸掉。动画师 Andy Biddle 每一帧都会轻碰角色衣服，让毛线持续“沸腾”；这点不干净的抖动，反而把 CG 最容易丢掉的手感留住了。</p>
+<p class="mixed-script">品牌片常把产品露出当暂停键，这支片没有。衣服是剧情解法，也是材质主角。做产品 motion 可以照着试一遍：先让某个材质承担故事功能，再决定 macro 和转场；别把针织、玻璃、金属只当最后一层 shader。Vimeo player 预检与带飞书来源头的请求都返回 200，飞书主卡将使用 player iframe，不另塞静态封面。</p>
+<h2>● Stash 最新内容观察</h2>
+<p class="mixed-script">11 月 3 日新增不多，真正能留下来的就三条。Flora、BFG 和 Crown Royal 都已经记过，不再换个说法充数。</p>
+<ul>
+<li>Blinkink Gets Fuzzy at a Cabin in the Woods for Levi’s<a class="source-url" href="https://www.stashmedia.tv/blinkink-gets-fuzzy-at-a-cabin-in-the-woods-for-levis/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/blinkink-gets-fuzzy-at-a-cabin-in-the-woods-for-levis/</a>｜stop motion / holiday film：<strong>已升级为今日主卡</strong>。恐怖片结构、毛毡角色和真实针织被绑在一条故事里，产品不是片尾硬塞进来的。</li>
+<li>Motion Plus Design Returns to Paris 2026<a class="source-url" href="https://www.stashmedia.tv/motion-plus-design-returns-to-paris-2026/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/motion-plus-design-returns-to-paris-2026/</a>｜motion conference：11 月 14 日回到巴黎。值得盯的是现场 speaker reel 和学生作品，不是又一张活动海报；它通常能提前暴露明年的 motion 语言。</li>
+<li>Motion North 2027 Goes Big<a class="source-url" href="https://www.stashmedia.tv/motion-north-2027-goes-big/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/motion-north-2027-goes-big/</a>｜motion conference：2027 年 3 月 10–11 日在曼彻斯特扩成两天。等议程和案例片单出来再看，现在先登记，不替尚未发生的活动写趋势结论。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Figma code layer 读取 overlay、back 与条件分支时，到底能还原多少状态，而不是只复述连线。</li>
+<li>GitHub clone 默认开启后，Figma 管理员的审计与仓库级关闭入口是否够清楚。</li>
+<li>Framer Convert 的实验命名、流量分配、停止条件和历史回滚。</li>
+<li>Vercel Security Review 的误报率、平均 token 与 push 频率成本；<code>vercel doctor --json</code> 能否稳定交给 agent 处理。</li>
+<li>JetBrains Air 与 Copilot 的企业用量去哪里看；APM 依赖更新有没有一套能跑的回归任务。</li>
+<li>Stash 下一批真正有制作 breakdown 的片子；Levi’s Fuzzy 已登记，避免连续重复。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日主题：Figma 原型连线进入 code layer、GitHub 仓库默认 clone、Framer Convert Agent、Vercel Security Review、无项目 CI、<code>vercel doctor</code>、Zapier Marketing OS、Copilot in JetBrains Air、Dependabot × APM。</li>
+<li>今日视频：Blinkink × Levi’s「Let’s Get Fuzzy」；主来源为 Stash、Vimeo <code>1242832881</code> 与 Blinkink 制作信息。</li>
+<li>今日 Stash：Levi’s 升级为主卡；Motion Plus Design Paris 与 Motion North 2027 做轻观察。</li>
+<li>继续避免：11 月 3 日的 Figma shader、Framer Harness 2、Localization、Vercel MCP card / Flags / Project Connections / Sandbox / npm block，以及 Flora、BFG、Crown Royal。没有新的实测、价格、权限或制作细节，不换标题重发。</li>
+</ul>
+<p class="mixed-script verification">核验说明：Figma、Framer、Vercel、GitHub、Stash 与 Vimeo 官方页面于 2026-11-04 回读。正文 5 张配图原始宽度为 1200–3600px，并逐张目视检查；Framer Convert 与 Vercel CI / Doctor 的抽象标题图没有帮助理解功能，因此没有嵌入。Levi’s 主片按 2、15、30、45、58 秒抽帧检查；Vimeo player <code>1242832881</code> 的普通 GET 与带飞书来源头 GET 均返回 200。</p>

@@ -28,7 +28,7 @@ def read_json(url, user_agent=mediautil.UA):
         return json.load(response)
 
 
-def resolve_post(url):
+def resolve_post(url, *, official_only=False):
     """Prefer X's public embed metadata; an X reader is only a fallback."""
     pid = post_id(url)
     if not pid:
@@ -44,10 +44,12 @@ def resolve_post(url):
         variants = []
         for item in data.get("mediaDetails") or []:
             variants += (item.get("video_info") or {}).get("variants") or []
-        return {"author": user["screen_name"], "avatar": user.get("profile_image_url_https"),
+        return {"author": user["screen_name"], "text": data.get("text") or "", "avatar": user.get("profile_image_url_https"),
                 "date": data.get("created_at"), "metrics": {"likes": data.get("favorite_count"), "replies": data.get("conversation_count")},
                 "variants": variants, "provider": "X", "fetched_at": store.now_iso()}
     except Exception as original_error:
+        if official_only:
+            raise ValueError("无法读取 X 原帖") from original_error
         data = read_json("https://api.fxtwitter.com/status/" + pid)
         tweet = data.get("tweet") or {}
         user = tweet.get("author") or {}

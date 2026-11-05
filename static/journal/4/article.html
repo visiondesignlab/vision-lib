@@ -1,0 +1,66 @@
+
+<header>
+<h1>Vol.4 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-10-26 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天没什么“十倍效率”可写，倒是几件小更新终于把设计上下文接起来了：Figma 能往外吐 <code>DESIGN.md</code>，画布评论能直接交给 agent，界面规范也能塞进 <code>AGENTS.md</code>。</p>
+<p>以前的 AI 工具很爱往设计稿里写东西，写完就走。现在总算有人开始补另一半：原始层在哪、为什么改、谁有权限、改完怎么验。系统只会生成，不会回读，说到底还是个手快的外包。</p>
+<h2>● Design Systems</h2>
+<h3>Figma plugin, now both ways<a class="source-url" href="https://designmd.me/whats-new" rel="noopener noreferrer" target="_blank">https://designmd.me/whats-new</a></h3>
+<figure><img alt="DesignMD 把网站与 Figma 文件整理为 DESIGN.md" decoding="async" height="630" loading="lazy" src="01.png" width="1200"/><figcaption>DesignMD 把网站与 Figma 文件整理为 DESIGN.md</figcaption></figure>
+<p class="mixed-script">DesignMD 的 Figma 插件现在能反向把文件整理成 <code>DESIGN.md</code>。Variables、styles、components 会读，screens、prototype flows、FigJam diagram 可以选着读；整份文件、部分页面或当前选区都行，每一节还能跳回原图层。</p>
+<p class="mixed-script">这才叫 “both ways”。8 credits，而且生成失败不扣，账也算得明白。还没拿复杂组件库实测，先不替它保证变量别名和组件属性能不能收拾干净。</p>
+<h3>Canvas comments, hidden variants, new sizes and custom icons in DS Manager<a class="source-url" href="https://www.shadcndesign.com/blog/shadcn-canvas-comments-variants-custom-icons" rel="noopener noreferrer" target="_blank">https://www.shadcndesign.com/blog/shadcn-canvas-comments-variants-custom-icons</a></h3>
+<figure><img alt="DS Manager 画布评论与 agent 处理入口" decoding="async" height="1260" loading="lazy" src="02.webp" width="2400"/><figcaption>DS Manager 画布评论与 agent 处理入口</figcaption></figure>
+<p class="mixed-script">DS Manager 这次加了画布评论，分享链接里也能留。Pro 用户可以在评论里 <code>@agent</code>，MCP 接进来的 Claude Code 或 Cursor 能读 open comments、改系统、回复，然后把 thread resolve 掉。</p>
+<p class="mixed-script">我更喜欢另一个小细节：隐藏 <code>outline</code> 这类 variant 时，可以指定 <code>secondary</code> 顶上，旧代码继续传 <code>variant="outline"</code> 也不会立刻炸。设计系统最怕“整理一下”变成全仓库迁移，这个处理很懂现实。</p>
+<h3>Web Interface Guidelines<a class="source-url" href="https://vercel.com/design/guidelines" rel="noopener noreferrer" target="_blank">https://vercel.com/design/guidelines</a></h3>
+<figure><img alt="Vercel Web Interface Guidelines" decoding="async" height="1260" loading="lazy" src="03.png" width="2400"/><figcaption>Vercel Web Interface Guidelines</figcaption></figure>
+<p class="mixed-script">Vercel 把键盘、focus、hit target、loading、URL state、paste、overscroll 这些细碎规则摊成了一张长清单，还顺手做成 <code>web-design-guidelines</code> skill，并给了可直接放进项目的 <code>AGENTS.md</code>。</p>
+<p>这比再喂 agent 一张漂亮截图有用。截图告诉它长什么样，规则才告诉它哪些地方不能乱来。</p>
+<h2>● Products</h2>
+<h3>Varve<a class="source-url" href="https://github.com/varvedesign/varve" rel="noopener noreferrer" target="_blank">https://github.com/varvedesign/varve</a></h3>
+<figure><img alt="Varve 本地优先设计套件" decoding="async" height="630" loading="lazy" src="04.png" width="1200"/><figcaption>Varve 本地优先设计套件</figcaption></figure>
+<p class="mixed-script">Varve 想把 vector、layout、typography、photo、motion、prototype 和 print 全塞进一个本地应用里。0.5.1 还是 public beta，Linux、Windows 和 Apple Silicon Mac 都有包；无需账号、没有订阅，实时协作暂时只有 UI 壳子。</p>
+<p class="mixed-script">野心大得有点吓人，但至少 README 把丑话写在前面：它现在是 FSL-1.1-MIT 的 source-available，不是 OSI open source，每个版本两年后才转 MIT；macOS 安装包也没有 notarize。想试可以，重要文件先备份，别看到 GitHub 仓库就自动脑补成成熟开源替代品。</p>
+<h3>Introducing Webflow Campaigns<a class="source-url" href="https://webflow.com/updates/campaigns" rel="noopener noreferrer" target="_blank">https://webflow.com/updates/campaigns</a></h3>
+<figure><img alt="Webflow Campaigns 的落地页与广告工作区" decoding="async" height="1456" loading="lazy" src="05.jpg" width="2588"/><figcaption>Webflow Campaigns 的落地页与广告工作区</figcaption></figure>
+<p class="mixed-script">Webflow Campaigns 已经单独开卖：先从品牌里抽设计系统，再按 brief 生成落地页和广告；persona、行业、单个客户都能各有一条 URL，Marketo / HubSpot 收表单，Google Ads 发 Performance Max，最后再接 HubSpot / Salesforce 看 pipeline。</p>
+<p>设计系统终于不只负责“统一”，还要负责“出量”。好处是设计、发布、转化第一次放在一条线上；坏处也很明显——如果品牌规则只有 logo、颜色和圆角，最后只会稳定地批量生产平庸页面。</p>
+<h2>● AI Coding</h2>
+<h3>Enterprise installations for GitHub Apps generally available<a class="source-url" href="https://github.blog/changelog/2026-10-23-enterprise-installations-for-github-apps-generally-available/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-10-23-enterprise-installations-for-github-apps-generally-available/</a></h3>
+<figure><img alt="GitHub App 企业安装与权限范围" decoding="async" height="1260" loading="lazy" src="06.jpg" width="2400"/><figcaption>GitHub App 企业安装与权限范围</figcaption></figure>
+<p class="mixed-script">GitHub App 现在可以直接装到 enterprise，repository policy、ruleset、2FA、verified domain、IP allowlist、成员权限和 repository access 都补了对应权限与 API。</p>
+<p class="mixed-script">这条看起来离视觉设计很远，其实正好相反。只要 agent 能碰代码、设计资产和发布流程，权限边界就是产品体验的一部分。全公司继续共用一把 classic PAT，才是真的自动化恐怖片。</p>
+<h2>● Design Engineering</h2>
+<h3>What’s new in SwiftUI<a class="source-url" href="https://developer.apple.com/videos/play/wwdc2026/269/" rel="noopener noreferrer" target="_blank">https://developer.apple.com/videos/play/wwdc2026/269/</a></h3>
+<p class="mixed-script">WWDC26 这支 SwiftUI 更新不是今天才发，不过最近做跨尺寸界面值得翻出来：toolbar 可以设 visibility priority、收进 overflow、滚动时自动 minimize；列表、网格和 section 也补了重排，<code>AsyncImage</code> 终于有缓存改进。</p>
+<p>设计稿里那句“空间不够就自动收起来”，以前常常等于让开发现场发明规则。现在 API 已经把顺序、溢出和缩起拆开了，交付时也该把优先级写清楚。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Adrian Villagomez &amp; Mathematic “Finish It” for The Terry Fox Foundation<a class="source-url" href="https://www.stashmedia.tv/adrian-villagomez-mathematic-finish-it-for-the-terry-fox-foundation/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/adrian-villagomez-mathematic-finish-it-for-the-terry-fox-foundation/</a></h3>
+<figure data-film-source="https://player.vimeo.com/video/1239323190?title=0&amp;byline=0&amp;portrait=0"><img alt="《Finish It》从 Terry Fox 独跑的夜路展开到被他影响的一整座城市" decoding="async" height="1080" loading="lazy" src="07.jpg" width="1920"/><figcaption>《Finish It》从 Terry Fox 独跑的夜路展开到被他影响的一整座城市</figcaption></figure>
+<p>原片播放器<a class="source-url" href="https://player.vimeo.com/video/1239323190?title=0&amp;byline=0&amp;portrait=0" rel="noopener noreferrer" target="_blank">https://player.vimeo.com/video/1239323190?title=0&amp;byline=0&amp;portrait=0</a></p>
+<p>片子从 Terry Fox 一个人在夜路上跑开始，镜头慢慢把城市、研究者、病房和普通人展开。1980 年代的暖色、略带手作感的角色和很克制的景深，把“纪念人物”做成了“影响还在继续”，没有急着用旁白喊口号。</p>
+<p>最聪明的是尺度变化：先让观众贴着一个人的脚步走，再不断拉开，看到这件事如何进入更多人的生活。橙子、海报、研究者出场顺序还埋了 Terry 故事里的细节。品牌片要讲 legacy，可以学这个——先找一个能被看见的动作，再让世界围着它长出来；别一上来就是宇宙、粒子和一句改变世界。</p>
+<h2>● Stash 最新内容观察</h2>
+<ul>
+<li>Adrian Villagomez &amp; Mathematic “Finish It”<a class="source-url" href="https://www.stashmedia.tv/adrian-villagomez-mathematic-finish-it-for-the-terry-fox-foundation/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/adrian-villagomez-mathematic-finish-it-for-the-terry-fox-foundation/</a>｜CG / character animation / brand film：已升级为今日主卡。它把人物遗产拍成持续发生的动作，不靠纪念片腔调。</li>
+<li>Abstract Clarity: Illo Illuminates Everpure x Bloomberg TV<a class="source-url" href="https://www.stashmedia.tv/abstract-clarity-illo-illuminates-everpure-x-bloomberg-tv/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/abstract-clarity-illo-illuminates-everpure-x-bloomberg-tv/</a>｜motion system / explainer：一套形状只背一个概念，monolith、plane、gradient 和 data rectangle 还能继续长成图表；产品解释片可以直接抄这套“视觉语法先行”。</li>
+<li>We Love Pitching: Chronicles of a Necessary Mess – Part 21<a class="source-url" href="https://www.stashmedia.tv/we-love-pitching-chronicles-of-a-necessary-mess-part-21/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/we-love-pitching-chronicles-of-a-necessary-mess-part-21/</a>｜pitch / process：输赢不是重点，真正的问题是 pitch 有没有给想法足够的时间、信息和交流。设计评审如果只剩演示，也会选出最会演的方案。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>DesignMD 面对 variables alias、component properties 和混乱命名时，文档到底有多干净。</li>
+<li>DS Manager 的评论闭环会不会保留修改 diff 和回退点；只有 resolve 没有证据，不够。</li>
+<li>Webflow Campaigns 的购买价格、品牌约束强度和真实 pipeline 归因。</li>
+<li>Stash 10 月 26 日之后的新片，今天不拿旧条目硬凑数量。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日新增：DesignMD Figma 反向文档、DS Manager 画布评论、Vercel Web Interface Guidelines、Varve、Webflow Campaigns、GitHub Apps 企业安装、SwiftUI toolbar / reorder APIs。</li>
+<li>今日视频：Adrian Villagomez / Mathematic《Finish It》；Illo / Everpure 和 We Love Pitching Part 21 只做轻量观察。</li>
+<li>已覆盖不重写：Linear Loops、Webflow Box、Chrome <code>position-area</code>、Atelier UI、GitHub usage metrics、Vercel MCP feedback、Ontario / DWP Design System、Kim Soobin《Together》（10 月 25 日）；Dyson、FutureDeluxe / Verizon、Microsoft Foundry、Query、Bullpadel、Frame x Ege、Cypher。</li>
+<li>边界：Varve、DesignMD、DS Manager、Webflow Campaigns 均未做完整生产实测；SwiftUI 条目来自 WWDC26 官方资料，不冒充今日新品。</li>
+</ul>
+<p class="mixed-script verification">核验说明：DesignMD、shadcndesign、Varve GitHub、Webflow、Vercel、GitHub Changelog、Apple Developer、Stash API / 文章页及 Vimeo player 于 2026-10-26 回读。所有写入日报的图片均下载并检查原始像素，宽度不低于 1200px；Apple 页面候选图仅 500px，已省略。</p>
