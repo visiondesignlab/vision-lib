@@ -32,7 +32,7 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .count{font-size:11px;color:#fff;background:var(--pink);border-radius:999px;padding:0 6px;line-height:16px}
 .count:empty{display:none}
 .side-bottom{margin-top:auto}
-.about{border:0 solid #787878;padding-top:12px;width:208px;max-width:100%}
+.about{border:0 solid #787878;padding-top:12px;width:100%}
 .about b{font-weight:500;display:block;margin-bottom:6px}
 .about p{margin:6px 0;color:var(--fg2)}
 .about>p:first-of-type{padding-bottom:16px}

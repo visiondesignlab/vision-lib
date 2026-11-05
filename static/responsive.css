@@ -70,7 +70,6 @@ html:has(dialog[open]){overflow:hidden}
   .nav a{height:44px;font-size:18px;width:100%;padding-right:16px}
   .nav a.on::after{margin-left:auto}
   .side-bottom{padding-top:0;flex:none}
-  .side .about{width:320px;max-width:100%}
   .side .about>p:first-of-type{padding-bottom:4px}
   .foot{font-size:12px;align-items:center;gap:16px}
   .foot a{display:grid;place-items:center;min-height:44px}
