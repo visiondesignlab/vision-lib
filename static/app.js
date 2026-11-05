@@ -587,6 +587,23 @@ function renderImageSlicer() {
 
 let brandAssetsView = null, brandAssetsLoading = null;
 const isBrandAssetsRoute = () => /^\/assets\/brand\/?$/.test(routePath());
+const isDesignAssetsRoute = () => routePath() === '/assets/design';
+let designAssetsRequest = 0;
+async function renderDesignAssetPage() {
+  app.dataset.view = 'assets:design';
+  setNav('design-assets');
+  document.title = '设计资产 · Vision Lab';
+  const request = ++designAssetsRequest;
+  app.replaceChildren();
+  try {
+    const module = await import(sitePath('/static/assets/design-assets.js'));
+    if (request === designAssetsRequest && isDesignAssetsRoute()) {
+      module.renderDesignAssets(app, {copy: copyText, notify: toast});
+    }
+  } catch {
+    if (request === designAssetsRequest && isDesignAssetsRoute()) app.innerHTML = '<div class="empty">设计资产暂时无法加载，请刷新重试。</div>';
+  }
+}
 function renderBrandAssets() {
   app.dataset.view = "assets:brand";
   setNav("brand-assets");
@@ -660,6 +677,7 @@ function render() {
   if (isBrandAssetsRoute() && u.searchParams.get("section") === "brand-skills") return nav("/?tab=brand_skill", true);
   if (isBrandAssetsRoute()) { closeDetail(); return renderBrandAssets(); }
   brandAssetsView?.deactivate();
+  if (isDesignAssetsRoute()) { closeDetail(); return renderDesignAssetPage(); }
   if (p === '/tools/ai-nav' && u.searchParams.get('category') === 'model-rankings') {
     u.searchParams.delete('category');
     return nav('/tools/ai-models' + u.search, true);
@@ -1002,10 +1020,10 @@ document.addEventListener("keydown", e => {
 
 
 if (staticMode) document.querySelectorAll('a[href$="/review"]').forEach(a => a.remove());
-if (isCMSRoute() || isGuideRoute() || isDirectoryTool() || routePath() === '/static/README.html' || isSlicerRoute() || isBrandAssetsRoute()) render();
-Promise.all([load(), refreshAdminSession()]).then(() => { if (!isCMSRoute() && !isDirectoryTool()) render(); }).catch(e => {
+if (isCMSRoute() || isGuideRoute() || isDirectoryTool() || routePath() === '/static/README.html' || isSlicerRoute() || isBrandAssetsRoute() || isDesignAssetsRoute()) render();
+Promise.all([load(), refreshAdminSession()]).then(() => { if (!isCMSRoute() && !isDirectoryTool() && !isDesignAssetsRoute()) render(); }).catch(e => {
   if (isCMSRoute() || isDirectoryTool()) return;
-  if (isGuideRoute() || isSlicerRoute() || isBrandAssetsRoute()) return render();
+  if (isGuideRoute() || isSlicerRoute() || isBrandAssetsRoute() || isDesignAssetsRoute()) return render();
   app.innerHTML = `<div class="empty"><b>加载失败</b>${esc(e.message)}</div>`;
 });
 })();

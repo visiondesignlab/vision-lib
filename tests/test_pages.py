@@ -66,6 +66,7 @@ class PagesTests(unittest.TestCase):
         self.assertIn('/vision-lib/static/media-controls.svg#half', (self.output / 'static/style.css').read_text())
         self.assertEqual((self.output / 'tools/ai-nav/index.html').read_text(), shell)
         self.assertEqual((self.output / 'tools/ai-models/index.html').read_text(), shell)
+        self.assertEqual((self.output / 'assets/design/index.html').read_text(), shell)
         self.assertEqual(json.loads((self.output / 'public/ai-directory.json').read_text()), {'categories': [], 'entries': []})
         self.assertEqual((self.output / 'guide/index.html').read_text(), shell)
         self.assertEqual((self.output / 'static/README.html').read_text(), shell)
