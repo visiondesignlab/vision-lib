@@ -636,6 +636,7 @@ function filtered() {
   return l;
 }
 function cardHTML(c) {
+  if (c.type === "brand_skill" && c.brand_repository) return brandSkillCard(c);
   const m = c.media || {};
   const dimensions = String(m.specs?.resolution || "").match(/^(\d+)\s*[×x]\s*(\d+)$/);
   const aspect = dimensions ? `${Number(dimensions[1])}/${Number(dimensions[2])}` : c.type === "skill_repo" ? "2/1" : "16/9";
@@ -651,6 +652,20 @@ function cardHTML(c) {
     <span class="tr">${tr}</span>
     <span class="ov">${avatarOf(c)}<span class="ttl">${esc(label)}</span><span class="go">${ICON.go}</span></span></a></div>`;
 }
+function skillDownload(c) {
+  const zip = c.assets?.find(asset => asset.url?.endsWith(".zip"));
+  return zip ? `<a class="pill-btn shadow" href="${esc(zip.url)}" download>下载 ZIP</a>` : "";
+}
+function brandSkillCard(c) {
+  const href = sitePath("/c/" + c.id);
+  const covers = c.brand_repository.samples.slice(0, c.brand_repository.cover_count || 1);
+  return `<article class="card-item brand-skill-entry">
+    <a class="card brand-skill-card" href="${esc(href)}" data-link data-id="${esc(c.id)}">
+      <span class="skill-covers" data-count="${covers.length}">${covers.map(sample => `<img src="${esc(sample.url)}" alt="${esc(sample.label)}" loading="lazy">`).join("")}</span>
+      <span class="skill-card-text"><span class="muted">${esc(c.category)}</span><strong>${esc(c.title)}</strong><span>${esc(c.subtitle)}</span></span>
+    </a><div class="skill-card-actions"><a class="pill-btn grey" href="${esc(href)}" data-link>查看详情</a>${skillDownload(c)}</div>
+  </article>`;
+}
 function renderGrid() {
   STATE.sort = tabSort.get(STATE.tab) || (STATE.tab === "video" ? "hot" : "new");
   closeMenu();
@@ -662,7 +677,7 @@ function renderGrid() {
       <div class="right"><input class="search" id="q" type="search" aria-label="搜索标题、品牌、标签" placeholder="搜索标题、品牌、标签" value="${esc(STATE.q)}"></div></div>
     <div class="bar"><div class="chips" role="group" aria-label="分类筛选">${cats.map(k => `<button class="chip ${k === STATE.cat ? "on" : ""}" aria-pressed="${k === STATE.cat}" data-cat="${esc(k)}">${esc(k)}</button>`).join("")}</div>
       <div class="right"><select class="pill-btn shadow" id="sort"><option value="new">${STATE.tab === "skill_repo" ? "按排名" : "最新"}</option>${STATE.tab === "skill_repo" ? '<option value="latest">最新</option>' : ''}<option value="hot">${STATE.tab === "skill_repo" ? "按热度" : "最热"}</option></select></div></div>
-    ${list.length ? `<div class="grid">${list.map(cardHTML).join("")}</div>` :
+    ${list.length ? `<div class="grid${STATE.tab === "brand_skill" ? " brand-skills-grid" : ""}">${list.map(cardHTML).join("")}</div>` :
       `<div class="empty"><b>${all.length ? "没有匹配的条目" : "这里还没有内容"}</b>${all.length ? "换个关键词或分类试试" : STATE.tab === "graphic" ? "在内容管理平台提交平面作品，审核发布后会出现在这里。" : "审核通过的条目会出现在这里。"}</div>`}`;
   $("#sort").value = STATE.sort;
   syncAdminControls();
@@ -772,10 +787,62 @@ function metricsRows(c) {
     row("推荐帖浏览", m.post_views != null ? fmtN(m.post_views) : null), row("推荐帖点赞", m.post_likes != null ? fmtN(m.post_likes) : null)].join("") + f;
 }
 function stageHTML(c) {
+  if (c.type === "brand_skill" && c.brand_repository) {
+    const samples = c.brand_repository.samples;
+    return `<figure class="skill-sample"><div class="skill-sample-image"><img draggable="false" src="${esc(samples[0].url)}" alt="${esc(samples[0].label)}">
+      ${samples.length > 1 ? `<button class="ibtn" type="button" data-sample-prev aria-label="上一张示例">${ICON.l}</button>` : ""}
+      ${samples.length > 1 ? `<button class="ibtn" type="button" data-sample-next aria-label="下一张示例">${ICON.r}</button>` : ""}
+    </div><figcaption><span>${esc(c.brand_repository.sample_source)}</span><span role="status"></span></figcaption></figure>`;
+  }
   const m = c.media || {};
   if (m.video) return `<div class="frame video-frame">${window.VisionSite.videoPlayer(m.video, m.thumbnail)}</div>`;
   if (m.images && m.images.length) return `<div class="frame"><img src="${esc(m.images[0])}"></div>`;
   return `<div class="frame"><img src="${esc(m.thumbnail || sitePath("/static/cms-placeholder.svg"))}"></div>${c.source?.url ? `<div class="ext">${link(c.source.url, "打开原链接")}</div>` : ""}`;
+}
+function brandSkillDetails(c) {
+  const repo = c.brand_repository, source = c.source;
+  const steps = items => `<ol class="steps">${items.map(item => `<li>${esc(item)}</li>`).join("")}</ol>`;
+  return `<div class="skill-links"><a class="pill-btn dark" href="${esc(source.url)}" target="_blank" rel="noopener">查看仓库</a>${skillDownload(c)}</div>
+    <section class="sec"><h4>介绍</h4><p>${esc(c.description)}</p></section>
+    <section class="sec"><h4>安装方法</h4>${steps(repo.installation)}
+      ${repo.install_command ? `<div class="skill-command"><code>${esc(repo.install_command)}</code><button type="button" class="pill-btn shadow" data-copy-install>复制命令</button></div>` : ""}</section>
+    <section class="sec"><h4>使用方法</h4>${steps(c.how_to)}</section>
+    <section class="sec"><h4>示例请求<button class="pill-btn shadow" type="button" id="cp">复制</button></h4><div class="prompt">${esc(c.prompt)}</div></section>
+    <section class="sec"><h4>仓库信息</h4><div class="kv">
+      ${row("仓库",link(source.url,source.repo))}${row("默认分支",esc(repo.branch))}
+      ${row("收录提交",link(source.url + "/commit/" + repo.sha, repo.sha.slice(0,7)))}${row("提交日期",esc(source.date))}
+      ${row("许可证",link(source.url + "/blob/" + repo.sha + "/LICENSE", repo.license))}
+    </div><div class="skill-docs">${repo.docs.map(doc => link(doc.url,doc.name)).join("")}</div></section>`;
+}
+function bindSkillSample(samples) {
+  const figure = $(".skill-sample", overlay);
+  const image = $("img", figure), caption = $('[role="status"]', figure);
+  const prev = $("[data-sample-prev]", figure), next = $("[data-sample-next]", figure);
+  let index = 0;
+  function show(position) {
+    index = position;
+    const sample = samples[index];
+    image.src = sample.url; image.alt = sample.label;
+    caption.textContent = samples.length > 1 ? `${sample.label} · ${index + 1} / ${samples.length}` : sample.label;
+    if (prev) prev.disabled = index === 0;
+    if (next) next.disabled = index === samples.length - 1;
+  }
+  if (prev) prev.onclick = () => show(index - 1);
+  if (next) next.onclick = () => show(index + 1);
+  if (samples.length > 1) {
+    let start;
+    figure.addEventListener("pointerdown", e => {
+      if (e.pointerType === "touch" && e.isPrimary && !e.target.closest("button")) start = {x:e.clientX, y:e.clientY};
+    });
+    figure.addEventListener("pointercancel", () => { start = null; });
+    figure.addEventListener("pointerup", e => {
+      if (!start) return;
+      const dx = e.clientX - start.x, dy = e.clientY - start.y;
+      start = null;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) (dx < 0 ? next : prev).click();
+    });
+  }
+  show(0);
 }
 function openDetail(id) {
   cancelDetailExit();
@@ -792,9 +859,12 @@ function openDetail(id) {
   const back = `/?tab=${c.type}${STATE.cat !== "全部" ? "&cat=" + encodeURIComponent(STATE.cat) : ""}`;
   const s = c.source || {};
   const isShow = c.type === "showcase";
+  const isBrandRepo = c.type === "brand_skill" && c.brand_repository;
   const trust = `<span class="trust ${c.trust === "官方" ? "" : "c"}">${esc(c.trust || "社区")}</span>`;
   let body = "";
-  if (isShow) {
+  if (isBrandRepo) {
+    body = brandSkillDetails(c);
+  } else if (isShow) {
     body = `<div class="kv">${row("品牌", esc(c.brand))}${row("作者", link(s.author_url, s.author))}${row("来源平台", esc(s.platform))}${row("发布时间", esc(s.date))}${row("分类", esc(c.category))}${row("片型", esc(c.format))}${row("规格", esc(c.media?.specs ? c.media.specs.resolution + " · " + c.media.specs.duration_s + "s" : ""))}${metricsRows(c)}${row("原帖", link(s.url))}</div>
       <div class="sec"><h4>拉片</h4><div class="hint">打开自己电脑上的 AI，预填视频链接和拉片提示词，由你确认发送。</div>
         ${useButton(() => breakdownPrompt(c), "一键拉片", "复制拉片 Prompt")}
@@ -820,18 +890,28 @@ function openDetail(id) {
       ${!isShow && c.prompt ? useButton(() => casePrompt(c)) : ""}</div>
     <div class="phead">${avatarOf(c).replace('class="av"', 'class="av round"')}<div class="cat">${esc(TABS[c.type]?.name || "")} · ${esc(c.category)}</div>
       <h3>${esc(c.title)}</h3><p>${esc(isShow ? (c.description || c.subtitle) : c.subtitle)}</p>
-      <div class="when">${esc((s.date || "").slice(0, 10))}${c.version && !isShow ? " · v" + esc(c.version) : ""} ${isShow ? "" : trust}</div></div>
-    ${!isShow ? `<div class="kv">${metricsRows(c)}</div>` : ""}
+      <div class="when">${esc((s.date || "").slice(0, 10))}${c.version && !isShow ? (isBrandRepo ? " · " : " · v") + esc(c.version) : ""} ${isShow ? "" : trust}</div></div>
+    ${!isShow && !isBrandRepo ? `<div class="kv">${metricsRows(c)}</div>` : ""}
     ${body}</div>
     <div class="stage">${stageHTML(c)}</div>`;
   prepareDetail();
   syncAdminControls();
+  if (isBrandRepo) {
+    bindSkillSample(c.brand_repository.samples);
+    const copyInstall = $("[data-copy-install]", overlay);
+    if (copyInstall) copyInstall.onclick = async () => toast(await copyText(c.brand_repository.install_command) ? "安装命令已复制" : "复制失败");
+  }
   $(".ptop a.ibtn", overlay)?.focus({preventScroll: true});
   $(".stage", overlay).addEventListener("click", e => { if (e.target.classList.contains("stage")) nav(back); });
   const cp = $("#cp"); if (cp) cp.onclick = async () => toast((await copyText(casePrompt(c))) ? "已复制，粘贴即可" : "复制失败");
 }
 document.addEventListener("keydown", e => {
   if (overlay.hidden || activeMenu || $(".modal") || e.target.closest("input,textarea,select,video,[contenteditable=true]")) return;
+  if (!e.altKey && !e.metaKey && !e.ctrlKey && (e.key === "ArrowLeft" || e.key === "ArrowRight")) {
+    const direction = e.key === "ArrowLeft" ? "prev" : "next";
+    const sampleButton = $(`[data-sample-${direction}]`, overlay);
+    if (sampleButton) { e.preventDefault(); sampleButton.click(); return; }
+  }
   const selector = {Escape: ".ptop .ibtn", ArrowRight: '.ptop [title="下一条"]', ArrowLeft: '.ptop [title="上一条"]'}[e.key];
   if (selector) { e.preventDefault(); overlay.querySelector(selector)?.click(); }
 });

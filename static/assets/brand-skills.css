@@ -1,0 +1,26 @@
+.grid.brand-skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));align-items:start;gap:var(--gap)}
+.brand-skill-entry{margin:0;overflow:hidden;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.brand-skill-entry .brand-skill-card{margin:0;background:transparent;border-radius:0;box-shadow:none}
+.brand-skill-card .skill-covers{display:flex;justify-content:center;width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--bg2)}
+.brand-skill-card .skill-covers img{width:100%;height:100%;object-fit:cover}
+.brand-skill-card .skill-covers[data-count="2"]{gap:6px;padding:10px}
+.brand-skill-card .skill-covers[data-count="2"] img{width:auto;min-width:0;max-width:49%;object-fit:contain}
+.skill-card-text{display:grid;gap:5px;padding:16px 16px 12px}
+.skill-card-text strong{font-size:15px;font-weight:500}
+.skill-card-text>span{font-size:12px;color:var(--fg2)}
+.skill-card-actions,.skill-links,.skill-docs{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+.skill-card-actions{padding:0 16px 16px}
+.skill-links{justify-content:center;margin:10px 0 18px}
+.skill-docs{margin-top:12px;gap:8px 14px}
+.skill-docs a{color:var(--fg2);text-decoration:underline;text-underline-offset:3px}
+.skill-command{margin-top:10px;padding:12px;border-radius:8px;background:var(--bg2)}
+.skill-command code{display:block;overflow-wrap:anywhere;margin-bottom:8px}
+.stage .skill-sample{display:grid;justify-items:center;gap:12px;max-width:100%;min-width:0;margin:0;cursor:default}
+.stage .skill-sample img{display:block;max-width:100%;max-height:calc(100dvh - 148px);object-fit:contain;border-radius:6px;box-shadow:var(--ring)}
+.skill-sample-image{position:relative;max-width:100%;touch-action:pan-y}
+.skill-sample-image .ibtn{position:absolute;top:50%;transform:translateY(-50%);background:var(--bg);box-shadow:var(--ring);width:36px;height:36px}
+.skill-sample-image [data-sample-prev]{left:10px}
+.skill-sample-image [data-sample-next]{right:10px}
+.skill-sample figcaption{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:4px 12px;color:var(--fg2);font-size:12px;text-align:center}
+.skill-sample button:disabled{opacity:.36;cursor:default}
+@media(max-width:900px){.stage .skill-sample img{max-height:44svh}}

@@ -9369,6 +9369,217 @@
    "format": "设计工具功能发布",
    "heat": 93869,
    "ingested_by": "x-live-refresh-2026-11-05"
+  },
+  {
+   "status": "published",
+   "added_at": "2026-11-05T16:32:54+08:00",
+   "changelog": [
+    {
+     "version": "f12a5f1",
+     "date": "2026-11-05",
+     "note": "同步 GitHub 仓库版本。"
+    },
+    {
+     "version": "b4fe857",
+     "date": "2026-11-05",
+     "note": "同步 GitHub 仓库版本。"
+    }
+   ],
+   "id": "brand-viaim-brand-ppt-skill",
+   "type": "brand_skill",
+   "brand": "viaim",
+   "trust": "官方",
+   "title": "viaim 品牌 PPT Skill",
+   "category": "演示文稿",
+   "subtitle": "横向翻页 HTML 演示与可编辑 PPTX",
+   "description": "把大纲、数据和图片整理成 viaim 品牌演示文稿。产品发布和季度汇报可选瑞士风，图像与叙事型分享可选杂志风。HTML 支持演讲者备注，定稿后可导出 16:9 PPTX，文字、卡片和图形可继续编辑。",
+   "prompt": "用 viaim-brand-ppt-skill 把这份大纲做成 10 页季度产品复盘。受众是产品、设计和研发团队，采用瑞士风。先给我逐页规划，标出需要补充的数据，再输出带讲稿的 HTML 和可编辑 PPTX。",
+   "how_to": [
+    "提供主题、受众、页数或演讲时长，并附上大纲、数据和图片。",
+    "指定杂志风或瑞士风，先确认每页要传达的内容，再生成网页演示。用方向键翻页，按 P 查看讲稿。",
+    "需要在 PowerPoint 或 Keynote 中编辑时，要求同时交付 HTML 和原生可编辑 PPTX。"
+   ],
+   "tags": [
+    "PPT",
+    "HTML",
+    "PPTX",
+    "演示文稿"
+   ],
+   "version": "b4fe857",
+   "media": {
+    "kind": "image",
+    "thumbnail": "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-01.png",
+    "images": [
+     "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-01.png",
+     "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-07.png",
+     "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-18.png",
+     "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-29.png"
+    ]
+   },
+   "source": {
+    "platform": "GitHub",
+    "author": "visiondesignlab",
+    "repo": "visiondesignlab/viaim-brand-ppt-skill",
+    "url": "https://github.com/visiondesignlab/viaim-brand-ppt-skill",
+    "date": "2026-11-05",
+    "metrics": {
+     "stars": 0
+    }
+   },
+   "assets": [
+    {
+     "name": "Skill 安装包",
+     "url": "/media/brand-viaim-brand-ppt-skill/b4fe857e60faa59c42a8410a02e8b67902cb8758/viaim-brand-ppt-skill.zip"
+    }
+   ],
+   "brand_repository": {
+    "sha": "b4fe857e60faa59c42a8410a02e8b67902cb8758",
+    "branch": "main",
+    "license": "AGPL-3.0",
+    "installation": [
+     "下载 ZIP 并解压，将包含 SKILL.md 的整个 viaim-brand-ppt-skill 文件夹放入 ~/.agents/skills/。Windows 对应 %USERPROFILE%\\.agents\\skills\\。",
+     "在 Codex 中新建任务，输入下方示例请求。需要导出 PPTX 时，按仓库导出说明加载 Codex 工作区依赖。"
+    ],
+    "install_command": "",
+    "samples": [
+     {
+      "label": "第 1 页 · 封面",
+      "url": "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-01.png"
+     },
+     {
+      "label": "第 7 页 · 数据图表",
+      "url": "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-07.png"
+     },
+     {
+      "label": "第 18 页 · 三层系统",
+      "url": "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-18.png"
+     },
+     {
+      "label": "第 29 页 · 品牌宣言",
+      "url": "/static/assets/brand-skill-examples/viaim-brand-ppt-skill/slide-29.png"
+     }
+    ],
+    "cover_count": 1,
+    "sample_source": "viaim 品牌演示系统 · 30 页示例稿",
+    "docs": [
+     {
+      "name": "Skill 文档",
+      "url": "https://github.com/visiondesignlab/viaim-brand-ppt-skill/blob/b4fe857e60faa59c42a8410a02e8b67902cb8758/SKILL.md"
+     },
+     {
+      "name": "快速上手",
+      "url": "https://github.com/visiondesignlab/viaim-brand-ppt-skill/blob/b4fe857e60faa59c42a8410a02e8b67902cb8758/QUICKSTART.md"
+     },
+     {
+      "name": "PPTX 导出说明",
+      "url": "https://github.com/visiondesignlab/viaim-brand-ppt-skill/blob/b4fe857e60faa59c42a8410a02e8b67902cb8758/references/export-formats.md"
+     }
+    ]
+   },
+   "updated_at": "2026-11-05T16:38:31+08:00"
+  },
+  {
+   "status": "published",
+   "added_at": "2026-11-05T16:32:54+08:00",
+   "changelog": [
+    {
+     "version": "d98c1bd",
+     "date": "2026-11-05",
+     "note": "同步 GitHub 仓库版本。"
+    }
+   ],
+   "id": "brand-viaim-social-card-skill",
+   "type": "brand_skill",
+   "brand": "viaim",
+   "trust": "官方",
+   "title": "viaim 品牌卡片 Skill",
+   "category": "社交图文",
+   "subtitle": "小红书组图、公众号封面与 Live Photo 卡片",
+   "description": "把文章、产品说明、照片或视频整理为 viaim 五色品牌卡片。可制作 1080 × 1440 小红书组图、公众号头图与方形分享卡，也可用视频生成 Live Photo 动态卡。",
+   "prompt": "用 viaim-social-card-skill 把这篇产品介绍做成 5 张小红书图文。先给出每张卡片的标题和内容重点，再按 viaim 五色规范制作并导出 1080 × 1440 PNG。",
+   "how_to": [
+    "提供原文、产品素材或视频，注明发布平台、目标读者与张数。",
+    "让 Skill 先规划封面、内容页和收尾页，再确认版式与品牌配色。",
+    "导出指定尺寸的 PNG 并检查版式。制作 Live Photo 时，附上要使用的视频。"
+   ],
+   "tags": [
+    "小红书",
+    "公众号",
+    "社交图文",
+    "Live Photo"
+   ],
+   "version": "d98c1bd",
+   "media": {
+    "kind": "image",
+    "thumbnail": "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-1.png",
+    "images": [
+     "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-1.png",
+     "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-2.png",
+     "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-3.png",
+     "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-4.png"
+    ]
+   },
+   "source": {
+    "platform": "GitHub",
+    "author": "visiondesignlab",
+    "repo": "visiondesignlab/viaim-social-card-skill",
+    "url": "https://github.com/visiondesignlab/viaim-social-card-skill",
+    "date": "2026-11-05",
+    "metrics": {
+     "stars": 0
+    }
+   },
+   "assets": [
+    {
+     "name": "Skill 安装包",
+     "url": "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/viaim-social-card-skill.zip"
+    }
+   ],
+   "brand_repository": {
+    "sha": "d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572",
+    "branch": "main",
+    "license": "AGPL-3.0",
+    "installation": [
+     "在终端运行下方仓库安装命令。需要渲染 PNG 时，在安装后的 Skill 目录运行 npm ci，准备 Playwright 渲染依赖。",
+     "也可下载 ZIP 并解压，将 viaim-social-card-skill 文件夹放入 ~/.codex/skills/，然后在 Codex 中新建任务。"
+    ],
+    "install_command": "npx skills add https://github.com/visiondesignlab/viaim-social-card-skill --skill viaim-social-card-skill",
+    "samples": [
+     {
+      "label": "品牌封面",
+      "url": "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-1.png"
+     },
+     {
+      "label": "信息流",
+      "url": "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-2.png"
+     },
+     {
+      "label": "五色系统",
+      "url": "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-3.png"
+     },
+     {
+      "label": "深色收尾",
+      "url": "/media/brand-viaim-social-card-skill/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/sample-4.png"
+     }
+    ],
+    "cover_count": 2,
+    "sample_source": "viaim 社交卡片 · 仓库示例",
+    "docs": [
+     {
+      "name": "Skill 文档",
+      "url": "https://github.com/visiondesignlab/viaim-social-card-skill/blob/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/SKILL.md"
+     },
+     {
+      "name": "安装与使用",
+      "url": "https://github.com/visiondesignlab/viaim-social-card-skill/blob/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/README.md"
+     },
+     {
+      "name": "示例 HTML 源码",
+      "url": "https://github.com/visiondesignlab/viaim-social-card-skill/blob/d98c1bd1787ca9f94b0f0c8acac6ce0108a5c572/examples/viaim-brand-demo/index.html"
+     }
+    ]
+   },
+   "updated_at": "2026-11-05T16:38:31+08:00"
   }
  ]
 }
