@@ -53,7 +53,8 @@ html:has(dialog[open]){overflow:hidden}
   :root{--side:0px}
   html{scroll-padding-top:calc(var(--mobile-head) + env(safe-area-inset-top) + 12px)}
   .mobile-header{display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:30;min-height:calc(var(--mobile-head) + env(safe-area-inset-top));padding:calc(10px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 10px max(16px,env(safe-area-inset-left));background:rgba(255,255,255,.95);backdrop-filter:blur(12px)}
-  .nav-toggle{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:44px;height:44px;padding:10px;border-radius:50%;color:var(--fg2)}
+  .nav-toggle{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:var(--control-height);height:var(--control-height);padding:6px;border-radius:var(--control-radius);color:var(--fg2);position:relative}
+  .nav-toggle::after{content:"";position:absolute;inset:-6px}
   .nav-toggle:active{background:var(--chip)}
   .nav-close{position:relative;flex:none}
   .side{display:flex;inset:0;width:100%;height:100vh;height:100dvh;padding:calc(10px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(24px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));z-index:60;background:#fff;visibility:hidden;opacity:0;filter:blur(4px);pointer-events:none;transition:opacity var(--motion-base) var(--ease-out),filter var(--motion-base) var(--ease-out),visibility 0s var(--motion-base)}
@@ -136,7 +137,7 @@ html:has(dialog[open]){overflow:hidden}
   .cms-body td[data-label]::before{content:attr(data-label);display:block;font-size:11px;color:var(--fg2);margin-bottom:5px}
   .cms-body .title-cell{min-width:0;align-items:flex-start}
   .cms-body .title-text{max-width:none;min-width:0;flex:1}
-  .cms-body .title-text button{white-space:normal;overflow-wrap:anywhere;line-height:1.6}
+  .cms-body .title-text button{white-space:nowrap;text-overflow:ellipsis}
   .cms-body .row-actions{flex-wrap:wrap;gap:8px}
   .cms-body .dialog{max-height:calc(100dvh - 32px);width:calc(100vw - 24px);padding:20px 16px;animation:surface-in var(--motion-base) var(--ease-out)}
   .cms-body .dialog::backdrop{animation:backdrop-in var(--motion-base) var(--ease-out)}

@@ -1,4 +1,4 @@
-/* Visual language modelled on recent.design: Inter 13px, neutral oklch greys, pill controls,
+/* Visual language modelled on recent.design: Inter 13px, neutral oklch greys, shared controls,
    left text-only sidebar, masonry media grid with 8px radius cards and hairline rings. */
 :root{
   --fg: oklch(15% 0 0); --fg2: oklch(0% 0 0 / .486); --fg3: oklch(0% 0 0 / .267);
@@ -7,12 +7,33 @@
   --danger:oklch(55% .2 25);
   --ring: oklch(0 0 0 / .08) 0 0 0 .5px, oklch(0 0 0 / .2) 0 1px 1px -1px, oklch(0 0 0 / .08) 0 1px 2px 0;
   --side: 252px; --gap: 15px;
+  --control-height:32px; --control-radius:8px;
+  --checkbox-size:20px; --checkbox-radius:4px;
   --font: "Inter", "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", ui-sans-serif, system-ui, sans-serif;
 }
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--fg);font:13px/1.4 var(--font);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;height:var(--control-height);border-radius:var(--control-radius);padding-block:0}
+/* Single-line fields share metrics on every route and breakpoint. Textareas,
+   media/drop zones and tags keep their content-specific geometry. */
+:where(input:not([type=checkbox],[type=radio],[type=file],[type=range],[type=hidden],[type=image]),select){height:var(--control-height);border-radius:var(--control-radius);padding-block:0}
+textarea{border-radius:var(--control-radius)}
+/* Native checkbox appearance ignores radius on some platforms. Retain the native
+   input semantics and keyboard behavior, with a shared Hugeicons check mark. */
+input[type=checkbox]{appearance:none;-webkit-appearance:none;box-sizing:border-box;display:inline-grid;place-items:center;vertical-align:middle;flex:none;width:var(--checkbox-size);height:var(--checkbox-size);min-width:var(--checkbox-size);min-height:var(--checkbox-size);margin:0;padding:0;border:1px solid var(--fg3);border-radius:var(--checkbox-radius);background:var(--bg);color:var(--bg);cursor:pointer}
+input[type=checkbox]::before{content:"";width:16px;height:16px;background:currentColor;mask:url("/static/icons/check.svg") center/contain no-repeat;visibility:hidden}
+input[type=checkbox]:checked,input[type=checkbox]:indeterminate{background:var(--fg);border-color:var(--fg)}
+input[type=checkbox]:checked::before,input[type=checkbox]:indeterminate::before{visibility:visible}
+input[type=checkbox]:indeterminate::before{width:10px;height:2px;mask:none;border-radius:1px}
+input[type=checkbox]:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+input[type=checkbox]:disabled{opacity:.45;cursor:not-allowed}
+@media(forced-colors:active){
+  input[type=checkbox]{border-color:ButtonText;background:Canvas;color:HighlightText;forced-color-adjust:none}
+  input[type=checkbox]:checked,input[type=checkbox]:indeterminate{background:Highlight;border-color:Highlight}
+  input[type=checkbox]:disabled{border-color:GrayText;color:GrayText;opacity:1}
+  input[type=checkbox]:focus-visible{outline-color:Highlight}
+}
 .muted{color:var(--fg2)}
 /* ---------- sidebar */
 .side{position:fixed;inset:0 auto 0 0;width:var(--side);padding:16px;display:flex;flex-direction:column;z-index:30;background:var(--bg)}
@@ -40,33 +61,33 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .foot{display:flex;flex-direction:column;align-items:flex-start;gap:12px;color:var(--fg2);margin-top:20px}
 .foot>span,.foot>a{white-space:nowrap;flex-shrink:0}
 /* ---------- controls */
-.pill-btn{height:28px;padding:0 12px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;background:var(--bg);white-space:nowrap;letter-spacing:-.04px}
+.pill-btn{height:var(--control-height);padding:0 12px;border-radius:var(--control-radius);display:inline-flex;align-items:center;gap:6px;background:var(--bg);white-space:nowrap;letter-spacing:-.04px;justify-content:center;line-height:1;flex-shrink:0}
 .shadow{box-shadow:var(--ring)}
 .pill-btn.dark{background:var(--fg);color:#fff}
 .pill-btn.grey{background:var(--chip);color:var(--fg)}
 .pill-btn:disabled{opacity:.5;cursor:default}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{height:28px;padding:0 12px;border-radius:999px;background:var(--chip);color:var(--fg2);border:1px solid transparent;transition:background .15s,color .15s}
+.chip{height:var(--control-height);padding:0 12px;border-radius:999px;background:var(--chip);color:var(--fg2);border:1px solid transparent;transition:background .15s,color .15s}
 .chip:hover{color:var(--fg)}
 .chip.on{background:var(--fg);color:#fff}
 .chip .n{opacity:.6;margin-left:4px;font-size:12px}
-.search{height:28px;border-radius:999px;border:0;box-shadow:var(--ring);padding:0 12px 0 28px;width:200px;font:inherit;outline:none;
+.search{height:var(--control-height);border-radius:var(--control-radius);border:0;box-shadow:var(--ring);padding:0 12px 0 28px;width:200px;font:inherit;outline:none;
   background:#fff url("/static/icons/search.svg") 10px 50% / 1.15em no-repeat}
 input.search:focus,.ai-search input:focus{outline:1px solid var(--fg2);outline-offset:-1px;box-shadow:none}
 select[hidden]{display:none}
 .select-trigger{display:inline-flex;align-items:center;min-width:0;max-width:100%;gap:2px;padding:0 4px 0 12px;transition:background-color .12s cubic-bezier(.2,0,0,1)}
 .select-trigger>span:first-child,.menu button>span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.select-trigger.field-trigger{width:100%;height:34px;justify-content:space-between;padding:0 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);text-align:left}
+.select-trigger.field-trigger{width:100%;height:var(--control-height);justify-content:space-between;padding:0 10px;border:1px solid var(--line);border-radius:var(--control-radius);background:var(--bg);text-align:left}
 .select-trigger svg{flex:none;width:16px;height:16px;margin-left:4px;color:var(--fg2)}
 .select-trigger:hover,.select-trigger[aria-expanded=true]{background:var(--bg2)}
 .select-trigger:focus-visible,.caret:focus-visible{outline:1px solid var(--fg);outline-offset:-1px}
 /* ---------- main / header */
 main{margin-left:var(--side);padding:16px 16px 80px}
-.head{display:flex;align-items:center;gap:8px;height:28px}
+.head{display:flex;align-items:center;gap:8px;height:var(--control-height)}
 .head h1{font-size:16px;font-weight:500;margin:0}
 .head .sub{color:var(--fg2);margin-left:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .head .right{margin-left:auto;display:flex;gap:8px;align-items:center}
-/* Center the 28px filter row on the sidebar's first 1.4em section label. */
+/* Align controls and capsule tabs in the shared toolbar row. */
 .bar{display:flex;align-items:center;gap:8px;margin:calc(32px - (28px - 1.4em)/2) 0 14px}
 .bar .right{margin-left:auto;display:flex;gap:8px}
 /* ---------- masonry grid */
@@ -76,7 +97,7 @@ main{margin-left:var(--side);padding:16px 16px 80px}
 .content-admin-toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px;color:var(--fg2)}
 .content-admin-toolbar>span{font-size:12px;margin-right:auto}
 .detail-admin-tools{margin:0 0 24px}
-.card-manage{position:absolute;top:8px;left:8px;z-index:2;display:inline-flex;align-items:center;justify-content:center;min-height:28px;padding:0 12px;border-radius:999px;background:var(--bg);color:var(--fg);font-size:12px;box-shadow:var(--ring)}
+.card-manage{position:absolute;top:8px;left:8px;z-index:2;display:inline-flex;align-items:center;justify-content:center;min-height:var(--control-height);padding:0 12px;border-radius:var(--control-radius);background:var(--bg);color:var(--fg);font-size:12px;box-shadow:var(--ring);height:var(--control-height)}
 .card-manage:hover{background:var(--bg2)}
 .card-manage:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
 .admin-mode .card .badge{top:44px}
@@ -98,7 +119,7 @@ main{margin-left:var(--side);padding:16px 16px 80px}
 .card .go svg{width:12px;height:12px}
 .card .tr{position:absolute;top:8px;right:8px;opacity:0;transition:opacity .2s;display:flex;gap:6px}
 .card:hover .tr{opacity:1}
-.card .tr .pill-btn{height:24px;font-size:12px;padding:0 10px;background:var(--dark-btn);color:#fff;backdrop-filter:blur(6px)}
+.card .tr .pill-btn{height:var(--control-height);font-size:12px;padding:0 10px;background:var(--dark-btn);color:#fff;backdrop-filter:blur(6px)}
 .card .badge{position:absolute;top:8px;left:8px;font-size:11px;height:20px;line-height:20px;padding:0 8px;border-radius:999px;background:#fff;color:var(--fg);box-shadow:var(--ring)}
 .card .badge.pend{background:var(--pink);color:#fff}
 .empty{padding:80px 0;text-align:center;color:var(--fg2)}
@@ -135,7 +156,7 @@ body.detail-open .side{visibility:hidden}
 .video-surface>video::-webkit-media-controls-timeline{filter:url("media-controls.svg#timeline-no-shadow")}
 .stage .ext{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:var(--fg2);font-size:12px}
 .ptop{display:flex;gap:8px;align-items:center;position:sticky;top:0;background:#fff;padding:16px 20px 10px;margin:0 -20px;z-index:2}
-.ibtn{width:28px;height:28px;border-radius:50%;background:var(--chip);display:grid;place-items:center;color:var(--fg2)}
+.ibtn{width:var(--control-height);height:var(--control-height);border-radius:var(--control-radius);background:var(--chip);display:grid;place-items:center;color:var(--fg2);flex-shrink:0}
 .ibtn:hover{color:var(--fg)}
 .ibtn svg{width:12px;height:12px}
 .ptop .sp{flex:1}
@@ -153,7 +174,7 @@ body.detail-open .side{visibility:hidden}
 .sec{margin-top:22px}
 .sec h4{font-size:13px;font-weight:500;margin:0 0 8px;display:flex;align-items:center;gap:6px}
 .sec h4 .n{background:var(--chip);color:var(--fg2);border-radius:999px;font-size:11px;padding:0 6px;font-weight:400}
-.sec h4 .pill-btn{margin-left:auto;height:24px;font-size:12px}
+.sec h4 .pill-btn{margin-left:auto;height:var(--control-height);font-size:12px}
 .sec .hint{color:var(--fg2);margin:-4px 0 8px}
 .prompt{background:var(--bg2);border-radius:8px;padding:12px;white-space:pre-wrap;line-height:1.55;max-height:280px;overflow:auto;font-size:12.5px}
 .steps{margin:0;padding:0;list-style:none;counter-reset:s}
@@ -169,18 +190,18 @@ a.tag:hover{color:var(--fg)}
 .trust::before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor}
 .note{color:var(--fg2);font-size:12px;line-height:1.5;margin-top:8px}
 /* use dropdown */
-.split{position:relative;display:inline-flex;align-items:center;height:28px}
-.split .pill-btn.dark:first-child{border-radius:999px 0 0 999px;padding-right:10px}
-.split .caret{border-radius:0 999px 999px 0;padding:0 6px;border-left:1px solid rgba(255,255,255,.2)}
+.split{position:relative;display:inline-flex;align-items:center;height:var(--control-height)}
+.split .pill-btn.dark:first-child{border-radius:var(--control-radius) 0 0 var(--control-radius);padding-right:10px}
+.split .caret{border-radius:0 var(--control-radius) var(--control-radius) 0;padding:0 6px;border-left:1px solid rgba(255,255,255,.2);min-width:var(--control-height)}
 .split .caret:hover,.split .caret[aria-expanded=true]{background:oklch(28% 0 0)}
-/* recent.design: 150px minimum width, 8px surface radius, 4px inset, 28px rows. */
+/* recent.design: 150px minimum width, 8px surface radius, 4px inset, shared control-height rows. */
 .menu{position:fixed;background:var(--bg);color:var(--fg);border-radius:8px;box-shadow:oklch(0% 0 0 / .06) 0 1px 2px,oklch(0% 0 0 / .05) 0 0 0 1px;padding:4px;min-width:150px;width:max-content;z-index:100;overflow-y:auto;overscroll-behavior:contain;font:13px/1.4 var(--font);transform-origin:top right;animation:menu-in .18s cubic-bezier(.2,0,0,1)}
 .menu[data-side=top]{transform-origin:bottom right}
-.menu button{display:flex;width:100%;height:28px;text-align:left;padding:4px 8px;border-radius:4px;gap:8px;align-items:center;white-space:nowrap;font-weight:400;outline:none}
+.menu button{display:flex;width:100%;height:var(--control-height);text-align:left;padding:4px 8px;border-radius:var(--control-radius);gap:8px;align-items:center;white-space:nowrap;font-weight:400;outline:none}
 .menu button:hover,.menu button:focus-visible,.menu button[aria-checked=true]{background:var(--bg2)}
 .menu button:focus-visible{outline:1px solid var(--fg2);outline-offset:-1px}
-.menu[data-field=true] button{height:auto;min-height:28px}
-.menu[data-field=true] button>span:first-child{white-space:normal;overflow-wrap:anywhere}
+.menu[data-field=true] button{height:var(--control-height);min-height:var(--control-height)}
+.menu[data-field=true] button>span:first-child{white-space:nowrap;overflow-wrap:anywhere}
 .menu button:disabled{color:var(--fg3);cursor:default}
 .menu-check{display:flex;align-items:center;justify-content:center;width:16px;height:16px;margin-left:auto;flex:none}
 .menu hr{border:0;border-top:1px solid var(--line);margin:4px 0}
@@ -206,6 +227,7 @@ a.tag:hover{color:var(--fg)}
 .modal form{background:#fff;border-radius:14px;padding:20px;width:min(720px,92vw);max-height:90vh;overflow:auto;overscroll-behavior:contain;box-shadow:0 20px 60px rgba(0,0,0,.25)}
 .modal label{display:block;color:var(--fg2);margin:10px 0 4px}
 .modal input[type=text],.modal textarea{width:100%;font:inherit;border:0;box-shadow:0 0 0 1px var(--line);border-radius:8px;padding:8px 10px;background:#fff}
+.modal input[type=text]{padding-block:0}
 .modal textarea{min-height:90px;resize:vertical;line-height:1.5}
 .modal .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .modal .acts{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
@@ -262,6 +284,7 @@ a.tag:hover{color:var(--fg)}
 .submission-form label{display:block}.submission-form label>span{margin-left:4px;font-size:12px}
 .submission-form :is(input,textarea){display:block;width:100%;border:1px solid var(--line);border-radius:8px;margin-top:6px;padding:7px 10px;font:inherit;color:inherit;background:var(--bg)}
 .submission-form :is(input,textarea):focus{outline:1px solid var(--fg2);outline-offset:-1px}
+.submission-form input{padding-block:0}
 .submission-form textarea{resize:vertical}.submission-form .pill-btn{justify-self:start}
 .submission-status:empty{display:none}
 .shot-report details>div{max-height:220px;overflow:auto}

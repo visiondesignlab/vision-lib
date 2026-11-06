@@ -575,6 +575,26 @@ async function renderAcademyPage() {
   }
 }
 let journalController;
+let motionLogController;
+async function renderMotionLogPage(id) {
+  motionLogController?.abort();
+  const controller = motionLogController = new AbortController();
+  setNav('motion-log');
+  app.dataset.view = 'motion-log';
+  document.title = '拉片日志 · Vision Lab';
+  const view = document.createElement('div');
+  view.className = 'motion-log';
+  view.textContent = '正在读取拉片日志…';
+  app.replaceChildren(view);
+  try {
+    const module = await import(sitePath('/static/motion-log/motion-log.js'));
+    if (!controller.signal.aborted) await module.renderMotionLog(view, id, controller.signal);
+  } catch {
+    if (controller.signal.aborted || !view.isConnected) return;
+    view.innerHTML = '<div class="empty"><p>拉片日志暂时无法加载</p><button type="button" class="pill-btn shadow">重试</button></div>';
+    view.querySelector('button').onclick = () => renderMotionLogPage(id);
+  }
+}
 async function renderJournalPage(volume) {
   journalController?.abort();
   const controller = journalController = new AbortController();
@@ -673,6 +693,7 @@ async function renderDirectory() {
 function render() {
   playgroundView?.deactivate();
   journalController?.abort();
+  motionLogController?.abort();
   for(const d of document.querySelectorAll('[data-case-dialog] dialog[open]')) d.close();
   closeMenu();
   if (navOpen) setMobileNav(false, false);
@@ -687,6 +708,7 @@ function render() {
   if (isBrandAssetsRoute()) { closeDetail(); return renderBrandAssets(); }
   brandAssetsView?.deactivate();
   if (isJournalRoute()) { closeDetail(); return renderJournalPage(u.searchParams.get('vol')); }
+  if (p === '/motion-log') { closeDetail(); return renderMotionLogPage(u.searchParams.get('id')); }
   if (p === '/academy') { closeDetail(); return renderAcademyPage(); }
   if (isDesignAssetsRoute()) { closeDetail(); return renderDesignAssetPage(); }
   if (p === '/tools/ai-nav' && u.searchParams.get('category') === 'model-rankings') {

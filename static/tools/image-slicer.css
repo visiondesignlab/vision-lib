@@ -1,4 +1,4 @@
-/* Tool surfaces share the platform's type, greys, radii and pill controls. */
+/* Tool surfaces share the platform's type, greys, radii and shared controls. */
 .image-slicer{min-width:0;--slicer-pane-height:clamp(480px,calc(100dvh - 144px),1000px)}
 .image-slicer [hidden]{display:none!important}
 .image-slicer button:focus-visible,.image-slicer a:focus-visible,.image-slicer .preview-scroll:focus-visible,.image-slicer .slicer-results-scroll:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
@@ -25,14 +25,14 @@
 .slicer-file-info{display:flex;flex:1;min-width:0;flex-direction:column;gap:4px}
 .slicer-file-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--fg)}
 .slicer-file-size{font-size:11px;font-variant-numeric:tabular-nums}
-.slicer-file-remove{display:grid;place-items:center;width:24px;height:24px;flex:none;padding:0;border-radius:50%;background:var(--chip);color:var(--fg2);font-size:16px}
+.slicer-file-remove{display:grid;place-items:center;width:var(--control-height);height:var(--control-height);flex:none;padding:0;border-radius:var(--control-radius);background:var(--chip);color:var(--fg2);font-size:16px}
 .slicer-file-remove:hover:not(:disabled){color:var(--fg)}
 .slicer-settings{border-top:1px solid var(--line);margin-top:20px;padding-top:20px}
 .slicer-settings h2{margin-bottom:16px}
 .image-slicer .field{display:flex;flex-direction:column;gap:8px;min-width:0}
 .image-slicer .field>span{font-size:12px}
 .slicer-input{position:relative;display:flex;align-items:center;min-width:0}
-.slicer-input input{width:100%;min-width:0;height:34px;padding:0 32px 0 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);font:inherit;font-variant-numeric:tabular-nums;color:var(--fg);outline:none;appearance:textfield;-moz-appearance:textfield}
+.slicer-input input{width:100%;min-width:0;height:var(--control-height);padding:0 32px 0 10px;border:1px solid var(--line);border-radius:var(--control-radius);background:var(--bg);font:inherit;font-variant-numeric:tabular-nums;color:var(--fg);outline:none;appearance:textfield;-moz-appearance:textfield}
 .slicer-input input::-webkit-inner-spin-button,.slicer-input input::-webkit-outer-spin-button{appearance:none;margin:0}
 .slicer-input input:focus{border-color:var(--fg2);box-shadow:0 0 0 1px var(--fg2)}
 .slicer-input input::placeholder{color:var(--fg2)}
@@ -81,7 +81,7 @@
 .image-slicer .cut-label{left:8px;color:var(--pink);pointer-events:auto}
 .image-slicer .cut-list{display:flex;flex-wrap:wrap;gap:8px;max-height:76px;overflow:auto;overscroll-behavior:contain;margin-top:12px;color:var(--fg2);font-size:12px}
 .image-slicer .cut-chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;background:var(--bg2);padding:4px 8px;font-size:11px;font-variant-numeric:tabular-nums;max-width:100%}
-.image-slicer .cut-remove,.image-slicer .chip-remove{display:inline-grid;place-items:center;flex:none;width:20px;height:20px;border-radius:50%;padding:0;background:var(--chip);color:inherit}
+.image-slicer .cut-remove,.image-slicer .chip-remove{display:inline-grid;place-items:center;flex:none;width:var(--control-height);height:var(--control-height);border-radius:var(--control-radius);padding:0;background:var(--chip);color:inherit}
 .image-slicer .is-invalid{color:oklch(50% .18 25);border-color:currentColor}
 .image-slicer .knife-guide.is-invalid .knife-label{color:oklch(50% .18 25)}
 /* Wide screens keep the original, its cuts and the results in the same viewport. */

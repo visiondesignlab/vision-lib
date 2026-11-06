@@ -6,12 +6,12 @@
 .ai-directory-head>a { margin-left:auto; }
 .ai-layout { display:grid; grid-template-columns:148px minmax(0,1fr); gap:24px; align-items:start; }
 .ai-categories { position:sticky; top:16px; max-height:calc(100dvh - 32px); overflow:auto; display:grid; gap:2px; }
-.ai-categories button { text-align:left; padding:7px 12px; border-radius:8px; color:var(--fg2); }
+.ai-categories button{ text-align:left; padding:0 12px; border-radius:8px; color:var(--fg2); }
 .ai-categories button:hover,.ai-card:hover { background:var(--bg2); color:var(--fg); }
 .ai-categories button[aria-pressed=true] { background:var(--fg); color:var(--bg); }
-.ai-search input { font:inherit; border:1px solid var(--line); background:var(--bg); color:var(--fg); padding:8px 12px; border-radius:8px; min-width:0; }
+.ai-search input{ font:inherit; border:1px solid var(--line); background:var(--bg); color:var(--fg); padding:8px 12px; border-radius:var(--control-radius); min-width:0;height:var(--control-height);padding-block:0}
 .ai-search { position:relative; width:min(360px,100%); min-width:0; }
-.ai-search input { width:100%; padding-right:36px; }
+.ai-search input{width:100%;padding-right:36px}
 .ai-search-clear { position:absolute; inset:0 0 0 auto; width:32px; color:var(--fg2); border-radius:8px; }
 .ai-search-clear:not([hidden]) { display:grid; place-items:center; }
 .ai-search-clear:hover { color:var(--fg); }
@@ -41,7 +41,7 @@
   .ai-search { flex:1; width:auto; }
 }
 
-.ai-favorite{position:absolute;right:4px;top:4px;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;color:var(--fg2)}
+.ai-favorite{position:absolute;right:4px;top:4px;display:grid;place-items:center;width:var(--control-height);height:var(--control-height);border-radius:var(--control-radius);color:var(--fg2)}
 .ai-favorite svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linejoin:round}
 .ai-favorite:hover,.ai-favorite:focus-visible{background:var(--chip);color:var(--fg)}
 .ai-favorite[aria-pressed=true]{color:var(--fg)}

@@ -36,6 +36,12 @@ python3 scripts/import_journal.py "../../Design Reports/Vision Design 设计日�
 
 导入器只读取正式命名的 `Vol.N 有点意思 A Little Something.html`，沿用原刊期号、日期、正文和配图，在 `static/journal/` 更新目录及阅读页；不会修改日报源文件或 CMS 记录。
 
+## 拉片日志
+
+「浏览 → 拉片日志」位于 `/motion-log`，每个单片报告通过 `?id=<report-id>` 直接打开。正文保留原 Markdown 的全部章节、表格和时间码，详情提供章节目录与原站嵌入播放器。视频文件不会下载、复制或写入发布包。
+
+当前选录 Google Drive「Codex Nyx / 每日产品动态」中的两篇报告。源日期目录只有 `reports` 与 `videos`，未归档的关键帧、联系表和分析附件在阅读页明确标注，原 Markdown 原样保存。目录与来源、SHA-256 在 `static/motion-log/index.json`；`scripts/import_motion_log.py` 将已读取的 Drive 正文及经核验的原站播放器地址转换为静态内容。
+
 ## 运行
 
 ```bash

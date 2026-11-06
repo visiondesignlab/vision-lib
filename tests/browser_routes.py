@@ -162,7 +162,7 @@ def verify(base, pw, width):
         page.locator('.journal-card[href$="vol=14"]').click()
         back = page.get_by_role("link", name="全部期刊", exact=True)
         expect(back).to_be_visible()
-        assert back.bounding_box()["height"] == 28
+        assert back.bounding_box()["height"] == 32
         page.locator('.journal-film').scroll_into_view_if_needed()
         page.wait_for_function("window.testFilm?.playing")
         film = page.locator('.journal-film iframe')
@@ -308,7 +308,7 @@ def verify(base, pw, width):
         go("/tools/ai-nav?category=model-rankings")
         expect(page).to_have_url(base + "/tools/ai-models")
         tabs = page.get_by_role("navigation", name="榜单类型")
-        assert tabs.get_by_role("link").evaluate_all("links=>links.every(a=>a.getBoundingClientRect().height===28)")
+        assert tabs.get_by_role("link").evaluate_all("links=>links.every(a=>a.getBoundingClientRect().height===32)")
         for label in ("语言模型", "图像", "视频", "语音"):
             tabs.get_by_role("link", name=label, exact=True).click()
             expect(tabs.locator('[aria-current="page"]')).to_have_text(label)
