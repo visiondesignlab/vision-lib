@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT))
 import ai_directory
 import cms_content
 import store
+from media_delivery import excluded_backups
 
 
 def references(value):
@@ -45,8 +46,9 @@ def main():
     (staging / 'cases.json').write_text(json.dumps({'cases': cases}, ensure_ascii=False, indent=1) + '\n')
     (staging / 'ai-directory.json').write_text(json.dumps(ai_directory.public_view(ai_directory.load()), ensure_ascii=False, indent=1) + '\n')
     large = []
+    external = excluded_backups(ROOT)
     for source in sorted((ROOT / 'static').rglob('*')):
-        if not source.is_file() or source.stat().st_size < 80_000_000:
+        if not source.is_file() or str(source.relative_to(ROOT)) in external or source.stat().st_size < 80_000_000:
             continue
         digest = hashlib.sha256(source.read_bytes()).hexdigest()
         large.append({'path': str(source.relative_to(ROOT)), 'name': source.name,

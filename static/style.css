@@ -120,6 +120,11 @@ body.detail-open .side{visibility:hidden}
 .video-surface{border-radius:inherit;overflow:hidden;isolation:isolate;transform:translateZ(0);-webkit-mask-image:linear-gradient(#fff,#fff);mask-image:linear-gradient(#fff,#fff)}
 .video-surface>video{border-radius:0;clip-path:none}
 .video-surface>video:fullscreen{border-radius:0;clip-path:none}
+.stage .online-video{width:min(800px,100%);max-height:calc(100dvh - 100px);overflow:auto;background:var(--bg);padding:16px;text-align:center;box-shadow:0 0 0 1px var(--line)}
+.online-video iframe{display:block;width:100%;aspect-ratio:16/9;border:0}
+.online-video .twitter-tweet{margin:0 auto!important}
+.online-video p{color:var(--muted);font-size:13px}
+.online-video>.pill-btn{margin-top:12px}
 /* Chromium's native fade curve with a maximum opacity of 32%; controls retain full opacity. */
 .video-surface>video::-webkit-media-controls-panel{background-image:linear-gradient(
   rgb(0 0 0 / 0) 0%,rgb(0 0 0 / 0.0032) 8.1%,rgb(0 0 0 / 0.01504) 15.5%,rgb(0 0 0 / 0.03392) 22.5%,

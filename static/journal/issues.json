@@ -1,5 +1,11 @@
 [
   {
+    "volume": 15,
+    "date": "2026-11-06",
+    "headline": "Improvements to agent-generated vector illustrations and icons",
+    "intro": "今天真正有用的更新，都在拆掉 AI 的“成片假象”：Figma 把生成插画还原成描边和图层，OpenAI 把局部标注与 SVG 交给 API，Linear 干脆把 credits 花到哪里摊成账单。能生成早就不稀奇了，能改、能续、能停，才算开始进生产。"
+  },
+  {
     "volume": 14,
     "date": "2026-11-05",
     "headline": "Generative Remove in Premiere beta",

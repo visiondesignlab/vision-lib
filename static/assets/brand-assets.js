@@ -23,7 +23,7 @@ export async function createBrandAssets({openPreview}) {
     return sitePath(`/assets/brand?${query}`);
   }
   function download(file, label, dark = false) {
-    return `<a class="pill-btn ${dark ? "dark" : "shadow"}" href="${esc(file.href)}" download="${esc(file.fileName || "viaim 260309 Internal Draft.pdf")}" title="下载 ${esc(file.fileName || label)}">${esc(label)}</a>`;
+    return `<a class="pill-btn ${dark ? "dark" : "shadow"}" href="${esc(file.downloadHref || file.href)}" download="${esc(file.fileName || "viaim 260309 Internal Draft.pdf")}" title="下载 ${esc(file.fileName || label)}">${esc(label)}</a>`;
   }
   function render(url) {
     deactivate();
@@ -46,8 +46,8 @@ export async function createBrandAssets({openPreview}) {
         <span class="brand-eyebrow">品牌规范</span><h2>${esc(g.title)}</h2>
         <p class="brand-description">${esc(g.summary)}</p>
         <div class="brand-actions">${download(g, "下载 PDF", true)}<button type="button" class="pill-btn shadow" data-document-preview="${esc(g.href)}" aria-haspopup="dialog">大图预览</button></div>
-        <dl class="brand-meta">${[["版本", g.version],["状态", "当前版本 · 内部草案"],["格式", g.format],["文件大小", sizeLabel(g.bytes)],["源文件日期", g.sourceDate],["收录日期", g.updatedAt]].map(([label,value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join("")}</dl>
-        <section class="brand-history"><h3>版本历史 <span class="tag">${data.versions.length}</span></h3>${data.versions.map(version => `<button type="button" data-document-preview="${esc(version.href)}" aria-haspopup="dialog"><span class="brand-version-title">${esc(version.version)}<span class="tag">当前</span></span><span class="muted">${esc(version.date)}</span><p>${esc(version.note)}</p></button>`).join("")}</section>
+        <dl class="brand-meta">${[["版本", g.version],["状态", g.statusLabel || "当前版本 · 内部草案"],["格式", g.format],["文件大小", sizeLabel(g.bytes)],["源文件日期", g.sourceDate],["收录日期", g.updatedAt]].map(([label,value]) => `<div><dt>${esc(label)}</dt><dd>${esc(value)}</dd></div>`).join("")}</dl>
+        <section class="brand-history"><h3>版本历史 <span class="tag">${data.versions.length}</span></h3>${data.versions.map(version => `<button type="button" ${version.href ? `data-document-preview="${esc(version.href)}" aria-haspopup="dialog"` : 'disabled'}><span class="brand-version-title">${esc(version.version)}<span class="tag">${version.status === 'current' ? '当前' : '历史版本'}</span></span><span class="muted">${esc(version.date)}</span><p>${esc(version.note)}</p></button>`).join("")}</section>
       </article>
       <section class="brand-surface brand-document-preview" aria-label="品牌规范 PDF 预览"><div class="brand-section-head"><h2>文档预览</h2><span class="muted">${esc(g.version)}</span></div><div class="brand-pdf"></div></section>
     </div>`;
@@ -83,7 +83,7 @@ export async function createBrandAssets({openPreview}) {
           previewHref: file.href, initialPage: file.href === selected.href ? documentViewer.pageNumber : 1,
           usage: file.summary || file.fileName,
           metadata: [['版本',file.version],['页数',file.pages ? `${file.pages} 页` : null],['文件大小',sizeLabel(file.bytes)]],
-          formats: [{label:'PDF', href:file.href, fileName:file.fileName || 'viaim 260309 Internal Draft.pdf'}],
+          formats: [{label:'PDF', href:file.downloadHref || file.href, fileName:file.fileName || 'viaim 260309 Internal Draft.pdf'}],
         }));
         const index = documents.findIndex(file => file.previewHref === button.dataset.documentPreview);
         if (index >= 0) openPreview(documents, index, '品牌文档', button);

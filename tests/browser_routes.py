@@ -5,6 +5,7 @@ Use BROWSER_CHANNEL=chrome to test the system Chrome instead of bundled Chromium
 """
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import socket
@@ -28,6 +29,15 @@ def fixture():
         media = directory / "media"
         example = "ambi-2114733804535377947"
         shutil.copytree(ROOT / "publish/media" / example, media / example)
+        # Public snapshots now stream original-site videos. Keep playback QA
+        # independent of those providers and of removed production MP4 files.
+        subprocess.run([
+            "ffmpeg", "-loglevel", "error", "-y", "-f", "lavfi",
+            "-i", "testsrc2=size=320x180:rate=12", "-f", "lavfi",
+            "-i", "sine=frequency=440:sample_rate=44100", "-t", "2",
+            "-c:v", "libx264", "-pix_fmt", "yuv420p", "-c:a", "aac",
+            "-movflags", "+faststart", str(media / example / "web.mp4"),
+        ], check=True)
         rows = [
             dict(id=f"qa-{i}", title=f"QA video {i}", category="QA", type="video",
                  tags=[], _version=1, status="pending" if i < 4 else "archived" if i < 6 else "published",
@@ -125,6 +135,15 @@ def verify(base, pw, width):
     errors = []
     with browser.new_context(viewport={"width": width, "height": 900}) as ctx:
         ctx.route("https://**/*", lambda route: route.abort())
+        # Exercise the online player lifecycle without a live provider/network dependency.
+        ctx.route("https://www.youtube.com/iframe_api", lambda route: route.fulfill(content_type="application/javascript", body="""
+          window.YT={Player:class {
+            constructor(frame,{events}){this.frame=frame;window.testFilm=this;setTimeout(()=>events.onReady({target:this}),0);}
+            setVolume(value){this.volume=value;} unMute(){this.muted=false;}
+            playVideo(){this.playing=true;} destroy(){this.playing=false;this.destroyed=true;this.frame.remove();}
+          }};window.onYouTubeIframeAPIReady();
+        """))
+        ctx.route("https://www.youtube.com/embed/**", lambda route: route.fulfill(content_type="text/html",body="<p>Online player fixture</p>"))
         page = ctx.new_page()
         page.on("pageerror", lambda err: errors.append(str(err)))
         def go(path):
@@ -144,14 +163,16 @@ def verify(base, pw, width):
         back = page.get_by_role("link", name="全部期刊", exact=True)
         expect(back).to_be_visible()
         assert back.bounding_box()["height"] == 28
-        film = page.locator(".journal-film video")
-        assert film.evaluate("v=>v.volume === 0.5 && !v.muted")
-        film.scroll_into_view_if_needed()
-        page.wait_for_function("document.querySelector('.journal-film video').currentTime > 0.05")
+        page.locator('.journal-film').scroll_into_view_if_needed()
+        page.wait_for_function("window.testFilm?.playing")
+        film = page.locator('.journal-film iframe')
+        expect(film).to_have_attribute('src', re.compile(r'^https://www.youtube.com/embed/ff6ZvCfHJrM'))
+        assert page.evaluate("window.testFilm.volume === 50 && !window.testFilm.muted")
         old_film = film.element_handle()
         back.click()
         expect(page.locator(".journal-latest")).to_be_visible()
-        assert old_film.evaluate("v=>v.paused && !v.isConnected")
+        assert old_film.evaluate("v=>!v.isConnected")
+        page.wait_for_function("window.testFilm.destroyed && !window.testFilm.playing")
         # Migrated videos can have no authored prompt. They must still offer a usable handoff.
         go("/c/transfer-%s-0" % width)
         handoff = page.locator("#overlay > .ptop .split")
@@ -308,6 +329,16 @@ def verify(base, pw, width):
         go("/guide")
         expect(page.get_by_role("heading", name="常见问题")).to_be_visible()
         expect(page.locator("body")).not_to_contain_text("输入管理员 token")
+        go("/academy")
+        expect(page.get_by_role("heading", name="AI 学堂", exact=True)).to_be_visible()
+        expect(page.locator("#primaryNav [data-tab=academy]")).to_have_class("on")
+        academy = page.locator(".academy-card")
+        expect(academy).to_have_count(3)
+        assert academy.evaluate_all("links=>links.map(a=>a.href)") == [
+            "https://academy.claude.com/", "https://academy.runwayml.com/courses",
+            "https://app.tapnow.ai/home/taptv"]
+        page.wait_for_function("Array.from(document.querySelectorAll('.academy-card img')).every(img=>img.complete && img.naturalWidth>0)")
+        assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
         go("/assets/design")
         expect(page.get_by_role("heading", name="设计资产")).to_be_visible()
         expect(page.get_by_text("含新品 · 谨慎公开", exact=True)).to_be_visible()

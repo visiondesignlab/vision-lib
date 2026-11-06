@@ -1,0 +1,73 @@
+
+<header>
+<h1>Vol.15 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-11-06 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天真正有用的更新，都在拆掉 AI 的“成片假象”：Figma 把生成插画还原成描边和图层，OpenAI 把局部标注与 SVG 交给 API，Linear 干脆把 credits 花到哪里摊成账单。能生成早就不稀奇了，能改、能续、能停，才算开始进生产。</p>
+<p class="mixed-script">另一条线更朴素。GitHub 把阻断项搬到顶部，WebKit 给不支持暗色的网站兜底，Affinity 则把 iPad 从伴侣软件做成正经工作台。今天没有“革命”，但全是能少返一次工的东西。</p>
+<h2>● AI Design</h2>
+<h3>Improvements to agent-generated vector illustrations and icons<a class="source-url" href="https://www.figma.com/release-notes/" rel="noopener noreferrer" target="_blank">https://www.figma.com/release-notes/</a></h3>
+<p class="mixed-script">Figma agent 现在生成的插画和图标不再是一坨难拆的矢量：对象按功能分组、图层可以独立改，自己的插画也能作为 style reference。线条保留 stroke，不用拿 fill 假装描边，官方还把结构直接写成可进 Figma Motion。</p>
+<p>这次终于碰到设计文件的基本盘了。会画一只图标不值多少钱，能把线宽、端点、层级和后续动画都留下，才可能接进设计系统。还没实测，跨一整套图标的一致性先不替它吹。</p>
+<h3>Introducing Images 2.6<a class="source-url" href="https://openai.com/index/introducing-images-2-6/" rel="noopener noreferrer" target="_blank">https://openai.com/index/introducing-images-2-6/</a></h3>
+<p class="mixed-script">OpenAI 把 Images 2.6 分成 Flare 和 Sunburst：官方称整体生成快 50%，Flare 在 low quality 下最快约 6 秒，Sunburst 负责更高质量和多轮编辑的一致性。GIF 是最显眼的新玩具；更实用的是 API 终于有 image markup、SVG export 和 complexity 参数。</p>
+<p class="mixed-script">API 标准 token 价没有顺手涨一档：Flare / Sunburst 的 image input 是 $8/M、output $30/M、cached input $2/M，text input $5/M，和 2.5 同档模型一致。单张到底多少钱仍看质量和 token，别拿“同价”当无限重画。品牌细节能不能扛住十轮修改，还没实测，先不下结论。</p>
+<h2>● Products</h2>
+<h3>Affinity for iPad<a class="source-url" href="https://www.canva.com/newsroom/news/affinity-for-ipad/" rel="noopener noreferrer" target="_blank">https://www.canva.com/newsroom/news/affinity-for-ipad/</a></h3>
+<figure><img alt="Affinity for iPad 把 sketch、vector、pixel 和 layout 放进同一个工作台" decoding="async" height="587" loading="lazy" src="01.png" width="1920"/><figcaption>Affinity for iPad 把 sketch、vector、pixel 和 layout 放进同一个工作台</figcaption></figure>
+<p class="mixed-script">Affinity 把 sketch、vector、pixel 和 layout 都塞进同一个 <code>.af</code> 文件，Apple Pencil 的 pressure、tilt、barrel roll、squeeze、hover 也都接上了。RAW、矢量、千层文件和多页排版不需要先导出再换 App，最后还能回到 proper color handling 的印刷文件。</p>
+<p class="mixed-script">核心工具对个人免费，Canva AI Studio 才要 premium；App 本身需要一个免费 Canva 账号。这定价挺狠，iPad 上那些各管一段、每段再收一次订阅的软件要难受了。真机大文件性能还没测，但它至少不是把桌面版切薄一半就端上来。</p>
+<h3>Framer Agent Templates<a class="source-url" href="https://www.framer.com/updates/community/" rel="noopener noreferrer" target="_blank">https://www.framer.com/updates/community/</a></h3>
+<figure><img alt="Framer Marketplace 的 Agent Template 同时交付视觉、组件和 skills" decoding="async" height="1080" loading="lazy" src="02.png" width="1920"/><figcaption>Framer Marketplace 的 Agent Template 同时交付视觉、组件和 skills</figcaption></figure>
+<p class="mixed-script">Framer Marketplace 新增 Agent Templates。每套模板不只卖页面皮肤，还带 skills、design system page 和一条说明视频；让 agent 补 careers page 或 blog index 时，它会沿用原模板的样式与组件。</p>
+<p class="mixed-script">这比“照这张图再做一页”靠谱得多。模板作者以后卖的是一小套生成规则，组件命名、内容边界和禁用项都会影响结果。好处是新页面没那么容易跑味；麻烦也很直接，skills 和组件一样要维护，交付后不能装死。</p>
+<h2>● Design Engineering</h2>
+<h3>Mobile Diffs<a class="source-url" href="https://linear.app/changelog/2026-11-04-mobile-diffs" rel="noopener noreferrer" target="_blank">https://linear.app/changelog/2026-11-04-mobile-diffs</a></h3>
+<figure><img alt="Linear 把 Guided Reviews 和代码 diff 带到 iOS 与 Android" decoding="async" height="1760" loading="lazy" src="03.png" width="3904"/><figcaption>Linear 把 Guided Reviews 和代码 diff 带到 iOS 与 Android</figcaption></figure>
+<p class="mixed-script">Linear 的 Diffs 已进 iOS 和 Android：手机上能跑 Guided Reviews、从 review inbox 接活、看 preview link、跟 review / cloud coding agent 对话，也能把批准的改动合并；看一半可以回桌面接着看。</p>
+<p class="mixed-script">它没把桌面 diff 生硬缩成一条细缝，而是把“先弄懂改了什么，再决定下一步”留在小屏。设计评审也该学这点：移动端先给变化、阻断和责任人，完整画布回桌面看，别逼人在手机上捏两下完成像素级验收。</p>
+<h3>AI credit usage explorer and spend limits<a class="source-url" href="https://linear.app/changelog" rel="noopener noreferrer" target="_blank">https://linear.app/changelog</a></h3>
+<figure><img alt="Linear AI usage explorer 把总费用、session 数和平均每次费用放进同一张账单" decoding="async" height="2150" loading="lazy" src="04.png" width="3600"/><figcaption>Linear AI usage explorer 把总费用、session 数和平均每次费用放进同一张账单</figcaption></figure>
+<p class="mixed-script">Linear 管理员现在能按 team、feature、user 或 loop 拆 AI credit，用任意时间段看总花费、session 数和平均每次费用。限制可以下到 workspace、user、loop；撞线后直接暂停新增用量，等周期重置或管理员加额度。</p>
+<p class="mixed-script">这才是 agent 真正进入公司的标志：不是大家都在用，而是财务终于知道谁在烧、哪个流程最贵、何时该停。没有 loop 级限额的“AI 预算”，基本都只是月底看总账时的一声叹气。</p>
+<h2>● Articles</h2>
+<h3>Introducing Adaptive Dark Mode<a class="source-url" href="https://webkit.org/blog/18541/introducing-adaptive-dark-mode/" rel="noopener noreferrer" target="_blank">https://webkit.org/blog/18541/introducing-adaptive-dark-mode/</a></h3>
+<figure><img alt="WebKit Adaptive Dark Mode 会分析页面并生成暗色版本，而不是简单整页反相" decoding="async" height="654" loading="lazy" src="05.png" width="1024"/><figcaption>WebKit Adaptive Dark Mode 会分析页面并生成暗色版本，而不是简单整页反相</figcaption></figure>
+<p class="mixed-script">Safari 27.3 beta 加了用户主动开启的 Adaptive Dark Mode。WebKit 说暗色模式用户占约 40% 的页面加载，但真正支持暗色的网站只有约 10%；新模式会分析亮度，处理文字、渐变、SVG，连简单黑白位图 logo 都可能重画。已经声明 <code>color-scheme: light dark</code> 的站点不动，<code>canvas</code> 也不碰。</p>
+<p class="mixed-script">这不是开发者可以偷懒的许可证。混合模式、mask 和品牌 logo 都可能被系统判断错，兜底永远比原生暗色粗。想保住控制权就认真声明 <code>color-scheme</code>，再拿透明 PNG、SVG、图表和嵌入内容逐个过一遍；整页 <code>invert()</code> 那套早该退休了。</p>
+<h3>New pull request overview page in public preview<a class="source-url" href="https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-05-new-pull-request-overview-page-in-public-preview/</a></h3>
+<figure><img alt="GitHub 新 PR Overview 把 merge readiness、checks、comments 和 approvals 放到页面顶部" decoding="async" height="768" loading="lazy" src="06.png" width="1464"/><figcaption>GitHub 新 PR Overview 把 merge readiness、checks、comments 和 approvals 放到页面顶部</figcaption></figure>
+<p class="mixed-script">GitHub 的新 PR Overview 开放 opt-in public preview。合并状态、checks、comments、approvals 和下一步动作被搬到页面顶部，merge box 用不到原来一半的空间；评论还能只看 unresolved 或自己写的，并按最新优先。</p>
+<p class="mixed-script">这是很标准、也很容易被忽略的信息架构修正：先告诉人为什么不能过，再给能做的动作，历史流水往后放。设计评审、内容审批、发布清单都适用。现在只是 preview，信息密度会不会过头还得看长 PR，至少方向没绕弯。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Cif Infinite: Visual R&amp;D by Bleed<a class="source-url" href="https://www.stashmedia.tv/infinte-invisible-bleed-get-clean-with-lola-mullenlowe/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/infinte-invisible-bleed-get-clean-with-lola-mullenlowe/</a></h3>
+<figure data-film-source="https://vimeo.com/1096333916"><img alt="Bleed 把 Cif 包装上的沙漏轮廓做成可反复使用的三维益生菌胶囊" decoding="async" height="1080" loading="lazy" src="07.jpg" width="1920"/><figcaption>Bleed 把 Cif 包装上的沙漏轮廓做成可反复使用的三维益生菌胶囊</figcaption></figure>
+<p class="mixed-script">视频：Pitch / Visual R&amp;D<a class="source-url" href="https://vimeo.com/1096333916" rel="noopener noreferrer" target="_blank">https://vimeo.com/1096333916</a>｜Finished spot<a class="source-url" href="https://vimeo.com/1221226233" rel="noopener noreferrer" target="_blank">https://vimeo.com/1221226233</a>｜来源：Stash 制作解析<a class="source-url" href="https://www.stashmedia.tv/infinte-invisible-bleed-get-clean-with-lola-mullenlowe/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/infinte-invisible-bleed-get-clean-with-lola-mullenlowe/</a></p>
+<p class="mixed-script">Bleed 和 LOLA MullenLowe 要给 Cif Infinite 解释“看不见的益生菌技术”。他们没画一堆实验室蓝光，而是抓住包装上的沙漏轮廓，把它做成半透明的 3D 胶囊：外面是软膜和细网，里面是绿、黄颗粒，运动时有流体感，但整体几何非常干净。技术感有了，还是一眼能认回清洁产品，不会突然变成药企片。</p>
+<p class="mixed-script">镜头节奏也不靠狂切。先让胶囊在白色空间里慢慢开合、分裂和连接，再用微粒、薄膜形变和透光把“持续作用”讲出来；产品包装只需要在关键节点接住颜色和轮廓。最值钱的是这套 pitch 里的视觉概念最后真的进了 campaign，后来还能继续复用。R&amp;D 不是开拍前做几张气氛图，是一路改到能当品牌资产。</p>
+<p class="mixed-script">做下一条产品 hero video，可以先只做一个五秒母镜头：把包装或 UI 里最有识别度的轮廓抽出来，规定它的材质、形变和进入退出方式，再看能不能长出三种镜头。长不出来就别急着上整片。这个方法比先写一百句“未来感、科技感、粒子感”管用。</p>
+<h2>● Stash 最新内容观察</h2>
+<p>过去 24 小时真正新增的就两条，今天不拿旧片凑第三条。</p>
+<ul>
+<li>Infinte &amp; Invisible: Bleed Get Clean With LOLA MullenLowe<a class="source-url" href="https://www.stashmedia.tv/infinte-invisible-bleed-get-clean-with-lola-mullenlowe/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/infinte-invisible-bleed-get-clean-with-lola-mullenlowe/</a>｜motion / product visualization：<strong>已升级为今日主卡</strong>。包装图形变成可扩展的 3D 语言，这类 pitch R&amp;D 比成片炫技更该存档。</li>
+<li>More Holiday Warmth and Wit from Wallace Gromit<a class="source-url" href="https://www.stashmedia.tv/more-holiday-warmth-and-wit-from-wallace-gromit/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/more-holiday-warmth-and-wit-from-wallace-gromit/</a>｜stop motion / holiday film：Aardman 和 Barbour 又把 Wallace、Gromit 拉回来，Steve Harding-Hill 导演，雪地散步加一台注定出事的新发明。老角色不需要重做世界观，品牌只要把服装、礼物和救场动作嵌进熟悉的节奏；making-of 更适合看实体表演怎么给产品留位置。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Figma agent 生成一整套图标时，描边规范、图层命名和跨轮次风格能不能真的守住。</li>
+<li>Images 2.6 的 GIF 是否只是 sprite sheet 包装；SVG export 的节点质量、渐变和可编辑文字有没有坑。</li>
+<li>Affinity for iPad 在千层文件、RAW 和多页排版里是否还顺，免费核心工具的导出边界在哪里。</li>
+<li>Framer Agent Template 的 skills 会不会被页面级 prompt 覆盖，模板更新后旧项目怎么继承。</li>
+<li>Linear 的 loop 费用到底包含哪些 agent 动作，触顶暂停后有没有清楚的用户提示和管理员审计。</li>
+<li>Adaptive Dark Mode 对品牌色、透明素材、mask、iframe 和图表的误判清单。</li>
+<li>Stash 下一条真正有制作 breakdown 的新片；Cif Infinite 与 Wallace &amp; Gromit 已登记，不连续重复。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日主题：Figma agent 矢量插画与图标、OpenAI Images 2.6、Affinity for iPad、Framer Agent Templates、Linear Mobile Diffs、Linear AI credit 管理、WebKit Adaptive Dark Mode、GitHub PR Overview。</li>
+<li>今日视频：Bleed × LOLA MullenLowe 的 Cif Infinite visual R&amp;D；Pitch <code>1096333916</code> 与 finished spot <code>1221226233</code> 已交叉核验。两个 Vimeo player 均返回 401，飞书使用 Stash 1920×1080 静态图降级并保留原片链接。</li>
+<li>今日 Stash：Cif Infinite 升级主卡；Aardman × Barbour <code>More Holiday Warmth and Wit from Wallace Gromit</code> 轻观察。最新 feed 只有这两条，不把 Doom Burger、Bass X Machina 或更早内容搬回来。</li>
+<li>继续避免：11 月 5 日的 Premiere Generative Remove、Illustrator Icon Sheets / Bitmap Rasterize、Spline 3D Comments、Workflow SDK 幂等启动、After Effects layer controls、Copilot in Xcode、OpenAI physical-world engineering；11 月 4 日的 Figma prototype connections、Framer Convert、Zapier Marketing OS、Copilot in JetBrains Air、Dependabot APM 与 Levi’s 也不换标题重发。</li>
+</ul>
+<p class="mixed-script verification">核验说明：Figma、OpenAI、Canva、Framer、Linear、WebKit、GitHub 与 Stash 官方页面于 2026-11-06 回读。正文 7 张配图原始宽度为 1024–3904px，并逐张目视检查；Cif Infinite 的 Vimeo player 预检返回 HTTP 401，因此按规则使用 Stash 1920×1080 静态图作为 <code>fallback=image</code>，保留 Stash 与两条 Vimeo 链接。</p>

@@ -1,25 +1,33 @@
 {
   "guideline": {
-    "id": "viaim-visual-guidelines-260309",
+    "id": "viaim-brand-guidelines-v260717",
     "title": "viaim 品牌视觉规范",
-    "version": "260309 Internal Draft",
+    "version": "v260717",
     "status": "latest",
     "format": "PDF",
-    "size": "82 MB",
     "owner": "viaim brand",
-    "updatedAt": "2026-07-05",
-    "sourceDate": "2026-03-09",
-    "href": "/static/assets/viaim/files/viaim-visual-guidelines-260309-internal-draft.pdf",
+    "updatedAt": "2026-11-06",
+    "sourceDate": "2026-07-17",
+    "href": "https://air-prod.imgix.net/d782979b-786a-4c04-8fa7-6fd1199d301f.pdf",
     "summary": "最新品牌视觉规范。支持在线预览和下载，后续版本会继续追加到版本更新历史。",
-    "bytes": 85560377
+    "bytes": 116240526,
+    "fileName": "viaim Brand Guidelines v260717.pdf",
+    "statusLabel": "当前版本",
+    "downloadHref": "https://air-prod.imgix.net/d782979b-786a-4c04-8fa7-6fd1199d301f.pdf?dl=viaim+Brand+Guidelines+v260717.pdf"
   },
   "versions": [
     {
+      "version": "v260717",
+      "date": "2026-11-06",
+      "status": "current",
+      "note": "接入 Air 中的品牌视觉规范，支持站内预览与原文件下载。",
+      "href": "https://air-prod.imgix.net/d782979b-786a-4c04-8fa7-6fd1199d301f.pdf"
+    },
+    {
       "version": "260309 Internal Draft",
       "date": "2026-07-05",
-      "status": "current",
-      "note": "新增到公开品牌资料库，作为当前最新品牌视觉规范。",
-      "href": "/static/assets/viaim/files/viaim-visual-guidelines-260309-internal-draft.pdf"
+      "status": "archived",
+      "note": "曾收录的内部草案，已由 v260717 替换。"
     }
   ],
   "categories": [
@@ -854,10 +862,11 @@
       "version": "v260924",
       "format": "PDF",
       "fileName": "viaim 公司品牌介绍_国内_v260924.pdf",
-      "href": "/static/assets/viaim/files/viaim-company-intro-cn-v260924.pdf",
-      "bytes": 122424775,
+      "href": "https://air-prod.imgix.net/8119a700-ef1b-4b56-a977-931f1a7397ca.pdf",
+      "bytes": 41398932,
       "pages": 38,
-      "addedAt": "2026-11-04"
+      "addedAt": "2026-11-04",
+      "downloadHref": "https://air-prod.imgix.net/8119a700-ef1b-4b56-a977-931f1a7397ca.pdf?dl=viaim+%E5%85%AC%E5%8F%B8%E5%93%81%E7%89%8C%E4%BB%8B%E7%BB%8D_%E5%9B%BD%E5%86%85_v260924.pdf"
     },
     {
       "id": "ja",
@@ -866,10 +875,11 @@
       "version": "v260924",
       "format": "PDF",
       "fileName": "viaim 公司品牌介绍_日语_v260924.pdf",
-      "href": "/static/assets/viaim/files/viaim-company-intro-ja-v260924.pdf",
-      "bytes": 97659049,
+      "href": "https://air-prod.imgix.net/0d19b786-80d1-4342-a225-bc730fa67896.pdf",
+      "bytes": 37113015,
       "pages": 28,
-      "addedAt": "2026-11-04"
+      "addedAt": "2026-11-04",
+      "downloadHref": "https://air-prod.imgix.net/0d19b786-80d1-4342-a225-bc730fa67896.pdf?dl=viaim+%E5%85%AC%E5%8F%B8%E5%93%81%E7%89%8C%E4%BB%8B%E7%BB%8D_%E6%97%A5%E8%AF%AD_v260924.pdf"
     },
     {
       "id": "en",
@@ -878,10 +888,11 @@
       "version": "v260924",
       "format": "PDF",
       "fileName": "viaim 公司品牌介绍_英语_v260924.pdf",
-      "href": "/static/assets/viaim/files/viaim-company-intro-en-v260924.pdf",
-      "bytes": 109936623,
+      "href": "https://air-prod.imgix.net/984aea75-9a49-4a94-a97a-7774fbf5fd22.pdf",
+      "bytes": 35691373,
       "pages": 29,
-      "addedAt": "2026-11-04"
+      "addedAt": "2026-11-04",
+      "downloadHref": "https://air-prod.imgix.net/984aea75-9a49-4a94-a97a-7774fbf5fd22.pdf?dl=viaim+%E5%85%AC%E5%8F%B8%E5%93%81%E7%89%8C%E4%BB%8B%E7%BB%8D_%E8%8B%B1%E8%AF%AD_v260924.pdf"
     }
   ]
 }

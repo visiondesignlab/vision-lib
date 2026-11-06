@@ -1,5 +1,4 @@
-const {path, icon} = window.VisionSite;
-const localFilms = new Map([['ff6ZvCfHJrM', 'doom-burger.mp4']]);
+const {icon} = window.VisionSite;
 const scripts = new Map();
 const initialVolume = 0.5;
 
@@ -30,7 +29,6 @@ function describe(url) {
   if (['www.youtube.com','youtu.be'].includes(u.hostname)) {
     const id = u.searchParams.get('v') || u.pathname.slice(1);
     if (!/^[\w-]{11}$/.test(id)) return;
-    if (localFilms.has(id)) return {native:path('/static/journal/films/' + localFilms.get(id))};
     return {kind:'youtube',id};
   }
   if (['vimeo.com','player.vimeo.com'].includes(u.hostname)) {
@@ -50,7 +48,7 @@ function mountFilm(figure, signal) {
   region.className = 'journal-film';
   poster.before(region); region.append(poster);
   const title = poster.alt || '产品动态视频';
-  let native, active = null, failed = false, visible = false;
+  let active = null, failed = false, visible = false;
   const status = document.createElement('span');
   status.className = 'journal-film-status'; status.hidden = true;
   const play = document.createElement('button');
@@ -61,15 +59,7 @@ function mountFilm(figure, signal) {
   source.target = '_blank'; source.rel = 'noopener noreferrer';
   source.className = 'journal-film-source'; source.innerHTML = '查看原片 ' + icon('external');
   figure.querySelector('figcaption')?.append(' ', source);
-  if (film.native) {
-    native = document.createElement('video');
-    native.src = film.native; native.poster = poster.src; native.preload = 'none';
-    native.controls = true; native.playsInline = true; native.volume = initialVolume;
-    native.setAttribute('aria-label', title); region.prepend(native); poster.hidden = true; play.hidden = true;
-    native.addEventListener('error', () => { native.hidden = true; poster.hidden = false; error(); }, {signal});
-  }
   function stop() {
-    native?.pause();
     const old = active; active = null;
     if (old) {
       clearTimeout(old.timer);
@@ -77,7 +67,7 @@ function mountFilm(figure, signal) {
       old.mount.remove(); // Removing the frame stops its audio even if the provider is unresponsive.
       if (old.player?.destroy) Promise.resolve().then(()=>old.player.destroy()).catch(()=>{});
     }
-    if (!native) { poster.hidden = false; play.hidden = failed; }
+    poster.hidden = false; play.hidden = failed;
     status.hidden = !failed;
   }
   function error() {
@@ -86,10 +76,6 @@ function mountFilm(figure, signal) {
   }
   async function start() {
     if (document.hidden || active || failed || signal.aborted) return;
-    if (native) {
-      native.play().catch(()=>{}); // Native controls remain available if autoplay is disabled.
-      return;
-    }
     const mount = document.createElement('div'); mount.className = 'journal-film-player'; region.prepend(mount);
     const current = active = {mount};
     const live = () => active === current && !signal.aborted;

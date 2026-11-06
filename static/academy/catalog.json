@@ -1,0 +1,31 @@
+[
+  {
+    "id": "claude",
+    "name": "Claude Academy",
+    "provider": "Anthropic",
+    "url": "https://academy.claude.com/",
+    "icon": "/static/tools/ranking-logos/claude-color.svg",
+    "description": "学习 Claude 的使用方法，从日常协作、编程到构建 AI 应用，把课程中的方法用到实际工作中。",
+    "topics": ["AI 协作", "Claude Code", "应用开发"]
+  },
+  {
+    "id": "runway",
+    "name": "Runway Academy",
+    "provider": "Runway",
+    "url": "https://academy.runwayml.com/courses",
+    "icon": "/static/tools/ai-icons/beb62ae610534c107528.webp",
+    "description": "学习 AI 视频生成、视觉特效与创作工作流，通过课程和教程探索广告、角色动画等创作场景。",
+    "topics": ["AI 视频", "视觉特效", "创作工作流"]
+  },
+  {
+    "id": "tapnow-taptv",
+    "name": "TapNow · TapTV",
+    "provider": "TapNow",
+    "kind": "作品与教程",
+    "action": "浏览作品与教程",
+    "url": "https://app.tapnow.ai/home/taptv",
+    "icon": "/static/tools/ai-icons/0a0c93db86ea7fb01081.webp",
+    "description": "浏览 AI 影像作品、创作配方与教程，学习广告、动画和叙事短片的制作方法。",
+    "topics": ["AI 视频", "创作配方", "案例学习"]
+  }
+]

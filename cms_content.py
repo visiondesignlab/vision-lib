@@ -4,6 +4,7 @@ import re
 import uuid
 from urllib.parse import urlsplit, unquote
 import store
+import media_delivery
 
 TYPES = {'video', 'showcase', 'graphic', 'brand_skill', 'skill_repo'}
 TEXT = {'title', 'subtitle', 'category', 'prompt', 'trust', 'version', 'notes', 'analysis', 'brand', 'description'}
@@ -20,7 +21,15 @@ class ContentError(ValueError):
 
 
 def public_view(c):
-    return {k: v for k, v in c.items() if k not in PRIVATE}
+    result = {k: v for k, v in c.items() if k not in PRIVATE}
+    if 'media' in result:
+        result['media'] = media_delivery.online_media(result)
+        if result['media'].get('embed') == 'remote':
+            remote = result['media'].get('video') or result.get('source', {}).get('url', '')
+            replacements = {c['media'][key]:remote for key in ('video', 'preview')
+                            if c['media'].get(key, '').startswith('/media/') and remote}
+            result = media_delivery.online_references(result, replacements)
+    return result
 
 
 def admin_view(c):

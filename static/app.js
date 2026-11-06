@@ -539,6 +539,24 @@ let brandAssetsView = null, brandAssetsLoading = null;
 const isBrandAssetsRoute = () => /^\/assets\/brand\/?$/.test(routePath());
 const isDesignAssetsRoute = () => routePath() === '/assets/design';
 const isJournalRoute = () => routePath() === '/journal';
+let academyRequest = 0;
+async function renderAcademyPage() {
+  const request = ++academyRequest;
+  setNav('academy');
+  app.dataset.view = 'academy';
+  document.title = 'AI 学堂 · Vision Lab';
+  app.innerHTML = '<div class="empty" role="status">正在打开 AI 学堂…</div>';
+  try {
+    const module = await import(sitePath('/static/academy/academy.js'));
+    const entries = await module.loadAcademy();
+    if (request !== academyRequest || routePath() !== '/academy') return;
+    app.replaceChildren(module.academyPage(entries));
+  } catch {
+    if (request !== academyRequest || routePath() !== '/academy') return;
+    app.innerHTML = '<div class="empty"><b>AI 学堂暂时无法加载</b><button type="button" class="pill-btn shadow">重试</button></div>';
+    $('button', app).onclick = renderAcademyPage;
+  }
+}
 let journalController;
 async function renderJournalPage(volume) {
   journalController?.abort();
@@ -651,6 +669,7 @@ function render() {
   if (isBrandAssetsRoute()) { closeDetail(); return renderBrandAssets(); }
   brandAssetsView?.deactivate();
   if (isJournalRoute()) { closeDetail(); return renderJournalPage(u.searchParams.get('vol')); }
+  if (p === '/academy') { closeDetail(); return renderAcademyPage(); }
   if (isDesignAssetsRoute()) { closeDetail(); return renderDesignAssetPage(); }
   if (p === '/tools/ai-nav' && u.searchParams.get('category') === 'model-rankings') {
     u.searchParams.delete('category');
@@ -913,6 +932,7 @@ function stageHTML(c) {
   }
   const m = c.media || {};
   if (m.video) return `<div class="frame video-frame">${window.VisionSite.videoPlayer(m.video, m.thumbnail, {detail:true})}</div>`;
+  if (m.embed === 'remote' && c.source?.url) return '<div class="frame video-frame" data-online-video></div>';
   if (m.images && m.images.length) return `<div class="frame"><img src="${esc(m.images[0])}"></div>`;
   return `<div class="frame"><img src="${esc(m.thumbnail || sitePath("/static/cms-placeholder.svg"))}"></div>${c.source?.url ? `<div class="ext">${link(c.source.url, "打开原链接")}</div>` : ""}`;
 }
@@ -1032,10 +1052,20 @@ function openDetail(id) {
     ${body}</div>
     <div class="stage">${stageHTML(c)}${videoShortcuts(c,prev,next)}</div>`;
   const player=$('.stage video',overlay);
+  let disposeOnline, disposed = false;
+  function originalPlayer() {
+    if (disposed) return;
+    if (player) window.VisionSite.releaseVideo(player);
+    import(sitePath('/static/online-video.js')).then(({mountOnlineVideo}) => {
+      if (!disposed) disposeOnline = mountOnlineVideo($('.stage .frame',overlay), c.source.url, c.title);
+    });
+  }
+  detailCleanup=()=>{ disposed = true; disposeOnline?.(); if (player) window.VisionSite.releaseVideo(player); };
+  if ($('[data-online-video]',overlay)) originalPlayer();
   if (player) {
     player.volume=0.5;
     player.muted=false;
-    detailCleanup=()=>window.VisionSite.releaseVideo(player);
+    if(c.media?.embed === 'remote' && c.source?.url) player.addEventListener('error',originalPlayer,{once:true});
     // Direct links may require a user gesture; native controls remain available.
     if(!document.hidden) player.play().catch(()=>{});
   }

@@ -126,16 +126,24 @@ let pdfLibrary;
 function acquirePDF(href) {
   let entry = pdfDocuments.get(href);
   if (!entry) {
-    entry = {refs: 0, task: null};
+    entry = {refs: 0, task: null, controller: new AbortController(), listeners: new Set()};
     pdfLibrary ||= import(sitePath('/static/vendor/pdfjs/pdf.min.mjs')).then(lib => {
       lib.GlobalWorkerOptions.workerSrc = sitePath('/static/vendor/pdfjs/pdf.worker.min.mjs'); return lib;
     }).catch(error => { pdfLibrary = null; throw error; });
-    entry.promise = pdfLibrary.then(lib => {
+    entry.promise = pdfLibrary.then(async lib => {
       if (!entry.refs) throw new Error('Viewer closed');
-      entry.task = lib.getDocument({url: href, disableAutoFetch: true, disableStream: true, rangeChunkSize: 262144,
+      const failed = Promise.withResolvers();
+      const fail = error => { failed.reject(error); entry.listeners.forEach(listener => listener(error)); entry.task?.destroy().catch(()=>{}); };
+      let range;
+      if (new URL(href, location.href).hostname === 'air-prod.imgix.net') {
+        const {airPDFRange} = await import('./pdf-range.js');
+        range = await airPDFRange(lib, href, entry.controller, fail);
+      }
+      if (!entry.refs) throw new Error('Viewer closed');
+      entry.task = lib.getDocument({url: href, range, disableAutoFetch: true, disableStream: true, rangeChunkSize: 65536,
         cMapUrl: sitePath('/static/vendor/pdfjs/cmaps/'), cMapPacked: true, standardFontDataUrl: sitePath('/static/vendor/pdfjs/standard_fonts/'),
         wasmUrl: sitePath('/static/vendor/pdfjs/wasm/'), iccUrl: sitePath('/static/vendor/pdfjs/iccs/')});
-      return entry.task.promise;
+      return Promise.race([entry.task.promise, failed.promise]);
     }).catch(error => {
       if (pdfDocuments.get(href) === entry) pdfDocuments.delete(href);
       throw error;
@@ -143,8 +151,11 @@ function acquirePDF(href) {
     pdfDocuments.set(href, entry);
   }
   entry.refs++;
-  return {promise: entry.promise, release() {
+  const listeners = new Set();
+  return {promise: entry.promise, onError(listener) { listeners.add(listener); entry.listeners.add(listener); }, release() {
+    listeners.forEach(listener => entry.listeners.delete(listener));
     if (--entry.refs === 0) {
+      entry.controller.abort();
       if (pdfDocuments.get(href) === entry) pdfDocuments.delete(href);
       entry.task?.destroy().catch(() => {});
     }
@@ -259,6 +270,7 @@ export function createPDFViewer(host, {href, title, initialPage = 1}) {
   }
   async function loadDocument() {
     try {
+      lease.onError(showLoadError);
       const loaded = await lease.promise;
       if (destroyed) return;
       pdf = loaded;
@@ -272,13 +284,17 @@ export function createPDFViewer(host, {href, title, initialPage = 1}) {
       records[0].pagePromise = Promise.resolve(first);
       pages.replaceChildren(...records.map(record => record.element)); status.textContent = '';
       layout(); goToPage(initialPage);
-    } catch (error) {
+    } catch (error) { showLoadError(); }
+  }
+  function showLoadError() {
       if (destroyed) return;
+      records.forEach(record => { record.token++; record.task?.cancel(); });
+      records = []; pdf = null; pages.replaceChildren();
+      previous.disabled = next.disabled = input.disabled = true;
       root.setAttribute('aria-busy', 'false'); status.textContent = '文档加载失败。';
       const retry = window.document.createElement('button'); retry.type = 'button'; retry.className = 'pill-btn shadow'; retry.textContent = '重试';
       retry.onclick = () => { lease.release(); lease = acquirePDF(href); status.textContent = '文档加载中…'; loadDocument(); };
       status.append(retry);
-    }
   }
   // Leave wheel and touch scrolling native: PDF pages flow vertically at every zoom level.
   scroller.addEventListener('scroll', schedule, {passive: true});

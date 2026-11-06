@@ -69,6 +69,7 @@ class PagesTests(unittest.TestCase):
         self.assertEqual((self.output / 'tools/ai-models/index.html').read_text(), shell)
         self.assertEqual((self.output / 'assets/design/index.html').read_text(), shell)
         self.assertEqual((self.output / 'journal/index.html').read_text(), shell)
+        self.assertEqual((self.output / 'academy/index.html').read_text(), shell)
         self.assertEqual(json.loads((self.output / 'public/ai-directory.json').read_text()), {'categories': [], 'entries': []})
         self.assertEqual((self.output / 'guide/index.html').read_text(), shell)
         self.assertEqual((self.output / 'static/README.html').read_text(), shell)
@@ -105,6 +106,16 @@ class PagesTests(unittest.TestCase):
         source.write_bytes(b'tampered release asset')
         with self.assertRaisesRegex(ValueError, 'integrity check failed'):
             self.build()
+
+    def test_external_assets_are_not_copied_or_downloaded(self):
+        (self.root / 'catalog/external-assets.json').write_text(json.dumps(['static/brand.pdf','static/film.mp4']))
+        (self.root / 'static/brand.pdf').write_bytes(b'local backup')
+        (self.root / 'static/film.mp4').write_bytes(b'local video backup')
+        (self.root / 'publish/large-assets.json').write_text(json.dumps([{'path':'static/brand.pdf','url':'https://invalid.example/unused'}]))
+        self.build()
+        self.assertFalse((self.output / 'static/brand.pdf').exists())
+        self.assertFalse((self.output / 'static/film.mp4').exists())
+        self.assertTrue((self.root / 'static/brand.pdf').exists())
 
     def test_route_runtime_is_idempotent(self):
         runtime = (ROOT / 'static/site.js').read_text()

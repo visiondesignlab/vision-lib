@@ -9,8 +9,11 @@ from pathlib import Path
 import re
 import shutil
 import urllib.request
+import sys
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from media_delivery import excluded_backups
 PRIVATE = {'discovery', 'revision', 'review_log', 'notes', '_version', 'origin'}
 
 
@@ -68,12 +71,17 @@ def build(output, base):
         ids.add(cid)
     # Never copy the private store, logs, backups, CMS code or arbitrary media.
     excluded = {'README.md', 'cms.js', 'cms-directory.js', 'cms-submissions.js', 'cms.html', '.DS_Store'}
-    shutil.copytree(ROOT / 'static', output / 'static', ignore=lambda d, names: set(names) & excluded)
+    external = excluded_backups(ROOT)
+    def ignore_backups(directory, names):
+        return {name for name in names if name in excluded or str((Path(directory) / name).relative_to(ROOT)) in external}
+    shutil.copytree(ROOT / 'static', output / 'static', ignore=ignore_backups)
     for directory in ('media', 'brand_skills'):
         if (ROOT / 'publish' / directory).exists():
             shutil.copytree(ROOT / 'publish' / directory, output / directory)
     check_media(cases, output)
     for asset in json.loads((ROOT / 'publish/large-assets.json').read_text()):
+        if asset['path'] in external:
+            continue
         target = output / asset['path']
         if not target.resolve().is_relative_to(output):
             raise ValueError('Invalid release asset path')
@@ -99,7 +107,7 @@ def build(output, base):
     (output / 'index.html').write_text(shell)
     (output / '404.html').write_text(shell)
     (output / 'static/index.html').unlink()
-    routes = ['tools/ai-nav', 'tools/ai-models', 'tools/image-slicer', 'assets/brand', 'assets/design', 'review', 'cms', 'guide', 'submit', 'journal', *('c/' + cid for cid in sorted(ids))]
+    routes = ['tools/ai-nav', 'tools/ai-models', 'tools/image-slicer', 'assets/brand', 'assets/design', 'review', 'cms', 'guide', 'submit', 'journal', 'academy', *('c/' + cid for cid in sorted(ids))]
     for route in routes:
         target = output / route / 'index.html'
         target.parent.mkdir(parents=True, exist_ok=True)
