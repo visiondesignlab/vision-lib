@@ -1,0 +1,9 @@
+{
+  "name": "vision-lab-playground",
+  "main": "worker.js",
+  "compatibility_date": "2026-11-01",
+  "vars": { "SITE_ORIGIN": "https://visiondesignlab.github.io" },
+  "durable_objects": { "bindings": [{ "name": "SESSIONS", "class_name": "GenerationSession" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["GenerationSession"] }],
+  "observability": { "enabled": false }
+}

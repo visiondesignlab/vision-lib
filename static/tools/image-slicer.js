@@ -47,7 +47,7 @@ root.innerHTML = `
     </section>
     <div class="slicer-output">
       <section id="manualPanel" class="slicer-surface manual-panel" aria-labelledby="manualTitle" hidden>
-        <div class="slicer-section-title"><h2 id="manualTitle">定点裁切</h2><button id="clearCutsBtn" type="button" class="pill-btn grey">清空标记</button></div>
+        <div class="slicer-section-title"><h2 id="manualTitle" tabindex="-1">定点裁切</h2><button id="clearCutsBtn" type="button" class="pill-btn grey">清空标记</button></div>
         <p class="slicer-help">轻触或点击预览添加切线，也可输入精确 Y 坐标。超出最大高度时，会在本段最大高度处添加切线。</p>
         <div class="manual-tools">
           <label class="field" for="cutYInput">裁切位置 Y</label>
@@ -63,16 +63,23 @@ root.innerHTML = `
           </div>
         </div>
         <div id="cutList" class="cut-list">尚未添加裁切点。</div>
-      </section>
-      <section class="slicer-surface slicer-result-panel" aria-labelledby="resultTitle">
-        <div class="slicer-section-title"><h2 id="resultTitle">处理结果 <span class="tag" id="sliceCount">0 张</span></h2><button id="downloadZipBtn" type="button" class="pill-btn shadow" disabled>下载全部 ZIP</button></div>
-        <div id="status" class="slicer-status" role="status" aria-live="polite">选择图片并设置尺寸，点击“开始切图”。</div>
-        <div id="resultEmpty" class="slicer-empty">
-          ${icon('crop')}
-          <b>把一张长图，变成刚好的尺寸</b>
-          <span>切片预览与下载会显示在这里</span>
+        <div class="slicer-pane-actions">
+          <button id="manualSliceBtn" type="button" class="pill-btn dark">开始切图</button>
+          <button id="showResultsBtn" type="button" class="pill-btn shadow">查看结果</button>
         </div>
-        <div id="results" class="results"></div>
+      </section>
+      <section id="resultPanel" class="slicer-surface slicer-result-panel" aria-labelledby="resultTitle">
+        <div class="slicer-section-title"><h2 id="resultTitle" tabindex="-1">处理结果 <span class="tag" id="sliceCount">0 张</span></h2><button id="downloadZipBtn" type="button" class="pill-btn shadow" disabled>下载全部 ZIP</button></div>
+        <div id="status" class="slicer-status" role="status" aria-live="polite">选择图片并设置尺寸，点击“开始切图”。</div>
+        <div class="slicer-results-scroll" tabindex="0" role="region" aria-label="切片处理结果，可滚动查看">
+          <div id="resultEmpty" class="slicer-empty">
+            ${icon('crop')}
+            <b>把一张长图，变成刚好的尺寸</b>
+            <span>切片预览与下载会显示在这里</span>
+          </div>
+          <div id="results" class="results"></div>
+        </div>
+        <div id="resultActions" class="slicer-pane-actions" hidden><button id="showPreviewBtn" type="button" class="pill-btn shadow">返回裁切</button></div>
       </section>
     </div>
   </div>`;
@@ -99,6 +106,22 @@ const cutList = getElement("cutList");
 const cutYInput = getElement("cutYInput");
 const addCutYBtn = getElement("addCutYBtn");
 const clearCutsBtn = getElement("clearCutsBtn");
+const resultPanel = getElement("resultPanel");
+const resultsScroll = root.querySelector(".slicer-results-scroll");
+
+function revealPanel(panel, heading) {
+  // Do not move the page when both panes already fit side by side.
+  const rect = panel.getBoundingClientRect();
+  const header = document.querySelector(".mobile-header");
+  const topInset = header ? header.getBoundingClientRect().height : 0;
+  if (rect.top < topInset || rect.bottom > window.innerHeight) {
+    panel.scrollIntoView({block: "start", behavior: "instant"});
+  }
+  getElement(heading).focus({preventScroll: true});
+}
+getElement("showResultsBtn").addEventListener("click", () => revealPanel(resultPanel, "resultTitle"));
+getElement("showPreviewBtn").addEventListener("click", () => revealPanel(manualPanel, "manualTitle"));
+getElement("manualSliceBtn").addEventListener("click", () => sliceBtn.click());
 
 let busy = false;
 const allSlices = [];
@@ -106,7 +129,7 @@ const filePreviewUrls = [];
 function setBusy(value) {
   busy = value;
   root.setAttribute("aria-busy", String(value));
-  root.querySelectorAll(".slicer-controls input, .slicer-controls button, [data-mode], .manual-tools input, .manual-tools button, #clearCutsBtn").forEach(el => el.disabled = value);
+  root.querySelectorAll(".slicer-controls input, .slicer-controls button, [data-mode], .manual-tools input, .manual-tools button, #clearCutsBtn, #manualSliceBtn").forEach(el => el.disabled = value);
 }
 function syncResultSummary() {
   getElement("sliceCount").textContent = `${allSlices.length} 张`;
@@ -176,6 +199,7 @@ function setStatus(text) {
 
 function resetView() {
   resultsEl.innerHTML = "";
+  resultsScroll.scrollTop = 0;
   allSlices.length = 0;
   downloadZipBtn.disabled = true;
   for (const url of objectUrls) {
@@ -682,7 +706,9 @@ async function sliceOneFile(file, targetWidth, chunkWidth, chunkHeight, manualCu
 
 function updateModeView() {
   const manualMode = cutModeInput.value === "manual";
+  root.classList.toggle("is-manual", manualMode);
   manualPanel.hidden = !manualMode;
+  getElement("resultActions").hidden = !manualMode;
   loadPreviewBtn.hidden = !manualMode;
   root.querySelectorAll("[data-mode]").forEach(button => {
     const selected = button.dataset.mode === cutModeInput.value;
@@ -701,6 +727,7 @@ async function loadManualPreview() {
     setStatus("请先将裁切方式切换为定点裁切。");
     return;
   }
+  revealPanel(manualPanel, "manualTitle");
   if (!files.length) {
     setPreviewStatus("请先选择一张图片。");
     return;
@@ -761,6 +788,7 @@ function getManualCutsForExport(files, targetWidth) {
 
 sliceBtn.addEventListener("click", async () => {
   if (busy) return;
+  revealPanel(resultPanel, "resultTitle");
   const files = Array.from(fileInput.files || []);
   const targetWidth = getTargetWidth();
   const chunkWidth = Number(chunkWidthInput.value);

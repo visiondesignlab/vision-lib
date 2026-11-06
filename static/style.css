@@ -235,8 +235,8 @@ a.tag:hover{color:var(--fg)}
 .video-shortcuts{position:absolute;bottom:16px;left:0;right:0;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:6px 14px;color:var(--fg2);font-size:12px;pointer-events:none}
 .video-shortcuts span{white-space:nowrap}
 .video-shortcuts kbd{display:inline-grid;place-items:center;min-width:19px;padding:0 4px;height:19px;background:var(--bg);box-shadow:var(--ring);border-radius:4px;font:inherit;color:var(--fg)}
-@media(max-width:900px){.video-shortcuts{position:static;margin-top:10px}}
-@media(max-width:900px) and (orientation:landscape) and (max-height:500px){.stage:has(.video-shortcuts){display:flex;flex-direction:column;justify-content:center}.stage:has(.video-shortcuts) video{max-height:calc(100dvh - 132px)}}
+/* Keep keyboard hints on desktop; touch layouts do not need keyboard guidance. */
+@media(max-width:900px), (hover:none) and (pointer:coarse){.video-shortcuts{display:none}}
 .prompt-preview summary,.cms-body .duplicate-info summary{list-style:none}
 .prompt-preview summary::-webkit-details-marker,.cms-body .duplicate-info summary::-webkit-details-marker{display:none}
 .prompt-preview summary::before,.cms-body .duplicate-info summary::before{content:"";display:inline-block;width:1.1em;height:1.1em;background:currentColor;vertical-align:-.16em;margin-right:3px;mask:url("/static/icons/next.svg") center/contain no-repeat}

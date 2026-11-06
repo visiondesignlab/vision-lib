@@ -536,6 +536,23 @@ function renderImageSlicer() {
 }
 
 let brandAssetsView = null, brandAssetsLoading = null;
+let playgroundView, playgroundLoading;
+async function renderPlayground() {
+  setNav('playground'); app.dataset.view='tool:playground';
+  document.title='Playground · Vision Lab';
+  if(playgroundView){app.replaceChildren(playgroundView.element);playgroundView.activate();return;}
+  app.innerHTML='<div class="empty" role="status">正在打开 Playground…</div>';
+  try {
+    playgroundLoading ||= import(sitePath('/static/playground/playground.js')).then(m=>m.createPlayground({notify:toast}));
+    playgroundView=await playgroundLoading;
+    if(routePath()==='/tools/playground'){app.replaceChildren(playgroundView.element);playgroundView.activate();}
+  } catch {
+    playgroundLoading=null;
+    if(routePath()!=='/tools/playground')return;
+    app.innerHTML='<div class="empty"><p>Playground 暂时无法加载</p><button type="button" class="pill-btn shadow">重试</button></div>';
+    $('button',app).onclick=renderPlayground;
+  }
+}
 const isBrandAssetsRoute = () => /^\/assets\/brand\/?$/.test(routePath());
 const isDesignAssetsRoute = () => routePath() === '/assets/design';
 const isJournalRoute = () => routePath() === '/journal';
@@ -654,6 +671,7 @@ async function renderDirectory() {
   }
 }
 function render() {
+  playgroundView?.deactivate();
   journalController?.abort();
   for(const d of document.querySelectorAll('[data-case-dialog] dialog[open]')) d.close();
   closeMenu();
@@ -677,6 +695,7 @@ function render() {
   }
   if (p === '/tools/ai-models') { closeDetail(); return renderModelBoards(); }
   if (p === '/tools/ai-nav') { closeDetail(); return renderDirectory(); }
+  if (p === '/tools/playground') { closeDetail(); return renderPlayground(); }
   if (p === '/submit') {
     closeDetail(); setNav('submit'); showSectionSummary('submit','提交作品'); document.title='提交作品 · Vision Lab';
     if (app.dataset.view!=='submit') { app.dataset.view='submit'; app.replaceChildren(submissionPage()); }

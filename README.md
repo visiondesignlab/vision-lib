@@ -47,6 +47,10 @@ python3 server.py --host 127.0.0.1 --port 8787          # 只用 Python 标准�
 依赖：Python 3.10+（标准库 + numpy + Pillow，用于拉片和占位图）、ffmpeg/ffprobe、yt-dlp（ingest 下载 X 视频时用）。
 数据都是文件：`data/cases.json`（全部条目）、`data/rejected.json`（被拒绝的来源链接，去重用）、`media/<id>/`（转码视频、预览、缩略图、拉片结果）。
 
+## Playground
+
+「工具 → Playground」在 `/tools/playground` 打开，提供 OpenHiggsfield 的图片、视频生成与模型参数、参考素材、创作记录、收藏、下载和复用。使用者在页面连接自己的 Higgsfield API Key，服务地址已预置。界面复用本站样式；生成与素材上传由独立服务连接 Higgsfield，不把密钥或生成媒体写入 GitHub Pages。接入、更新和验证说明见 [Playground](docs/playground.md)。
+
 ## 图片切图工具
 
 侧栏「工具 → 图片切图」，地址 `/tools/image-slicer`。工具使用平台现有的字体、灰阶、药丸按钮与侧栏导航。

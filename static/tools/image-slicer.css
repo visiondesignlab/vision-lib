@@ -1,7 +1,8 @@
 /* Tool surfaces share the platform's type, greys, radii and pill controls. */
-.image-slicer{min-width:0}
+.image-slicer{min-width:0;--slicer-pane-height:clamp(480px,calc(100dvh - 144px),1000px)}
 .image-slicer [hidden]{display:none!important}
-.image-slicer button:focus-visible,.image-slicer a:focus-visible,.image-slicer .preview-scroll:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.image-slicer button:focus-visible,.image-slicer a:focus-visible,.image-slicer .preview-scroll:focus-visible,.image-slicer .slicer-results-scroll:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.image-slicer h2[tabindex="-1"]:focus{outline:none}
 .image-slicer button:disabled{opacity:.45;cursor:default}
 .image-slicer h2{font-size:13px;font-weight:500;margin:0}
 .image-slicer .slicer-mode-hint{color:var(--fg2);margin-left:4px}
@@ -42,13 +43,16 @@
 .slicer-actions .pill-btn{justify-content:center}
 .slicer-local-note{border-top:1px solid var(--line);padding-top:16px;margin-top:20px}
 .slicer-output{min-width:0;display:flex;flex-direction:column;gap:var(--gap)}
-.slicer-result-panel{min-height:466px;display:flex;flex-direction:column}
+.image-slicer .manual-panel,.slicer-result-panel{height:var(--slicer-pane-height);min-height:0;display:flex;flex-direction:column;scroll-margin-block:12px}
+.image-slicer .manual-panel>*,.slicer-result-panel>*{flex-shrink:0}
+.slicer-results-scroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;margin-top:16px}
+.image-slicer .slicer-pane-actions{display:flex;flex-wrap:wrap;gap:8px;padding-top:12px;margin-top:12px;border-top:1px solid var(--line)}
 .slicer-status{color:var(--fg2);font-size:12px;line-height:1.6;overflow-wrap:anywhere}
-.slicer-empty{flex:1;min-height:330px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;text-align:center;color:var(--fg2);padding:40px 12px}
+.slicer-empty{min-height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;text-align:center;color:var(--fg2);padding:24px 12px}
 .slicer-empty svg{color:var(--fg3);margin-bottom:8px}
 .slicer-empty b{color:var(--fg);font-weight:400}
 .slicer-empty>span{font-size:12px}
-.image-slicer .results{display:grid;gap:24px;margin-top:20px}
+.image-slicer .results{display:grid;gap:24px}
 .image-slicer .results:empty{margin:0}
 .image-slicer .result-card{min-width:0}
 .image-slicer .result-card+.result-card{border-top:1px solid var(--line);padding-top:20px}
@@ -65,7 +69,7 @@
 .image-slicer .manual-tools{display:flex;align-items:center;gap:10px;margin:16px 0 12px;flex-wrap:wrap}
 .image-slicer .manual-tools>.field{font-size:12px;color:var(--fg2)}
 .image-slicer .manual-tools .slicer-input{width:150px}
-.image-slicer .preview-scroll{max-height:60vh;min-height:140px;overflow:auto;overscroll-behavior:contain;border:1px solid var(--line);border-radius:8px;background:var(--bg2);margin-top:12px}
+.image-slicer .manual-panel .preview-scroll{flex:1;min-height:100px;max-height:none;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;border:1px solid var(--line);border-radius:8px;background:var(--bg2);margin-top:12px}
 .image-slicer .preview-frame{position:relative;max-width:100%;margin:0 auto}
 .image-slicer .preview-image{display:block;width:100%;height:100%;object-fit:fill}
 .image-slicer .cut-overlay{position:absolute;inset:0;z-index:2;cursor:crosshair}
@@ -75,11 +79,28 @@
 .image-slicer .knife-label,.image-slicer .cut-label{position:absolute;display:inline-flex;align-items:center;gap:6px;top:-12px;border-radius:999px;padding:3px 8px;font-size:11px;font-variant-numeric:tabular-nums;white-space:nowrap;box-shadow:var(--ring);background:var(--bg)}
 .image-slicer .knife-label{right:8px;color:var(--fg)}
 .image-slicer .cut-label{left:8px;color:var(--pink);pointer-events:auto}
-.image-slicer .cut-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;color:var(--fg2);font-size:12px}
+.image-slicer .cut-list{display:flex;flex-wrap:wrap;gap:8px;max-height:76px;overflow:auto;overscroll-behavior:contain;margin-top:12px;color:var(--fg2);font-size:12px}
 .image-slicer .cut-chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;background:var(--bg2);padding:4px 8px;font-size:11px;font-variant-numeric:tabular-nums;max-width:100%}
 .image-slicer .cut-remove,.image-slicer .chip-remove{display:inline-grid;place-items:center;flex:none;width:20px;height:20px;border-radius:50%;padding:0;background:var(--chip);color:inherit}
 .image-slicer .is-invalid{color:oklch(50% .18 25);border-color:currentColor}
 .image-slicer .knife-guide.is-invalid .knife-label{color:oklch(50% .18 25)}
+/* Wide screens keep the original, its cuts and the results in the same viewport. */
+@media(min-width:1200px){
+  main[data-view="tool:image-slicer"]{padding-bottom:16px}
+  .slicer-workspace{grid-template-columns:260px minmax(0,1fr)}
+  .slicer-controls{max-height:var(--slicer-pane-height);overflow:auto;overscroll-behavior:contain}
+  .slicer-output{display:grid;grid-template-columns:minmax(0,1fr)}
+  .is-manual .slicer-output{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .image-slicer .slicer-section-title{flex-wrap:wrap;row-gap:8px}
+}
+/* Stacked panes stay bounded; the paired buttons jump between them on narrow screens. */
+@media(max-width:1199px){
+  .image-slicer{--slicer-pane-height:clamp(520px,70svh,640px)}
+  .slicer-result-panel{height:clamp(360px,65svh,600px)}
+}
+@media(max-width:900px){
+  .image-slicer .manual-panel,.slicer-result-panel{scroll-margin-top:12px}
+}
 @media (max-width:1150px) and (min-width:901px){.slicer-workspace{grid-template-columns:260px minmax(0,1fr)}.slicer-surface{padding:16px}.image-slicer .head .sub{max-width:230px}}
 @media (max-width:640px){
   .slicer-workspace{grid-template-columns:minmax(0,1fr)}
@@ -87,8 +108,6 @@
   .image-slicer .head .sub{display:none}
   .image-slicer .bar{align-items:flex-start;flex-direction:column;gap:12px}
   .image-slicer .slicer-mode-hint{margin-left:0;font-size:12px}
-  .slicer-result-panel{min-height:360px}
-  .slicer-empty{min-height:240px}
   .image-slicer .thumbs{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
   .image-slicer .cut-label,.image-slicer .knife-label{font-size:10px;max-width:calc(100% - 16px);white-space:normal}
 }

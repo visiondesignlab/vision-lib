@@ -1247,8 +1247,8 @@
   {
    "type": "skill_repo",
    "category": "代码动效",
-   "title": "huashu-motion",
-   "subtitle": "一键直出商业级产品宣传片，会配乐，能指着画面改",
+   "title": "huashu-motion｜产品发布片与画面批注修改",
+   "subtitle": "从产品信息生成宣传片与配乐，支持在画面上批注修改。",
    "media": {
     "kind": "image",
     "images": [],
@@ -1275,13 +1275,12 @@
     "rank": 6,
     "group": "专帖"
    },
-   "prompt": "把 alchaincyf/huashu-motion 安装为这个 coding agent 的 skill：克隆 https://github.com/alchaincyf/huashu-motion ，阅读 README，把整个文件夹放进这个 agent 的 skills 目录（技能名和文件夹名保持一致）。\n\n它的用途：一键直出商业级产品宣传片，会配乐，能指着画面改。\n\n装好后，用它为 {产品} 的 {功能} 做一支 30 秒 launch 视频：先读 README 里的用法和示例，给我一份带时长的镜头表（每个镜头：画面、两行标题 + 一句说明、声音），我确认后一次只做一个场景，最后导出 1920×1080、30fps 的 MP4，并另出一版 1080×1350 竖版。",
+   "prompt": "请阅读 https://github.com/alchaincyf/huashu-motion 并按 README 检查环境。使用 huashu-motion，为 {产品链接或资料} 制作一支 {时长} 的发布片：先研究产品和品牌，提出视觉方向与节奏，再完成代码动画、配乐和可批注预览。",
    "how_to": [
-    "打开 GitHub 仓库，先读 README 的安装方式和示例。",
-    "安装：在 agent 里粘贴上面的 Prompt，让它克隆并放进 skills 目录。",
-    "在一个空项目里先跑通官方示例，确认渲染环境（Node / ffmpeg / Chrome）都正常。",
-    "再按 Prompt 让 agent 出镜头表 → 逐场景制作 → 导出。",
-    "开工前先读本库「品牌 Skill」里的《Launch 视频通用规范》，按它的导出规格和自检清单交付。"
+    "按官方说明安装：`npx skills add alchaincyf/huashu-motion`。",
+    "用 `om doctor` 检查环境，提供产品链接、目标受众和品牌素材。",
+    "选择关键帧方向与节奏，再生成动画和配乐。",
+    "在编辑器中点击画面写批注，完成局部修改和导出。"
    ],
    "skills": [
     {
@@ -1290,21 +1289,41 @@
      "url": "https://github.com/alchaincyf/huashu-motion"
     }
    ],
-   "tools": [],
-   "assets": [],
+   "tools": [
+    "Node.js 22+",
+    "Chrome / Chromium",
+    "FFmpeg"
+   ],
+   "assets": [
+    {
+     "name": "README · 使用与安装",
+     "url": "https://github.com/alchaincyf/huashu-motion#readme"
+    },
+    {
+     "name": "许可说明",
+     "url": "https://github.com/alchaincyf/huashu-motion/blob/main/LICENSE"
+    }
+   ],
    "tags": [
-    "代码动效"
+    "代码动效",
+    "产品宣传片",
+    "配乐",
+    "画面批注",
+    "Claude Code",
+    "Codex"
    ],
    "featured": true,
    "trust": "社区",
    "status": "published",
    "version": "1.0.0",
    "added_at": "2026-11-04T16:13:22+08:00",
-   "updated_at": "2026-11-04T16:13:22+08:00",
+   "updated_at": "2026-11-06T12:21:43+08:00",
    "seed": true,
    "id": "repo-alchaincyf-huashu-motion",
    "analysis": "推荐理由：中文作者，专做商业级产品宣传片，能指着画面让 agent 改，适合中文团队上手。",
-   "rank": 6
+   "rank": 6,
+   "description": "面向支持 Agent Skills 的编程助手，用代码生成产品发布片，并提供浏览器编辑器。流程包含产品研究、方向选择、节奏设计、动画与配乐；画面批注带有时间点和元素定位，便于局部修改。需要 Node.js 22+、浏览器和 FFmpeg；作者说明当前主要在 macOS 实测。许可为 MIT。",
+   "published_at": "2026-11-06T12:21:43+08:00"
   },
   {
    "type": "skill_repo",
@@ -2185,8 +2204,8 @@
   {
    "type": "skill_repo",
    "category": "代码动效",
-   "title": "animate",
-   "subtitle": "任意风格的程序化动画短片，带分镜自检",
+   "title": "animate｜多画风代码动画短片",
+   "subtitle": "用 Canvas 制作讲解与叙事动画，内置 7 种风格并支持参考图匹配。",
    "media": {
     "kind": "image",
     "images": [],
@@ -2206,20 +2225,19 @@
      "post_likes": 6016
     },
     "metrics_fetched_at": "2026-11-04",
-    "date": "2026-10-08",
+    "date": "2026-10-04",
     "x_post": "https://x.com/N01ennn/status/2108182955671580771",
     "x_author": "@N01ennn",
     "note": "",
     "rank": 21,
     "group": "合集帖"
    },
-   "prompt": "把 cth9191/animate 安装为这个 coding agent 的 skill：克隆 https://github.com/cth9191/animate ，阅读 README，把整个文件夹放进这个 agent 的 skills 目录（技能名和文件夹名保持一致）。\n\n它的用途：任意风格的程序化动画短片，带分镜自检。\n\n装好后，用它为 {产品} 的 {功能} 做一支 30 秒 launch 视频：先读 README 里的用法和示例，给我一份带时长的镜头表（每个镜头：画面、两行标题 + 一句说明、声音），我确认后一次只做一个场景，最后导出 1920×1080、30fps 的 MP4，并另出一版 1080×1350 竖版。",
+   "prompt": "请阅读 https://github.com/cth9191/animate，用 animate 为 {主题} 制作 {时长} 的动画短片。先给出故事节拍表，再提供 {指定画风或参考图} 的风格帧和分镜，确认后完成动画与声音，并导出 {目标画幅}。",
    "how_to": [
-    "打开 GitHub 仓库，先读 README 的安装方式和示例。",
-    "安装：在 agent 里粘贴上面的 Prompt，让它克隆并放进 skills 目录。",
-    "在一个空项目里先跑通官方示例，确认渲染环境（Node / ffmpeg / Chrome）都正常。",
-    "再按 Prompt 让 agent 出镜头表 → 逐场景制作 → 导出。",
-    "开工前先读本库「品牌 Skill」里的《Launch 视频通用规范》，按它的导出规格和自检清单交付。"
+    "按 README 使用 Claude Code 插件方式安装 animate，并检查渲染依赖。",
+    "提供主题、画幅、旁白与风格参考，先确认故事结构。",
+    "审阅风格帧和分镜，再进入动画制作。",
+    "导出视频并检查画幅适配、节拍与声音。"
    ],
    "skills": [
     {
@@ -2228,21 +2246,43 @@
      "url": "https://github.com/cth9191/animate"
     }
    ],
-   "tools": [],
-   "assets": [],
+   "tools": [
+    "Claude Code",
+    "Node.js 18+",
+    "Playwright / Chromium",
+    "ffmpeg"
+   ],
+   "assets": [
+    {
+     "name": "README · 使用与安装",
+     "url": "https://github.com/cth9191/animate#readme"
+    },
+    {
+     "name": "许可说明",
+     "url": "https://github.com/cth9191/animate/blob/main/LICENSE"
+    }
+   ],
    "tags": [
-    "代码动效"
+    "程序化动画",
+    "Canvas",
+    "讲解短片",
+    "剪纸",
+    "孔版印刷",
+    "像素风",
+    "分镜"
    ],
    "featured": false,
    "trust": "社区",
    "status": "published",
    "version": "1.0.0",
    "added_at": "2026-11-04T16:13:22+08:00",
-   "updated_at": "2026-11-04T16:13:22+08:00",
+   "updated_at": "2026-11-06T12:21:43+08:00",
    "seed": true,
    "id": "repo-cth9191-animate",
    "analysis": "",
-   "rank": 21
+   "rank": 21,
+   "description": "Claude Code 动画 Skill，通过单个 Canvas 和确定性逐帧渲染制作短片。内置剪纸、排线、孔版印刷、素描、数学、像素和等距风格；也能根据参考图测量配色、线条、纹理与节奏，建立新风格。制作前依次确认故事、风格帧和分镜，再导出多画幅视频。许可为 MIT。",
+   "published_at": "2026-11-06T12:21:43+08:00"
   },
   {
    "type": "skill_repo",
@@ -4163,61 +4203,6 @@
    "brand": "Replit ⠕",
    "description": "Replit Agent can now be brought into Slack channels and direct messages. Teams mention it to work on projects, link tools, and get replies with progress right in the thread.",
    "lvg_id": "e4ffbb3a-7323-4b8d-bccc-5dbe52b648d2"
-  },
-  {
-   "type": "showcase",
-   "category": "开发者工具",
-   "title": "Native Cook",
-   "subtitle": "Watch phone UI videos and copy build pro",
-   "media": {
-    "kind": "video",
-    "thumbnail": "/media/lvg-0e3b79a6/thumb.jpg",
-    "images": [],
-    "specs": {
-     "duration_s": 53.0,
-     "resolution": "1920×1080"
-    },
-    "embed": "remote",
-    "video": "https://video.twimg.com/amplify_video/2117642927619149824/vid/avc1/1920x1080/ZbMlDTHuV3YlqCl3.mp4",
-    "preview": "https://video.twimg.com/amplify_video/2117642927619149824/vid/avc1/1920x1080/ZbMlDTHuV3YlqCl3.mp4"
-   },
-   "source": {
-    "platform": "X",
-    "author": "@ngocdevv",
-    "author_url": "https://x.com/ngocdevv",
-    "url": "https://x.com/ngocdevv/status/2117645490057892004",
-    "video_source_url": "https://x.com/ngocdevv/status/2117645490057892004",
-    "brand_site": "https://www.ngocdevv.com/",
-    "date": "2026-11-03 23:50（北京时间）",
-    "avatar": "/media/avatars/86169cd106a0a72c07e3.jpg",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2095577017035165696/mPMm5_SO_normal.jpg",
-    "metrics": {
-     "likes": 455,
-     "replies": 15
-    },
-    "metrics_fetched_at": "2026-11-04T18:21:40+08:00"
-   },
-   "prompt": "",
-   "how_to": [],
-   "skills": [],
-   "tools": [],
-   "assets": [],
-   "tags": [
-    "开发者工具",
-    "设计",
-    "动态图形"
-   ],
-   "featured": false,
-   "trust": "社区",
-   "status": "published",
-   "version": "1.0.0",
-   "added_at": "2026-11-04T16:14:22+08:00",
-   "updated_at": "2026-11-04T18:22:05+08:00",
-   "ingested_by": "ingest.py",
-   "id": "lvg-0e3b79a6",
-   "brand": "Ngoc Le",
-   "description": "Native Cook is a free catalog of more than 750 mobile interface blocks. Each block appears as a short video so users can judge the motion, select a stack, and copy a prompt that a coding agent can use to recreate it.",
-   "lvg_id": "0e3b79a6-5163-4a7a-aef4-1785ac5cc386"
   },
   {
    "type": "showcase",
@@ -6201,91 +6186,6 @@
    "ingested_by": "x-live-refresh-2026-11-05"
   },
   {
-   "type": "showcase",
-   "category": "待分类",
-   "title": "OpenAI：There are many futures",
-   "subtitle": "品牌愿景片 · 77s · 官方宣传",
-   "media": {
-    "kind": "video",
-    "thumbnail": "/media/bench-2116253388883345623/thumb.jpg",
-    "images": [],
-    "specs": {
-     "duration_s": 77.0,
-     "resolution": "1280×720"
-    },
-    "embed": "remote",
-    "video": "https://video.twimg.com/amplify_video/2116236456897212416/vid/avc1/1920x1080/sm29CeaG5Z5Eba7P.mp4",
-    "preview": "https://video.twimg.com/amplify_video/2116236456897212416/vid/avc1/1920x1080/sm29CeaG5Z5Eba7P.mp4"
-   },
-   "source": {
-    "platform": "X",
-    "author": "@OpenAI",
-    "author_url": "https://x.com/OpenAI",
-    "url": "https://x.com/OpenAI/status/2116253388883345623",
-    "metrics": {
-     "views": 2796979,
-     "likes": 11763,
-     "reposts": 830,
-     "bookmarks": 2514,
-     "replies": 1015
-    },
-    "metrics_fetched_at": "2026-11-05",
-    "date": "2026-10-31 03:38（北京时间）",
-    "post_text": "There are many futures. Which do you want to build?",
-    "note": "",
-    "avatar": "/media/avatars/d425de81597d651f6bc5.jpg",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_normal.jpg"
-   },
-   "prompt": "参考「OpenAI：There are many futures」这支 launch 视频（品牌愿景片 · 77s · 官方宣传）的做法，为 {产品} 的 {功能} 做一支同类型的视频。\n\n要学的核心手法：官方品牌愿景片，电影感叙事。\n\n请先输出：\n1. 一句话核心信息 + 3 个备选 hook（首帧就是 hook）。\n2. 带时长的镜头表：每个镜头写清画面、文案、声音、时长；第 10 秒前必须看到产品在工作（品牌愿景片除外）。\n3. 用哪种做法实现（代码动效 / 实拍 / AI 生成 / 3D），每个镜头需要的素材清单。\n镜头表经我确认后，再一次只做一个场景；导出 MP4（H.264 + AAC，1080p，30fps）。\n\n（复现步骤为根据公开帖推断，非官方制作文档。）",
-   "how_to": [
-    "先写一句话核心信息与 3 个 hook，确认后再拆镜头表（步骤为根据公开帖推断，非官方制作文档）。",
-    "按镜头表准备素材：产品 UI 录屏 / 实拍 / AI 生成 / 代码动效，任选其适合的手段。",
-    "粗剪后加字幕与音效，静音自检「3 秒内看懂了吗」。",
-    "导出 MP4（H.264 + AAC，1080p，30fps），另出一版适合 X 的 4:5 或 1:1。",
-    "发布文案对齐视频 hook；官方账号优先，配上清晰 CTA。"
-   ],
-   "skills": [
-    {
-     "name": "Remotion Skills",
-     "repo": "remotion-dev/skills",
-     "url": "https://github.com/remotion-dev/skills"
-    },
-    {
-     "name": "HyperFrames",
-     "repo": "heygen-com/hyperframes",
-     "url": "https://github.com/heygen-com/hyperframes"
-    },
-    {
-     "name": "ffmpeg-skill",
-     "repo": "kajisho5/ffmpeg-skill",
-     "url": "https://github.com/kajisho5/ffmpeg-skill"
-    }
-   ],
-   "tools": [],
-   "assets": [
-    {
-     "name": "原片 MP4（站内转码）",
-     "url": "https://video.twimg.com/amplify_video/2116236456897212416/vid/avc1/1920x1080/sm29CeaG5Z5Eba7P.mp4"
-    }
-   ],
-   "tags": [
-    "OpenAI",
-    "品牌宣传片",
-    "官方发布"
-   ],
-   "featured": false,
-   "trust": "官方",
-   "status": "published",
-   "version": "1.0.0",
-   "added_at": "2026-11-05T13:02:54+08:00",
-   "updated_at": "2026-11-05T17:43:13+08:00",
-   "id": "bench-2116253388883345623",
-   "analysis": "可学的点：少产品多情绪；开放式提问作 hook；高制作水准品牌片。",
-   "format": "品牌愿景片",
-   "heat": 3385129,
-   "ingested_by": "x-live-refresh-2026-11-05"
-  },
-  {
    "type": "video",
    "category": "营销产品",
    "title": "ChatGPT Images 2.6",
@@ -6541,8 +6441,8 @@
    "ingested_by": "x-live-refresh-2026-11-05"
   },
   {
-   "type": "showcase",
-   "category": "待分类",
+   "type": "video",
+   "category": "营销产品",
    "title": "Notion Agent 共享记忆",
    "subtitle": "多 Agent 同一个脑 · 36s · 功能发布",
    "media": {
@@ -6619,7 +6519,7 @@
    "status": "published",
    "version": "1.0.0",
    "added_at": "2026-11-05T13:02:54+08:00",
-   "updated_at": "2026-11-05T17:43:13+08:00",
+   "updated_at": "2026-11-06T12:04:06+08:00",
    "id": "bench-2118059335930744999",
    "analysis": "可学的点：用「shared brain」隐喻；跨 ChatGPT/Claude/Muse/Bot 统一记忆与技能。",
    "format": "功能发布",
@@ -7069,6 +6969,708 @@
     ]
    },
    "updated_at": "2026-11-05T17:09:38+08:00"
+  },
+  {
+   "id": "cms-9501470bcd0245a2",
+   "type": "video",
+   "title": "Seedance｜拥挤列车穿越历史时空",
+   "category": "电影感叙事",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "@oggii_0",
+    "author_url": "https://x.com/oggii_0",
+    "url": "https://x.com/oggii_0/status/2092938748073849067",
+    "date": "2026-08-27"
+   },
+   "media": {
+    "kind": "video",
+    "embed": "remote",
+    "thumbnail": "/media/cms-assets-8fb3dff8b937441bbc6c6d20ffa35c44/image.jpg",
+    "specs": {
+     "resolution": "1920×1080",
+     "duration_s": 42.014
+    },
+    "video": "https://video.twimg.com/amplify_video/2092938310318800898/vid/avc1/1920x1080/v8aOND9gxClHIcvj.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2092938310318800898/vid/avc1/1920x1080/v8aOND9gxClHIcvj.mp4"
+   },
+   "added_at": "2026-11-06T12:21:42+08:00",
+   "subtitle": "固定车厢视角，用窗外时代变化与时间雾道连接历史场景。",
+   "description": "一段以通勤列车为场景的时间旅行短片。提示词重点是保持同一车厢、乘客和观察方向，通过车窗外的环境、光线与声音表达时代更迭。\n\n来源页标注 Seedance 2.5。原提示词设定为 30 秒、9:16；实际关联的原帖视频约 42 秒、16:9，两者已分别保留，不将提示词参数当作成片规格。",
+   "tags": [
+    "Seedance 2.5",
+    "时间旅行",
+    "科幻",
+    "一镜到底",
+    "第一人称",
+    "电影感叙事"
+   ],
+   "trust": "社区",
+   "featured": false,
+   "prompt": "中文整理版（非原文，完整原提示词见附件链接）：\n制作一段从拥挤通勤列车内部观察历史场景的写实短片。镜头始终朝向左侧车窗，车厢、乘客与行进方向保持连续。用有空间纵深的灰色雾道衔接不同时代，避免直接跳切；窗外建筑、光线和环境声随着时代变化。保留手持手机的轻微抖动、对焦波动及自然遮挡。让乘客的身体反应与车速变化一致，用细小表情回应窗外奇观。声音以列车运行、广播及各场景环境声为主。先列出时代顺序与时间分配，再检查人物一致性、运动方向和转场连续性。",
+   "how_to": [
+    "打开原提示词入口，查看原作者的完整时代时间线与连续性要求。",
+    "在 Seedance 中按目标成片重新确定时长和画幅；来源提示词参数与演示视频规格不同。",
+    "固定车厢、乘客与车窗方向，逐段检查历史场景和环境光是否连续。",
+    "导出后检查声音衔接、人物稳定性和窗口边缘。"
+   ],
+   "tools": [
+    "Seedance 2.5"
+   ],
+   "assets": [
+    {
+     "name": "完整原提示词 · AgentCraft",
+     "url": "https://agentcraft.dev/zh/prompts/video/#seedance-crowded-maglev-time-travel"
+    }
+   ],
+   "updated_at": "2026-11-06T12:21:42+08:00",
+   "published_at": "2026-11-06T12:21:42+08:00"
+  },
+  {
+   "id": "cms-d90eab96a0f34e96",
+   "type": "video",
+   "title": "Seedance｜魔法师少女越过画框送礼",
+   "category": "动效特效",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "@aimikoda",
+    "author_url": "https://x.com/aimikoda",
+    "url": "https://x.com/aimikoda/status/2106393688653922602",
+    "date": "2026-10-03"
+   },
+   "media": {
+    "kind": "video",
+    "embed": "remote",
+    "thumbnail": "/media/cms-assets-9cb7549dd094401c8cb9fe4de698d0e6/image.jpg",
+    "specs": {
+     "resolution": "2560×1440",
+     "duration_s": 30.033
+    },
+    "video": "https://video.twimg.com/amplify_video/2106393512597913600/vid/avc1/1280x720/Mpkbfmn58dHK26T_.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2106393512597913600/vid/avc1/1280x720/Mpkbfmn58dHK26T_.mp4"
+   },
+   "added_at": "2026-11-06T12:21:42+08:00",
+   "subtitle": "用固定黑边与前景遮挡，制造角色和礼物伸出画框的效果。",
+   "description": "参考图驱动的动漫角色短片，以无对白表演和逐次送礼构成小段落。上下黑边作为固定的屏幕图层，角色、道具和身体从其前方经过，形成突破画框的空间错觉。\n\n来源页标注 Seedance 2.5，实际原片约 30 秒。复现时需要提供角色参考图，并保持角色服装、脸部与画风一致。",
+   "tags": [
+    "Seedance 2.5",
+    "动漫",
+    "角色一致性",
+    "破框效果",
+    "参考图生视频",
+    "无对白表演"
+   ],
+   "trust": "社区",
+   "featured": false,
+   "prompt": "中文整理版（非原文，完整原提示词见附件链接）：\n以提供的角色图为视觉基准，在纯白背景中完成一段固定机位的无对白表演。角色向观众递出几件不同礼物，以表情表现期待与失落，最后自己走近镜头。将上下黑边视为静止的屏幕遮幅，让手、道具和身体处于黑边前层，从画面边界伸向观众；黑边本身不得弯折或移动。每次只出现一件礼物，清楚表现取出、递出和收回。保持面部可见、服饰稳定及自然手部接触。只使用轻微物件、衣料和脚步声。先做前景跨越下黑边的短测试，再完成整段表演。",
+   "how_to": [
+    "从原提示词入口查看角色、礼物顺序和图层要求，准备自有或获授权的角色参考图。",
+    "使用 Seedance 的参考图生成流程，先验证角色一致性与前景跨黑边效果。",
+    "固定机位和遮幅位置，检查手、衣袖与道具是否正确遮挡黑边。",
+    "完成送礼表演后，检查道具进出、表情连续性及无对白音轨。"
+   ],
+   "tools": [
+    "Seedance 2.5",
+    "角色参考图"
+   ],
+   "assets": [
+    {
+     "name": "完整原提示词 · AgentCraft",
+     "url": "https://agentcraft.dev/zh/prompts/video/#seedance-magician-girl-letterbox-gifts"
+    }
+   ],
+   "updated_at": "2026-11-06T12:21:42+08:00",
+   "published_at": "2026-11-06T12:21:42+08:00"
+  },
+  {
+   "id": "cms-2e1b4274e1914eb8",
+   "type": "video",
+   "title": "UI 状态连续形变｜按钮到图表的节奏循环",
+   "category": "动效特效",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "@twoclipping",
+    "author_url": "https://x.com/twoclipping",
+    "url": "https://x.com/twoclipping/status/2103273003555402193",
+    "date": "2026-09-25"
+   },
+   "media": {
+    "kind": "video",
+    "embed": "remote",
+    "thumbnail": "/media/cms-assets-ebf6142994b4455f9ae716ead4496c30/image.jpg",
+    "specs": {
+     "resolution": "1440×1440",
+     "duration_s": 14.0
+    },
+    "video": "https://video.twimg.com/amplify_video/2103272964967804928/vid/avc1/720x720/18beFxJGrO4tjaDQ.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2103272964967804928/vid/avc1/720x720/18beFxJGrO4tjaDQ.mp4"
+   },
+   "added_at": "2026-11-06T12:21:42+08:00",
+   "subtitle": "同一形状在多种 UI 状态间连续变化，跟随光标与音乐节拍循环。",
+   "description": "由 @twoclipping 发布的代码动效案例，Prompt Motion 收录了视频和原提示词。页面标注使用 Opus 5.5 与 HTML + Playwright；原片为约 14 秒的方形动画。\n\n适合参考单一容器形变、光标交互、弹簧节奏与无缝循环的组织方式。",
+   "tags": [
+    "代码动效",
+    "UI 动效",
+    "形状变换",
+    "弹簧动画",
+    "无缝循环",
+    "HTML",
+    "Playwright"
+   ],
+   "trust": "社区",
+   "featured": false,
+   "prompt": "中文整理版（非原文，完整原提示词见附件链接）：\n制作一段约 14 秒的方形 UI 动效循环。让同一个容器连续变为按钮、加载反馈、播放器、滑杆、开关、图表和提示消息，用光标点击与拖动触发变化。采用浅色背景、克制的黑白组件和统一字体，围绕音乐节拍安排状态切换；文字需独立控制进出，避免重叠。使用单个 HTML 场景，通过时间函数确定任意一帧，便于浏览器逐帧渲染。先输出状态顺序与节拍表，再制作关键帧。最终检查拖动手感、弹簧收敛、文字清晰度，以及首尾画面和光标位置是否无缝衔接。",
+   "how_to": [
+    "打开 Prompt Motion 查看视频与完整原提示词，确定要替换的 UI 状态和视觉主题。",
+    "提供状态列表与可使用的音乐，先排好节拍表和关键帧。",
+    "用 HTML 编写时间可定位的动画，检查光标动作与组件状态同步。",
+    "通过 Playwright 和 ffmpeg 导出视频，核对每个节拍和循环接缝。"
+   ],
+   "tools": [
+    "Opus 5.5",
+    "HTML",
+    "Playwright",
+    "ffmpeg"
+   ],
+   "assets": [
+    {
+     "name": "原提示词与示例 · Prompt Motion",
+     "url": "https://prompt-motion.com/twoclipping-5cba86"
+    },
+    {
+     "name": "Prompt Motion 视频地址",
+     "url": "https://media.prompt-motion.com/twoclipping-opus-5-5-is-f-cking/video.eef090ae.mp4"
+    }
+   ],
+   "updated_at": "2026-11-06T12:21:42+08:00",
+   "published_at": "2026-11-06T12:21:42+08:00"
+  },
+  {
+   "id": "cms-286d16e1bffb4dd3",
+   "type": "showcase",
+   "title": "Claude Personal Finance｜个人财务功能发布片",
+   "category": "AI",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "@claudeai",
+    "author_url": "https://x.com/claudeai",
+    "url": "https://x.com/claudeai/status/2118403114890137895",
+    "date": "2026-11-06"
+   },
+   "media": {
+    "kind": "video",
+    "embed": "remote",
+    "thumbnail": "/media/cms-assets-80e7762656704025899fc9e58f776cda/image.jpg",
+    "specs": {
+     "resolution": "1920×1080",
+     "duration_s": 91.166
+    },
+    "video": "https://video.twimg.com/amplify_video/2118401044841390080/vid/avc1/1920x1080/lQ99Zn7JR9hyYGA6.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2118401044841390080/vid/avc1/1920x1080/lQ99Zn7JR9hyYGA6.mp4"
+   },
+   "added_at": "2026-11-06T12:21:42+08:00",
+   "subtitle": "Claude 官方发布的 Personal Finance 功能介绍。",
+   "description": "Claude 官方发布帖介绍 Personal Finance 美国测试版：连接用户选择的账户，用日常语言询问余额和交易信息。原帖明确说明账户连接为只读。收录其约 91 秒的发布视频，供产品功能讲解与发布片结构参考。",
+   "tags": [
+    "Claude",
+    "AI 产品",
+    "产品发布",
+    "功能演示",
+    "个人财务"
+   ],
+   "trust": "官方",
+   "featured": false,
+   "brand": "Claude",
+   "updated_at": "2026-11-06T12:21:42+08:00",
+   "published_at": "2026-11-06T12:21:42+08:00"
+  },
+  {
+   "id": "cms-b3f370b1fd2e4b17",
+   "type": "showcase",
+   "title": "Kimi K3.1 Pro｜模型发布片",
+   "category": "AI",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "@Kimi_Moonshot",
+    "author_url": "https://x.com/Kimi_Moonshot",
+    "url": "https://x.com/Kimi_Moonshot/status/2113681863109939271",
+    "date": "2026-10-24"
+   },
+   "media": {
+    "kind": "video",
+    "embed": "remote",
+    "thumbnail": "/media/cms-assets-9d368a98d92440a39c4fb8da0c60a07e/image.jpg",
+    "specs": {
+     "resolution": "1920×1080",
+     "duration_s": 93.68
+    },
+    "video": "https://video.twimg.com/amplify_video/2113681249936285696/vid/avc1/1920x1080/AeLQGv285opf9RKo.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2113681249936285696/vid/avc1/1920x1080/AeLQGv285opf9RKo.mp4"
+   },
+   "added_at": "2026-11-06T12:21:42+08:00",
+   "subtitle": "Kimi 官方发布 K3.1 Pro 的宣传视频。",
+   "description": "Kimi 官方账号发布的 K3.1 Pro 视频，原帖将其介绍为 3T 级模型。收录约 94 秒原片，作为 AI 模型发布与品牌表达参考。",
+   "tags": [
+    "Kimi",
+    "K3.1 Pro",
+    "AI 模型",
+    "产品发布",
+    "品牌宣传"
+   ],
+   "trust": "官方",
+   "featured": false,
+   "brand": "Kimi",
+   "updated_at": "2026-11-06T12:21:42+08:00",
+   "published_at": "2026-11-06T12:21:42+08:00"
+  },
+  {
+   "id": "cms-5630f0f569544d31",
+   "type": "showcase",
+   "title": "Kimi K3｜模型发布片",
+   "category": "AI",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "@Kimi_Moonshot",
+    "author_url": "https://x.com/Kimi_Moonshot",
+    "url": "https://x.com/Kimi_Moonshot/status/2077821890207547467",
+    "date": "2026-07-17"
+   },
+   "media": {
+    "kind": "video",
+    "embed": "remote",
+    "thumbnail": "/media/cms-assets-819801fd2569465fa4e0e3d749bc386d/image.jpg",
+    "specs": {
+     "resolution": "1920×1080",
+     "duration_s": 56.689
+    },
+    "video": "https://video.twimg.com/amplify_video/2077820634730749952/vid/avc1/1920x1080/-7JLoNiYg2boupuD.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2077820634730749952/vid/avc1/1920x1080/-7JLoNiYg2boupuD.mp4"
+   },
+   "added_at": "2026-11-06T12:21:42+08:00",
+   "subtitle": "Kimi 官方发布 K3 的宣传视频。",
+   "description": "Kimi 官方账号以 Meet Kimi K3 发布的模型宣传片，原视频约 57 秒。保留原作者、原帖和在线播放地址，供模型发布片研究使用。",
+   "tags": [
+    "Kimi",
+    "K3",
+    "AI 模型",
+    "产品发布",
+    "品牌宣传"
+   ],
+   "trust": "官方",
+   "featured": false,
+   "brand": "Kimi",
+   "updated_at": "2026-11-06T12:21:43+08:00",
+   "published_at": "2026-11-06T12:21:43+08:00"
+  },
+  {
+   "id": "cms-39d3fa6f44014188",
+   "type": "showcase",
+   "title": "Nexo｜Motion Design 动效展示",
+   "category": "动效设计",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "@Nexoxh",
+    "author_url": "https://x.com/Nexoxh",
+    "url": "https://x.com/Nexoxh/status/2117911995605569654",
+    "date": "2026-11-04"
+   },
+   "media": {
+    "kind": "video",
+    "embed": "remote",
+    "thumbnail": "/media/cms-assets-e691b3b7ceae4b3e96dedd2a90537394/image.jpg",
+    "specs": {
+     "resolution": "1024×576",
+     "duration_s": 44.698
+    },
+    "video": "https://video.twimg.com/amplify_video/2117911960079433729/vid/avc1/1024x576/BumT4KbKwOj7Lwc8.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2117911960079433729/vid/avc1/1024x576/BumT4KbKwOj7Lwc8.mp4"
+   },
+   "added_at": "2026-11-06T12:21:43+08:00",
+   "subtitle": "Nexo 分享的动态图形作品。",
+   "description": "Nexo 在 X 分享的约 45 秒动效视频，原帖文案为 Motion design。收录原片作为动态图形、文字表现和画面节奏参考；原帖未说明具体制作工具。",
+   "tags": [
+    "Motion Design",
+    "动态图形",
+    "文字动效",
+    "创意参考"
+   ],
+   "trust": "社区",
+   "featured": false,
+   "brand": "Nexo",
+   "updated_at": "2026-11-06T12:21:43+08:00",
+   "published_at": "2026-11-06T12:21:43+08:00"
+  },
+  {
+   "id": "cms-55ccde5511644d26",
+   "type": "showcase",
+   "title": "Affinity for iPad｜产品发布展示",
+   "category": "设计工具",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "@avstorm",
+    "author_url": "https://x.com/avstorm",
+    "url": "https://x.com/avstorm/status/2117265682262040987",
+    "date": "2026-11-02"
+   },
+   "media": {
+    "kind": "video",
+    "embed": "remote",
+    "thumbnail": "/media/cms-assets-54de8bc0df7b4ab3a1d989ca859c1350/image.jpg",
+    "specs": {
+     "resolution": "1920×1080",
+     "duration_s": 30.093
+    },
+    "video": "https://video.twimg.com/amplify_video/2117265503915823104/vid/avc1/1920x1080/B4WskP3HnZlB4X0w.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2117265503915823104/vid/avc1/1920x1080/B4WskP3HnZlB4X0w.mp4"
+   },
+   "added_at": "2026-11-06T12:21:43+08:00",
+   "subtitle": "Andreas Storm 分享的 Affinity for iPad 发布视频。",
+   "description": "Andreas Storm 在 X 分享的 Affinity for iPad 发布展示，原视频约 30 秒。作为设计工具产品呈现与短发布片参考，来源保留该分享帖。",
+   "tags": [
+    "Affinity",
+    "iPad",
+    "设计工具",
+    "产品发布",
+    "功能展示"
+   ],
+   "trust": "社区",
+   "featured": false,
+   "brand": "Affinity",
+   "updated_at": "2026-11-06T12:21:43+08:00",
+   "published_at": "2026-11-06T12:21:43+08:00"
+  },
+  {
+   "id": "cms-63fa349c223b413d",
+   "type": "skill_repo",
+   "title": "motion-prompt｜动效与运镜名称词典",
+   "category": "提示词",
+   "status": "published",
+   "source": {
+    "platform": "GitHub",
+    "author": "showheyohtaki",
+    "author_url": "https://github.com/showheyohtaki",
+    "url": "https://github.com/showheyohtaki/motion-prompt",
+    "date": "2026-10-14"
+   },
+   "media": {
+    "kind": "image",
+    "images": [],
+    "thumbnail": "/media/cms-assets-3df56c47a96045b994e93d3afa0d781b/image.jpg"
+   },
+   "added_at": "2026-11-06T12:21:43+08:00",
+   "subtitle": "192 个视觉术语，配动态示例、解释和 AI 提问写法。",
+   "description": "覆盖动效、运镜、UI 组件、网页表现与摄影的名称库，帮助把视觉想法说清楚。当前 README 列出 8 组、共 192 个名称；名称列表含简体中文，在线画廊主要为日文和英文。可直接查阅，也可通过 Skill 将选中的示例交给 AI。许可为 MIT。",
+   "tags": [
+    "动效词典",
+    "运镜",
+    "视觉术语",
+    "提示词",
+    "中文名称表"
+   ],
+   "prompt": "请阅读 https://github.com/showheyohtaki/motion-prompt，打开它的动态示例库。根据我的目标 {视觉效果或使用场景}，找出合适的动效或运镜名称，解释区别，并将选中示例的规格整理为可执行的制作提示词。",
+   "how_to": [
+    "按 README 使用 `npx skills add showheyohtaki/motion-prompt`，或直接打开在线画廊。",
+    "查找需要的动效名称，查看动态示例与规格。",
+    "选择示例并补充使用场景，把生成的提示词交给自己的 AI。"
+   ],
+   "tools": [
+    "Node.js 18+",
+    "Claude Code / Codex"
+   ],
+   "skills": [
+    {
+     "name": "motion-prompt",
+     "repo": "showheyohtaki/motion-prompt",
+     "url": "https://github.com/showheyohtaki/motion-prompt"
+    }
+   ],
+   "assets": [
+    {
+     "name": "在线示例",
+     "url": "https://showheyohtaki.github.io/motion-prompt/"
+    },
+    {
+     "name": "README · 使用与安装",
+     "url": "https://github.com/showheyohtaki/motion-prompt#readme"
+    },
+    {
+     "name": "许可说明",
+     "url": "https://github.com/showheyohtaki/motion-prompt/blob/main/LICENSE"
+    }
+   ],
+   "trust": "社区",
+   "featured": false,
+   "updated_at": "2026-11-06T12:21:43+08:00",
+   "published_at": "2026-11-06T12:21:43+08:00"
+  },
+  {
+   "id": "cms-7b698b89ae3a4828",
+   "type": "skill_repo",
+   "title": "mg-styles-15｜15 种 MG 风格成片与源码",
+   "category": "代码动效",
+   "status": "published",
+   "source": {
+    "platform": "GitHub",
+    "author": "Vincentwei1021",
+    "author_url": "https://github.com/Vincentwei1021",
+    "url": "https://github.com/Vincentwei1021/mg-styles-15",
+    "date": "2026-10-02"
+   },
+   "media": {
+    "kind": "image",
+    "images": [],
+    "thumbnail": "/media/cms-assets-3aff7aaaab5c42cabefadb25fd913521/image.jpg"
+   },
+   "added_at": "2026-11-06T12:21:43+08:00",
+   "subtitle": "15 支约 10 秒的风格样片，附提示词、风格说明和完整工程。",
+   "description": "代码动效示例仓库，覆盖多种 MG 视觉风格。每支样片都可查看成片、阅读原提示词并研究源码；适合做风格选择、镜头语言学习和二次创作。画面使用 SVG、Canvas、WebGL、Three.js 等技术，部分示例使用 Blender；音频由脚本生成。许可为 MIT，具体外部素材按仓库标注使用。",
+   "tags": [
+    "MG 动效",
+    "风格参考",
+    "代码动画",
+    "提示词",
+    "源码",
+    "Opus 5.5"
+   ],
+   "prompt": "请阅读 https://github.com/Vincentwei1021/mg-styles-15，并根据 {品牌或主题} 选择合适的示例风格。解释所选视觉语言，查看对应提示词和源码，保留可复用的动画结构，用我的素材与文案完成一支短片。",
+   "how_to": [
+    "打开在线画廊，先选择一支与目标气质接近的风格样片。",
+    "进入对应 prompts 和 demos 目录，核对提示词、源码与依赖。",
+    "让编程助手基于示例改写内容，在关键帧通过后渲染视频。"
+   ],
+   "tools": [
+    "HTML / Canvas / WebGL",
+    "Python",
+    "ffmpeg",
+    "Blender（部分示例）"
+   ],
+   "skills": [
+    {
+     "name": "mg-styles-15",
+     "repo": "Vincentwei1021/mg-styles-15",
+     "url": "https://github.com/Vincentwei1021/mg-styles-15"
+    }
+   ],
+   "assets": [
+    {
+     "name": "在线示例",
+     "url": "https://vincentwei1021.github.io/mg-styles-15/"
+    },
+    {
+     "name": "README · 使用与安装",
+     "url": "https://github.com/Vincentwei1021/mg-styles-15#readme"
+    },
+    {
+     "name": "许可说明",
+     "url": "https://github.com/Vincentwei1021/mg-styles-15/blob/main/LICENSE"
+    }
+   ],
+   "trust": "社区",
+   "featured": false,
+   "updated_at": "2026-11-06T12:21:43+08:00",
+   "published_at": "2026-11-06T12:21:43+08:00"
+  },
+  {
+   "id": "cms-5f42f7bed0084d4a",
+   "type": "skill_repo",
+   "title": "vibe-knowledge-film｜知识短片与导演分镜",
+   "category": "代码动效",
+   "status": "published",
+   "source": {
+    "platform": "GitHub",
+    "author": "HeyChengC",
+    "author_url": "https://github.com/HeyChengC",
+    "url": "https://github.com/HeyChengC/vibe-knowledge-film",
+    "date": "2026-10-06"
+   },
+   "media": {
+    "kind": "image",
+    "thumbnail": "https://raw.githubusercontent.com/HeyChengC/vibe-knowledge-film/main/examples/fold_C.gif",
+    "images": []
+   },
+   "added_at": "2026-11-06T12:21:43+08:00",
+   "subtitle": "从选题或文案制作知识短片，先出约 30 秒样片。",
+   "description": "围绕知识讲解的代码视频 Skill，提供偏抽象知识的“夜曲”和偏行为叙事的“寓言”两种模式。可整理字幕稿、分镜与代码工程，生成音效，背景音乐可自行补充。需要本机 Chrome、ffmpeg 和 Python 渲染依赖。引擎与方法文档采用 MIT；仓库明确区分第三方学习对照样例，不能当作自有作品发布。",
+   "tags": [
+    "知识短片",
+    "科普",
+    "导演分镜",
+    "Canvas",
+    "音效",
+    "样片确认"
+   ],
+   "prompt": "请阅读 https://github.com/HeyChengC/vibe-knowledge-film，用此 Skill 把 {选题或文稿} 做成知识短片。先核对内容，选择合适的视觉模式，给出字幕稿和导演分镜。制作约 30 秒样片后再推进全片，并说明需要我提供的配乐素材。",
+   "how_to": [
+    "按 README 将 Skill 放入对应目录，检查 Python、Chrome、ffmpeg 与字体依赖。",
+    "提交选题或文稿，选择夜曲或寓言模式。",
+    "确认内容和分镜，先制作约 30 秒样片。",
+    "样片通过后制作全片，按需加入自己的 BGM。"
+   ],
+   "tools": [
+    "Python",
+    "Chrome",
+    "Playwright",
+    "ffmpeg"
+   ],
+   "skills": [
+    {
+     "name": "vibe-knowledge-film",
+     "repo": "HeyChengC/vibe-knowledge-film",
+     "url": "https://github.com/HeyChengC/vibe-knowledge-film"
+    }
+   ],
+   "assets": [
+    {
+     "name": "README · 使用与安装",
+     "url": "https://github.com/HeyChengC/vibe-knowledge-film#readme"
+    },
+    {
+     "name": "许可说明",
+     "url": "https://github.com/HeyChengC/vibe-knowledge-film/blob/main/LICENSE"
+    }
+   ],
+   "trust": "社区",
+   "featured": false,
+   "updated_at": "2026-11-06T12:21:43+08:00",
+   "published_at": "2026-11-06T12:21:43+08:00"
+  },
+  {
+   "id": "cms-ded079083d5a40cc",
+   "type": "skill_repo",
+   "title": "story-studio｜故事口播到剪映草稿",
+   "category": "口播/解说",
+   "status": "published",
+   "source": {
+    "platform": "GitHub",
+    "author": "konlu",
+    "author_url": "https://github.com/konlu",
+    "url": "https://github.com/konlu/story-studio",
+    "date": "2026-10-26"
+   },
+   "media": {
+    "kind": "image",
+    "images": [],
+    "thumbnail": "/media/cms-assets-a00fc3c2112e4eb696653985b2d6fba5/image.jpg"
+   },
+   "added_at": "2026-11-06T12:21:43+08:00",
+   "subtitle": "串联选题、文案、配音、配图与可编辑剪映工程。",
+   "description": "针对历史叙事和人物故事的创作 Skill，可按需只写稿、做分镜配图，或将现成素材排成剪映专业版草稿。支持豆包语音或自备配音，再通过本地转录对齐字幕与画面。采用 CC BY-NC-SA 4.0，仅限许可范围内的非商业使用；素材和史实仍需核对。",
+   "tags": [
+    "历史叙事",
+    "人物故事",
+    "口播",
+    "剪映草稿",
+    "配音",
+    "非商业许可"
+   ],
+   "prompt": "请阅读 https://github.com/konlu/story-studio 和许可说明。在非商业学习项目中，围绕 {历史或人物选题} 建立事实表和叙事结构，再整理口播文稿、分镜与素材清单。使用 {自备配音或指定语音方案} 对齐时间线，输出可编辑的剪映草稿。",
+   "how_to": [
+    "先核对 CC BY-NC-SA 4.0 是否符合使用场景，再按 README 安装和检查环境。",
+    "明确只写稿、只配图或全流程制作，提供选题与资料。",
+    "确认史实和定稿，使用自备配音或配置语音服务。",
+    "核对分镜与音频对齐，导出可编辑剪映草稿。"
+   ],
+   "tools": [
+    "剪映专业版",
+    "Python / Node.js",
+    "FFmpeg",
+    "Coli",
+    "豆包语音（可选）"
+   ],
+   "skills": [
+    {
+     "name": "story-studio",
+     "repo": "konlu/story-studio",
+     "url": "https://github.com/konlu/story-studio"
+    }
+   ],
+   "assets": [
+    {
+     "name": "README · 使用与安装",
+     "url": "https://github.com/konlu/story-studio#readme"
+    },
+    {
+     "name": "许可说明",
+     "url": "https://github.com/konlu/story-studio/blob/main/LICENSE"
+    }
+   ],
+   "trust": "社区",
+   "featured": false,
+   "updated_at": "2026-11-06T12:21:43+08:00",
+   "published_at": "2026-11-06T12:21:43+08:00"
+  },
+  {
+   "id": "cms-5d03ac560ce74ee5",
+   "type": "skill_repo",
+   "title": "video-editor-skills｜达芬奇口播与 Vlog 粗剪",
+   "category": "自动剪辑",
+   "status": "published",
+   "source": {
+    "platform": "GitHub",
+    "author": "appariciojunior",
+    "author_url": "https://github.com/appariciojunior",
+    "url": "https://github.com/appariciojunior/video-editor-skills",
+    "date": "2026-10-23"
+   },
+   "media": {
+    "kind": "image",
+    "images": [],
+    "thumbnail": "/media/cms-assets-aee7f71c04944fd3b9ab780a3f84f77a/image.jpg"
+   },
+   "added_at": "2026-11-06T12:21:43+08:00",
+   "subtitle": "让 Claude Code 按 Skill 在 DaVinci Resolve Studio 中完成第一轮剪辑。",
+   "description": "面向口播、Vlog 和教学视频的剪辑方法 Skill 集，覆盖重录片段与停顿处理、B-roll、声音、字幕、动效叠层和导出。仓库主要提供方法与规则，由 Claude Code 针对工作环境构建脚本。需要付费版 DaVinci Resolve Studio 的外部脚本能力，以及 ffmpeg、Python 和词级时间戳转录服务。许可为 CC BY-NC 4.0，不允许商业使用。",
+   "tags": [
+    "DaVinci Resolve",
+    "Claude Code",
+    "Vlog",
+    "口播粗剪",
+    "字幕",
+    "B-roll",
+    "非商业许可"
+   ],
+   "prompt": "请阅读 https://github.com/appariciojunior/video-editor-skills 及 CC BY-NC 4.0 许可。在我的非商业项目中先检查 DaVinci Resolve Studio 和转录环境，再根据原始素材完成一轮粗剪：处理重录与停顿，保留有效 B-roll，整理声音和字幕。保留原素材与原项目，在新时间线上交付检查版。",
+   "how_to": [
+    "确认非商业使用条件，并准备 DaVinci Resolve Studio。",
+    "按 README 安装 skills，先执行 video-editor-setup 的环境配置流程。",
+    "放入原始素材，建立新时间线，进行第一轮粗剪与字幕整理。",
+    "人工检查节奏、保留片段、音量和字幕，再导出。"
+   ],
+   "tools": [
+    "DaVinci Resolve Studio",
+    "Claude Code",
+    "Python 3.9+",
+    "ffmpeg",
+    "语音转文字服务"
+   ],
+   "skills": [
+    {
+     "name": "video-editor-skills",
+     "repo": "appariciojunior/video-editor-skills",
+     "url": "https://github.com/appariciojunior/video-editor-skills"
+    }
+   ],
+   "assets": [
+    {
+     "name": "README · 使用与安装",
+     "url": "https://github.com/appariciojunior/video-editor-skills#readme"
+    },
+    {
+     "name": "许可说明",
+     "url": "https://github.com/appariciojunior/video-editor-skills/blob/main/LICENSE"
+    }
+   ],
+   "trust": "社区",
+   "featured": false,
+   "updated_at": "2026-11-06T12:21:43+08:00",
+   "published_at": "2026-11-06T12:21:43+08:00"
   }
  ]
 }

@@ -107,7 +107,7 @@ def build(output, base):
     (output / 'index.html').write_text(shell)
     (output / '404.html').write_text(shell)
     (output / 'static/index.html').unlink()
-    routes = ['tools/ai-nav', 'tools/ai-models', 'tools/image-slicer', 'assets/brand', 'assets/design', 'review', 'cms', 'guide', 'submit', 'journal', 'academy', *('c/' + cid for cid in sorted(ids))]
+    routes = ['tools/ai-nav', 'tools/ai-models', 'tools/image-slicer', 'tools/playground', 'assets/brand', 'assets/design', 'review', 'cms', 'guide', 'submit', 'journal', 'academy', *('c/' + cid for cid in sorted(ids))]
     for route in routes:
         target = output / route / 'index.html'
         target.parent.mkdir(parents=True, exist_ok=True)

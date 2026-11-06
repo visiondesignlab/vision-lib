@@ -67,6 +67,7 @@ class PagesTests(unittest.TestCase):
         self.assertEqual((self.output / 'submit/index.html').read_text(), shell)
         self.assertEqual((self.output / 'tools/ai-nav/index.html').read_text(), shell)
         self.assertEqual((self.output / 'tools/ai-models/index.html').read_text(), shell)
+        self.assertEqual((self.output / 'tools/playground/index.html').read_text(), shell)
         self.assertEqual((self.output / 'assets/design/index.html').read_text(), shell)
         self.assertEqual((self.output / 'journal/index.html').read_text(), shell)
         self.assertEqual((self.output / 'academy/index.html').read_text(), shell)

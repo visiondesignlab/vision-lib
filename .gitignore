@@ -7,6 +7,7 @@ __pycache__/
 .venv/
 .playwright-cli/
 /output/
+/playground-service/output/
 /data/
 /media/
 /dist/
