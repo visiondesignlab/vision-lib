@@ -1,6 +1,8 @@
 """Render selected Drive reports without fetching or copying video bytes.
 
-Input: a JSON array of {date, file:{id,url,title}, report, sourcePage, cover, embeds}.
+Input: a JSON array of {date, file:{id,url,title}, report, sourcePage, cover,
+embeds, assets, attachmentLinks}. Assets map Markdown paths to local files;
+attachmentLinks map analysis attachments to verified Google Drive file URLs.
 The original Markdown is retained verbatim. Missing relative attachments are
 labelled in the reader, never silently converted to broken local URLs.
 """
@@ -9,7 +11,9 @@ import hashlib
 import json
 import re
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
+
+from PIL import Image
 
 from bs4 import BeautifulSoup
 from markdown_it import MarkdownIt
@@ -29,7 +33,7 @@ def import_reports(source):
         dest.mkdir(parents=True, exist_ok=True)
         (dest / 'report.md').write_bytes(raw.encode('utf-8'))
         doc = BeautifulSoup(renderer.render(raw), 'html.parser')
-        title = re.sub(r'^\d+\s*[|｜]\s*|\s*动态视频拆解$', '', doc.h1.get_text()).strip()
+        title = row.get('title') or re.sub(r'^\d+\s*[|｜]\s*|\s*动态视频拆解$', '', doc.h1.get_text()).strip()
         doc.h1.decompose()
         intro = doc.find('p').get_text()
         fields = {}
@@ -41,18 +45,65 @@ def import_reports(source):
                   and urlsplit(url).hostname in {'player.vimeo.com', 'framerate.tv'}]
         if not embeds:
             raise ValueError(f'No verified original embed for {slug}')
-        missing = 0
+        missing = missing_images = image_count = representative_count = external_count = 0
+        assets = row.get('assets', {})
+        attachment_links = row.get('attachmentLinks', {})
+
+        def local_asset(url):
+            mapped = assets.get(unquote(url))
+            if not mapped:
+                return None
+            path = (dest / mapped).resolve()
+            if not path.is_relative_to(dest.resolve()) or not path.is_file():
+                raise ValueError(f'Missing or invalid report asset: {slug}/{mapped}')
+            return mapped
+
         for image in doc.find_all('img'):
             if not urlsplit(image.get('src', '')).scheme:
+                mapped = local_asset(image.get('src', ''))
+                if mapped:
+                    image['src'] = mapped
+                    image['data-motion-asset'] = mapped
+                    image['loading'] = 'lazy'
+                    image['decoding'] = 'async'
+                    with Image.open(dest / mapped) as source_image:
+                        image['width'], image['height'] = source_image.size
+                    full = doc.new_tag('a', attrs={'href': mapped, 'data-motion-asset': mapped,
+                        'target': '_blank', 'rel': 'noopener', 'class': 'motion-keyframe',
+                        'aria-label': image.get('alt', '关键画面') + '，查看原图'})
+                    image.wrap(full)
+                    image_count += 1
+                    continue
                 label = image.get('alt', '关键画面')
                 figure = doc.new_tag('span', attrs={'class': 'motion-missing-image'})
-                figure.string = label + ' · 原关键帧图片未归档'
+                figure.string = label + ' · 原关键帧图片未收录'
                 image.replace_with(figure)
                 missing += 1
+                missing_images += 1
         for a in doc.find_all('a'):
+            if a.has_attr('data-motion-asset'):
+                continue
             href = a.get('href', '')
             parsed = urlsplit(href)
-            if parsed.scheme in {'https', 'http'}:
+            mapped = local_asset(href) if not parsed.scheme else None
+            external = attachment_links.get(unquote(href))
+            if mapped:
+                a['href'] = mapped
+                a['data-motion-asset'] = mapped
+                a['target'] = '_blank'
+                a['rel'] = 'noopener'
+                if unquote(href).startswith('../frames/'):
+                    representative_count += 1
+            elif external:
+                target = urlsplit(external)
+                if target.scheme != 'https' or target.hostname != 'drive.google.com':
+                    raise ValueError(f'Invalid Drive attachment URL: {slug}/{href}')
+                a['href'] = external
+                a['target'] = '_blank'
+                a['rel'] = 'noopener noreferrer'
+                a['title'] = '在 Google Drive 中打开原始分析附件'
+                external_count += 1
+            elif parsed.scheme in {'https', 'http'}:
                 a['target'] = '_blank'
                 a['rel'] = 'noopener noreferrer'
             elif '../videos/' in href:
@@ -60,8 +111,8 @@ def import_reports(source):
                 a.string = '播放原片'
             else:
                 a.name = 'span'
-                a.attrs = {'class': 'motion-missing-attachment', 'title': '此附件未在源文件夹归档'}
-                a.append('（未归档）')
+                a.attrs = {'class': 'motion-missing-attachment', 'title': '此分析附件尚未收录到站点'}
+                a.append('（未收录）')
                 missing += 1
         toc = []
         for i, heading in enumerate(doc.select('h2, h3')):
@@ -83,7 +134,10 @@ def import_reports(source):
             'embed': embeds[0], 'sourcePage': row['sourcePage'],
             'reportSource': row['file']['url'], 'reportFileId': row['file']['id'],
             'sha256': hashlib.sha256(raw.encode()).hexdigest(),
-            'missingAttachments': missing, 'toc': toc,
+            'missingAttachments': missing, 'missingImages': missing_images,
+            'keyframeCount': image_count, 'toc': toc,
+            'representativeFrameCount': representative_count,
+            'externalAttachments': external_count,
         })
     catalog.sort(key=lambda x: x['date'], reverse=True)
     (DEST / 'index.json').write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n')

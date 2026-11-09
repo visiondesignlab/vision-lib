@@ -1,20 +1,22 @@
 [
   {
-    "id": "2026-09-25-01_beats_x_jennie_solo_4",
-    "title": "Beats x JENNIE Solo 4 Headphones",
-    "date": "2026-09-25",
-    "intro": "让一枚红色蝴蝶结从晶体花田中生长为耳机的结构与身份，把 JENNIE 的甜与力量压缩成 Solo 4 的产品轮廓。",
-    "brand": "Beats",
-    "creator": "SENSITIVE / XK studio",
-    "duration": "00:35.648",
-    "spec": "1920×1080 / h264 / 25/1 fps",
-    "cover": "https://www.stashmedia.tv/wp-content/uploads/Beats-x-JENNIE-Solo-4-Headphones-film-by-XK-studio4.jpg",
-    "embed": "https://player.vimeo.com/video/1150844183?title=0&byline=0&portrait=0",
-    "sourcePage": "https://www.stashmedia.tv/xk-studio-dons-the-beats-x-jennie-solo-4-headphones/",
-    "reportSource": "https://drive.google.com/file/d/1tAFXNJFy94HHbz13oQ_0cOUzKXpD1QgR/view?usp=drivesdk",
-    "reportFileId": "1tAFXNJFy94HHbz13oQ_0cOUzKXpD1QgR",
-    "sha256": "876ec596b8631a6f2e155a1fc2cba1c406d83393e4baca28a0355a144b5cbbb4",
-    "missingAttachments": 33,
+    "id": "2026-10-06-01_alo_handbags",
+    "title": "Alo Handbags — Tendril",
+    "date": "2026-10-06",
+    "intro": "把空气、皮革、黄铜与阴影变成一套会呼吸的展示语言，让四款手袋在不牺牲产品准确性的前提下获得安静而昂贵的运动感。",
+    "brand": "Alo Yoga",
+    "creator": "Tendril",
+    "duration": "00:40.960",
+    "spec": "1920×1080 / h264 / 24000/1001 fps",
+    "cover": "assets/K04_00-09-000.jpg",
+    "embed": "https://player.vimeo.com/video/1231733992?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/air-breath-quiet-luxury-tendril-intros-alos-handbags/",
+    "reportSource": "https://drive.google.com/file/d/1cbY_wU1wywuXOg9ixXsKgwuqsRN6rgjk/view?usp=drivesdk",
+    "reportFileId": "1cbY_wU1wywuXOg9ixXsKgwuqsRN6rgjk",
+    "sha256": "ede984a4d8e1211658883b952cfcf4fda833b85b503b3d7f11ea0ca8f60ff4dc",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 12,
     "toc": [
       {
         "id": "section-1",
@@ -34,50 +36,255 @@
       },
       {
         "id": "section-6",
-        "title": "关键画面(9 张,按内容需要选取)"
+        "title": "关键画面(12 张,按内容需要选取)"
       },
       {
-        "id": "section-16",
+        "id": "section-19",
         "title": "表达手法拆解"
       },
       {
-        "id": "section-17",
+        "id": "section-20",
         "title": "音乐与声音设计"
       },
       {
-        "id": "section-23",
+        "id": "section-26",
         "title": "品牌/产品卖点的植入方式"
       },
       {
-        "id": "section-24",
+        "id": "section-27",
         "title": "可复用方法、观察边界与改进建议"
       },
       {
-        "id": "section-25",
+        "id": "section-28",
         "title": "全片逐帧与镜头索引"
       },
       {
-        "id": "section-26",
+        "id": "section-29",
         "title": "权利与使用说明"
       }
-    ]
+    ],
+    "representativeFrameCount": 16,
+    "externalAttachments": 6
   },
   {
-    "id": "2026-09-19-01_kef_ls_luxe_process",
-    "title": "KEF LS Luxe — Process Film",
-    "date": "2026-09-19",
-    "intro": "把扬声器研发中的声波、液体、粒子与材质试验编成一册会运动的视觉情绪板，让 KEF LS Luxe 的工业设计从灵感到成品被看见。",
-    "brand": "KEF LS Luxe",
-    "creator": "James Brocklebank",
-    "duration": "00:48.000",
-    "spec": "1920×1920 / h264 / 1079250/35957 fps",
-    "cover": "https://www.stashmedia.tv/wp-content/uploads/KEF-LS-Luxe-x-Ross-Lovegrove-launch-film-by-James-Brocklebank-STASH-MAGAZINE.8.jpg",
-    "embed": "https://framerate.tv/embed/HAq69urW?primary_color=%2523ffffff&track_color=%2523ffffff&theme=minimal",
-    "sourcePage": "https://www.stashmedia.tv/james-brocklebank-sounds-out-the-ls-luxe-for-kef/",
-    "reportSource": "https://drive.google.com/file/d/1VDWnDsgPEUfv77GGC81hytyKqejJYBpp/view?usp=drivesdk",
-    "reportFileId": "1VDWnDsgPEUfv77GGC81hytyKqejJYBpp",
-    "sha256": "725c4dc78345e9f20d095efa8be954ae80ee774ec24e5de02346033f118e9f61",
-    "missingAttachments": 52,
+    "id": "2026-10-06-02_washington_post_relentless",
+    "title": "The Washington Post — Relentless",
+    "date": "2026-10-06",
+    "intro": "把调查报道的证据链压缩成一场黑白红信息洪流，让报纸的名字、文件、监控图像与记者劳动共同证明“Relentless”不是口号。",
+    "brand": "The Washington Post",
+    "creator": "Blinkink / Uncommon Creative Studio",
+    "duration": "01:26.784",
+    "spec": "1920×1080 / h264 / 30/1 fps",
+    "cover": "assets/K04_00-22-000.jpg",
+    "embed": "https://player.vimeo.com/video/1233014464?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/sabih-mahmoods-relentless-motion-for-washington-post/",
+    "reportSource": "https://drive.google.com/file/d/1c58DzPgeZWJHitgrPObslLyfwh-nfR6M/view?usp=drivesdk",
+    "reportFileId": "1c58DzPgeZWJHitgrPObslLyfwh-nfR6M",
+    "sha256": "7ca921d1cbe865dc2279ef07b322676ac72079a43adc4023925c45f33a2eb2cd",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 16,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(16 张,按内容需要选取)"
+      },
+      {
+        "id": "section-23",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-24",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-30",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-31",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-32",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-33",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 27,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-06-03_virgin_media_walrus_whizzer",
+    "title": "Virgin Media — Walrus Whizzer",
+    "date": "2026-10-06",
+    "intro": "让一只绝不拟人化的写实海象乘快艇穿过海湾，用荒诞但可信的速度体验替代技术参数，直接表达宽带又快又稳。",
+    "brand": "Virgin Media",
+    "creator": "Untold Studios",
+    "duration": "01:00.053",
+    "spec": "1920×1080 / h264 / 25/1 fps",
+    "cover": "assets/K04_00-16-000.jpg",
+    "embed": "https://player.vimeo.com/video/1028486640?badge=0&autopause=0&player_id=0&app_id=58479",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2024-vfx/",
+    "reportSource": "https://drive.google.com/file/d/13Ifx6FC0oeTU1_WMYV85Putk9mn7tdAy/view?usp=drivesdk",
+    "reportFileId": "13Ifx6FC0oeTU1_WMYV85Putk9mn7tdAy",
+    "sha256": "8f227c8750af029ac97be47a5206eb64b54e32d368edfb4289b34f85573216f3",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 13,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(13 张,按内容需要选取)"
+      },
+      {
+        "id": "section-20",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-21",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-27",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-28",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-29",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-30",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 21,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-06-04_valorant_console_launch",
+    "title": "VALORANT — Console Launch",
+    "date": "2026-10-06",
+    "intro": "把主机版发布拍成一次从网吧入口不断扩张的多角色追逐，让控制器操作、英雄技能与世界奇观在三分钟里轮流呼吸，而不是只剩高速混战。",
+    "brand": "Riot Games / VALORANT",
+    "creator": "Mill+",
+    "duration": "03:08.501",
+    "spec": "2560×1080 / h264 / 24/1 fps",
+    "cover": "assets/K04_00-35-000.jpg",
+    "embed": "https://player.vimeo.com/video/1007251369?badge=0&autopause=0&player_id=0&app_id=58479",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2024-game-films/",
+    "reportSource": "https://drive.google.com/file/d/1pKbIm2DCc7zerjMWLjtIIr_ZgF7-gwaa/view?usp=drivesdk",
+    "reportFileId": "1pKbIm2DCc7zerjMWLjtIIr_ZgF7-gwaa",
+    "sha256": "ee2c3918605c6e6be3b29a9fbf377a6dc476e8bdd1989b66a99dd6aef375f403",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 18,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(18 张,按内容需要选取)"
+      },
+      {
+        "id": "section-25",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-26",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-32",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-33",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-34",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-35",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 99,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-06-05_rayban_refracted_night",
+    "title": "Ray-Ban — Refracted Night",
+    "date": "2026-10-06",
+    "intro": "让镜片折射、镜框轮廓和霓虹反射本身成为夜生活场景，把 Ray-Ban 从一件静物变成能够弯曲光线的空间装置。",
+    "brand": "Ray-Ban",
+    "creator": "MinimalChat",
+    "duration": "00:35.093",
+    "spec": "3840×2160 / h264 / 30/1 fps",
+    "cover": "assets/K04_00-11-000.jpg",
+    "embed": "https://player.vimeo.com/video/921320579?app_id=122963",
+    "sourcePage": "https://www.stashmedia.tv/sunglasses-at-night-minimalchats-ray-ban-refractions/",
+    "reportSource": "https://drive.google.com/file/d/1hSevFYTKX2GSdLqnEq1XSOy2p1aPSLJP/view?usp=drivesdk",
+    "reportFileId": "1hSevFYTKX2GSdLqnEq1XSOy2p1aPSLJP",
+    "sha256": "0d5498caaa2019aba2f5ce0a692e9f565cc52941a4dc3b53dffd089bb075599f",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 11,
     "toc": [
       {
         "id": "section-1",
@@ -123,6 +330,209 @@
         "id": "section-28",
         "title": "权利与使用说明"
       }
-    ]
+    ],
+    "representativeFrameCount": 18,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-06-06_louis_vuitton_coussin",
+    "title": "Louis Vuitton — Coussin",
+    "date": "2026-10-06",
+    "intro": "用链条、气囊感皮革与黑白人体雕塑反复改写手袋的承重关系，把 Coussin 的柔软、结构与奢华五金拍成一场材料实验。",
+    "brand": "Louis Vuitton",
+    "creator": "Stylo Creative",
+    "duration": "01:00.053",
+    "spec": "2562×1440 / h264 / 24/1 fps",
+    "cover": "assets/K04_00-15-000.jpg",
+    "embed": "https://player.vimeo.com/video/942937719?badge=0&autopause=0&player_id=0&app_id=58479",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2024-passion-projects/",
+    "reportSource": "https://drive.google.com/file/d/1SaENZFoosUh4fWJisZNKlLVbkR7dXFp0/view?usp=drivesdk",
+    "reportFileId": "1SaENZFoosUh4fWJisZNKlLVbkR7dXFp0",
+    "sha256": "bb1c2b909b712afce83185ff01bb73edd24bd35cdda64a66e8feb03097321040",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 13,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(13 张,按内容需要选取)"
+      },
+      {
+        "id": "section-20",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-21",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-27",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-28",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-29",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-30",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 26,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-09-25-01_beats_x_jennie_solo_4",
+    "title": "Beats x JENNIE Solo 4 Headphones",
+    "date": "2026-09-25",
+    "intro": "让一枚红色蝴蝶结从晶体花田中生长为耳机的结构与身份，把 JENNIE 的甜与力量压缩成 Solo 4 的产品轮廓。",
+    "brand": "Beats",
+    "creator": "SENSITIVE / XK studio",
+    "duration": "00:35.648",
+    "spec": "1920×1080 / h264 / 25/1 fps",
+    "cover": "https://www.stashmedia.tv/wp-content/uploads/Beats-x-JENNIE-Solo-4-Headphones-film-by-XK-studio4.jpg",
+    "embed": "https://player.vimeo.com/video/1150844183?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/xk-studio-dons-the-beats-x-jennie-solo-4-headphones/",
+    "reportSource": "https://drive.google.com/file/d/1tAFXNJFy94HHbz13oQ_0cOUzKXpD1QgR/view?usp=drivesdk",
+    "reportFileId": "1tAFXNJFy94HHbz13oQ_0cOUzKXpD1QgR",
+    "sha256": "876ec596b8631a6f2e155a1fc2cba1c406d83393e4baca28a0355a144b5cbbb4",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 9,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(9 张,按内容需要选取)"
+      },
+      {
+        "id": "section-16",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-17",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-23",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-24",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-25",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-26",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 17,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-09-19-01_kef_ls_luxe_process",
+    "title": "KEF LS Luxe — Process Film",
+    "date": "2026-09-19",
+    "intro": "把扬声器研发中的声波、液体、粒子与材质试验编成一册会运动的视觉情绪板，让 KEF LS Luxe 的工业设计从灵感到成品被看见。",
+    "brand": "KEF LS Luxe",
+    "creator": "James Brocklebank",
+    "duration": "00:48.000",
+    "spec": "1920×1920 / h264 / 1079250/35957 fps",
+    "cover": "https://www.stashmedia.tv/wp-content/uploads/KEF-LS-Luxe-x-Ross-Lovegrove-launch-film-by-James-Brocklebank-STASH-MAGAZINE.8.jpg",
+    "embed": "https://framerate.tv/embed/HAq69urW?primary_color=%2523ffffff&track_color=%2523ffffff&theme=minimal",
+    "sourcePage": "https://www.stashmedia.tv/james-brocklebank-sounds-out-the-ls-luxe-for-kef/",
+    "reportSource": "https://drive.google.com/file/d/1VDWnDsgPEUfv77GGC81hytyKqejJYBpp/view?usp=drivesdk",
+    "reportFileId": "1VDWnDsgPEUfv77GGC81hytyKqejJYBpp",
+    "sha256": "725c4dc78345e9f20d095efa8be954ae80ee774ec24e5de02346033f118e9f61",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 11,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(11 张,按内容需要选取)"
+      },
+      {
+        "id": "section-18",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-19",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-25",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-26",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-27",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-28",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 34,
+    "externalAttachments": 6
   }
 ]

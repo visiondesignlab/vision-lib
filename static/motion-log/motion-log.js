@@ -1,7 +1,16 @@
+import {mountFrameViewer} from './frame-viewer.js';
+
 const {path: sitePath, icon} = window.VisionSite;
 const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const link = id => sitePath('/motion-log' + (id ? '?id=' + encodeURIComponent(id) : ''));
 const asset = (id, file) => sitePath('/static/motion-log/' + id + '/' + file);
+function autoplayEmbed(embed) {
+  const url = new URL(embed);
+  url.searchParams.set('autoplay', '1');
+  url.searchParams.set('muted', '0');
+  url.searchParams.set('playsinline', '1');
+  return url.href;
+}
 let catalog;
 async function loadCatalog() {
   return catalog ||= fetch(sitePath('/static/motion-log/index.json')).then(r => {
@@ -12,10 +21,20 @@ async function loadCatalog() {
 const outside = (url, label) => `<a class="pill-btn shadow" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${label} ${icon('external')}</a>`;
 function card(item) {
   return `<a data-link class="motion-card" href="${link(item.id)}">
-    <div class="motion-cover">${item.cover ? `<img src="${esc(item.cover)}" alt="${esc(item.title)}" loading="lazy" referrerpolicy="no-referrer">` : ''}<span class="motion-duration">${esc(item.duration)}</span></div>
+    <div class="motion-cover">${item.cover ? `<img src="${esc(item.cover.startsWith('assets/') ? asset(item.id,item.cover) : item.cover)}" alt="${esc(item.title)}" loading="lazy" referrerpolicy="no-referrer">` : ''}<span class="motion-duration">${esc(item.duration)}</span></div>
     <div class="motion-card-meta"><time datetime="${item.date}">${item.date.replaceAll('-','.')}</time><span>${esc(item.brand)}</span></div>
     <h2>${esc(item.title)}</h2><p>${esc(item.intro)}</p>
     <span class="motion-read">阅读报告 ${icon('forward')}</span></a>`;
+}
+
+function reportStep(item, direction, compact = false) {
+  const label = direction === 'prev' ? '上一篇' : '下一篇';
+  const arrow = icon(direction === 'prev' ? 'back' : 'forward');
+  if (!item) return compact
+    ? `<button class="ibtn" type="button" disabled aria-label="${label}">${arrow}</button>`
+    : `<span class="motion-step-empty">已是${direction === 'prev' ? '第一' : '最后一'}篇</span>`;
+  const content = compact ? arrow : `<span>${direction === 'prev' ? arrow : ''}${label}${direction === 'next' ? arrow : ''}</span><b>${esc(item.title)}</b>`;
+  return `<a data-link data-motion-step="${direction}" class="${compact ? 'ibtn' : 'motion-turn-link'}" href="${link(item.id)}" title="${label}：${esc(item.title)}" aria-label="${label}：${esc(item.title)}" aria-keyshortcuts="${direction === 'prev' ? 'ArrowLeft' : 'ArrowRight'}" rel="${direction}">${content}</a>`;
 }
 
 export async function renderMotionLog(view, id, signal) {
@@ -26,36 +45,58 @@ export async function renderMotionLog(view, id, signal) {
     hideBrokenCovers(view);
     return;
   }
-  const item = list.find(x => x.id === id);
+  const index = list.findIndex(x => x.id === id);
+  const item = list[index];
   const back = `<a class="pill-btn grey" data-link href="${link()}">${icon('back')} 拉片日志</a>`;
   if (!item) {view.innerHTML = back + '<p class="empty">未收录这篇报告。</p>'; return;}
+  const previous = list[index - 1], next = list[index + 1];
   const response = await fetch(asset(id, 'report.html'), {signal});
   if (!response.ok) throw new Error('报告暂时无法读取');
   const html = await response.text();
   if (signal.aborted || !view.isConnected) return;
   document.title = item.title + ' · 拉片日志 · Vision Lab';
-  view.innerHTML = `<div class="motion-toolbar">${back}<div>${outside(item.sourcePage, '查看原片')}${outside(item.reportSource, '原始报告')}</div></div>
+  view.innerHTML = `<div class="motion-toolbar"><div class="motion-toolbar-start">${back}<nav class="motion-pager" aria-label="切换拉片报告">${reportStep(previous,'prev',true)}<span aria-label="第 ${index + 1} 篇，共 ${list.length} 篇">${index + 1} / ${list.length}</span>${reportStep(next,'next',true)}</nav></div><div>${outside(item.sourcePage, '查看原片')}</div></div>
     <header class="motion-heading"><div class="motion-card-meta"><time>${item.date.replaceAll('-','.')}</time><span>拉片日志</span></div><h1>${esc(item.title)}</h1><p>${esc(item.creator)} · ${esc(item.duration)}</p></header>
     <div class="motion-layout"><div class="motion-main">
-      <section class="motion-player" id="motion-player" aria-label="原片播放器">
-        <iframe src="${esc(item.embed)}" title="${esc(item.title)} 原片" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </section>
-      <p class="motion-player-note">原站嵌入播放。若播放器不可用，可<a href="${esc(item.sourcePage)}" target="_blank" rel="noopener noreferrer">查看原片 ${icon('external')}</a>。</p>
-      ${item.missingAttachments ? '<p class="motion-source-note">完整报告正文已保留。源文件夹未归档关键帧图片与分析附件，下文保留对应说明和时间码。</p>' : ''}
+      <div class="motion-player-slot" id="motion-player"><section class="motion-player" aria-label="原片播放器">
+        <a class="motion-player-return" href="#motion-player">回到原片 ${icon('external')}</a>
+        <iframe src="${esc(autoplayEmbed(item.embed))}" title="${esc(item.title)} 原片" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </section></div>
+      <p class="motion-player-note">原片默认有声播放；若未自动开始，请点击播放。若播放器不可用，可<a href="${esc(item.sourcePage)}" target="_blank" rel="noopener noreferrer">查看原片 ${icon('external')}</a>。</p>
+      ${item.missingAttachments ? `<p class="motion-source-note">完整报告正文已保留。${item.missingImages ? '部分关键帧与分析附件尚未收录，' : '部分分析附件尚未收录，'}下文保留对应说明和时间码。</p>` : item.externalAttachments ? '<p class="motion-source-note">关键画面、代表帧与高清联系表已收录。音频与分析数据链接在 Google Drive 中打开原文件。</p>' : ''}
       <article class="motion-report">${html}</article>
+      <nav class="motion-report-turn" aria-label="继续阅读拉片报告">${reportStep(previous,'prev')}${reportStep(next,'next')}</nav>
       <footer class="motion-report-footer"><a class="pill-btn shadow" href="${asset(id,'report.md')}" download>下载报告 Markdown</a>${back}</footer>
     </div><aside class="motion-toc" aria-label="报告目录"><b>报告目录</b><a href="#motion-player">原片</a>${item.toc.map(h=>`<a href="#${esc(h.id)}">${esc(h.title)}</a>`).join('')}</aside></div>`;
+  for (const element of view.querySelectorAll('[data-motion-asset]')) {
+    element.setAttribute(element.tagName === 'IMG' ? 'src' : 'href', asset(id, element.dataset.motionAsset));
+  }
   const frame = view.querySelector('iframe');
   signal.addEventListener('abort', () => frame.remove(), {once:true});
   mountReportNavigation(view, signal);
+  mountReportPaging(view, signal);
+  mountFrameViewer(view, signal);
+}
+
+function mountReportPaging(view, signal) {
+  document.addEventListener('keydown', event => {
+    if (signal.aborted || !view.isConnected || event.defaultPrevented || event.repeat || event.isComposing ||
+        event.altKey || event.ctrlKey || event.metaKey || event.shiftKey || document.fullscreenElement ||
+        window.VisionMenu?.active || document.querySelector('dialog[open], .modal') ||
+        event.target.closest('input, textarea, select, [contenteditable], [role="slider"], [role="tablist"], video, iframe') || event.target.matches('.motion-table')) return;
+    const direction = {ArrowLeft:'prev', ArrowRight:'next'}[event.key];
+    const target = direction && view.querySelector(`.motion-pager [data-motion-step="${direction}"]`);
+    if (target) {event.preventDefault(); target.click();}
+  }, {signal});
 }
 
 function mountReportNavigation(view, signal) {
   const player = view.querySelector('.motion-player');
+  const slot = view.querySelector('.motion-player-slot');
   const links = [...view.querySelectorAll('.motion-toc a')];
   const sections = links.map(a => view.querySelector(a.getAttribute('href')));
   let scheduled = 0, anchorOffset = 24;
-  const stickyTop = () => parseFloat(getComputedStyle(player).top) || 0;
+  const topInset = () => parseFloat(getComputedStyle(slot).scrollMarginTop) || 0;
   function activate(id) {
     for (const a of links) {
       const active = a.getAttribute('href') === '#' + id;
@@ -67,7 +108,9 @@ function mountReportNavigation(view, signal) {
   function update() {
     scheduled = 0;
     if (signal.aborted || !view.isConnected) return;
-    const readingLine = player.getBoundingClientRect().bottom + 32;
+    // Keep the same iframe in place: only its CSS position changes, preserving playback.
+    player.classList.toggle('is-floating', slot.getBoundingClientRect().bottom <= topInset());
+    const readingLine = anchorOffset + 8;
     let current = sections[0];
     for (const section of sections.slice(1)) {
       if (section.getBoundingClientRect().top <= readingLine) current = section;
@@ -78,12 +121,13 @@ function mountReportNavigation(view, signal) {
   }
   function schedule() {if (!scheduled) scheduled = requestAnimationFrame(update);}
   function measure() {
-    anchorOffset = stickyTop() + player.getBoundingClientRect().height + 24;
+    anchorOffset = topInset() + 24;
+    view.style.setProperty('--motion-floating-width', Math.max(220, slot.getBoundingClientRect().width / 2) + 'px');
     view.style.setProperty('--motion-anchor-offset', anchorOffset + 'px');
     schedule();
   }
   const observer = new ResizeObserver(measure);
-  observer.observe(player);
+  observer.observe(slot);
   window.addEventListener('scroll', schedule, {passive:true, signal});
   window.addEventListener('resize', measure, {passive:true, signal});
   signal.addEventListener('abort', () => {observer.disconnect(); cancelAnimationFrame(scheduled);}, {once:true});
@@ -94,11 +138,7 @@ function mountReportNavigation(view, signal) {
     if (!target) return;
     event.preventDefault();
     measure();
-    if (target === player) {
-      // The sticky player's viewport position no longer represents its original location.
-      const main = view.querySelector('.motion-main');
-      window.scrollTo({top:scrollY + main.getBoundingClientRect().top - stickyTop(), behavior:'instant'});
-    } else window.scrollTo({top:scrollY + target.getBoundingClientRect().top - anchorOffset, behavior:'instant'});
+    window.scrollTo({top:scrollY + target.getBoundingClientRect().top - (target === slot ? topInset() : anchorOffset), behavior:'instant'});
     activate(target.id);
   }, {signal});
   measure();

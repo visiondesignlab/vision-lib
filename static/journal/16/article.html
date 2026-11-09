@@ -1,0 +1,68 @@
+
+<header>
+<h1>Vol.16 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-11-07 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天这些更新没有一个在比谁更会“生成”，都在补生成之后那堆不好看的活：选区要能点，卡片要能校验，临时项目要能自己消失，AI review 还得交代它看了什么、花了多少。</p>
+<p class="mixed-script">这比再多一个 prompt 框有意思。AI 进生产以后，设计团队真正缺的不是灵感，是边界、账本和清理机制。做不完这三件事，demo 越顺，后面越容易欠债。</p>
+<h2>● AI Design</h2>
+<h3>Select objects even faster with Figma’s AI image editing tools<a class="source-url" href="https://www.figma.com/release-notes/" rel="noopener noreferrer" target="_blank">https://www.figma.com/release-notes/</a></h3>
+<p class="mixed-script">Figma 的 Select Area 现在可以直接点图里的物体，自动把它选出来，再隔离或擦除，不用拿笔绕着边缘描一圈。目前只在 macOS 桌面端。</p>
+<p class="mixed-script">功能不大，位置很准。电商图、情绪板、提案合成里最烦的往往不是“生成一张”，而是把杯子、人物或一块材质从结果里捞出来继续改。还没实测毛发、半透明和反光边，先不替它把 Photoshop 判死刑。</p>
+<h3>Introducing Spline Arena<a class="source-url" href="https://spline.design/changelog" rel="noopener noreferrer" target="_blank">https://spline.design/changelog</a></h3>
+<p class="mixed-script">Spline Arena 把同一个 prompt 同时交给两个 3D 模型，用户能绕场景看、平移，然后匿名投 A、B、平局或“两边都差”。排行榜用 Bradley–Terry 拟合，每个分数带置信区间；每天投够票还能领 AI credits。</p>
+<p class="mixed-script">这个比盯一张缩略图打分靠谱，但还不是生产 benchmark。模型在竞技场里赢，可能只是第一眼构图讨巧；拓扑、材质可改性、移动端性能和导出后的脏活都没进票箱。Arena 适合找候选，不适合替团队验收。</p>
+<h2>● Design Engineering</h2>
+<h3>Chat SDK agents can now stream generative UI with json-render<a class="source-url" href="https://vercel.com/changelog/json-render-and-chat-sdk-agents" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/json-render-and-chat-sdk-agents</a></h3>
+<figure><img alt="json-render 把 agent 输出限制在有类型的组件目录里，再流式生成 Slack 或 Teams 卡片" decoding="async" height="1256" loading="lazy" src="01.png" width="2400"/><figcaption>json-render 把 agent 输出限制在有类型的组件目录里，再流式生成 Slack 或 Teams 卡片</figcaption></figure>
+<p class="mixed-script">Vercel 把 json-render 接进 Chat SDK agent：先给模型一份有类型的组件目录，它再输出 JSON spec，卡片可在 Slack、Teams 里边生成边更新。默认最多每 500ms 刷一次，结束时做最终校验；属性不合规会抛 <code>CardSpecError</code>。</p>
+<p class="mixed-script">重点不是“聊天里也能画 UI”，而是模型没有资格随手发明组件。平台超限时 adapter 还能降级，比如 Slack 的第二张表会变成 code block，也可以直接用 limits 拒收。生成式界面想进业务，白名单和失败姿势比动画更重要。</p>
+<h3>Vercel CLI can now set new projects to expire<a class="source-url" href="https://vercel.com/changelog/vercel-cli-can-now-set-new-projects-to-expire" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-cli-can-now-set-new-projects-to-expire</a></h3>
+<figure><img alt="Vercel CLI 可以给新建的 demo 与测试项目设置自动过期" decoding="async" height="1256" loading="lazy" src="02.png" width="2400"/><figcaption>Vercel CLI 可以给新建的 demo 与测试项目设置自动过期</figcaption></figure>
+<p class="mixed-script"><code>vercel deploy --delete-project-after 1d</code> 可以让新项目到期自动删除，支持 1h、1d、1w、2w、30d；反悔则用 <code>vercel project keep</code>。要升级到 CLI v65.12.0 以上。</p>
+<p class="mixed-script">有个边界别漏：这个 flag 只管本次创建的新项目，拿去部署已有项目只会收到 warning，不会偷偷改掉它的寿命。原型团队早该把“什么时候删”写进部署命令，别让一次提案在列表里住三年。</p>
+<h3>Vercel Tracing is now generally available<a class="source-url" href="https://vercel.com/changelog/vercel-tracing-is-now-generally-available" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-tracing-is-now-generally-available</a></h3>
+<figure><img alt="Vercel Tracing 正式开放，可从 Dashboard 与 CLI 搜索 trace" decoding="async" height="1256" loading="lazy" src="03.png" width="2400"/><figcaption>Vercel Tracing 正式开放，可从 Dashboard 与 CLI 搜索 trace</figcaption></figure>
+<p class="mixed-script">Vercel Tracing 正式 GA，所有套餐都能在 Dashboard 或 CLI 用 KQL 查 span 和 trace。Next.js 16.5 起，新建且包含 Node.js function 的项目会在首次成功构建后自动开 100% sampling；不想要，得把 sampling rule 删掉。</p>
+<p class="mixed-script">“所有套餐”不等于“都留 14 天”：Hobby 是 3 天，Pro 与 Enterprise 是 14 天。默认全采样对排查 demo 很爽，长期项目先看流量和隐私边界，再决定是不是一直开满。</p>
+<h2>● Articles</h2>
+<h3>Copilot code review: API management and review overview updates<a class="source-url" href="https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates/</a></h3>
+<figure><img alt="GitHub Copilot code review 增加 API 归因、review effort 与更紧凑的结果总览" decoding="async" height="1260" loading="lazy" src="04.jpg" width="2400"/><figcaption>GitHub Copilot code review 增加 API 归因、review effort 与更紧凑的结果总览</figcaption></figure>
+<p class="mixed-script">GitHub 现在能通过 API 明确识别 Copilot 的 review 和 comment，还能回读 review effort，以及某条意见引用过哪些 skill、MCP server 和 custom instruction。review 总览也收紧了：跳过与排除的文件合并进 <code>Files not reviewed</code>，空区块不再占位，AI credits 会显示在 session 里。</p>
+<p class="mixed-script">这次补的是审计，不是聪明度。至少以后能回答“它为什么这么说、哪些文件根本没看、这轮花了多少”。但 enterprise / organization 设置接口不支持 GitHub Apps 和 fine-grained PAT，只有 repository 级接口支持，自动化前先把权限表看完。</p>
+<h3>Copilot impact dashboard adds chat and VS Code agent usage<a class="source-url" href="https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-06-copilot-impact-dashboard-adds-chat-and-vs-code-agent-usage/</a></h3>
+<figure><img alt="Copilot impact dashboard 现在统计九种使用面，包括 Chat 与 VS Code Agents window" decoding="async" height="1260" loading="lazy" src="05.jpg" width="2400"/><figcaption>Copilot impact dashboard 现在统计九种使用面，包括 Chat 与 VS Code Agents window</figcaption></figure>
+<p class="mixed-script">Copilot impact dashboard 把 Chat 和 VS Code Agents window 加进 adoption 图，现在一共看九种使用面；原来的 Passive users 改名 Chat-first users。参与规则仍是 28 天里至少两天使用某功能，而且一个人可以同时落进多个 feature。</p>
+<p class="mixed-script">名字改对了，指标没变。Chat 和 VS Code Agents window 只算 feature engagement，不推动 adoption phase，API 里这批人仍叫 <code>No Cohort</code>。所以“大家都在聊天”不能直接翻译成“agent 已进交付”；这个区别最好原样留在周报里。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Framestore’s Reindeer Takes Flight for The National Lottery<a class="source-url" href="https://www.youtube.com/watch?v=msJBau701rY" rel="noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=msJBau701rY</a></h3>
+<figure data-film-source="https://www.youtube.com/watch?v=msJBau701rY"><img alt="Framestore 把手 K 动画的 CG 驯鹿嵌进苏格兰高地实拍" decoding="async" height="1036" loading="lazy" src="06.jpg" width="1920"/><figcaption>Framestore 把手 K 动画的 CG 驯鹿嵌进苏格兰高地实拍</figcaption></figure>
+<p class="mixed-script">来源：Stash 制作解析<a class="source-url" href="https://www.stashmedia.tv/framestore-reindeer-take-flight-for-the-national-lottery/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/framestore-reindeer-take-flight-for-the-national-lottery/</a>｜制作：Arts and Sciences × Framestore｜导演：Tim McNaughton</p>
+<p class="mixed-script">片子讲一只驯鹿往高处走，情绪不靠台词，靠步态、停顿和那点不肯退的劲。Framestore 在苏格兰高地拍了真实鹿群做运动参考，但没有图省事上自动 mocap；为了赶工期和守住表演，主角从头手 K。Houdini 再接肌肉、毛发、白气、雪和水，冬季数字环境按实拍里的岩石、树枝和地形往回对。</p>
+<p class="mixed-script">好看不在“鹿很真”，而在镜头一直知道自己要讲什么。前半段用远景把它压得很小，坡、风、雪都比主角大；越接近山顶，景别才慢慢收回来。CG 没有抢着证明毛发做了多少根，角色的犹豫和继续往前才是视觉中心。这种克制比满屏粒子贵，也更难。</p>
+<p class="mixed-script">做产品发布片时可以偷这套结构：先找一个能被动作表达的性格，不急着列功能。用三段位移讲清“遇阻—调整—继续”，再让材质、粒子和 UI 只服务这条动作线。没有动作线，技术 breakdown 越豪华，片子越像供应商 showreel。</p>
+<h2>● Stash 最新内容观察</h2>
+<ul>
+<li>Framestore’s Reindeer Takes Flight for The National Lottery<a class="source-url" href="https://www.stashmedia.tv/framestore-reindeer-take-flight-for-the-national-lottery/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/framestore-reindeer-take-flight-for-the-national-lottery/</a>｜character animation / VFX：<strong>已升级为今日主卡</strong>。手 K 表演压住技术炫耀，CG 生物片最该学的是角色意志，不是毛发数量。</li>
+<li>Cif Infinite<a class="source-url" href="https://www.stashmedia.tv/infinte-invisible-bleed-get-clean-with-lola-mullenlowe/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/infinte-invisible-bleed-get-clean-with-lola-mullenlowe/</a> / Wallace &amp; Gromit<a class="source-url" href="https://www.stashmedia.tv/more-holiday-warmth-and-wit-from-wallace-gromit/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/more-holiday-warmth-and-wit-from-wallace-gromit/</a>｜已覆盖：11 月 6 日已经写过，本期不换标题重发；等新 breakdown 或 campaign 延展再回来。</li>
+<li>Doom Burger<a class="source-url" href="https://www.stashmedia.tv/tom-noakes-black-kite-deliver-the-doom-burger-for-kfc/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/tom-noakes-black-kite-deliver-the-doom-burger-for-kfc/</a> / Bass X Machina<a class="source-url" href="https://www.stashmedia.tv/alt-western-buck-opens-bass-x-machina-on-netflix/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/alt-western-buck-opens-bass-x-machina-on-netflix/</a> / Motion Plus Design Paris<a class="source-url" href="https://www.stashmedia.tv/motion-plus-design-returns-to-paris-2026-november-14th/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/motion-plus-design-returns-to-paris-2026-november-14th/</a> / Motion North 2027<a class="source-url" href="https://www.stashmedia.tv/motion-north-2027-goes-big-march-10-11-in-manchester/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/motion-north-2027-goes-big-march-10-11-in-manchester/</a>｜已覆盖：11 月 4–5 日已登记，最新 feed 没有新制作信息，继续跳过。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Figma Select Area 在头发、玻璃、阴影和多个相似物体上的边界质量，Windows 端什么时候补。</li>
+<li>json-render 的组件目录怎样版本化，模型反复修正 <code>CardSpecError</code> 时会不会把卡片改得越来越保守。</li>
+<li>Vercel 临时项目被自动删除前有没有 webhook、审计记录和资产保留提醒。</li>
+<li>Next.js 新项目默认 100% tracing 对高流量团队的费用、采样策略与隐私提示。</li>
+<li>Copilot review 的 source attribution 是否够稳定，能不能真正追到自定义 instruction 的具体版本。</li>
+<li>Spline Arena 的高分模型导出后，拓扑、材质和移动端 runtime 是否还站得住。</li>
+<li>Stash 下一条有制作 breakdown 的新片；National Lottery 驯鹿已登记，不连续重复。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日主题：Figma Select Area 自动选物、Spline Arena、json-render × Chat SDK、Vercel 临时项目与 Tracing GA、Copilot code review 审计、Copilot impact dashboard。</li>
+<li>今日视频：Framestore × National Lottery 驯鹿广告；YouTube <code>msJBau701rY</code> 与 Stash 制作解析已核验，飞书使用 YouTube URL Preview。</li>
+<li>今日 Stash：只有 National Lottery 驯鹿是新条目并升级主卡。Cif Infinite、Wallace &amp; Gromit、Doom Burger、Bass X Machina、Motion Plus Design Paris、Motion North 2027 与 Levi’s 都按既有记录跳过。</li>
+<li>继续避免：11 月 6 日已写的 Figma agent 矢量、OpenAI Images 2.6、Affinity for iPad、Framer Agent Templates、Linear Mobile Diffs / AI credits、WebKit Adaptive Dark Mode、GitHub PR Overview。</li>
+</ul>
+<p class="mixed-script verification">核验说明：Figma、Vercel、GitHub、Spline 与 Stash 官方页面于 2026-11-07 回读。正文 6 张配图原始宽度均为 1920–2400px，并逐张目视检查；视频原片为 YouTube 官方嵌入，飞书按 URL Preview 发布，不使用单独视频封面块。</p>

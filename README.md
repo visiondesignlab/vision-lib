@@ -38,9 +38,13 @@ python3 scripts/import_journal.py "../../Design Reports/Vision Design 设计日�
 
 ## 拉片日志
 
-「浏览 → 拉片日志」位于 `/motion-log`，每个单片报告通过 `?id=<report-id>` 直接打开。正文保留原 Markdown 的全部章节、表格和时间码，详情提供章节目录与原站嵌入播放器。视频文件不会下载、复制或写入发布包。
+「浏览 → 拉片日志」位于 `/motion-log`，每个单片报告通过 `?id=<report-id>` 直接打开。正文保留原 Markdown 的全部章节、表格和时间码，详情提供章节目录与原站嵌入播放器。进入详情请求有声自动播放，若受浏览器策略限制则由用户点击播放；滚过原片后缩为约一半宽度的右下角悬浮播放器，点击「回到原片」恢复。切换仅改变布局，保留同一个 iframe 与播放进度。视频文件不会下载、复制或写入发布包。
 
-当前选录 Google Drive「Codex Nyx / 每日产品动态」中的两篇报告。源日期目录只有 `reports` 与 `videos`，未归档的关键帧、联系表和分析附件在阅读页明确标注，原 Markdown 原样保存。目录与来源、SHA-256 在 `static/motion-log/index.json`；`scripts/import_motion_log.py` 将已读取的 Drive 正文及经核验的原站播放器地址转换为静态内容。
+选录 Google Drive Nyx 拉片归档中的单片报告。原 Markdown 原样保存，关键帧、镜头索引代表帧及高清联系表按原路径与时间码匹配，保存在各报告的 `assets/`，点击可查看原图。音频、波形及分析数据链接至经核验的 Google Drive 原文件，不复制原视频。目录、正文 SHA-256、关键帧与代表帧数量见 `static/motion-log/index.json`，图片来源见各报告的 `asset-sources.json`。
+
+详情顶部与底部可按目录顺序切换上一篇 / 下一篇，并支持方向键。代表帧通过 `frame-viewer.js` 在页内对话框中预览，方向键切换帧，Esc 关闭并返回原阅读位置；预览打开时，方向键不会切换报告。视频控件、输入框和已聚焦的横向表格保留自身的键盘操作。
+
+`python3 scripts/import_motion_log.py output/motion-log-source.json` 将已读取的 Drive 正文、经核验的原站播放器地址和 `assets` 映射转换为静态内容。输入须包含全部已选报告；`assets` 将原 Markdown 相对路径映射至报告目录中的本地图片，导入时验证路径、文件存在与尺寸；`attachmentLinks` 将分析附件原路径映射至核验过的 HTTPS Google Drive 文件地址。图片使用懒加载，并按当前站点基础路径解析，兼容本地与 Pages。
 
 ## 运行
 

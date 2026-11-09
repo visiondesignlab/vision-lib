@@ -1,5 +1,23 @@
 [
   {
+    "volume": 18,
+    "date": "2026-11-09",
+    "headline": "Motion 14.10.0",
+    "intro": "这周最有意思的变化，不是 Agent 又多会了一项，而是产品开始补“人怎么验收它”：GitHub 把上下文、预览、归因和缺失 telemetry 摆到台面上；Chrome 把 CSS 与 anchor positioning 做成可读的调试界面；Motion 连长按、多击和键盘重排都补成了正式能力。"
+  },
+  {
+    "volume": 17,
+    "date": "2026-11-08",
+    "headline": "October 2026 - Trace, Code Block and AI Elements",
+    "intro": "这两天的更新终于不只谈“能不能做”，开始交代 Agent 做事时会留下什么：步骤、代码、工具调用、credit、权限和失败记录。shadcn 把 trace 做成组件，Adobe 把每次回答的 credits 摆到界面上，GitHub 连“指标为什么缺一块”都补了字段。"
+  },
+  {
+    "volume": 16,
+    "date": "2026-11-07",
+    "headline": "Select objects even faster with Figma’s AI image editing tools",
+    "intro": "今天这些更新没有一个在比谁更会“生成”，都在补生成之后那堆不好看的活：选区要能点，卡片要能校验，临时项目要能自己消失，AI review 还得交代它看了什么、花了多少。"
+  },
+  {
     "volume": 15,
     "date": "2026-11-06",
     "headline": "Improvements to agent-generated vector illustrations and icons",
