@@ -34,9 +34,11 @@
 .ai-ranking th[scope="colgroup"] { border-left:1px solid var(--line); }
 .ai-ranking th[data-column] { padding:0; }
 .ai-ranking th button{ display:flex; width:100%; align-items:center; justify-content:space-between; gap:6px; padding:0 10px; min-height:var(--control-height); text-align:left;height:var(--control-height)}
-.ai-ranking th button>span { white-space:nowrap; }
+.ai-ranking th button>span { white-space:nowrap; line-height:14px; }
+.ai-ranking th[data-column="rank"] button { padding-inline:5px; gap:2px; }
+.ai-ranking th[data-column="rank"] button .ui-icon { width:12px; height:12px; }
 .ai-ranking th[data-column="score"] { width:1%; }
-.ai-ranking th small{ display:inline; color:var(--fg2); font-size:11px;margin-left:4px}
+.ai-ranking th small{ display:block; color:var(--fg2); font-size:11px;line-height:14px;margin:0}
 .ai-ranking th button:hover { background:var(--chip); }
 .ai-ranking tbody th { font-weight:500; min-width:166px; }
 .rank-identity { display:inline-flex; align-items:center; gap:8px; vertical-align:middle; }
@@ -50,48 +52,34 @@
   .ai-ranking-source{flex-basis:100%;margin:3px 0 0}
 }
 
-/* Keep the page controls and both table header rows available while browsing. */
-#app[data-view="tool:ai-models"] {
-  display:flex; flex-direction:column; min-height:0;
-  height:100vh; height:100dvh; overflow:hidden; padding-bottom:max(16px,env(safe-area-inset-bottom));
+/* Keep the page shell outside iOS rubber-band scrolling. Only ranking rows scroll. */
+html:has(#app[data-view="tool:ai-models"]),
+body:has(#app[data-view="tool:ai-models"]){overflow:hidden;overscroll-behavior:none}
+#app[data-view="tool:ai-models"]{
+  position:fixed;inset:0 0 0 var(--side);margin-left:0;
+  display:flex;flex-direction:column;min-height:0;overflow:hidden;
+  padding-bottom:max(16px,env(safe-area-inset-bottom));
 }
-.models-page { display:flex; flex:1; flex-direction:column; min-height:0; padding-bottom:0; }
-.models-header,.models-tools,.ai-ranking-head { flex:none; }
-.models-page .ai-ranking { display:flex; flex-direction:column; flex:1; min-height:0; margin:0; }
-.models-page .ai-ranking-scroll { flex:1; min-height:0; overflow:auto; overscroll-behavior:contain; }
-.models-page .ai-ranking { --rank-group-height:34px; }
-.models-page thead th { position:sticky; top:0; z-index:2; }
-.models-page thead th[scope="colgroup"] { height:var(--rank-group-height); padding-block:0; }
-.models-page thead tr:nth-child(2) th { top:var(--rank-group-height); }
-@media(max-width:900px) {
-  #app[data-view="tool:ai-models"] {
-    height:calc(100vh - var(--mobile-head) - env(safe-area-inset-top));
-    height:calc(100dvh - var(--mobile-head) - env(safe-area-inset-top));
-  }
-  /* Keep model identity visible while metrics scroll in either direction. */
-  .models-page .ai-ranking { --rank-number-width:48px; --rank-model-width:180px; }
-  .models-page table { table-layout:fixed; min-width:0; }
-  .models-page col[data-column="rank"] { width:var(--rank-number-width); }
-  .models-page col[data-column="model"] { width:var(--rank-model-width); }
-  .models-page col[data-column="provider"] { width:160px; }
-  .models-page col[data-column="contextTokens"] { width:126px; }
-  .models-page col[data-column="score"],.models-page col[data-column="votes"],.models-page col[data-column="voices"] { width:90px; }
-  .models-page col[data-column="released"] { width:106px; }
-  .models-page col[data-column="price"],.models-page col[data-column="costUSD"],.models-page col[data-column="durationMinutes"] { width:124px; }
-  .models-page col[data-column="firstAnswerSeconds"] { width:138px; }
-  .models-page tbody td[data-key="rank"],.models-page tbody th[scope="row"] { position:sticky; z-index:1; background:var(--bg); }
-  .models-page tbody td[data-key="rank"],.models-page thead th[data-column="rank"] { left:0; }
-  .models-page tbody th[scope="row"],.models-page thead th[data-column="model"] { left:var(--rank-number-width); border-right:1px solid var(--line); }
-  .models-page thead th[data-column="rank"],.models-page thead th[data-column="model"] { z-index:3; }
-  .models-page tbody th[scope="row"] { min-width:0; }
-  .models-page tbody th .rank-identity { display:flex; align-items:flex-start; gap:6px; }
-  .models-page tbody th .rank-identity>span { min-width:0; overflow-wrap:anywhere; }
-  .models-page tbody th .rank-identity img { margin-top:1px; }
+.models-page{--rank-number-width:48px;--rank-model-width:260px;display:flex;flex:1;flex-direction:column;min-height:0;padding-bottom:0}
+.models-header,.models-tools,.ai-ranking-head{flex:none}
+.models-page .ai-ranking{display:flex;flex-direction:column;flex:1;min-height:0;margin:0}
+.models-page .ai-ranking-columns{flex:none;overflow:hidden;scrollbar-gutter:stable;background:var(--bg2)}
+.models-page .ai-ranking-scroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:none;scrollbar-gutter:stable;touch-action:pan-x pan-y}
+.models-page table{table-layout:fixed;width:100%;min-width:calc(var(--rank-other-width) + var(--rank-model-width))}
+.models-page .ai-ranking-columns th[scope=colgroup]{height:34px;padding-block:0}
+.models-page .rank-accessible-head{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.models-page tbody th[scope=row]{min-width:0}
+.models-page tbody th .rank-identity{display:flex;align-items:flex-start;gap:6px}
+.models-page tbody th .rank-identity>span{min-width:0;overflow-wrap:anywhere}
+.models-page tbody th .rank-identity img{margin-top:1px}
+.models-page [hidden]{display:none!important}
+@media(max-width:900px){
+  #app[data-view="tool:ai-models"]{top:calc(var(--mobile-head) + env(safe-area-inset-top))}
+  .models-page{--rank-model-width:180px}
+  .models-page tbody td[data-key="rank"],.models-page tbody th[scope="row"]{position:sticky;z-index:1;background:var(--bg)}
+  .models-page .ai-ranking-columns th[data-column="rank"],.models-page .ai-ranking-columns th[data-column="model"]{position:sticky;z-index:2}
+  .models-page tbody td[data-key="rank"],.models-page .ai-ranking-columns th[data-column="rank"]{left:0}
+  .models-page tbody th[scope="row"],.models-page .ai-ranking-columns th[data-column="model"]{left:var(--rank-number-width);border-right:1px solid var(--line)}
 }
-@media(max-width:420px) {
-  .models-page .ai-ranking { --rank-model-width:144px; }
-}
-@media(max-height:540px) {
-  .models-tools { margin-block:6px; }
-  .ai-ranking-head { padding-block:6px; }
-}
+@media(max-width:420px){.models-page{--rank-model-width:144px}}
+@media(max-height:540px){.models-tools{margin-block:6px}.ai-ranking-head{padding-block:6px}}

@@ -105,7 +105,7 @@ html:has(dialog[open]){overflow:hidden}
   .sec .hint{line-height:1.65}
   .prompt{max-height:360px;overflow-x:hidden;overflow-wrap:anywhere}
   .prompt-preview summary{display:list-item;align-content:center}
-  .tag{max-width:100%;white-space:normal;overflow-wrap:anywhere;line-height:1.5}
+  .tag{max-width:100%;height:auto;min-height:24px;white-space:normal;overflow-wrap:anywhere;line-height:1.5}
   .panel .tags .tag{display:inline-flex;align-items:center;justify-content:center;text-align:center;height:auto;min-height:24px}
   #toast{max-width:calc(100vw - 32px);width:max-content;bottom:calc(16px + env(safe-area-inset-bottom));border-radius:16px;line-height:1.6}
   .modal form{max-height:calc(100dvh - 32px);padding:20px;width:calc(100% - 32px)}

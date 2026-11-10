@@ -1,6 +1,6 @@
 const sitePath = window.VisionSite.path;
 /* Shared, local image/PDF reader. Zoom is relative to the fitted view. */
-const {icon} = window.VisionSite;
+const {icon, emptyState} = window.VisionSite;
 const button = (action, label, glyph) => `<button type="button" class="ibtn" data-viewer-action="${action}" title="${label}" aria-label="${label}">${icon(glyph)}</button>`;
 const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
@@ -111,13 +111,20 @@ export function createImageViewer(host, {src, title, onBackdrop}) {
   const view = createViewport(host, {onBackdrop});
   const image = new Image(); image.alt = title; image.draggable = false;
   let destroyed = false;
-  view.status.textContent = '图片加载中…';
+  const loadImage = () => {
+    view.status.innerHTML = emptyState({icon:'image', title:'图片加载中', description:'正在准备预览，请稍等片刻。', compact:true, busy:true});
+    image.src = src;
+  };
   image.onload = () => {
     if (destroyed) return;
     view.setContent(image, image.naturalWidth, image.naturalHeight); view.status.textContent = '';
   };
-  image.onerror = () => { if (!destroyed) view.status.textContent = '图片加载失败，请关闭后重试。'; };
-  image.src = src;
+  image.onerror = () => {
+    if (destroyed) return;
+    view.status.innerHTML = emptyState({icon:'image', title:'图片暂时无法加载', description:'请检查网络连接，然后重新加载图片。', compact:true, actionsHTML:'<button type="button">重试</button>'});
+    view.status.querySelector('button').onclick = loadImage;
+  };
+  loadImage();
   return {destroy() { destroyed = true; image.onload = image.onerror = null; view.destroy(); }};
 }
 
@@ -164,7 +171,7 @@ function acquirePDF(href) {
 
 export function createPDFViewer(host, {href, title, initialPage = 1}) {
   host.innerHTML = `<div class="asset-viewer asset-pdf-viewer" aria-busy="true">
-    <div class="asset-pdf-scroll" tabindex="0" aria-label="文档预览，上下滚动浏览页面"><div class="asset-pdf-pages"></div><div class="asset-viewer-status" role="status">文档加载中…</div></div>
+    <div class="asset-pdf-scroll" tabindex="0" aria-label="文档预览，上下滚动浏览页面"><div class="asset-pdf-pages"></div><div class="asset-viewer-status"></div></div>
     <div class="asset-viewer-toolbar" aria-label="预览工具">
       <div class="asset-page-controls">${button('page-previous','上一页','previous')}<label><input type="number" min="1" value="1" aria-label="页码" disabled><span class="asset-page-total">/ —</span></label>${button('page-next','下一页','next')}</div>
       <div class="asset-zoom-controls">${button('zoom-out','缩小','minus')}<span class="asset-zoom-value" title="相对适应窗口的比例">100%</span>${button('zoom-in','放大','plus')}<button type="button" class="pill-btn grey" data-viewer-action="fit">适应窗口</button></div>
@@ -176,6 +183,13 @@ export function createPDFViewer(host, {href, title, initialPage = 1}) {
   let lease = acquirePDF(href), pdf, records = [], destroyed = false, zoom = 1, fit = 1, pageNumber = initialPage, frameRequest = 0, pointer;
   let lastWidth = 0, lastHeight = 0;
   previous.disabled = next.disabled = true;
+  const toolbar = root.querySelector('.asset-viewer-toolbar');
+  function showLoading() {
+    root.setAttribute('aria-busy', 'true');
+    toolbar.hidden = true;
+    status.innerHTML = emptyState({icon:'folder', title:'文档加载中', description:'正在准备页面，请稍等片刻。', compact:true, busy:true});
+  }
+  showLoading();
   function updateControls() {
     if (!pdf) return;
     if (window.document.activeElement !== input) input.value = pageNumber;
@@ -262,9 +276,11 @@ export function createPDFViewer(host, {href, title, initialPage = 1}) {
     } catch (error) {
       if (destroyed || token !== record.token || error.name === 'RenderingCancelledException') return;
       record.task = null; record.pagePromise = null;
-      const retry = window.document.createElement('button'); retry.type = 'button'; retry.className = 'pill-btn shadow asset-page-retry'; retry.textContent = '加载失败，重试';
-      retry.onclick = () => { record.scale = 0; render(record); };
-      record.element.replaceChildren(retry);
+      record.element.innerHTML = emptyState({icon:'folder', title:'这一页暂时无法加载', description:'请检查网络连接后重试。', compact:true, actionsHTML:'<button type="button">重试</button>'});
+      record.element.querySelector('button').onclick = () => {
+        record.element.innerHTML = emptyState({icon:'folder', title:'页面加载中', description:'正在重新准备这一页。', compact:true, busy:true});
+        record.scale = 0; render(record);
+      };
       root.setAttribute('aria-busy', 'false');
     }
   }
@@ -282,7 +298,7 @@ export function createPDFViewer(host, {href, title, initialPage = 1}) {
         return {number: index + 1, element, width: base.width, height: base.height, token: 0, scale: 0, active: false};
       });
       records[0].pagePromise = Promise.resolve(first);
-      pages.replaceChildren(...records.map(record => record.element)); status.textContent = '';
+      pages.replaceChildren(...records.map(record => record.element)); status.textContent = ''; toolbar.hidden = false;
       layout(); goToPage(initialPage);
     } catch (error) { showLoadError(); }
   }
@@ -291,10 +307,9 @@ export function createPDFViewer(host, {href, title, initialPage = 1}) {
       records.forEach(record => { record.token++; record.task?.cancel(); });
       records = []; pdf = null; pages.replaceChildren();
       previous.disabled = next.disabled = input.disabled = true;
-      root.setAttribute('aria-busy', 'false'); status.textContent = '文档加载失败。';
-      const retry = window.document.createElement('button'); retry.type = 'button'; retry.className = 'pill-btn shadow'; retry.textContent = '重试';
-      retry.onclick = () => { lease.release(); lease = acquirePDF(href); status.textContent = '文档加载中…'; loadDocument(); };
-      status.append(retry);
+      root.setAttribute('aria-busy', 'false'); toolbar.hidden = true;
+      status.innerHTML = emptyState({icon:'folder', title:'文档暂时无法加载', description:'请检查网络连接，然后重新加载文档。', compact:true, actionsHTML:'<button type="button">重试</button>'});
+      status.querySelector('button').onclick = () => { lease.release(); lease = acquirePDF(href); showLoading(); loadDocument(); };
   }
   // Leave wheel and touch scrolling native: PDF pages flow vertically at every zoom level.
   scroller.addEventListener('scroll', schedule, {passive: true});

@@ -15,10 +15,13 @@
 html,body{margin:0;background:var(--bg);color:var(--fg);font:13px/1.4 var(--font);-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;cursor:pointer;border:0;background:none;height:var(--control-height);border-radius:var(--control-radius);padding-block:0}
-/* Single-line fields share metrics on every route and breakpoint. Textareas,
-   media/drop zones and tags keep their content-specific geometry. */
-:where(input:not([type=checkbox],[type=radio],[type=file],[type=range],[type=hidden],[type=image]),select){height:var(--control-height);border-radius:var(--control-radius);padding-block:0}
-textarea{border-radius:var(--control-radius)}
+/* Text fields use the image slicer's shared appearance. Keep specialized
+   controls (checkboxes, upload targets, sliders and color pickers) separate. */
+:where(input:not([type=checkbox],[type=radio],[type=file],[type=range],[type=hidden],[type=image],[type=button],[type=submit],[type=reset],[type=color]),textarea){min-width:0;border:1px solid var(--line);border-radius:var(--control-radius);background-color:var(--bg);color:var(--fg);font:inherit;outline:none;box-shadow:none;padding:0 10px}
+:where(input:not([type=checkbox],[type=radio],[type=file],[type=range],[type=hidden],[type=image],[type=button],[type=submit],[type=reset],[type=color]),select){height:var(--control-height);border-radius:var(--control-radius);padding-block:0}
+textarea{padding:8px 10px;border-radius:var(--control-radius)}
+:root :is(input:not([type=checkbox],[type=radio],[type=file],[type=range],[type=hidden],[type=image],[type=button],[type=submit],[type=reset],[type=color]),textarea):is(:focus,:focus-visible){border-color:var(--fg2);box-shadow:0 0 0 1px var(--fg2);outline:none;outline-offset:0}
+:where(input,textarea)::placeholder{color:var(--fg2)}
 /* Native checkbox appearance ignores radius on some platforms. Retain the native
    input semantics and keyboard behavior, with a shared Hugeicons check mark. */
 input[type=checkbox]{appearance:none;-webkit-appearance:none;box-sizing:border-box;display:inline-grid;place-items:center;vertical-align:middle;flex:none;width:var(--checkbox-size);height:var(--checkbox-size);min-width:var(--checkbox-size);min-height:var(--checkbox-size);margin:0;padding:0;border:1px solid var(--fg3);border-radius:var(--checkbox-radius);background:var(--bg);color:var(--bg);cursor:pointer}
@@ -71,9 +74,9 @@ input[type=checkbox]:disabled{opacity:.45;cursor:not-allowed}
 .chip:hover{color:var(--fg)}
 .chip.on{background:var(--fg);color:#fff}
 .chip .n{opacity:.6;margin-left:4px;font-size:12px}
-.search{height:var(--control-height);border-radius:var(--control-radius);border:0;box-shadow:var(--ring);padding:0 12px 0 28px;width:200px;font:inherit;outline:none;
+.search{height:var(--control-height);border-radius:var(--control-radius);border:1px solid var(--line);box-shadow:none;padding:0 10px 0 28px;width:200px;font:inherit;outline:none;
   background:#fff url("/static/icons/search.svg") 10px 50% / 1.15em no-repeat}
-input.search:focus,.ai-search input:focus{outline:1px solid var(--fg2);outline-offset:-1px;box-shadow:none}
+
 select[hidden]{display:none}
 .select-trigger{display:inline-flex;align-items:center;min-width:0;max-width:100%;gap:2px;padding:0 4px 0 12px;transition:background-color .12s cubic-bezier(.2,0,0,1)}
 .select-trigger>span:first-child,.menu button>span:first-child{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -133,6 +136,16 @@ main{margin-left:var(--side);padding:16px 16px 80px}
 .empty-state .empty-state-actions>:is(a,button){box-sizing:border-box;display:inline-flex;justify-content:center;align-items:center;gap:6px;min-height:var(--control-height);height:auto;margin:0;padding:5px 12px;border:1px solid var(--line);border-radius:var(--control-radius);background:var(--bg);color:var(--fg);font:400 13px/20px var(--font);text-decoration:none;box-shadow:none;cursor:pointer}
 .empty-state .empty-state-actions>:is(a,button):hover{background:var(--bg2)}
 .empty-state .empty-state-actions .ui-icon{width:14px;height:14px}
+/* A small bob and three trailing dots make waiting feel alive without shifting text. */
+.empty-state--loading .empty-state-icon{position:relative;margin-bottom:24px}
+.empty-state--loading .empty-state-icon>.ui-icon{animation:state-bob 1.8s ease-in-out infinite;transform-origin:50% 85%}
+.loading-dots{position:absolute;top:38px;left:50%;display:flex;gap:4px;transform:translateX(-50%)}
+.loading-dots i{width:3px;height:3px;border-radius:50%;background:currentColor;animation:state-dot 1.2s ease-in-out infinite}
+.loading-dots i:nth-child(2){animation-delay:.15s}.loading-dots i:nth-child(3){animation-delay:.3s}
+@keyframes state-bob{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-4px) rotate(5deg)}}
+@keyframes state-dot{0%,70%,100%{opacity:.25;transform:translateY(0)}35%{opacity:.8;transform:translateY(-2px)}}
+@media(prefers-reduced-motion:reduce){.empty-state--loading .empty-state-icon>.ui-icon,.loading-dots i{animation:none}}
+
 /* ---------- detail overlay */
 html.modal-open{overflow:hidden;overscroll-behavior:none}
 body.modal-open{position:fixed;top:var(--locked-scroll-y,0);width:100%;padding-right:var(--scrollbar-gap,0px);overflow:hidden;overscroll-behavior:none}
@@ -191,7 +204,7 @@ body.detail-open .side{visibility:hidden}
 .steps li::before{content:counter(s);position:absolute;left:0;top:4px;width:18px;height:18px;border-radius:50%;background:var(--chip);font-size:11px;display:grid;place-items:center;color:var(--fg2)}
 code{font:12px ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--chip);padding:1px 5px;border-radius:4px}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
-.tag{height:24px;line-height:24px;padding:0 10px;border-radius:999px;background:var(--chip);color:var(--fg2);font-size:12px}
+.tag{display:inline-flex;align-items:center;justify-content:center;text-align:center;height:24px;line-height:24px;padding:0 10px;border-radius:999px;background:var(--chip);color:var(--fg2);font-size:12px}
 a.tag:hover{color:var(--fg)}
 .tag.mono{font-family:ui-monospace,Menlo,monospace}
 .trust{display:inline-flex;align-items:center;gap:4px;height:20px;padding:0 8px;border-radius:999px;font-size:11px;background:oklch(94% .05 250);color:oklch(45% .15 250)}
@@ -235,7 +248,7 @@ a.tag:hover{color:var(--fg)}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.25);backdrop-filter:blur(4px);z-index:80;display:grid;place-items:center}
 .modal form{background:#fff;border-radius:14px;padding:20px;width:min(720px,92vw);max-height:90vh;overflow:auto;overscroll-behavior:contain;box-shadow:0 20px 60px rgba(0,0,0,.25)}
 .modal label{display:block;color:var(--fg2);margin:10px 0 4px}
-.modal input[type=text],.modal textarea{width:100%;font:inherit;border:0;box-shadow:0 0 0 1px var(--line);border-radius:8px;padding:8px 10px;background:#fff}
+.modal input[type=text],.modal textarea{width:100%;font:inherit;border:1px solid var(--line);border-radius:var(--control-radius);padding:8px 10px;background:var(--bg)}
 .modal input[type=text]{padding-block:0}
 .modal textarea{min-height:90px;resize:vertical;line-height:1.5}
 .modal .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -292,7 +305,7 @@ a.tag:hover{color:var(--fg)}
 .submission-form h2{font-size:16px}.submission-form p,.submission-form small,.submission-form label>span{color:var(--fg2)}
 .submission-form label{display:block}.submission-form label>span{margin-left:4px;font-size:12px}
 .submission-form :is(input,textarea){display:block;width:100%;border:1px solid var(--line);border-radius:8px;margin-top:6px;padding:7px 10px;font:inherit;color:inherit;background:var(--bg)}
-.submission-form :is(input,textarea):focus{outline:1px solid var(--fg2);outline-offset:-1px}
+
 .submission-form input{padding-block:0}
 .submission-form textarea{resize:vertical}.submission-form .pill-btn{justify-self:start}
 .submission-status:empty{display:none}

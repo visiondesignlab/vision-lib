@@ -98,9 +98,12 @@ export function modelsPage(dataset, replaceURL) {
   const mode=Object.hasOwn(modes,selected)?selected:'language';
   const board=dataset.boards[mode], cols=columnsFor(mode);
   const original=board.rows.map((r,i)=>({...r,rank:i+1}));
+  const widths={rank:48,provider:160,contextTokens:126,score:90,votes:90,released:106,voices:90,price:124,costUSD:124,durationMinutes:124,firstAnswerSeconds:138};
+  const colgroup=`<colgroup>${cols.map(col=>`<col data-column="${col.key}" style="width:${col.key==='model'?'var(--rank-model-width)':widths[col.key]+'px'}">`).join('')}</colgroup>`;
   let sort=sortByMode.get(mode) || {key:'score',direction:'descending'};
   const page=document.createElement('section');
   page.className='models-page';
+  page.style.setProperty('--rank-other-width',cols.reduce((sum,col)=>sum+(widths[col.key]||0),0)+'px');
   const tabLinks=Object.entries(modes).map(([key,[label]])=>{
     const href=path('/tools/ai-models')+(key==='language'?'':'?type='+key);
     return `<a data-link href="${href}"${key===mode?' aria-current="page"':''}>${label}</a>`;
@@ -108,7 +111,19 @@ export function modelsPage(dataset, replaceURL) {
   page.innerHTML=`<header class="models-header"><h1>AI 大模型</h1><span>${dataset.date} 快照</span><a href="${esc(board.source)}" target="_blank" rel="noopener noreferrer">Artificial Analysis ${icon('external')}</a></header>
     <div class="models-tools"><nav class="model-tabs" aria-label="榜单类型">${tabLinks}</nav><div data-search-slot></div></div>
     <div class="ai-ranking"><div class="ai-ranking-head"><h2>${modes[mode][1]}</h2><span class="models-count" role="status"></span></div>
-    <div class="ai-ranking-scroll" role="region" tabindex="0" aria-label="模型排行，可上下或左右滚动"><table aria-label="${modes[mode][1]}"><colgroup>${cols.map(col=>`<col data-column="${col.key}">`).join('')}</colgroup><thead>${tableHead(cols)}</thead><tbody></tbody></table><div class="models-empty" hidden></div></div></div>`;
+    <div class="ai-ranking-columns"><table aria-label="榜单排序">${colgroup}<thead>${tableHead(cols)}</thead></table></div>
+    <div class="ai-ranking-scroll" role="region" tabindex="0" aria-label="模型排行，可上下或左右滚动"><table class="ai-ranking-data" aria-label="${modes[mode][1]}">${colgroup}<thead class="rank-accessible-head"><tr>${cols.map(col=>`<th scope="col">${esc(col.label)}</th>`).join('')}</tr></thead><tbody></tbody></table><div class="models-empty" hidden></div></div></div>`;
+  const scroller=page.querySelector('.ai-ranking-scroll');
+  const columnHeader=page.querySelector('.ai-ranking-columns');
+  // Vertical scrolling belongs to the data region; only its horizontal offset is mirrored.
+  scroller.addEventListener('scroll',()=>{
+    const left=Math.max(0,Math.min(scroller.scrollLeft,scroller.scrollWidth-scroller.clientWidth));
+    if(columnHeader.scrollLeft!==left)columnHeader.scrollLeft=left;
+  },{passive:true});
+  // Keyboard focus can reveal a sorting button outside the visible columns.
+  columnHeader.addEventListener('scroll',()=>{
+    if(scroller.scrollLeft!==columnHeader.scrollLeft)scroller.scrollLeft=columnHeader.scrollLeft;
+  },{passive:true});
   const search=toolSearch('搜索模型或开发商','搜索模型或开发商',params.get('q'),()=>{
     const url=new URL(location.href), term=search.input.value.trim();
     if(term)url.searchParams.set('q',term);else url.searchParams.delete('q');
@@ -122,7 +137,8 @@ export function modelsPage(dataset, replaceURL) {
     const rows=sortRows(original.filter(r=>normalize(r.model+' '+r.provider).includes(q)),sort);
     page.querySelector('.models-count').textContent=q?`${rows.length} / ${original.length} 个模型`:`${original.length} 个模型`;
     page.querySelector('tbody').innerHTML=rows.map(row=>`<tr>${cols.map(col=>col.key==='model'?`<th scope="row">${cell(row,col,dataset.providerLogos)}</th>`:`<td data-key="${col.key}">${cell(row,col,dataset.providerLogos)}</td>`).join('')}</tr>`).join('');
-    page.querySelector('table').hidden=!rows.length;
+    page.querySelector('.ai-ranking-data').hidden=!rows.length;
+    columnHeader.hidden=!rows.length;
     const empty=page.querySelector('.models-empty');
     empty.hidden=!!rows.length;
     empty.innerHTML=rows.length?'':VisionSite.emptyState({icon:original.length?'search':'inbox',title:original.length?'没有匹配的模型':'暂无模型数据',description:original.length?'试试其他关键词，或清除搜索查看全部模型。':'这个榜单尚未收录模型，更新后会显示在这里。',actionsHTML:original.length?'<button type="button" data-clear-model-search>清除搜索</button>':''});

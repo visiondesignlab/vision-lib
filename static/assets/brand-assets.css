@@ -84,7 +84,10 @@
 .asset-page-controls label{display:flex;align-items:center;gap:6px;font-size:12px;font-variant-numeric:tabular-nums;color:var(--fg2)}
 .asset-page-controls input{width:40px;height:var(--control-height);padding:0 4px;border:1px solid var(--line);border-radius:var(--control-radius);text-align:center;font:inherit;color:var(--fg);background:var(--bg);appearance:textfield;-moz-appearance:textfield}
 .asset-page-controls input::-webkit-inner-spin-button,.asset-page-controls input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}
-.asset-viewer-status{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:12px;color:var(--fg2);font-size:12px;pointer-events:none}
+.asset-viewer-status{position:absolute;inset:0;display:grid;place-items:center;color:var(--fg2);pointer-events:none}
+.asset-viewer-status>.empty-state{min-height:0}
+.asset-viewer-toolbar[hidden]{display:none}
+.asset-pdf-page>.empty-state{height:100%;min-height:0}
 .asset-viewer-status:empty{display:none}
 .asset-viewer-status button{pointer-events:auto}
 @media(max-width:900px){.brand-viewer-stage{padding:12px}.asset-viewer-toolbar{gap:8px}.asset-zoom-controls,.asset-page-controls{gap:6px}}
