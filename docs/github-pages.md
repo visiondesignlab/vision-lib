@@ -47,6 +47,6 @@ python3 -m http.server 8792 --bind 127.0.0.1 --directory output/pages-preview
 
 ## 飞书发布通知
 
-`Publish Vision Lab` 在每次 `main` 推送或手动发布结束后，通过「Vision Lab Bot」向「个个都是美工」群发送一条消息，包含本次推送的提交摘要、构建和 Pages 发布结果、站点及运行详情链接。失败时也通知，只有部署成功才标为发布成功。
+`Publish Vision Lab` 在每次 `main` 推送或手动发布结束后，通过「Vision Lab Bot」向「个个都是美工」群发送信息卡片：标题为「Vision Lab · 发布成功」或「Vision Lab · 发布未完成」，正文显示操作人、提交编号与最新改动，底部提供「在线查看」「仓库地址」两个按钮。失败时补充构建和 Pages 状态，只有部署成功才标为发布成功。Pages 部署最多等待 30 分钟，避免同步文件超过默认 10 分钟时过早判定失败。
 
 仓库 Actions Secrets 保存 `FEISHU_BOT_WEBHOOK` 和 `FEISHU_BOT_SIGNING_SECRET`，对应启用签名校验的自定义群机器人。凭据不进入仓库、静态构建或日志。通知由 `scripts/notify_feishu.py` 发送；请求超时不会自动重发，需先核对群中是否已收到消息，避免重复。

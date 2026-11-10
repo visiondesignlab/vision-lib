@@ -19,17 +19,17 @@ def signature(secret, timestamp):
     return base64.b64encode(hmac.new(key, b"", hashlib.sha256).digest()).decode()
 
 
-def commit_lines(event, limit=12):
+def commit_lines(event, limit=5):
     commits = event.get("commits") or []
     if not commits and event.get("head_commit"):
         commits = [event["head_commit"]]
     lines = []
-    for commit in commits[:limit]:
+    for commit in reversed(commits[-limit:]):
         subject = str(commit.get("message", "")).splitlines()
         subject = subject[0][:200] if subject else "无提交说明"
-        lines.append(f"• {str(commit.get('id', ''))[:7]} {subject}")
+        lines.append(f"• {subject}")
     if len(commits) > limit:
-        lines.append(f"另有 {len(commits) - limit} 条提交，详见比较链接。")
+        lines.append(f"另有 {len(commits) - limit} 条提交。")
     return lines
 
 
@@ -39,22 +39,31 @@ def message(event, env):
     success = build == "success" and deploy == "success"
     statuses = {"success": "成功", "failure": "失败", "cancelled": "已取消", "skipped": "未执行", "unknown": "未知"}
     repo = env["GITHUB_REPOSITORY"]
-    server = env.get("GITHUB_SERVER_URL", "https://github.com")
-    sha = env.get("GITHUB_SHA", "")
-    lines = ["Vision Lab · 发布成功" if success else "Vision Lab · 发布未完成",
-             f"仓库：{repo}",
-             f"分支：{env.get('GITHUB_REF_NAME', 'main')} · 提交：{sha[:7]}",
-             f"操作人：{env.get('GITHUB_ACTOR', '未知')}", ""]
+    server = env.get("GITHUB_SERVER_URL", "https://github.com").rstrip("/")
+    sha = env.get("GITHUB_SHA", "")[:7]
     changes = commit_lines(event)
-    lines.extend(changes or ["手动发布当前版本。"])
-    lines.extend(["", f"构建：{statuses.get(build, '未知')} · Pages：{statuses.get(deploy, '未知')}"])
-    if success:
-        lines.append(f"访问：{env['PAGES_URL']}")
-    compare = event.get("compare")
-    if compare and str(compare).startswith(f"{server}/{repo}/compare/"):
-        lines.append(f"变更：{compare}")
-    lines.append(f"运行详情：{server}/{repo}/actions/runs/{env['GITHUB_RUN_ID']}")
-    return "\n".join(lines)
+    body = f"操作人：{env.get('GITHUB_ACTOR', '未知')} • {sha}\n\n最新改动：\n"
+    body += "\n".join(changes or ["手动发布当前版本。"])
+    if not success:
+        body += f"\n\n构建：{statuses.get(build, '未知')} · Pages：{statuses.get(deploy, '未知')}"
+    owner, name = repo.split("/", 1)
+    pages_url = env.get("PAGES_URL") or f"https://{owner}.github.io/{name}/"
+    return {
+        "config": {"wide_screen_mode": True},
+        "header": {
+            "template": "blue" if success else "orange",
+            "title": {"tag": "plain_text", "content": "Vision Lab · 发布成功" if success else "Vision Lab · 发布未完成"},
+        },
+        "elements": [
+            {"tag": "div", "text": {"tag": "plain_text", "content": body}},
+            {"tag": "action", "actions": [
+                {"tag": "button", "text": {"tag": "plain_text", "content": "在线查看"},
+                 "type": "primary", "url": pages_url},
+                {"tag": "button", "text": {"tag": "plain_text", "content": "仓库地址"},
+                 "type": "default", "url": f"{server}/{repo}"},
+            ]},
+        ],
+    }
 
 
 def load_event(env):
@@ -76,7 +85,7 @@ def load_event(env):
     return event
 
 
-def send(webhook, secret, text, now=None):
+def send(webhook, secret, card, now=None):
     target = urlparse(webhook)
     if target.scheme != "https" or target.netloc != "open.feishu.cn" or not target.path.startswith("/open-apis/bot/v2/hook/"):
         raise ValueError("飞书 Webhook 地址无效")
@@ -84,7 +93,7 @@ def send(webhook, secret, text, now=None):
         raise ValueError("缺少飞书签名配置")
     timestamp = str(int(time.time() if now is None else now))
     payload = {"timestamp": timestamp, "sign": signature(secret, timestamp),
-               "msg_type": "text", "content": {"text": text}}
+               "msg_type": "interactive", "card": card}
     request = Request(webhook, data=json.dumps(payload, ensure_ascii=False).encode(),
                       headers={"Content-Type": "application/json"}, method="POST")
     try:

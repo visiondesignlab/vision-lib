@@ -49,6 +49,7 @@ jobs:
         with:
           path: dist
   deploy:
+    timeout-minutes: 35
     needs: build
     runs-on: ubuntu-latest
     permissions:
@@ -61,6 +62,9 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          # File synchronization can exceed the action's default 10 minutes.
+          timeout: 1800000
   notify:
     name: Notify Feishu group
     if: ${{ always() }}
