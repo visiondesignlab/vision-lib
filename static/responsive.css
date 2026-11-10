@@ -14,7 +14,7 @@ button,a{touch-action:manipulation}
 .head h1{flex:none}
 .head,.head .right,.bar,.bar .chips{min-width:0}
 .bar .right{flex:none}
-.prompt,.sec,.phead,.empty{overflow-wrap:anywhere}
+.prompt,.sec,.phead{overflow-wrap:anywhere}
 .pill-btn,.chip,.ibtn,.cms-body .btn,.brand-logo-preview,.slicer-dropzone{transition:background-color var(--motion-fast) var(--ease-out),color var(--motion-fast) var(--ease-out),transform var(--motion-fast) var(--ease-out)}
 .pill-btn:active,.chip:active,.ibtn:active,.cms-body .btn:active{transform:scale(.96)}
 .card{transition:transform var(--motion-fast) var(--ease-out),box-shadow var(--motion-fast) var(--ease-out)}
@@ -88,7 +88,6 @@ html:has(dialog[open]){overflow:hidden}
   .grid{columns:2;column-gap:var(--gap)}
   .card .tr{display:none}
   .card .ttl{display:none}
-  .empty{padding:56px 8px;line-height:1.7}
   #overlay{display:flex;flex-direction:column;background:var(--bg);overflow-y:auto;overflow-x:hidden;scroll-padding-top:76px}
   #overlay>.ptop{position:sticky;top:0;order:0;flex:none;width:100%;padding:calc(10px + env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) 10px max(16px,env(safe-area-inset-left));background:rgba(255,255,255,.96);backdrop-filter:blur(12px);z-index:4;min-height:64px}
   #overlay>.stage{order:1;flex:none;height:auto;min-height:160px;padding:8px max(16px,env(safe-area-inset-right)) 20px max(16px,env(safe-area-inset-left));background:var(--bg);backdrop-filter:none;cursor:default;overflow:hidden}

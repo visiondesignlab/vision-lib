@@ -1,0 +1,71 @@
+
+<header>
+<h1>Vol.19 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-11-10 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p>今天这批更新没有新的“画布魔法”，都在补生成之后的硬成本：流式输出要更稳，沙箱要更快复现，重型镜像与视觉回归要能顺利搬运，复杂交互还得有人验收可访问性。</p>
+<p class="mixed-script">Vercel 一天连发四条基础设施更新，看着像后端新闻，实际直接决定设计工程能不能高频跑预览、截图、视频与 agent 工作流。另一边，两篇前端文章把常见误区说透了：删掉 JavaScript 不等于系统更简单，聊天框能出字也不等于所有人都能用。今天的片头也很应景——Escafandra 没追求“完美 CG”，而是用像素、抖动和手绘纹理把不稳定感做成视觉规则。</p>
+<h2>● AI Coding</h2>
+<h3>Workflow SDK now writes over WebSockets on Vercel<a class="source-url" href="https://vercel.com/changelog/workflow-writes-now-use-websockets-on-vercel" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/workflow-writes-now-use-websockets-on-vercel</a></h3>
+<figure><img alt="Workflow SDK 默认改用 WebSocket 写入事件与流" decoding="async" height="1256" loading="lazy" src="01.png" width="2400"/><figcaption>Workflow SDK 默认改用 WebSocket 写入事件与流</figcaption></figure>
+<p class="mixed-script"><code>workflow@5.2.0</code> 起，event write 与 stream write 默认经 WebSocket 发送，升级依赖即可，不用改现有流式代码；已经在跑的 workflow 仍会留在原 deployment。Vercel 的 AI token 回放 benchmark 里，5.2.0 完整响应比 4.8.12 快 4.2 倍，且没有 chunk 延迟超过一秒。这是官方基准，不是本地实测。</p>
+<p class="mixed-script">速度真正影响的是“用户是否相信它还活着”。产品侧别只把 token 更快吐出来，还要补齐断线重连、工具调用中的等待态、取消和最终完成标记；否则 WebSocket 只会让一个模糊状态更快地闪过去。</p>
+<h3>Vercel Sandbox snapshot creation is now up to 10x faster<a class="source-url" href="https://vercel.com/changelog/vercel-sandbox-snapshot-creation-is-now-up-to-10x-faster" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-sandbox-snapshot-creation-is-now-up-to-10x-faster</a></h3>
+<figure><img alt="Vercel Sandbox 新快照格式把创建中位数降到 0.4 秒以内" decoding="async" height="1256" loading="lazy" src="02.png" width="2400"/><figcaption>Vercel Sandbox 新快照格式把创建中位数降到 0.4 秒以内</figcaption></figure>
+<p class="mixed-script">Vercel 把 Sandbox snapshot 的创建中位数从 4.4 秒压到 0.4 秒以内，restore 的 p50 从约 500ms 降到 250ms；新快照自动生效，既有快照不会被后台重写。</p>
+<p class="mixed-script">这会让“每个分支一套可复现视觉环境”更现实：agent 改完 UI，立刻固化依赖与资产，再交给 Playwright、截图 diff 或人工复查。注意新旧 snapshot 格式并存，回归基线要写清创建时间，别把格式差异误判成页面性能变化。</p>
+<h2>● Design Engineering</h2>
+<h3>Vercel Container Registry now supports 2 GB compressed image layers<a class="source-url" href="https://vercel.com/changelog/vercel-container-registry-now-supports-2-gb-compressed-image-layers" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-container-registry-now-supports-2-gb-compressed-image-layers</a></h3>
+<figure><img alt="Vercel Container Registry 把单层压缩镜像上限提高到 2GB" decoding="async" height="1256" loading="lazy" src="03.jpg" width="2400"/><figcaption>Vercel Container Registry 把单层压缩镜像上限提高到 2GB</figcaption></figure>
+<p class="mixed-script">Container Registry 的单个 compressed layer 上限从 500MB 提到 2GB，完整镜像仍可到 15GB；同时补上 public / cross-team repository、CLI 管理和 GitHub Actions OIDC 登录，需要 Vercel CLI 58.3.0 以上。</p>
+<p class="mixed-script">带 Chromium、FFmpeg、字体和模型的视觉 QA 镜像终于不用为了过 500MB 门槛硬拆得七零八落。上限提高不代表 layer 可以随便堆：浏览器、字体、模型和项目依赖仍应分层，否则每次只改一张截图，也要重推一大块二进制。</p>
+<h3>Build disk space on Vercel increased to 64 GB<a class="source-url" href="https://vercel.com/changelog/build-disk-space-on-vercel-increased-to-64-gb" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/build-disk-space-on-vercel-increased-to-64-gb</a></h3>
+<figure><img alt="Vercel Basic 与 Standard 构建磁盘从 32GB 增至 64GB" decoding="async" height="1256" loading="lazy" src="04.png" width="2400"/><figcaption>Vercel Basic 与 Standard 构建磁盘从 32GB 增至 64GB</figcaption></figure>
+<p class="mixed-script">Basic 与 Standard build machine 的磁盘从 32GB 增到 64GB，和 Enhanced / Turbo 对齐；所有套餐自动生效，不加钱，也不需要改配置。</p>
+<p class="mixed-script">对设计工程最直接的是多浏览器包、视频帧、字体全集和截图 cache 不再那么容易互相挤爆。真正的验收仍要看峰值占用和清理日志；磁盘翻倍只能缓解失败，不能替代对临时文件、缓存命中与产物保留周期的管理。</p>
+<h2>● Articles</h2>
+<h3>Modern CSS Might Make Your Front-End More Complex<a class="source-url" href="https://www.smashingmagazine.com/2026/11/modern-css-might-make-your-front-end-more-complex/" rel="noopener noreferrer" target="_blank">https://www.smashingmagazine.com/2026/11/modern-css-might-make-your-front-end-more-complex/</a></h3>
+<figure><img alt="Smashing Magazine 讨论现代 CSS 的局部简化与系统复杂度" decoding="async" height="675" loading="lazy" src="05.jpg" width="1200"/><figcaption>Smashing Magazine 讨论现代 CSS 的局部简化与系统复杂度</figcaption></figure>
+<p class="mixed-script">Gabriel Shoyombo 把一个常见 PR 拆得很具体：用 container query、<code>:has()</code> 和 CSS 动画删掉几十行 JavaScript，单文件确实更短，但宽度来源、formatting context、cascade 与旧逻辑可能一起变复杂。文中的 5,000 行测试里，一个看似无害的 <code>:has()</code> 路径会牵动 5,001 个元素重算；放到 20,000 行，两个规则一次 toggle 约吃掉 31ms。作者也明确说这只是单机 Chrome 测试，数字不能直接外推。</p>
+<p class="mixed-script">文章最后的六问比“CSS 更现代”有用：谁拥有这个行为、作用域到哪里、cascade 怎么赢、旧实现删干净没有、真实负载测过没有、下一个人看不看得懂。设计系统升级 native CSS 时，把这六项写进 PR 模板，比继续比较代码行数靠谱。</p>
+<h3>Making Immersive LLM Chat Experiences More Accessible<a class="source-url" href="https://www.smashingmagazine.com/2026/11/making-immersive-llm-chat-experiences-more-accessible/" rel="noopener noreferrer" target="_blank">https://www.smashingmagazine.com/2026/11/making-immersive-llm-chat-experiences-more-accessible/</a></h3>
+<figure><img alt="Smashing Magazine 汇总沉浸式 LLM 聊天界面的无障碍实现" decoding="async" height="675" loading="lazy" src="06.jpg" width="1200"/><figcaption>Smashing Magazine 汇总沉浸式 LLM 聊天界面的无障碍实现</figcaption></figure>
+<p class="mixed-script">Eric Bailey 讨论的不是右下角客服泡泡，而是 ChatGPT、Claude、Copilot 这类全屏聊天应用。文章把 landmark、焦点管理、live region、<code>Control + F6</code> / <code>F6</code> 区域跳转和 inclusive user research 放回同一条体验链；即便 <code>ariaNotify()</code> 已有跨浏览器可用性，也提醒团队考虑辅助技术用户的升级迟疑与组织支持策略。</p>
+<p class="mixed-script">AI 聊天产品最容易犯的错，是只测“消息能不能生成”。真正的组件规格还要写清流式内容怎么宣告、停止按钮去哪、工具调用后焦点回哪里、侧栏与输入区怎样用键盘跨区。没有这些状态，模型再聪明也只是在给一部分人工作。</p>
+<h2>● Random Stuff</h2>
+<h3>Adobe MAX 2026<a class="source-url" href="https://www.max.adobe.com/" rel="noopener noreferrer" target="_blank">https://www.max.adobe.com/</a></h3>
+<figure><img alt="Adobe MAX 2026 于 11 月 10 日在 Miami Beach 开幕" decoding="async" height="526" loading="lazy" src="07.jpg" width="1200"/><figcaption>Adobe MAX 2026 于 11 月 10 日在 Miami Beach 开幕</figcaption></figure>
+<p class="mixed-script">Adobe MAX 今天在 Miami Beach 开幕，线下会期为 11 月 10–12 日，线上直播为 10–11 日且免费；官方列出 200 多场 session，分七条 track，包含 Design / Imaging / Illustration 与 Video / Audio / Motion。开幕 keynote 在当地时间 9 点开始。</p>
+<p class="mixed-script">今天先把它当观察清单，不把 session 标题写成产品已发布。后续真正要核的是 release notes、可用地区、套餐权限、生成式功能的 credits 与失败是否收费；keynote 演示再顺，也不能替代这些交付边界。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Escafandra Studio — Web Unleashed 2026 Opening Titles<a class="source-url" href="https://www.stashmedia.tv/escafandra-studio-opens-web-unleashed-2026/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/escafandra-studio-opens-web-unleashed-2026/</a></h3>
+<figure data-film-source="https://framerate.tv/embed/kgPSrL0I?primary_color=%2523ffffff&amp;track_color=%2523ffffff&amp;theme=minimal"><img alt="Escafandra 为 Web Unleashed 2026 制作的数字粗粝片头" decoding="async" height="1125" loading="lazy" src="08.jpg" width="2000"/><figcaption>Escafandra 为 Web Unleashed 2026 制作的数字粗粝片头</figcaption></figure>
+<p class="mixed-script">视频：Framerate 播放器<a class="source-url" href="https://framerate.tv/embed/kgPSrL0I?primary_color=%2523ffffff&amp;track_color=%2523ffffff&amp;theme=minimal" rel="noopener noreferrer" target="_blank">https://framerate.tv/embed/kgPSrL0I?primary_color=%2523ffffff&amp;track_color=%2523ffffff&amp;theme=minimal</a>｜来源：Stash 文章<a class="source-url" href="https://www.stashmedia.tv/escafandra-studio-opens-web-unleashed-2026/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/escafandra-studio-opens-web-unleashed-2026/</a>｜制作：Escafandra Studio｜音乐 / 声音：Leo Grand</p>
+<p class="mixed-script">Escafandra 为 10 月底在 Toronto 举办的 Web Unleashed 2026 做了开场片头。团队前一支 FITC 片头偏手绘和模拟质感，这次故意换成数字语法，也没有追求 photoreal 3D：树叶与枝条保留插画纹理，空间里混入 voxel、pixel 与 dithering，Luis Mejia 把方向概括成“less perfect”。</p>
+<p class="mixed-script">片子好看的地方不在 glitch 数量，而在粗糙度有层级。黑白大字先把会议信息钉住，酸绿与洋红负责把森林、网格和人物切成不同深度；像素崩解只在转场和强调点出现，画面仍有足够安静区。2D 字体、3D 植被与低分辨率噪点没有争主角，因为它们共用同一套方块、抖动和错位规则。</p>
+<p class="mixed-script">下一条产品 hero 可以先做一张“失真预算表”：信息层保持锐利，空间层允许 voxel 化，转场层才开放 dithering 与位移；三层各选一个强度，不要把每个元素都做成故障艺术。飞书发布优先插入 Framerate player iframe，若 CLI 回读没有稳定落成，再降级为这张 2000×1125 制作画面，并保留播放器与文章链接。</p>
+<h2>● Stash 最新内容观察</h2>
+<p class="mixed-script">11 月 9 日 Stash feed 只有一条新文章，因此今天不拿旧片凑“最新”。其余三条只保留去重边界，等制作方补 breakdown 再回来。</p>
+<ul>
+<li>Escafandra Studio — Web Unleashed 2026 Opening Titles<a class="source-url" href="https://www.stashmedia.tv/escafandra-studio-opens-web-unleashed-2026/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/escafandra-studio-opens-web-unleashed-2026/</a>｜title sequence / typography / 2D × 3D：<strong>已升级为今日主卡</strong>。值得盯的是数字粗粝感如何被限制在统一规则里，而不是把 glitch 当万能转场。</li>
+<li>Renaud Hallée — PLUS<a class="source-url" href="https://www.stashmedia.tv/take-a-break-from-festive-feels-and-get-lost-in-renaud-hallees-new-short-film-plus/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/take-a-break-from-festive-feels-and-get-lost-in-renaud-hallees-new-short-film-plus/</a>｜abstract motion / music-driven film：11 月 9 日已做主卡；等 Possible Metrics 放出时间线或脚本 breakdown，再讨论声音与几何系统的实现。</li>
+<li>Framestore’s Reindeer Takes Flight for The National Lottery<a class="source-url" href="https://www.stashmedia.tv/framestore-reindeer-take-flight-for-the-national-lottery/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/framestore-reindeer-take-flight-for-the-national-lottery/</a>｜character animation / VFX：11 月 7 日已做主卡。当前没有新的毛发、表演或合成资料，不重复节日片结论。</li>
+<li>Infinite &amp; Invisible: Bleed Get Clean With LOLA MullenLowe<a class="source-url" href="https://www.stashmedia.tv/infinte-invisible-bleed-get-clean-with-lola-mullenlowe/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/infinte-invisible-bleed-get-clean-with-lola-mullenlowe/</a>｜product visualization / pitch R&amp;D：11 月 6 日已覆盖；继续等包装图形到 3D 场景的制作拆解。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Adobe MAX keynote 之后的正式 release notes：尤其 After Effects 27.0、Premiere credits、地区 / 套餐 / 失败收费与回滚边界。</li>
+<li>Workflow WebSocket 的断线恢复、HTTP fallback 与长时间流式任务是否会出现重复 chunk。</li>
+<li>Sandbox 新旧 snapshot 混用时，视觉回归基线、字体 cache 与 restore 性能是否一致。</li>
+<li><code>ariaNotify()</code> 在真实 screen reader / 旧浏览器组合里的支持边界，以及全屏 chat 的 F6 导航实测。</li>
+<li>Stash 下一条新文章；Web Unleashed 已做主卡，PLUS、National Lottery、Infinite &amp; Invisible 继续去重。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日主题：Workflow SDK WebSocket、Vercel Sandbox snapshot、Container Registry 2GB layer、Vercel build disk 64GB、Modern CSS system complexity、immersive LLM chat accessibility、Adobe MAX 2026。</li>
+<li>今日视频：Escafandra Studio / FITC《Web Unleashed 2026 Opening Titles》；Stash 文章、Framerate embed 与 2000×1125 制作画面交叉核验。</li>
+<li>今日 Stash：新增 Web Unleashed 并升级主卡；PLUS、National Lottery、Infinite &amp; Invisible 只记录去重状态。</li>
+<li>继续避免：11 月 9 日已写的 Motion 14.10.0、Penpot 2.19、GitHub Copilot 周更、Chrome DevTools、Modern Web Guidance、Lighthouse 13.6 与《PLUS》；也不重复 10 月的 Squints、7 月的 HTML-in-Canvas 与 Astryx 初次开源，除非出现独立实测或稳定版本证据。</li>
+</ul>
+<p class="mixed-script verification">核验说明：Vercel、Smashing Magazine、Adobe MAX、Stash 与 Framerate 官方页面于 2026-11-10 回读。正文 8 张配图原始宽度为 1200–2400px，已逐张目视检查；飞书视频 iframe 将以最终 CLI section 回读结果为准。</p>

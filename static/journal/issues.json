@@ -1,5 +1,11 @@
 [
   {
+    "volume": 19,
+    "date": "2026-11-10",
+    "headline": "Workflow SDK now writes over WebSockets on Vercel",
+    "intro": "今天这批更新没有新的“画布魔法”，都在补生成之后的硬成本：流式输出要更稳，沙箱要更快复现，重型镜像与视觉回归要能顺利搬运，复杂交互还得有人验收可访问性。"
+  },
+  {
     "volume": 18,
     "date": "2026-11-09",
     "headline": "Motion 14.10.0",

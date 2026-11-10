@@ -41,14 +41,14 @@ export async function renderMotionLog(view, id, signal) {
   const list = await loadCatalog();
   if (signal.aborted || !view.isConnected) return;
   if (!id) {
-    view.innerHTML = `<header class="head"><h1>拉片日志</h1><span class="sub">${list.length} 篇单片报告 · 镜头、叙事与声音</span></header><div class="motion-grid">${list.map(card).join('')}</div>`;
+    view.innerHTML = `<header class="head"><h1>拉片日志</h1><span class="sub">${list.length} 篇单片报告 · 镜头、叙事与声音</span></header><div class="motion-grid">${list.map(card).join('') || VisionSite.emptyState({icon:'inbox',title:'还没有拉片报告',description:'单片分析报告发布后会显示在这里。'})}</div>`;
     hideBrokenCovers(view);
     return;
   }
   const index = list.findIndex(x => x.id === id);
   const item = list[index];
   const back = `<a class="pill-btn grey" data-link href="${link()}">${icon('back')} 拉片日志</a>`;
-  if (!item) {view.innerHTML = back + '<p class="empty">未收录这篇报告。</p>'; return;}
+  if (!item) {view.innerHTML = VisionSite.emptyState({icon:'folder',title:'未收录这篇报告',description:'返回报告列表，查看已经收录的拉片日志。',actionsHTML:back}); return;}
   const previous = list[index - 1], next = list[index + 1];
   const response = await fetch(asset(id, 'report.html'), {signal});
   if (!response.ok) throw new Error('报告暂时无法读取');

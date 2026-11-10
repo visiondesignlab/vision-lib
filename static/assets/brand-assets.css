@@ -92,10 +92,6 @@
 .brand-logo-gallery[data-view=list] .brand-logo-card{display:grid;grid-template-columns:220px minmax(180px,1fr) auto;align-items:center}
 .brand-logo-gallery[data-view=list] .brand-logo-preview{height:140px;padding:24px}
 .brand-logo-gallery[data-view=list] .brand-format-links{max-width:300px;padding:16px}
-.brand-empty{grid-column:1/-1;padding:80px 20px;text-align:center;color:var(--fg2)}
-.brand-empty h2{color:var(--fg);margin:12px 0 0}
-.brand-empty p{margin:8px 0 0}
-.brand-empty-mark{display:inline-grid;place-items:center;width:40px;height:40px;border:1px dashed var(--fg3);border-radius:8px;color:var(--fg3);font-size:22px}
 .brand-font-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:var(--gap);align-items:start}
 .brand-font-list{padding:16px}
 .brand-font-list nav{display:flex;flex-direction:column;gap:4px}

@@ -44,3 +44,9 @@ python3 -m http.server 8792 --bind 127.0.0.1 --directory output/pages-preview
 打开 `http://127.0.0.1:8792/vision-lib/`。每条已发布详情、切图与品牌资产均生成独立入口文件，可刷新或直接分享。
 
 构建会检查发布状态、内部字段、素材校验和及 1 GiB 体积上限。PDF 和在线来源视频不占 Pages 文件容量；无在线来源的本地上传附件仍计入体积，不应删除容量校验。
+
+## 飞书发布通知
+
+`Publish Vision Lab` 在每次 `main` 推送或手动发布结束后，通过「Vision Lab Bot」向「个个都是美工」群发送一条消息，包含本次推送的提交摘要、构建和 Pages 发布结果、站点及运行详情链接。失败时也通知，只有部署成功才标为发布成功。
+
+仓库 Actions Secrets 保存 `FEISHU_BOT_WEBHOOK` 和 `FEISHU_BOT_SIGNING_SECRET`，对应启用签名校验的自定义群机器人。凭据不进入仓库、静态构建或日志。通知由 `scripts/notify_feishu.py` 发送；请求超时不会自动重发，需先核对群中是否已收到消息，避免重复。

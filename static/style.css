@@ -122,8 +122,17 @@ main{margin-left:var(--side);padding:16px 16px 80px}
 .card .tr .pill-btn{height:var(--control-height);font-size:12px;padding:0 10px;background:var(--dark-btn);color:#fff;backdrop-filter:blur(6px)}
 .card .badge{position:absolute;top:8px;left:8px;font-size:11px;height:20px;line-height:20px;padding:0 8px;border-radius:999px;background:#fff;color:var(--fg);box-shadow:var(--ring)}
 .card .badge.pend{background:var(--pink);color:#fff}
-.empty{padding:80px 0;text-align:center;color:var(--fg2)}
-.empty b{display:block;color:var(--fg);font-weight:500;margin-bottom:6px}
+/* Shared empty, filtered, unavailable and loading states, at every viewport size. */
+.empty-state{box-sizing:border-box;grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;width:100%;min-height:320px;padding:48px 24px;text-align:center;overflow-wrap:anywhere}
+.empty-state--compact{min-height:180px;padding:28px 20px}
+.empty-state .empty-state-icon{display:grid;place-items:center;width:32px;height:32px;margin-bottom:16px;color:var(--fg2)}
+.empty-state .empty-state-icon>.ui-icon{width:32px;height:32px;margin:0}
+.empty-state .empty-state-title{max-width:360px;margin:0;color:var(--fg);font:500 13px/1.5 var(--font)}
+.empty-state .empty-state-description{max-width:360px;margin:8px 0 0;color:var(--fg2);font:400 13px/1.7 var(--font)}
+.empty-state .empty-state-actions{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:8px;margin-top:20px}
+.empty-state .empty-state-actions>:is(a,button){box-sizing:border-box;display:inline-flex;justify-content:center;align-items:center;gap:6px;min-height:var(--control-height);height:auto;margin:0;padding:5px 12px;border:1px solid var(--line);border-radius:var(--control-radius);background:var(--bg);color:var(--fg);font:400 13px/20px var(--font);text-decoration:none;box-shadow:none;cursor:pointer}
+.empty-state .empty-state-actions>:is(a,button):hover{background:var(--bg2)}
+.empty-state .empty-state-actions .ui-icon{width:14px;height:14px}
 /* ---------- detail overlay */
 html.modal-open{overflow:hidden;overscroll-behavior:none}
 body.modal-open{position:fixed;top:var(--locked-scroll-y,0);width:100%;padding-right:var(--scrollbar-gap,0px);overflow:hidden;overscroll-behavior:none}

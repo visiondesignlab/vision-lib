@@ -21,7 +21,7 @@ export function directoryManager(main, db, {esc, dialog, post, toast, markBusy, 
     $('[data-directory-filter]').hidden=isGroup;
     filter.innerHTML='<option value="">全部分类</option>'+db.categories.map(c=>`<option value="${esc(c.id)}">${esc(c.name)}</option>`).join('');
     filter.value=cat;refreshFilter();
-    results.innerHTML=rows.slice(0,limit).map(rowHTML).join('') || '<div class="empty"><b>没有匹配的记录</b></div>';
+    results.innerHTML=rows.slice(0,limit).map(rowHTML).join('') || VisionSite.emptyState({icon:'search',title:isGroup?'没有匹配的分类':'没有匹配的入口',description:isGroup?'试试其他关键词，或添加新的目录分类。':'试试其他关键词，或切换目录分类。'});
     progress(rows);
   }
   function rowHTML(x){

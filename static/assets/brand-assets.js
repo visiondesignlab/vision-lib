@@ -36,7 +36,7 @@ export async function createBrandAssets({openPreview}) {
     else if (section.id === "company-intro") renderCompanyIntros(url);
     else if (section.id === "visual-assets") renderLogos(url);
     else if (section.id === "font-packages") renderFonts(url);
-    else $("#brandContent").innerHTML = `<div class="brand-empty"><span class="brand-empty-mark" aria-hidden="true">${icon('plus')}</span><h2>暂无${esc(section.name)}</h2><p>此分类尚未收录内容。</p></div>`;
+    else $("#brandContent").innerHTML = VisionSite.emptyState({icon:'folder',title:`暂无${section.name}`,description:'此分类尚未收录资产，添加后会显示在这里。'});
   }
 
   function renderGuidelines() {
@@ -58,7 +58,7 @@ export async function createBrandAssets({openPreview}) {
     const documents = data.companyIntros || [];
     const selected = documents.find(item => item.id === url.searchParams.get("document")) || documents[0];
     if (!selected) {
-      $("#brandContent").innerHTML = '<div class="brand-empty"><h2>暂无公司介绍</h2><p>此分类尚未收录内容。</p></div>';
+      $("#brandContent").innerHTML = VisionSite.emptyState({icon:'folder',title:'暂无公司介绍',description:'此分类尚未收录文档，添加后会显示在这里。'});
       return;
     }
     $("#brandContent").innerHTML = `<div class="brand-document-layout">
@@ -108,7 +108,7 @@ export async function createBrandAssets({openPreview}) {
         <button type="button" class="brand-logo-preview ${category.id === "app" ? "brand-app-preview" : ""}" aria-label="预览 ${esc(asset.title)}" aria-haspopup="dialog"><img src="${esc(asset.previewHref)}" alt="${esc(asset.title)}" loading="lazy"></button>
         <div class="brand-logo-copy"><span class="brand-eyebrow">${esc(asset.context)}</span><h2>${esc(asset.title)}</h2><p>${esc(asset.usage)}</p><span class="muted brand-dimensions">${esc(asset.dimensions)}</span></div>
         <div class="brand-format-links">${asset.formats.map(format => `<a href="${esc(format.href)}" download="${esc(format.fileName)}" class="pill-btn shadow" title="下载 ${esc(format.fileName)} · ${sizeLabel(format.bytes)}">${esc(format.label)}<span>${sizeLabel(format.bytes)}</span></a>`).join("")}</div>
-      </article>`).join("") : '<div class="brand-empty"><h2>没有匹配的 Logo</h2><p>换个关键词试试。</p></div>';
+      </article>`).join("") : VisionSite.emptyState({icon:'search',title:'没有匹配的 Logo',description:'试试其他关键词，或切换资产分类。'});
       element.querySelectorAll(".brand-logo-preview").forEach((button, index) => {
         button.addEventListener("click", () => openPreview(list, index, category.label, button));
       });

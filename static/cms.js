@@ -95,10 +95,10 @@ async function render(){
   }catch(err){
     if(seq!==routeId)return;
     if(err.status===401)return login();
-    root.innerHTML=`<div class="empty"><h3>工作台暂时无法加载</h3><p>${esc(err.message)}</p><button class="btn" id="retry">重新加载</button></div>`;$('#retry').onclick=render;
+    root.innerHTML=VisionSite.emptyState({icon:'folder',title:'工作台暂时无法加载',description:'暂时无法获取内容，请检查本地服务后重试。',actionsHTML:'<button type="button" id="retry">重新加载</button>'});$('#retry').onclick=render;
   }
 }
-function empty(title,description,create=false){return `<div class="empty"><div class="empty-icon" aria-hidden="true">${icon('inbox')}</div><h3>${esc(title)}</h3><p>${esc(description)}</p>${create?`<a data-nav href="/cms/new" class="btn primary">${icon('plus')} 新建内容</a>`:''}</div>`;}
+function empty(title,description,create=false){return VisionSite.emptyState({icon:filter.q?'search':'inbox',title,description,actionsHTML:create?`<a data-nav href="/cms/new">${icon('plus')} 新建内容</a>`:''});}
 function overview(){
   const count=st=>cases.filter(c=>c.status===st).length;
   $('#main').innerHTML=`<div class="page-head"><div><div class="eyebrow">YOUR CONTENT, AT A GLANCE</div><h1>内容工作台</h1><p>管理草稿、审核和已发布内容。</p></div><a class="btn primary" href="/cms/new" data-nav>${icon('plus')} 新建内容</a></div><div class="stats">${[['draft','草稿箱','继续完善你的创作'],['pending','等待审核','确认后发布到前台'],['published','已发布','用户正在浏览的内容'],['rejected','退回修改','完善后可再次提交']].map(([st,label,hint])=>`<a data-nav href="/cms/content?status=${st}" class="stat ${st}"><span class="label">${label}<span aria-hidden="true">${icon('external')}</span></span><strong>${st==='published'?cases.filter(c=>c.live_status==='published').length:count(st)}</strong><span class="hint">${hint}</span></a>`).join('')}</div><section class="panel"><div class="panel-heading"><div><h2>最近更新</h2><p>最近保存与审核的内容</p></div><a class="btn small" data-nav href="/cms/content">全部内容 ${icon('forward')}</a></div><div id="table"></div></section>`;
@@ -137,7 +137,7 @@ function renderTable(list,scrollLoad){
   const table=$('#table'), total=list.length, batchSize=15;
   table.onchange=null;
   if(!total){
-    table.innerHTML=empty('这里还没有内容',filter.q?'试试其他关键词或筛选条件。':'创建你的第一条内容，或切换状态查看已有内容。',true);
+    table.innerHTML=empty(filter.q?'没有匹配的内容':'这里还没有内容',filter.q?'试试其他关键词或筛选条件。':'创建你的第一条内容，或切换状态查看已有内容。',true);
     table.onclick=null;
     return;
   }

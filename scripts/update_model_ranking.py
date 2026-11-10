@@ -80,7 +80,7 @@ def media_row(cells, mode):
         released = datetime.strptime(released.replace('Sept ', 'Sep '), '%b %Y').strftime('%Y-%m')
     else:
         released = None
-    price = re.match(r'^US\$([\d,.]+)',text[-1])
+    price = re.match(r'^(?:US)?\$([\d,.]+)',text[-1])
     row = dict(model=model,provider=provider,score=number(elo[1]), votes=int(number(text[4])),
                range=text[1], released=released, price=number(price[1]) if price else None)
     if mode=='speech':

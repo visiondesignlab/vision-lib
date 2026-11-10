@@ -17,6 +17,6 @@ export function academyPage(entries) {
       <p class="academy-description">${esc(entry.description)}</p>
       <ul class="academy-topics" aria-label="学习方向">${entry.topics.map(topic => `<li>${esc(topic)}</li>`).join('')}</ul>
       <span class="academy-card-footer">${esc(entry.action || '浏览课程')} ${icon('external')}</span>
-    </a>`).join('')}</div>`;
+    </a>`).join('') || VisionSite.emptyState({icon:'inbox',title:'还没有学习资源',description:'课程、教程与创作方法收录后会显示在这里。'})}</div>`;
   return page;
 }

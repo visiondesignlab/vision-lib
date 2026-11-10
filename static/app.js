@@ -8,8 +8,10 @@ const {path: sitePath, routePath, staticMode} = window.VisionSite;
 const mobileLayout = matchMedia("(max-width: 900px)"), reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 const touchLayout = matchMedia("(hover: none) and (pointer: coarse)");
 let navOpen = false, navAnimation = null, detailExit = null;
-let CASES = [], casesLoaded = false, STATE = {tab: "video", cat: "全部", tag:"", q: "", sort: "hot"};
+let CASES = [], casesLoaded = false, STATE = {tab: "video", cat: "全部", tag:"", q: "", sort: "random"};
 const tabSort = new Map();
+const randomGalleryTabs = new Set(["video", "showcase"]);
+let galleryOrder = new Map();
 let adminSession = false, authRevision = 0, authReady = false;
 const TABS = {
   video: {name: "AI 视频案例", sub: "好的 launch / 宣传视频，附复现 Prompt、步骤和依赖的 Skill", cats: ["全部", "动效特效", "社交短视频", "营销产品", "电影感叙事"]},
@@ -18,7 +20,7 @@ const TABS = {
   brand_skill: {name: "品牌 Skill", sub: "团队长期维护、带版本的规范和 Skill", cats: ["全部"]},
   skill_repo: {name: "Skill 仓库", sub: "做视频用的 agent skill 仓库（Top 50 + 每日新增）", cats: ["全部", "推荐", "代码动效", "AI 生成", "自动剪辑", "口播/解说", "提示词", "发布/字幕", "合集索引"]},
 };
-const {icon} = window.VisionSite;
+const {icon, emptyState} = window.VisionSite;
 const ICON = {go:icon('external'), x:icon('close'), l:icon('previous'), r:icon('next'),
   caret:icon('caret'), check:icon('check')};
 
@@ -333,6 +335,7 @@ document.addEventListener("click", e => {
   if (new URL(a.href).origin !== location.origin) return;
   e.preventDefault();
   if (a.closest('.model-tabs') && a.hasAttribute('aria-current') && !new URL(location.href).searchParams.has('q')) return;
+  if (a.closest('#primaryNav') && randomGalleryTabs.has(a.dataset.tab) && app.dataset.view === 'grid:' + a.dataset.tab) startGalleryVisit(a.dataset.tab);
   nav(a.getAttribute("href"));
 });
 window.addEventListener("popstate", () => {
@@ -472,7 +475,7 @@ function refreshPublicContent() {
 function renderCMS() {
   if (staticMode) {
     app.dataset.view = "static-info"; setNav("review");
-    app.innerHTML = '<div class="empty"><b>内容管理在本机进行</b><p>线上版本展示已发布内容。更新内容后重新发布，即可同步到网站。</p><a class="pill-btn shadow" href="' + sitePath("/") + '" data-link>返回案例库</a></div>';
+    app.innerHTML = emptyState({icon:'folder', title:'内容管理在本机进行', description:'线上版本展示已发布内容。在本机更新并发布后，即可同步到网站。', actionsHTML:`<a href="${sitePath('/')}" data-link>返回案例库</a>`});
     return;
   }
   app.dataset.view = "cms";
@@ -481,10 +484,10 @@ function renderCMS() {
     if (!app.contains(cmsView.element)) app.replaceChildren(cmsView.element);
     return cmsView.render();
   }
-  app.innerHTML = '<div class="empty" role="status">正在打开内容工作台…</div>';
+  app.innerHTML = emptyState({icon:'time', title:'正在打开内容工作台', description:'请稍候，正在准备内容。', busy:true});
   return loadCMS().then(()=>{ if(isCMSRoute()) renderCMS(); }).catch(()=>{
     if (!isCMSRoute()) return;
-    app.innerHTML='<div class="empty"><b>内容管理加载失败</b><button class="pill-btn shadow">重新加载</button></div>';
+    app.innerHTML=emptyState({icon:'folder', title:'内容管理加载失败', description:'暂时无法获取内容，请检查网络连接后重试。', actionsHTML:'<button class="pill-btn shadow">重新加载</button>'});
     $('button',app).onclick=renderCMS;
   });
 }
@@ -502,7 +505,7 @@ const isGuideRoute = () => routePath() === '/guide';
 function renderGuidePage() {
   app.dataset.view = 'guide';setNav('guide');
   const seq = ++guideSequence;
-  app.innerHTML = '<div class="empty" role="status">正在打开使用说明…</div>';
+  app.innerHTML = emptyState({icon:'time', title:'正在打开使用说明', description:'请稍候，正在准备内容。', busy:true});
   import(sitePath('/static/guide.js')).then(async module => {
     const content = await module.loadGuide();
     if (!isGuideRoute() || seq !== guideSequence) return;
@@ -511,7 +514,7 @@ function renderGuidePage() {
     module.updateGuideAssets(element);
   }).catch(() => {
     if (!isGuideRoute() || seq !== guideSequence) return;
-    app.innerHTML = '<div class="empty"><b>使用说明暂时无法加载</b><button class="pill-btn shadow" id="retryGuide">重新加载</button></div>';
+    app.innerHTML = emptyState({icon:'folder', title:'使用说明暂时无法加载', description:'暂时无法获取内容，请检查网络连接后重试。', actionsHTML:'<button class="pill-btn shadow" id="retryGuide">重新加载</button>'});
     $('#retryGuide').onclick = renderGuidePage;
   });
 }
@@ -523,14 +526,14 @@ function renderImageSlicer() {
   app.dataset.view = "tool:image-slicer";
   setNav("image-slicer");
   if (slicerView) { app.replaceChildren(slicerView); return; }
-  app.innerHTML = '<div class="empty" role="status">正在加载图片切图…</div>';
+  app.innerHTML = emptyState({icon:'time', title:'正在加载图片切图', description:'请稍候，正在准备内容。', busy:true});
   if (slicerLoading) return;
   slicerLoading = import(sitePath("/static/tools/image-slicer.js")).then(({createImageSlicer}) => {
     slicerView = createImageSlicer();
     if (isSlicerRoute()) app.replaceChildren(slicerView);
   }).catch(() => {
     if (!isSlicerRoute()) return;
-    app.innerHTML = '<div class="empty"><b>工具加载失败</b><button type="button" class="pill-btn shadow" id="retrySlicer">重新加载</button></div>';
+    app.innerHTML = emptyState({icon:'folder', title:'工具加载失败', description:'暂时无法获取内容，请检查网络连接后重试。', actionsHTML:'<button type="button" class="pill-btn shadow" id="retrySlicer">重新加载</button>'});
     $("#retrySlicer").onclick = renderImageSlicer;
   }).finally(() => { slicerLoading = null; });
 }
@@ -541,7 +544,7 @@ async function renderPlayground() {
   setNav('playground'); app.dataset.view='tool:playground';
   document.title='Playground · Vision Lab';
   if(playgroundView){app.replaceChildren(playgroundView.element);playgroundView.activate();return;}
-  app.innerHTML='<div class="empty" role="status">正在打开 Playground…</div>';
+  app.innerHTML=emptyState({icon:'time', title:'正在打开 Playground', description:'请稍候，正在准备内容。', busy:true});
   try {
     playgroundLoading ||= import(sitePath('/static/playground/playground.js')).then(m=>m.createPlayground({notify:toast}));
     playgroundView=await playgroundLoading;
@@ -549,7 +552,7 @@ async function renderPlayground() {
   } catch {
     playgroundLoading=null;
     if(routePath()!=='/tools/playground')return;
-    app.innerHTML='<div class="empty"><p>Playground 暂时无法加载</p><button type="button" class="pill-btn shadow">重试</button></div>';
+    app.innerHTML=emptyState({icon:'folder', title:'Playground 暂时无法加载', description:'暂时无法获取内容，请检查网络连接后重试。', actionsHTML:'<button type="button" class="pill-btn shadow">重新加载</button>'});
     $('button',app).onclick=renderPlayground;
   }
 }
@@ -562,7 +565,7 @@ async function renderAcademyPage() {
   setNav('academy');
   app.dataset.view = 'academy';
   document.title = 'AI 学堂 · Vision Lab';
-  app.innerHTML = '<div class="empty" role="status">正在打开 AI 学堂…</div>';
+  app.innerHTML = emptyState({icon:'time', title:'正在打开 AI 学堂', description:'请稍候，正在准备内容。', busy:true});
   try {
     const module = await import(sitePath('/static/academy/academy.js'));
     const entries = await module.loadAcademy();
@@ -570,7 +573,7 @@ async function renderAcademyPage() {
     app.replaceChildren(module.academyPage(entries));
   } catch {
     if (request !== academyRequest || routePath() !== '/academy') return;
-    app.innerHTML = '<div class="empty"><b>AI 学堂暂时无法加载</b><button type="button" class="pill-btn shadow">重试</button></div>';
+    app.innerHTML = emptyState({icon:'folder', title:'AI 学堂暂时无法加载', description:'暂时无法获取内容，请检查网络连接后重试。', actionsHTML:'<button type="button" class="pill-btn shadow">重新加载</button>'});
     $('button', app).onclick = renderAcademyPage;
   }
 }
@@ -584,14 +587,14 @@ async function renderMotionLogPage(id) {
   document.title = '拉片日志 · Vision Lab';
   const view = document.createElement('div');
   view.className = 'motion-log';
-  view.textContent = '正在读取拉片日志…';
+  view.innerHTML = emptyState({icon:'time', title:'正在读取拉片日志', description:'请稍候，正在准备内容。', busy:true});
   app.replaceChildren(view);
   try {
     const module = await import(sitePath('/static/motion-log/motion-log.js'));
     if (!controller.signal.aborted) await module.renderMotionLog(view, id, controller.signal);
   } catch {
     if (controller.signal.aborted || !view.isConnected) return;
-    view.innerHTML = '<div class="empty"><p>拉片日志暂时无法加载</p><button type="button" class="pill-btn shadow">重试</button></div>';
+    view.innerHTML = emptyState({icon:'folder', title:'拉片日志暂时无法加载', description:'暂时无法获取内容，请检查网络连接后重试。', actionsHTML:'<button type="button" class="pill-btn shadow">重新加载</button>'});
     view.querySelector('button').onclick = () => renderMotionLogPage(id);
   }
 }
@@ -603,14 +606,14 @@ async function renderJournalPage(volume) {
   document.title = '有点意思 · Vision Lab';
   const view = document.createElement('div');
   view.className = 'journal-view';
-  view.textContent = '正在读取日刊…';
+  view.innerHTML = emptyState({icon:'time', title:'正在读取日刊', description:'请稍候，正在准备内容。', busy:true});
   app.replaceChildren(view);
   try {
     const module = await import(sitePath('/static/journal/journal.js'));
     await module.renderJournal(view, volume, controller.signal);
   } catch {
     if (!view.isConnected) return;
-    view.innerHTML = '<div class="empty"><b>日刊暂时无法加载</b><button type="button" class="pill-btn shadow">重试</button></div>';
+    view.innerHTML = emptyState({icon:'folder', title:'日刊暂时无法加载', description:'暂时无法获取内容，请检查网络连接后重试。', actionsHTML:'<button type="button" class="pill-btn shadow">重新加载</button>'});
     view.querySelector('button').onclick = () => renderJournalPage(volume);
   }
 }
@@ -627,7 +630,10 @@ async function renderDesignAssetPage() {
       module.renderDesignAssets(app, {copy: copyText, notify: toast});
     }
   } catch {
-    if (request === designAssetsRequest && isDesignAssetsRoute()) app.innerHTML = '<div class="empty">设计资产暂时无法加载，请刷新重试。</div>';
+    if (request === designAssetsRequest && isDesignAssetsRoute()) {
+      app.innerHTML = emptyState({icon:'folder', title:'设计资产暂时无法加载', description:'暂时无法获取内容，请检查网络连接后重试。', actionsHTML:'<button type="button">重新加载</button>'});
+      $('button', app).onclick = renderDesignAssetPage;
+    }
   }
 }
 function renderBrandAssets() {
@@ -638,7 +644,7 @@ function renderBrandAssets() {
     app.replaceChildren(brandAssetsView.element);
     return;
   }
-  app.innerHTML = '<div class="empty" role="status">正在加载品牌资产…</div>';
+  app.innerHTML = emptyState({icon:'time', title:'正在加载品牌资产', description:'请稍候，正在准备内容。', busy:true});
   if (brandAssetsLoading) return;
   brandAssetsLoading = import(sitePath("/static/assets/brand-assets.js")).then(module => module.createBrandAssets({openPreview: openBrandAssetPreview})).then(view => {
     brandAssetsView = view;
@@ -648,7 +654,7 @@ function renderBrandAssets() {
     }
   }).catch(() => {
     if (!isBrandAssetsRoute()) return;
-    app.innerHTML = '<div class="empty"><b>品牌资产加载失败</b><button type="button" class="pill-btn shadow" id="retryBrandAssets">重新加载</button></div>';
+    app.innerHTML = emptyState({icon:'folder', title:'品牌资产加载失败', description:'暂时无法获取内容，请检查网络连接后重试。', actionsHTML:'<button type="button" class="pill-btn shadow" id="retryBrandAssets">重新加载</button>'});
     $("#retryBrandAssets").onclick = renderBrandAssets;
   }).finally(() => { brandAssetsLoading = null; });
 }
@@ -666,7 +672,7 @@ async function renderModelBoards() {
     app.replaceChildren(module.modelsPage(dataset, replaceURL));
   } catch {
     if (seq !== modelsRequest || routePath() !== '/tools/ai-models') return;
-    app.innerHTML = '<div class="empty"><b>模型排行榜加载失败</b><button type="button" class="pill-btn shadow">重新加载</button></div>';
+    app.innerHTML = emptyState({icon:'folder', title:'模型排行榜加载失败', description:'暂时无法获取内容，请检查网络连接后重试。', actionsHTML:'<button type="button" class="pill-btn shadow">重新加载</button>'});
     $('button', app).onclick = renderModelBoards;
   }
 }
@@ -675,7 +681,7 @@ async function renderDirectory() {
   const seq = ++directoryRequest;
   setNav('ai-nav'); app.dataset.view = 'tool:ai-nav';
   document.title = 'AI 导航 · Vision Lab';
-  app.innerHTML = '<div class="empty" role="status">正在打开 AI 导航…</div>';
+  app.innerHTML = emptyState({icon:'time', title:'正在打开 AI 导航', description:'请稍候，正在准备内容。', busy:true});
   try {
     const [module, response] = await Promise.all([import(sitePath('/static/tools/ai-nav.js')),
       fetch(staticMode ? sitePath('/public/ai-directory.json') : '/api/ai-directory')]);
@@ -686,7 +692,7 @@ async function renderDirectory() {
     syncAdminControls();
   } catch {
     if (seq !== directoryRequest || routePath() !== '/tools/ai-nav') return;
-    app.innerHTML = '<div class="empty"><b>AI 导航暂时无法加载</b><button class="pill-btn shadow" type="button">重试</button></div>';
+    app.innerHTML = emptyState({icon:'folder', title:'AI 导航暂时无法加载', description:'暂时无法获取内容，请检查网络连接后重试。', actionsHTML:'<button class="pill-btn shadow" type="button">重新加载</button>'});
     $('button', app).onclick = renderDirectory;
   }
 }
@@ -744,6 +750,16 @@ function render() {
 }
 
 /* ---------------- grid */
+function startGalleryVisit(tab) {
+  const ids = CASES.filter(c => c.type === tab).map(c => c.id);
+  for (let i = ids.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [ids[i], ids[j]] = [ids[j], ids[i]];
+  }
+  // Keep one order for filters, detail navigation and returning to this grid.
+  galleryOrder = new Map(ids.map((id, index) => [id, index]));
+  tabSort.set(tab, "random");
+}
 function catsFor(tab, list) {
   const counts=new Map();
   for(const c of list) if(c.category) counts.set(c.category,(counts.get(c.category)||0)+1);
@@ -777,7 +793,8 @@ function filtered() {
   const q = STATE.q.trim().toLowerCase();
   let l = CASES.filter(c=>c.type===STATE.tab && inCategory(c) && (!STATE.tag || (c.tags || []).includes(STATE.tag)));
   if (q) l = l.filter(c => [c.title, c.subtitle, c.brand, c.category, c.source?.author, c.source?.repo, (c.tags || []).join(" "), c.description].join(" ").toLowerCase().includes(q));
-  if (STATE.tab === "skill_repo" && STATE.sort === "new") l.sort((a, b) => (b.featured - a.featured) || ((a.rank || 999) - (b.rank || 999)));
+  if (randomGalleryTabs.has(STATE.tab) && STATE.sort === "random") l.sort((a, b) => (galleryOrder.get(a.id) ?? Infinity) - (galleryOrder.get(b.id) ?? Infinity));
+  else if (STATE.tab === "skill_repo" && STATE.sort === "new") l.sort((a, b) => (b.featured - a.featured) || ((a.rank || 999) - (b.rank || 999)));
   else if (STATE.tab === "skill_repo" && STATE.sort === "latest") l.sort((a, b) => (b.added_at || b.source?.date || "").localeCompare(a.added_at || a.source?.date || ""));
   else if (STATE.sort === "hot") l.sort((a, b) => popularity(b) - popularity(a));
   else l.sort((a, b) => (b.featured - a.featured) || caseDate(b).localeCompare(caseDate(a)));
@@ -827,7 +844,9 @@ function brandSkillCard(c) {
   </article>`;
 }
 function renderGrid() {
-  STATE.sort = tabSort.get(STATE.tab) || (STATE.tab === "video" ? "hot" : "new");
+  const randomGallery = randomGalleryTabs.has(STATE.tab);
+  if (randomGallery && app.dataset.view !== "grid:" + STATE.tab) startGalleryVisit(STATE.tab);
+  STATE.sort = tabSort.get(STATE.tab) || (randomGallery ? "random" : "new");
   closeMenu();
   const T = TABS[STATE.tab] || TABS.video; setNav(STATE.tab);
   app.dataset.view = "grid:" + STATE.tab;
@@ -836,9 +855,15 @@ function renderGrid() {
   app.innerHTML = `<div class="head"><h1>${T.name}</h1><span class="sub">${T.sub}</span>
       <div class="right"><input class="search" id="q" type="search" aria-label="搜索标题、品牌、标签" placeholder="搜索标题、品牌、标签" value="${esc(STATE.q)}"></div></div>
     <div class="bar"><div class="chips" role="group" aria-label="分类筛选">${cats.map(k => `<button class="chip ${k === STATE.cat ? "on" : ""}" aria-pressed="${k === STATE.cat}" data-cat="${esc(k)}">${esc(k)}</button>`).join("")}</div>
-      <div class="right">${tagFilter(all)}<select class="pill-btn shadow" id="sort"><option value="new">${STATE.tab === "skill_repo" ? "按排名" : "最新"}</option>${STATE.tab === "skill_repo" ? '<option value="latest">最新</option>' : ''}<option value="hot">${STATE.tab === "skill_repo" ? "按热度" : "最热"}</option></select></div></div>
+      <div class="right">${tagFilter(all)}<select class="pill-btn shadow" id="sort">${randomGallery ? '<option value="random">随机</option>' : ''}<option value="new">${STATE.tab === "skill_repo" ? "按排名" : "最新"}</option>${STATE.tab === "skill_repo" ? '<option value="latest">最新</option>' : ''}<option value="hot">${STATE.tab === "skill_repo" ? "按热度" : "最热"}</option></select></div></div>
     ${list.length ? `<div class="grid${STATE.tab === "brand_skill" ? " brand-skills-grid" : ""}">${list.map(cardHTML).join("")}</div>` :
-      `<div class="empty"><b>${all.length ? "没有匹配的条目" : "这里还没有内容"}</b>${all.length ? "换个关键词或分类试试" : STATE.tab === "graphic" ? "在内容管理平台提交平面作品，审核发布后会出现在这里。" : "审核通过的条目会出现在这里。"}</div>`}`;
+      emptyState({icon:all.length ? 'search' : 'inbox', title:all.length ? '没有匹配的内容' : '这里还没有内容', description:all.length ? '试试其他关键词，或清除筛选查看全部内容。' : STATE.tab === 'graphic' ? '在内容管理平台提交平面作品，审核发布后会出现在这里。' : '审核发布后的内容会显示在这里。', actionsHTML:all.length ? '<button type="button" data-clear-filters>清除筛选</button>' : ''})}`;
+  $('[data-clear-filters]', app)?.addEventListener('click', () => {
+    STATE.q=''; STATE.cat='全部'; STATE.tag='';
+    const url=new URL(location.href);
+    ['q','cat','tag'].forEach(key=>url.searchParams.delete(key));
+    replaceURL(url); renderGrid(); $('#q').focus({preventScroll:true});
+  });
   $("#sort").value = STATE.sort;
   syncAdminControls();
   $("#sort").onchange = e => { tabSort.set(STATE.tab, e.target.value); renderGrid(); };
@@ -1048,7 +1073,7 @@ function openDetail(id) {
   overlay.setAttribute("role", "dialog"); overlay.setAttribute("aria-modal", "true"); overlay.setAttribute("aria-label", "案例详情");
   syncModalState();
   const c = CASES.find(x => x.id === id);
-  if (!c) { overlay.innerHTML = `<div class="panel"><div class="ptop"><a class="ibtn" href="/" data-link aria-label="关闭">${ICON.x}</a></div><div class="empty"><b>找不到这条案例</b>可能还在审核中或已下架。</div></div><div class="stage"></div>`; prepareDetail(); $(".ptop a", overlay).focus({preventScroll: true}); return; }
+  if (!c) { overlay.innerHTML = `<div class="panel"><div class="ptop"><a class="ibtn" href="/" data-link aria-label="关闭">${ICON.x}</a></div>${emptyState({icon:'folder', title:'找不到这条内容', description:'内容可能尚未发布或已经下架。', compact:true})}</div><div class="stage"></div>`; prepareDetail(); $(".ptop a", overlay).focus({preventScroll: true}); return; }
   const sib = filtered(), idx = sib.findIndex(x => x.id === id);
   const prev = sib[idx - 1], next = sib[idx + 1];
   const backParams=new URLSearchParams({tab:c.type});
@@ -1155,6 +1180,7 @@ if (routePath()==='/submit' || isCMSRoute() || isGuideRoute() || isDirectoryTool
 Promise.all([load(), refreshAdminSession()]).then(() => { if (!isCMSRoute() && !isDirectoryTool() && !isDesignAssetsRoute() && !isJournalRoute()) render(); }).catch(e => {
   if (isCMSRoute() || isDirectoryTool() || isJournalRoute()) return;
   if (isGuideRoute() || isSlicerRoute() || isBrandAssetsRoute() || isDesignAssetsRoute()) return render();
-  app.innerHTML = `<div class="empty"><b>加载失败</b>${esc(e.message)}</div>`;
+  app.innerHTML = emptyState({icon:'folder', title:'内容暂时无法加载', description:'暂时无法获取内容，请检查网络连接后重试。', actionsHTML:'<button type="button">重新加载</button>'});
+  $('button', app).onclick = () => location.reload();
 });
 })();

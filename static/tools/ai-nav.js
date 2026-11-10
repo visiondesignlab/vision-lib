@@ -75,8 +75,8 @@ export function directory({categories, entries}, replaceURL, enhanceSelect) {
       group('favorites','我的收藏',ids.map(id=>shown.get(id)).filter(Boolean));
     const count = shown.size;
     $('.ai-summary').textContent = term ? `找到 ${count} 个入口` : '';
-    $('.ai-groups').innerHTML = (top + sections.join('')) || '<div class="empty"><b>没有匹配的入口</b><p>试试其他关键词或分类。</p><button type="button" class="pill-btn shadow">查看全部入口</button></div>';
-    $('.empty button')?.addEventListener('click', () => { category = ''; q.value = ''; render(true); });
+    $('.ai-groups').innerHTML = (top + sections.join('')) || VisionSite.emptyState({icon:entries.length?'search':'inbox',title:entries.length?'没有匹配的入口':'还没有导航入口',description:entries.length?'试试其他关键词，或清除筛选查看全部入口。':'AI 工具与学习资源收录后会显示在这里。',actionsHTML:entries.length?'<button type="button">清除筛选</button>':''});
+    $('.empty-state button')?.addEventListener('click', () => { category = ''; q.value = ''; render(true); });
   }
   el.addEventListener('error', e => { if (e.target.matches('.ai-icon img')) e.target.remove(); }, true);
   el.addEventListener('favoriteschange',()=>render(false));

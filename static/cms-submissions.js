@@ -18,7 +18,7 @@ export function submissionManager(main,{api,post,esc,dialog,toast,upload}) {
       (item.note?'<p>'+esc(item.note)+'</p>':'')+(item.reason?'<p>'+esc(item.reason)+'</p>':'')+(item.problem?'<p>'+esc(item.problem)+'</p>':'')+
       (item.case_id?(item.case_status?'<a class="btn small" data-nav href="/cms/edit/'+encodeURIComponent(item.case_id)+'">打开内容</a>':'<small>关联内容已删除</small>'):
         '<button type="button" class="btn small" data-review="'+esc(item.id)+'">处理投稿</button>')+'</article>').join('') ||
-      '<div class="empty"><b>还没有投稿</b></div>';
+      VisionSite.emptyState({title:'还没有投稿',description:'本地提交或同步收到的作品后，投稿会显示在这里。'});
     list.querySelectorAll('[data-review]').forEach(b=>b.onclick=()=>edit(db.items.find(i=>i.id===b.dataset.review)));
     if(focused) list.querySelector('[data-review="'+CSS.escape(focused)+'"]')?.focus({preventScroll:true});
   }

@@ -1,5 +1,273 @@
 [
   {
+    "id": "2026-10-21-01_bbc-square-eyed-boy",
+    "title": "BBC — Square Eyed Boy",
+    "date": "2026-10-21",
+    "intro": "把长时间盯屏幕变成孩子脸上真实发光的‘方眼’，用略带黑色幽默的定格寓言让数字健康议题可视、可感。",
+    "brand": "BBC",
+    "creator": "Blinkink",
+    "duration": "01:00.053",
+    "spec": "1920×1080 / h264 / 25/1 fps",
+    "cover": "assets/keyframes/K01_00-02-000.jpg",
+    "embed": "https://player.vimeo.com/video/862173786?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2023-characters/",
+    "reportSource": "https://drive.google.com/file/d/1mOovMNwqDtpmbsKUdt30ObviLbIH_CDi/view?usp=drivesdk",
+    "reportFileId": "1mOovMNwqDtpmbsKUdt30ObviLbIH_CDi",
+    "sha256": "8557c4c5c1df5faad67d468f13322a5bea1b8bad29808a539233bb155f69a471",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 9,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(9 张,按内容需要选取)"
+      },
+      {
+        "id": "section-16",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-17",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-23",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-24",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-25",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-26",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 15,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-21-02_wild-hearts-tame-world",
+    "title": "Wild Hearts — Tame a World Gone Wild",
+    "date": "2026-10-21",
+    "intro": "把狩猎、建造与兽类生态压缩进一次田园剧场般的循环，让玩法在观赏奇观的同时被看懂。",
+    "brand": "EA / Wild Hearts",
+    "creator": "The Mill",
+    "duration": "02:27.733",
+    "spec": "1920×1080 / h264 / 24000/1001 fps",
+    "cover": "assets/keyframes/K01_00-03-000.jpg",
+    "embed": "https://player.vimeo.com/video/806509038?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2023-game-films/",
+    "reportSource": "https://drive.google.com/file/d/1JMVzgdr6yjhSYEn8LIFyd5MdY5gj_oA-/view?usp=drivesdk",
+    "reportFileId": "1JMVzgdr6yjhSYEn8LIFyd5MdY5gj_oA-",
+    "sha256": "85c9c28a60fed1b4a41dd80617f9f3bf0a826fd96e2a2a52e0010a347a98db62",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 9,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(9 张,按内容需要选取)"
+      },
+      {
+        "id": "section-16",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-17",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-23",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-24",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-25",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-26",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 48,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-21-03_bungie-marathon-reveal",
+    "title": "Bungie — Marathon Reveal",
+    "date": "2026-10-21",
+    "intro": "把肉体、数据和竞技装备熔成高饱和度的扫描仪式，用视觉系统本身声明 Marathon 的死亡竞速规则。",
+    "brand": "Bungie / Marathon",
+    "creator": "Antibody",
+    "duration": "01:35.125",
+    "spec": "3840×2160 / h264 / 30/1 fps",
+    "cover": "assets/keyframes/K01_00-03-000.jpg",
+    "embed": "https://player.vimeo.com/video/843622251?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2023-game-films/",
+    "reportSource": "https://drive.google.com/file/d/1yq-PCbND2kT1HACbnFtaNthEMkIpvpNB/view?usp=drivesdk",
+    "reportFileId": "1yq-PCbND2kT1HACbnFtaNthEMkIpvpNB",
+    "sha256": "0affbf1ddcaaf926620484f7ac123d0eaaac3fe0fcd95a74bbb2312d140788ca",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 9,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(9 张,按内容需要选取)"
+      },
+      {
+        "id": "section-16",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-17",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-23",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-24",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-25",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-26",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 60,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-21-04_prince-of-persia-lost-crown",
+    "title": "Prince of Persia — The Lost Crown",
+    "date": "2026-10-21",
+    "intro": "用动画分格、刀光轨迹和高速定格把王子的时间能力转成可见的动作文法。",
+    "brand": "Ubisoft / Prince of Persia",
+    "creator": "Eddy",
+    "duration": "01:40.715",
+    "spec": "1920×1080 / h264 / 30/1 fps",
+    "cover": "assets/keyframes/K01_00-01-000.jpg",
+    "embed": "https://player.vimeo.com/video/843631107?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2023-game-films/",
+    "reportSource": "https://drive.google.com/file/d/1kufQN0NvMBj1jVPWx6J0WB2cv6E97zvs/view?usp=drivesdk",
+    "reportFileId": "1kufQN0NvMBj1jVPWx6J0WB2cv6E97zvs",
+    "sha256": "00842f2821ee658f0f0c656c5fbfb9efcef6d9f310633f17012d746931d9ce5b",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 8,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(8 张,按内容需要选取)"
+      },
+      {
+        "id": "section-15",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-16",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-22",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-23",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-24",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-25",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 110,
+    "externalAttachments": 6
+  },
+  {
     "id": "2026-10-06-01_alo_handbags",
     "title": "Alo Handbags — Tendril",
     "date": "2026-10-06",

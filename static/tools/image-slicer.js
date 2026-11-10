@@ -73,9 +73,7 @@ root.innerHTML = `
         <div id="status" class="slicer-status" role="status" aria-live="polite">选择图片并设置尺寸，点击“开始切图”。</div>
         <div class="slicer-results-scroll" tabindex="0" role="region" aria-label="切片处理结果，可滚动查看">
           <div id="resultEmpty" class="slicer-empty">
-            ${icon('crop')}
-            <b>把一张长图，变成刚好的尺寸</b>
-            <span>切片预览与下载会显示在这里</span>
+            ${VisionSite.emptyState({icon:'crop',title:'还没有切图结果',description:'选择图片并开始切图，切片预览与下载会显示在这里。'})}
           </div>
           <div id="results" class="results"></div>
         </div>

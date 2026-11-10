@@ -108,7 +108,7 @@ export function modelsPage(dataset, replaceURL) {
   page.innerHTML=`<header class="models-header"><h1>AI 大模型</h1><span>${dataset.date} 快照</span><a href="${esc(board.source)}" target="_blank" rel="noopener noreferrer">Artificial Analysis ${icon('external')}</a></header>
     <div class="models-tools"><nav class="model-tabs" aria-label="榜单类型">${tabLinks}</nav><div data-search-slot></div></div>
     <div class="ai-ranking"><div class="ai-ranking-head"><h2>${modes[mode][1]}</h2><span class="models-count" role="status"></span></div>
-    <div class="ai-ranking-scroll" role="region" tabindex="0" aria-label="模型排行，可上下或左右滚动"><table aria-label="${modes[mode][1]}"><thead>${tableHead(cols)}</thead><tbody></tbody></table></div></div>`;
+    <div class="ai-ranking-scroll" role="region" tabindex="0" aria-label="模型排行，可上下或左右滚动"><table aria-label="${modes[mode][1]}"><colgroup>${cols.map(col=>`<col data-column="${col.key}">`).join('')}</colgroup><thead>${tableHead(cols)}</thead><tbody></tbody></table><div class="models-empty" hidden></div></div></div>`;
   const search=toolSearch('搜索模型或开发商','搜索模型或开发商',params.get('q'),()=>{
     const url=new URL(location.href), term=search.input.value.trim();
     if(term)url.searchParams.set('q',term);else url.searchParams.delete('q');
@@ -121,7 +121,14 @@ export function modelsPage(dataset, replaceURL) {
     const q=normalize(search.input.value);
     const rows=sortRows(original.filter(r=>normalize(r.model+' '+r.provider).includes(q)),sort);
     page.querySelector('.models-count').textContent=q?`${rows.length} / ${original.length} 个模型`:`${original.length} 个模型`;
-    page.querySelector('tbody').innerHTML=rows.map(row=>`<tr>${cols.map(col=>col.key==='model'?`<th scope="row">${cell(row,col,dataset.providerLogos)}</th>`:`<td data-key="${col.key}">${cell(row,col,dataset.providerLogos)}</td>`).join('')}</tr>`).join('') || `<tr><td colspan="${cols.length}" class="models-empty">没有匹配的模型</td></tr>`;
+    page.querySelector('tbody').innerHTML=rows.map(row=>`<tr>${cols.map(col=>col.key==='model'?`<th scope="row">${cell(row,col,dataset.providerLogos)}</th>`:`<td data-key="${col.key}">${cell(row,col,dataset.providerLogos)}</td>`).join('')}</tr>`).join('');
+    page.querySelector('table').hidden=!rows.length;
+    const empty=page.querySelector('.models-empty');
+    empty.hidden=!!rows.length;
+    empty.innerHTML=rows.length?'':VisionSite.emptyState({icon:original.length?'search':'inbox',title:original.length?'没有匹配的模型':'暂无模型数据',description:original.length?'试试其他关键词，或清除搜索查看全部模型。':'这个榜单尚未收录模型，更新后会显示在这里。',actionsHTML:original.length?'<button type="button" data-clear-model-search>清除搜索</button>':''});
+    page.querySelector('[data-clear-model-search]')?.addEventListener('click',()=>{
+      search.input.value=''; search.input.dispatchEvent(new Event('input',{bubbles:true})); search.input.focus();
+    });
     const last=page.querySelector('th[aria-sort]');
     if(last) {
       last.removeAttribute('aria-sort');

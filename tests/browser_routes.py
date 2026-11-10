@@ -315,14 +315,20 @@ def verify(base, pw, width):
             expect(page.locator(".ai-ranking tbody tr").first).to_be_visible()
             assert page.locator(".ai-ranking tbody tr").count() >= 30
             scroller = page.locator(".ai-ranking-scroll")
-            top = page.locator(".ai-ranking thead").evaluate("e=>e.getBoundingClientRect().top")
-            assert scroller.evaluate("e=>{e.scrollTop=e.scrollHeight;return e.scrollTop}") > 0
-            assert abs(page.locator(".ai-ranking thead").evaluate("e=>e.getBoundingClientRect().top") - top) < 1
+            headers = page.locator(".ai-ranking thead th")
+            tops = headers.evaluate_all("cells=>cells.map(e=>e.getBoundingClientRect().top)")
+            model = page.locator('.ai-ranking tbody tr').first.locator('th[scope="row"]')
+            model_left = model.evaluate("e=>e.getBoundingClientRect().left")
+            assert scroller.evaluate("e=>{e.scrollTop=e.scrollHeight;e.scrollLeft=e.scrollWidth;return e.scrollTop}") > 0
+            after_tops = headers.evaluate_all("cells=>cells.map(e=>e.getBoundingClientRect().top)")
+            assert all(abs(before-after) < 1 for before, after in zip(tops, after_tops))
+            if width == 390:
+                assert abs(model.evaluate("e=>e.getBoundingClientRect().left") - model_left) < 1
             assert page.evaluate("scrollY===0")
         search = page.get_by_role("searchbox", name="搜索模型或开发商")
         search.fill("qa-missing-model")
         expect(page.get_by_text("没有匹配的模型", exact=True)).to_be_visible()
-        page.get_by_role("button", name="清除搜索").click()
+        page.locator(".ai-search-clear").click()
         expect(search).to_be_focused()
         expect(page).to_have_url(base + "/tools/ai-models?type=speech")
         verify_detail_actions(page,base,width)

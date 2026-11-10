@@ -48,10 +48,6 @@
 .slicer-results-scroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;scrollbar-gutter:stable;margin-top:16px}
 .image-slicer .slicer-pane-actions{display:flex;flex-wrap:wrap;gap:8px;padding-top:12px;margin-top:12px;border-top:1px solid var(--line)}
 .slicer-status{color:var(--fg2);font-size:12px;line-height:1.6;overflow-wrap:anywhere}
-.slicer-empty{min-height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;text-align:center;color:var(--fg2);padding:24px 12px}
-.slicer-empty svg{color:var(--fg3);margin-bottom:8px}
-.slicer-empty b{color:var(--fg);font-weight:400}
-.slicer-empty>span{font-size:12px}
 .image-slicer .results{display:grid;gap:24px}
 .image-slicer .results:empty{margin:0}
 .image-slicer .result-card{min-width:0}
@@ -111,3 +107,5 @@
   .image-slicer .thumbs{grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
   .image-slicer .cut-label,.image-slicer .knife-label{font-size:10px;max-width:calc(100% - 16px);white-space:normal}
 }
+
+.slicer-empty{min-height:100%;display:flex}.slicer-empty[hidden]{display:none}.slicer-empty>.empty-state{flex:1}

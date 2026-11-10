@@ -34,12 +34,12 @@ export async function renderJournal(view, requested, signal) {
   const list = await issues();
   if (!view.isConnected) return;
   if (requested === null) {
-    view.innerHTML = list.length ? archive(list) : '<p class="empty">还没有已收录的日刊。</p>';
+    view.innerHTML = list.length ? archive(list) : VisionSite.emptyState({title:'还没有日刊',description:'收录后的日刊会按期显示在这里。'});
     return;
   }
   const index = list.findIndex(item => String(item.volume) === requested);
   if (index < 0) {
-    view.innerHTML = back() + '<p class="empty">未收录这一期日刊。</p>';
+    view.innerHTML = VisionSite.emptyState({icon:'folder',title:'未收录这一期日刊',description:'返回全部期刊，查看已经收录的日刊。',actionsHTML:back()});
     return;
   }
   const current = list[index];
