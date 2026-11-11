@@ -81,6 +81,11 @@ jobs:
         env:
           FEISHU_BOT_WEBHOOK: ${{ secrets.FEISHU_BOT_WEBHOOK }}
           FEISHU_BOT_SIGNING_SECRET: ${{ secrets.FEISHU_BOT_SIGNING_SECRET }}
+          FEISHU_NOTIFY_MODE: ${{ vars.FEISHU_NOTIFY_MODE }}
+          FEISHU_APP_ID: ${{ secrets.FEISHU_APP_ID }}
+          FEISHU_APP_SECRET: ${{ secrets.FEISHU_APP_SECRET }}
+          FEISHU_CHAT_IDS: ${{ secrets.FEISHU_CHAT_IDS }}
+          FEISHU_FALLBACK_CHAT_ID: ${{ secrets.FEISHU_FALLBACK_CHAT_ID }}
           BUILD_RESULT: ${{ needs.build.result }}
           DEPLOY_RESULT: ${{ needs.deploy.result }}
           PAGES_URL: https://visiondesignlab.github.io/vision-lib/

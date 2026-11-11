@@ -1,17 +1,141 @@
 #!/usr/bin/env python3
-"""Send one signed Feishu notification after a Pages workflow finishes."""
+"""Send Pages results through one Feishu application bot to multiple chats."""
 
 import base64
 import hashlib
 import hmac
 import json
 import os
+import re
 import subprocess
 import sys
 import time
-from urllib.error import URLError
+import uuid
+from urllib.error import HTTPError, URLError
 from urllib.parse import urlparse
 from urllib.request import Request, urlopen
+
+
+class DeliveryUnknown(RuntimeError):
+    """A message might have arrived: never switch transports in this case."""
+
+
+def app_request(path, payload, token=None):
+    headers = {"Content-Type": "application/json; charset=utf-8"}
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    url = ("https://accounts.feishu.cn/oauth/v3/token" if path == "oauth/v3/token"
+           else "https://open.feishu.cn/open-apis/" + path)
+    request = Request(url,
+                      data=json.dumps(payload, ensure_ascii=False).encode(),
+                      headers=headers, method="POST")
+    try:
+        with urlopen(request, timeout=20) as response:
+            result = json.load(response)
+    except HTTPError as error:
+        try:
+            result = json.load(error)
+        except (ValueError, OSError):
+            raise DeliveryUnknown("飞书应用请求结果未确认，请先回读群消息") from None
+    except (URLError, TimeoutError, ValueError, OSError):
+        # Do not include response bodies, tokens or exception URLs in logs.
+        raise DeliveryUnknown("飞书应用请求结果未确认，请先回读群消息") from None
+    if not isinstance(result, dict) or not isinstance(result.get("code"), int):
+        raise DeliveryUnknown("飞书应用返回结果无效，请先回读群消息")
+    if result["code"] != 0:
+        raise RuntimeError(f"飞书应用拒绝请求，错误码：{result['code']}")
+    return result
+
+
+def app_token(env):
+    app_id, secret = env.get("FEISHU_APP_ID", ""), env.get("FEISHU_APP_SECRET", "")
+    if not app_id or not secret:
+        raise ValueError("未配置 FEISHU_APP_ID 或 FEISHU_APP_SECRET")
+    result = app_request("oauth/v3/token",
+                         {"grant_type": "client_credentials", "client_id": app_id,
+                          "client_secret": secret, "scope": "im:message:send_as_bot"})
+    token = result.get("access_token")
+    if not isinstance(token, str) or not token:
+        raise RuntimeError("飞书未返回有效的应用凭证")
+    return token
+
+
+def chat_ids(env):
+    ids = list(dict.fromkeys(x.strip() for x in env.get("FEISHU_CHAT_IDS", "").split(",") if x.strip()))
+    if not ids or any(not re.fullmatch(r"oc_[0-9a-f]{32}", x) for x in ids):
+        raise ValueError("FEISHU_CHAT_IDS 必须包含有效的群 ID 列表")
+    return ids
+
+
+def send_app(token, chat_id, card, env):
+    # Same workflow, chat and content reuse a UUID (Feishu deduplicates for 1h).
+    run_id = env.get("GITHUB_RUN_ID")
+    if not run_id:
+        raise ValueError("应用通知需要 GITHUB_RUN_ID 生成幂等键")
+    content = json.dumps(card, ensure_ascii=False, sort_keys=True)
+    digest = hashlib.sha256(content.encode()).hexdigest()
+    key = str(uuid.uuid5(uuid.NAMESPACE_URL,
+                        f"{env['GITHUB_REPOSITORY']}:{run_id}:{chat_id}:{digest}"))
+    payload = {"receive_id": chat_id, "msg_type": "interactive",
+               "content": content, "uuid": key}
+    # A timeout can be retried safely with the same UUID, never via the Webhook.
+    for attempt in range(2):
+        try:
+            result = app_request("im/v1/messages?receive_id_type=chat_id", payload, token)
+            message_id = (result.get("data") or {}).get("message_id")
+            if not isinstance(message_id, str) or not message_id.startswith("om_"):
+                raise DeliveryUnknown("飞书未返回消息 ID，请先回读群消息")
+            return message_id
+        except DeliveryUnknown:
+            if attempt:
+                raise
+        except RuntimeError:
+            if attempt:
+                raise DeliveryUnknown("飞书重试未确认成功，请先回读群消息") from None
+            raise
+
+
+def notify(card, env):
+    mode = env.get("FEISHU_NOTIFY_MODE", "webhook") or "webhook"
+    webhook, secret = env.get("FEISHU_BOT_WEBHOOK", ""), env.get("FEISHU_BOT_SIGNING_SECRET", "")
+
+    def legacy():
+        send(webhook, secret, card)
+        print("原群 Webhook 通知已发送。")
+
+    if mode == "webhook":
+        legacy()
+        return
+    if mode != "app":
+        raise ValueError("FEISHU_NOTIFY_MODE 仅支持 webhook 或 app")
+    fallback_chat = env.get("FEISHU_FALLBACK_CHAT_ID", "")
+    try:
+        targets = chat_ids(env)
+        if fallback_chat and fallback_chat not in targets:
+            raise ValueError("原群必须包含在 FEISHU_CHAT_IDS 中")
+        if not env.get("GITHUB_RUN_ID"):
+            raise ValueError("应用通知需要 GITHUB_RUN_ID 生成幂等键")
+        token = app_token(env)
+    except (ValueError, RuntimeError):
+        # Token/config failures happen before any message is sent.
+        if fallback_chat and webhook and secret:
+            legacy()
+        raise
+
+    failures = []
+    for index, chat_id in enumerate(targets, start=1):
+        try:
+            message_id = send_app(token, chat_id, card, env)
+            print(f"群 {index} 应用通知已发送，message_id={message_id}")
+        except (ValueError, RuntimeError) as error:
+            failures.append(f"群 {index}：{error}")
+            if not isinstance(error, DeliveryUnknown) and chat_id == fallback_chat and webhook and secret:
+                try:
+                    legacy()
+                except (ValueError, RuntimeError) as fallback_error:
+                    failures.append(f"原群回退：{fallback_error}")
+    if failures:
+        raise RuntimeError("；".join(failures))
 
 
 def signature(secret, timestamp):
@@ -110,11 +234,7 @@ def send(webhook, secret, card, now=None):
 
 def main():
     env = os.environ
-    webhook, secret = env.get("FEISHU_BOT_WEBHOOK", ""), env.get("FEISHU_BOT_SIGNING_SECRET", "")
-    if not webhook or not secret:
-        raise ValueError("未配置 FEISHU_BOT_WEBHOOK 或 FEISHU_BOT_SIGNING_SECRET")
-    send(webhook, secret, message(load_event(env), env))
-    print("Vision Lab Bot 通知已发送。")
+    notify(message(load_event(env), env), env)
 
 
 if __name__ == "__main__":
