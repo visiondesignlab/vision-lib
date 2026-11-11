@@ -11,12 +11,11 @@ function autoplayEmbed(embed) {
   url.searchParams.set('playsinline', '1');
   return url.href;
 }
-let catalog;
 async function loadCatalog() {
-  return catalog ||= fetch(sitePath('/static/motion-log/index.json')).then(r => {
+  return fetch(sitePath('/static/motion-log/index.json'), {cache:'no-cache'}).then(r => {
     if (!r.ok) throw new Error('无法读取日志');
     return r.json();
-  }).catch(error => {catalog = null; throw error;});
+  });
 }
 const outside = (url, label) => `<a class="pill-btn shadow" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${label} ${icon('external')}</a>`;
 function card(item) {

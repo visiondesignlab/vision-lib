@@ -988,6 +988,9 @@ function metricsRows(c) {
     row("收藏", m.bookmarks != null ? fmtN(m.bookmarks) : null), row("GitHub Star", m.stars != null ? fmtN(m.stars) : null),
     row("推荐帖浏览", m.post_views != null ? fmtN(m.post_views) : null), row("推荐帖点赞", m.post_likes != null ? fmtN(m.post_likes) : null)].join("") + f;
 }
+function caseMediaItems(c) {
+  return c.media?.items?.length ? c.media.items : (c.media?.images || []).map(url => ({kind:'image', url}));
+}
 function stageHTML(c) {
   if (c.type === "brand_skill" && c.brand_repository) {
     const samples = c.brand_repository.samples;
@@ -997,9 +1000,12 @@ function stageHTML(c) {
     </div><figcaption><span>${esc(c.brand_repository.sample_source)}</span><span role="status"></span></figcaption></figure>`;
   }
   const m = c.media || {};
+  const items = caseMediaItems(c);
+  if (c.type === 'graphic' && items.length > 1) return `<div class="media-stack" aria-label="作品素材">${items.map((item, i) => `<figure><div class="frame${item.kind === 'video' ? ' video-frame' : ''}">${item.kind === 'video' ? window.VisionSite.videoPlayer(item.url, item.thumbnail || '', {detail:true}) : `<img src="${esc(item.url)}" alt="${esc(c.title)} · 素材 ${i + 1}" loading="lazy">`}</div><figcaption>${i + 1} / ${items.length}</figcaption></figure>`).join('')}</div>`;
+  if (items.length === 1 && items[0].kind === 'video') return `<div class="frame video-frame">${window.VisionSite.videoPlayer(items[0].url, items[0].thumbnail || m.thumbnail, {detail:true})}</div>`;
   if (m.video) return `<div class="frame video-frame">${window.VisionSite.videoPlayer(m.video, m.thumbnail, {detail:true})}</div>`;
   if (m.embed === 'remote' && c.source?.url) return '<div class="frame video-frame" data-online-video></div>';
-  if (m.images && m.images.length) return `<div class="frame"><img src="${esc(m.images[0])}"></div>`;
+  if (items.length) return `<div class="frame"><img src="${esc(items[0].url)}" alt="${esc(c.title)}"></div>`;
   return `<div class="frame"><img src="${esc(m.thumbnail || sitePath("/static/cms-placeholder.svg"))}"></div>${c.source?.url ? `<div class="ext">${link(c.source.url, "打开原链接")}</div>` : ""}`;
 }
 function brandSkillDetails(c) {
@@ -1116,7 +1122,9 @@ function openDetail(id) {
       <div class="when">${esc((s.date || "").slice(0, 10))}${c.version && !isShow ? (isBrandRepo ? " · " : " · v") + esc(c.version) : ""} ${isShow ? "" : trust}</div></div>
     ${!isShow && !isBrandRepo ? `<div class="kv">${metricsRows(c)}</div>` : ""}
     ${body}</div>
-    <div class="stage">${stageHTML(c)}${videoShortcuts(c,prev,next)}</div>`;
+    <div class="stage${c.type === 'graphic' && caseMediaItems(c).length > 1 ? ' is-gallery' : ''}"${c.type === 'graphic' && caseMediaItems(c).length > 1 ? ' tabindex="0" role="region" aria-label="作品素材，向下滚动浏览"' : ''}>${stageHTML(c)}${videoShortcuts(c,prev,next)}</div>`;
+  const gallery = $('.stage.is-gallery', overlay);
+  const players = [...overlay.querySelectorAll('.stage video')];
   const player=$('.stage video',overlay);
   let disposeOnline, disposed = false;
   function originalPlayer() {
@@ -1126,9 +1134,9 @@ function openDetail(id) {
       if (!disposed) disposeOnline = mountOnlineVideo($('.stage .frame',overlay), c.source.url, c.title);
     });
   }
-  detailCleanup=()=>{ disposed = true; disposeOnline?.(); if (player) window.VisionSite.releaseVideo(player); };
+  detailCleanup=()=>{ disposed = true; disposeOnline?.(); players.forEach(video => window.VisionSite.releaseVideo(video)); };
   if ($('[data-online-video]',overlay)) originalPlayer();
-  if (player) {
+  if (player && !gallery) {
     player.volume=0.5;
     player.muted=false;
     if(c.media?.embed === 'remote' && c.source?.url) player.addEventListener('error',originalPlayer,{once:true});
@@ -1143,7 +1151,7 @@ function openDetail(id) {
     if (copyInstall) copyInstall.onclick = async () => toast(await copyText(c.brand_repository.install_command) ? "安装命令已复制" : "复制失败");
   }
   $(".ptop a.ibtn", overlay)?.focus({preventScroll: true});
-  $(".stage", overlay).addEventListener("click", e => { if (e.target.classList.contains("stage")) nav(back); });
+  $(".stage", overlay).addEventListener("click", e => { if (e.target.classList.contains("stage") && !gallery) nav(back); });
   if(c.type==='video' && c.shot_analysis) {
     const panel=$('.panel',overlay);
     const steps=[...panel.querySelectorAll('h4')].find(el=>el.textContent.includes('怎么用'));
@@ -1156,7 +1164,7 @@ function openDetail(id) {
 document.addEventListener("keydown", e => {
   if (overlay.hidden || window.VisionMenu.active || document.querySelector("dialog[open]") || $(".modal") || e.isComposing || e.altKey || e.ctrlKey || e.metaKey || e.target.closest("input,textarea,select,[contenteditable=true]") || document.fullscreenElement) return;
   const player=$('.stage video',overlay);
-  if(player && (e.code==='Space' || e.key.toLowerCase()==='m') && !e.target.closest('button,summary,video')) {
+  if(player && !$('.stage.is-gallery',overlay) && (e.code==='Space' || e.key.toLowerCase()==='m') && !e.target.closest('button,summary,video')) {
     e.preventDefault();
     if(e.repeat)return;
     if(e.code==='Space') {

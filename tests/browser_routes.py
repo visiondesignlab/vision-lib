@@ -55,6 +55,11 @@ def fixture():
                          media=rows[0]["media"], description="示例 " * 150))
         rows.append(dict(id="qa-showcase-other", type="showcase", title="Keep in inspiration", category="QA",
                          status="published", source={"url":"https://example.org/other"}, media={}))
+        rows.append(dict(id="qa-graphic", type="graphic", title="Grouped mixed media", category="QA",
+                         status="published", source={}, media={'kind':'images', 'thumbnail':rows[0]['media']['thumbnail'],
+                         'items':[{'kind':'image','url':rows[0]['media']['thumbnail']},
+                                  {'kind':'video','url':rows[0]['media']['video']},
+                                  {'kind':'image','url':rows[0]['media']['thumbnail']}]}))
         for width in (390,1440):
             for n in range(4):
                 rows.append(dict(id=f"transfer-{width}-{n}", type="video", title=f"Clip {n}",
@@ -332,6 +337,20 @@ def verify(base, pw, width):
         expect(search).to_be_focused()
         expect(page).to_have_url(base + "/tools/ai-models?type=speech")
         verify_detail_actions(page,base,width)
+        go('/c/qa-graphic')
+        stack = page.locator('#overlay .stage.is-gallery')
+        expect(stack.locator('figure')).to_have_count(3)
+        expect(stack.locator('video')).to_have_count(1)
+        stack.locator('img').evaluate_all("images=>images.forEach(i=>i.loading='eager')")
+        page.wait_for_function("[...document.querySelectorAll('.media-stack img')].every(i=>i.naturalWidth>0)")
+        assert stack.evaluate('e=>e.scrollHeight>e.clientHeight')
+        stack.evaluate('e=>e.scrollTop=e.scrollHeight')
+        assert stack.evaluate('e=>e.scrollTop>0')
+        stack.locator('video').evaluate('v=>{v.muted=true;v.play()}')
+        page.wait_for_function("document.querySelector('.media-stack video').currentTime>0")
+        go('/?tab=graphic')
+        expect(page.locator('#overlay')).to_be_hidden()
+        assert page.evaluate("[...document.querySelectorAll('video')].every(v=>v.paused)")
         go("/guide")
         expect(page.get_by_role("heading", name="常见问题")).to_be_visible()
         expect(page.locator("body")).not_to_contain_text("输入管理员 token")

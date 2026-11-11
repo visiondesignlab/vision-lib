@@ -157,6 +157,12 @@ body.detail-open .side{visibility:hidden}
 .stage{flex:1;min-width:0;position:relative;display:grid;place-items:center;background:rgba(255,255,255,.72);backdrop-filter:blur(14px) saturate(.6);padding:40px;cursor:zoom-out;overflow:hidden;overscroll-behavior:none}
 .stage .frame{--frame-radius:8px;max-width:100%;max-height:calc(100vh - 80px);border-radius:var(--frame-radius);overflow:hidden;isolation:isolate;box-shadow:0 20px 60px -10px rgba(0,0,0,.35),0 0 0 .5px var(--line);background:#000;cursor:default}
 .stage video,.stage img{display:block;max-width:100%;max-height:calc(100vh - 80px)}
+.stage.is-gallery{display:block;overflow-y:auto;overscroll-behavior:contain;cursor:default}
+.media-stack{width:100%;max-width:900px;margin:0 auto;display:grid;gap:28px}
+.media-stack figure{min-width:0;margin:0}
+.stage .media-stack .frame{max-height:none}
+.stage .media-stack img,.stage .media-stack video{width:100%;height:auto;max-height:none}
+.media-stack figcaption{margin-top:10px;color:var(--muted);font-size:12px;text-align:center;font-variant-numeric:tabular-nums}
 /* The masked inner surface clips the composited video and native controls
    together. Keep the outer shadow outside that single transparent clipping box. */
 .stage .video-frame{overflow:visible;background:transparent;box-shadow:0 20px 60px -10px rgba(0,0,0,.35)}

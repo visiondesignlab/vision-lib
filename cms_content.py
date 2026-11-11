@@ -100,7 +100,7 @@ def validate(patch):
                 if name in {'url', 'author_url'}:
                     safe_url(value)
         elif k == 'media':
-            if not isinstance(v, dict) or set(v) - {'kind', 'thumbnail', 'video', 'preview', 'images', 'specs', 'embed', 'remote_video'}:
+            if not isinstance(v, dict) or set(v) - {'kind', 'thumbnail', 'video', 'preview', 'images', 'items', 'specs', 'embed', 'remote_video'}:
                 raise ContentError('媒体格式不正确')
             if v.get('kind', 'image') not in {'image', 'images', 'video'}:
                 raise ContentError('媒体类型不正确')
@@ -113,6 +113,14 @@ def validate(patch):
                 raise ContentError('最多支持 30 张图片')
             for img in images:
                 safe_url(img, local=True)
+            items = v.get('items', [])
+            if not isinstance(items, list) or len(items) > 30:
+                raise ContentError('最多支持 30 份素材')
+            for item in items:
+                if not isinstance(item, dict) or set(item) - {'kind', 'url', 'thumbnail'} or item.get('kind') not in {'image', 'video'} or not item.get('url'):
+                    raise ContentError('素材列表格式不正确')
+                safe_url(item['url'], local=True)
+                safe_url(item.get('thumbnail', ''), local=True)
             specs = v.get('specs', {})
             if not isinstance(specs, dict) or any(not isinstance(t, (str, int, float)) for t in specs.values()):
                 raise ContentError('媒体规格格式不正确')
@@ -128,7 +136,7 @@ def ready(c):
     m = c.get('media', {})
     if c['type'] in {'video', 'showcase'} and not (m.get('video') or c.get('source', {}).get('url')):
         raise ContentError('请上传视频或填写作品来源链接')
-    if c['type'] == 'graphic' and not (m.get('thumbnail') or m.get('images')):
+    if c['type'] == 'graphic' and not (m.get('thumbnail') or m.get('images') or m.get('items')):
         raise ContentError('请上传平面图片或填写封面链接')
     if c['type'] in {'brand_skill', 'skill_repo'} and not (c.get('prompt') or c.get('assets') or c.get('source', {}).get('url')):
         raise ContentError('请填写 Prompt、添加附件或填写来源链接')
