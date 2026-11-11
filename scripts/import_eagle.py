@@ -194,14 +194,16 @@ def apply_manifest(inventory, manifest, state_path):
                 cms_content.safe_url(group['remoteVideo'])
                 fields['media']['remote_video'] = group['remoteVideo']
             if existing:
-                # Media increments do not overwrite a person's edited text.
-                patch = {'type': fields['type'], 'media': fields['media'], '_version': existing[0]['_version']}
+                # Preserve manual moves even when a later scan adds or replaces media.
+                target_type = fields['type'] if existing[0]['type'] == previous.get('autoType') else existing[0]['type']
+                patch = {'type': target_type, 'media': fields['media'], '_version': existing[0]['_version']}
                 current = cms_content.change(existing[0]['id'], 'edit', patch)
             else:
                 current = cms_content.create(fields)
             # Record the ID before lifecycle transitions so a retry cannot duplicate it.
             state['groups'][key] = {'cmsId': current['id'], 'hashes': hashes, 'aliases': sorted(aliases),
-                                    'ownership': 'eagle', 'sourceUrl': group['sourceUrl'], 'checkedAt': store.now_iso()}
+                                    'ownership': 'eagle', 'autoType': fields['type'],
+                                    'sourceUrl': group['sourceUrl'], 'checkedAt': store.now_iso()}
             save(state_path, state)
             current = cms_content.change(current['id'], 'submit', {'_version': current['_version']})
             current = cms_content.change(current['id'], 'approve', {'_version': current['_version']})

@@ -112,7 +112,7 @@ API：`POST /api/auth/login`、`GET /api/auth/session`、`POST /api/auth/logout|
 
 先运行 `python3 scripts/import_eagle.py "<library 路径>" --output output/eagle-intake/<日期>` 保存扫描清单，再抓取原帖准备编辑清单。清单包含 `groups`，每组填写 `sourceUrl`、有序 `eagleIds`、保存的来源 `evidence` 文件路径，以及 `fields`（标题、介绍、分类、标签、作者与来源信息）；已验证的 X 原站视频可填 `remoteVideo`。原帖不可读时保留待补全状态，不用文件名猜作者。
 
-运行同一命令并加 `--apply <编辑清单.json>`，通过 CMS 草稿、提交、发布流程入库。`output/eagle-intake/state.json` 保存来源、Eagle ID、文件哈希与 CMS ID 的私有映射；同源重复跳过，已导入来源新增素材时更新原卡片并保留人工文案。删除或拒绝过的来源不恢复，源库删除不传播到 CMS。公开快照不包含源库路径、映射或抓取证据。发布仍遵循下述项目协作与 Pages 验证流程。
+运行同一命令并加 `--apply <编辑清单.json>`，通过 CMS 草稿、提交、发布流程入库。`output/eagle-intake/state.json` 保存来源、Eagle ID、文件哈希、自动分类基线与 CMS ID 的私有映射；同源重复跳过，已导入来源新增素材时更新原卡片并保留人工文案、栏目迁移和分类调整。删除或拒绝过的来源不恢复，源库删除不传播到 CMS。公开快照不包含源库路径、映射或抓取证据。发布仍遵循下述项目协作与 Pages 验证流程。
 
 ### 其他来源
 

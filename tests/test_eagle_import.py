@@ -21,7 +21,7 @@ class EagleTests(unittest.TestCase):
         self.assertNotEqual(source_key('https://instagram.com/p/AbC/'), source_key('https://instagram.com/p/abc/'))
         self.assertEqual(source_key('https://threads.net/@a/post/AbC?x=1'), source_key('https://threads.com/@a/post/AbC'))
 
-    def test_grouped_images_are_published_once_and_incremental_edits_preserve_text(self):
+    def test_grouped_images_are_published_once_and_increments_preserve_manual_edits(self):
         with tempfile.TemporaryDirectory() as temp, ExitStack() as patches:
             root = Path(temp)
             for name, value in {'DATA':str(root), 'CASES':str(root/'cases.json'),
@@ -48,15 +48,19 @@ class EagleTests(unittest.TestCase):
             self.assertEqual(len(case['media']['images']), 2)
             self.assertEqual(apply_manifest(scan(library), {'groups':[group]}, state)[0]['status'], 'skipped_existing')
             self.assertEqual(len(store.load_cases()), 1)
-            edited = cms_content.change(case['id'], 'edit', {'title':'Human title','_version':case['_version']})
+            edited = cms_content.change(case['id'], 'edit', {'title':'Human title','type':'video','_version':case['_version']})
             edited = cms_content.change(case['id'], 'submit', {'_version':edited['_version']})
             cms_content.change(case['id'], 'approve', {'_version':edited['_version']})
             add(3);group['eagleIds'].append('3')
             self.assertEqual(apply_manifest(scan(library), {'groups':[group]}, state)[0]['status'], 'updated')
             case = store.load_cases()[0]
             self.assertEqual(case['title'], 'Human title')
+            self.assertEqual(case['type'], 'video')
             self.assertEqual(len(case['media']['images']), 3)
             self.assertEqual(len(store.load_cases()), 1)
+            add(4);group['eagleIds'].append('4')
+            self.assertEqual(apply_manifest(scan(library), {'groups':[group]}, state)[0]['status'], 'updated')
+            self.assertEqual(store.load_cases()[0]['type'], 'video')
             store.save_rejected([store.norm_url(group['sourceUrl'])])
             self.assertEqual(apply_manifest(scan(library), {'groups':[group]}, state)[0]['status'], 'skipped_rejected')
 
