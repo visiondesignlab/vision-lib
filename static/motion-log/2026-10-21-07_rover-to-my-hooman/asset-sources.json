@@ -1,0 +1,226 @@
+[
+  {
+    "path": "assets/contact_sheets/07_rover-to-my-hooman_selected_keyframes.jpg",
+    "originalPath": "../contact_sheets/07_rover-to-my-hooman_selected_keyframes.jpg",
+    "driveFileId": "1O09gLpuZPucFmZQpedm81zvNSoT0OEvF",
+    "sourceUrl": "https://drive.google.com/file/d/1O09gLpuZPucFmZQpedm81zvNSoT0OEvF/view?usp=drivesdk",
+    "bytes": 363803,
+    "sha256": "ff2d6c2f7221112c10dd7f9b3f3268cbb12393edbf764da83681236f20dedc57"
+  },
+  {
+    "path": "assets/frames/shot_001_00-00-00.550.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_001_00-00-00.550.jpg",
+    "driveFileId": "1CohFgAf4CyCh1t_azUs7yLoz1SAlP0G2",
+    "sourceUrl": "https://drive.google.com/file/d/1CohFgAf4CyCh1t_azUs7yLoz1SAlP0G2/view?usp=drivesdk",
+    "bytes": 65128,
+    "sha256": "a7276125b07a73e4cb467ff1873f0812f246cb2e136ae5e8f5f013d9a79ed603"
+  },
+  {
+    "path": "assets/frames/shot_002_00-00-07.341.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_002_00-00-07.341.jpg",
+    "driveFileId": "1PJtrLYge4X2y8SHmHqscyVsVi8L0RyXH",
+    "sourceUrl": "https://drive.google.com/file/d/1PJtrLYge4X2y8SHmHqscyVsVi8L0RyXH/view?usp=drivesdk",
+    "bytes": 98850,
+    "sha256": "2be0addd399092d2d7314624fa977f127ebf17531271493b7e6c26194ab504e2"
+  },
+  {
+    "path": "assets/frames/shot_003_00-00-09.049.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_003_00-00-09.049.jpg",
+    "driveFileId": "10-oPiIIT8fabnilBRXq1_HoR1ls8LiuG",
+    "sourceUrl": "https://drive.google.com/file/d/10-oPiIIT8fabnilBRXq1_HoR1ls8LiuG/view?usp=drivesdk",
+    "bytes": 156940,
+    "sha256": "392f5df2fafb47a11161e0c9d95c577a8bc494431d71f80730bfb5c9324bbbb7"
+  },
+  {
+    "path": "assets/frames/shot_004_00-00-11.033.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_004_00-00-11.033.jpg",
+    "driveFileId": "1u0SOixtJCYGIwX9LglroOP8I7HLt6Chd",
+    "sourceUrl": "https://drive.google.com/file/d/1u0SOixtJCYGIwX9LglroOP8I7HLt6Chd/view?usp=drivesdk",
+    "bytes": 140814,
+    "sha256": "15931460b77fd29bc52b17ae1f88faf92ae48f37c308a0f83d77681760ee76cd"
+  },
+  {
+    "path": "assets/frames/shot_005_00-00-11.671.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_005_00-00-11.671.jpg",
+    "driveFileId": "1nHmOlx2_jY5jWshasUu2KXFyeG3IZaul",
+    "sourceUrl": "https://drive.google.com/file/d/1nHmOlx2_jY5jWshasUu2KXFyeG3IZaul/view?usp=drivesdk",
+    "bytes": 95155,
+    "sha256": "72aa2f63cb562c6d7ad97c9f34264bffde533aeaf82b8f7dfdb5a4ca72b0f598"
+  },
+  {
+    "path": "assets/frames/shot_006_00-00-12.497.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_006_00-00-12.497.jpg",
+    "driveFileId": "1WnQFmpG8ffpQsYIV7Mu25ex5iwRbwBfy",
+    "sourceUrl": "https://drive.google.com/file/d/1WnQFmpG8ffpQsYIV7Mu25ex5iwRbwBfy/view?usp=drivesdk",
+    "bytes": 132438,
+    "sha256": "1a8fa20b75350bc2fd11776d81ac9922e867d4b44ee038baecde2b4fbde1d567"
+  },
+  {
+    "path": "assets/frames/shot_007_00-00-13.383.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_007_00-00-13.383.jpg",
+    "driveFileId": "1mFNmT_-9a31nJfeox_88Rg8ipobd_K8C",
+    "sourceUrl": "https://drive.google.com/file/d/1mFNmT_-9a31nJfeox_88Rg8ipobd_K8C/view?usp=drivesdk",
+    "bytes": 99487,
+    "sha256": "24ccc2bd570412f917747e5fda31eea0eeb10c7c24f7103177c2da0c488a4934"
+  },
+  {
+    "path": "assets/frames/shot_008_00-00-20.049.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_008_00-00-20.049.jpg",
+    "driveFileId": "1oVumrXubndqk54vuIbXVNpchxi5RR6cP",
+    "sourceUrl": "https://drive.google.com/file/d/1oVumrXubndqk54vuIbXVNpchxi5RR6cP/view?usp=drivesdk",
+    "bytes": 133798,
+    "sha256": "808d5e86f87e2abd7bc1a107349651001d52fcfc77d2229665cc21904077b861"
+  },
+  {
+    "path": "assets/frames/shot_009_00-00-27.341.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_009_00-00-27.341.jpg",
+    "driveFileId": "12_mel9Giv2oZxrNiTeUJuEYFVZszdn5O",
+    "sourceUrl": "https://drive.google.com/file/d/12_mel9Giv2oZxrNiTeUJuEYFVZszdn5O/view?usp=drivesdk",
+    "bytes": 163214,
+    "sha256": "986a92bb4c11fc09d326c901869e8f72fadffa9e68ec19597b5fdae8f76a07b3"
+  },
+  {
+    "path": "assets/frames/shot_010_00-00-52.258.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_010_00-00-52.258.jpg",
+    "driveFileId": "1lrk3aPh8-fxGbBVnzPRbRD8J8enEzORT",
+    "sourceUrl": "https://drive.google.com/file/d/1lrk3aPh8-fxGbBVnzPRbRD8J8enEzORT/view?usp=drivesdk",
+    "bytes": 99878,
+    "sha256": "9229512ee0b7aa38424553bd750592643060a307932829e702728b64e9e6dff7"
+  },
+  {
+    "path": "assets/frames/shot_011_00-00-57.174.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_011_00-00-57.174.jpg",
+    "driveFileId": "1_uyOOQ6ucbbDIoyGzdti_O0aeCI5NzrM",
+    "sourceUrl": "https://drive.google.com/file/d/1_uyOOQ6ucbbDIoyGzdti_O0aeCI5NzrM/view?usp=drivesdk",
+    "bytes": 104129,
+    "sha256": "82ca3cff10df66957a8bcaba804f8ddc9e6351e90db6e6dea14d6133545390fe"
+  },
+  {
+    "path": "assets/frames/shot_012_00-00-58.814.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_012_00-00-58.814.jpg",
+    "driveFileId": "1MizRT4YlqbQuKbKEh7tbWYrbdBMnVLcz",
+    "sourceUrl": "https://drive.google.com/file/d/1MizRT4YlqbQuKbKEh7tbWYrbdBMnVLcz/view?usp=drivesdk",
+    "bytes": 99720,
+    "sha256": "1f6e75cbfb959f2db5942b032b0d6e7fac9fe3ef2894cf5ea76126aba58333e4"
+  },
+  {
+    "path": "assets/frames/shot_013_00-00-59.647.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_013_00-00-59.647.jpg",
+    "driveFileId": "1Fp-IVQPs2PHc85lfoIOOm65_R0AlTpZp",
+    "sourceUrl": "https://drive.google.com/file/d/1Fp-IVQPs2PHc85lfoIOOm65_R0AlTpZp/view?usp=drivesdk",
+    "bytes": 105952,
+    "sha256": "6776d71258b94a8a3bda421321defab9b4fdcce8412c93aff5c72f03c3942416"
+  },
+  {
+    "path": "assets/frames/shot_014_00-01-00.626.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_014_00-01-00.626.jpg",
+    "driveFileId": "1M0tnhCmkY0lJh0YQgc4AlQ1HOuVaEStO",
+    "sourceUrl": "https://drive.google.com/file/d/1M0tnhCmkY0lJh0YQgc4AlQ1HOuVaEStO/view?usp=drivesdk",
+    "bytes": 134000,
+    "sha256": "d87d2d4990771b47fa5e90951c4456732e2a7a82ae061adeb56b08a9186d8f19"
+  },
+  {
+    "path": "assets/frames/shot_015_00-01-01.383.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_015_00-01-01.383.jpg",
+    "driveFileId": "173D043jhFrZisQ_BNPM4z04s-gI8InOy",
+    "sourceUrl": "https://drive.google.com/file/d/173D043jhFrZisQ_BNPM4z04s-gI8InOy/view?usp=drivesdk",
+    "bytes": 91331,
+    "sha256": "2293f21b562cf9d77d967bc59fcfbe64fd5493193d8c138f2f1c75e608d11f3d"
+  },
+  {
+    "path": "assets/frames/shot_016_00-01-06.758.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_016_00-01-06.758.jpg",
+    "driveFileId": "1ETPAawGmAbdv11O9rirzbJV3-rpQ0-8x",
+    "sourceUrl": "https://drive.google.com/file/d/1ETPAawGmAbdv11O9rirzbJV3-rpQ0-8x/view?usp=drivesdk",
+    "bytes": 110884,
+    "sha256": "a0ed8f88de3c4493cb6adb0b9ffc96b10f59b0cf73bdf273f3ec516b51ee4bfa"
+  },
+  {
+    "path": "assets/frames/shot_017_00-01-15.424.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_017_00-01-15.424.jpg",
+    "driveFileId": "1OH0bTzKc0XGrYgoYBxL_nCF31qHbwe9r",
+    "sourceUrl": "https://drive.google.com/file/d/1OH0bTzKc0XGrYgoYBxL_nCF31qHbwe9r/view?usp=drivesdk",
+    "bytes": 78773,
+    "sha256": "6d53da56e7d2a783bbd33dab52be11d020fc4c3686c0024974272b7f4fac63da"
+  },
+  {
+    "path": "assets/frames/shot_018_00-01-17.633.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_018_00-01-17.633.jpg",
+    "driveFileId": "1UNixb7OFF3G-DkqQlDnVf1OhmRaaBzZw",
+    "sourceUrl": "https://drive.google.com/file/d/1UNixb7OFF3G-DkqQlDnVf1OhmRaaBzZw/view?usp=drivesdk",
+    "bytes": 119395,
+    "sha256": "f29581e32aed2474463cff30166f7fc293a40b056b58c1c39cb3c147735e05cf"
+  },
+  {
+    "path": "assets/frames/shot_019_00-01-20.174.jpg",
+    "originalPath": "../frames/07_161_04_GIANT_ANT_ROVER_862173657/shot_019_00-01-20.174.jpg",
+    "driveFileId": "1Ig2y0TipVVHnabYDE7QuW4A5UvFshEkb",
+    "sourceUrl": "https://drive.google.com/file/d/1Ig2y0TipVVHnabYDE7QuW4A5UvFshEkb/view?usp=drivesdk",
+    "bytes": 96881,
+    "sha256": "9f49437971a8170a1ac0d088f0dd2f76bb7f516db54bc2697ce605747fdb2516"
+  },
+  {
+    "path": "assets/keyframes/K01_00-01-000.jpg",
+    "originalPath": "../keyframes/07_rover-to-my-hooman/K01_00-01-000.jpg",
+    "driveFileId": "1xAi6BC-qOsikTRDXbngnNbrXippqkbDE",
+    "sourceUrl": "https://drive.google.com/file/d/1xAi6BC-qOsikTRDXbngnNbrXippqkbDE/view?usp=drivesdk",
+    "bytes": 64054,
+    "sha256": "835de987a54c29941740bf19c945f5b3fe847333814f105501bfc63227a4a30c"
+  },
+  {
+    "path": "assets/keyframes/K02_00-04-000.jpg",
+    "originalPath": "../keyframes/07_rover-to-my-hooman/K02_00-04-000.jpg",
+    "driveFileId": "15A6M2W8Wew2wkjZAYLNm2oqwDQv9RQGo",
+    "sourceUrl": "https://drive.google.com/file/d/15A6M2W8Wew2wkjZAYLNm2oqwDQv9RQGo/view?usp=drivesdk",
+    "bytes": 154704,
+    "sha256": "35c905137c93d1a2091acc3bb599fe826b0e25db40ce949194198ed35ab603a4"
+  },
+  {
+    "path": "assets/keyframes/K03_00-12-000.jpg",
+    "originalPath": "../keyframes/07_rover-to-my-hooman/K03_00-12-000.jpg",
+    "driveFileId": "17oGA7-YC_wgmcxLgG3xkI7WGLKj477Vs",
+    "sourceUrl": "https://drive.google.com/file/d/17oGA7-YC_wgmcxLgG3xkI7WGLKj477Vs/view?usp=drivesdk",
+    "bytes": 117193,
+    "sha256": "b2b9d1d2d017fa53fefb8e70137483459f811ec90dcd2f4a5a22d7f44517ebe3"
+  },
+  {
+    "path": "assets/keyframes/K04_00-18-000.jpg",
+    "originalPath": "../keyframes/07_rover-to-my-hooman/K04_00-18-000.jpg",
+    "driveFileId": "133Wqs-JG2kbv7LuPzdLmFshQwQr1HYU2",
+    "sourceUrl": "https://drive.google.com/file/d/133Wqs-JG2kbv7LuPzdLmFshQwQr1HYU2/view?usp=drivesdk",
+    "bytes": 175319,
+    "sha256": "6e1ddac8d5bc58d67afd17c2bac2e20aca956f4be438a5df93860e2f91b0b392"
+  },
+  {
+    "path": "assets/keyframes/K05_00-35-000.jpg",
+    "originalPath": "../keyframes/07_rover-to-my-hooman/K05_00-35-000.jpg",
+    "driveFileId": "1PXUEbfvIdDoGm31D8eia3tpdmtDG89hd",
+    "sourceUrl": "https://drive.google.com/file/d/1PXUEbfvIdDoGm31D8eia3tpdmtDG89hd/view?usp=drivesdk",
+    "bytes": 136726,
+    "sha256": "b611d2dbf759bc8621a898a4a855ec2159a4a7a4bd0877379a0e89c2178473a5"
+  },
+  {
+    "path": "assets/keyframes/K06_00-55-000.jpg",
+    "originalPath": "../keyframes/07_rover-to-my-hooman/K06_00-55-000.jpg",
+    "driveFileId": "18YbjsxE2SySS_73eqBLULbd0UlAgSLvG",
+    "sourceUrl": "https://drive.google.com/file/d/18YbjsxE2SySS_73eqBLULbd0UlAgSLvG/view?usp=drivesdk",
+    "bytes": 115093,
+    "sha256": "64261b1222224aa39a914178cd48e27a538e2725b51f25ef6518a6d9c40ecd58"
+  },
+  {
+    "path": "assets/keyframes/K07_01-16-000.jpg",
+    "originalPath": "../keyframes/07_rover-to-my-hooman/K07_01-16-000.jpg",
+    "driveFileId": "1mbMMmssUIAWlkUl-F_2bAbWvPceIij7U",
+    "sourceUrl": "https://drive.google.com/file/d/1mbMMmssUIAWlkUl-F_2bAbWvPceIij7U/view?usp=drivesdk",
+    "bytes": 91356,
+    "sha256": "1f9f495f86d74d199477bb564d14120ae1bf33f4b77f17346a32e7a2da65c367"
+  },
+  {
+    "path": "assets/keyframes/K08_01-22-000.jpg",
+    "originalPath": "../keyframes/07_rover-to-my-hooman/K08_01-22-000.jpg",
+    "driveFileId": "1HStvZ_kRpYTnH1hcYVA99a0fh0D7RSWo",
+    "sourceUrl": "https://drive.google.com/file/d/1HStvZ_kRpYTnH1hcYVA99a0fh0D7RSWo/view?usp=drivesdk",
+    "bytes": 106141,
+    "sha256": "c93b7663bf0becf413996ea4e5e8da8971a8d4badbc8637713dff82c57c7c2ec"
+  }
+]

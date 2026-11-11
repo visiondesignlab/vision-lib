@@ -1,5 +1,11 @@
 [
   {
+    "volume": 20,
+    "date": "2026-11-11",
+    "headline": "New Figma Motion updates",
+    "intro": "今天真正有分量的不是又多了几个生成按钮，而是动效、图像、版式和发布流程开始长出可复用参数与可回读边界。Figma 把 spring 做成能存进设计系统的变量；Adobe 一口气把画布、节点工作流、桌面应用和本地 MCP 串起来，但大量能力仍在 beta、private beta 或 2027 预告阶段。Framer 与 Vercel 则把权限、分支、环境归因这些“不好看但决定能不能交付”的部分说得更清楚。"
+  },
+  {
     "volume": 19,
     "date": "2026-11-10",
     "headline": "Workflow SDK now writes over WebSockets on Vercel",

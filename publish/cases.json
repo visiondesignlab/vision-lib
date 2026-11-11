@@ -7687,6 +7687,85 @@
    "featured": false,
    "updated_at": "2026-11-06T12:21:43+08:00",
    "published_at": "2026-11-06T12:21:43+08:00"
+  },
+  {
+   "id": "cms-1646c9c989bc4e36",
+   "type": "showcase",
+   "title": "Claude Fable 5.2 × Mythos 5.2｜模型发布短片",
+   "category": "AI",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "@claudeai",
+    "author_url": "https://x.com/claudeai",
+    "url": "https://x.com/claudeai/status/2119867114450268322",
+    "date": "2026-11-10 02:57（北京时间）"
+   },
+   "media": {
+    "kind": "video",
+    "thumbnail": "/media/x-2119867114450268322/cover.jpg",
+    "embed": "remote",
+    "specs": {
+     "resolution": "1920×1080",
+     "duration_s": 18.52,
+     "aspect_ratio": "16:9"
+    },
+    "video": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1920x1080/E6naF0FCPw_qRYv0.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2119862225028452352/vid/avc1/1920x1080/E6naF0FCPw_qRYv0.mp4"
+   },
+   "added_at": "2026-11-10T19:59:45+08:00",
+   "subtitle": "Claude 官方双模型发布短片，介绍面向复杂技术挑战的 AI 协作能力。",
+   "description": "Claude 官方发布 Fable 5.2 与 Mythos 5.2 的产品短片。原帖介绍了两个模型在编程、推理和视觉方面的改进，以及参与跨领域复杂项目的协作能力。保留官方视频与原帖，供 AI 产品发布传播参考。",
+   "tags": [
+    "Claude",
+    "Anthropic",
+    "AI 产品",
+    "模型发布",
+    "产品发布短片"
+   ],
+   "prompt": "",
+   "updated_at": "2026-11-10T19:59:45+08:00",
+   "published_at": "2026-11-10T19:59:45+08:00"
+  },
+  {
+   "id": "cms-9efc782436e14645",
+   "type": "showcase",
+   "title": "dessn｜品牌视觉动效片段",
+   "category": "动效设计",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "@ayushsoni_io",
+    "author_url": "https://x.com/ayushsoni_io",
+    "url": "https://x.com/ayushsoni_io/status/2119607784677539975",
+    "date": "2026-11-09 09:47（北京时间）"
+   },
+   "media": {
+    "kind": "video",
+    "thumbnail": "/media/x-2119607784677539975/cover.jpg",
+    "embed": "remote",
+    "specs": {
+     "resolution": "1920×1080",
+     "duration_s": 5.056,
+     "aspect_ratio": "16:9"
+    },
+    "video": "https://video.twimg.com/amplify_video/2119607492829380608/vid/avc1/1920x1080/BhjzDu3HenZ_hkGu.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2119607492829380608/vid/avc1/1920x1080/BhjzDu3HenZ_hkGu.mp4"
+   },
+   "added_at": "2026-11-10T20:02:27+08:00",
+   "brand": "dessn",
+   "subtitle": "Ayush Soni 分享的 dessn 品牌视觉动效，以手绘花朵、纹理和卡片构成鲜明的视觉语言。",
+   "description": "Ayush Soni 发布的 dessn 品牌视觉动效片段。绿色底色搭配手绘花朵、波纹质感与彩色卡片，将品牌图形和输入框界面组合在约 5 秒的短片中，可作为品牌视觉与界面动效的参考。",
+   "tags": [
+    "dessn",
+    "品牌设计",
+    "动效设计",
+    "视觉识别",
+    "手绘质感"
+   ],
+   "prompt": "",
+   "updated_at": "2026-11-10T20:02:27+08:00",
+   "published_at": "2026-11-10T20:02:27+08:00"
   }
  ]
 }

@@ -268,6 +268,274 @@
     "externalAttachments": 6
   },
   {
+    "id": "2026-10-21-05_back-market-monster",
+    "title": "Back Market — Monster",
+    "date": "2026-10-21",
+    "intro": "把被丢弃的充电线、耳机和手机缠成一只有情绪的怪物，让科技消费过量成为可被看见和被收养的问题。",
+    "brand": "Back Market",
+    "creator": "Nexus Studios",
+    "duration": "01:00.523",
+    "spec": "1920×1080 / h264 / 24000/1001 fps",
+    "cover": "assets/keyframes/K01_00-02-000.jpg",
+    "embed": "https://player.vimeo.com/video/800136695?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2023-characters/",
+    "reportSource": "https://drive.google.com/file/d/1euHI7ib71Eq4pQGfse34d8iQ8x1tYyib/view?usp=drivesdk",
+    "reportFileId": "1euHI7ib71Eq4pQGfse34d8iQ8x1tYyib",
+    "sha256": "c3d8360fa475d5cbeebd7520b4391079af12da6a96b958ef3dacae8fa7f89aa4",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 9,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(9 张,按内容需要选取)"
+      },
+      {
+        "id": "section-16",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-17",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-23",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-24",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-25",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-26",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 21,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-21-06_eggscape-eggstories",
+    "title": "Eggscape — Eggstories",
+    "date": "2026-10-21",
+    "intro": "用三组‘鸡蛋最怕什么’的黑色喜剧小故事，在不讲 UI 的情况下展示敌人、战斗和定制化三大玩法。",
+    "brand": "Eggscape",
+    "creator": "3DAR",
+    "duration": "01:53.813",
+    "spec": "1920×1080 / h264 / 24/1 fps",
+    "cover": "assets/keyframes/K01_00-02-000.jpg",
+    "embed": "https://player.vimeo.com/video/843622718?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2023-characters/",
+    "reportSource": "https://drive.google.com/file/d/1TUF3ZO5gp4HJPCRMnycq-saxMS0XZV0i/view?usp=drivesdk",
+    "reportFileId": "1TUF3ZO5gp4HJPCRMnycq-saxMS0XZV0i",
+    "sha256": "78b71227303f14ca4130dd8219e23feba37f1382888dd687102a54f371cacd91",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 9,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(9 张,按内容需要选取)"
+      },
+      {
+        "id": "section-16",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-17",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-23",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-24",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-25",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-26",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 52,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-21-07_rover-to-my-hooman",
+    "title": "Rover — To My Hooman",
+    "date": "2026-10-21",
+    "intro": "用宠物的拼写错误、手绘线条和简化视角，把离家照护服务说成一封宠物给主人的安心信。",
+    "brand": "Rover",
+    "creator": "Giant Ant",
+    "duration": "01:30.048",
+    "spec": "1920×1080 / h264 / 24/1 fps",
+    "cover": "assets/keyframes/K01_00-01-000.jpg",
+    "embed": "https://player.vimeo.com/video/862173657?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2023-characters/",
+    "reportSource": "https://drive.google.com/file/d/1GdZF4Uc2UxZTv679aXy-XrAmm_0zGytC/view?usp=drivesdk",
+    "reportFileId": "1GdZF4Uc2UxZTv679aXy-XrAmm_0zGytC",
+    "sha256": "fb6d7d285993921933c708d17beb98e34387f781f24796e9db8e8ad9b452091d",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 8,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(8 张,按内容需要选取)"
+      },
+      {
+        "id": "section-15",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-16",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-22",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-23",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-24",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-25",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 19,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-21-08_wednesday-main-titles",
+    "title": "Wednesday — Main Titles",
+    "date": "2026-10-21",
+    "intro": "把打字机、大提琴、时钟和蜘蛛网变成一座可连续穿行的黑色机械恶梦，用物件而不是剧照讲角色。",
+    "brand": "Netflix / Wednesday",
+    "creator": "Filmograph",
+    "duration": "01:05.088",
+    "spec": "1920×1080 / h264 / 24/1 fps",
+    "cover": "assets/keyframes/K01_00-01-000.jpg",
+    "embed": "https://player.vimeo.com/video/800136865?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2023-titles-and-broadcast-design/",
+    "reportSource": "https://drive.google.com/file/d/1AyzfoM8VFpot8shhEz9MRRg9-fN8aprS/view?usp=drivesdk",
+    "reportFileId": "1AyzfoM8VFpot8shhEz9MRRg9-fN8aprS",
+    "sha256": "1e142b262ac5d2172a989eb813c3499807898d63761c44ec04b4dabab5caeea7",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 8,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(8 张,按内容需要选取)"
+      },
+      {
+        "id": "section-15",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-16",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-22",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-23",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-24",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-25",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 9,
+    "externalAttachments": 6
+  },
+  {
     "id": "2026-10-06-01_alo_handbags",
     "title": "Alo Handbags — Tendril",
     "date": "2026-10-06",
