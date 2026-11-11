@@ -1,23 +1,19 @@
 #!/usr/bin/env python3
 """Send Pages results through one Feishu application bot to multiple chats."""
 
-import base64
 import hashlib
-import hmac
 import json
 import os
 import re
 import subprocess
 import sys
-import time
 import uuid
 from urllib.error import HTTPError, URLError
-from urllib.parse import urlparse
 from urllib.request import Request, urlopen
 
 
 class DeliveryUnknown(RuntimeError):
-    """A message might have arrived: never switch transports in this case."""
+    """A message might have arrived: retry only with the same UUID."""
 
 
 def app_request(path, payload, token=None):
@@ -78,7 +74,7 @@ def send_app(token, chat_id, card, env):
                         f"{env['GITHUB_REPOSITORY']}:{run_id}:{chat_id}:{digest}"))
     payload = {"receive_id": chat_id, "msg_type": "interactive",
                "content": content, "uuid": key}
-    # A timeout can be retried safely with the same UUID, never via the Webhook.
+    # A timeout can be retried safely with the same UUID.
     for attempt in range(2):
         try:
             result = app_request("im/v1/messages?receive_id_type=chat_id", payload, token)
@@ -96,31 +92,10 @@ def send_app(token, chat_id, card, env):
 
 
 def notify(card, env):
-    mode = env.get("FEISHU_NOTIFY_MODE", "webhook") or "webhook"
-    webhook, secret = env.get("FEISHU_BOT_WEBHOOK", ""), env.get("FEISHU_BOT_SIGNING_SECRET", "")
-
-    def legacy():
-        send(webhook, secret, card)
-        print("原群 Webhook 通知已发送。")
-
-    if mode == "webhook":
-        legacy()
-        return
-    if mode != "app":
-        raise ValueError("FEISHU_NOTIFY_MODE 仅支持 webhook 或 app")
-    fallback_chat = env.get("FEISHU_FALLBACK_CHAT_ID", "")
-    try:
-        targets = chat_ids(env)
-        if fallback_chat and fallback_chat not in targets:
-            raise ValueError("原群必须包含在 FEISHU_CHAT_IDS 中")
-        if not env.get("GITHUB_RUN_ID"):
-            raise ValueError("应用通知需要 GITHUB_RUN_ID 生成幂等键")
-        token = app_token(env)
-    except (ValueError, RuntimeError):
-        # Token/config failures happen before any message is sent.
-        if fallback_chat and webhook and secret:
-            legacy()
-        raise
+    targets = chat_ids(env)
+    if not env.get("GITHUB_RUN_ID"):
+        raise ValueError("应用通知需要 GITHUB_RUN_ID 生成幂等键")
+    token = app_token(env)
 
     failures = []
     for index, chat_id in enumerate(targets, start=1):
@@ -129,18 +104,8 @@ def notify(card, env):
             print(f"群 {index} 应用通知已发送，message_id={message_id}")
         except (ValueError, RuntimeError) as error:
             failures.append(f"群 {index}：{error}")
-            if not isinstance(error, DeliveryUnknown) and chat_id == fallback_chat and webhook and secret:
-                try:
-                    legacy()
-                except (ValueError, RuntimeError) as fallback_error:
-                    failures.append(f"原群回退：{fallback_error}")
     if failures:
         raise RuntimeError("；".join(failures))
-
-
-def signature(secret, timestamp):
-    key = f"{timestamp}\n{secret}".encode()
-    return base64.b64encode(hmac.new(key, b"", hashlib.sha256).digest()).decode()
 
 
 def commit_lines(event, limit=5):
@@ -207,29 +172,6 @@ def load_event(env):
             except (subprocess.SubprocessError, OSError):
                 pass  # head_commit remains available as the fallback.
     return event
-
-
-def send(webhook, secret, card, now=None):
-    target = urlparse(webhook)
-    if target.scheme != "https" or target.netloc != "open.feishu.cn" or not target.path.startswith("/open-apis/bot/v2/hook/"):
-        raise ValueError("飞书 Webhook 地址无效")
-    if not secret:
-        raise ValueError("缺少飞书签名配置")
-    timestamp = str(int(time.time() if now is None else now))
-    payload = {"timestamp": timestamp, "sign": signature(secret, timestamp),
-               "msg_type": "interactive", "card": card}
-    request = Request(webhook, data=json.dumps(payload, ensure_ascii=False).encode(),
-                      headers={"Content-Type": "application/json"}, method="POST")
-    try:
-        with urlopen(request, timeout=20) as response:
-            result = json.load(response)
-    except (URLError, TimeoutError, ValueError, OSError):
-        # Do not print exception URLs (they contain the bot credential), or retry
-        # an ambiguous timeout that might already have delivered the message.
-        raise RuntimeError("飞书通知请求未确认成功，请检查本次运行和群消息后再重试") from None
-    if result.get("code") != 0:
-        raise RuntimeError(f"飞书拒绝通知，错误码：{result.get('code', 'unknown')}")
-    return result
 
 
 def main():

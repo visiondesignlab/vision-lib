@@ -49,6 +49,6 @@ python3 -m http.server 8792 --bind 127.0.0.1 --directory output/pages-preview
 
 `Publish Vision Lab` 在每次 `main` 推送或手动发布结束后，通过同一个「Vision Lab Bot」应用机器人向「个个都是美工」和「上市 aura mate」发送信息卡片：标题为「Vision Lab · 发布成功」或「Vision Lab · 发布未完成」，正文显示操作人、提交编号与最新改动，底部提供「在线查看」「仓库地址」两个按钮。失败时补充构建和 Pages 状态，只有部署成功才标为发布成功。Pages 部署最多等待 30 分钟，避免同步文件超过默认 10 分钟时过早判定失败。
 
-应用只需 `im:message:send_as_bot` 权限，并加入两个目标群。仓库 Actions Secrets 保存 `FEISHU_APP_ID`、`FEISHU_APP_SECRET` 和逗号分隔的 `FEISHU_CHAT_IDS`；`FEISHU_FALLBACK_CHAT_ID` 指向原群。凭据不进入仓库、静态构建或日志。`FEISHU_NOTIFY_MODE` 仓库变量设为 `app` 后启用双群通知；为空或 `webhook` 时保持原通知，便于分阶段配置与回滚。
+应用只需 `im:message:send_as_bot` 权限，并加入两个目标群。仓库 Actions Secrets 只保存 `FEISHU_APP_ID`、`FEISHU_APP_SECRET` 和逗号分隔的 `FEISHU_CHAT_IDS`。凭据不进入仓库、静态构建或日志。发布通知固定通过应用机器人发送，两个群共用同一个应用身份。
 
-原来的 `FEISHU_BOT_WEBHOOK` 和 `FEISHU_BOT_SIGNING_SECRET` 在切换期间保留。应用认证失败，或原群应用发送被明确拒绝时，仅向原群回退 Webhook，并将任务标为失败供排查；第二个群单独失败不影响原群。应用发送使用工作流、目标群和卡片内容共同生成的 UUID，超时仅以相同 UUID 重试一次（飞书去重窗口为 1 小时）；重跑后发布结果改变时会产生新的 UUID。结果仍不明时不切换 Webhook，必须回读群消息后处理；超过 1 小时重跑工作流也应先回读，避免重复。日志记录成功消息 ID，核验须确认两个群的发送者都是同一个应用。
+两个群分别发送并记录结果，一个群失败不会阻止另一个群发送；任何失败都会将通知任务标为失败供排查。应用发送使用工作流、目标群和卡片内容共同生成的 UUID，超时仅以相同 UUID 重试一次（飞书去重窗口为 1 小时）；重跑后发布结果改变时会产生新的 UUID。结果仍不明时必须回读群消息后处理；超过 1 小时重跑工作流也应先回读，避免重复。日志记录成功消息 ID，核验须确认两个群的发送者都是同一个应用。
