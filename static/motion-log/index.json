@@ -536,6 +536,274 @@
     "externalAttachments": 6
   },
   {
+    "id": "2026-10-21-09_hello-tomorrow-main-titles",
+    "title": "Hello Tomorrow! — Main Titles",
+    "date": "2026-10-21",
+    "intro": "把 1950s 乐观主义广告里的家用机器组成一条注定失败的便利机械，让复古未来在优雅运动中暴露裂缝。",
+    "brand": "Apple TV+ / Hello Tomorrow!",
+    "creator": "Imaginary Forces",
+    "duration": "00:48.469",
+    "spec": "3840×2160 / h264 / 24/1 fps",
+    "cover": "assets/keyframes/K01_00-02-000.jpg",
+    "embed": "https://player.vimeo.com/video/806502508?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2023-titles-and-broadcast-design/",
+    "reportSource": "https://drive.google.com/file/d/19v3Q7JuV0Xmbg2lSduURG-XHmqfUdWaW/view?usp=drivesdk",
+    "reportFileId": "19v3Q7JuV0Xmbg2lSduURG-XHmqfUdWaW",
+    "sha256": "002f521fea02dc29368fe939c58cc9f4a27bb0ecbd242d3d73a267f2ee513658",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 8,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(8 张,按内容需要选取)"
+      },
+      {
+        "id": "section-15",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-16",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-22",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-23",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-24",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-25",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 3,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-21-10_espn-monday-night-football",
+    "title": "ESPN — Monday Night Football",
+    "date": "2026-10-21",
+    "intro": "把球员、聚光灯、LED 屏和球场进场通道组成一台红蓝发光的体育剧场，让广播包装与赛事仪式同步。",
+    "brand": "ESPN / Monday Night Football",
+    "creator": "Elastic",
+    "duration": "01:30.112",
+    "spec": "1920×1080 / h264 / 30000/1001 fps",
+    "cover": "assets/keyframes/K01_00-03-000.jpg",
+    "embed": "https://player.vimeo.com/video/882043256?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2023-titles-and-broadcast-design/",
+    "reportSource": "https://drive.google.com/file/d/1_4sPnmzOPVdwqjg2J5eba_KiyCGOn3cP/view?usp=drivesdk",
+    "reportFileId": "1_4sPnmzOPVdwqjg2J5eba_KiyCGOn3cP",
+    "sha256": "5f74eacd157d1706161bd1f1114a39761edc6d6c44fa7b8a945274747fc5d22c",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 9,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(9 张,按内容需要选取)"
+      },
+      {
+        "id": "section-16",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-17",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-23",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-24",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-25",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-26",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 94,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-20-01_ecovative-mushroom-materials",
+    "title": "Ecovative — Mushroom Materials",
+    "date": "2026-10-20",
+    "intro": "把菌丝从森林里的隐形网络一路放大到工业材料与成品，让可持续科技以一条可见的生长链被理解。",
+    "brand": "Ecovative",
+    "creator": "VantageFilms",
+    "duration": "01:44.320",
+    "spec": "1920×1080 / h264 / 30/1 fps",
+    "cover": "assets/keyframes/K01_00-03-000.jpg",
+    "embed": "https://player.vimeo.com/video/685257275?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2022-explainers/",
+    "reportSource": "https://drive.google.com/file/d/1wwxSuk1s7xi69LN6Mwm-rJfkhLHX0twi/view?usp=drivesdk",
+    "reportFileId": "1wwxSuk1s7xi69LN6Mwm-rJfkhLHX0twi",
+    "sha256": "5d8cbc9ac2282ac941f918e90304de87c8252e2e723205b21e9018dd5dcb5d41",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 9,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(9 张,按内容需要选取)"
+      },
+      {
+        "id": "section-16",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-17",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-23",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-24",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-25",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-26",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 25,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-20-02_wheel-of-time-main-titles",
+    "title": "The Wheel of Time — Main Titles",
+    "date": "2026-10-20",
+    "intro": "用无数纤维的牵引、编织与断裂生成角色和图腾，让命运之轮成为一张不断重写的人物织毯。",
+    "brand": "Amazon Prime Video",
+    "creator": "Imaginary Forces",
+    "duration": "01:32.139",
+    "spec": "3840×2160 / h264 / 24000/1001 fps",
+    "cover": "assets/keyframes/K01_00-02-000.jpg",
+    "embed": "https://player.vimeo.com/video/664373118?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/best-of-stash-2022-title-and-broadcast-design/",
+    "reportSource": "https://drive.google.com/file/d/1OU8Pc8ARQxIHaE4rknQ5edKgwXx5hjtD/view?usp=drivesdk",
+    "reportFileId": "1OU8Pc8ARQxIHaE4rknQ5edKgwXx5hjtD",
+    "sha256": "8157767b72e79ce49f7dc3b26cfad3821b11c96ee6cc7113d4041ee555c6d4e9",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 9,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(9 张,按内容需要选取)"
+      },
+      {
+        "id": "section-16",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-17",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-23",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-24",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-25",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-26",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 24,
+    "externalAttachments": 6
+  },
+  {
     "id": "2026-10-06-01_alo_handbags",
     "title": "Alo Handbags — Tendril",
     "date": "2026-10-06",

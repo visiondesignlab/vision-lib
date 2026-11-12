@@ -1,5 +1,11 @@
 [
   {
+    "volume": 21,
+    "date": "2026-11-12",
+    "headline": "Adobe MAX 2026 Sneaks",
+    "intro": "今天的主线不是“AI 又能多做一种内容”，而是软件开始争夺创作流程里更具体的控制权：事件何时发生、声音如何随镜头移动、重复编辑能否保留原生图层、agent 该不该放行一个动作。Adobe MAX Sneaks 给了十个研究方向，但它们仍是 Sneaks，不是已经进入套餐的功能；Vercel 的 decision model 倒是已经能按明确价格调用。"
+  },
+  {
     "volume": 20,
     "date": "2026-11-11",
     "headline": "New Figma Motion updates",
