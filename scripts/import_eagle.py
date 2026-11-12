@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 import re
 import shutil
+import stat
 import subprocess
 import sys
 from urllib.parse import urlsplit
@@ -24,7 +25,15 @@ IMAGES = {'png', 'jpg', 'jpeg', 'webp', 'gif'}
 VIDEOS = {'mp4', 'mov', 'webm'}
 
 
+def require_local(path):
+    # macOS can report a file's size while its content is only in iCloud.
+    # Opening it would synchronously wait for FileProvider to download it.
+    if getattr(Path(path).stat(), 'st_flags', 0) & getattr(stat, 'SF_DATALESS', 0x40000000):
+        raise OSError('iCloud content is not downloaded locally: ' + str(path))
+
+
 def digest(path):
+    require_local(path)
     with Path(path).open('rb') as stream:
         return hashlib.file_digest(stream, 'sha256').hexdigest()
 
@@ -64,6 +73,7 @@ def scan(library):
     items, failures = [], []
     for metadata in sorted((library / 'images').glob('*.info/metadata.json')):
         try:
+            require_local(metadata)
             data = json.loads(metadata.read_text())
             if data.get('isDeleted'):
                 continue
@@ -84,7 +94,8 @@ def scan(library):
         except (ValueError, KeyError, OSError) as error:
             failures.append({'metadata': str(metadata), 'error': str(error)})
     items.sort(key=lambda item: (item['addedAt'], item['id']))
-    return {'library': str(library), 'checkedAt': store.now_iso(), 'items': items, 'failures': failures}
+    return {'library': str(library), 'checkedAt': store.now_iso(), 'complete': not failures,
+            'items': items, 'failures': failures}
 
 
 def copy_media(items, key):
@@ -132,6 +143,10 @@ def copy_media(items, key):
 
 
 def apply_manifest(inventory, manifest, state_path):
+    if inventory.get('failures') or inventory.get('complete') is False:
+        return [{'sourceKey': source_key(group['sourceUrl']), 'status': 'failed',
+                 'error': 'Source scan is incomplete; preserve existing CMS media and retry after source files are available.'}
+                for group in manifest['groups']]
     state = json.loads(state_path.read_text()) if state_path.exists() else {'version': 1, 'groups': {}}
     lookup = {item['id']: item for item in inventory['items']}
     result = []
@@ -224,15 +239,16 @@ def main():
     parser.add_argument('--state', type=Path, default=ROOT/'output/eagle-intake/state.json')
     args = parser.parse_args()
     inventory = scan(args.library)
-    save(args.output/'inventory.json', inventory)
+    # A partial scan must never replace the last complete source inventory.
+    save(args.output/('inventory.json' if inventory['complete'] else 'inventory.partial.json'), inventory)
     if args.apply:
         result = apply_manifest(inventory, json.loads(args.apply.read_text()), args.state)
         save(args.output/'result.json', result)
         print(json.dumps(result, ensure_ascii=False, indent=2))
-        return int(any(item['status'] == 'failed' for item in result))
+        return int(not inventory['complete'] or any(item['status'] == 'failed' for item in result))
     print(json.dumps({'items': len(inventory['items']), 'sources': len({i['sourceKey'] for i in inventory['items']}),
                       'failures': inventory['failures']}, ensure_ascii=False))
-    return 0
+    return 0 if inventory['complete'] else 2
 
 
 if __name__ == '__main__':

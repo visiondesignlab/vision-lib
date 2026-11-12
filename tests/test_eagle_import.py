@@ -3,6 +3,7 @@ import json
 from contextlib import ExitStack
 from pathlib import Path
 import tempfile
+from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 from PIL import Image
@@ -10,9 +11,33 @@ from PIL import Image
 import cms_content
 import store
 from scripts.import_eagle import apply_manifest, scan, source_key
+from scripts import import_eagle
 
 
 class EagleTests(unittest.TestCase):
+    def test_icloud_placeholder_is_not_opened_for_hashing(self):
+        with patch.object(Path, 'stat', return_value=SimpleNamespace(st_flags=0x40000000)), \
+                patch.object(Path, 'open', side_effect=AssertionError('Cloud content must not be opened')):
+            with self.assertRaisesRegex(OSError, 'not downloaded locally'):
+                import_eagle.digest(Path('/cloud/video.mp4'))
+
+    def test_incomplete_scan_preserves_inventory_and_never_touches_cms(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            baseline = '{"complete":true,"items":[{"id":"keep"}]}'
+            (root/'inventory.json').write_text(baseline)
+            manifest = root/'manifest.json'
+            manifest.write_text(json.dumps({'groups':[{'sourceUrl':'https://x.com/a/status/123'}]}))
+            partial = {'complete':False,'items':[], 'failures':[{'error':'iCloud content is not downloaded locally'}]}
+            with patch.object(import_eagle, 'scan', return_value=partial), \
+                    patch.object(import_eagle.sys, 'argv', ['import_eagle.py', str(root/'source.library'),
+                        '--output',str(root),'--apply',str(manifest)]), \
+                    patch.object(store, 'load_cases', side_effect=AssertionError('CMS must stay untouched')):
+                self.assertEqual(import_eagle.main(), 1)
+            self.assertEqual((root/'inventory.json').read_text(), baseline)
+            self.assertEqual(json.loads((root/'inventory.partial.json').read_text()), partial)
+            self.assertEqual(json.loads((root/'result.json').read_text())[0]['status'], 'failed')
+
     def test_canonical_source_keys_keep_post_identity(self):
         self.assertEqual(source_key('https://twitter.com/a/status/123/photo/2?s=1'),
                          source_key('https://x.com/b/status/123/video/1'))
