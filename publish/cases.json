@@ -8024,6 +8024,217 @@
    "brand": "",
    "updated_at": "2026-11-11T12:19:54+08:00",
    "published_at": "2026-11-11T12:19:54+08:00"
+  },
+  {
+   "id": "cms-eef13f10da4d4f51",
+   "type": "showcase",
+   "title": "Claude Meetings｜视频会议中的实时 AI 协作",
+   "category": "AI",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "Claude（@claudeai）",
+    "author_url": "https://x.com/claudeai",
+    "url": "https://x.com/claudeai/status/2120973994191094179",
+    "date": "2026-11-13 04:16（北京时间）"
+   },
+   "media": {
+    "kind": "video",
+    "thumbnail": "/media/eagle-55128ac48e5c99a5/658E1BF2-C34A-49E8-9C34-A76E759885FB-2cb3208fc6.jpg",
+    "specs": {
+     "resolution": "1920×1080",
+     "duration_s": 62.6
+    },
+    "embed": "remote",
+    "video": "https://video.twimg.com/amplify_video/2120970641876586497/vid/avc1/1920x1080/GSxy8WyJp7bII_Zl.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2120970641876586497/vid/avc1/1920x1080/GSxy8WyJp7bII_Zl.mp4"
+   },
+   "added_at": "2026-11-13T10:53:56+08:00",
+   "subtitle": "Claude 官方发布的会议协作演示：让 Claude 加入团队视频通话，在讨论过程中共同创建文档、白板和其他成果。",
+   "description": "Claude 官方发布的 Claude Meetings 演示短片，将 AI 协作放进团队视频通话：成员在讨论时，Claude 同步参与创建文档、白板和其他成果。原帖说明该功能正以 Beta 形式向 Team 与 Enterprise 方案逐步开放，可作为 AI 会议产品的功能叙事与演示节奏参考。",
+   "tags": [
+    "Claude",
+    "Claude Meetings",
+    "AI 协作",
+    "视频会议",
+    "产品演示",
+    "官方发布"
+   ],
+   "brand": "Claude",
+   "updated_at": "2026-11-13T10:53:56+08:00",
+   "published_at": "2026-11-13T10:53:56+08:00"
+  },
+  {
+   "id": "cms-cd410456baaa4af9",
+   "type": "graphic",
+   "title": "Peeps｜高饱和字体动效与社交品牌视觉",
+   "category": "品牌视觉",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "anagram（@anagramclub）",
+    "author_url": "https://x.com/anagramclub",
+    "url": "https://x.com/anagramclub/status/2119809427700154464",
+    "date": "2026-11-09 23:08（北京时间）"
+   },
+   "media": {
+    "kind": "images",
+    "thumbnail": "/media/eagle-53259e11c4743339/3823CF71-6E53-46C7-9251-8E6319440FBB-962d8a3619.jpg",
+    "items": [
+     {
+      "kind": "video",
+      "url": "/media/eagle-53259e11c4743339/3823CF71-6E53-46C7-9251-8E6319440FBB-962d8a3619.mp4",
+      "thumbnail": "/media/eagle-53259e11c4743339/3823CF71-6E53-46C7-9251-8E6319440FBB-962d8a3619.jpg"
+     },
+     {
+      "kind": "image",
+      "url": "/media/eagle-53259e11c4743339/A915D8F1-F505-4A06-BF1C-016306EBEA67-9cf03d1c8b.jpg"
+     },
+     {
+      "kind": "video",
+      "url": "/media/eagle-53259e11c4743339/A7B15A5A-5B78-47E0-9603-FC9A27421D84-40262fd3b9.mp4",
+      "thumbnail": "/media/eagle-53259e11c4743339/A7B15A5A-5B78-47E0-9603-FC9A27421D84-40262fd3b9.jpg"
+     }
+    ]
+   },
+   "added_at": "2026-11-13T10:53:56+08:00",
+   "subtitle": "anagram 发布的 Peeps 品牌视觉，以夸张字形、荧光撞色和三维日常物件表达结识新朋友的活力。",
+   "description": "anagram 发布的一组 Peeps 品牌视觉，围绕结识新朋友与共同玩乐展开。大字排版采用拉伸、挤压和层叠色边，三维指尖陀螺与钥匙扣将社交兴趣转化为具体物件。收录原帖的两段动效和一张静态图，按原帖顺序纵向浏览，可参考动态字体、鲜明配色与品牌延展之间的呼应。",
+   "tags": [
+    "Peeps",
+    "anagram",
+    "品牌视觉",
+    "字体动效",
+    "高饱和配色",
+    "三维视觉",
+    "社交产品"
+   ],
+   "brand": "Peeps",
+   "updated_at": "2026-11-13T10:53:56+08:00",
+   "published_at": "2026-11-13T10:53:56+08:00"
+  },
+  {
+   "id": "cms-4f164842d317469f",
+   "type": "graphic",
+   "title": "Anagram｜Pact 的方块模块品牌识别",
+   "category": "品牌视觉",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "Fabio - abduzeedo（@abduzeedo）",
+    "author_url": "https://x.com/abduzeedo",
+    "url": "https://x.com/abduzeedo/status/2121006258115444919",
+    "date": "2026-11-13 06:24（北京时间）"
+   },
+   "media": {
+    "kind": "images",
+    "thumbnail": "/media/eagle-3104a0fdb51f78b4/2F8B59EC-66C9-4994-9359-3ACDE3C48469-95c43e2897.jpg",
+    "images": [
+     "/media/eagle-3104a0fdb51f78b4/2F8B59EC-66C9-4994-9359-3ACDE3C48469-95c43e2897.jpg",
+     "/media/eagle-3104a0fdb51f78b4/3CB7950C-CD34-44C0-90CD-0571DB88575C-4f2d4ca7da.jpg",
+     "/media/eagle-3104a0fdb51f78b4/9BB86087-CCDC-47B6-9D7B-69D9B2B5278C-63f3128018.jpg"
+    ]
+   },
+   "added_at": "2026-11-13T10:53:56+08:00",
+   "subtitle": "Pact 为 Anagram 设计的品牌识别从一个方块出发，将字形、网格与鲜明色块延展到平面编排、户外广告和立体灯箱。",
+   "description": "Pact 为 Anagram 设计的品牌识别，以单一方块为基础生成模块化图形、字形与网格，并通过高对比色彩建立统一的视觉语言。本组由 Fabio - abduzeedo 分享，按原帖顺序收录视觉系统总览、户外广告和立体灯箱三张图片；设计方为 Pact，项目解析文章作者为 Jeff。可参考基础图形如何在不同尺度与载体中保持识别度。",
+   "tags": [
+    "Anagram",
+    "Pact",
+    "品牌识别",
+    "模块化设计",
+    "网格系统",
+    "户外广告",
+    "空间导视"
+   ],
+   "brand": "Anagram",
+   "assets": [
+    {
+     "name": "项目解析（Jeff / abduzeedo）",
+     "url": "https://abduzeedo.com/branding-anagram-brand-identity-pact/"
+    },
+    {
+     "name": "原设计项目（Pact）",
+     "url": "https://www.pact.studio/case-studies/anagram"
+    }
+   ],
+   "updated_at": "2026-11-13T10:53:56+08:00",
+   "published_at": "2026-11-13T10:53:56+08:00"
+  },
+  {
+   "id": "cms-c4aa20690bdd48c3",
+   "type": "showcase",
+   "title": "OpenOn｜品牌视觉动态演绎",
+   "category": "品牌",
+   "status": "published",
+   "source": {
+    "platform": "小红书",
+    "author": "OKD",
+    "author_url": "https://www.xiaohongshu.com/user/profile/5b5586274eacab5d6834e417",
+    "url": "https://www.xiaohongshu.com/explore/6af65edf000000002b01e3aa",
+    "date": "2026-11-13 08:50（北京时间）"
+   },
+   "media": {
+    "kind": "video",
+    "thumbnail": "/media/eagle-e6ce2045e14ab364/14C12C37-E5E9-45DD-B7E5-71FD02DA1F8F-8a41c405ea.jpg",
+    "video": "/media/eagle-e6ce2045e14ab364/14C12C37-E5E9-45DD-B7E5-71FD02DA1F8F-8a41c405ea.mp4",
+    "specs": {
+     "resolution": "720×960",
+     "duration_s": 63.5
+    }
+   },
+   "added_at": "2026-11-14T21:17:57+08:00",
+   "subtitle": "OKD 分享的 OpenOn 品牌视觉演绎，以彩色渐变环形线条与衬线字标构成动态识别画面。",
+   "description": "OKD 分享的 OpenOn 品牌视觉演绎视频。画面将彩色渐变环形线条与黑色衬线字标组合，可参考品牌图形、字体与运动节奏的关系。原帖标注品牌、品牌设计、平面设计和动态设计；发布者在评论中注明为分享，原设计作者尚未在原帖中标明。",
+   "brand": "OpenOn",
+   "tags": [
+    "OpenOn",
+    "品牌设计",
+    "动态设计",
+    "视觉识别",
+    "Logo 动效"
+   ],
+   "updated_at": "2026-11-14T21:17:57+08:00",
+   "published_at": "2026-11-14T21:17:57+08:00"
+  },
+  {
+   "id": "cms-e625ec02215f493f",
+   "type": "showcase",
+   "title": "AULUMU × MWT_O｜iPhone 手机壳产品动画",
+   "category": "产品",
+   "status": "published",
+   "source": {
+    "platform": "小红书",
+    "author": "MWT_O",
+    "author_url": "https://www.xiaohongshu.com/user/profile/62257a840000000021029f66",
+    "url": "https://www.xiaohongshu.com/explore/6ae1718f0000000023010ead",
+    "date": "2026-10-28 11:52（北京时间）"
+   },
+   "media": {
+    "kind": "video",
+    "thumbnail": "/media/eagle-298eb2fcbda6f56c/BEE0D84E-9C8E-4A31-98E9-F7398967EA63-0cf1745f7b.jpg",
+    "video": "/media/eagle-298eb2fcbda6f56c/BEE0D84E-9C8E-4A31-98E9-F7398967EA63-0cf1745f7b.mp4",
+    "specs": {
+     "resolution": "720×720",
+     "duration_s": 35.0
+    }
+   },
+   "added_at": "2026-11-14T21:17:57+08:00",
+   "subtitle": "MWT_O 发布的 AULUMU iPhone 手机壳产品动画，以透明材质、流动形态与近景细节呈现产品视觉。",
+   "description": "MWT_O 发布的 AULUMU iPhone 手机壳产品动画。画面以灰阶背景、透明材质的高光反射与流动形态建立科技感，可作为手机配件广告和三维材质表现的参考。原帖标注 C4D、3D、motion、渲染与 Octane。",
+   "brand": "AULUMU",
+   "tags": [
+    "AULUMU",
+    "MWT_O",
+    "iPhone",
+    "手机壳",
+    "产品动画",
+    "3D",
+    "C4D",
+    "Octane"
+   ],
+   "updated_at": "2026-11-14T21:17:57+08:00",
+   "published_at": "2026-11-14T21:17:57+08:00"
   }
  ]
 }

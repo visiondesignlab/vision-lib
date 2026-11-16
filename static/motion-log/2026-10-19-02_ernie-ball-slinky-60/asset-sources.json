@@ -1,0 +1,800 @@
+[
+  {
+    "sourcePath": "../contact_sheets/02_ernie-ball-slinky-60_selected_keyframes.jpg",
+    "localPath": "assets/contact_sheets/02_ernie-ball-slinky-60_selected_keyframes.jpg",
+    "fileId": "1GPSojxwcGY7ysoGT5iIfWTwcN_UmwcKw",
+    "sourceUrl": "https://drive.google.com/file/d/1GPSojxwcGY7ysoGT5iIfWTwcN_UmwcKw/view?usp=drivesdk",
+    "sha256": "8d57cc875b42c95c451c91391c01a271872baafa85fab9fac1f4b8630cee466d"
+  },
+  {
+    "sourcePath": "../keyframes/02_ernie-ball-slinky-60/K01_00-03-000.jpg",
+    "localPath": "assets/keyframes/K01_00-03-000.jpg",
+    "fileId": "1NNIgB1wPv1SKX8ZjgwapSbVh9wWiBro4",
+    "sourceUrl": "https://drive.google.com/file/d/1NNIgB1wPv1SKX8ZjgwapSbVh9wWiBro4/view?usp=drivesdk",
+    "sha256": "0cf904f3f97865a328ae437aed38b908eace8effacdc5f0b3d87b6768ae70eca"
+  },
+  {
+    "sourcePath": "../keyframes/02_ernie-ball-slinky-60/K02_00-31-000.jpg",
+    "localPath": "assets/keyframes/K02_00-31-000.jpg",
+    "fileId": "1Yv9oJRc68oz_DWMqC0_6GywpjCnJulFb",
+    "sourceUrl": "https://drive.google.com/file/d/1Yv9oJRc68oz_DWMqC0_6GywpjCnJulFb/view?usp=drivesdk",
+    "sha256": "d83870e095bcd275125eb8a66537d9295e118d483e80887a86dd7c10d9044276"
+  },
+  {
+    "sourcePath": "../keyframes/02_ernie-ball-slinky-60/K03_01-07-000.jpg",
+    "localPath": "assets/keyframes/K03_01-07-000.jpg",
+    "fileId": "1YNUlv65Pk6eQ3UazGmmwjqjeSWISFbV_",
+    "sourceUrl": "https://drive.google.com/file/d/1YNUlv65Pk6eQ3UazGmmwjqjeSWISFbV_/view?usp=drivesdk",
+    "sha256": "f215b201093ab18cfa6b646baef672a17ef070d5ae3b87d01525b3a12f8c55a0"
+  },
+  {
+    "sourcePath": "../keyframes/02_ernie-ball-slinky-60/K04_01-41-000.jpg",
+    "localPath": "assets/keyframes/K04_01-41-000.jpg",
+    "fileId": "1N_GpCS9UoacPawQl487LnRST2jhBaspJ",
+    "sourceUrl": "https://drive.google.com/file/d/1N_GpCS9UoacPawQl487LnRST2jhBaspJ/view?usp=drivesdk",
+    "sha256": "eec475bfa4ef2282b5502c75dc5cf135f7292e2161353436df44c2b0239a45cb"
+  },
+  {
+    "sourcePath": "../keyframes/02_ernie-ball-slinky-60/K05_02-14-000.jpg",
+    "localPath": "assets/keyframes/K05_02-14-000.jpg",
+    "fileId": "1c7vD1802QEdlxWDHOZJELJJCAfucfwQq",
+    "sourceUrl": "https://drive.google.com/file/d/1c7vD1802QEdlxWDHOZJELJJCAfucfwQq/view?usp=drivesdk",
+    "sha256": "4649338ab73294c8aa6884e56df36f94b2e58e57dbdd16587bc75138b22db433"
+  },
+  {
+    "sourcePath": "../keyframes/02_ernie-ball-slinky-60/K06_02-48-000.jpg",
+    "localPath": "assets/keyframes/K06_02-48-000.jpg",
+    "fileId": "1QcrQZH0b9Rat4a-KWue5BwlAZc1Grb-p",
+    "sourceUrl": "https://drive.google.com/file/d/1QcrQZH0b9Rat4a-KWue5BwlAZc1Grb-p/view?usp=drivesdk",
+    "sha256": "0eb1d8e1cafafc1bb5c3cac4e7075abba4efb35bec61c3dd6b76d0f029ac4dfc"
+  },
+  {
+    "sourcePath": "../keyframes/02_ernie-ball-slinky-60/K07_03-26-000.jpg",
+    "localPath": "assets/keyframes/K07_03-26-000.jpg",
+    "fileId": "1p1zRUMLlXraAcIosEzmg1AwPTr_N7n5V",
+    "sourceUrl": "https://drive.google.com/file/d/1p1zRUMLlXraAcIosEzmg1AwPTr_N7n5V/view?usp=drivesdk",
+    "sha256": "c8619bf02361df748ffeb1b84cf87a37eaaa57f4b6e16258fd72d9051cd0940e"
+  },
+  {
+    "sourcePath": "../keyframes/02_ernie-ball-slinky-60/K08_03-54-000.jpg",
+    "localPath": "assets/keyframes/K08_03-54-000.jpg",
+    "fileId": "1c5YO9e7CM4hpIDWocyvoEInMvTZY6AK8",
+    "sourceUrl": "https://drive.google.com/file/d/1c5YO9e7CM4hpIDWocyvoEInMvTZY6AK8/view?usp=drivesdk",
+    "sha256": "b068ebf747d7aeffbacddfbdf6952f8f29e07e53e1fe7084b5c3920768628140"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_001_00-00-00.127.jpg",
+    "localPath": "assets/frames/shot_001_00-00-00.127.jpg",
+    "fileId": "1q96sD9S057Oicy3ut5DR3DQebTjxPMfJ",
+    "sourceUrl": "https://drive.google.com/file/d/1q96sD9S057Oicy3ut5DR3DQebTjxPMfJ/view?usp=drivesdk",
+    "sha256": "f61e550409d95400180b0b11192b495d48c468735e95f7e5c6b51b6d18751f69"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_002_00-00-00.883.jpg",
+    "localPath": "assets/frames/shot_002_00-00-00.883.jpg",
+    "fileId": "1ZgJFLD5uXpvd0ZTMLOd3NX_Ev1vw2k1t",
+    "sourceUrl": "https://drive.google.com/file/d/1ZgJFLD5uXpvd0ZTMLOd3NX_Ev1vw2k1t/view?usp=drivesdk",
+    "sha256": "143022d744295a148847164e3cb40e1cbba09561431ee4016342d85bc6ea8405"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_003_00-00-06.252.jpg",
+    "localPath": "assets/frames/shot_003_00-00-06.252.jpg",
+    "fileId": "1sTSyO04v_VyLkvJ9xQ__DPxa4yyulW8U",
+    "sourceUrl": "https://drive.google.com/file/d/1sTSyO04v_VyLkvJ9xQ__DPxa4yyulW8U/view?usp=drivesdk",
+    "sha256": "62c685b760e00cd2e195d8e556cb4ddd86ee135f6bc1c35d9c3bf8cd53f548e5"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_004_00-00-07.008.jpg",
+    "localPath": "assets/frames/shot_004_00-00-07.008.jpg",
+    "fileId": "1SqYxfiNCabxHAuitF2HQu0oo9DQbMC3L",
+    "sourceUrl": "https://drive.google.com/file/d/1SqYxfiNCabxHAuitF2HQu0oo9DQbMC3L/view?usp=drivesdk",
+    "sha256": "d35577012b328726521f289929616066530b1bdf439585a2675410c6b77fa8fd"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_005_00-00-08.842.jpg",
+    "localPath": "assets/frames/shot_005_00-00-08.842.jpg",
+    "fileId": "1B_ICJ5ixc4ORcRaRSJTHYcTvZHN6xZZT",
+    "sourceUrl": "https://drive.google.com/file/d/1B_ICJ5ixc4ORcRaRSJTHYcTvZHN6xZZT/view?usp=drivesdk",
+    "sha256": "2a59e8bbe5a8d193799bf761fc8304e476a67b1ce491794f0aae445bc894f4f3"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_006_00-00-11.425.jpg",
+    "localPath": "assets/frames/shot_006_00-00-11.425.jpg",
+    "fileId": "1SJgMirqcD4UNzoA0eMg0iPwoW2uBYPg8",
+    "sourceUrl": "https://drive.google.com/file/d/1SJgMirqcD4UNzoA0eMg0iPwoW2uBYPg8/view?usp=drivesdk",
+    "sha256": "4401d59f6b4eb24f371962c0d497a3aad70f29c1806d181b1da73b76ec6c5e88"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_007_00-00-14.258.jpg",
+    "localPath": "assets/frames/shot_007_00-00-14.258.jpg",
+    "fileId": "15mibaShxgfNxln1Ixjvv9ZTBfgpwGvGM",
+    "sourceUrl": "https://drive.google.com/file/d/15mibaShxgfNxln1Ixjvv9ZTBfgpwGvGM/view?usp=drivesdk",
+    "sha256": "5b747770acfde690d28cce79e708f4b338292958112c881c88eb875f47858d5a"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_008_00-00-15.758.jpg",
+    "localPath": "assets/frames/shot_008_00-00-15.758.jpg",
+    "fileId": "1fmuHROWH-9S2aFurc-HVo4zjLgcP8Bor",
+    "sourceUrl": "https://drive.google.com/file/d/1fmuHROWH-9S2aFurc-HVo4zjLgcP8Bor/view?usp=drivesdk",
+    "sha256": "626c132f0d46510509bca988897e32014d6c0048fd7a0cbc2c3376e9e38c2fd8"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_009_00-00-19.398.jpg",
+    "localPath": "assets/frames/shot_009_00-00-19.398.jpg",
+    "fileId": "1nitBvUfA-Ujfgl5xX8zwcF18b7511-89",
+    "sourceUrl": "https://drive.google.com/file/d/1nitBvUfA-Ujfgl5xX8zwcF18b7511-89/view?usp=drivesdk",
+    "sha256": "c30ce425602cef48f8b03c64e9b93be81dce8c7b59638cf8d4b1be811f5884ed"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_010_00-00-19.898.jpg",
+    "localPath": "assets/frames/shot_010_00-00-19.898.jpg",
+    "fileId": "1zUtM86Bl7t7Gv38pb1V_ZVLWzvlnri1T",
+    "sourceUrl": "https://drive.google.com/file/d/1zUtM86Bl7t7Gv38pb1V_ZVLWzvlnri1T/view?usp=drivesdk",
+    "sha256": "c24286657cb7ddf35a08ff889a4f898506eb43e0c0fd2b165dcff6d0e05e75b1"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_011_00-00-20.758.jpg",
+    "localPath": "assets/frames/shot_011_00-00-20.758.jpg",
+    "fileId": "1P3A_Pkv8QTOewthSqYFbYFhRsLfH6-NV",
+    "sourceUrl": "https://drive.google.com/file/d/1P3A_Pkv8QTOewthSqYFbYFhRsLfH6-NV/view?usp=drivesdk",
+    "sha256": "f9375e30a78bc6d2b8656a60e5e3ad3aac5a8af23b840ca86d6893efb72a107d"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_012_00-00-26.092.jpg",
+    "localPath": "assets/frames/shot_012_00-00-26.092.jpg",
+    "fileId": "1u4Zw9kGYsi8rf4ZTwM8mC4TmzT_XXZvJ",
+    "sourceUrl": "https://drive.google.com/file/d/1u4Zw9kGYsi8rf4ZTwM8mC4TmzT_XXZvJ/view?usp=drivesdk",
+    "sha256": "c50cbb28f8f1b253230378305819ee8a536dffc14a8ecedfa502321a3f09ed7b"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_013_00-00-28.008.jpg",
+    "localPath": "assets/frames/shot_013_00-00-28.008.jpg",
+    "fileId": "1BubhLiaCekah2YkdeRwBsxsq78L2Tldu",
+    "sourceUrl": "https://drive.google.com/file/d/1BubhLiaCekah2YkdeRwBsxsq78L2Tldu/view?usp=drivesdk",
+    "sha256": "b90bc2343e9af93fa75183985ecf62b802412087a1e53d346fddc32281646bab"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_014_00-00-30.175.jpg",
+    "localPath": "assets/frames/shot_014_00-00-30.175.jpg",
+    "fileId": "17ncCXGv9jc3aidY-ooyYDm_MVCG-fNkt",
+    "sourceUrl": "https://drive.google.com/file/d/17ncCXGv9jc3aidY-ooyYDm_MVCG-fNkt/view?usp=drivesdk",
+    "sha256": "c98776cf8d930f80ff9fea1dd95c320632a5ca74c684c2e1cabb75055314a8fa"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_015_00-00-32.715.jpg",
+    "localPath": "assets/frames/shot_015_00-00-32.715.jpg",
+    "fileId": "1J6IeE6LxE2_-letxeAJolCxXnC7T71yU",
+    "sourceUrl": "https://drive.google.com/file/d/1J6IeE6LxE2_-letxeAJolCxXnC7T71yU/view?usp=drivesdk",
+    "sha256": "84765005de7f9079570d7f25296116ab5e09f6a9c8cfcd8994553240c65b5ce6"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_016_00-00-34.092.jpg",
+    "localPath": "assets/frames/shot_016_00-00-34.092.jpg",
+    "fileId": "13Oi4-lo6Pe-WowaW6PeajMsQP_6Oxgq2",
+    "sourceUrl": "https://drive.google.com/file/d/13Oi4-lo6Pe-WowaW6PeajMsQP_6Oxgq2/view?usp=drivesdk",
+    "sha256": "a898936292802821031d4ad138abb35e47335205c9a525a2ecfa6a12ebfbaa03"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_017_00-00-36.925.jpg",
+    "localPath": "assets/frames/shot_017_00-00-36.925.jpg",
+    "fileId": "11VKE_k6Q0mVWOa7CmKabUYsGTcsk517T",
+    "sourceUrl": "https://drive.google.com/file/d/11VKE_k6Q0mVWOa7CmKabUYsGTcsk517T/view?usp=drivesdk",
+    "sha256": "55b0436985b187839821948f8309ca53b39066e6aff0ebe01e6c4b82b6a51268"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_018_00-00-38.758.jpg",
+    "localPath": "assets/frames/shot_018_00-00-38.758.jpg",
+    "fileId": "1YT5T6U2BZ4XjvgNkz6CNcXigXQRJzsmo",
+    "sourceUrl": "https://drive.google.com/file/d/1YT5T6U2BZ4XjvgNkz6CNcXigXQRJzsmo/view?usp=drivesdk",
+    "sha256": "b06028709abcd9fdf1f624a33e75285039154b1911080190245ecaf32c98e4eb"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_019_00-00-42.675.jpg",
+    "localPath": "assets/frames/shot_019_00-00-42.675.jpg",
+    "fileId": "1nQWgYUSZJikCSJfKXHwZ-ui51Jm4qve4",
+    "sourceUrl": "https://drive.google.com/file/d/1nQWgYUSZJikCSJfKXHwZ-ui51Jm4qve4/view?usp=drivesdk",
+    "sha256": "c8829effcc5acbf0acfc680b22d0e25e64394261edc126f9016d3eb30355da60"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_020_00-00-45.925.jpg",
+    "localPath": "assets/frames/shot_020_00-00-45.925.jpg",
+    "fileId": "1-gUuTthYIHKyHfH-AAET-wMmXUHZ_28k",
+    "sourceUrl": "https://drive.google.com/file/d/1-gUuTthYIHKyHfH-AAET-wMmXUHZ_28k/view?usp=drivesdk",
+    "sha256": "5a4bfaed4e8ab3ce596243897036ae4b97ab797f1f12f34fefb01789a47495ad"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_021_00-00-49.175.jpg",
+    "localPath": "assets/frames/shot_021_00-00-49.175.jpg",
+    "fileId": "1Mw_dZFQQqiWL9RI_8q0ZWx2nmEgSA981",
+    "sourceUrl": "https://drive.google.com/file/d/1Mw_dZFQQqiWL9RI_8q0ZWx2nmEgSA981/view?usp=drivesdk",
+    "sha256": "50253f0a440ff8eef65f0287504793ad6f0c067dae5c5ce0474d8f3726b6c46c"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_022_00-00-51.752.jpg",
+    "localPath": "assets/frames/shot_022_00-00-51.752.jpg",
+    "fileId": "11TpzilX2N1s867jY8RR1q0uRYWB_8GCJ",
+    "sourceUrl": "https://drive.google.com/file/d/11TpzilX2N1s867jY8RR1q0uRYWB_8GCJ/view?usp=drivesdk",
+    "sha256": "07348672d59f5d9025f5c63a222d433000e47b8540528a3a7a818a8a2fc00d01"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_023_00-00-52.508.jpg",
+    "localPath": "assets/frames/shot_023_00-00-52.508.jpg",
+    "fileId": "1ZvF8E3fR0nV4SC45lSmGHABO1mS8VMF0",
+    "sourceUrl": "https://drive.google.com/file/d/1ZvF8E3fR0nV4SC45lSmGHABO1mS8VMF0/view?usp=drivesdk",
+    "sha256": "0421d7538a438b3e70c9a5aecafbb94966d13ec533224c86c561a3aa3f2f0f99"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_024_00-00-55.092.jpg",
+    "localPath": "assets/frames/shot_024_00-00-55.092.jpg",
+    "fileId": "1WH8BcDKhvuqj-d62YuLAeOcypB4gX6Z4",
+    "sourceUrl": "https://drive.google.com/file/d/1WH8BcDKhvuqj-d62YuLAeOcypB4gX6Z4/view?usp=drivesdk",
+    "sha256": "36a2a273d91ea556e4ac11ec27dcb5c32d41f4614135b440acb22c2e8ec97245"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_025_00-00-57.342.jpg",
+    "localPath": "assets/frames/shot_025_00-00-57.342.jpg",
+    "fileId": "1F2QFZP3ozwkBQP2zkYxYns2yeb2qcdye",
+    "sourceUrl": "https://drive.google.com/file/d/1F2QFZP3ozwkBQP2zkYxYns2yeb2qcdye/view?usp=drivesdk",
+    "sha256": "982c04bbc2b95582947e02f4267a4d962605c7a1a17c5c596646bc71f6f53938"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_026_00-00-59.425.jpg",
+    "localPath": "assets/frames/shot_026_00-00-59.425.jpg",
+    "fileId": "10bHR805tYZDbJbMSonKOn8Lp388qlKLq",
+    "sourceUrl": "https://drive.google.com/file/d/10bHR805tYZDbJbMSonKOn8Lp388qlKLq/view?usp=drivesdk",
+    "sha256": "c5a4c6623d9f474be0ab605c093965621018cd2dc7665e4808356faa83ba9205"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_027_00-01-06.453.jpg",
+    "localPath": "assets/frames/shot_027_00-01-06.453.jpg",
+    "fileId": "18JSp0FtEDaJqF5_XlRmwP54fnGoQ3pnw",
+    "sourceUrl": "https://drive.google.com/file/d/18JSp0FtEDaJqF5_XlRmwP54fnGoQ3pnw/view?usp=drivesdk",
+    "sha256": "2f17f25c867fc81125ee7351a8cdba1829d24cab13178b3150582f36236b0ffb"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_028_00-01-07.315.jpg",
+    "localPath": "assets/frames/shot_028_00-01-07.315.jpg",
+    "fileId": "1_w1g1XKnniq42rBWy5pDIEk4H5m33AY-",
+    "sourceUrl": "https://drive.google.com/file/d/1_w1g1XKnniq42rBWy5pDIEk4H5m33AY-/view?usp=drivesdk",
+    "sha256": "146cbaa460161f7c1e96d7fe1063c5889b77446c15dc620ec33a58f2f703661d"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_029_00-01-07.878.jpg",
+    "localPath": "assets/frames/shot_029_00-01-07.878.jpg",
+    "fileId": "1EvKL3zQzmxFgSHitJkkvvULiugRjTcP1",
+    "sourceUrl": "https://drive.google.com/file/d/1EvKL3zQzmxFgSHitJkkvvULiugRjTcP1/view?usp=drivesdk",
+    "sha256": "9a4aad3b48db44503038b7d9b1d72e86c12b018f63d84d8a06cc9712ba760513"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_030_00-01-08.418.jpg",
+    "localPath": "assets/frames/shot_030_00-01-08.418.jpg",
+    "fileId": "1dN91vCWwO6RNcj8zk-1bZAYOoopeDVN_",
+    "sourceUrl": "https://drive.google.com/file/d/1dN91vCWwO6RNcj8zk-1bZAYOoopeDVN_/view?usp=drivesdk",
+    "sha256": "93a4f73641fa3d422c4a940c716a5532b8e05968c3280cb2a6325d81b2e38167"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_031_00-01-09.175.jpg",
+    "localPath": "assets/frames/shot_031_00-01-09.175.jpg",
+    "fileId": "1EmhRcj2yrHqUl4OphJgkYqJflgkP0b3b",
+    "sourceUrl": "https://drive.google.com/file/d/1EmhRcj2yrHqUl4OphJgkYqJflgkP0b3b/view?usp=drivesdk",
+    "sha256": "c6b0a94508997df73d79e05c911ead7ed32abca4fa7c39df787fa5644f7e07e8"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_032_00-01-12.338.jpg",
+    "localPath": "assets/frames/shot_032_00-01-12.338.jpg",
+    "fileId": "1pON3eNVcgM2R78rDbemnNDZ7qN7TpaBS",
+    "sourceUrl": "https://drive.google.com/file/d/1pON3eNVcgM2R78rDbemnNDZ7qN7TpaBS/view?usp=drivesdk",
+    "sha256": "f33700f1e80de9cec04179873890d13d3ff746f8b83271be09f8df3ecb97048c"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_033_00-01-13.508.jpg",
+    "localPath": "assets/frames/shot_033_00-01-13.508.jpg",
+    "fileId": "1raqv38eXdl0v4wyDfvPeBQCp7AMwyeM3",
+    "sourceUrl": "https://drive.google.com/file/d/1raqv38eXdl0v4wyDfvPeBQCp7AMwyeM3/view?usp=drivesdk",
+    "sha256": "a1615888caf1d80c4087edb74a1b467abf15d9574cae4ee3e35be899833384d2"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_034_00-01-16.258.jpg",
+    "localPath": "assets/frames/shot_034_00-01-16.258.jpg",
+    "fileId": "1iJiavlBWUI6ky4d7EXkCNlZOjAPLAO_r",
+    "sourceUrl": "https://drive.google.com/file/d/1iJiavlBWUI6ky4d7EXkCNlZOjAPLAO_r/view?usp=drivesdk",
+    "sha256": "779d9e4b6e06f0b3fb6a9a4c0a45c0681cb26e4f8c7623429f41c26b9eb9e43e"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_035_00-01-18.258.jpg",
+    "localPath": "assets/frames/shot_035_00-01-18.258.jpg",
+    "fileId": "16g6PootxZC8NENUk6YJc79mAVHZ617Rh",
+    "sourceUrl": "https://drive.google.com/file/d/16g6PootxZC8NENUk6YJc79mAVHZ617Rh/view?usp=drivesdk",
+    "sha256": "0743ecafe2d35f912d04f6c7b152f4fd4e8838e0a1e96dda64d9ed97b5b04540"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_036_00-01-20.925.jpg",
+    "localPath": "assets/frames/shot_036_00-01-20.925.jpg",
+    "fileId": "1Eqc73d_s1BVZic96qaR5mchLHUAPVTIm",
+    "sourceUrl": "https://drive.google.com/file/d/1Eqc73d_s1BVZic96qaR5mchLHUAPVTIm/view?usp=drivesdk",
+    "sha256": "be016cd0e2cff23d64eebdb1d33f85fc56c053ed8f77f520d039f257d43eb526"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_037_00-01-24.508.jpg",
+    "localPath": "assets/frames/shot_037_00-01-24.508.jpg",
+    "fileId": "1FZ_swCYl5JwXRx0OrMTzKX3ZovMDqdf3",
+    "sourceUrl": "https://drive.google.com/file/d/1FZ_swCYl5JwXRx0OrMTzKX3ZovMDqdf3/view?usp=drivesdk",
+    "sha256": "22e91e6d18ff12821658df4cc712d93f557c6ecb63cab5606eaf8a0db3f8ff1a"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_038_00-01-31.533.jpg",
+    "localPath": "assets/frames/shot_038_00-01-31.533.jpg",
+    "fileId": "1MYzKaWNXOZIxy1fQMnAAQGOqw80opWFl",
+    "sourceUrl": "https://drive.google.com/file/d/1MYzKaWNXOZIxy1fQMnAAQGOqw80opWFl/view?usp=drivesdk",
+    "sha256": "00e282c9d7ded399802c213b445f41e4298348c1cc51e533b1e834d2b8eb69f2"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_039_00-01-32.172.jpg",
+    "localPath": "assets/frames/shot_039_00-01-32.172.jpg",
+    "fileId": "1NDcSMhJdTKwG_3xfF1PQMrX5phxXvIdQ",
+    "sourceUrl": "https://drive.google.com/file/d/1NDcSMhJdTKwG_3xfF1PQMrX5phxXvIdQ/view?usp=drivesdk",
+    "sha256": "44b9be2bbfeb2e9ce8305ca1992da9dd45ecac5beb5112b2f7658e051476d756"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_040_00-01-33.045.jpg",
+    "localPath": "assets/frames/shot_040_00-01-33.045.jpg",
+    "fileId": "1npLPLx0fkVprA4DIaEd5DAEwUwaBvPi6",
+    "sourceUrl": "https://drive.google.com/file/d/1npLPLx0fkVprA4DIaEd5DAEwUwaBvPi6/view?usp=drivesdk",
+    "sha256": "bc358a6a0ddb9a9d312f5210432d776ed5d4031e783217488e9ab6feeac069a5"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_041_00-01-33.585.jpg",
+    "localPath": "assets/frames/shot_041_00-01-33.585.jpg",
+    "fileId": "1qAcP7Wae-rSkDv-40cOsv1dfgm0EYpVh",
+    "sourceUrl": "https://drive.google.com/file/d/1qAcP7Wae-rSkDv-40cOsv1dfgm0EYpVh/view?usp=drivesdk",
+    "sha256": "8e0b8113fc1f727b94438954daab06c383a1a2550fbd5f53cd2f10e003f1888e"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_042_00-01-33.918.jpg",
+    "localPath": "assets/frames/shot_042_00-01-33.918.jpg",
+    "fileId": "1hdXZtN-MZdGzvqPVpTy3_01Nzfi0ilUr",
+    "sourceUrl": "https://drive.google.com/file/d/1hdXZtN-MZdGzvqPVpTy3_01Nzfi0ilUr/view?usp=drivesdk",
+    "sha256": "1aa845017bfa576d34cc4cd230147e2caf302db7b2551316c36c812ede279f30"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_043_00-01-34.315.jpg",
+    "localPath": "assets/frames/shot_043_00-01-34.315.jpg",
+    "fileId": "1p7upglJo4AltapLb8Uz0S_g6q6wPQJms",
+    "sourceUrl": "https://drive.google.com/file/d/1p7upglJo4AltapLb8Uz0S_g6q6wPQJms/view?usp=drivesdk",
+    "sha256": "5f873d407a31f9b128fe34bd4ae4549e1b1416a437ed278d03894e6f647ad5a9"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_044_00-01-35.175.jpg",
+    "localPath": "assets/frames/shot_044_00-01-35.175.jpg",
+    "fileId": "17nfrpOu7w-78wHIKUciOwNieBXz6VxLv",
+    "sourceUrl": "https://drive.google.com/file/d/17nfrpOu7w-78wHIKUciOwNieBXz6VxLv/view?usp=drivesdk",
+    "sha256": "04794e978322f2ed5b2d89c216517b4c687aa429a3f1f80d0713844e284d93e2"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_045_00-01-38.925.jpg",
+    "localPath": "assets/frames/shot_045_00-01-38.925.jpg",
+    "fileId": "1FeDB1Fgoh4zhLuzqTCy8tGWPEvW_mFZK",
+    "sourceUrl": "https://drive.google.com/file/d/1FeDB1Fgoh4zhLuzqTCy8tGWPEvW_mFZK/view?usp=drivesdk",
+    "sha256": "246571d07b577aa0ac014c76699076b36cd5d5a509605f43267e99437680acde"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_046_00-01-49.097.jpg",
+    "localPath": "assets/frames/shot_046_00-01-49.097.jpg",
+    "fileId": "1aUozRkGzhJCre1SZT1Zx3Xq90-e_BBZM",
+    "sourceUrl": "https://drive.google.com/file/d/1aUozRkGzhJCre1SZT1Zx3Xq90-e_BBZM/view?usp=drivesdk",
+    "sha256": "bef912dce8265f7f1fe34b4e075e276e1be6e8107892a8f315d7ce4766d853e6"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_047_00-01-49.712.jpg",
+    "localPath": "assets/frames/shot_047_00-01-49.712.jpg",
+    "fileId": "14Aw1fMYmRk8srYKr4rc00Yms3bTfDcZ1",
+    "sourceUrl": "https://drive.google.com/file/d/14Aw1fMYmRk8srYKr4rc00Yms3bTfDcZ1/view?usp=drivesdk",
+    "sha256": "322dae76930af2a55e64fd75a34ba060662b59168c9f85f1d4bc2a85edd793ff"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_048_00-01-50.315.jpg",
+    "localPath": "assets/frames/shot_048_00-01-50.315.jpg",
+    "fileId": "1YAGZn77OOAiFlUl6TBTlxhNiZ_HLm4A-",
+    "sourceUrl": "https://drive.google.com/file/d/1YAGZn77OOAiFlUl6TBTlxhNiZ_HLm4A-/view?usp=drivesdk",
+    "sha256": "bc737b3c9f58beb03b38316f1780fd60c3ae3ffc0c0c0c316957a62f0bf715e7"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_049_00-01-51.100.jpg",
+    "localPath": "assets/frames/shot_049_00-01-51.100.jpg",
+    "fileId": "1Bd88PXNrZvcp6GUqCpf1giZqfDRUuo5b",
+    "sourceUrl": "https://drive.google.com/file/d/1Bd88PXNrZvcp6GUqCpf1giZqfDRUuo5b/view?usp=drivesdk",
+    "sha256": "2ea3149c794f866b1470d44173c9b08e2903e4817d1dd671fd67d936e3ef335a"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_050_00-01-52.002.jpg",
+    "localPath": "assets/frames/shot_050_00-01-52.002.jpg",
+    "fileId": "171xDa0nS3pvofI27vhKrdmc8MisttLWX",
+    "sourceUrl": "https://drive.google.com/file/d/171xDa0nS3pvofI27vhKrdmc8MisttLWX/view?usp=drivesdk",
+    "sha256": "19b8c61862e2b788e6e133051ec557ff229ccf9e5d473ecc7e9dc865ec61a9f1"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_051_00-01-52.493.jpg",
+    "localPath": "assets/frames/shot_051_00-01-52.493.jpg",
+    "fileId": "1L6GrVjVeCN0bTuGlebyDJbMSOdqlQ_qq",
+    "sourceUrl": "https://drive.google.com/file/d/1L6GrVjVeCN0bTuGlebyDJbMSOdqlQ_qq/view?usp=drivesdk",
+    "sha256": "1a53cf6fa4f06246d424c83cce8e2041d6e723e9a75fb85c19adcabaae63841a"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_052_00-01-53.243.jpg",
+    "localPath": "assets/frames/shot_052_00-01-53.243.jpg",
+    "fileId": "14-A7F-lMYEO0zb2hTX6EeLof_00zpmo8",
+    "sourceUrl": "https://drive.google.com/file/d/14-A7F-lMYEO0zb2hTX6EeLof_00zpmo8/view?usp=drivesdk",
+    "sha256": "42b716143bae0fb238aacb57e50003df31e58f44fc9c4598f2c7d57a73b88420"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_053_00-01-54.258.jpg",
+    "localPath": "assets/frames/shot_053_00-01-54.258.jpg",
+    "fileId": "1iykbOgdI6i9xUh9AYvOZCrIIt-3cgHHV",
+    "sourceUrl": "https://drive.google.com/file/d/1iykbOgdI6i9xUh9AYvOZCrIIt-3cgHHV/view?usp=drivesdk",
+    "sha256": "272d3a00394369b31d41213f29091900cb4741476876ca51572e7ca79e8480e6"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_054_00-01-58.758.jpg",
+    "localPath": "assets/frames/shot_054_00-01-58.758.jpg",
+    "fileId": "1uY5P14U0DmU3g1j30K6GJP71-cIKmkR5",
+    "sourceUrl": "https://drive.google.com/file/d/1uY5P14U0DmU3g1j30K6GJP71-cIKmkR5/view?usp=drivesdk",
+    "sha256": "4560720017e863f49ee2488b4fdb28d0e6925fd611182f542b3eed9fda5c34f9"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_055_00-02-01.382.jpg",
+    "localPath": "assets/frames/shot_055_00-02-01.382.jpg",
+    "fileId": "129H23U-sdTFfWhzEcj8l1KtDZ_DmyRWJ",
+    "sourceUrl": "https://drive.google.com/file/d/129H23U-sdTFfWhzEcj8l1KtDZ_DmyRWJ/view?usp=drivesdk",
+    "sha256": "f3d2c965d815bdcaebac2a9b13132bd71ddf121f7d854f54844e9cc32e75071b"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_056_00-02-02.620.jpg",
+    "localPath": "assets/frames/shot_056_00-02-02.620.jpg",
+    "fileId": "1lsA996bTxmFBqcPjOwoShDoc8msDAecb",
+    "sourceUrl": "https://drive.google.com/file/d/1lsA996bTxmFBqcPjOwoShDoc8msDAecb/view?usp=drivesdk",
+    "sha256": "ad181ec745023c283f674f322910f9e8f850277e94d3834666f9d3012aa2810e"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_057_00-02-03.798.jpg",
+    "localPath": "assets/frames/shot_057_00-02-03.798.jpg",
+    "fileId": "1Pkh0SPZhOeM8V5Iw0e85NW8bdgwYb0od",
+    "sourceUrl": "https://drive.google.com/file/d/1Pkh0SPZhOeM8V5Iw0e85NW8bdgwYb0od/view?usp=drivesdk",
+    "sha256": "5382ac586fbc67f24fab47fb59139d6ef4e7c2beb0d334d0dcfaab5aac5b25a0"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_058_00-02-05.037.jpg",
+    "localPath": "assets/frames/shot_058_00-02-05.037.jpg",
+    "fileId": "1OFlivToIW2NOQlXaRA0BBFycvkZMcdyk",
+    "sourceUrl": "https://drive.google.com/file/d/1OFlivToIW2NOQlXaRA0BBFycvkZMcdyk/view?usp=drivesdk",
+    "sha256": "06b277be494995bd795a9d1406743f504610fcd298012895e43c7ddf06bf58db"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_059_00-02-06.258.jpg",
+    "localPath": "assets/frames/shot_059_00-02-06.258.jpg",
+    "fileId": "1VSxKzoBMj5_A3MbkPY0lUOQcTtw8Fa5m",
+    "sourceUrl": "https://drive.google.com/file/d/1VSxKzoBMj5_A3MbkPY0lUOQcTtw8Fa5m/view?usp=drivesdk",
+    "sha256": "f19f5ad620015d48a333eef77507f29e12a22a6e7cdfa14f6b477344560392b8"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_060_00-02-09.008.jpg",
+    "localPath": "assets/frames/shot_060_00-02-09.008.jpg",
+    "fileId": "1OK3qI9aiIjoSG9tF5LLAI2hvcHlNKJn7",
+    "sourceUrl": "https://drive.google.com/file/d/1OK3qI9aiIjoSG9tF5LLAI2hvcHlNKJn7/view?usp=drivesdk",
+    "sha256": "933d9670a64c7a92f45ce99fe9762c0e4e46152d0677765d008451d17a907b7e"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_061_00-02-12.752.jpg",
+    "localPath": "assets/frames/shot_061_00-02-12.752.jpg",
+    "fileId": "1CzygFd0nqFWUCWiNjSvDlDsOF3nTaOc9",
+    "sourceUrl": "https://drive.google.com/file/d/1CzygFd0nqFWUCWiNjSvDlDsOF3nTaOc9/view?usp=drivesdk",
+    "sha256": "83add05705b07d5df0f7989a3806e5989f8948744d2563a2b3688474c62cb0d1"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_062_00-02-13.508.jpg",
+    "localPath": "assets/frames/shot_062_00-02-13.508.jpg",
+    "fileId": "1zflwMIj60khRxBogMc279YCY74uTCmAa",
+    "sourceUrl": "https://drive.google.com/file/d/1zflwMIj60khRxBogMc279YCY74uTCmAa/view?usp=drivesdk",
+    "sha256": "7eb55c72aaf64105f077217dcea21e094e8abb2b62e5cd540c6780eab68725d7"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_063_00-02-15.508.jpg",
+    "localPath": "assets/frames/shot_063_00-02-15.508.jpg",
+    "fileId": "1-7bdctGLkanwda_GRwfxF9mnjV4aPb-z",
+    "sourceUrl": "https://drive.google.com/file/d/1-7bdctGLkanwda_GRwfxF9mnjV4aPb-z/view?usp=drivesdk",
+    "sha256": "efb0b88f4fdc8a2aac23ab915969866ba28e18e0be185332a2a1d1250cc5adb0"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_064_00-02-18.508.jpg",
+    "localPath": "assets/frames/shot_064_00-02-18.508.jpg",
+    "fileId": "1kMuBJz4wsJfr0qFG78fsgeRWnRdJLqIV",
+    "sourceUrl": "https://drive.google.com/file/d/1kMuBJz4wsJfr0qFG78fsgeRWnRdJLqIV/view?usp=drivesdk",
+    "sha256": "c1f12f1b2d0361adfbe74351cb0cffde46597ed2c97b09782ca279d0e6ba8d6d"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_065_00-02-21.252.jpg",
+    "localPath": "assets/frames/shot_065_00-02-21.252.jpg",
+    "fileId": "1ZlESPjc0Z5xvbzVq4xZqqBpivtWtBEHW",
+    "sourceUrl": "https://drive.google.com/file/d/1ZlESPjc0Z5xvbzVq4xZqqBpivtWtBEHW/view?usp=drivesdk",
+    "sha256": "bf7a7aa1aa4f08052f8e35b780a9beba428665540f041d66a0d82552d83fea0a"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_066_00-02-22.008.jpg",
+    "localPath": "assets/frames/shot_066_00-02-22.008.jpg",
+    "fileId": "1PlTNaNDYHsfytl6Z2B2gvTSCNK3JRgBt",
+    "sourceUrl": "https://drive.google.com/file/d/1PlTNaNDYHsfytl6Z2B2gvTSCNK3JRgBt/view?usp=drivesdk",
+    "sha256": "414c2953db08cdd57fbba0065f52def4196041c4c40e9fe9b5eea6b648e7b27d"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_067_00-02-26.758.jpg",
+    "localPath": "assets/frames/shot_067_00-02-26.758.jpg",
+    "fileId": "1dFP_Jl7-nooFwiNhXLzVWvBgKz0JZC43",
+    "sourceUrl": "https://drive.google.com/file/d/1dFP_Jl7-nooFwiNhXLzVWvBgKz0JZC43/view?usp=drivesdk",
+    "sha256": "217d07ca3acb706da4652e4203dfa2c5d993318c54d13229bb088335cb6e39ab"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_068_00-02-29.758.jpg",
+    "localPath": "assets/frames/shot_068_00-02-29.758.jpg",
+    "fileId": "1ekDJy_JmXeYkr7RS_MYZpl4stQ7X7ize",
+    "sourceUrl": "https://drive.google.com/file/d/1ekDJy_JmXeYkr7RS_MYZpl4stQ7X7ize/view?usp=drivesdk",
+    "sha256": "5f327917c5cd81785ce501d99ea0c04524afe6b1f71cb10a4fd96777ee4f2855"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_069_00-02-31.592.jpg",
+    "localPath": "assets/frames/shot_069_00-02-31.592.jpg",
+    "fileId": "15nVy4jTeZ8Wi1dhpEGgX7rCjhHSU-tv4",
+    "sourceUrl": "https://drive.google.com/file/d/15nVy4jTeZ8Wi1dhpEGgX7rCjhHSU-tv4/view?usp=drivesdk",
+    "sha256": "0a32d24cfc460f4d2af8affec649950dd67318f8f798d1ed89f81161fe0d9720"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_070_00-02-34.287.jpg",
+    "localPath": "assets/frames/shot_070_00-02-34.287.jpg",
+    "fileId": "1jNo_abGGINkQN5U6jm0SvFnlXGpEKR7N",
+    "sourceUrl": "https://drive.google.com/file/d/1jNo_abGGINkQN5U6jm0SvFnlXGpEKR7N/view?usp=drivesdk",
+    "sha256": "6ee8aeed58aa29e45316297ee4e71af162126c727eb50da89cbe79d58c3b4a32"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_071_00-02-35.508.jpg",
+    "localPath": "assets/frames/shot_071_00-02-35.508.jpg",
+    "fileId": "1SzuDLe1Zz9ZfNe4L_PmaGERtVGNEmOQc",
+    "sourceUrl": "https://drive.google.com/file/d/1SzuDLe1Zz9ZfNe4L_PmaGERtVGNEmOQc/view?usp=drivesdk",
+    "sha256": "92f8e7ac37613476e9cbd53f77f6574a5237e22f5f27549f66c1a6d8bae302cd"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_072_00-02-37.842.jpg",
+    "localPath": "assets/frames/shot_072_00-02-37.842.jpg",
+    "fileId": "1nknZYHU-9JJs6tH0T6yNddtBv_S2ddCL",
+    "sourceUrl": "https://drive.google.com/file/d/1nknZYHU-9JJs6tH0T6yNddtBv_S2ddCL/view?usp=drivesdk",
+    "sha256": "75eef226862d012286737123e94d7f9ab551ad0ea2926531c8eeafb82b5a5994"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_073_00-02-40.008.jpg",
+    "localPath": "assets/frames/shot_073_00-02-40.008.jpg",
+    "fileId": "1Qp3IOVxnhm0CBUDXJsSj4qbzRA9xJdm6",
+    "sourceUrl": "https://drive.google.com/file/d/1Qp3IOVxnhm0CBUDXJsSj4qbzRA9xJdm6/view?usp=drivesdk",
+    "sha256": "460b20d1e3bda028a5a603334427081aeff8012b0603ee2fcf2f1c0bf4a1174a"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_074_00-02-43.508.jpg",
+    "localPath": "assets/frames/shot_074_00-02-43.508.jpg",
+    "fileId": "13w6K3t14KOFKPJmapz3DnovjZ1Ti7vxs",
+    "sourceUrl": "https://drive.google.com/file/d/13w6K3t14KOFKPJmapz3DnovjZ1Ti7vxs/view?usp=drivesdk",
+    "sha256": "7b3bbd32549db3697b31a94c92acbab789684212994d42eb360932a433a8ac34"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_075_00-02-47.100.jpg",
+    "localPath": "assets/frames/shot_075_00-02-47.100.jpg",
+    "fileId": "1Si8efrtqsRFPTSvHC_0d4V432pkV4L9l",
+    "sourceUrl": "https://drive.google.com/file/d/1Si8efrtqsRFPTSvHC_0d4V432pkV4L9l/view?usp=drivesdk",
+    "sha256": "2a4c87718732913d591bbec48e080c846781c30f857d7ac6c7d8c3023ce0c449"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_076_00-02-48.425.jpg",
+    "localPath": "assets/frames/shot_076_00-02-48.425.jpg",
+    "fileId": "1AbIVYLknWxvBZGuCklWqDxjLmukQ25xb",
+    "sourceUrl": "https://drive.google.com/file/d/1AbIVYLknWxvBZGuCklWqDxjLmukQ25xb/view?usp=drivesdk",
+    "sha256": "9f40c5f4e36e854f9d3b3707e77df3b000e0ef17545d8b6527c5ff9a9266a3e0"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_077_00-02-57.752.jpg",
+    "localPath": "assets/frames/shot_077_00-02-57.752.jpg",
+    "fileId": "17ZiUZBgqscwYXlFu4xnshpNpNw9CZ9KC",
+    "sourceUrl": "https://drive.google.com/file/d/17ZiUZBgqscwYXlFu4xnshpNpNw9CZ9KC/view?usp=drivesdk",
+    "sha256": "0beb410d39807112c2332575df3af4cf0551259dae6fb363484e55d38324aaad"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_078_00-02-58.508.jpg",
+    "localPath": "assets/frames/shot_078_00-02-58.508.jpg",
+    "fileId": "1JZDUI968l6KYmJ5MuBegX4SKiQAuqkg2",
+    "sourceUrl": "https://drive.google.com/file/d/1JZDUI968l6KYmJ5MuBegX4SKiQAuqkg2/view?usp=drivesdk",
+    "sha256": "6856fd6bff46351adbb53cbca16e0a97469775ffad62a69a50dd783a91b43f61"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_079_00-03-02.148.jpg",
+    "localPath": "assets/frames/shot_079_00-03-02.148.jpg",
+    "fileId": "13tI532j_rowohir_j6SXCmzIdUgrgJab",
+    "sourceUrl": "https://drive.google.com/file/d/13tI532j_rowohir_j6SXCmzIdUgrgJab/view?usp=drivesdk",
+    "sha256": "e1611c78ec14bf36ff6c67720ea783fbf1f71b3eacee2eb54cf90c77d239f461"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_080_00-03-02.585.jpg",
+    "localPath": "assets/frames/shot_080_00-03-02.585.jpg",
+    "fileId": "1aVkskQ1K_olHVyAqGEanQkRVod2yokoE",
+    "sourceUrl": "https://drive.google.com/file/d/1aVkskQ1K_olHVyAqGEanQkRVod2yokoE/view?usp=drivesdk",
+    "sha256": "fa4a9f62b258a71b34367b2a7881727f8485e3a0541d36f4f0863891663360c0"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_081_00-03-02.950.jpg",
+    "localPath": "assets/frames/shot_081_00-03-02.950.jpg",
+    "fileId": "1Sy893Izyul0zXCKuAxL-gbIqcNS93Ktt",
+    "sourceUrl": "https://drive.google.com/file/d/1Sy893Izyul0zXCKuAxL-gbIqcNS93Ktt/view?usp=drivesdk",
+    "sha256": "eec16229fe88e5d183879083ec6cf17b4caf16092ce4771689155a1951fc2faa"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_082_00-03-03.335.jpg",
+    "localPath": "assets/frames/shot_082_00-03-03.335.jpg",
+    "fileId": "19z3Gc621FiBVqppEZ60-yfy1DwK4mNPQ",
+    "sourceUrl": "https://drive.google.com/file/d/19z3Gc621FiBVqppEZ60-yfy1DwK4mNPQ/view?usp=drivesdk",
+    "sha256": "04980a0d389351534b07ed17791c386cba543054eee09908fd5297316839e955"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_083_00-03-03.668.jpg",
+    "localPath": "assets/frames/shot_083_00-03-03.668.jpg",
+    "fileId": "1szVHMgEV2WY6PZPDb4KogD_-rWf4VIFB",
+    "sourceUrl": "https://drive.google.com/file/d/1szVHMgEV2WY6PZPDb4KogD_-rWf4VIFB/view?usp=drivesdk",
+    "sha256": "80633340f6134d53c533e39b78de4f43a2a4f2dcb22d330d547697bdc590185f"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_084_00-03-04.065.jpg",
+    "localPath": "assets/frames/shot_084_00-03-04.065.jpg",
+    "fileId": "1sWAABIsFjsiF6Ap-IfmijpSH98DN8Uqx",
+    "sourceUrl": "https://drive.google.com/file/d/1sWAABIsFjsiF6Ap-IfmijpSH98DN8Uqx/view?usp=drivesdk",
+    "sha256": "0d70559baf7c5e2b883d000c3671e8deb5b83976e131de9ad30aa2dad743eae7"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_085_00-03-04.502.jpg",
+    "localPath": "assets/frames/shot_085_00-03-04.502.jpg",
+    "fileId": "19WQyEAdHsDKF98zymw9huT36eh4fremN",
+    "sourceUrl": "https://drive.google.com/file/d/19WQyEAdHsDKF98zymw9huT36eh4fremN/view?usp=drivesdk",
+    "sha256": "8681981231f8f426a3f403f3d2f76df14143eeb0d21d27c41b4a8ff02ee6e05d"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_086_00-03-04.867.jpg",
+    "localPath": "assets/frames/shot_086_00-03-04.867.jpg",
+    "fileId": "1NP0csNVPahojsEs0vmm3101mi5CvKX-T",
+    "sourceUrl": "https://drive.google.com/file/d/1NP0csNVPahojsEs0vmm3101mi5CvKX-T/view?usp=drivesdk",
+    "sha256": "b128a6d4982d47d9fb11b7a84001fedb429f46878d52771aa82bb754e08e6b6e"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_087_00-03-05.283.jpg",
+    "localPath": "assets/frames/shot_087_00-03-05.283.jpg",
+    "fileId": "1GO06FbcPfACKzVh09qEa572XPGV_awen",
+    "sourceUrl": "https://drive.google.com/file/d/1GO06FbcPfACKzVh09qEa572XPGV_awen/view?usp=drivesdk",
+    "sha256": "739180bbe32c46aa753f2709ac860c00b9bc30030bfb7bf634caab4ca3f27391"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_088_00-03-05.668.jpg",
+    "localPath": "assets/frames/shot_088_00-03-05.668.jpg",
+    "fileId": "1-RWXun0A_BAsitIg2Tz-lODMz8VA9nuZ",
+    "sourceUrl": "https://drive.google.com/file/d/1-RWXun0A_BAsitIg2Tz-lODMz8VA9nuZ/view?usp=drivesdk",
+    "sha256": "bcb87640dc00333847547a616148e2a0e2b6d17dc1000afe6977c61a3a1a2081"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_089_00-03-06.425.jpg",
+    "localPath": "assets/frames/shot_089_00-03-06.425.jpg",
+    "fileId": "1eFxxS27UdMwjO2h94sxxevBq4k42g15y",
+    "sourceUrl": "https://drive.google.com/file/d/1eFxxS27UdMwjO2h94sxxevBq4k42g15y/view?usp=drivesdk",
+    "sha256": "9a9716177b0a8881d51611d08a34faeef4aeb09a72787496c344e2b7ec1a6766"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_090_00-03-08.092.jpg",
+    "localPath": "assets/frames/shot_090_00-03-08.092.jpg",
+    "fileId": "16_H27ifqMJBTC7ZBPMrURaFoEkGxIuCs",
+    "sourceUrl": "https://drive.google.com/file/d/16_H27ifqMJBTC7ZBPMrURaFoEkGxIuCs/view?usp=drivesdk",
+    "sha256": "b7acc5d286604d4d16644f2f39cfda8151dceaa218460f40fa0be9d656ea8a4e"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_091_00-03-10.425.jpg",
+    "localPath": "assets/frames/shot_091_00-03-10.425.jpg",
+    "fileId": "1OBqHM1hMAsu4fs8B2FualZ-OmS9Bfl7b",
+    "sourceUrl": "https://drive.google.com/file/d/1OBqHM1hMAsu4fs8B2FualZ-OmS9Bfl7b/view?usp=drivesdk",
+    "sha256": "0041cbfb135bbc05893ff6507c8793484dc13108d4b48e45990ccf362a77ee1a"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_092_00-03-12.232.jpg",
+    "localPath": "assets/frames/shot_092_00-03-12.232.jpg",
+    "fileId": "146-FrIGFg8To2BAjljug7aLVbbpP5Ml4",
+    "sourceUrl": "https://drive.google.com/file/d/146-FrIGFg8To2BAjljug7aLVbbpP5Ml4/view?usp=drivesdk",
+    "sha256": "166d7bee3c052a11cc39c11702365201659062f54313ac9625286f0e6782108d"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_093_00-03-12.795.jpg",
+    "localPath": "assets/frames/shot_093_00-03-12.795.jpg",
+    "fileId": "1tSAt2xLU_HwjOTCl34GH8Pya1o3bo-10",
+    "sourceUrl": "https://drive.google.com/file/d/1tSAt2xLU_HwjOTCl34GH8Pya1o3bo-10/view?usp=drivesdk",
+    "sha256": "a77c6073c429634ac0cc5c38c7c9f55486aea8cde2787007d55e79f885829206"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_094_00-03-13.758.jpg",
+    "localPath": "assets/frames/shot_094_00-03-13.758.jpg",
+    "fileId": "1Sg3IYDjKmCIc4zqfxGb8sRFcFsXyAxXc",
+    "sourceUrl": "https://drive.google.com/file/d/1Sg3IYDjKmCIc4zqfxGb8sRFcFsXyAxXc/view?usp=drivesdk",
+    "sha256": "08e1e65f1145266e9fb98eb46a36a73a2140ddd9b2bb7003b8ad3a12829b79a4"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_095_00-03-19.175.jpg",
+    "localPath": "assets/frames/shot_095_00-03-19.175.jpg",
+    "fileId": "1_8wlQ0kSTVWL4rSoUqfzjecXMXZ_IU-_",
+    "sourceUrl": "https://drive.google.com/file/d/1_8wlQ0kSTVWL4rSoUqfzjecXMXZ_IU-_/view?usp=drivesdk",
+    "sha256": "44c4b4e5e19fdceae698c910984cdd30afc7286cd823a893185cfb5b38fb00f3"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_096_00-03-21.258.jpg",
+    "localPath": "assets/frames/shot_096_00-03-21.258.jpg",
+    "fileId": "1SNJCrKRxghvH3_WqmazmsxvfJK-SZXqV",
+    "sourceUrl": "https://drive.google.com/file/d/1SNJCrKRxghvH3_WqmazmsxvfJK-SZXqV/view?usp=drivesdk",
+    "sha256": "41d17eedbbfa1078da184154ca2d5ef8132358b95c126dcf0d1b3b5a82c7b581"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_097_00-03-23.732.jpg",
+    "localPath": "assets/frames/shot_097_00-03-23.732.jpg",
+    "fileId": "12ITGb2wXnlkVOpUQKS1mwh6Dwgl378CJ",
+    "sourceUrl": "https://drive.google.com/file/d/12ITGb2wXnlkVOpUQKS1mwh6Dwgl378CJ/view?usp=drivesdk",
+    "sha256": "ade4cd7bd1a260c9ef62f5d982d100f13e02f7171858c6e116677fa2aa7fd494"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_098_00-03-24.168.jpg",
+    "localPath": "assets/frames/shot_098_00-03-24.168.jpg",
+    "fileId": "1zXzYyyB6tixDajIqiGCKVA2NgGcJlfC6",
+    "sourceUrl": "https://drive.google.com/file/d/1zXzYyyB6tixDajIqiGCKVA2NgGcJlfC6/view?usp=drivesdk",
+    "sha256": "4bc46506fa9fb69e8058c0e1ae10980b05ce3035e978871acbda48a8bca211c5"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_099_00-03-24.565.jpg",
+    "localPath": "assets/frames/shot_099_00-03-24.565.jpg",
+    "fileId": "1QPv7-ysXf-7x_nDBphWW840M49754IiR",
+    "sourceUrl": "https://drive.google.com/file/d/1QPv7-ysXf-7x_nDBphWW840M49754IiR/view?usp=drivesdk",
+    "sha256": "1ffe28619adf4d1dc9912273bfbb23ce3a7700831953884a1f4ba3c493dfe56c"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_100_00-03-25.425.jpg",
+    "localPath": "assets/frames/shot_100_00-03-25.425.jpg",
+    "fileId": "1x3z-9c3vP1b4lp-xmd9RqK4kC4ftYXhI",
+    "sourceUrl": "https://drive.google.com/file/d/1x3z-9c3vP1b4lp-xmd9RqK4kC4ftYXhI/view?usp=drivesdk",
+    "sha256": "21a4f63ead3f7fccf5d7f58523ed9795210ce245b0f8d5ab49507a7caad495c2"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_101_00-03-33.175.jpg",
+    "localPath": "assets/frames/shot_101_00-03-33.175.jpg",
+    "fileId": "18HNOcrbkY8Kl60VtKAEeRzhg7sZiCNaB",
+    "sourceUrl": "https://drive.google.com/file/d/18HNOcrbkY8Kl60VtKAEeRzhg7sZiCNaB/view?usp=drivesdk",
+    "sha256": "2d483545c158d0a3b619110be479da0aafa559e980a89aa75c78b4c00c457241"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_102_00-03-38.675.jpg",
+    "localPath": "assets/frames/shot_102_00-03-38.675.jpg",
+    "fileId": "1dhl3Ol4xXDvqHluAmAEbG7CventxkqCD",
+    "sourceUrl": "https://drive.google.com/file/d/1dhl3Ol4xXDvqHluAmAEbG7CventxkqCD/view?usp=drivesdk",
+    "sha256": "36013fd89f6df1c6a47dda7032dcc906ff69acaf38a5729f6f91b2d0059d6c5d"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_103_00-03-41.175.jpg",
+    "localPath": "assets/frames/shot_103_00-03-41.175.jpg",
+    "fileId": "1QSjxT-9QuKmFmX62XtyIYB0PKfkDH_Qq",
+    "sourceUrl": "https://drive.google.com/file/d/1QSjxT-9QuKmFmX62XtyIYB0PKfkDH_Qq/view?usp=drivesdk",
+    "sha256": "aa996ab5a2c3e30e2a97adff66850ce98e4130a0521dfe82aada0fb99d1f37cd"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_104_00-03-48.430.jpg",
+    "localPath": "assets/frames/shot_104_00-03-48.430.jpg",
+    "fileId": "13ZlY45haSE_W0eyftvKlQpM8mZ9geG9F",
+    "sourceUrl": "https://drive.google.com/file/d/13ZlY45haSE_W0eyftvKlQpM8mZ9geG9F/view?usp=drivesdk",
+    "sha256": "6078aa3c2f330d755454c21d5867a68a3affff2bde29c5e273b9c03632c21440"
+  },
+  {
+    "sourcePath": "../frames/02_154_22COSTA_ERNIE_BALL.mp4_728265819/shot_105_00-03-49.342.jpg",
+    "localPath": "assets/frames/shot_105_00-03-49.342.jpg",
+    "fileId": "1z-WT-6lWtxUM2HD8Ys_idg8FhS5rKjtg",
+    "sourceUrl": "https://drive.google.com/file/d/1z-WT-6lWtxUM2HD8Ys_idg8FhS5rKjtg/view?usp=drivesdk",
+    "sha256": "b0610be1075f4617e41a8491b6b482c69b5faf385bd30760f75a2cd256d1d717"
+  }
+]

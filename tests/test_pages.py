@@ -7,6 +7,7 @@ import subprocess
 import tempfile
 import unittest
 from unittest.mock import patch
+from scripts import export_pages_snapshot as exporter
 
 ROOT = Path(__file__).resolve().parents[1]
 spec = importlib.util.spec_from_file_location('pages_build', ROOT / 'scripts/build_pages.py')
@@ -15,6 +16,27 @@ spec.loader.exec_module(pages)
 
 
 class PagesTests(unittest.TestCase):
+    def test_local_only_record_and_its_media_are_excluded_from_export(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp).resolve()
+            (root/'media').mkdir()
+            (root/'media/public.png').write_bytes(b'public asset')
+            (root/'media/local.png').write_bytes(b'local-only asset')
+            cases = [
+                {'id':'public','status':'published','media':{'thumbnail':'/media/public.png'}},
+                {'id':'local','status':'published','notes':'[local-only]\nHold until authorized',
+                 'media':{'thumbnail':'/media/local.png'}},
+            ]
+            with patch.object(exporter, 'ROOT', root), patch.object(exporter.store, 'load_cases', return_value=cases), \
+                    patch.object(exporter.ai_directory, 'load', return_value={}), \
+                    patch.object(exporter.ai_directory, 'public_view', return_value={}):
+                exporter.main()
+            snapshot=json.loads((root/'publish/cases.json').read_text())
+            self.assertEqual([c['id'] for c in snapshot['cases']], ['public'])
+            self.assertTrue((root/'publish/media/public.png').is_file())
+            self.assertFalse((root/'publish/media/local.png').exists())
+            self.assertTrue((root/'media/local.png').is_file())
+
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)

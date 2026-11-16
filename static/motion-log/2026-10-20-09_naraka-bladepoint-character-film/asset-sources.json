@@ -1,0 +1,989 @@
+[
+  {
+    "sourcePath": "../contact_sheets/09_naraka-bladepoint-character-film_selected_keyframes.jpg",
+    "localPath": "assets/contact_sheets/09_naraka-bladepoint-character-film_selected_keyframes.jpg",
+    "fileId": "1ZMvvZDjQeS5cWKe-9JReTKXzxvzrw3Zi",
+    "sourceUrl": "https://drive.google.com/file/d/1ZMvvZDjQeS5cWKe-9JReTKXzxvzrw3Zi/view?usp=drivesdk",
+    "sha256": "e3fcd0bf74551916f471002bee74ac1887c190adcf06a6b3a51fc33523fce236"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_001_00-00-00.550.jpg",
+    "localPath": "assets/frames/shot_001_00-00-00.550.jpg",
+    "fileId": "1KuIdnjhaPMRPBo8RdtTkhZTKqRlvtmjg",
+    "sourceUrl": "https://drive.google.com/file/d/1KuIdnjhaPMRPBo8RdtTkhZTKqRlvtmjg/view?usp=drivesdk",
+    "sha256": "d053ed36cc177d5ef70959f011d511750bf737a3b552053bee8c00ee10ae672f"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_002_00-00-04.070.jpg",
+    "localPath": "assets/frames/shot_002_00-00-04.070.jpg",
+    "fileId": "1RSJhX9U_h9TgdCedVihW0bhdOpdUl2Sr",
+    "sourceUrl": "https://drive.google.com/file/d/1RSJhX9U_h9TgdCedVihW0bhdOpdUl2Sr/view?usp=drivesdk",
+    "sha256": "06d40b4ad564c778ab53547924784bc453494d331e36d70e87910415737d93b2"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_003_00-00-07.020.jpg",
+    "localPath": "assets/frames/shot_003_00-00-07.020.jpg",
+    "fileId": "17UTSro_iRL5T7Phm-jUDyVxfPiQnFFPL",
+    "sourceUrl": "https://drive.google.com/file/d/17UTSro_iRL5T7Phm-jUDyVxfPiQnFFPL/view?usp=drivesdk",
+    "sha256": "033b784e0beed0519af366344d2e6534b3bbc5cee68d32f984375c0e0e4a6b44"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_004_00-00-08.190.jpg",
+    "localPath": "assets/frames/shot_004_00-00-08.190.jpg",
+    "fileId": "1RR5PhQ-TQ0h-r7vq2MFqSSV8qi0gLIXe",
+    "sourceUrl": "https://drive.google.com/file/d/1RR5PhQ-TQ0h-r7vq2MFqSSV8qi0gLIXe/view?usp=drivesdk",
+    "sha256": "af86ed7e6040507d3e0a862a0568c71980c40319176c1ae9dabc1f4ae694b0ab"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_005_00-00-10.270.jpg",
+    "localPath": "assets/frames/shot_005_00-00-10.270.jpg",
+    "fileId": "1sJ2cLzcis30MIPNr3gN4tRG2GTC8jyA_",
+    "sourceUrl": "https://drive.google.com/file/d/1sJ2cLzcis30MIPNr3gN4tRG2GTC8jyA_/view?usp=drivesdk",
+    "sha256": "7d6934a1dc0da3e9d9295458972b318f86c37d996f122635fec36d31ed8d7f52"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_006_00-00-11.790.jpg",
+    "localPath": "assets/frames/shot_006_00-00-11.790.jpg",
+    "fileId": "1JBKyTCQb8sl7EI-PTVr1YdlLaXwykr8G",
+    "sourceUrl": "https://drive.google.com/file/d/1JBKyTCQb8sl7EI-PTVr1YdlLaXwykr8G/view?usp=drivesdk",
+    "sha256": "dfb4705c8d92b13319d27cf52fa3822e32c4fa2253f4475636b0da55ad9e842a"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_007_00-00-16.790.jpg",
+    "localPath": "assets/frames/shot_007_00-00-16.790.jpg",
+    "fileId": "1nRVq3NwLGlFoNQP1HSpR8HXI-_rtz46O",
+    "sourceUrl": "https://drive.google.com/file/d/1nRVq3NwLGlFoNQP1HSpR8HXI-_rtz46O/view?usp=drivesdk",
+    "sha256": "624311a9e7ab45c735b476bad355898b1269c06a938fc728e0232681b85cc106"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_008_00-00-19.070.jpg",
+    "localPath": "assets/frames/shot_008_00-00-19.070.jpg",
+    "fileId": "1hsRlkYMjR4Zf3xXEdkFGVCd6qwH2rrvW",
+    "sourceUrl": "https://drive.google.com/file/d/1hsRlkYMjR4Zf3xXEdkFGVCd6qwH2rrvW/view?usp=drivesdk",
+    "sha256": "cf4b5b90e9cf9b6bb12a2baa706ba0906b3e0cb41d67468a0c334d399928c7cc"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_009_00-00-20.737.jpg",
+    "localPath": "assets/frames/shot_009_00-00-20.737.jpg",
+    "fileId": "16a362RKUe-z9eOgunDBPK1z4cPCvYAcw",
+    "sourceUrl": "https://drive.google.com/file/d/16a362RKUe-z9eOgunDBPK1z4cPCvYAcw/view?usp=drivesdk",
+    "sha256": "6ef8750cb698bb247699331e08ea87c9aa655460bf2ae9ca890231a5d72e0097"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_010_00-00-21.234.jpg",
+    "localPath": "assets/frames/shot_010_00-00-21.234.jpg",
+    "fileId": "1K5wkSEzzibyXaF4zYWotU4rIOQSLynha",
+    "sourceUrl": "https://drive.google.com/file/d/1K5wkSEzzibyXaF4zYWotU4rIOQSLynha/view?usp=drivesdk",
+    "sha256": "a392114c5671f8a8ed1fdae12bf2e620ef3227a9cd9fe74d77ac574530d5857c"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_011_00-00-21.802.jpg",
+    "localPath": "assets/frames/shot_011_00-00-21.802.jpg",
+    "fileId": "1FpOm4I_I3j47vhEmCdJp5cRN2NUXJ42P",
+    "sourceUrl": "https://drive.google.com/file/d/1FpOm4I_I3j47vhEmCdJp5cRN2NUXJ42P/view?usp=drivesdk",
+    "sha256": "2e885ed29a0221b238a12cc84beae5e98f97af64eb9c8007958cfce97d83dd8b"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_012_00-00-22.198.jpg",
+    "localPath": "assets/frames/shot_012_00-00-22.198.jpg",
+    "fileId": "1MlR3ReZymnRyklll7lFlzew_gaJcBCo9",
+    "sourceUrl": "https://drive.google.com/file/d/1MlR3ReZymnRyklll7lFlzew_gaJcBCo9/view?usp=drivesdk",
+    "sha256": "10a0b1adfd3627f68dcde5c0b8176874f78b1741e60b06aeb06bdf9d561be484"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_013_00-00-22.642.jpg",
+    "localPath": "assets/frames/shot_013_00-00-22.642.jpg",
+    "fileId": "1rhk5nZnlbcLUBRB2W6ajXqx6KwJ4U2D-",
+    "sourceUrl": "https://drive.google.com/file/d/1rhk5nZnlbcLUBRB2W6ajXqx6KwJ4U2D-/view?usp=drivesdk",
+    "sha256": "fdba300d7e7027145e17cdbbd30409a56e8f49d7c00a63a9c2112dd08d6d015b"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_014_00-00-23.390.jpg",
+    "localPath": "assets/frames/shot_014_00-00-23.390.jpg",
+    "fileId": "1fvAvbjGLMi7AHig7NX2j4S0I1qf3tNHN",
+    "sourceUrl": "https://drive.google.com/file/d/1fvAvbjGLMi7AHig7NX2j4S0I1qf3tNHN/view?usp=drivesdk",
+    "sha256": "050a255ffc091a9cb68d0dd4cdaad5dfa4ffd5b457691211afcecd1a30c11718"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_015_00-00-25.070.jpg",
+    "localPath": "assets/frames/shot_015_00-00-25.070.jpg",
+    "fileId": "1vyP2nrMBYPLIVQf50gT5rISAXzHOjnPK",
+    "sourceUrl": "https://drive.google.com/file/d/1vyP2nrMBYPLIVQf50gT5rISAXzHOjnPK/view?usp=drivesdk",
+    "sha256": "041c3406c7d56cbbecc35734ae5906760fd2e680757eb93a53ebb4e2d36474e1"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_016_00-00-26.035.jpg",
+    "localPath": "assets/frames/shot_016_00-00-26.035.jpg",
+    "fileId": "1-HXS05k3demMnW0gcUnb8faxtEVEzaHR",
+    "sourceUrl": "https://drive.google.com/file/d/1-HXS05k3demMnW0gcUnb8faxtEVEzaHR/view?usp=drivesdk",
+    "sha256": "a283774ddae9579a18e8aa9c5063a1a14b139109863fb49acebf54e2d573a9f1"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_017_00-00-26.999.jpg",
+    "localPath": "assets/frames/shot_017_00-00-26.999.jpg",
+    "fileId": "1_CM4HiPqMYLgbFfk_wvr6lK5xFAcMNgg",
+    "sourceUrl": "https://drive.google.com/file/d/1_CM4HiPqMYLgbFfk_wvr6lK5xFAcMNgg/view?usp=drivesdk",
+    "sha256": "990cdf16c4a5ebac1225a8a44590757e983cd2d857073855289e4da1f55daf5e"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_018_00-00-27.642.jpg",
+    "localPath": "assets/frames/shot_018_00-00-27.642.jpg",
+    "fileId": "1t38Ku2E9ThjL4MLDEeGMX-RJZb9ND0zN",
+    "sourceUrl": "https://drive.google.com/file/d/1t38Ku2E9ThjL4MLDEeGMX-RJZb9ND0zN/view?usp=drivesdk",
+    "sha256": "9de622f8dbc21d9c598eb3af41b5050aab6af9ff967e4a64b838d1d682c56c08"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_019_00-00-28.098.jpg",
+    "localPath": "assets/frames/shot_019_00-00-28.098.jpg",
+    "fileId": "1NC4CGM8LHl_Mi_uAK_w_y2T7G0wHOz-u",
+    "sourceUrl": "https://drive.google.com/file/d/1NC4CGM8LHl_Mi_uAK_w_y2T7G0wHOz-u/view?usp=drivesdk",
+    "sha256": "cfe3d32f60e2ed55f3cc4ccf25e3896022d90e4c8fe419b53d426856ff798f9a"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_020_00-00-28.778.jpg",
+    "localPath": "assets/frames/shot_020_00-00-28.778.jpg",
+    "fileId": "15FvR_FE61nxmGc9HqByL4T9iKmeSQOaX",
+    "sourceUrl": "https://drive.google.com/file/d/15FvR_FE61nxmGc9HqByL4T9iKmeSQOaX/view?usp=drivesdk",
+    "sha256": "b24205bde8d068b6971b27f8e432dabec9907b692894c2bfc72174dc7f1142df"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_021_00-00-29.474.jpg",
+    "localPath": "assets/frames/shot_021_00-00-29.474.jpg",
+    "fileId": "15JalF6-qe7f2xyytqmorSZyw2UwNlEht",
+    "sourceUrl": "https://drive.google.com/file/d/15JalF6-qe7f2xyytqmorSZyw2UwNlEht/view?usp=drivesdk",
+    "sha256": "b0636869259d647186d998ed9d5160023b056826d41de98dcdfd692b1fe7b69f"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_022_00-00-30.042.jpg",
+    "localPath": "assets/frames/shot_022_00-00-30.042.jpg",
+    "fileId": "1om3VuRu-v7Lz5gkdypkKSQVQ_BXYt52S",
+    "sourceUrl": "https://drive.google.com/file/d/1om3VuRu-v7Lz5gkdypkKSQVQ_BXYt52S/view?usp=drivesdk",
+    "sha256": "1ebe17ffa4427769a0d959ee9d576386c8f402c48c6394732abcf78d41c72c23"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_023_00-00-30.377.jpg",
+    "localPath": "assets/frames/shot_023_00-00-30.377.jpg",
+    "fileId": "1nFHQVZTtDUu1keYPwcHTuy8RYGB3abxW",
+    "sourceUrl": "https://drive.google.com/file/d/1nFHQVZTtDUu1keYPwcHTuy8RYGB3abxW/view?usp=drivesdk",
+    "sha256": "6c700ec924adf298c9453d000f70316fdd71aae89a747510eaa33317579b2de6"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_024_00-00-30.904.jpg",
+    "localPath": "assets/frames/shot_024_00-00-30.904.jpg",
+    "fileId": "1Jk9ZIlejUTbe8gJxNcMz33gvRiv2H2rC",
+    "sourceUrl": "https://drive.google.com/file/d/1Jk9ZIlejUTbe8gJxNcMz33gvRiv2H2rC/view?usp=drivesdk",
+    "sha256": "8315cb4ee6a35071c5e146fecdb14d62e68c64da0512495857d75a3674a17df0"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_025_00-00-31.950.jpg",
+    "localPath": "assets/frames/shot_025_00-00-31.950.jpg",
+    "fileId": "1iwWAyHwTzQ2ojodEMs_3v1IRRJhKG4bE",
+    "sourceUrl": "https://drive.google.com/file/d/1iwWAyHwTzQ2ojodEMs_3v1IRRJhKG4bE/view?usp=drivesdk",
+    "sha256": "83c32a2e5c8c44440c1bb51b5ded5c08a97d17d77715b8670bd1c231f0ba509f"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_026_00-00-36.750.jpg",
+    "localPath": "assets/frames/shot_026_00-00-36.750.jpg",
+    "fileId": "1OfDrobCEpQRTdMOShZA7-XO5MdY_A24T",
+    "sourceUrl": "https://drive.google.com/file/d/1OfDrobCEpQRTdMOShZA7-XO5MdY_A24T/view?usp=drivesdk",
+    "sha256": "98a51e99b7a04be0739042c7e12d493541ce0a746b5f544e7aca8745aeb2e52a"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_027_00-00-38.750.jpg",
+    "localPath": "assets/frames/shot_027_00-00-38.750.jpg",
+    "fileId": "1gZfMibS54LdGB1CH0WnqwFQmTGIBA9le",
+    "sourceUrl": "https://drive.google.com/file/d/1gZfMibS54LdGB1CH0WnqwFQmTGIBA9le/view?usp=drivesdk",
+    "sha256": "d2eb6b868662b64f6ef7208632dad72368328601e6adc4f30383e96f395806b1"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_028_00-00-40.723.jpg",
+    "localPath": "assets/frames/shot_028_00-00-40.723.jpg",
+    "fileId": "1eKkYrmkf9JGca1VEB3FwWrsDZIkcxZ5F",
+    "sourceUrl": "https://drive.google.com/file/d/1eKkYrmkf9JGca1VEB3FwWrsDZIkcxZ5F/view?usp=drivesdk",
+    "sha256": "fcebf75aa46bf81f2065efe2764433d90c1ec0d0f8727ce80a7226783ec09dd7"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_029_00-00-41.242.jpg",
+    "localPath": "assets/frames/shot_029_00-00-41.242.jpg",
+    "fileId": "1TaXZcBlRG7sikZxwjSzoDJeQ2VOFH6Y5",
+    "sourceUrl": "https://drive.google.com/file/d/1TaXZcBlRG7sikZxwjSzoDJeQ2VOFH6Y5/view?usp=drivesdk",
+    "sha256": "dd4faad65b9e24c7db690a79dfe35b68d3a03520caa6b3a90da47e4c34f5215b"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_030_00-00-41.638.jpg",
+    "localPath": "assets/frames/shot_030_00-00-41.638.jpg",
+    "fileId": "1q0_ONel6EPdr2jarEuYJgqYm4uGOL85D",
+    "sourceUrl": "https://drive.google.com/file/d/1q0_ONel6EPdr2jarEuYJgqYm4uGOL85D/view?usp=drivesdk",
+    "sha256": "e93f5d8e32a221bb233ae9fdb554d4597bf924e11e472ab468f2e678fe8cb8b8"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_031_00-00-42.510.jpg",
+    "localPath": "assets/frames/shot_031_00-00-42.510.jpg",
+    "fileId": "1QiyQrRDF6UCe8PtmZ8V6rap23XKNvFCP",
+    "sourceUrl": "https://drive.google.com/file/d/1QiyQrRDF6UCe8PtmZ8V6rap23XKNvFCP/view?usp=drivesdk",
+    "sha256": "79d4aca7f0fe769e9e85bc4c07c555081e4f908198191fb5524ae76e9cf6bc3d"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_032_00-00-46.030.jpg",
+    "localPath": "assets/frames/shot_032_00-00-46.030.jpg",
+    "fileId": "1_j5x3YIZY50HcZO6A4qukb5X0avvnjX2",
+    "sourceUrl": "https://drive.google.com/file/d/1_j5x3YIZY50HcZO6A4qukb5X0avvnjX2/view?usp=drivesdk",
+    "sha256": "12077334954bfc95e51e8c1937f246fc7f1cabe3c6792f3c94f7eb8f03eeb0f3"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_033_00-00-47.525.jpg",
+    "localPath": "assets/frames/shot_033_00-00-47.525.jpg",
+    "fileId": "1XaOQh6_ig8_A-pEolOF-v9Y6UXCZiNTL",
+    "sourceUrl": "https://drive.google.com/file/d/1XaOQh6_ig8_A-pEolOF-v9Y6UXCZiNTL/view?usp=drivesdk",
+    "sha256": "c02fe26cbee8c5cdbd679c84f558f62a3f3add5de5c70178fe897f52aae7d230"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_034_00-00-48.242.jpg",
+    "localPath": "assets/frames/shot_034_00-00-48.242.jpg",
+    "fileId": "1ieSLeBN27X-ECswGo4BRFxrN6pfBbOIt",
+    "sourceUrl": "https://drive.google.com/file/d/1ieSLeBN27X-ECswGo4BRFxrN6pfBbOIt/view?usp=drivesdk",
+    "sha256": "dea3eaa0c5c46597f17b5c85db0a1720f871afaf6c621b33b66fe2bd85142df7"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_035_00-00-48.546.jpg",
+    "localPath": "assets/frames/shot_035_00-00-48.546.jpg",
+    "fileId": "1zTZ2Wtk_QFxNCweL_ZF2I-YdVU02A5kz",
+    "sourceUrl": "https://drive.google.com/file/d/1zTZ2Wtk_QFxNCweL_ZF2I-YdVU02A5kz/view?usp=drivesdk",
+    "sha256": "713bc6b48838b2eab974433398d352efc1df85efefa12ca6fa75b36829f321dd"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_036_00-00-48.978.jpg",
+    "localPath": "assets/frames/shot_036_00-00-48.978.jpg",
+    "fileId": "11cmB-gs4G5MdV-9ugtSEkUIKfTSDRx6N",
+    "sourceUrl": "https://drive.google.com/file/d/11cmB-gs4G5MdV-9ugtSEkUIKfTSDRx6N/view?usp=drivesdk",
+    "sha256": "d2766a8b9f5c7c4d73115f495d163308a8b366dbd1a4f00572617cc6c1b8bc9a"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_037_00-00-49.567.jpg",
+    "localPath": "assets/frames/shot_037_00-00-49.567.jpg",
+    "fileId": "1v_i_vw3TYbvXQCnhJJB7EBS9GwB8xMGO",
+    "sourceUrl": "https://drive.google.com/file/d/1v_i_vw3TYbvXQCnhJJB7EBS9GwB8xMGO/view?usp=drivesdk",
+    "sha256": "2f6e8fc583b1daf2b60061bb320761462725a00c6969d3b271160e48e85c0995"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_038_00-00-50.068.jpg",
+    "localPath": "assets/frames/shot_038_00-00-50.068.jpg",
+    "fileId": "1CSlh46gHPgNju2gqviFc2YviczWwRnDN",
+    "sourceUrl": "https://drive.google.com/file/d/1CSlh46gHPgNju2gqviFc2YviczWwRnDN/view?usp=drivesdk",
+    "sha256": "b166b69c649ac914c1b9c7d8c519d16e6c36a25952be00d177d009e271bee0d4"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_039_00-00-50.577.jpg",
+    "localPath": "assets/frames/shot_039_00-00-50.577.jpg",
+    "fileId": "1vy0C_5ZFClX9wJAtu36CjDXd7zbLIprC",
+    "sourceUrl": "https://drive.google.com/file/d/1vy0C_5ZFClX9wJAtu36CjDXd7zbLIprC/view?usp=drivesdk",
+    "sha256": "1a541d5f397c8fc57eb87aa49115759561e948ae49bc68563c8f727b2e45b66f"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_040_00-00-51.028.jpg",
+    "localPath": "assets/frames/shot_040_00-00-51.028.jpg",
+    "fileId": "1_U3Z6QP4Hi0_BdHdTVQnmT9b8lZDpZzm",
+    "sourceUrl": "https://drive.google.com/file/d/1_U3Z6QP4Hi0_BdHdTVQnmT9b8lZDpZzm/view?usp=drivesdk",
+    "sha256": "c0e5b361be409bbbc55ef6e07c8f344e5430503cb36ad54e6662b187233412ff"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_041_00-00-51.613.jpg",
+    "localPath": "assets/frames/shot_041_00-00-51.613.jpg",
+    "fileId": "1PCR9X7xl3lLmnfOxGzHPzilzC3AqeaiY",
+    "sourceUrl": "https://drive.google.com/file/d/1PCR9X7xl3lLmnfOxGzHPzilzC3AqeaiY/view?usp=drivesdk",
+    "sha256": "f21fd2b130b034f96a08f5abd03d427924a12a9b8feea0a866f5dac52ded4242"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_042_00-00-52.510.jpg",
+    "localPath": "assets/frames/shot_042_00-00-52.510.jpg",
+    "fileId": "1YozOOnTQ-aT2g62ZV4BpCtUaCvfYhPZG",
+    "sourceUrl": "https://drive.google.com/file/d/1YozOOnTQ-aT2g62ZV4BpCtUaCvfYhPZG/view?usp=drivesdk",
+    "sha256": "1e1d9f1c48bed8e23b0521f396e47c0a091cb69fecbefc549593a2e0902bba4d"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_043_00-00-54.969.jpg",
+    "localPath": "assets/frames/shot_043_00-00-54.969.jpg",
+    "fileId": "1cSKi00WJMDfhUlsNCHK16sGPoj9gAnl6",
+    "sourceUrl": "https://drive.google.com/file/d/1cSKi00WJMDfhUlsNCHK16sGPoj9gAnl6/view?usp=drivesdk",
+    "sha256": "8c7a9584ca434963dfcc95dc6ee088a01a7bf3d56809760039664a1736681039"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_044_00-00-55.577.jpg",
+    "localPath": "assets/frames/shot_044_00-00-55.577.jpg",
+    "fileId": "1tywDVzlu4G3N1uODPhyUCEJQt9QWetYa",
+    "sourceUrl": "https://drive.google.com/file/d/1tywDVzlu4G3N1uODPhyUCEJQt9QWetYa/view?usp=drivesdk",
+    "sha256": "dd6f6e037bc54933ccc2f1a0727b1972caf3b3e18a8daa24fd0fc48381fe37b3"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_045_00-00-56.043.jpg",
+    "localPath": "assets/frames/shot_045_00-00-56.043.jpg",
+    "fileId": "1gYWJEjIYACE-1vYpV5IQ1B8gbcLKwxUB",
+    "sourceUrl": "https://drive.google.com/file/d/1gYWJEjIYACE-1vYpV5IQ1B8gbcLKwxUB/view?usp=drivesdk",
+    "sha256": "d7e58fa5cd74d654365dac382e3461b64142dbaac9a1d12e6c3b4861e592b654"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_046_00-00-56.805.jpg",
+    "localPath": "assets/frames/shot_046_00-00-56.805.jpg",
+    "fileId": "1CHd8CESwhxsJYRjKUR0iIJo_eJ-lEjqa",
+    "sourceUrl": "https://drive.google.com/file/d/1CHd8CESwhxsJYRjKUR0iIJo_eJ-lEjqa/view?usp=drivesdk",
+    "sha256": "c92889bb2532fd3284e2bf2f1ca943e18449e60a813188e21dedaa94612ce79e"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_047_00-00-57.658.jpg",
+    "localPath": "assets/frames/shot_047_00-00-57.658.jpg",
+    "fileId": "1mwj0TZFVKcLI0zaQwdPCXsIQozKx7Kh7",
+    "sourceUrl": "https://drive.google.com/file/d/1mwj0TZFVKcLI0zaQwdPCXsIQozKx7Kh7/view?usp=drivesdk",
+    "sha256": "5d10156fc2f2ca421553d9da6d23564c76ed0d63abbd33e15ac1a9ded297dff8"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_048_00-00-58.354.jpg",
+    "localPath": "assets/frames/shot_048_00-00-58.354.jpg",
+    "fileId": "1yBahDbpu3GiXPmiqhcd1QqsEzrkZYZQs",
+    "sourceUrl": "https://drive.google.com/file/d/1yBahDbpu3GiXPmiqhcd1QqsEzrkZYZQs/view?usp=drivesdk",
+    "sha256": "942386855cbdb94928188af9ffb9116e6efeebc3cad87fa4e61390a10278728a"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_049_00-00-59.271.jpg",
+    "localPath": "assets/frames/shot_049_00-00-59.271.jpg",
+    "fileId": "10cYzu-ba5gER2m3_Ceme0XMIozW8CTHq",
+    "sourceUrl": "https://drive.google.com/file/d/10cYzu-ba5gER2m3_Ceme0XMIozW8CTHq/view?usp=drivesdk",
+    "sha256": "64064b0d3a5c3abcaee79272ea77fe87b3ee7c9b58137f81c623cc1318a15ebe"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_050_00-01-00.590.jpg",
+    "localPath": "assets/frames/shot_050_00-01-00.590.jpg",
+    "fileId": "1vMxwiM2pZqpr5wZXEV72tZT0397OEU4y",
+    "sourceUrl": "https://drive.google.com/file/d/1vMxwiM2pZqpr5wZXEV72tZT0397OEU4y/view?usp=drivesdk",
+    "sha256": "c0090983ca8aa3d1b35ec1caf5a12ab93d52c1c3d01bc8e3debdb46b9682e6d7"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_051_00-01-02.350.jpg",
+    "localPath": "assets/frames/shot_051_00-01-02.350.jpg",
+    "fileId": "1PbKs0QRNZUu8kEHXnN5cNnbOhzVB_eWz",
+    "sourceUrl": "https://drive.google.com/file/d/1PbKs0QRNZUu8kEHXnN5cNnbOhzVB_eWz/view?usp=drivesdk",
+    "sha256": "e28f2e61b4ccc79d82417961e3f43c156f5b2ea3e4f8affbaf24ef5e990b1f33"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_052_00-01-03.946.jpg",
+    "localPath": "assets/frames/shot_052_00-01-03.946.jpg",
+    "fileId": "1SWDmc4X_yNVWBLlvKfOmGmLEpqqni_4Y",
+    "sourceUrl": "https://drive.google.com/file/d/1SWDmc4X_yNVWBLlvKfOmGmLEpqqni_4Y/view?usp=drivesdk",
+    "sha256": "dcccab9d4191f663a1566ff5f484fc85ec45a197e4a5ed38a7de8d2399c931bd"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_053_00-01-04.762.jpg",
+    "localPath": "assets/frames/shot_053_00-01-04.762.jpg",
+    "fileId": "1R5m1m2Te7CzFBbP2T_qXrxkIUh7xwkR-",
+    "sourceUrl": "https://drive.google.com/file/d/1R5m1m2Te7CzFBbP2T_qXrxkIUh7xwkR-/view?usp=drivesdk",
+    "sha256": "c332350c3d4b0ff8500ccfee887cd0572860307ee301b3ac444e03655d987d84"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_054_00-01-05.416.jpg",
+    "localPath": "assets/frames/shot_054_00-01-05.416.jpg",
+    "fileId": "1yA16yZjHCv3Odh4WLuLN28jVpXf1-0FF",
+    "sourceUrl": "https://drive.google.com/file/d/1yA16yZjHCv3Odh4WLuLN28jVpXf1-0FF/view?usp=drivesdk",
+    "sha256": "b12b974541c9712eb9d2159151de1d5d2dfa3e5fa73026957d17dfae62e934bf"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_055_00-01-06.710.jpg",
+    "localPath": "assets/frames/shot_055_00-01-06.710.jpg",
+    "fileId": "1wWWDeng0E4TOoA9zzPMDvVFTHqGQfIMp",
+    "sourceUrl": "https://drive.google.com/file/d/1wWWDeng0E4TOoA9zzPMDvVFTHqGQfIMp/view?usp=drivesdk",
+    "sha256": "39d87f52221b8bf7041e4e9ce11acd77a40b951b3284fba50a5ece90f70ca0b4"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_056_00-01-08.075.jpg",
+    "localPath": "assets/frames/shot_056_00-01-08.075.jpg",
+    "fileId": "1ehsWk-n1mG-Ed5t07vJqVQP02BHCpQRo",
+    "sourceUrl": "https://drive.google.com/file/d/1ehsWk-n1mG-Ed5t07vJqVQP02BHCpQRo/view?usp=drivesdk",
+    "sha256": "770e18b6c55fd1b727d181a2bb0d10ed613f50ebcbfc9974b369491c2cc7b9df"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_057_00-01-08.872.jpg",
+    "localPath": "assets/frames/shot_057_00-01-08.872.jpg",
+    "fileId": "18lGx_xRaB-m8-GQ89Z0-nvZLdz8FQ-mH",
+    "sourceUrl": "https://drive.google.com/file/d/18lGx_xRaB-m8-GQ89Z0-nvZLdz8FQ-mH/view?usp=drivesdk",
+    "sha256": "639b483b4d2fa8798a3dad08a481c7f259be4e2e4a59fb5124f0804b20dcf57b"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_058_00-01-09.242.jpg",
+    "localPath": "assets/frames/shot_058_00-01-09.242.jpg",
+    "fileId": "113x5gfIjfzRX5nx5lqP2Xm-z-rY7I5KZ",
+    "sourceUrl": "https://drive.google.com/file/d/113x5gfIjfzRX5nx5lqP2Xm-z-rY7I5KZ/view?usp=drivesdk",
+    "sha256": "77eb749c17d2836db583aff4b172fbeef1856b361d4d5747f1a61f19d61f6350"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_059_00-01-09.683.jpg",
+    "localPath": "assets/frames/shot_059_00-01-09.683.jpg",
+    "fileId": "1czai5Kvc2ecUJrRCj7pHoIuFvTCiXGR7",
+    "sourceUrl": "https://drive.google.com/file/d/1czai5Kvc2ecUJrRCj7pHoIuFvTCiXGR7/view?usp=drivesdk",
+    "sha256": "797574ded4e84981a92e53a8b8cea5f042358a16c6cda6d4bb294d477e0129d1"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_060_00-01-10.247.jpg",
+    "localPath": "assets/frames/shot_060_00-01-10.247.jpg",
+    "fileId": "1i3HejytUflrRlpynu0rQTgEs7CMPAh4C",
+    "sourceUrl": "https://drive.google.com/file/d/1i3HejytUflrRlpynu0rQTgEs7CMPAh4C/view?usp=drivesdk",
+    "sha256": "02db934d33c27f04f72f4779346b57904fcf65532199672df25d28308dac4b0d"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_061_00-01-10.763.jpg",
+    "localPath": "assets/frames/shot_061_00-01-10.763.jpg",
+    "fileId": "1w2mUEobvs3rj1O0Zp_aDOJLVxmQMi1Q8",
+    "sourceUrl": "https://drive.google.com/file/d/1w2mUEobvs3rj1O0Zp_aDOJLVxmQMi1Q8/view?usp=drivesdk",
+    "sha256": "32a2cad796df9b17d97d7a148625aeefa2043b86e410db2d1c042d2722b1117c"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_062_00-01-11.312.jpg",
+    "localPath": "assets/frames/shot_062_00-01-11.312.jpg",
+    "fileId": "1e5Mv_Gz8gQilUjyuwUaMVuuYXDFYlpoG",
+    "sourceUrl": "https://drive.google.com/file/d/1e5Mv_Gz8gQilUjyuwUaMVuuYXDFYlpoG/view?usp=drivesdk",
+    "sha256": "c5ab3013ec48f86146269349a28092f62fd779935491dcbcb068929683d763d5"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_063_00-01-11.758.jpg",
+    "localPath": "assets/frames/shot_063_00-01-11.758.jpg",
+    "fileId": "1SyQ9voHCdfS1GYAHc8oXBFeqo-wJpfkv",
+    "sourceUrl": "https://drive.google.com/file/d/1SyQ9voHCdfS1GYAHc8oXBFeqo-wJpfkv/view?usp=drivesdk",
+    "sha256": "0ea9033925dc6556cb82570f8c382fbf96ae59fd1321dc1506605102302e5fdb"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_064_00-01-12.186.jpg",
+    "localPath": "assets/frames/shot_064_00-01-12.186.jpg",
+    "fileId": "189ChQBkHMWoiIjK-27-4o0Ce-BC9s8Y2",
+    "sourceUrl": "https://drive.google.com/file/d/189ChQBkHMWoiIjK-27-4o0Ce-BC9s8Y2/view?usp=drivesdk",
+    "sha256": "2edeb96e2858319caa5f3805cfbc064de8a71ee79abbc471d82637de6475c033"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_065_00-01-12.846.jpg",
+    "localPath": "assets/frames/shot_065_00-01-12.846.jpg",
+    "fileId": "1veIW0jS4SqwPeBnUvztOPwYZpE5ErIa7",
+    "sourceUrl": "https://drive.google.com/file/d/1veIW0jS4SqwPeBnUvztOPwYZpE5ErIa7/view?usp=drivesdk",
+    "sha256": "2c0d18266e7c05006c4711fb7ec7b21988533dadcfda495dc6c778ca3f91f3ba"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_066_00-01-13.838.jpg",
+    "localPath": "assets/frames/shot_066_00-01-13.838.jpg",
+    "fileId": "1GkYcYWdCxgvLfTLsRoI__YO1JytEMGnw",
+    "sourceUrl": "https://drive.google.com/file/d/1GkYcYWdCxgvLfTLsRoI__YO1JytEMGnw/view?usp=drivesdk",
+    "sha256": "2d22dd208858e67510df0658975febe68fc367be3a115e86b022b02d80df61ab"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_067_00-01-14.616.jpg",
+    "localPath": "assets/frames/shot_067_00-01-14.616.jpg",
+    "fileId": "1s4ZK4jvEjB0uQlUjSeiitdN57ogI22RS",
+    "sourceUrl": "https://drive.google.com/file/d/1s4ZK4jvEjB0uQlUjSeiitdN57ogI22RS/view?usp=drivesdk",
+    "sha256": "bff5779169f510625a2ee28eac6b4520966d97dc88354c712cfc82bbc7c2d9d1"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_068_00-01-15.497.jpg",
+    "localPath": "assets/frames/shot_068_00-01-15.497.jpg",
+    "fileId": "1PhCkI6zl1iAWV3rsZ76LL46MZsAI_Ge8",
+    "sourceUrl": "https://drive.google.com/file/d/1PhCkI6zl1iAWV3rsZ76LL46MZsAI_Ge8/view?usp=drivesdk",
+    "sha256": "8940a2fd39a6e4895dcc8db52b8ff3db9f5c71f0a57a77622ab8f8181543f087"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_069_00-01-16.039.jpg",
+    "localPath": "assets/frames/shot_069_00-01-16.039.jpg",
+    "fileId": "1BNJvK87WaQfK0n5O5Sig-L8rUrImOxTv",
+    "sourceUrl": "https://drive.google.com/file/d/1BNJvK87WaQfK0n5O5Sig-L8rUrImOxTv/view?usp=drivesdk",
+    "sha256": "5a49ed546a4e8eaf3311b46bdb7fd8c420d2917ee86e9b908b8bf574b147ab26"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_070_00-01-16.727.jpg",
+    "localPath": "assets/frames/shot_070_00-01-16.727.jpg",
+    "fileId": "1E2iAAvis_Vh_gfScRXv65RYNcBs1cswG",
+    "sourceUrl": "https://drive.google.com/file/d/1E2iAAvis_Vh_gfScRXv65RYNcBs1cswG/view?usp=drivesdk",
+    "sha256": "46ecbd02232408a90b02c80aca375c1d36e8c40bbff52452bd7d8df5b64668f5"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_071_00-01-17.106.jpg",
+    "localPath": "assets/frames/shot_071_00-01-17.106.jpg",
+    "fileId": "1QHGHe79_OZIYqokgDxc4J89MB7AUwnLq",
+    "sourceUrl": "https://drive.google.com/file/d/1QHGHe79_OZIYqokgDxc4J89MB7AUwnLq/view?usp=drivesdk",
+    "sha256": "af32e7c24ab3a44064e095c9fe509790c3cc8e6040576eb165bbc7174a6a62cf"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_072_00-01-17.830.jpg",
+    "localPath": "assets/frames/shot_072_00-01-17.830.jpg",
+    "fileId": "1LuL0elvYE-xuU3kgcvllbXEEJHOPymL2",
+    "sourceUrl": "https://drive.google.com/file/d/1LuL0elvYE-xuU3kgcvllbXEEJHOPymL2/view?usp=drivesdk",
+    "sha256": "2c36f3c1422b8364a52586c825cdc9cef2fe9d4e77e8097fb1cef7f191bb19b8"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_073_00-01-19.430.jpg",
+    "localPath": "assets/frames/shot_073_00-01-19.430.jpg",
+    "fileId": "1wlroL0YEXcbC87xyJlxoCTEq06Bg2Ypl",
+    "sourceUrl": "https://drive.google.com/file/d/1wlroL0YEXcbC87xyJlxoCTEq06Bg2Ypl/view?usp=drivesdk",
+    "sha256": "c665a965e7f256dc9673510cc19affe56fe173665a244d20e2e19231b3452ee1"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_074_00-01-20.778.jpg",
+    "localPath": "assets/frames/shot_074_00-01-20.778.jpg",
+    "fileId": "1MDnl1nwiLoYI8a3bynugHdEmYBVnVEkj",
+    "sourceUrl": "https://drive.google.com/file/d/1MDnl1nwiLoYI8a3bynugHdEmYBVnVEkj/view?usp=drivesdk",
+    "sha256": "536c639836b65758ef3d4cb926431b7a99493a9e3ba80bf0ca60b7e21f4e893d"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_075_00-01-21.337.jpg",
+    "localPath": "assets/frames/shot_075_00-01-21.337.jpg",
+    "fileId": "1QYUYpzKV3JCY5V2K-fMwV8SsNRm4eITB",
+    "sourceUrl": "https://drive.google.com/file/d/1QYUYpzKV3JCY5V2K-fMwV8SsNRm4eITB/view?usp=drivesdk",
+    "sha256": "278c9ee84abd792c5bc7216c58c83df0f266ab0296733469d82aecd8e34042db"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_076_00-01-21.682.jpg",
+    "localPath": "assets/frames/shot_076_00-01-21.682.jpg",
+    "fileId": "1BJvXaf3DNIIyHeNx23GMUKpQvYBonwQg",
+    "sourceUrl": "https://drive.google.com/file/d/1BJvXaf3DNIIyHeNx23GMUKpQvYBonwQg/view?usp=drivesdk",
+    "sha256": "41b0f40973070450ea133d44a621b34e19f56188203878cbb85a20df1e17b2b9"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_077_00-01-22.093.jpg",
+    "localPath": "assets/frames/shot_077_00-01-22.093.jpg",
+    "fileId": "12Xynbev9Q0G3eBCRk0H9cIwd2n1zkGuw",
+    "sourceUrl": "https://drive.google.com/file/d/12Xynbev9Q0G3eBCRk0H9cIwd2n1zkGuw/view?usp=drivesdk",
+    "sha256": "937763a6bb89cf9ee7eb530f42f660a64ca23d5a94dbdf41bfe336e7cdb22b16"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_078_00-01-22.714.jpg",
+    "localPath": "assets/frames/shot_078_00-01-22.714.jpg",
+    "fileId": "1BgK7LojEqxO5EmZijSsTqFj6dMzisBdi",
+    "sourceUrl": "https://drive.google.com/file/d/1BgK7LojEqxO5EmZijSsTqFj6dMzisBdi/view?usp=drivesdk",
+    "sha256": "0e42200fe745bf963e8beb41befba2c0e3c687f327086cdf36bf2897730fd8bb"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_079_00-01-23.464.jpg",
+    "localPath": "assets/frames/shot_079_00-01-23.464.jpg",
+    "fileId": "15Zjdyupz_3TDSQkfuiSrE0OzQQ6Yt3IN",
+    "sourceUrl": "https://drive.google.com/file/d/15Zjdyupz_3TDSQkfuiSrE0OzQQ6Yt3IN/view?usp=drivesdk",
+    "sha256": "1a2fa0c624abe0a221db4b5fbc3ee9d714ecea783fde3f86aa9bb1fcfd9ec2a3"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_080_00-01-24.142.jpg",
+    "localPath": "assets/frames/shot_080_00-01-24.142.jpg",
+    "fileId": "1rjowK2RK946b_z-AZe54hD1iB-YA3ohg",
+    "sourceUrl": "https://drive.google.com/file/d/1rjowK2RK946b_z-AZe54hD1iB-YA3ohg/view?usp=drivesdk",
+    "sha256": "673c2674c6e41217ac61a020fec004655860c4ee51a3aa457bbfec8b632f3c90"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_081_00-01-24.622.jpg",
+    "localPath": "assets/frames/shot_081_00-01-24.622.jpg",
+    "fileId": "1jBFwsLUu_1BLTVDOhVCXlb5-jbWtEech",
+    "sourceUrl": "https://drive.google.com/file/d/1jBFwsLUu_1BLTVDOhVCXlb5-jbWtEech/view?usp=drivesdk",
+    "sha256": "9c45835c770ca823165649966b24eb474e7a24c7b54ee037685327ee3eff30d9"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_082_00-01-25.042.jpg",
+    "localPath": "assets/frames/shot_082_00-01-25.042.jpg",
+    "fileId": "1iRhj_nESduOxP0_Op4wTDaRC2JZborih",
+    "sourceUrl": "https://drive.google.com/file/d/1iRhj_nESduOxP0_Op4wTDaRC2JZborih/view?usp=drivesdk",
+    "sha256": "7415ea7ea00394cc3947c7a1d812cd84162b4a636e35c51040210403629feebf"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_083_00-01-25.407.jpg",
+    "localPath": "assets/frames/shot_083_00-01-25.407.jpg",
+    "fileId": "1_jmzDpYX4-IHPaOINmnvWXHuDEzn6_8J",
+    "sourceUrl": "https://drive.google.com/file/d/1_jmzDpYX4-IHPaOINmnvWXHuDEzn6_8J/view?usp=drivesdk",
+    "sha256": "fb07d7919d9c3293d65b7857e9d6d6872053c264b5ef03645ff2dfadebfd4fd1"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_084_00-01-25.954.jpg",
+    "localPath": "assets/frames/shot_084_00-01-25.954.jpg",
+    "fileId": "1XFjXs_rcMruP3SLfGci53IF0CfmhMLFx",
+    "sourceUrl": "https://drive.google.com/file/d/1XFjXs_rcMruP3SLfGci53IF0CfmhMLFx/view?usp=drivesdk",
+    "sha256": "ca5c3c5fbb249e9295722c97348765e81a2bd97ab30c460a72db5b42fdc1756b"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_085_00-01-26.734.jpg",
+    "localPath": "assets/frames/shot_085_00-01-26.734.jpg",
+    "fileId": "1AFTRElWdnkGbb_Ep0w7K69UMThM0uBd0",
+    "sourceUrl": "https://drive.google.com/file/d/1AFTRElWdnkGbb_Ep0w7K69UMThM0uBd0/view?usp=drivesdk",
+    "sha256": "343fa5058c0e2a26eda3f1f7b04698fe67215ae424c60292e626d1d15f603307"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_086_00-01-27.630.jpg",
+    "localPath": "assets/frames/shot_086_00-01-27.630.jpg",
+    "fileId": "1Fz2KcYnlYLxLJgoj8t9hybUjmz1f_FlG",
+    "sourceUrl": "https://drive.google.com/file/d/1Fz2KcYnlYLxLJgoj8t9hybUjmz1f_FlG/view?usp=drivesdk",
+    "sha256": "6c94a31d42e294e6f4e50d09dd0d283fa990b70bf98bbcced08cad576f617540"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_087_00-01-28.565.jpg",
+    "localPath": "assets/frames/shot_087_00-01-28.565.jpg",
+    "fileId": "1f_FQMxQRwD9C8gcIZqlEBg73evKEJYGL",
+    "sourceUrl": "https://drive.google.com/file/d/1f_FQMxQRwD9C8gcIZqlEBg73evKEJYGL/view?usp=drivesdk",
+    "sha256": "fea654fdea9c8dd0c21efd02b1f597e028552d7b0940830aa0b34575e30373b8"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_088_00-01-29.297.jpg",
+    "localPath": "assets/frames/shot_088_00-01-29.297.jpg",
+    "fileId": "1UknXq-LOgqZDcf4jNQCWqRZkoPIqrJ8j",
+    "sourceUrl": "https://drive.google.com/file/d/1UknXq-LOgqZDcf4jNQCWqRZkoPIqrJ8j/view?usp=drivesdk",
+    "sha256": "f6fa9fd12730d88c5650cc3093578fdc7a89d8667730b0bd9899e6a51b28ee9a"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_089_00-01-29.991.jpg",
+    "localPath": "assets/frames/shot_089_00-01-29.991.jpg",
+    "fileId": "12MGdIHMnzNlmXattazv4bZP-_Z5Ome4u",
+    "sourceUrl": "https://drive.google.com/file/d/12MGdIHMnzNlmXattazv4bZP-_Z5Ome4u/view?usp=drivesdk",
+    "sha256": "1189c21833c11427f187934c25d4b4c1d11c2e92e83d4ef333a2c44c3603af42"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_090_00-01-30.912.jpg",
+    "localPath": "assets/frames/shot_090_00-01-30.912.jpg",
+    "fileId": "12J1eBm3Q3WWC1deWkj9D8MnhbgFNYrMB",
+    "sourceUrl": "https://drive.google.com/file/d/12J1eBm3Q3WWC1deWkj9D8MnhbgFNYrMB/view?usp=drivesdk",
+    "sha256": "335bd86911044d9754f953c326e938f5ae4c4d264e55a0a4983d63e7ece449b0"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_091_00-01-31.662.jpg",
+    "localPath": "assets/frames/shot_091_00-01-31.662.jpg",
+    "fileId": "13OTgGUiBJxpzyrjImPJx6SMFAWMVnpHV",
+    "sourceUrl": "https://drive.google.com/file/d/13OTgGUiBJxpzyrjImPJx6SMFAWMVnpHV/view?usp=drivesdk",
+    "sha256": "7d6a0543f7dfd097717da9c24d1441776523c98aebc54550786a786262801580"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_092_00-01-32.662.jpg",
+    "localPath": "assets/frames/shot_092_00-01-32.662.jpg",
+    "fileId": "1uZW-ZsaLRHiOlYS8-vTnOqJ7biWQWGKs",
+    "sourceUrl": "https://drive.google.com/file/d/1uZW-ZsaLRHiOlYS8-vTnOqJ7biWQWGKs/view?usp=drivesdk",
+    "sha256": "0416c22b77fbff4665601b1d37117e5d03fc06677328baa8e7badb085321e33e"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_093_00-01-33.510.jpg",
+    "localPath": "assets/frames/shot_093_00-01-33.510.jpg",
+    "fileId": "1KVtzq3Cr-PKayetxWcNGwNoRDNnaxnbA",
+    "sourceUrl": "https://drive.google.com/file/d/1KVtzq3Cr-PKayetxWcNGwNoRDNnaxnbA/view?usp=drivesdk",
+    "sha256": "207774a411cf71d91d4154a74302b2ffad9b737551d05f85b96da9e445a98747"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_094_00-01-35.310.jpg",
+    "localPath": "assets/frames/shot_094_00-01-35.310.jpg",
+    "fileId": "1yBy-FDXfQ69dySx6ggjtNy0CORRfOqfv",
+    "sourceUrl": "https://drive.google.com/file/d/1yBy-FDXfQ69dySx6ggjtNy0CORRfOqfv/view?usp=drivesdk",
+    "sha256": "06cdff9fa204df6995d38e2dbc9cda1c1ad6cf968a8751585ab3886776004a9d"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_095_00-01-36.032.jpg",
+    "localPath": "assets/frames/shot_095_00-01-36.032.jpg",
+    "fileId": "1VsgugmRyObOFPn7NWsVamEkRce4WQfoJ",
+    "sourceUrl": "https://drive.google.com/file/d/1VsgugmRyObOFPn7NWsVamEkRce4WQfoJ/view?usp=drivesdk",
+    "sha256": "1f08bcd5546d1eb9af8fe3e59df0bd9b52cf8ba4ff25095315eb4c9e413b378c"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_096_00-01-36.432.jpg",
+    "localPath": "assets/frames/shot_096_00-01-36.432.jpg",
+    "fileId": "1tNMpV6_ORaCUADm-t6yF0XpgV_3nPVWd",
+    "sourceUrl": "https://drive.google.com/file/d/1tNMpV6_ORaCUADm-t6yF0XpgV_3nPVWd/view?usp=drivesdk",
+    "sha256": "f41e2ef69ed274d9368af934f6e016a8a21274a151c9ab984191e861ba754fb6"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_097_00-01-36.862.jpg",
+    "localPath": "assets/frames/shot_097_00-01-36.862.jpg",
+    "fileId": "1KNSDzBKqOdwlJzAJQ6GSnxo4UjdC2wjC",
+    "sourceUrl": "https://drive.google.com/file/d/1KNSDzBKqOdwlJzAJQ6GSnxo4UjdC2wjC/view?usp=drivesdk",
+    "sha256": "f34dc81ab09e8d07588d9636f4199d4ebadeef68eb62d240f540717b4e24836b"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_098_00-01-37.710.jpg",
+    "localPath": "assets/frames/shot_098_00-01-37.710.jpg",
+    "fileId": "18zWPV56CXNCQvTxPvbs4pwOYVtXxFcoC",
+    "sourceUrl": "https://drive.google.com/file/d/18zWPV56CXNCQvTxPvbs4pwOYVtXxFcoC/view?usp=drivesdk",
+    "sha256": "841b4e8d488264593a0347a4e28620125299f44317280d3438aecb44bfd31185"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_099_00-01-38.866.jpg",
+    "localPath": "assets/frames/shot_099_00-01-38.866.jpg",
+    "fileId": "1yPE4QfoNhbJz7QqeB9Q8huZet6N3a6Um",
+    "sourceUrl": "https://drive.google.com/file/d/1yPE4QfoNhbJz7QqeB9Q8huZet6N3a6Um/view?usp=drivesdk",
+    "sha256": "7b23bd8d78e7c1035812ff4244eeea3e3bd35759d984383b5a58664a5650e2c1"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_100_00-01-39.572.jpg",
+    "localPath": "assets/frames/shot_100_00-01-39.572.jpg",
+    "fileId": "13LTLOQt7IkmcZ_M81sxZtmVdAN0PWysE",
+    "sourceUrl": "https://drive.google.com/file/d/13LTLOQt7IkmcZ_M81sxZtmVdAN0PWysE/view?usp=drivesdk",
+    "sha256": "c6a75481f6d3acc43609112583c968438b83efa39f65bce92d9b8e196574b4f8"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_101_00-01-40.653.jpg",
+    "localPath": "assets/frames/shot_101_00-01-40.653.jpg",
+    "fileId": "11fy8Nu8-lGeFF1Tfcs628K46TMUGoLIG",
+    "sourceUrl": "https://drive.google.com/file/d/11fy8Nu8-lGeFF1Tfcs628K46TMUGoLIG/view?usp=drivesdk",
+    "sha256": "46c5d1dd67ece84c2a2f60ccfe654df8776cfe481559f34a712161bfc1f2e354"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_102_00-01-41.304.jpg",
+    "localPath": "assets/frames/shot_102_00-01-41.304.jpg",
+    "fileId": "18dlCfHgDXKiJQQlyn3yy14yIVulBBkpH",
+    "sourceUrl": "https://drive.google.com/file/d/18dlCfHgDXKiJQQlyn3yy14yIVulBBkpH/view?usp=drivesdk",
+    "sha256": "8efab1f677939bf2c51227bd3fc30fc9f215a379917b62d0a74b49a2b59ff30b"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_103_00-01-42.058.jpg",
+    "localPath": "assets/frames/shot_103_00-01-42.058.jpg",
+    "fileId": "1Jrxp_bnSa-hrGMOzqbME-T6RBo0WuwkY",
+    "sourceUrl": "https://drive.google.com/file/d/1Jrxp_bnSa-hrGMOzqbME-T6RBo0WuwkY/view?usp=drivesdk",
+    "sha256": "81c9674d195b68003245ed2292782cd341ec02685049182f2977cbd86487bf82"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_104_00-01-42.647.jpg",
+    "localPath": "assets/frames/shot_104_00-01-42.647.jpg",
+    "fileId": "1KWelAFBXzOQEzXXzRwrXm5zu081JsviX",
+    "sourceUrl": "https://drive.google.com/file/d/1KWelAFBXzOQEzXXzRwrXm5zu081JsviX/view?usp=drivesdk",
+    "sha256": "2e4c007d593b58e8b2ee847941dbd5021294e25fe379e01d2d81a39eea1c553e"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_105_00-01-43.118.jpg",
+    "localPath": "assets/frames/shot_105_00-01-43.118.jpg",
+    "fileId": "1qzPOLZFb3Upq7X5r322z-Hc2YhtB6CpJ",
+    "sourceUrl": "https://drive.google.com/file/d/1qzPOLZFb3Upq7X5r322z-Hc2YhtB6CpJ/view?usp=drivesdk",
+    "sha256": "11d79b85b8aecc74d7d6a52b9130998e5d6f8b93d96a4957b1fd1fbd4f40002f"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_106_00-01-43.607.jpg",
+    "localPath": "assets/frames/shot_106_00-01-43.607.jpg",
+    "fileId": "1ZXG_ZUnXrUBdh0-z7dlrsifTm9IXl1PI",
+    "sourceUrl": "https://drive.google.com/file/d/1ZXG_ZUnXrUBdh0-z7dlrsifTm9IXl1PI/view?usp=drivesdk",
+    "sha256": "3c3fc2373abe4aa7c3e5011fe3ca51a760f61bbcd870d522a8d7f0bd6d32b947"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_107_00-01-44.138.jpg",
+    "localPath": "assets/frames/shot_107_00-01-44.138.jpg",
+    "fileId": "1vMsrNusPBZrUfIHbXsyjz8FB0FNY9v_3",
+    "sourceUrl": "https://drive.google.com/file/d/1vMsrNusPBZrUfIHbXsyjz8FB0FNY9v_3/view?usp=drivesdk",
+    "sha256": "6b532724568c089be4bf79d29e0d8e2c9e140fba19eefb1d45366c72df091062"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_108_00-01-44.727.jpg",
+    "localPath": "assets/frames/shot_108_00-01-44.727.jpg",
+    "fileId": "1M84OUyvxm-bPV7V4b44Pucgf_P8X2DQS",
+    "sourceUrl": "https://drive.google.com/file/d/1M84OUyvxm-bPV7V4b44Pucgf_P8X2DQS/view?usp=drivesdk",
+    "sha256": "559f65ce3766078917fa11f77f6ff9c48c95d9a1da32e20b0294cee2d8b1fb01"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_109_00-01-45.106.jpg",
+    "localPath": "assets/frames/shot_109_00-01-45.106.jpg",
+    "fileId": "1YFrItU1bJsLbUAoMGEgV12bNLbrvdl5n",
+    "sourceUrl": "https://drive.google.com/file/d/1YFrItU1bJsLbUAoMGEgV12bNLbrvdl5n/view?usp=drivesdk",
+    "sha256": "a16ebff9685b4323fe8de71f23a79f2ed8af07e120ad8e49ffa981f46cc8ba44"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_110_00-01-45.432.jpg",
+    "localPath": "assets/frames/shot_110_00-01-45.432.jpg",
+    "fileId": "1fKO8ywAQMkD7Zjf4EOSPCDLjAWrAAA2E",
+    "sourceUrl": "https://drive.google.com/file/d/1fKO8ywAQMkD7Zjf4EOSPCDLjAWrAAA2E/view?usp=drivesdk",
+    "sha256": "990585cd06748a13504305ae84c808b79eb90c8dd5603da13d01ddf8630a6695"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_111_00-01-46.014.jpg",
+    "localPath": "assets/frames/shot_111_00-01-46.014.jpg",
+    "fileId": "1bGfr5nJ6F5RE7HmxbKrHSQvsx5ZngGH9",
+    "sourceUrl": "https://drive.google.com/file/d/1bGfr5nJ6F5RE7HmxbKrHSQvsx5ZngGH9/view?usp=drivesdk",
+    "sha256": "73831300a65e8ff93b0ef385e0db632c7e4750ae697ef1710d2adc8d823178dc"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_112_00-01-46.864.jpg",
+    "localPath": "assets/frames/shot_112_00-01-46.864.jpg",
+    "fileId": "1_3A0onfYLRJVga_ii1tw81OUqXIJxr9H",
+    "sourceUrl": "https://drive.google.com/file/d/1_3A0onfYLRJVga_ii1tw81OUqXIJxr9H/view?usp=drivesdk",
+    "sha256": "c0c588c286c993ad4d473623e30ffb5421eda25b0c6b3421eec4b244a8102a02"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_113_00-01-47.740.jpg",
+    "localPath": "assets/frames/shot_113_00-01-47.740.jpg",
+    "fileId": "1IH_-CeSKZMmymEZFWt8zqWeH4-6hYSzM",
+    "sourceUrl": "https://drive.google.com/file/d/1IH_-CeSKZMmymEZFWt8zqWeH4-6hYSzM/view?usp=drivesdk",
+    "sha256": "1eb7495901490ce951d6b7cd5c01e026e12fe80fafb53f8426d878956f1b0987"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_114_00-01-48.618.jpg",
+    "localPath": "assets/frames/shot_114_00-01-48.618.jpg",
+    "fileId": "19uFKwerhpJyRoB5aV586vY7-vVnpBQBc",
+    "sourceUrl": "https://drive.google.com/file/d/19uFKwerhpJyRoB5aV586vY7-vVnpBQBc/view?usp=drivesdk",
+    "sha256": "c57bb83d779ca2dbfff04ec00a99a4270bd1fb3145007fb210e6b72654245f0f"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_115_00-01-49.435.jpg",
+    "localPath": "assets/frames/shot_115_00-01-49.435.jpg",
+    "fileId": "1OtBEWxol6e27FHU-i2YZOfMuetGZZzyo",
+    "sourceUrl": "https://drive.google.com/file/d/1OtBEWxol6e27FHU-i2YZOfMuetGZZzyo/view?usp=drivesdk",
+    "sha256": "cb10bf58fe1ed39cd3141d3a15679a9691c2b463ad578bb4714e1a1abc455313"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_116_00-01-50.369.jpg",
+    "localPath": "assets/frames/shot_116_00-01-50.369.jpg",
+    "fileId": "1T8es8IyshQPsHLRKiDCdcgcIJd-suR-g",
+    "sourceUrl": "https://drive.google.com/file/d/1T8es8IyshQPsHLRKiDCdcgcIJd-suR-g/view?usp=drivesdk",
+    "sha256": "e3158d651f9f4139e586dba43214719d34e15cc141abe2694bce02949324307d"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_117_00-01-51.022.jpg",
+    "localPath": "assets/frames/shot_117_00-01-51.022.jpg",
+    "fileId": "1UUh3yQZjZ-8KIRiHWCQ4yjWmWKvGQRKs",
+    "sourceUrl": "https://drive.google.com/file/d/1UUh3yQZjZ-8KIRiHWCQ4yjWmWKvGQRKs/view?usp=drivesdk",
+    "sha256": "14ba174279a7cca51a68fff1e9ce473e270fa16ccbfc9daddab00f945754d266"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_118_00-01-51.746.jpg",
+    "localPath": "assets/frames/shot_118_00-01-51.746.jpg",
+    "fileId": "1Z1TT9y9E3KlsNH3ku7YFTLfP9YmlrPVP",
+    "sourceUrl": "https://drive.google.com/file/d/1Z1TT9y9E3KlsNH3ku7YFTLfP9YmlrPVP/view?usp=drivesdk",
+    "sha256": "0c7cc9c62fcae4831c77d05e794d5a27703a28b6ac596a14d6b04dc0a4be88f0"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_119_00-01-52.990.jpg",
+    "localPath": "assets/frames/shot_119_00-01-52.990.jpg",
+    "fileId": "1_HNHzJYCuDlpOhIAudiauvmPZAV9i5BX",
+    "sourceUrl": "https://drive.google.com/file/d/1_HNHzJYCuDlpOhIAudiauvmPZAV9i5BX/view?usp=drivesdk",
+    "sha256": "f997e44da020f8ea1e60c112eb2b4f181798cf3d1657145aaa9a98019f6c432b"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_120_00-01-54.082.jpg",
+    "localPath": "assets/frames/shot_120_00-01-54.082.jpg",
+    "fileId": "1to_0aS1LLjLiIAdvELCqW7mYJsQFNb_z",
+    "sourceUrl": "https://drive.google.com/file/d/1to_0aS1LLjLiIAdvELCqW7mYJsQFNb_z/view?usp=drivesdk",
+    "sha256": "cac1184b09397c63bd3424f12aa30c27d69b340adb076705bc1e0862d1a736a4"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_121_00-01-54.830.jpg",
+    "localPath": "assets/frames/shot_121_00-01-54.830.jpg",
+    "fileId": "1vaXlWy-JjqkJzJnq7HV5S0VWHGTEQzOV",
+    "sourceUrl": "https://drive.google.com/file/d/1vaXlWy-JjqkJzJnq7HV5S0VWHGTEQzOV/view?usp=drivesdk",
+    "sha256": "d13c218d03107ff86e63b8ba4ffeedfc541c939cdd218e05897f44dd3940bb6f"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_122_00-01-57.319.jpg",
+    "localPath": "assets/frames/shot_122_00-01-57.319.jpg",
+    "fileId": "1sByJ_WxdPoZCmPojferc7_BkKLvc19rJ",
+    "sourceUrl": "https://drive.google.com/file/d/1sByJ_WxdPoZCmPojferc7_BkKLvc19rJ/view?usp=drivesdk",
+    "sha256": "554c4034c352cd711d4c0df0643956abc509ed8ad260e0be98107139cc7e7264"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_123_00-01-57.946.jpg",
+    "localPath": "assets/frames/shot_123_00-01-57.946.jpg",
+    "fileId": "1Q5Ojjf4R1-xhTVHu79-ZMKABMfts7XrZ",
+    "sourceUrl": "https://drive.google.com/file/d/1Q5Ojjf4R1-xhTVHu79-ZMKABMfts7XrZ/view?usp=drivesdk",
+    "sha256": "e43ec3c72d0be01c0484ac47cec3380b88344bb27629cbebd23d879d7ba005d4"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_124_00-01-58.470.jpg",
+    "localPath": "assets/frames/shot_124_00-01-58.470.jpg",
+    "fileId": "1fld0fJzWjnz93bigXylTEzXq6GT0mAVM",
+    "sourceUrl": "https://drive.google.com/file/d/1fld0fJzWjnz93bigXylTEzXq6GT0mAVM/view?usp=drivesdk",
+    "sha256": "567b79ba9f1b5837894cb6c8e3553ecd5f888576d87c8fa0018cbba3366454e2"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_125_00-01-59.526.jpg",
+    "localPath": "assets/frames/shot_125_00-01-59.526.jpg",
+    "fileId": "10JeXM_AAIpUUyZ-MW6Z6GHeLoQRYr619",
+    "sourceUrl": "https://drive.google.com/file/d/10JeXM_AAIpUUyZ-MW6Z6GHeLoQRYr619/view?usp=drivesdk",
+    "sha256": "0251cafee5a2a3a5fdcd55216c51e5058a10d80055d9a5a03d08ac2f5a174eb7"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_126_00-02-00.442.jpg",
+    "localPath": "assets/frames/shot_126_00-02-00.442.jpg",
+    "fileId": "1qMICFMByEKk7qVarIdNPK6-TdcCvmwYt",
+    "sourceUrl": "https://drive.google.com/file/d/1qMICFMByEKk7qVarIdNPK6-TdcCvmwYt/view?usp=drivesdk",
+    "sha256": "e5cf4a23f6f68b9607d89ddc0df76bcdf7009d7559601861423e6023200680b5"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_127_00-02-00.792.jpg",
+    "localPath": "assets/frames/shot_127_00-02-00.792.jpg",
+    "fileId": "1uwLw4aDsuTWkjvBJHDZUNsOzuPoSKoCo",
+    "sourceUrl": "https://drive.google.com/file/d/1uwLw4aDsuTWkjvBJHDZUNsOzuPoSKoCo/view?usp=drivesdk",
+    "sha256": "bb2e55bb25e166d1a9446fd2e1f09252c61a28a40e5c44eb9fa7f475f15ed3bc"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_128_00-02-01.162.jpg",
+    "localPath": "assets/frames/shot_128_00-02-01.162.jpg",
+    "fileId": "1AK98JiN7kjqf6FnrmY0URvpQzq4bdU-G",
+    "sourceUrl": "https://drive.google.com/file/d/1AK98JiN7kjqf6FnrmY0URvpQzq4bdU-G/view?usp=drivesdk",
+    "sha256": "6ed579375edb862838c789e997d83dbd71213fe38bf731d2e9ffcf458fd30974"
+  },
+  {
+    "sourcePath": "../frames/09_153_15LE_CUBE_NARAKA.mp4_707986519/shot_129_00-02-01.910.jpg",
+    "localPath": "assets/frames/shot_129_00-02-01.910.jpg",
+    "fileId": "1Tyj2iKVLbQhIcqx3M096QduOmDCgG5Y2",
+    "sourceUrl": "https://drive.google.com/file/d/1Tyj2iKVLbQhIcqx3M096QduOmDCgG5Y2/view?usp=drivesdk",
+    "sha256": "4fd9d9330b9a9fd10c35fa2075967c35d90b659e8a929a66b3b5c5299848de27"
+  },
+  {
+    "sourcePath": "../keyframes/09_naraka-bladepoint-character-film/K01_00-03-000.jpg",
+    "localPath": "assets/keyframes/K01_00-03-000.jpg",
+    "fileId": "1LiN3fV93ix0nL6yEZth8rccI3jT8D1Me",
+    "sourceUrl": "https://drive.google.com/file/d/1LiN3fV93ix0nL6yEZth8rccI3jT8D1Me/view?usp=drivesdk",
+    "sha256": "f66f94acb5e14719d824535b8c03d70ae965b953f5259ae89783ee91100f6331"
+  },
+  {
+    "sourcePath": "../keyframes/09_naraka-bladepoint-character-film/K02_00-16-000.jpg",
+    "localPath": "assets/keyframes/K02_00-16-000.jpg",
+    "fileId": "1vAgclTFEHBRK1b9VMqZiiXIZYpuvROp7",
+    "sourceUrl": "https://drive.google.com/file/d/1vAgclTFEHBRK1b9VMqZiiXIZYpuvROp7/view?usp=drivesdk",
+    "sha256": "0e1f66cee9041045abd33427f704996648b27dcbe916fcfcae8f8c80b3f14128"
+  },
+  {
+    "sourcePath": "../keyframes/09_naraka-bladepoint-character-film/K03_00-29-000.jpg",
+    "localPath": "assets/keyframes/K03_00-29-000.jpg",
+    "fileId": "1m1c8YvwSwheWLu-HE2qBwsgb3CPQh_69",
+    "sourceUrl": "https://drive.google.com/file/d/1m1c8YvwSwheWLu-HE2qBwsgb3CPQh_69/view?usp=drivesdk",
+    "sha256": "1414ca16795e589ff9da80ad8f0dc7c5e806110960864a352332e7bcd75abf79"
+  },
+  {
+    "sourcePath": "../keyframes/09_naraka-bladepoint-character-film/K04_00-43-000.jpg",
+    "localPath": "assets/keyframes/K04_00-43-000.jpg",
+    "fileId": "1p1K3rb3RuXmF0Mj9sUiAVK45QKnsvuPw",
+    "sourceUrl": "https://drive.google.com/file/d/1p1K3rb3RuXmF0Mj9sUiAVK45QKnsvuPw/view?usp=drivesdk",
+    "sha256": "2f3000add0770b88f668267e28a4786883ac9cda269edb4e042fe79d0334887f"
+  },
+  {
+    "sourcePath": "../keyframes/09_naraka-bladepoint-character-film/K05_00-58-000.jpg",
+    "localPath": "assets/keyframes/K05_00-58-000.jpg",
+    "fileId": "1I4MGW0vqDkljIXEalpj_OAv_uiHdUBSg",
+    "sourceUrl": "https://drive.google.com/file/d/1I4MGW0vqDkljIXEalpj_OAv_uiHdUBSg/view?usp=drivesdk",
+    "sha256": "721755d5e20c4978102cff53a5179960975f4b94bc3273f35cbbc21637b0e480"
+  },
+  {
+    "sourcePath": "../keyframes/09_naraka-bladepoint-character-film/K06_01-10-000.jpg",
+    "localPath": "assets/keyframes/K06_01-10-000.jpg",
+    "fileId": "1zVC08sKrfKzarPPkFKHnu2wNi-5FyvqV",
+    "sourceUrl": "https://drive.google.com/file/d/1zVC08sKrfKzarPPkFKHnu2wNi-5FyvqV/view?usp=drivesdk",
+    "sha256": "f4b26dd1256ce0b39258546ffe954bc7cee7d412695005eacff8bbdefc6f5eb5"
+  },
+  {
+    "sourcePath": "../keyframes/09_naraka-bladepoint-character-film/K07_01-24-000.jpg",
+    "localPath": "assets/keyframes/K07_01-24-000.jpg",
+    "fileId": "1Un1rhYwAvI8WylnwBjeHhIqid5nFwW8u",
+    "sourceUrl": "https://drive.google.com/file/d/1Un1rhYwAvI8WylnwBjeHhIqid5nFwW8u/view?usp=drivesdk",
+    "sha256": "ce499e6d26d3f52360519b04c188a48eb072367c67e9d63fb55d02f85841273b"
+  },
+  {
+    "sourcePath": "../keyframes/09_naraka-bladepoint-character-film/K08_01-38-000.jpg",
+    "localPath": "assets/keyframes/K08_01-38-000.jpg",
+    "fileId": "1F3rrqnhvt0DVLvOmITxQZjFjzGn4wbjW",
+    "sourceUrl": "https://drive.google.com/file/d/1F3rrqnhvt0DVLvOmITxQZjFjzGn4wbjW/view?usp=drivesdk",
+    "sha256": "5bdb6ed7bd5255e8c56a3398b516032e487eef88b4f92bf5dc32a5f02e7f91fb"
+  },
+  {
+    "sourcePath": "../keyframes/09_naraka-bladepoint-character-film/K09_01-52-000.jpg",
+    "localPath": "assets/keyframes/K09_01-52-000.jpg",
+    "fileId": "15dfc5jCPBky87huSnyvAMNUn69cPO1KC",
+    "sourceUrl": "https://drive.google.com/file/d/15dfc5jCPBky87huSnyvAMNUn69cPO1KC/view?usp=drivesdk",
+    "sha256": "9bfa782ac7f7b4621d5b927cf8ce7c0b48b0bd285ad01e19fcff4dbb9178f84a"
+  },
+  {
+    "sourcePath": "../keyframes/09_naraka-bladepoint-character-film/K10_02-01-000.jpg",
+    "localPath": "assets/keyframes/K10_02-01-000.jpg",
+    "fileId": "1ao3YCwH1Dh2xcws5cW54cysFq0jxbBZ4",
+    "sourceUrl": "https://drive.google.com/file/d/1ao3YCwH1Dh2xcws5cW54cysFq0jxbBZ4/view?usp=drivesdk",
+    "sha256": "10cb57064b6e6913dccd0f69533da134b24487054ef839a5b50ac1fda8f1740b"
+  },
+  {
+    "sourcePath": "../keyframes/09_naraka-bladepoint-character-film/K11_02-09-000.jpg",
+    "localPath": "assets/keyframes/K11_02-09-000.jpg",
+    "fileId": "1mVtSfOhjEpN8YgAR5dkEFW5N98L2Qio8",
+    "sourceUrl": "https://drive.google.com/file/d/1mVtSfOhjEpN8YgAR5dkEFW5N98L2Qio8/view?usp=drivesdk",
+    "sha256": "6c04f8b1c04314ec3430290d66e4df90d35803ac29cb5d5c2ad3aaf7e31a15e4"
+  }
+]

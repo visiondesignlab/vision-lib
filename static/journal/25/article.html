@@ -1,0 +1,69 @@
+
+<header>
+<h1>Vol.25 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-11-16 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天的主角不是“又多了一个会生成的模型”，而是成本和边界终于被写进产品接口。Linear 把模型账单与 sandbox 运行账单拆开，Vercel 把额度、缓存和私有包凭证分别显式化，Penpot 与 Rive 则把变量和交互拉回可维护结构。</p>
+<p class="mixed-script">设计团队接上 AI 之后，真正会拖慢交付的往往不是第一版出得慢，而是凭证暴露、缓存失效、token 超支、组件逻辑没人能接手。今天这批更新都在回答同一个问题：生成之后，谁付钱、谁能访问、哪里能复现、出了问题怎么查。</p>
+<h2>● AI Coding</h2>
+<h3>Bring your own key (BYOK)<a class="source-url" href="https://linear.app/changelog/2026-11-12-bring-your-own-key" rel="noopener noreferrer" target="_blank">https://linear.app/changelog/2026-11-12-bring-your-own-key</a></h3>
+<figure><img alt="Linear BYOK 把模型供应商、API key 与 cloud coding agent 运行成本拆开管理" decoding="async" height="900" loading="lazy" src="01.png" width="1440"/><figcaption>Linear BYOK 把模型供应商、API key 与 cloud coding agent 运行成本拆开管理</figcaption></figure>
+<p class="mixed-script">Linear 现在允许所有现有方案接入自己的 OpenAI、Anthropic、AWS Bedrock、Azure OpenAI、Claude in Foundry、OpenRouter 或 Vercel 凭证，也支持兼容 OpenAI Responses / Anthropic Messages 的网关。模型用量由供应商计费，Linear 的 sandbox 运行仍消耗 Linear AI credits；ChatGPT 或 Claude 订阅也不能替代 API key。</p>
+<p class="mixed-script">这不是一张“支持更多模型”的清单，而是两本账。采购表里至少要拆出模型 token 与运行时 credits，权限表里还要写清 key 属于个人、团队还是网关；否则 BYOK 只是把平台的黑箱账单换成团队自己的黑箱账单。还没拿真实仓库跑过，先不判断它的失败重试是否也收费。</p>
+<h3>Token Pass now includes $150 in tokens for $30/month<a class="source-url" href="https://vercel.com/changelog/vercel-token-pass-now-includes-one-hundred-fifty-dollars-of-monthly-tokens" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-token-pass-now-includes-one-hundred-fifty-dollars-of-monthly-tokens</a></h3>
+<figure><img alt="Vercel Token Pass 以团队月费提供固定 AI Gateway token 额度" decoding="async" height="720" loading="lazy" src="02.png" width="1280"/><figcaption>Vercel Token Pass 以团队月费提供固定 AI Gateway token 额度</figcaption></figure>
+<p class="mixed-script">Vercel Token Pass 仍是 Pro 团队的 Early Access add-on，月费 30 美元，额度从 80 美元升到 150 美元，只适用于 AI Gateway 里指定的 open-weight 模型，月底不结转。普通 AI Gateway key 超额后会回落到团队余额继续计费；Token Pass 专用 key 用完即停，不产生 overage。</p>
+<p class="mixed-script">表面是五倍面值，真正能改变产品决策的是 key 的失败方式。做 demo 可以用普通 key 保连续性，做预算受控的批处理或 agent 实验，专用 key 的“到线即停”更诚实；但模型池受限、额度不结转，不能拿 150 美元直接等同可替代的通用推理预算。</p>
+<h2>● Design Systems</h2>
+<h3>Design Tokens with Penpot<a class="source-url" href="https://penpot.app/blog/design-tokens-with-penpot/" rel="noopener noreferrer" target="_blank">https://penpot.app/blog/design-tokens-with-penpot/</a></h3>
+<figure><img alt="Penpot 用 token sets、themes 与 shared libraries 组织跨文件设计变量" decoding="async" height="900" loading="lazy" src="03.png" width="1440"/><figcaption>Penpot 用 token sets、themes 与 shared libraries 组织跨文件设计变量</figcaption></figure>
+<p class="mixed-script">Penpot 的 token sets、themes 和 theme groups 已经能组合颜色模式、密度与品牌主题，并通过 shared libraries 跨文件复用。连接库后选择 <code>Set as tokens source</code>，该库会成为当前文件唯一的 token 来源，而不是再复制一份变量快照。</p>
+<p class="mixed-script">“唯一来源”比“支持 token”重要得多，它把覆盖冲突直接变成产品规则。适合先拿一组颜色 × 密度做双轴 theme 验证，再观察库更新、回滚和分支审查是否够用；如果版本治理还要靠口头约定，变量面板再完整也只是更漂亮的同步按钮。</p>
+<h2>● Design Engineering</h2>
+<h3>Build cache size limit increased to 5 GB<a class="source-url" href="https://vercel.com/changelog/build-cache-size-limit-on-vercel-increased-to-five-gb" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/build-cache-size-limit-on-vercel-increased-to-five-gb</a></h3>
+<figure><img alt="Vercel 把所有构建机器的 build cache 上限统一提高到 5GB" decoding="async" height="720" loading="lazy" src="04.png" width="1280"/><figcaption>Vercel 把所有构建机器的 build cache 上限统一提高到 5GB</figcaption></figure>
+<p class="mixed-script">Vercel 把所有 build machine 的缓存上限统一到 5GB，原先 Basic / Standard 是 1.5GB、Enhanced 是 3GB、Turbo 是 4.75GB；更新自动生效，不需要配置，也不额外收费。</p>
+<p class="mixed-script">对带 Storybook、字体、WASM 或 3D 依赖的前端仓库，这是实打实的安装时间缓冲。但缓存更大不是放任依赖继续膨胀的理由：把 cold build 与 warm build 分开记，缓存命中率和依赖体积一起看，才能分清“基础设施变快”还是“包袱被藏起来了”。</p>
+<h3>Vercel Sandbox now supports managed npm credentials<a class="source-url" href="https://vercel.com/changelog/vercel-sandbox-now-supports-managed-npm-credentials" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-sandbox-now-supports-managed-npm-credentials</a></h3>
+<figure><img alt="Vercel Sandbox 通过受管 npm credentials 安装私有 npm 与自定义 registry 包" decoding="async" height="720" loading="lazy" src="05.png" width="1280"/><figcaption>Vercel Sandbox 通过受管 npm credentials 安装私有 npm 与自定义 registry 包</figcaption></figure>
+<p class="mixed-script">Vercel Sandbox 现在可用 <code>credentials: { npm: true }</code> 安装团队的私有 npm 包，也覆盖 GitHub Packages、JFrog 等自定义 registry。凭证存放在 Shared Environment Variables，防火墙在安装请求经过时补上授权，token 本身不进入 sandbox。</p>
+<p class="mixed-script">这对让 agent 复现真实设计系统最有用：它终于能装到私有组件，而不用把长期 token 塞进临时环境。边界也很清楚——凭证没进沙箱，不代表所有包都该开放；registry、scope、只读权限和安装日志仍然要收窄，否则“能跑起来”会先于最小权限落地。</p>
+<h2>● Case Study</h2>
+<h3>From brief to breakthrough: giving Frontify’s product story a pulse with Rive<a class="source-url" href="https://webflow.com/blog/frontify-rive-offbrand" rel="noopener noreferrer" target="_blank">https://webflow.com/blog/frontify-rive-offbrand</a></h3>
+<figure><img alt="OFF+BRAND 用 Rive 组件、remap、nested timelines 与数据绑定制作 Frontify 交互故事" decoding="async" height="900" loading="lazy" src="06.png" width="1440"/><figcaption>OFF+BRAND 用 Rive 组件、remap、nested timelines 与数据绑定制作 Frontify 交互故事</figcaption></figure>
+<p class="mixed-script">OFF+BRAND 为 Frontify 做的滚动故事把实现细节交代得很实在：JavaScript 驱动 Rive 的 <code>scroll_y</code>，通过 joystick 的 -100% 到 100% 映射进 blend state；组件、remap 与 nested timelines 控制文件复杂度，箭头只做一个基础组件，再用 path variants 和 trim-path overlap 维持连续运动。</p>
+<p class="mixed-script">最该抄走的不是视觉风格，而是一条硬约束：scroll timeline 与 click timeline 不要同时控制同一个属性。鼠标样式也不是在画布里猜，而是用 Rive data binding 回传给 JavaScript / CSS。交互文件能不能被下一位设计工程师接住，往往就差这些看似无聊的控制权划分。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Gatto — Official Trailer<a class="source-url" href="https://video.disney.com/watch/gatto-official-trailer-in-theaters-march-5-2027-66019a8462ded13689429c7b" rel="noopener noreferrer" target="_blank">https://video.disney.com/watch/gatto-official-trailer-in-theaters-march-5-2027-66019a8462ded13689429c7b</a></h3>
+<figure><img alt="Gatto 官方预告用绘本笔触、3D 景深与手绘字卡建立威尼斯猫咪世界" decoding="async" height="720" loading="lazy" src="07.jpg" width="1280"/><figcaption>Gatto 官方预告用绘本笔触、3D 景深与手绘字卡建立威尼斯猫咪世界</figcaption></figure>
+<p class="mixed-script">视频：Disney 官方落地页<a class="source-url" href="https://video.disney.com/watch/gatto-official-trailer-in-theaters-march-5-2027-66019a8462ded13689429c7b" rel="noopener noreferrer" target="_blank">https://video.disney.com/watch/gatto-official-trailer-in-theaters-march-5-2027-66019a8462ded13689429c7b</a>｜类型：2D × 3D / animated feature trailer｜片长：142.7 秒｜上映：2027 年 3 月 5 日</p>
+<p class="mixed-script">《Gatto》先用市场追逐和“九条命”把规则说清，再从个体逃生切到群体关系与大场面。142 秒里，信息不是靠旁白排队，而是靠色彩分区：白天的街市用暖黄、石灰墙和高饱和食物建立生活感，危险段落压成蓝黑与近单色，音乐演奏、群猫聚集和俯拍爆点再把色彩重新放回来。</p>
+<p class="mixed-script">它真正有意思的是“2D 感”没有停在贴一层纸纹。角色轮廓、墙面、阴影边缘和速度线都保留可见笔触，但镜头仍有完整的 3D 景深、透视和灯光体积；手绘字卡也不只是章节标题，字形的拉伸、发光和尾巴线条直接接住猫的动作。画面很满，阅读顺序却稳定：先角色眼神和动作，再看环境细节，最后才轮到材质炫技。</p>
+<p class="mixed-script">做产品发布片可以拿走一套很具体的办法：先规定“事实层、情绪层、爆点层”各自的色域和镜头职责，再让同一个品牌形态贯穿字卡、转场与界面反馈。别把 2D 笔触当滤镜全局覆盖；只在轮廓变化、速度与情绪转折处出现，画面会更有手感，也更省实现成本。</p>
+<p class="mixed-script">飞书发布使用 Disney 官方落地页的 URL Preview；本地已从官方 Kaltura 流回放并抽取 14 个时间点检查，不插入单独视频封面块。</p>
+<h2>● Stash 最新内容观察</h2>
+<p class="mixed-script">Stash 在 11 月 15 日新增 Stash 180 Preview<a class="source-url" href="https://www.stashmedia.tv/new-issue-stash-180-drops-inspiration-insight-insanity/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/new-issue-stash-180-drops-inspiration-insight-insanity/</a>。文章汇集本期 animation / VFX / motion design 片段，适合当选题雷达；但 Vimeo 播放器当前返回 401，今天只核到文章元数据和 1920×1080 编辑拼图，不拿静态图冒充运动判断。</p>
+<ul>
+<li>Stash 180 Preview<a class="source-url" href="https://www.stashmedia.tv/new-issue-stash-180-drops-inspiration-insight-insanity/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/new-issue-stash-180-drops-inspiration-insight-insanity/</a>｜issue preview / motion reel｜新条目：140 秒预览覆盖多种风格，先盯可访问 player 与后续单片 breakdown；播放器恢复前不升级主卡。</li>
+<li>Reframe Studio Get Comfortable in Fursys Manta Chair<a class="source-url" href="https://www.stashmedia.tv/reframe-studio-get-comfortable-in-fursys-manta-chair/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/reframe-studio-get-comfortable-in-fursys-manta-chair/</a>｜3D / product film｜11 月 14 日主卡：材质隐喻紧贴椅背结构；没有新 breakdown 不重复展开。</li>
+<li>Roof Studio &amp; Pedro Allevato Stay Hands On for Clash Royale<a class="source-url" href="https://www.stashmedia.tv/roof-studio-pedro-allevato-stay-hands-on-for-clash-royale/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/roof-studio-pedro-allevato-stay-hands-on-for-clash-royale/</a>｜2D × 3D animation｜11 月 13 日主卡：3D blocking 保空间、逐帧水彩保表演，继续作为混合媒介分工样本。</li>
+<li>Electric Theatre Collective’s Ambitious Amphibian Adventure<a class="source-url" href="https://www.stashmedia.tv/electric-theatre-collectives-ambitious-amphibian-adventure/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/electric-theatre-collectives-ambitious-amphibian-adventure/</a>｜VFX / character film｜11 月 12 日已覆盖：角色欲望线托住品牌命题，新项目先写动作动机再决定镜头规模。</li>
+<li>Trizz Reframes Complexity for Google Security<a class="source-url" href="https://www.stashmedia.tv/trizz-reframes-complexity-for-google-security/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/trizz-reframes-complexity-for-google-security/</a>｜3D / cybersecurity｜11 月 12 日已覆盖：复杂技术片先锁形态语法，再开放镜头变形。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Linear BYOK 的失败重试、上下文缓存与 sandbox credits 如何计费；API key 能否按 agent、项目和网关做最小权限隔离。</li>
+<li>Vercel Token Pass 的指定模型池、专用 key 停机行为，以及真实团队能否稳定吃满不结转额度。</li>
+<li>Penpot token library 的版本、分支、回滚与 theme 冲突；“唯一来源”能否在多人协作里保持可审查。</li>
+<li>Rive scroll / click 控制权拆分在移动端、低性能设备和 <code>prefers-reduced-motion</code> 下是否仍然成立。</li>
+<li>Stash 180 的 Vimeo player 是否恢复；恢复后只升级一条有完整制作信息的片，不把整期 reel 拆成多条水文。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日主题：Linear BYOK、Vercel Token Pass、Penpot token libraries、Vercel 5GB build cache、Sandbox managed npm credentials、Frontify × Rive。</li>
+<li>今日视频：Disney / Pixar《Gatto》官方预告；官方 Kaltura 片源 142.7 秒、1920×1080、23.976fps，14 个时间点已目视检查，飞书使用 Disney URL Preview。</li>
+<li>今日 Stash：新增 Stash 180 Preview；Fursys Manta、Clash Royale、ETC amphibian、Trizz / Google Security 只保留覆盖状态。</li>
+<li>继续避免：11 月 15 日 Clayzo、Storybook 11 beta、GitHub portable skills、Chrome DevTools 11 月更新、Vercel Sandbox 冷启动 / Security Review / daemon traces、Particle Logo 与 Snowfire；没有新实测、价格权限变化或制作 breakdown 不重复展开。</li>
+</ul>
+<p class="mixed-script verification">核验说明：Linear、Penpot、Vercel、Webflow / OFF+BRAND、Disney Video、Stash 首页与 WordPress API 于 2026-11-16 回读。正文 7 张配图原始宽度为 1280–1440px，已逐张目视检查；Stash 180 的 1920px 编辑图只用于证据，不嵌入日报。飞书文档、URL Preview 与群消息状态以最终 CLI 回读为准。</p>

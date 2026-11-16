@@ -7,9 +7,26 @@ import unittest
 from unittest.mock import patch
 import cms_content
 import media_delivery
+from scripts import sync_video_sources
 
 
 class MediaDeliveryTests(unittest.TestCase):
+    def test_local_only_source_is_not_added_to_public_catalog(self):
+        case = {'id':'local', 'status':'published', 'notes':'Hold for review\n[local-only]',
+                'source':{'url':'https://x.com/brand/status/456'},
+                'media':{'kind':'video','video':'/media/local/web.mp4'}}
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            catalog = root/'catalog/video-sources.json'
+            catalog.parent.mkdir()
+            catalog.write_text('{"sources":{}}')
+            with patch.object(sync_video_sources, 'ROOT', root), \
+                    patch.object(sync_video_sources.store, 'load_cases', return_value=[case]), \
+                    patch.object(sync_video_sources.xsource, 'resolve_post') as resolve:
+                sync_video_sources.sync(refresh=True)
+            resolve.assert_not_called()
+            self.assertEqual(json.loads(catalog.read_text()), {'sources':{}})
+
     def test_public_source_keeps_private_original_intact(self):
         case = {'id':'sample', 'source':{'url':'https://x.com/brand/status/123'},
                 'media':{'kind':'video','video':'/media/sample/web.mp4','preview':'/media/sample/preview.mp4',

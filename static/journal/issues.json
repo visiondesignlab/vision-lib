@@ -1,5 +1,29 @@
 [
   {
+    "volume": 25,
+    "date": "2026-11-16",
+    "headline": "Bring your own key (BYOK)",
+    "intro": "今天的主角不是“又多了一个会生成的模型”，而是成本和边界终于被写进产品接口。Linear 把模型账单与 sandbox 运行账单拆开，Vercel 把额度、缓存和私有包凭证分别显式化，Penpot 与 Rive 则把变量和交互拉回可维护结构。"
+  },
+  {
+    "volume": 24,
+    "date": "2026-11-15",
+    "headline": "Clayzo",
+    "intro": "今天没有硬凑“周末大新闻”。真正连成一条线的，是 Clayzo、Storybook、GitHub、Chrome DevTools 和 Vercel 都在补 agent 交付后的检查面：逐帧看、跑组件测试、声明权限、读 trace、把安全审查留在代码库里。"
+  },
+  {
+    "volume": 23,
+    "date": "2026-11-14",
+    "headline": "GitHub Enterprise Server support in the GitHub Copilot app",
+    "intro": "今天没有再追一轮“谁又生成了什么”，更有用的更新集中在边界：GitHub 把 GHES 带进 Copilot app，却明确留下 cloud session 的缺口；AI Scan 能用 API 批量开关，但每次实际扫描仍要单独触发、单独计 credits；六个模型也已经写下退役日期。"
+  },
+  {
+    "volume": 22,
+    "date": "2026-11-13",
+    "headline": "3D transform in Figma Design",
+    "intro": "今天两条更新都在把“高级视觉”塞回设计画布：Figma 原生补上 3D transform、深度和透视，Framer 的 Agent 开始直接生成图像、纹理与 shader。表面看是创作入口变短，真正拉开差距的却是出口——Figma 能回到可编辑图层、CSS 与 MCP，Framer 要回到网站运行时和共享 credits。"
+  },
+  {
     "volume": 21,
     "date": "2026-11-12",
     "headline": "Adobe MAX 2026 Sneaks",

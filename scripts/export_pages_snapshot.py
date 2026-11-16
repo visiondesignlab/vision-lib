@@ -26,8 +26,16 @@ def references(value):
         yield unquote(urlsplit(value).path).lstrip('/')
 
 
+def release_cases():
+    # The private CMS notes marker keeps a locally visible case out of Pages
+    # until the user explicitly releases it. Notes never enter public data.
+    return [cms_content.public_view(c) for c in store.load_cases()
+            if c.get('status') == 'published'
+            and '[local-only]' not in (c.get('notes') or '').splitlines()]
+
+
 def main():
-    cases = [cms_content.public_view(c) for c in store.load_cases() if c.get('status') == 'published']
+    cases = release_cases()
     if not cases:
         raise SystemExit('No published content; refusing to replace the public snapshot.')
     output = ROOT / 'publish'

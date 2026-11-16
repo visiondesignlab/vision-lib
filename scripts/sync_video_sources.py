@@ -20,6 +20,7 @@ def sync(refresh=False):
     data = json.loads(path.read_text()) if path.exists() else {'sources': {}}
     sources = data['sources']
     cases = [c for c in store.load_cases() if c.get('status') == 'published'
+             and '[local-only]' not in (c.get('notes') or '').splitlines()
              and c.get('media', {}).get('kind') == 'video' and xsource.post_id(c.get('source', {}).get('url'))]
     pending = [c for c in cases if refresh or c['source']['url'] not in sources]
 

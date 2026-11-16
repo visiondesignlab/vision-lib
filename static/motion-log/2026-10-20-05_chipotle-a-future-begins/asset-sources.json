@@ -1,0 +1,175 @@
+[
+  {
+    "id": "1tqPFzazNRU9xhBQ8x0PFmr0Zoutt7Am3",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/contact_sheets/05_chipotle-a-future-begins_selected_keyframes.jpg",
+    "bytes": 959639,
+    "sha256": "91d4308a81b6de0b37435be283d903223e3d424ed7d10704ed074b699ff8ccdc",
+    "status": "verified"
+  },
+  {
+    "id": "1klyyPD840EG3E6nwQSCVmhdXC68gyTlZ",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_001_00-00-00.550.jpg",
+    "bytes": 36025,
+    "sha256": "ff48453d6435f443203e2857533bf26ac8c54fc8ba410225fbee12e29e865b79",
+    "status": "verified"
+  },
+  {
+    "id": "1pf5S5fBuxBq4oT-B2CFiG3bdACQAyoL2",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_002_00-00-23.967.jpg",
+    "bytes": 243716,
+    "sha256": "a250cffafef2f5c45cff9bc66865a7cf53b984419bd42860c6ec74efdfe39057",
+    "status": "verified"
+  },
+  {
+    "id": "1oq8D_V43fijYRV2qEf-x5_jN9V5Z69Op",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_003_00-00-29.508.jpg",
+    "bytes": 185231,
+    "sha256": "0ca505f663baa0b1473dbb554df7b6934eec7656a251f5512abc81cbed84f82d",
+    "status": "verified"
+  },
+  {
+    "id": "1tcJaPSHBaq68MsH9FDDypa6Rq3EMLyi5",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_004_00-00-33.633.jpg",
+    "bytes": 100382,
+    "sha256": "412752cc6933c9a7fa8212b85e71b837ba395821d2ba3e2e1970ed6f5b0a9808",
+    "status": "verified",
+    "retried": true
+  },
+  {
+    "id": "175VsPFFAsj1v8VK5OwoOq7DPcxxM_KaQ",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_009_00-01-23.992.jpg",
+    "bytes": 109062,
+    "sha256": "26be8ab01d6c0d2a83f7d9ae14b0037fa38c2e8a86429e33bbd088bdcce90d96",
+    "status": "verified",
+    "retried": true
+  },
+  {
+    "id": "1EuwsGScyRciiMLY8vTXs31-JUUJKEhCG",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_005_00-00-36.800.jpg",
+    "bytes": 238805,
+    "sha256": "ceeff4ba305a9347d32e3ab6dde405fd5ba2564aa72f9c28b756ca6411cf8acd",
+    "status": "verified"
+  },
+  {
+    "id": "1sVAVEozzJSxoandsz045CvZ1DUs6I_b8",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_008_00-01-23.058.jpg",
+    "bytes": 124324,
+    "sha256": "8c0dd4e0489f8075c6e6f46e68d8476171c04744358dd4417d5e2abccf53f2b7",
+    "status": "verified"
+  },
+  {
+    "id": "19ZgXjtIao1aEvknZL29zgy_GFROTFR7y",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/keyframes/K01_00-02-000.jpg",
+    "bytes": 116409,
+    "sha256": "5343f346a01ab82afbf10ec11e2b04dc5760f4eb3d36eea258d8249a62249bf1",
+    "status": "verified"
+  },
+  {
+    "id": "15R1HU7tOClsPa9GEnBAf3d2o91OK88wN",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_013_00-02-20.217.jpg",
+    "bytes": 85475,
+    "sha256": "61d12363cf64d87be6adc09fb7fbb126cb24973c57daaf40384688d202343441",
+    "status": "verified"
+  },
+  {
+    "id": "196dCdM50QdUdig-NB4MIjceQzk4kTnGF",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/keyframes/K02_00-18-000.jpg",
+    "bytes": 284607,
+    "sha256": "3e3feadde0ff99f38eda0f902339e3a430c3a0d770010ea309c38ac4c66ee7dc",
+    "status": "verified"
+  },
+  {
+    "id": "1kcMpLOeCjVX7kEQBdYujukd6D9Px1Wb9",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_012_00-01-58.133.jpg",
+    "bytes": 222642,
+    "sha256": "5e6f11758ea31e51bc6080f29f7e59dda252cdbfe52870c58c82648d61c62cc7",
+    "status": "verified"
+  },
+  {
+    "id": "1Y2vaDIxiuZ6krHmK4e9UjThq0XWLzIdx",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/keyframes/K03_00-34-000.jpg",
+    "bytes": 106533,
+    "sha256": "15c0586d653809211b7c467e49ebd504d8b5eccdfe4d4d6048d1d6fbaf9cb08b",
+    "status": "verified"
+  },
+  {
+    "id": "1MulTXJr0awaaa7RXqVBJimDNAHJC20pN",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/keyframes/K05_01-03-000.jpg",
+    "bytes": 213602,
+    "sha256": "c266d45b03027ecdcbc9a74d52769bb0a5eab2b4ff34587b6bee076f2ff1633d",
+    "status": "verified"
+  },
+  {
+    "id": "1AEVIhxaxxAvEwrOaaPdahatAyN1S7WUJ",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/keyframes/K04_00-48-000.jpg",
+    "bytes": 160858,
+    "sha256": "067fa7824f525e69d8b69bb35ced6544973890a9ecf22ff393ca3388bf51f8e5",
+    "status": "verified"
+  },
+  {
+    "id": "12-u5D50pgMaLAxgSJITJcBS05uREqL_j",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/keyframes/K06_01-19-000.jpg",
+    "bytes": 182949,
+    "sha256": "9b0209350dc6e89c0e46c8ad2791efbaf7ebfaca1b469ab3f2f6b26b4de543c3",
+    "status": "verified"
+  },
+  {
+    "id": "1yp-iphKgx7SPcJnIlOFDpQ4OqesNxO6A",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/keyframes/K07_01-34-000.jpg",
+    "bytes": 349408,
+    "sha256": "7a55a43f0b00c9f5200234bf371a11e7a9eddd59a2d96363e66223335b878503",
+    "status": "verified"
+  },
+  {
+    "id": "1OVNxrwwAfRPfxQMAuV6IaeYJofn3Ff1w",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/keyframes/K09_02-04-000.jpg",
+    "bytes": 235455,
+    "sha256": "c718e67513df626dee85727c60d4f30b28a58793c4bb1bd6a53cdfdd70e57a42",
+    "status": "verified"
+  },
+  {
+    "id": "1doSFUpmjiC0ztR-xA1hCIPcBt_Iay_Cr",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/keyframes/K08_01-48-000.jpg",
+    "bytes": 447150,
+    "sha256": "f3ba575368aa247344f87192beb40455889bf9f7af42ddf2568e0436d38e16d8",
+    "status": "verified"
+  },
+  {
+    "id": "14rVFHWNg0DR3w4jYU23MpR8kSiilrdKf",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/keyframes/K10_02-18-000.jpg",
+    "bytes": 29764,
+    "sha256": "f3d22095c8915f9d5d0df5b38b0d0f9cee4f773061f304ed49fe817bb0c3f47e",
+    "status": "verified"
+  },
+  {
+    "id": "1H7ObpDvlgB9GK-DkzE-3C-nNizIl0sqa",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_006_00-00-40.050.jpg",
+    "bytes": 120795,
+    "sha256": "00479e7f370e5ba57aab226dd9bbe3905222310ccea1ced740b56ecfa9e030c0",
+    "status": "verified"
+  },
+  {
+    "id": "1SbxPT1DfrR-iql-exNvzQiw290cNIm3l",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_011_00-01-57.248.jpg",
+    "bytes": 235315,
+    "sha256": "eaae83d9fda4bfe05f78d60350556b81a62270bfccc1fb89a6ce3550da0c0486",
+    "status": "verified",
+    "retried": true
+  },
+  {
+    "id": "1NIhfEetN-prZOmJj0KUNDdt0eIR1CFpd",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_010_00-01-24.800.jpg",
+    "bytes": 119219,
+    "sha256": "0fd8b43e2d66d8ba542aaf27458e77f23bbba7140279edc0ec2827e48bb746c6",
+    "status": "verified",
+    "retried": true
+  },
+  {
+    "id": "1nUQJK-4clps2DxT_RvHyPKkIUlVjKXRh",
+    "dest": "2026-10-20-05_chipotle-a-future-begins/assets/frames/shot_007_00-01-10.467.jpg",
+    "bytes": 120769,
+    "sha256": "772d0e190ece11a60b44b30356eeace60215d8bfbafed0eda2dac259b95e2c36",
+    "status": "verified",
+    "retried": true
+  }
+]

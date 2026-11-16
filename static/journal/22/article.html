@@ -1,0 +1,69 @@
+
+<header>
+<h1>Vol.22 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-11-13 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天两条更新都在把“高级视觉”塞回设计画布：Figma 原生补上 3D transform、深度和透视，Framer 的 Agent 开始直接生成图像、纹理与 shader。表面看是创作入口变短，真正拉开差距的却是出口——Figma 能回到可编辑图层、CSS 与 MCP，Framer 要回到网站运行时和共享 credits。</p>
+<p class="mixed-script">一篇 17 位职业 UI 设计师的访谈也给这股热闹踩了刹车：prompt-to-design 目前更常被用于构思和原型，不是端到端替代。今天最有用的产品更新，恰好不是“再生成一张图”，而是让生成结果留在原生结构里，能继续改、能审、能交付。Stash 的新片甚至给了另一种提醒：当手工水彩被误认成 AI，制作过程本身也成了品牌资产。</p>
+<h2>● Products</h2>
+<h3>3D transform in Figma Design<a class="source-url" href="https://www.figma.com/release-notes/" rel="noopener noreferrer" target="_blank">https://www.figma.com/release-notes/</a></h3>
+<figure><img alt="Figma 3D transform 的旋转轴、原点与 Depth 控制面板" decoding="async" height="1030" loading="lazy" src="01.png" width="1374"/><figcaption>Figma 3D transform 的旋转轴、原点与 Depth 控制面板</figcaption></figure>
+<p class="mixed-script">Figma 11 月 12 日上线原生 3D transform：对象可以沿 x、y、z 轴旋转，用画布手柄即时预览，再用 Perspective 与 Depth 组成空间场景；它能和 Figma Motion 的关键帧配合，Dev Mode 则把结果映射为 CSS，官方发布说明还明确提到可通过 Figma MCP 交给 coding agent。功能覆盖所有套餐，但需要 Full seat 和文件编辑权限。</p>
+<p class="mixed-script">这条更新的价值不是把 Figma 变成 Blender，而是让卡片翻转、倾斜 mockup、空间化 hero 这些常见网页视觉留在组件与文字仍可编辑的画布里。边界也要记住：父框开启 <code>Keep nested layers 3D</code> 后，opacity、blend mode、shader、effects、clip content 以及父级 fill / stroke 都可能不可用；CSS 映射不等于浏览器里零差异复刻。还没实测，先不下结论，第一轮验证应盯 <code>translateZ</code>、<code>perspective</code>、<code>transform-style</code> 和移动端 GPU 成本。</p>
+<h3>Image and Shader Generation<a class="source-url" href="https://www.framer.com/updates/image-shader-generation" rel="noopener noreferrer" target="_blank">https://www.framer.com/updates/image-shader-generation</a></h3>
+<figure><img alt="Framer Agent 生成图像后叠加 shader 的官方示例" decoding="async" height="900" loading="lazy" src="02.png" width="1600"/><figcaption>Framer Agent 生成图像后叠加 shader 的官方示例</figcaption></figure>
+<p class="mixed-script">Framer Agent 现在可以从提示生成图片、纹理和插画，也能对已选或导入的图片换主体、去背景、重设风格；同一入口还能生成和微调 halftone、bokeh、CRT、pencil、拖拽涂抹等 shader，并把生成图像与 shader 叠在一个网站画布里。</p>
+<p class="mixed-script">免费 workspace 有 500 credits，Basic 月付 $10 含 1,000 credits，Pro 月付 $30 含 3,000 credits；Agent 与 AI 功能消耗 workspace 共享 credits。更新页没有公布每种操作的消耗，也没说明失败生成是否扣费。它适合快速定 hero 的材质与交互方向，但采购前至少要记一次完整生成—调整—发布链路的 credits，别只看演示里最顺的那一遍。</p>
+<h2>● Articles</h2>
+<h3>Designing UIs with GenAI<a class="source-url" href="https://arxiv.org/abs/2611.13211" rel="noopener noreferrer" target="_blank">https://arxiv.org/abs/2611.13211</a></h3>
+<figure><img alt="Designing UIs with GenAI 论文标题、作者与摘要" decoding="async" height="526" loading="lazy" src="03.png" width="1181"/><figcaption>Designing UIs with GenAI 论文标题、作者与摘要</figcaption></figure>
+<p class="mixed-script">这篇 11 月 9 日提交的预印本访谈了 17 位职业 UI 设计师。受访者把 prompt-to-design generator 主要用于构思与原型，而不是把一整套界面从提示直接交付；论文还整理了个人提示策略、协作提示方式，以及围绕质量、创造力和治理的顾虑。</p>
+<p>样本只有 17 人，又是定性研究，不能拿来证明“行业已经如何”。但它至少把工具评估从单次出图拉回真实工作：下一轮团队测试不该只比较首屏好不好看，要记录需求澄清、多人接手、组件替换、异常状态、代码落地与回滚各花多少时间。</p>
+<h2>● AI Coding</h2>
+<h3>Gemini 4 Hydrogen on Vercel AI Gateway<a class="source-url" href="https://vercel.com/changelog/gemini-4-hydrogen-now-available-on-ai-gateway" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/gemini-4-hydrogen-now-available-on-ai-gateway</a></h3>
+<figure><img alt="Vercel AI Gateway 与 Google Gemini 4 Hydrogen" decoding="async" height="1256" loading="lazy" src="04.png" width="2400"/><figcaption>Vercel AI Gateway 与 Google Gemini 4 Hydrogen</figcaption></figure>
+<p class="mixed-script">Vercel AI Gateway 已接入 <code>google/gemini-4-hydrogen</code>。模型页列出文本、图片、视频与文档输入，支持 tool calling 和 structured outputs，context window 与最大输出都标为 1M tokens；官方把它定位在与 Gemini 3.8 Flash 相近的 latency class，同时强调长任务、agentic coding、视觉推理和文档 / 表格 / 演示处理。</p>
+<p class="mixed-script">当前标价是输入 $1.50 / 1M tokens、输出 $7.50 / 1M tokens、cache read $0.08 / 1M tokens，Search 另计 $14 / 1K；未付费账户每 30 天有 $5 credits。长上下文不是免费的设计保险，完整塞入 Figma dump、截图和代码后，输出成本更快变成账单。还没实测，先用一个多页面组件迁移任务比对视觉理解、结构化输出和 token 日志，再决定是否替换现有模型。</p>
+<h2>● Design Ops</h2>
+<h3>Public monitoring alerts now have direct links<a class="source-url" href="https://github.blog/changelog/2026-11-12-public-monitoring-alerts-now-have-direct-links/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-12-public-monitoring-alerts-now-have-direct-links/</a></h3>
+<figure><img alt="GitHub Public monitoring alert 详情页与直接链接" decoding="async" height="1779" loading="lazy" src="05.png" width="1440"/><figcaption>GitHub Public monitoring alert 详情页与直接链接</figcaption></figure>
+<p class="mixed-script">GitHub 现在给每条 Public monitoring alert 一个可直接打开的 URL，授权成员可以收藏或分享具体 finding；这项能力面向带 Secret Protection 或 Advanced Security 的 GitHub Enterprise Cloud 客户，不额外收费。</p>
+<p class="mixed-script">小改动，但正好补上设计安全评审常见的断链：评论、工单和聊天终于可以指向同一条泄露证据，不必只贴截图。真正的流程闭环仍要保留权限回读、修复 owner 和关闭状态，链接本身不会替团队完成治理。</p>
+<h2>● Resources</h2>
+<h3>Updated Live Activities UI kits<a class="source-url" href="https://developer.apple.com/design/whats-new/" rel="noopener noreferrer" target="_blank">https://developer.apple.com/design/whats-new/</a></h3>
+<figure><img alt="Apple 11 月 6 日更新的产品边框与 Live Activities UI kits" decoding="async" height="231" loading="lazy" src="06.png" width="980"/><figcaption>Apple 11 月 6 日更新的产品边框与 Live Activities UI kits</figcaption></figure>
+<p class="mixed-script">Apple 11 月 6 日更新了 Figma 与 Sketch 的 Live Activities UI kits：适配 iOS 27，并新增 macOS 组件与示例；同批还发布 MacBook Pro with PROLED XDR Display、iPad mini 与 Apple Watch Ultra 4 的产品边框。</p>
+<p class="mixed-script">Live Activity 已经不是只画一张 iPhone 锁屏稿。它可能出现在 iPhone、iPad、Dynamic Island、CarPlay、配对 Mac 与 Apple Watch，上下文尺寸与信息密度都不同；ActivityKit 的静态加动态数据总量仍受 4KB 限制。先拿官方 kit 建跨端状态矩阵，再谈动画和装饰，否则最先失控的是“同一状态在六个表面上分别长什么样”。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>ClashterPieces – 30 seconds to detonation<a class="source-url" href="https://www.stashmedia.tv/roof-studio-pedro-allevato-stay-hands-on-for-clash-royale/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/roof-studio-pedro-allevato-stay-hands-on-for-clash-royale/</a></h3>
+<figure data-film-source="https://vimeo.com/1245468644"><img alt="Clash Royale 手绘水彩角色与烟尘画面" decoding="async" height="1125" loading="lazy" src="07.jpg" width="2000"/><figcaption>Clash Royale 手绘水彩角色与烟尘画面</figcaption></figure>
+<p class="mixed-script">来源：Stash 文章<a class="source-url" href="https://www.stashmedia.tv/roof-studio-pedro-allevato-stay-hands-on-for-clash-royale/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/roof-studio-pedro-allevato-stay-hands-on-for-clash-royale/</a>｜原片：Vimeo<a class="source-url" href="https://vimeo.com/1245468644" rel="noopener noreferrer" target="_blank">https://vimeo.com/1245468644</a>｜客户：Supercell｜代理：DAVID New York｜导演：Pedro Allevato｜制作：Roof Studio</p>
+<p class="mixed-script">Supercell 的 brief 明确要求不使用 AI，Roof Studio 和 Pedro Allevato 选择逐帧手绘水彩。文章披露的制作路径很实用：团队先重建 3D 背景，用它解决镜头移动、空间关系和 paint-over 参考，再把最终画面拉回不稳定的笔刷边缘、纸张颗粒、色块跳动与逐帧形变。也就是说，3D 在后台保证空间，2D 在前台保留表演。</p>
+<p class="mixed-script">目前 Vimeo player 与原片下载都返回 401，因此本次没有把 45 秒原片完整播放当成已核验事实；视觉判断来自 Stash 制作文章与 2000×1125、1920×1080 官方静帧。可见画面里，红、黑、灰先把爆炸与危险压成大色块，蓝色角色和细碎飞线再制造反差；角色轮廓会故意越过干净模型边界，避免 3D blocking 露出“搭台感”。</p>
+<p class="mixed-script">片子发布后被部分观众误认成 AI，团队才公开 behind-the-scenes 与制作说明。这件事比风格争论更有用：当生成内容充斥 feed，制作 provenance 已经是视觉系统的一部分。下次做 2D × 3D 产品片，可以先用 3D 锁镜头、碰撞和空间，再为关键帧设固定色板、笔刷与 paint-over 规则，并从项目开始就保留 blocking、线稿和合成对照；别等评论区质疑时才补过程。</p>
+<p class="mixed-script">飞书发布采用 <code>fallback=image</code>：保留一张 Stash 官方高清静帧与 Stash / Vimeo 链接，不插入返回 401 的 Vimeo iframe。</p>
+<h2>● Stash 最新内容观察</h2>
+<p class="mixed-script">Stash 11 月 12 日只新增一条，已升级为今日主卡。其后的三条分别在 11 月 12 日与 11 月 11 日日报覆盖过；这里保留 feed 状态，避免把旧内容包装成新鲜消息。</p>
+<ul>
+<li>Roof Studio &amp; Pedro Allevato Stay Hands On for Clash Royale<a class="source-url" href="https://www.stashmedia.tv/roof-studio-pedro-allevato-stay-hands-on-for-clash-royale/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/roof-studio-pedro-allevato-stay-hands-on-for-clash-royale/</a>｜2D animation / 3D blocking｜已升级为今日主卡：逐帧水彩不排斥 3D 空间预演，真正需要守住的是最终轮廓、材质和制作 provenance。</li>
+<li>Electric Theatre Collective’s Ambitious Amphibian Adventure<a class="source-url" href="https://www.stashmedia.tv/electric-theatre-collectives-ambitious-amphibian-adventure/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/electric-theatre-collectives-ambitious-amphibian-adventure/</a>｜VFX / brand film｜昨日已覆盖：克制角色动画和明确欲望线比密集功能镜头更能托住品牌命题。</li>
+<li>We Love Pitching: Chronicles of a Necessary Mess – Part 24<a class="source-url" href="https://www.stashmedia.tv/we-love-pitching-chronicles-of-a-necessary-mess-part-24/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/we-love-pitching-chronicles-of-a-necessary-mess-part-24/</a>｜production process｜11 月 12 日已覆盖：brief、预算、决策人和 idea protection 不完整，就别用未付费视觉提案替客户吸收不确定性。</li>
+<li>Trizz Reframes Complexity for Google Security<a class="source-url" href="https://www.stashmedia.tv/trizz-reframes-complexity-for-google-security/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/trizz-reframes-complexity-for-google-security/</a>｜3D / cybersecurity｜11 月 12 日已覆盖：B2B 技术片先建立形态语法，再开放镜头变形，复杂不等于每秒换一套规则。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Figma 3D transform 的浏览器 CSS 还原度、层级限制与移动端 GPU 成本；尤其验证 <code>Keep nested layers 3D</code> 对现有效果链的破坏面。</li>
+<li>Framer Agent 每类 image / shader 操作的实际 credits 消耗、失败扣费与发布后性能；价格页只有共享额度，没有操作明细。</li>
+<li>Gemini 4 Hydrogen 的视觉理解、结构化输出与 1M 上下文真实账单，用一个多页面设计系统迁移任务做同条件比较。</li>
+<li>Apple Live Activities 新 kit 在 iPhone、iPad、Mac、Watch 与 CarPlay 的状态差异，优先补异常与受限宽度，不只画理想态。</li>
+<li>Stash 后续是否发布 Clash Royale breakdown 或可访问原片；在完整播放恢复前，不追加镜头级结论。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日主题：Figma 3D transform、Framer Image and Shader Generation、Designing UIs with GenAI 预印本、Vercel Gemini 4 Hydrogen、GitHub Public monitoring 直接链接、Apple Live Activities UI kits。</li>
+<li>今日视频：Roof Studio / Pedro Allevato / Supercell 的 <code>ClashterPieces – 30 seconds to detonation</code>；Vimeo player 401，按规则使用 Stash 官方静态图降级，并保留双链接。</li>
+<li>今日 Stash：Clash Royale 为 11 月 12 日新增并升级主卡；Netflix axolotl、We Love Pitching Part 24、Trizz / Google Security 只记录已覆盖状态。</li>
+<li>继续避免：11 月 12 日 Adobe MAX Sneaks、On Cue / Sound Bender、Link Up / Rinse Repeat、Penpot design infrastructure、GitHub personal issue fields、Gemini Decision 1；11 月 11 日 Figma Motion、Firefly Design / Graph / Builder、Framer MCP 与 Creative Cloud MCP。没有新版本、实测或制作 breakdown 不回锅。</li>
+</ul>
+<p class="mixed-script verification">核验说明：Figma Release Notes / Help Center、Framer Update / Pricing、arXiv、Vercel Changelog / model page、GitHub Changelog、Apple Developer、Stash WordPress API / 文章页与 Vimeo oEmbed 于 2026-11-13 回读。正文 7 张配图原始宽度为 980–2400px，已逐张目视检查；飞书文档、静态视频降级与群消息状态以最终 CLI 回读为准。</p>

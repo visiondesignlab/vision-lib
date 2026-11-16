@@ -1,0 +1,74 @@
+
+<header>
+<h1>Vol.23 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-11-14 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天没有再追一轮“谁又生成了什么”，更有用的更新集中在边界：GitHub 把 GHES 带进 Copilot app，却明确留下 cloud session 的缺口；AI Scan 能用 API 批量开关，但每次实际扫描仍要单独触发、单独计 credits；六个模型也已经写下退役日期。</p>
+<p class="mixed-script">另一边，Chrome、WebKit 和 Anthropic 都在把模糊的“最佳实践”变成可验证的条件：跨浏览器兼容要有 Baseline，方形短视口要真的跑 448×364，AI 评测先写清问题和量尺。工具能力越来越像快消品，团队真正该积累的是测试矩阵、权限图和迁移账本。</p>
+<h2>● AI Coding</h2>
+<h3>GitHub Enterprise Server support in the GitHub Copilot app<a class="source-url" href="https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app/</a></h3>
+<figure><img alt="GitHub Copilot app 支持 GitHub Enterprise Server 的官方发布页" decoding="async" height="1100" loading="lazy" src="01.png" width="1440"/><figcaption>GitHub Copilot app 支持 GitHub Enterprise Server 的官方发布页</figcaption></figure>
+<p class="mixed-script">GitHub Copilot app 1.2.0 起正式支持 GitHub Enterprise Server，已从 opt-in preview 转为 GA。用户要先登录 GitHub.com 或 GHE.com，再添加 GHES 账户，之后可以在 app 里处理远程仓库、issue 和 pull request；GHES 仍不能使用 cloud sessions。</p>
+<p class="mixed-script">对自托管代码库来说，这不是“云端 agent 全打通”，而是上下文入口先统一、执行边界继续分叉。设计工程团队在流程图里应把本地 session、cloud session、GHES 数据源分别标出来，否则同一个“让 Copilot 改页面”的动作，会在不同仓库上得到完全不同的权限和交付路径。</p>
+<h3>Manage AI Scan for repositories using the REST API<a class="source-url" href="https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api/</a></h3>
+<figure><img alt="GitHub AI Scan REST API 的组织级与仓库级配置页" decoding="async" height="1100" loading="lazy" src="02.png" width="1440"/><figcaption>GitHub AI Scan REST API 的组织级与仓库级配置页</figcaption></figure>
+<p class="mixed-script">GitHub 给 AI Scan 增加了组织与仓库级 REST 开关，<code>repository_scan</code> 可以和现有 <code>pr_scan</code> 一起用脚本或 IaC 管理。组织关闭时仓库不能自行开启；企业策略不允许会返回 422，而且同一请求里的两项配置都不会落地。</p>
+<p class="mixed-script">开关打开并不会自动扫描，仍要由有写权限的人按需运行，每次扫描消耗 GitHub Code Security AI credits；GHES 也不支持。它适合把“哪些前端仓库必须扫 agent 生成代码”写进治理配置，但费用和触发动作还在配置之外，别把 <code>enabled</code> 误读成已经覆盖。</p>
+<h3>Upcoming deprecation of selected GitHub Copilot models in December<a class="source-url" href="https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december/</a></h3>
+<figure><img alt="GitHub Copilot 12 月模型退役列表与建议替代项" decoding="async" height="1100" loading="lazy" src="03.png" width="1440"/><figcaption>GitHub Copilot 12 月模型退役列表与建议替代项</figcaption></figure>
+<p class="mixed-script">GitHub 将在 12 月 14 日从 Copilot Chat、inline edits、ask / agent mode 和 code completion 中移除 Claude Fable 5、Claude Haiku 4.5、Gemini 3.8 Flash、Gemini 4 Argon、Grok 4.6 与 Kimi K3，并给出除 Kimi 之外的替代模型。年度个人订阅用户的 Claude Haiku 4.5 是例外。</p>
+<p class="mixed-script">模型选择器不是稳定接口。团队若把视觉回归、代码生成或评审 prompt 绑定到具体模型，应该在退役前把基准任务跑一轮新旧对照，保存截图、结构差异、token 与失败样本；只把名字替换成“建议替代项”，等于默认接受行为漂移。</p>
+<h2>● Design Engineering</h2>
+<h3>Modern Web Guidance 1.0<a class="source-url" href="https://developer.chrome.com/blog/modern-web-guidance-recap" rel="noopener noreferrer" target="_blank">https://developer.chrome.com/blog/modern-web-guidance-recap</a></h3>
+<figure><img alt="Chrome Modern Web Guidance 1.0 稳定版发布与案例拼图" decoding="async" height="1100" loading="lazy" src="04.png" width="1440"/><figcaption>Chrome Modern Web Guidance 1.0 稳定版发布与案例拼图</figcaption></figure>
+<p class="mixed-script">前几天还是“先看看指南”，11 月 13 日它正式变成稳定版 1.0：Chrome、Firefox 与 Edge 团队共同维护，指南覆盖性能、样式、无障碍、安全、隐私和表单；每条都带 Baseline 兼容数据与 fallback，公开 eval dashboard 也能回看数千次测试。</p>
+<p class="mixed-script">官方案例里，MetaMask 在约 480 个 PR 上得到 43 个无障碍与语义修复，WeTV 把 recurring CLS 的自动诊断修复率做到 90%。这些数字不等于换个 skill 就自动提质，但它终于给“让 coding agent 写现代 Web”补上版本、兼容与评测三件套。安装前先在一个真实页面跑 <code>legacy-scan</code>，看它带来的改动量和噪音，再决定是否进 CI。</p>
+<h3>Safari on Apple HomeView<a class="source-url" href="https://webkit.org/blog/18608/safari-on-apple-homeview/" rel="noopener noreferrer" target="_blank">https://webkit.org/blog/18608/safari-on-apple-homeview/</a></h3>
+<figure><img alt="WebKit 展示 Safari 运行在 Apple HomeView 的方形 7 英寸屏幕上" decoding="async" height="1100" loading="lazy" src="05.png" width="1440"/><figcaption>WebKit 展示 Safari 运行在 Apple HomeView 的方形 7 英寸屏幕上</figcaption></figure>
+<p class="mixed-script">Safari 现在运行在 Apple HomeView 的方形 7 英寸屏幕上，主要输入既有远距离语音，也有近距离触控。WebKit 还把网页结构直接变成系统体验：Recipe JSON-LD 会触发逐步烹饪视图，视频字幕要用 <code>track</code> + WebVTT；HomeView 报告 iOS user agent，因此官方再次要求用 feature detection，别把 iOS 等同 iPhone。</p>
+<p class="mixed-script">最实用的测试尺寸已经给了：448×364。固定头尾、超高 modal、只有图标没有清楚标签、依赖 hover 的控件，都会在短视口和语音输入里露馅。产品不必为 HomeView 单独重做一套页面，先把首页、登录、支付和弹窗在这个尺寸跑通，顺手也能清掉手机横屏的老问题。</p>
+<h2>● Articles</h2>
+<h3>Building strong safety evaluations<a class="source-url" href="https://www.anthropic.com/research/building-strong-safety-evaluations" rel="noopener noreferrer" target="_blank">https://www.anthropic.com/research/building-strong-safety-evaluations</a></h3>
+<figure><img alt="Anthropic 安全评测文章的设计、运行与报告结构" decoding="async" height="1100" loading="lazy" src="06.png" width="1440"/><figcaption>Anthropic 安全评测文章的设计、运行与报告结构</figcaption></figure>
+<p class="mixed-script">Anthropic 把安全评测拆成 Design、Run、Report：先确定问题是观察性的还是因果性的，再确认量尺真的测到目标；运行前做 preregistration，报告里完整披露统计、文档与缺陷。文章还明确提醒，多选或开放题、选项顺序、样本和评分方式都能改变结果。</p>
+<p class="mixed-script">这不是 UI 生成器的直接测评模板，但方法很能治“凭一张漂亮首屏宣布模型更好”。设计团队比较两个 agent 时，也该先写清要测的是首稿质量、可编辑性、组件复用还是修订成本；一次只改一个变量，保留失败样本，并让结论和证据一一对上。</p>
+<h2>● Products</h2>
+<h3>Help<a class="source-url" href="https://www.framer.com/updates/community/help" rel="noopener noreferrer" target="_blank">https://www.framer.com/updates/community/help</a></h3>
+<figure><img alt="Framer Community 用 Help 替代 Feed 后的分类与问答界面" decoding="async" height="1100" loading="lazy" src="07.png" width="1440"/><figcaption>Framer Community 用 Help 替代 Feed 后的分类与问答界面</figcaption></figure>
+<p class="mixed-script">Framer Community 用 Help 替换了原来的 Feed，把入口收敛到 Q&amp;A 与讨论，支持提问、讨论和标记 solved answer。它按 Canvas、CMS、Agents、Integrations、Publishing、Security、SEO 等任务分类，不再把所有内容混在一条动态流里。</p>
+<p class="mixed-script">这是个很小但很干净的信息架构判断：社区产品真正可复用的资产不是“今天谁发了什么”，而是一个问题有没有被解决、后来的人能不能找到答案。要做用户社区或内部知识库，solved 状态和任务分类通常比点赞、关注和无限 feed 更先改变检索效率。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>FURSYS | Manta<a class="source-url" href="https://www.stashmedia.tv/reframe-studio-get-comfortable-in-fursys-manta-chair/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/reframe-studio-get-comfortable-in-fursys-manta-chair/</a></h3>
+<figure data-film-source="https://vimeo.com/1240694152"><img alt="Fursys Manta 椅背表面与砂粒材质转场" decoding="async" height="1152" loading="lazy" src="08.jpg" width="2048"/><figcaption>Fursys Manta 椅背表面与砂粒材质转场</figcaption></figure>
+<p class="mixed-script">来源：Stash 文章<a class="source-url" href="https://www.stashmedia.tv/reframe-studio-get-comfortable-in-fursys-manta-chair/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/reframe-studio-get-comfortable-in-fursys-manta-chair/</a>｜原片：Vimeo<a class="source-url" href="https://vimeo.com/1240694152" rel="noopener noreferrer" target="_blank">https://vimeo.com/1240694152</a>｜客户：Fursys｜产品设计：Jehs+Laub｜制作：Reframe Studio｜片长：60 秒</p>
+<p class="mixed-script">Manta 是一把以蝠鲼展开轮廓为灵感的任务椅，Reframe 没有用常规办公室情境讲“坐得舒服”，而是把产品卖点拆成材质隐喻：云状烟雾承接包裹感，蓝色织带强调面料流动，陶土块和碎裂炭黑对应不同表面处理，再回到宽头枕、极简骨架与曲面靠背。官方列出的工具链是 Cinema 4D、Houdini、Redshift、After Effects 与 Photoshop。</p>
+<p class="mixed-script">静帧里最好的地方是抽象段落没有抢走产品辨识度。色彩、颗粒和软体模拟都围绕椅背弧线展开，镜头切到局部时仍能认出是哪一块结构；材质不是贴在产品外面的 moodboard，而是产品形态的放大器。对产品发布片来说，这比把每个功能都配一套特效省得多，也更容易形成统一 hero 语言。</p>
+<p class="mixed-script">目前 <code>player.vimeo.com/video/1240694152</code> 在带飞书 referrer 的请求里返回 401，Vimeo oEmbed 的带播放按钮缩略图又只有 295×166，均不适合飞书主卡；本次视觉判断来自 Stash 制作说明和五张 2048×1152 官方静帧，未把完整节奏当成已核验事实。下一支硬件片可以先给每个结构卖点配一种材料行为，再把动画参数收敛到同一套曲率、阻尼和色板，别从“这镜头还能加什么”开始。</p>
+<p class="mixed-script">飞书发布采用 <code>fallback=image</code>：保留一张 2048×1152 Stash 官方静帧与 Stash / Vimeo 链接，不插入返回 401 的 Vimeo iframe。</p>
+<h2>● Stash 最新内容观察</h2>
+<p class="mixed-script">Stash API 在 11 月 13 日之后只多出一条新片，已升级为今日主卡；其余条目保留覆盖状态，避免把旧 feed 重新包装成新消息。</p>
+<ul>
+<li>Reframe Studio Get Comfortable in Fursys Manta Chair<a class="source-url" href="https://www.stashmedia.tv/reframe-studio-get-comfortable-in-fursys-manta-chair/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/reframe-studio-get-comfortable-in-fursys-manta-chair/</a>｜3D / product launch film｜已升级为今日主卡：把头枕、织物和表面处理翻译成云、织带、陶土与炭黑，材料行为直接服务产品识别。</li>
+<li>Roof Studio &amp; Pedro Allevato Stay Hands On for Clash Royale<a class="source-url" href="https://www.stashmedia.tv/roof-studio-pedro-allevato-stay-hands-on-for-clash-royale/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/roof-studio-pedro-allevato-stay-hands-on-for-clash-royale/</a>｜2D animation / 3D blocking｜昨日已覆盖：3D 保空间，逐帧水彩保表演；没有新 breakdown 不重复展开。</li>
+<li>Electric Theatre Collective’s Ambitious Amphibian Adventure<a class="source-url" href="https://www.stashmedia.tv/electric-theatre-collectives-ambitious-amphibian-adventure/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/electric-theatre-collectives-ambitious-amphibian-adventure/</a>｜VFX / brand film｜11 月 12 日已覆盖：角色欲望线比镜头堆料更能托住品牌命题。</li>
+<li>We Love Pitching: Chronicles of a Necessary Mess – Part 24<a class="source-url" href="https://www.stashmedia.tv/we-love-pitching-chronicles-of-a-necessary-mess-part-24/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/we-love-pitching-chronicles-of-a-necessary-mess-part-24/</a>｜production process｜11 月 12 日已覆盖：brief、预算、决策人和 idea protection 不清楚，视觉提案越精细越容易替客户吸收不确定性。</li>
+<li>Trizz Reframes Complexity for Google Security<a class="source-url" href="https://www.stashmedia.tv/trizz-reframes-complexity-for-google-security/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/trizz-reframes-complexity-for-google-security/</a>｜3D / cybersecurity｜11 月 12 日已覆盖：复杂技术片先锁形态语法，再开放镜头变形。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>GitHub GHES 接入 Copilot app 后，本地 session、权限回读与文件写入是否和 GitHub.com 仓库一致；cloud session 缺口不要被界面统一掩盖。</li>
+<li>AI Scan 的单次 credits、失败是否计费、按需触发日志和 repo 级 opt-out；先做成本账，再谈全组织启用。</li>
+<li>Copilot 12 月模型迁移的视觉代码基准：截图、DOM、无障碍树、token 与修订轮次要同条件保存。</li>
+<li>Modern Web Guidance 1.0 在真实设计系统上的 <code>legacy-scan</code> 噪音、Baseline fallback 与 CI 运行时间。</li>
+<li>HomeView 的 448×364 短视口、语音标签与 modal 关闭路径；优先补登录、支付和异常态。</li>
+<li>Stash 后续是否放出 Fursys Manta 的可访问 player 或制作 breakdown；完整播放恢复前不追加镜头节奏结论。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<ul>
+<li>今日主题：GitHub Copilot app 的 GHES GA、AI Scan REST API、Copilot 12 月模型退役、Modern Web Guidance 1.0、Safari on Apple HomeView、Anthropic 安全评测方法、Framer Community Help。</li>
+<li>今日视频：Reframe Studio / Fursys / Jehs+Laub 的 <code>FURSYS | Manta</code>；Vimeo player 401，按规则使用 Stash 2048×1152 官方静态图降级，并保留双链接。</li>
+<li>今日 Stash：Fursys Manta 为唯一新帖并升级主卡；Clash Royale、Netflix axolotl、We Love Pitching Part 24、Trizz / Google Security 只记录已覆盖状态。</li>
+<li>继续避免：11 月 13 日 Figma 3D transform、Framer Image and Shader Generation、Designing UIs with GenAI、Vercel Gemini 4 Hydrogen、GitHub Public monitoring、Apple Live Activities kits 与 Clash Royale；11 月 11–12 日 Adobe MAX / Firefly / Creative Cloud MCP / Framer MCP / Penpot design infrastructure。没有新实测、价格权限变化或制作 breakdown 不回锅。</li>
+</ul>
+<p class="mixed-script verification">核验说明：GitHub Changelog、Chrome for Developers、WebKit、Anthropic Engineering、Framer Community Updates、Stash 首页 / WordPress API / 文章页与 Vimeo oEmbed 于 2026-11-14 回读。正文 8 张配图原始宽度为 1440–2048px，已逐张目视检查；飞书文档、静态视频降级与群消息状态以最终 CLI 回读为准。</p>

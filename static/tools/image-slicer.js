@@ -22,12 +22,13 @@ root.innerHTML = `
     <section class="slicer-controls slicer-surface" aria-label="切图设置">
       <div class="slicer-section-title"><h2>图片</h2><span class="muted" id="fileCount">未选择</span></div>
       <label class="slicer-dropzone" id="dropzone">
-        <input id="fileInput" type="file" accept="image/*" multiple aria-label="选择图片（可多选）">
+        <input id="fileInput" type="file" accept="image/*" multiple aria-label="添加图片（可批量导入）">
         ${icon('upload')}
         <b id="filePrompt">点击选择，或拖入图片</b>
         <span>支持 PNG、JPG、WebP 等图片格式</span>
       </label>
-      <ul id="fileList" class="slicer-file-list" aria-label="已选图片" hidden></ul>
+      <ul id="fileList" class="slicer-file-list" aria-label="已添加图片" hidden></ul>
+      <p id="fileHint" class="slicer-help" hidden>每次选中一张编辑，切换图片会保留各自的切线。</p>
       <div class="slicer-settings">
         <h2>输出设置</h2>
         <label class="field"><span>输出宽度 <span class="muted">· 可选</span></span><div class="slicer-input"><input id="targetWidth" type="number" min="1" step="1" placeholder="保留原图宽度" aria-describedby="resizeHint"><span>px</span></div></label>
@@ -47,14 +48,15 @@ root.innerHTML = `
     </section>
     <div class="slicer-output">
       <section id="manualPanel" class="slicer-surface manual-panel" aria-labelledby="manualTitle" hidden>
-        <div class="slicer-section-title"><h2 id="manualTitle" tabindex="-1">定点裁切</h2><button id="clearCutsBtn" type="button" class="pill-btn grey">清空标记</button></div>
+        <div class="slicer-section-title"><h2 id="manualTitle" tabindex="-1">定点裁切</h2><button id="clearCutsBtn" type="button" class="pill-btn grey">清空当前标记</button></div>
+        <p id="currentFileName" class="slicer-current-file" hidden></p>
         <p class="slicer-help">轻触或点击预览添加切线，也可输入精确 Y 坐标。超出最大高度时，会在本段最大高度处添加切线。</p>
         <div class="manual-tools">
           <label class="field" for="cutYInput">裁切位置 Y</label>
           <div class="slicer-input"><input id="cutYInput" type="number" min="1" step="1" placeholder="例如 1280"><span>px</span></div>
           <button id="addCutYBtn" type="button" class="pill-btn shadow">添加切线</button>
         </div>
-        <div id="previewStatus" class="slicer-status" role="status" aria-live="polite">选择一张图片，点击“加载预览”。</div>
+        <div id="previewStatus" class="slicer-status" role="status" aria-live="polite">添加图片后，选中一张开始裁切。</div>
         <div class="preview-scroll" tabindex="0" role="region" aria-label="图片裁切预览，可滚动查看">
           <div id="previewFrame" class="preview-frame" hidden>
             <img id="previewImage" class="preview-image" alt="裁切预览" draggable="false">
@@ -122,27 +124,36 @@ getElement("showPreviewBtn").addEventListener("click", () => revealPanel(manualP
 getElement("manualSliceBtn").addEventListener("click", () => sliceBtn.click());
 
 let busy = false;
+let sourceFiles = [];
+let activeFile = null;
+const manualStates = new Map();
 const allSlices = [];
 const filePreviewUrls = [];
 function setBusy(value) {
   busy = value;
   root.setAttribute("aria-busy", String(value));
-  root.querySelectorAll(".slicer-controls input, .slicer-controls button, [data-mode], .manual-tools input, .manual-tools button, #clearCutsBtn, #manualSliceBtn").forEach(el => el.disabled = value);
+  root.querySelectorAll(".slicer-controls input, .slicer-controls button, [data-mode], .manual-tools input, .manual-tools button, .cut-remove, .chip-remove, #clearCutsBtn, #manualSliceBtn").forEach(el => el.disabled = value);
 }
 function syncResultSummary() {
   getElement("sliceCount").textContent = `${allSlices.length} 张`;
   getElement("resultEmpty").hidden = allSlices.length > 0;
 }
 function updateFileSummary() {
-  const files = Array.from(fileInput.files || []);
+  const files = sourceFiles;
   getElement("fileCount").textContent = files.length ? `${files.length} 张` : "未选择";
-  getElement("filePrompt").textContent = files.length ? "点击更换，或拖入新图片" : "点击选择，或拖入图片";
+  getElement("filePrompt").textContent = files.length ? "继续添加，或拖入新图片" : "点击选择，或拖入图片";
   const list = getElement("fileList");
   list.replaceChildren();
   filePreviewUrls.forEach(url => URL.revokeObjectURL(url));
   filePreviewUrls.length = 0;
   files.forEach((file, index) => {
     const row = document.createElement("li");
+    const select = document.createElement("button");
+    select.type = "button";
+    select.className = "slicer-file-select";
+    select.disabled = busy;
+    select.setAttribute("aria-controls", "manualPanel");
+    select.addEventListener("click", () => selectManualFile(file));
     const thumbnail = document.createElement("img");
     const url = URL.createObjectURL(file);
     filePreviewUrls.push(url);
@@ -160,28 +171,37 @@ function updateFileSummary() {
     thumbnail.onload = () => { size.textContent = `${thumbnail.naturalWidth} × ${thumbnail.naturalHeight} px`; };
     thumbnail.onerror = () => { thumbnail.hidden = true; size.textContent = "图片预览不可用"; };
     info.append(name, size);
+    const progress = document.createElement("span");
+    progress.className = "slicer-file-progress";
+    info.append(progress);
+    select.append(thumbnail, info);
     const remove = document.createElement("button");
     remove.type = "button"; remove.className = "slicer-file-remove";
-    remove.innerHTML = icon("close"); remove.title = "取消选择";
-    remove.setAttribute("aria-label", `取消选择 ${file.name}`);
+    remove.innerHTML = icon("close"); remove.title = "移除图片";
+    remove.setAttribute("aria-label", `移除 ${file.name}`);
     remove.disabled = busy;
     remove.addEventListener("click", () => {
       if (busy) return;
-      const transfer = new DataTransfer();
-      Array.from(fileInput.files).forEach((selected, i) => { if (i !== index) transfer.items.add(selected); });
-      fileInput.files = transfer.files;
-      fileInput.dispatchEvent(new Event("change"));
-      const buttons = list.querySelectorAll("button");
+      sourceFiles.splice(index, 1);
+      manualStates.delete(file);
+      if (activeFile === file) {
+        resetManualCutState();
+        activeFile = sourceFiles[Math.min(index, sourceFiles.length - 1)] || null;
+      }
+      updateFileSummary();
+      invalidateResults("图片已移除，请重新切图。");
+      if (cutModeInput.value === "manual") loadManualPreview();
+      const buttons = list.querySelectorAll(".slicer-file-select");
       (buttons[Math.min(index, buttons.length - 1)] || fileInput).focus({preventScroll: true});
     });
-    row.append(thumbnail, info, remove);
+    row.append(select, remove);
     list.appendChild(row);
   });
   list.hidden = !files.length;
+  syncFileSelection();
 }
 const objectUrls = [];
-const manualCutState = {
-  signature: "",
+const emptyManualState = () => ({
   previewUrl: "",
   width: 0,
   height: 0,
@@ -189,7 +209,58 @@ const manualCutState = {
   outputHeight: 0,
   resized: false,
   cuts: [],
-};
+  sourceCuts: [],
+  scrollTop: 0,
+});
+let manualCutState = emptyManualState();
+
+function syncFileSelection() {
+  const manual = cutModeInput.value === "manual";
+  getElement("fileHint").hidden = !manual || !sourceFiles.length;
+  getElement("fileList").querySelectorAll("li").forEach((row, index) => {
+    const file = sourceFiles[index];
+    const selected = manual && file === activeFile;
+    const button = row.querySelector(".slicer-file-select");
+    button.setAttribute("aria-pressed", String(selected));
+    row.classList.toggle("is-current", selected);
+    const progress = row.querySelector(".slicer-file-progress");
+    const state = manualStates.get(file);
+    progress.hidden = !manual;
+    progress.textContent = state ? (state.cuts.length ? `${state.cuts.length} 条切线` : "无切线") : "待设置";
+  });
+  const label = manual && sourceFiles.length > 1 ? "批量切图" : "开始切图";
+  sliceBtn.textContent = label;
+  getElement("manualSliceBtn").textContent = label;
+}
+
+function selectManualFile(file) {
+  if (busy) return;
+  if (activeFile !== file) {
+    resetManualCutState();
+    activeFile = file;
+  }
+  cutModeInput.value = "manual";
+  updateModeView();
+  loadManualPreview();
+}
+
+function invalidateResults(message = "裁切设置已更新，请重新切图。") {
+  resetView();
+  setStatus(message);
+}
+
+function rememberManualCuts() {
+  // Keep source coordinates so resizing and switching images never reuse another image's cuts.
+  manualCutState.sourceCuts = manualCutState.cuts.map(y => y * manualCutState.width / manualCutState.outputWidth);
+  syncFileSelection();
+  invalidateResults();
+}
+
+function syncManualOutput(state, targetWidth) {
+  const output = getOutputSize(state.width, state.height, targetWidth);
+  Object.assign(state, output);
+  state.cuts = getSortedCuts(state.sourceCuts.map(y => Math.round(y * output.outputWidth / state.width)), output.outputHeight);
+}
 
 function setStatus(text) {
   statusEl.textContent = text;
@@ -208,24 +279,21 @@ function resetView() {
 }
 
 function resetManualCutState() {
+  manualCutState.scrollTop = root.querySelector(".preview-scroll").scrollTop;
   if (manualCutState.previewUrl) {
     URL.revokeObjectURL(manualCutState.previewUrl);
   }
-  manualCutState.signature = "";
   manualCutState.previewUrl = "";
-  manualCutState.width = 0;
-  manualCutState.height = 0;
-  manualCutState.outputWidth = 0;
-  manualCutState.outputHeight = 0;
-  manualCutState.resized = false;
-  manualCutState.cuts = [];
+  manualCutState = emptyManualState();
+  getElement("currentFileName").hidden = true;
+  cutYInput.value = "";
   previewImage.removeAttribute("src");
   previewFrame.removeAttribute("style");
   previewFrame.hidden = true;
   hideKnifeGuide();
   cutOverlay.innerHTML = "";
   cutList.textContent = "尚未添加裁切点。";
-  previewStatusEl.textContent = "切换到定点裁切后加载预览。";
+  previewStatusEl.textContent = "添加图片后，选中一张开始裁切。";
 }
 
 function getFileExt(file) {
@@ -323,15 +391,6 @@ function getOutputSize(width, height, targetWidth) {
   };
 }
 
-function getPreviewSignature(file, targetWidth) {
-  return [
-    file.name,
-    file.size,
-    file.lastModified,
-    targetWidth === null ? "original" : targetWidth,
-  ].join(":");
-}
-
 function setPreviewStatus(text) {
   previewStatusEl.textContent = text;
 }
@@ -413,11 +472,14 @@ function getSortedCuts(cuts, outputHeight) {
 }
 
 function removeManualCut(y) {
+  if (busy) return;
   manualCutState.cuts = manualCutState.cuts.filter((cut) => cut !== y);
+  rememberManualCuts();
   renderManualCuts();
 }
 
 function addManualCut(y) {
+  if (busy) return false;
   if (!manualCutState.outputHeight) {
     setPreviewStatus("请先加载预览。");
     return false;
@@ -454,6 +516,7 @@ function addManualCut(y) {
     [...manualCutState.cuts, cut],
     manualCutState.outputHeight
   );
+  rememberManualCuts();
   renderManualCuts();
   return true;
 }
@@ -523,12 +586,6 @@ function renderManualCuts() {
   setPreviewStatus(
     `预览 ${manualCutState.outputWidth}x${manualCutState.outputHeight}，已标记 ${manualCutState.cuts.length} 条切线，导出 ${segments} 段${maxHeightText}。`
   );
-}
-
-function markManualPreviewStale() {
-  if (!manualCutState.signature) return;
-  manualCutState.signature = "";
-  setPreviewStatus("图片或缩放参数已变化，请重新加载预览。");
 }
 
 function buildResultCard(fileName, width, height, layout, cardSlices) {
@@ -713,55 +770,56 @@ function updateModeView() {
     button.classList.toggle("on", selected);
     button.setAttribute("aria-pressed", String(selected));
   });
-  getElement("modeHint").textContent = manualMode ? "指定切线，精确控制每一段" : "按最大尺寸，自动分行分列";
+  getElement("modeHint").textContent = manualMode ? "逐张设置切线，批量导出" : "按最大尺寸，自动分行分列";
+  syncFileSelection();
 }
 
 async function loadManualPreview() {
   if (busy) return;
-  const files = Array.from(fileInput.files || []);
   const targetWidth = getTargetWidth();
 
   if (cutModeInput.value !== "manual") {
     setStatus("请先将裁切方式切换为定点裁切。");
     return;
   }
-  revealPanel(manualPanel, "manualTitle");
-  if (!files.length) {
-    setPreviewStatus("请先选择一张图片。");
-    return;
-  }
-  if (files.length > 1) {
-    setPreviewStatus("定点裁切模式一次只支持一张图片。");
+  if (!activeFile) {
+    setPreviewStatus("添加图片后，选中一张开始裁切。");
     return;
   }
   if (Number.isNaN(targetWidth)) {
+    resetManualCutState();
     setPreviewStatus("输出宽度必须为空，或填写大于 0 的整数。");
     return;
   }
 
-  const file = files[0];
-  const signature = getPreviewSignature(file, targetWidth);
+  const file = activeFile;
   setBusy(true);
   setPreviewStatus("正在加载预览...");
 
   try {
-    const size = await readImageSize(file);
-    const output = getOutputSize(size.width, size.height, targetWidth);
+    let state = manualStates.get(file);
+    if (!state) {
+      const size = await readImageSize(file);
+      state = {...emptyManualState(), ...size};
+    }
+    syncManualOutput(state, targetWidth);
     resetManualCutState();
-
-    manualCutState.signature = signature;
-    manualCutState.width = size.width;
-    manualCutState.height = size.height;
-    manualCutState.outputWidth = output.outputWidth;
-    manualCutState.outputHeight = output.outputHeight;
-    manualCutState.resized = output.resized;
+    manualStates.set(file, state);
+    manualCutState = state;
     manualCutState.previewUrl = URL.createObjectURL(file);
 
     previewImage.src = manualCutState.previewUrl;
-    previewFrame.style.width = `${output.outputWidth}px`;
-    previewFrame.style.aspectRatio = `${output.outputWidth} / ${output.outputHeight}`;
+    previewImage.alt = `${file.name} 裁切预览`;
+    previewFrame.style.width = `${state.outputWidth}px`;
+    previewFrame.style.aspectRatio = `${state.outputWidth} / ${state.outputHeight}`;
     previewFrame.hidden = false;
+    root.querySelector(".preview-scroll").scrollTop = state.scrollTop;
+    const name = getElement("currentFileName");
+    name.textContent = file.name;
+    name.hidden = false;
+    name.title = file.name;
     renderManualCuts();
+    syncFileSelection();
   } catch (error) {
     resetManualCutState();
     setPreviewStatus(`预览加载失败：${error.message || "未知错误"}`);
@@ -770,24 +828,27 @@ async function loadManualPreview() {
   }
 }
 
-function getManualCutsForExport(files, targetWidth) {
+function getManualCutsForExport(files, targetWidth, chunkHeight) {
   if (cutModeInput.value !== "manual") return null;
-  if (files.length !== 1) {
-    throw new Error("定点裁切模式一次只支持一张图片。");
+  const missing = files.filter(file => !manualStates.has(file));
+  if (missing.length) {
+    throw new Error(`还有 ${missing.length} 张图片未设置，请先选中「${missing[0].name}」预览并设置切线。`);
   }
-
-  const signature = getPreviewSignature(files[0], targetWidth);
-  if (!manualCutState.signature || manualCutState.signature !== signature) {
-    throw new Error("请先加载当前图片的定点裁切预览。");
+  const cutsByFile = new Map();
+  for (const file of files) {
+    const state = manualStates.get(file);
+    syncManualOutput(state, targetWidth);
+    const error = getManualMaxHeightError(state.cuts, state.outputHeight, chunkHeight);
+    if (error) throw new Error(`${file.name}：${error}`);
+    cutsByFile.set(file, [...state.cuts]);
   }
-
-  return manualCutState.cuts;
+  return cutsByFile;
 }
 
 sliceBtn.addEventListener("click", async () => {
   if (busy) return;
   revealPanel(resultPanel, "resultTitle");
-  const files = Array.from(fileInput.files || []);
+  const files = [...sourceFiles];
   const targetWidth = getTargetWidth();
   const chunkWidth = Number(chunkWidthInput.value);
   const chunkHeight = Number(chunkHeightInput.value);
@@ -814,23 +875,11 @@ sliceBtn.addEventListener("click", async () => {
     return;
   }
   try {
-    manualCuts = getManualCutsForExport(files, targetWidth);
+    manualCuts = getManualCutsForExport(files, targetWidth, chunkHeight);
   } catch (error) {
     setStatus(error.message);
     return;
   }
-  if (manualCuts !== null) {
-    const maxHeightError = getManualMaxHeightError(
-      manualCuts,
-      manualCutState.outputHeight,
-      chunkHeight
-    );
-    if (maxHeightError) {
-      setStatus(maxHeightError);
-      return;
-    }
-  }
-
   resetView();
   setBusy(true);
   setStatus(`处理中：共 ${files.length} 张图片...`);
@@ -845,7 +894,7 @@ sliceBtn.addEventListener("click", async () => {
           targetWidth,
           chunkWidth,
           chunkHeight,
-          manualCuts
+          manualCuts === null ? null : manualCuts.get(file)
         );
         buildResultCard(
           file.name,
@@ -882,7 +931,7 @@ sliceBtn.addEventListener("click", async () => {
     const modeText =
       manualCuts === null
         ? `按最大 ${chunkWidth}x${chunkHeight}px 自动切片`
-        : `按 ${manualCuts.length} 条定点切线裁切，分段高度不超过 ${chunkHeight}px，每张最大宽度 ${chunkWidth}px`;
+        : `按 ${files.length} 张图片各自的定点切线裁切，分段高度不超过 ${chunkHeight}px，每张最大宽度 ${chunkWidth}px`;
     setStatus(`完成：共切出 ${allSlices.length} 张切片（${resizeText}；${modeText}）。`);
   } catch (error) {
     downloadZipBtn.disabled = allSlices.length === 0;
@@ -894,7 +943,11 @@ sliceBtn.addEventListener("click", async () => {
 });
 
 clearBtn.addEventListener("click", () => {
+  if (busy) return;
   fileInput.value = "";
+  sourceFiles = [];
+  activeFile = null;
+  manualStates.clear();
   updateFileSummary();
   resetView();
   resetManualCutState();
@@ -903,30 +956,55 @@ clearBtn.addEventListener("click", () => {
 
 cutModeInput.addEventListener("change", () => {
   updateModeView();
+  if (cutModeInput.value === "manual") loadManualPreview();
 });
 
 fileInput.addEventListener("change", () => {
-  resetManualCutState();
+  if (busy) return;
+  const incoming = Array.from(fileInput.files || []);
+  const key = file => JSON.stringify([file.name, file.size, file.lastModified, file.type]);
+  const existing = new Set(sourceFiles.map(key));
+  for (const file of incoming) {
+    if (!existing.has(key(file))) {
+      sourceFiles.push(file);
+      existing.add(key(file));
+    }
+  }
+  fileInput.value = "";
+  if (!incoming.length) return;
+  activeFile ||= sourceFiles[0] || null;
   updateFileSummary();
-  resetView();
-  setStatus(fileInput.files.length ? "图片已更新，设置尺寸后点击“开始切图”。" : "已取消选择。请重新选择图片。");
+  invalidateResults("图片已添加。定点裁切可逐张设置切线，再批量切图。");
+  if (cutModeInput.value === "manual") loadManualPreview();
 });
 
 targetWidthInput.addEventListener("input", () => {
-  markManualPreviewStale();
+  invalidateResults();
+  const width = getTargetWidth();
+  if (!Number.isNaN(width)) {
+    for (const state of manualStates.values()) {
+      try { syncManualOutput(state, width); } catch { /* Report invalid dimensions in preview/export. */ }
+    }
+  }
+  syncFileSelection();
+  if (cutModeInput.value === "manual") loadManualPreview();
 });
 
 chunkHeightInput.addEventListener("input", () => {
+  invalidateResults();
   if (manualCutState.outputHeight) {
     renderManualCuts();
   }
 });
+chunkWidthInput.addEventListener("input", () => invalidateResults());
 
 loadPreviewBtn.addEventListener("click", () => {
+  revealPanel(manualPanel, "manualTitle");
   loadManualPreview();
 });
 
 cutOverlay.addEventListener("pointermove", (event) => {
+  if (busy) return;
   if (event.pointerType === "touch") return;
   const y = getPointerCutY(event);
   if (y === null) return;
@@ -938,6 +1016,7 @@ cutOverlay.addEventListener("pointerleave", () => {
 });
 
 cutOverlay.addEventListener("click", (event) => {
+  if (busy) return;
   if (event.target.closest("button")) return;
   if (!manualCutState.outputHeight) {
     setPreviewStatus("请先加载预览。");
@@ -968,7 +1047,9 @@ cutYInput.addEventListener("keydown", (event) => {
 });
 
 clearCutsBtn.addEventListener("click", () => {
+  if (busy) return;
   manualCutState.cuts = [];
+  rememberManualCuts();
   renderManualCuts();
 });
 
@@ -999,6 +1080,7 @@ root.querySelectorAll("[data-mode]").forEach(button => {
     if (busy) return;
     cutModeInput.value = button.dataset.mode;
     updateModeView();
+    if (cutModeInput.value === "manual") loadManualPreview();
   });
 });
 const dropzone = getElement("dropzone");
