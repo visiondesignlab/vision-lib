@@ -1,11 +1,14 @@
 import io
 import json
+import tempfile
+from pathlib import Path
+from types import SimpleNamespace
 import unittest
 from unittest.mock import patch
 from urllib.error import URLError
 
 from scripts.notify_feishu import (DeliveryUnknown, app_request, app_token, chat_ids,
-                                   commit_lines, message, notify, send_app)
+                                   commit_lines, load_event, message, notify, send_app)
 
 
 class FeishuNotificationTests(unittest.TestCase):
@@ -24,9 +27,9 @@ class FeishuNotificationTests(unittest.TestCase):
         self.assertEqual(card["header"]["title"]["content"], "Vision Lab · 发布成功")
         self.assertEqual(card["header"]["template"], "blue")
         body = card["elements"][0]["text"]
-        self.assertEqual(body["tag"], "plain_text")
+        self.assertEqual(body["tag"], "lark_md")
         self.assertEqual(body["content"],
-                         "操作人：visiondesignlab • abcdef1\n\n最新改动：\n• 修复移动端表头")
+                         "操作人：visiondesignlab • abcdef1\n\n**最新改动**\n1. 修复移动端表头")
         buttons = card["elements"][1]["actions"]
         self.assertEqual([b["text"]["content"] for b in buttons], ["在线查看", "仓库地址"])
         self.assertEqual([b["url"] for b in buttons], [
@@ -42,13 +45,46 @@ class FeishuNotificationTests(unittest.TestCase):
         self.assertEqual(card["elements"][1]["actions"][0]["url"],
                          "https://visiondesignlab.github.io/vision-lib/")
 
-    def test_changes_show_newest_five_subjects(self):
-        lines = commit_lines({"commits": [{"message": f"改动 {i}\n详情"} for i in range(8)]})
-        self.assertEqual(lines, [f"• 改动 {i}" for i in range(7, 2, -1)] + ["另有 3 条提交。"])
+    def test_changes_show_newest_subjects_with_numbered_limit(self):
+        lines = commit_lines({"commits": [{"message": f"改动 {i}\n详情"} for i in range(8)]}, limit=5)
+        self.assertEqual(lines, [f"{n}. 改动 {i}" for n, i in enumerate(range(7, 2, -1), 1)] + ["另有 3 项改动，详见仓库提交记录。"])
 
     def test_head_commit_and_manual_release_fallback(self):
-        self.assertEqual(commit_lines({"head_commit": {"message": "修复卡片"}}), ["• 修复卡片"])
+        self.assertEqual(commit_lines({"head_commit": {"message": "修复卡片"}}), ["1. 修复卡片"])
         self.assertIn("手动发布当前版本。", message({}, self.env)["elements"][0]["text"]["content"])
+
+    def test_single_commit_preserves_detailed_release_notes_and_links(self):
+        event = {"commits": [{"message": "更新平台\n\n1. 更新四类榜单 [查看榜单](https://example.com/models)\n"
+                  "2、修复解析\n- 增加回归检查\n• 优化发布卡片\n\n验证：测试通过"}]}
+        lines = commit_lines(event)
+        self.assertEqual(lines, [
+            '1. 更新四类榜单 [查看榜单](https://example.com/models)',
+            '2. 修复解析', '3. 增加回归检查', '4. 优化发布卡片'])
+        card = message(event, self.env)
+        self.assertIn('\n\n4. 优化发布卡片', card['elements'][0]['text']['content'])
+        self.assertNotIn('验证：', card['elements'][0]['text']['content'])
+
+    def test_notes_are_deduplicated_and_code_and_mentions_are_not_executed(self):
+        event = {'commits': [{'message': '标题\n- 同一项\n```\n- 代码示例\n```\n- <at id=all>全员</at>'},
+                             {'message': '另一标题\n- 同一项'}]}
+        lines = commit_lines(event)
+        self.assertEqual(lines, ['1. 同一项', '2. <at id=all>全员</at>'])
+        self.assertNotIn('<at', message(event, self.env)['elements'][0]['text']['content'])
+
+    def test_git_fallback_preserves_multiline_commit_bodies(self):
+        before, after = 'a' * 40, 'b' * 40
+        body = '更新平台\n\n- 榜单同步\n- 发布卡片'
+        with tempfile.TemporaryDirectory() as tmp:
+            event_file = Path(tmp)/'event.json'
+            event_file.write_text(json.dumps({'before': before}))
+            for kind in ('push', 'workflow_dispatch'):
+                env = {**self.env, 'GITHUB_EVENT_NAME': kind, 'GITHUB_EVENT_PATH': str(event_file), 'GITHUB_SHA': after}
+                with patch('scripts.notify_feishu.subprocess.run', return_value=SimpleNamespace(stdout=f'{after}\0{body}\n\0\n')) as git:
+                    event = load_event(env)
+                self.assertEqual(commit_lines(event), ['1. 榜单同步', '2. 发布卡片'])
+                args = git.call_args.args[0]
+                self.assertIn('--format=%H%x00%B%x00', args)
+                self.assertIn(f'{before}..{after}' if kind == 'push' else '-1', args)
 
 class AppNotificationTests(unittest.TestCase):
     def setUp(self):

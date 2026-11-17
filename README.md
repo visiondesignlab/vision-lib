@@ -26,6 +26,8 @@ AI 视频案例默认按热度降序，使用已收录的热度值，缺省时�
 
 一级入口「AI 大模型」位于 `/tools/ai-models`。更新时从 Artificial Analysis 保存语言智能指数、文生图、文生视频（含音频）与文本转语音（提供商原生音色）的中文榜单页面，再运行 `python3 scripts/update_model_ranking.py --language language.html --image image.html --video video.html --speech speech.html --as-of YYYY-MM-DD`（需要 beautifulsoup4 和 Pillow）。四榜各取最多 50 个已排名模型。先在本地检查四个标签、数据和日期，确认后发布同一份快照。
 
+语言榜单按表头含义读取指标，兼容开发商独立成列以及合并进模型单元格的页面；跟随源站当前展示的模型配置与排序。四榜全部通过完整性、唯一性和分数顺序检查后才替换快照并更新日期；解析失败保留上一份有效数据，不仅修改日期。
+
 ## 「有点意思」日刊
 
 浏览入口是 `/journal`；每一期都有可直接访问的 `/journal?vol=N` 地址。新增日刊后，在 caselib 下执行：

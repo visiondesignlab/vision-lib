@@ -108,17 +108,29 @@ def notify(card, env):
         raise RuntimeError("；".join(failures))
 
 
-def commit_lines(event, limit=5):
+def commit_lines(event, limit=8):
     commits = event.get("commits") or []
     if not commits and event.get("head_commit"):
         commits = [event["head_commit"]]
-    lines = []
-    for commit in reversed(commits[-limit:]):
-        subject = str(commit.get("message", "")).splitlines()
-        subject = subject[0][:200] if subject else "无提交说明"
-        lines.append(f"• {subject}")
-    if len(commits) > limit:
-        lines.append(f"另有 {len(commits) - limit} 条提交。")
+    changes = []
+    for commit in reversed(commits):
+        message_lines = str(commit.get("message", "")).splitlines()
+        details = []
+        in_code = False
+        for line in message_lines[1:]:
+            if line.lstrip().startswith(('```', '~~~')):
+                in_code = not in_code
+            match = re.match(r'^\s*(?:[-*•]\s+|\d+[.、)]\s*)(.+)', line)
+            if match and not in_code:
+                details.append(match[1].strip())
+        for text in details or [message_lines[0] if message_lines else "无提交说明"]:
+            text = text[:400]
+            if text not in changes:
+                changes.append(text)
+    # Number the user-facing changes, not just the commits. Keep authored links.
+    lines = [f"{i}. {text}" for i, text in enumerate(changes[:limit], 1)]
+    if len(changes) > limit:
+        lines.append(f"另有 {len(changes) - limit} 项改动，详见仓库提交记录。")
     return lines
 
 
@@ -131,8 +143,8 @@ def message(event, env):
     server = env.get("GITHUB_SERVER_URL", "https://github.com").rstrip("/")
     sha = env.get("GITHUB_SHA", "")[:7]
     changes = commit_lines(event)
-    body = f"操作人：{env.get('GITHUB_ACTOR', '未知')} • {sha}\n\n最新改动：\n"
-    body += "\n".join(changes or ["手动发布当前版本。"])
+    body = f"操作人：{env.get('GITHUB_ACTOR', '未知')} • {sha}\n\n**最新改动**\n"
+    body += "\n\n".join(changes or ["手动发布当前版本。"])
     if not success:
         body += f"\n\n构建：{statuses.get(build, '未知')} · Pages：{statuses.get(deploy, '未知')}"
     owner, name = repo.split("/", 1)
@@ -144,7 +156,7 @@ def message(event, env):
             "title": {"tag": "plain_text", "content": "Vision Lab · 发布成功" if success else "Vision Lab · 发布未完成"},
         },
         "elements": [
-            {"tag": "div", "text": {"tag": "plain_text", "content": body}},
+            {"tag": "div", "text": {"tag": "lark_md", "content": body.replace('<', '&lt;').replace('>', '&gt;')}},
             {"tag": "action", "actions": [
                 {"tag": "button", "text": {"tag": "plain_text", "content": "在线查看"},
                  "type": "primary", "url": pages_url},
@@ -159,16 +171,19 @@ def load_event(env):
     with open(env["GITHUB_EVENT_PATH"], encoding="utf-8") as file:
         event = json.load(file)
     # Actions push payloads may omit the commits array. Read the checked-out range.
-    if env.get("GITHUB_EVENT_NAME") == "push" and not event.get("commits"):
+    if env.get("GITHUB_EVENT_NAME") in {"push", "workflow_dispatch"} and not event.get("commits"):
         before, after = event.get("before", ""), env.get("GITHUB_SHA", "")
         valid_sha = lambda value: len(value) == 40 and all(c in "0123456789abcdef" for c in value.lower())
         if valid_sha(after):
-            revision = f"{before}..{after}" if valid_sha(before) and set(before) != {"0"} else after
+            has_range = env.get("GITHUB_EVENT_NAME") == "push" and valid_sha(before) and set(before) != {"0"}
+            revision = f"{before}..{after}" if has_range else after
             try:
-                result = subprocess.run(["git", "log", "--reverse", "--format=%H%x09%s", revision, "--"],
+                result = subprocess.run(["git", "log", "--reverse", "--format=%H%x00%B%x00",
+                                         *([] if has_range else ["-1"]), revision, "--"],
                                         check=True, capture_output=True, text=True, timeout=20)
-                event["commits"] = [{"id": row.split("\t", 1)[0], "message": row.split("\t", 1)[1]}
-                                    for row in result.stdout.splitlines() if "\t" in row]
+                fields = result.stdout.split("\0")
+                event["commits"] = [{"id": fields[i].strip(), "message": fields[i + 1].strip()}
+                                    for i in range(0, len(fields) - 1, 2) if valid_sha(fields[i].strip())]
             except (subprocess.SubprocessError, OSError):
                 pass  # head_commit remains available as the fallback.
     return event

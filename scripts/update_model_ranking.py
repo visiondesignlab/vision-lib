@@ -54,14 +54,38 @@ def logo_from(cell):
     return img.get('alt','').removesuffix(' logo'), path
 
 
-def language_row(cells):
-    model, context, provider, index, cost, duration, latency, _ = [td.get_text(' ',strip=True) for td in cells]
-    href = cells[-1].select_one('a[href]')['href']
-    if not href.startswith('/zh/models/'):
+LANGUAGE_HEADERS = {
+    'model': '模型', 'context': '上下文窗口', 'provider': '开发商',
+    'score': 'Artificial Analysis Intelligence Index', 'cost': '每任务成本',
+    'duration': '每任务耗时', 'latency': '首个答案', 'links': '进一步分析',
+}
+
+
+def language_columns(headers):
+    # The source moved context and merged the developer into the model cell.
+    # Match semantic headers so both layouts work without guessing cell offsets.
+    columns = {}
+    for key, label in LANGUAGE_HEADERS.items():
+        matches = [i for i, header in enumerate(headers) if header.get_text(' ', strip=True).startswith(label)]
+        if len(matches) > 1:
+            return None
+        if matches:
+            columns[key] = matches[0]
+    return columns if set(LANGUAGE_HEADERS) - {'provider'} <= columns.keys() else None
+
+
+def language_row(cells, columns):
+    text = {key: cells[i].get_text(' ', strip=True) for key, i in columns.items()}
+    model = text['model']
+    provider = text.get('provider') or logo_from(cells[columns['model']])[0]
+    link = cells[columns['links']].select_one('a[href^="/zh/models/"]')
+    if not link or not re.fullmatch(r'/zh/models/[\w-]+', link['href']):
         raise ValueError(f'Invalid model link for {model}')
-    return dict(model=model, url=urljoin(ORIGIN,href), provider=provider, score=number(index),
-                contextTokens=tokens(context), costUSD=number(cost), durationMinutes=number(duration),
-                firstAnswerSeconds=number(latency))
+    if not provider:
+        raise ValueError(f'Missing developer for {model}')
+    return dict(model=model, url=urljoin(ORIGIN,link['href']), provider=provider, score=number(text['score']),
+                contextTokens=tokens(text['context']), costUSD=number(text['cost']), durationMinutes=number(text['duration']),
+                firstAnswerSeconds=number(text['latency']))
 
 
 def media_row(cells, mode):
@@ -90,21 +114,29 @@ def media_row(cells, mode):
 
 
 def extract(html, mode, logos):
-    expected = ['模型','上下文窗口','开发商','Artificial Analysis Intelligence Index','每任务成本','每任务耗时','首个答案','进一步分析'] if mode=='language' else ['', '范围', '模型', 'Elo', '样本数'] + (['Arena 语音','发布'] if mode=='speech' else ['发布日期']) + ['价格']
+    expected = ['', '范围', '模型', 'Elo', '样本数'] + (['Arena 语音','发布'] if mode=='speech' else ['发布日期']) + ['价格']
     soup = BeautifulSoup(html, 'html.parser')
+    columns = None
     for table in soup.select('table'):
         headers = table.select('thead tr:last-child th')
-        if len(headers)==len(expected) and all(h.get_text(' ',strip=True).startswith(t) for h,t in zip(headers, expected)):
+        if mode == 'language':
+            columns = language_columns(headers)
+            if columns:
+                break
+        elif len(headers)==len(expected) and all(h.get_text(' ',strip=True).startswith(t) for h,t in zip(headers, expected)):
             break
     else:
         raise ValueError(f'{mode}: Unexpected source columns')
     rows=[]
     for i,tr in enumerate(table.select('tbody tr')[:LIMIT],1):
         cells = tr.find_all('td',recursive=False)
+        if len(cells) != len(headers):
+            raise ValueError(f'{mode}: Row {i} does not match source columns')
         if mode!='language' and cells[0].get_text(strip=True)!=str(i):
             raise ValueError(f'{mode}: Source is not ordered by published rank')
-        row = language_row(cells) if mode=='language' else media_row(cells,mode)
-        _, logo = logo_from(cells[2])
+        row = language_row(cells, columns) if mode=='language' else media_row(cells,mode)
+        logo_cell = columns.get('provider', columns['model']) if mode == 'language' else 2
+        _, logo = logo_from(cells[logo_cell])
         if logo:
             logos[row['provider']] = logo
         rows.append(row)

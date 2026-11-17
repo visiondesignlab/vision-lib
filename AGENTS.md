@@ -25,5 +25,6 @@
 
 # Publish from the verified local site
 
+- Write release commit bodies with numbered or bulleted user-facing changes, including concrete content names, counts and relevant page links. The Feishu release card uses these details as its numbered update list; a one-line commit subject is only a fallback. Keep implementation/test notes outside that list.
 - For every site change, first run it in this project at http://127.0.0.1:8787 and verify the affected pages and data in a browser.
 - Export the public snapshot from that verified local state, check that it matches the public local API, then push to GitHub Pages. Confirm the deployment and check the same behavior and data at the public URL.

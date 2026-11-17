@@ -1,0 +1,13 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="canva-a" cx="9.272" cy="42.543" r="37.124" gradientUnits="userSpaceOnUse"><stop stop-color="#6420FF"/><stop offset="1" stop-color="#7D2AE7"/></radialGradient>
+<radialGradient id="canva-b" cx="12.707" cy="5.457" r="41.864" gradientUnits="userSpaceOnUse"><stop stop-color="#00C4CC"/><stop offset="1" stop-color="#00C4CC" stop-opacity="0"/></radialGradient>
+<radialGradient id="canva-c" cx="0" cy="0" r="1" gradientTransform="translate(9.272 42.543) rotate(-45.1954) scale(36.675 16.867)" gradientUnits="userSpaceOnUse"><stop stop-color="#6420FF"/><stop offset="1" stop-color="#6420FF" stop-opacity="0"/></radialGradient>
+<radialGradient id="canva-d" cx="0" cy="0" r="1" gradientTransform="translate(19.629 6.467) rotate(66.5198) scale(37.79 63.307)" gradientUnits="userSpaceOnUse"><stop stop-color="#00C4CC"/><stop offset="1" stop-color="#00C4CC" stop-opacity="0"/></radialGradient>
+</defs>
+<circle cx="24" cy="24" r="24" fill="url(#canva-a)"/>
+<circle cx="24" cy="24" r="24" fill="url(#canva-b)"/>
+<circle cx="24" cy="24" r="24" fill="url(#canva-c)"/>
+<circle cx="24" cy="24" r="24" fill="url(#canva-d)"/>
+<path d="M34.361 28.923C34.163 28.923 33.989 29.091 33.808 29.456C31.759 33.609 28.221 36.548 24.128 36.548C19.394 36.548 16.462 32.275 16.462 26.371C16.462 16.371 22.034 10.59 26.928 10.59C29.215 10.59 30.611 12.027 30.611 14.314C30.611 17.028 29.069 18.465 29.069 19.422C29.069 19.852 29.336 20.112 29.866 20.112C31.996 20.112 34.495 17.665 34.495 14.209C34.495 10.857 31.578 8.393 26.684 8.393C18.596 8.393 11.408 15.892 11.408 26.266C11.408 34.297 15.994 39.604 23.07 39.604C30.58 39.604 34.923 32.132 34.923 29.706C34.923 29.169 34.648 28.923 34.361 28.923Z" fill="#fff"/>
+</svg>
