@@ -1,0 +1,69 @@
+
+<header>
+<h1>Vol.26 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-11-18 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天最有用的变化，不是又多了一个会生成页面的模型，而是生成之后终于有人开始补“验收层”。GitHub 把 agent eval、分级 code review、secret scan 和浏览器操作接进同一条工作流；WebKit 让空间界面从专用引擎往声明式 CSS 靠；Vercel 则把预览触发、构建分钟和临时资产寿命直接写进配置与账单。设计团队下一轮效率差距，不在 prompt 写得多花，而在能不能把评估标准、权限边界和运行成本一起交付。今天这批更新基本都还没实测，先看机制，不替官方预览版背书。</p>
+<h2>● Resources</h2>
+<h3>GitHub Copilot Evals<a class="source-url" href="https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/</a></h3>
+<figure><img alt="GitHub Copilot Evals 公测页面" decoding="async" height="900" loading="lazy" src="01.png" width="1440"/><figcaption>GitHub Copilot Evals 公测页面</figcaption></figure>
+<p class="mixed-script">GitHub 把 skills、custom agents 和 MCP tools 的评估做进 Copilot：用自然语言或 <code>/eval</code> 建用例，每次运行前人工批准，再对比定制前后的通过率。预览面向 Individual、Business 和 Enterprise，底层是可本地运行的 Vally eval engine。</p>
+<p class="mixed-script">这比“让同事多试几个 prompt”靠谱得多。真正该抄的是先写失败条件，再做 agent；否则一堆漂亮 demo 只是没有回归测试的动态原型。</p>
+<h3>Copilot code review: Adaptive effort, secret detection, and more<a class="source-url" href="https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-17-copilot-code-review-adaptive-effort-secret-detection-and-more/</a></h3>
+<figure><img alt="Copilot code review 自适应审查页面" decoding="async" height="900" loading="lazy" src="02.png" width="1440"/><figcaption>Copilot code review 自适应审查页面</figcaption></figure>
+<p class="mixed-script">Copilot code review 现在会按 PR 的复杂度与风险在 Lite、Balanced、Max 之间分档，而且不会越过组织设定的上限；跨仓上下文还可以读取相关公共仓库、文档、custom instructions 和 skills。适用 Pro、Pro+、Max、Business 与 Enterprise 方案。</p>
+<p class="mixed-script">对设计工程更实在的价值，是让 token 预算跟风险走：样式微调别开 Max，支付、权限和数据迁移别只跑 Lite。分级审查终于不像“一把尺子量所有 diff”。</p>
+<h3>Secret scanning on demand for developers and agents<a class="source-url" href="https://github.blog/changelog/2026-11-17-secret-scanning-on-demand-for-developers-and-agents/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-17-secret-scanning-on-demand-for-developers-and-agents/</a></h3>
+<figure><img alt="GitHub agent 按需 secret scanning 页面" decoding="async" height="900" loading="lazy" src="03.png" width="1440"/><figcaption>GitHub agent 按需 secret scanning 页面</figcaption></figure>
+<p class="mixed-script">Copilot 的 security review specialist 可直接调用 GitHub secret scanning，覆盖 500 多种 provider pattern 与 150 多家合作方；它检查当前变更，不扫完整仓库历史。功能默认关闭，不额外要求方案，但会按 Secret Protection AI Credit SKU 消耗 AI credits。</p>
+<p class="mixed-script">把密钥检查放到 agent 交付前，比泄漏后补 <code>.gitignore</code> 有用。边界也要写清：这是 diff 级护栏，不是历史仓库清洗，更不是免费的全量安全审计。</p>
+<h2>● AI Coding</h2>
+<h3>Let GitHub Copilot interact with your browser<a class="source-url" href="https://github.blog/changelog/2026-11-17-let-github-copilot-interact-with-your-browser/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-17-let-github-copilot-interact-with-your-browser/</a></h3>
+<figure><img alt="GitHub Copilot 浏览器操作页面" decoding="async" height="900" loading="lazy" src="04.png" width="1440"/><figcaption>GitHub Copilot 浏览器操作页面</figcaption></figure>
+<p class="mixed-script">GitHub 把 Chrome extension 和 Copilot CLI、app、VS Code、JetBrains 配对，公开预览里可以调试网页、跑交互测试和执行多步浏览器任务；权限仍可在设置里管理。</p>
+<p class="mixed-script">这类能力最容易被误写成“自动验收”。实际交付标准应该是可重复的脚本、截图和断言，不是看见 agent 点成功一次。还没实测，先不下稳定性结论。</p>
+<h3>Control where GitHub Copilot customizations come from<a class="source-url" href="https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from/</a></h3>
+<figure><img alt="GitHub Copilot 定制来源控制页面" decoding="async" height="900" loading="lazy" src="05.png" width="1440"/><figcaption>GitHub Copilot 定制来源控制页面</figcaption></figure>
+<p class="mixed-script">Enterprise 管理员可以强制团队只从指定 plugin 或 managed settings 获取 skills、custom agents、hooks、MCP servers 与可执行扩展；<code>strictPluginOnlyCustomization</code> 会阻断用户和项目里的独立来源，还能和 <code>strictKnownMarketplaces</code> 配合。</p>
+<p class="mixed-script">团队开始共享 agent 之后，治理问题会比 prompt 问题更早爆出来。设计系统脚本、发布钩子和原型 MCP 都属于可执行供应链，不该靠“这个 repo 看起来熟”来放行。</p>
+<h2>● Design Trends</h2>
+<h3>Introducing spatial CSS: A developer preview<a class="source-url" href="https://webkit.org/blog/18621/introducing-spatial-css-a-developer-preview/" rel="noopener noreferrer" target="_blank">https://webkit.org/blog/18621/introducing-spatial-css-a-developer-preview/</a></h3>
+<figure><img alt="WebKit Spatial CSS 开发者预览" decoding="async" height="900" loading="lazy" src="06.png" width="1440"/><figcaption>WebKit Spatial CSS 开发者预览</figcaption></figure>
+<p class="mixed-script">WebKit 在 visionOS 27.3 的 feature flag 下放出 Spatial CSS：<code>spatial: portal</code>、真正的 3D <code>transform</code>、<code>position-anchor</code>、<code>@environment-map</code>、<code>portal-action: orbit</code>，以及 <code>requestVolumetricScene()</code>。<code>&lt;model&gt;</code> 则已覆盖 Safari 27 的各个平台。</p>
+<p class="mixed-script">最关键的不是网页突然能做 3D，而是空间状态开始继承 CSS 的声明式能力：媒体查询、reduced motion、色彩主题都能进同一套规则。现在仍是 visionOS 开发预览，别急着改生产技术栈；先把空间层级、降级路径和无障碍状态写成设计规范。</p>
+<h2>● Products</h2>
+<h3>Standard builds move to usage-based billing for new teams<a class="source-url" href="https://vercel.com/changelog/standard-build-billing-new-teams" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/standard-build-billing-new-teams</a></h3>
+<figure><img alt="Vercel Standard build 计费页面" decoding="async" height="900" loading="lazy" src="07.png" width="1440"/><figcaption>Vercel Standard build 计费页面</figcaption></figure>
+<p class="mixed-script">新建的 Pro 与 Enterprise 团队不再自带 Standard build slot。Pro 在从 Elastic 切到 Standard 后按每分钟 0.014 美元计费，月度 usage credit 可抵扣；Enterprise 走合同价格。</p>
+<p class="mixed-script">这会把“预览部署随便跑”变成真实预算。动效网站、WebGL demo 和多语言营销页往往构建最慢，设计工程排期里该开始记录 build minute，而不是只看开发工时。</p>
+<h3>Pull-request-only preset for preview builds<a class="source-url" href="https://vercel.com/changelog/pull-request-only-preset-now-available-for-preview-builds" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/pull-request-only-preset-now-available-for-preview-builds</a></h3>
+<figure><img alt="Vercel PR-only 预览构建页面" decoding="async" height="900" loading="lazy" src="08.png" width="1440"/><figcaption>Vercel PR-only 预览构建页面</figcaption></figure>
+<p class="mixed-script">Vercel 的 Ignored Build Step 新增 Pull Request Only preset：没有开放 PR 的分支预览会在消耗 Build CPU Minutes 前被跳过，GitHub 与 GitLab 均可用；生产部署和有 PR 的预览不受影响。</p>
+<p class="mixed-script">成本控制和协作规则在这里对上了。探索分支可以继续乱跑，准备评审时再付构建费；代价是“直接发分支链接给设计师看”这条旧习惯会失效，团队要把 PR 变成正式预览入口。</p>
+<h3>Vercel Blob TTLs<a class="source-url" href="https://vercel.com/changelog/vercel-blob-now-supports-ttls-for-automatic-deletion" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-blob-now-supports-ttls-for-automatic-deletion</a></h3>
+<figure><img alt="Vercel Blob TTL 自动删除页面" decoding="async" height="900" loading="lazy" src="09.png" width="1440"/><figcaption>Vercel Blob TTL 自动删除页面</figcaption></figure>
+<p class="mixed-script">Vercel Blob 的 <code>put</code>、<code>copy</code>、<code>putImage</code>、multipart 和 presigned upload 都能设置 <code>ttlDays</code>，范围 1–730 天；也能通过 <code>expiresAt</code> 查看、批量设置、修改或清除，单次最多 1000 个 blob。TTL 每开始 60 天计 1 次 Advanced Operation，7 天是 1 次，730 天是 13 次，清除 TTL 与删除本身不收费。</p>
+<p class="mixed-script">原型上传图、AI 中间帧、评审录屏终于可以把“多久后消失”写进代码。别把 TTL 当免费清洁工，寿命越长操作费越高；临时资产默认 7–30 天更像正常值。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Quorum — Colors And The Kids<a class="source-url" href="https://www.stashmedia.tv/quorum-is-the-latest-buzz-from-colors-and-the-kids/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/quorum-is-the-latest-buzz-from-colors-and-the-kids/</a></h3>
+<p class="mixed-script">Vimeo 原片<a class="source-url" href="https://vimeo.com/1247356781" rel="noopener noreferrer" target="_blank">https://vimeo.com/1247356781</a></p>
+<figure data-film-source="https://vimeo.com/1247356781"><img alt="Quorum 片中静帧" decoding="async" height="1080" loading="lazy" src="10.jpg" width="1920"/><figcaption>Quorum 片中静帧</figcaption></figure>
+<p>这支 98 秒短片从一座蓝紫色微缩“蜂巢城市”起步，把蜜蜂身体、蜂群轨迹、洞孔网格和抽象容器拆成连续变体。中段最聪明的一笔，是让群体运动变成橙色波形：方向、密度和节奏同时可见；后半段故意让材料与空间失控，再回到城市舞台，完成一次“偏航—发现—归队”的小叙事。</p>
+<p class="mixed-script">它没有靠花哨转场硬推节奏，主要用形状押韵和运动方向接力。橙黄蜂体、蓝紫城市、黑白网格三套母题反复交叉，所以高密度镜头仍然记得住。前端实现可以照这个顺序做：先定三种视觉状态，再让材质、粒子与构图围绕状态换皮；下一支 WebGL hero 先画状态转移表，别一上来堆 shader。</p>
+<h2>● Stash 最新内容观察</h2>
+<ul>
+<li><strong>Postoffice Amsterdam “Give the Gift of Closeness”<a class="source-url" href="https://www.stashmedia.tv/postoffice-amsterdam-give-the-gift-of-closeness-for-swiss-brands-united/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/postoffice-amsterdam-give-the-gift-of-closeness-for-swiss-brands-united/</a></strong>｜品牌片 / CG：90 秒礼物叙事用“靠近”而非产品特写做情绪锚点，适合盯物体尺度与亲密距离怎么替品牌说话。Vimeo player 在飞书 Referer 下返回 401，所以不升主卡；若后续采用，只走静态图加原片链接。</li>
+<li><strong>Quorum<a class="source-url" href="https://www.stashmedia.tv/quorum-is-the-latest-buzz-from-colors-and-the-kids/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/quorum-is-the-latest-buzz-from-colors-and-the-kids/</a></strong>｜3D / motion design：已升级为今日主卡。三套视觉母题撑住 98 秒高密度变体，是今天最能直接拿去做产品 hero 的片子。</li>
+<li><strong>Something in the Air<a class="source-url" href="https://www.stashmedia.tv/the-nose-knows-creative-control-makes-stash-debut-with-something-in-the-air-short-film/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/the-nose-knows-creative-control-makes-stash-debut-with-something-in-the-air-short-film/</a></strong>｜AI 混合短片：Photoshop、Nano Banana、Seedance 2.5、DaVinci Resolve 与 Suno 被放进同一条制作链。工具名不稀奇，值得盯的是不同生成源如何靠调色、颗粒和剪辑节奏被压成一种片质。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Copilot Evals 是否公开可导出结果、计费口径与 CI 接口，而不是只留在交互面板。</li>
+<li>Spatial CSS 的降级行为、浏览器兼容和 reduced motion 示例，尤其是 portal 与 2D DOM 的焦点顺序。</li>
+<li>Vercel 新计费下，预览构建、AI 资产 TTL 与团队预算告警能不能形成一套默认模板。</li>
+<li>Stash 新片里真正能落到产品发布片的镜头语法，不追只换模型名的 AI showcase。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<p class="mixed-script">今天已覆盖 Copilot Evals、Adaptive code review、按需 secret scanning、browser use、customization source controls、Spatial CSS、Vercel Standard build billing、PR-only previews、Blob TTL；完整视频为《Quorum》。Stash 观察已覆盖 Postoffice《Give the Gift of Closeness》、《Quorum》、《Something in the Air》。</p>
+<p class="mixed-script">继续避免重复：11 月 16 日的 BYOK、Token Pass、Penpot token library、缓存、npm 凭证、《Gatto》；以及 Manta、Clash、ETC、We Love Pitching、Trizz、Swatch 与 Stash 180。</p>

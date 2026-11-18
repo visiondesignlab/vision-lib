@@ -8388,6 +8388,85 @@
    ],
    "updated_at": "2026-11-17T10:25:29+08:00",
    "published_at": "2026-11-17T10:25:29+08:00"
+  },
+  {
+   "id": "cms-626906c20b984584",
+   "type": "showcase",
+   "title": "OpenAI｜GPT-6.2 Astra 与 Sol 发布短片",
+   "category": "AI",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "OpenAI（@OpenAI）",
+    "author_url": "https://x.com/OpenAI",
+    "date": "2026-11-18 01:54（北京时间）",
+    "url": "https://x.com/OpenAI/status/2122750124543926515"
+   },
+   "media": {
+    "kind": "video",
+    "thumbnail": "/media/eagle-f638d8d9cb32b2d3/188B2D4C-0EBD-4055-B548-6F3CF9EC813B-a31e85d791.jpg",
+    "specs": {
+     "resolution": "1920×1080",
+     "duration_s": 118.7
+    },
+    "embed": "remote",
+    "video": "https://video.twimg.com/amplify_video/2122746240823943168/vid/avc1/1920x1080/u9FA7vr_eObv2kjx.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2122746240823943168/vid/avc1/1920x1080/u9FA7vr_eObv2kjx.mp4"
+   },
+   "added_at": "2026-11-18T10:20:41+08:00",
+   "subtitle": "OpenAI 发布 GPT-6.2 Astra 与 Sol，以真实工作场景和执行效率为核心信息。",
+   "description": "OpenAI 官方发布的 GPT-6.2 Astra 与 Sol 视频。原帖宣布两款模型现已推出，并强调效率与真实工作中的表现；同一官方发布串进一步介绍 Astra 面向复杂项目、Sol 面向日常工作与多步骤 Agent 工作流的定位。保留官方原帖入口，供参考 AI 产品发布内容的组织方式。",
+   "brand": "OpenAI",
+   "tags": [
+    "OpenAI",
+    "GPT-6.2",
+    "Astra",
+    "Sol",
+    "AI 产品",
+    "产品发布",
+    "Agent"
+   ],
+   "updated_at": "2026-11-18T10:21:16+08:00",
+   "published_at": "2026-11-18T10:21:16+08:00"
+  },
+  {
+   "id": "cms-b6e721a99c96461a",
+   "type": "showcase",
+   "title": "Devin Bots｜由 Agent 团队完成软件开发任务",
+   "category": "Agent",
+   "status": "published",
+   "source": {
+    "platform": "X",
+    "author": "Cognition（@cognition）",
+    "author_url": "https://x.com/cognition",
+    "date": "2026-11-18 01:03（北京时间）",
+    "url": "https://x.com/cognition/status/2122737511684587551"
+   },
+   "media": {
+    "kind": "video",
+    "thumbnail": "/media/eagle-48f956a46482ccf3/BAC478C8-5CD9-4034-B61E-F30694E92714-cc4c027712.jpg",
+    "specs": {
+     "resolution": "1920×1080",
+     "duration_s": 93.1
+    },
+    "embed": "remote",
+    "video": "https://video.twimg.com/amplify_video/2122736117183344641/vid/avc1/1920x1080/Y8kw49IJltU9CXei.mp4",
+    "preview": "https://video.twimg.com/amplify_video/2122736117183344641/vid/avc1/1920x1080/Y8kw49IJltU9CXei.mp4"
+   },
+   "added_at": "2026-11-18T10:20:41+08:00",
+   "subtitle": "Cognition 发布 Devin Bots，展示由一个 Bot 带领多个 Agent 协作处理开发任务的产品定位。",
+   "description": "Cognition 官方发布的 Devin Bots 介绍视频。原帖以编写固件、每周合并数千个 PR 为例，说明 Devin Bot 带领一组 Agent 推进工作的方式。这些能力表述来自官方发布，保留原作者与原帖链接，可作为 AI 编程产品介绍和多 Agent 工作流演示的参考。",
+   "brand": "Cognition",
+   "tags": [
+    "Cognition",
+    "Devin Bots",
+    "AI 编程",
+    "多 Agent 协作",
+    "产品演示",
+    "软件开发"
+   ],
+   "updated_at": "2026-11-18T10:21:16+08:00",
+   "published_at": "2026-11-18T10:21:16+08:00"
   }
  ]
 }

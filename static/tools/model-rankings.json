@@ -1,5 +1,5 @@
 {
- "date": "2026-11-17",
+ "date": "2026-11-18",
  "providerLogos": {
   "Alibaba": "providers/alibaba.svg",
   "Alibaba-ATH": "providers/alibaba.svg",
@@ -24,7 +24,6 @@
   "Gradium": "providers/gradium.svg",
   "HeyGen": "providers/heygen.svg",
   "HiDream": "providers/hidream.png",
-  "IBM": "providers/ibm.svg",
   "Ideogram": "providers/ideogram.svg",
   "InclusionAI": "providers/inclusionai.jpg",
   "Institute of Foundation Models": "providers/ifm.svg",
@@ -34,6 +33,7 @@
   "Krea": "providers/krea.svg",
   "LG AI Research": "providers/lg.png",
   "Lightricks": "providers/lightricks.svg",
+  "Liquid AI": "providers/liquidai.svg",
   "Luma Labs": "providers/lumalabs.svg",
   "Meta": "meta-color.svg",
   "Microsoft": "providers/microsoft.svg",
@@ -51,6 +51,7 @@
   "Reflection": "providers/reflection.svg",
   "Resemble AI": "providers/resembleai.jpg",
   "Rime": "providers/rime.svg",
+  "SK Telecom": "providers/sktelecom.svg",
   "Sand.ai": "providers/sandai.svg",
   "Sapiens AI": "providers/sapiens.svg",
   "Skywork AI": "providers/skywork.svg",
@@ -64,6 +65,7 @@
   "Upstage": "providers/upstage.svg",
   "Utopai Studios": "providers/utopai.svg",
   "VUI Labs": "providers/vuilabs.jpg",
+  "Video Rebirth": "providers/video-rebirth.jpg",
   "Vidu": "providers/vidu.svg",
   "Xiaomi": "providers/xiaomi.svg",
   "Z AI": "providers/zai.svg",
@@ -80,8 +82,18 @@
      "score": 65.0,
      "contextTokens": 1000000,
      "costUSD": 26.54,
-     "durationMinutes": 40.9,
-     "firstAnswerSeconds": 207.86
+     "durationMinutes": 40.7,
+     "firstAnswerSeconds": 214.95
+    },
+    {
+     "model": "GPT-6.2 Astra Max",
+     "url": "https://artificialanalysis.ai/zh/models/gpt-6-2-astra",
+     "provider": "OpenAI",
+     "score": 62.0,
+     "contextTokens": 1000000,
+     "costUSD": 4.0,
+     "durationMinutes": 10.7,
+     "firstAnswerSeconds": 147.65
     },
     {
      "model": "Gemini 4 Carbon High",
@@ -90,8 +102,8 @@
      "score": 60.0,
      "contextTokens": 1000000,
      "costUSD": 5.48,
-     "durationMinutes": 31.8,
-     "firstAnswerSeconds": 72.3
+     "durationMinutes": 33.2,
+     "firstAnswerSeconds": 73.37
     },
     {
      "model": "Claude Opus 5.5 Max, Default Fallback",
@@ -100,28 +112,18 @@
      "score": 59.0,
      "contextTokens": 1000000,
      "costUSD": 10.04,
-     "durationMinutes": 24.6,
-     "firstAnswerSeconds": 355.3
+     "durationMinutes": 24.5,
+     "firstAnswerSeconds": 355.12
     },
     {
-     "model": "GPT-6 Astra Max",
-     "url": "https://artificialanalysis.ai/zh/models/gpt-6-astra",
+     "model": "GPT-6.2 Sol Max",
+     "url": "https://artificialanalysis.ai/zh/models/gpt-6-2-sol",
      "provider": "OpenAI",
      "score": 57.0,
      "contextTokens": 1000000,
-     "costUSD": 6.24,
-     "durationMinutes": 20.2,
-     "firstAnswerSeconds": 198.4
-    },
-    {
-     "model": "GPT-6.1 Sol Max",
-     "url": "https://artificialanalysis.ai/zh/models/gpt-6-1-sol",
-     "provider": "OpenAI",
-     "score": 55.0,
-     "contextTokens": 1000000,
-     "costUSD": 1.27,
-     "durationMinutes": 22.7,
-     "firstAnswerSeconds": 156.92
+     "costUSD": 1.01,
+     "durationMinutes": 7.9,
+     "firstAnswerSeconds": 61.56
     },
     {
      "model": "Claude Sonnet 5.5 Max, Default Fallback",
@@ -130,8 +132,8 @@
      "score": 55.0,
      "contextTokens": 1000000,
      "costUSD": 10.02,
-     "durationMinutes": 31.1,
-     "firstAnswerSeconds": 283.74
+     "durationMinutes": 32.3,
+     "firstAnswerSeconds": 290.29
     },
     {
      "model": "Gemini 4 Hydrogen Xhigh",
@@ -140,8 +142,8 @@
      "score": 54.0,
      "contextTokens": 1000000,
      "costUSD": 3.16,
-     "durationMinutes": 15.6,
-     "firstAnswerSeconds": 51.74
+     "durationMinutes": 14.8,
+     "firstAnswerSeconds": 42.69
     },
     {
      "model": "GPT-6.1 Terra Max",
@@ -150,8 +152,8 @@
      "score": 51.0,
      "contextTokens": 1000000,
      "costUSD": 0.96,
-     "durationMinutes": 13.9,
-     "firstAnswerSeconds": 148.01
+     "durationMinutes": 14.2,
+     "firstAnswerSeconds": 144.41
     },
     {
      "model": "Gemini 4 Argon High",
@@ -160,8 +162,8 @@
      "score": 50.0,
      "contextTokens": 1000000,
      "costUSD": 4.97,
-     "durationMinutes": 29.4,
-     "firstAnswerSeconds": 44.04
+     "durationMinutes": 29.1,
+     "firstAnswerSeconds": 47.0
     },
     {
      "model": "Muse Wonder Full Max",
@@ -180,8 +182,8 @@
      "score": 46.0,
      "contextTokens": 1000000,
      "costUSD": 3.68,
-     "durationMinutes": 38.9,
-     "firstAnswerSeconds": 152.69
+     "durationMinutes": 38.3,
+     "firstAnswerSeconds": 155.21
     },
     {
      "model": "Muse Wonder Max",
@@ -190,8 +192,8 @@
      "score": 44.0,
      "contextTokens": 1000000,
      "costUSD": 6.95,
-     "durationMinutes": 13.0,
-     "firstAnswerSeconds": 19.04
+     "durationMinutes": 13.4,
+     "firstAnswerSeconds": 19.58
     },
     {
      "model": "Qwen4 Max",
@@ -200,8 +202,8 @@
      "score": 43.0,
      "contextTokens": 984000,
      "costUSD": 3.27,
-     "durationMinutes": 32.1,
-     "firstAnswerSeconds": 159.36
+     "durationMinutes": 33.1,
+     "firstAnswerSeconds": 143.51
     },
     {
      "model": "Claude Haiku 5.5 Max",
@@ -211,7 +213,7 @@
      "contextTokens": 1000000,
      "costUSD": 0.41,
      "durationMinutes": 14.7,
-     "firstAnswerSeconds": 184.29
+     "firstAnswerSeconds": 190.13
     },
     {
      "model": "Muse Ember Max",
@@ -220,8 +222,8 @@
      "score": 36.0,
      "contextTokens": 1000000,
      "costUSD": 0.14,
-     "durationMinutes": 3.2,
-     "firstAnswerSeconds": 4.96
+     "durationMinutes": 3.1,
+     "firstAnswerSeconds": 4.85
     },
     {
      "model": "Grok 4.7 Xhigh",
@@ -230,8 +232,8 @@
      "score": 35.0,
      "contextTokens": 500000,
      "costUSD": 7.77,
-     "durationMinutes": 24.8,
-     "firstAnswerSeconds": 49.9
+     "durationMinutes": 24.2,
+     "firstAnswerSeconds": 47.29
     },
     {
      "model": "Tencent Hy4",
@@ -241,7 +243,7 @@
      "contextTokens": 1000000,
      "costUSD": 1.03,
      "durationMinutes": 13.6,
-     "firstAnswerSeconds": 113.83
+     "firstAnswerSeconds": 111.73
     },
     {
      "model": "DeepSeek V4.1 Flash 1017 Max",
@@ -251,7 +253,7 @@
      "contextTokens": 1000000,
      "costUSD": 0.6,
      "durationMinutes": 13.0,
-     "firstAnswerSeconds": 40.43
+     "firstAnswerSeconds": 37.93
     },
     {
      "model": "GLM-5.3 Max",
@@ -260,8 +262,8 @@
      "score": 32.0,
      "contextTokens": 1000000,
      "costUSD": 5.01,
-     "durationMinutes": 22.1,
-     "firstAnswerSeconds": 60.33
+     "durationMinutes": 21.7,
+     "firstAnswerSeconds": 69.29
     },
     {
      "model": "Inkling 2 Small",
@@ -270,8 +272,8 @@
      "score": 31.0,
      "contextTokens": 1000000,
      "costUSD": 1.18,
-     "durationMinutes": 22.1,
-     "firstAnswerSeconds": 38.11
+     "durationMinutes": 20.9,
+     "firstAnswerSeconds": 39.18
     },
     {
      "model": "MiMo-V2.6-Pro",
@@ -280,8 +282,8 @@
      "score": 30.0,
      "contextTokens": 1000000,
      "costUSD": 0.26,
-     "durationMinutes": 37.8,
-     "firstAnswerSeconds": 26.99
+     "durationMinutes": 34.8,
+     "firstAnswerSeconds": 25.73
     },
     {
      "model": "Ling 3.1 Flash 1019",
@@ -300,8 +302,8 @@
      "score": 29.0,
      "contextTokens": 1000000,
      "costUSD": 0.49,
-     "durationMinutes": 15.9,
-     "firstAnswerSeconds": 46.82
+     "durationMinutes": 17.6,
+     "firstAnswerSeconds": 48.55
     },
     {
      "model": "Qwen3.8-Flash-Next",
@@ -310,8 +312,8 @@
      "score": 29.0,
      "contextTokens": 256000,
      "costUSD": 0.57,
-     "durationMinutes": 29.2,
-     "firstAnswerSeconds": 60.9
+     "durationMinutes": 29.4,
+     "firstAnswerSeconds": 62.69
     },
     {
      "model": "Step 5 Preview",
@@ -320,8 +322,8 @@
      "score": 29.0,
      "contextTokens": 1000000,
      "costUSD": 2.35,
-     "durationMinutes": 14.5,
-     "firstAnswerSeconds": 22.73
+     "durationMinutes": 13.2,
+     "firstAnswerSeconds": 21.77
     },
     {
      "model": "GPT-6 Luna Max",
@@ -330,8 +332,8 @@
      "score": 28.0,
      "contextTokens": 1000000,
      "costUSD": 0.15,
-     "durationMinutes": 12.2,
-     "firstAnswerSeconds": 68.75
+     "durationMinutes": 12.1,
+     "firstAnswerSeconds": 64.04
     },
     {
      "model": "GLM-5.3-Flash",
@@ -340,8 +342,8 @@
      "score": 28.0,
      "contextTokens": 1000000,
      "costUSD": 0.58,
-     "durationMinutes": 39.1,
-     "firstAnswerSeconds": 80.42
+     "durationMinutes": 38.3,
+     "firstAnswerSeconds": 84.58
     },
     {
      "model": "MiMo-V2.6-Flash",
@@ -350,8 +352,8 @@
      "score": 27.0,
      "contextTokens": 1000000,
      "costUSD": 0.13,
-     "durationMinutes": 51.9,
-     "firstAnswerSeconds": 27.47
+     "durationMinutes": 54.7,
+     "firstAnswerSeconds": 33.03
     },
     {
      "model": "Mistral Large 4 High",
@@ -360,8 +362,8 @@
      "score": 26.0,
      "contextTokens": 1000000,
      "costUSD": 2.06,
-     "durationMinutes": 18.0,
-     "firstAnswerSeconds": 56.66
+     "durationMinutes": 18.8,
+     "firstAnswerSeconds": 64.46
     },
     {
      "model": "Muse Spark Open Xhigh",
@@ -370,8 +372,8 @@
      "score": 25.0,
      "contextTokens": 1000000,
      "costUSD": 2.02,
-     "durationMinutes": 6.0,
-     "firstAnswerSeconds": 9.8
+     "durationMinutes": 5.8,
+     "firstAnswerSeconds": 10.44
     },
     {
      "model": "Agnes 2.5 Pro Theta",
@@ -380,8 +382,8 @@
      "score": 24.0,
      "contextTokens": 1000000,
      "costUSD": 0.57,
-     "durationMinutes": 24.3,
-     "firstAnswerSeconds": 7.95
+     "durationMinutes": 22.9,
+     "firstAnswerSeconds": 8.1
     },
     {
      "model": "DeepSeek V4 Pro 0813 Max",
@@ -390,8 +392,8 @@
      "score": 23.0,
      "contextTokens": 1000000,
      "costUSD": 1.77,
-     "durationMinutes": 17.3,
-     "firstAnswerSeconds": 50.0
+     "durationMinutes": 16.9,
+     "firstAnswerSeconds": 54.34
     },
     {
      "model": "Nanbeige4.3-33B",
@@ -410,8 +412,8 @@
      "score": 20.0,
      "contextTokens": 256000,
      "costUSD": 3.53,
-     "durationMinutes": 37.2,
-     "firstAnswerSeconds": 111.34
+     "durationMinutes": 38.1,
+     "firstAnswerSeconds": 121.79
     },
     {
      "model": "JT-4.1 Flash 236B A21B",
@@ -430,8 +432,8 @@
      "score": 19.0,
      "contextTokens": 1000000,
      "costUSD": 1.29,
-     "durationMinutes": 13.2,
-     "firstAnswerSeconds": 65.6
+     "durationMinutes": 14.1,
+     "firstAnswerSeconds": 69.98
     },
     {
      "model": "K2 Horizon 375B A23B",
@@ -440,8 +442,8 @@
      "score": 18.0,
      "contextTokens": 524000,
      "costUSD": 0.0,
-     "durationMinutes": 4.9,
-     "firstAnswerSeconds": 18.68
+     "durationMinutes": 4.8,
+     "firstAnswerSeconds": 19.59
     },
     {
      "model": "Beam 1.0",
@@ -450,8 +452,8 @@
      "score": 18.0,
      "contextTokens": 1000000,
      "costUSD": 0.28,
-     "durationMinutes": 2.0,
-     "firstAnswerSeconds": 6.17
+     "durationMinutes": 2.2,
+     "firstAnswerSeconds": 7.3
     },
     {
      "model": "Solar Pro 4",
@@ -460,8 +462,8 @@
      "score": 14.0,
      "contextTokens": 512000,
      "costUSD": 0.96,
-     "durationMinutes": 70.4,
-     "firstAnswerSeconds": 26.59
+     "durationMinutes": 72.0,
+     "firstAnswerSeconds": 31.47
     },
     {
      "model": "Apodex 1.1",
@@ -479,9 +481,9 @@
      "provider": "NVIDIA",
      "score": 14.0,
      "contextTokens": 1000000,
-     "costUSD": 0.56,
-     "durationMinutes": 4.8,
-     "firstAnswerSeconds": 12.09
+     "costUSD": 0.48,
+     "durationMinutes": 5.3,
+     "firstAnswerSeconds": 13.69
     },
     {
      "model": "Inkling Xhigh",
@@ -491,7 +493,7 @@
      "contextTokens": 1000000,
      "costUSD": 1.35,
      "durationMinutes": 8.1,
-     "firstAnswerSeconds": 13.07
+     "firstAnswerSeconds": 14.63
     },
     {
      "model": "Nemotron 3 Ultra 550B A55B Reasoning",
@@ -500,7 +502,7 @@
      "score": 12.0,
      "contextTokens": 262000,
      "costUSD": 2.21,
-     "durationMinutes": 4.3,
+     "durationMinutes": 4.4,
      "firstAnswerSeconds": 3.67
     },
     {
@@ -510,8 +512,18 @@
      "score": 12.0,
      "contextTokens": 1000000,
      "costUSD": 0.69,
-     "durationMinutes": 1.6,
-     "firstAnswerSeconds": 4.81
+     "durationMinutes": 1.5,
+     "firstAnswerSeconds": 4.82
+    },
+    {
+     "model": "A.X-K2",
+     "url": "https://artificialanalysis.ai/zh/models/a-x-k2",
+     "provider": "SK Telecom",
+     "score": 9.0,
+     "contextTokens": 262000,
+     "costUSD": null,
+     "durationMinutes": null,
+     "firstAnswerSeconds": null
     },
     {
      "model": "K-EXAONE 2.0",
@@ -531,7 +543,7 @@
      "contextTokens": 131000,
      "costUSD": 0.18,
      "durationMinutes": 4.7,
-     "firstAnswerSeconds": 18.21
+     "firstAnswerSeconds": 19.29
     },
     {
      "model": "Command A+",
@@ -540,8 +552,18 @@
      "score": 6.0,
      "contextTokens": 192000,
      "costUSD": 0.0,
-     "durationMinutes": 3.5,
-     "firstAnswerSeconds": 21.2
+     "durationMinutes": 3.6,
+     "firstAnswerSeconds": 29.84
+    },
+    {
+     "model": "LFM3-1.7B",
+     "url": "https://artificialanalysis.ai/zh/models/lfm3-1-7b",
+     "provider": "Liquid AI",
+     "score": 6.0,
+     "contextTokens": 262000,
+     "costUSD": 0.17,
+     "durationMinutes": null,
+     "firstAnswerSeconds": null
     },
     {
      "model": "Nemotron 3.5 Lightning",
@@ -550,28 +572,8 @@
      "score": 6.0,
      "contextTokens": 1000000,
      "costUSD": 0.31,
-     "durationMinutes": 4.0,
-     "firstAnswerSeconds": 10.28
-    },
-    {
-     "model": "Granite 4.2 8B",
-     "url": "https://artificialanalysis.ai/zh/models/granite-4-2-8b",
-     "provider": "IBM",
-     "score": 5.0,
-     "contextTokens": 131000,
-     "costUSD": 0.0405,
-     "durationMinutes": 13.8,
-     "firstAnswerSeconds": 53.5
-    },
-    {
-     "model": "Gemma 4 E4B Reasoning",
-     "url": "https://artificialanalysis.ai/zh/models/gemma-4-e4b",
-     "provider": "Google",
-     "score": 5.0,
-     "contextTokens": 128000,
-     "costUSD": 0.0083,
-     "durationMinutes": 4.0,
-     "firstAnswerSeconds": 27.64
+     "durationMinutes": 3.9,
+     "firstAnswerSeconds": 13.95
     }
    ]
   },
@@ -601,16 +603,25 @@
      "provider": "OpenAI",
      "score": 1227.0,
      "votes": 7214,
-     "range": "2-3",
+     "range": "2-4",
      "released": "2026-11",
      "price": 210.72
+    },
+    {
+     "model": "MAI-Image-2.7",
+     "provider": "Microsoft AI",
+     "score": 1214.0,
+     "votes": 5008,
+     "range": "3-5",
+     "released": "2026-11",
+     "price": 34.82
     },
     {
      "model": "GPT Image 2.5 Flare (max)",
      "provider": "OpenAI",
      "score": 1210.0,
      "votes": 13021,
-     "range": "4",
+     "range": "4-5",
      "released": "2026-09",
      "price": 210.72
     },
@@ -619,25 +630,25 @@
      "provider": "OpenAI",
      "score": 1192.0,
      "votes": 13487,
-     "range": "5-6",
+     "range": "6-7",
      "released": "2026-04",
      "price": 211.0
     },
     {
-     "model": "Kling Image 4.0 (preview)",
+     "model": "Kling Image 4.0",
      "provider": "KlingAI",
      "score": 1180.0,
      "votes": 5550,
-     "range": "5-8",
+     "range": "6-9",
      "released": "2026-11",
-     "price": null
+     "price": 63.0
     },
     {
      "model": "Nano Banana 2.1",
      "provider": "Google",
      "score": 1176.0,
      "votes": 6793,
-     "range": "6-9",
+     "range": "7-10",
      "released": "2026-10",
      "price": 33.6
     },
@@ -646,7 +657,7 @@
      "provider": "Microsoft AI",
      "score": 1168.0,
      "votes": 9009,
-     "range": "7-10",
+     "range": "8-12",
      "released": "2026-08",
      "price": 38.91
     },
@@ -655,16 +666,25 @@
      "provider": "SpaceXAI",
      "score": 1167.0,
      "votes": 8091,
-     "range": "7-10",
+     "range": "8-12",
      "released": "2026-08",
      "price": 60.0
+    },
+    {
+     "model": "MAI-Image-2.7-Flash",
+     "provider": "Microsoft AI",
+     "score": 1158.0,
+     "votes": 5951,
+     "range": "9-12",
+     "released": "2026-11",
+     "price": 10.24
     },
     {
      "model": "Canva Craft",
      "provider": "Canva",
      "score": 1158.0,
      "votes": 5343,
-     "range": "8-10",
+     "range": "9-12",
      "released": "2026-10",
      "price": 30.0
     },
@@ -673,7 +693,7 @@
      "provider": "Google",
      "score": 1143.0,
      "votes": 16702,
-     "range": "11-12",
+     "range": "12-14",
      "released": "2026-02",
      "price": 67.0
     },
@@ -682,7 +702,7 @@
      "provider": "ByteDance Seed",
      "score": 1134.0,
      "votes": 5260,
-     "range": "11-15",
+     "range": "13-17",
      "released": "2026-11",
      "price": 20.0
     },
@@ -691,7 +711,7 @@
      "provider": "Meta",
      "score": 1126.0,
      "votes": 9119,
-     "range": "12-18",
+     "range": "14-20",
      "released": "2026-07",
      "price": 10.0
     },
@@ -700,7 +720,7 @@
      "provider": "OpenAI",
      "score": 1125.0,
      "votes": 13491,
-     "range": "12-18",
+     "range": "14-20",
      "released": "2025-12",
      "price": 133.0
     },
@@ -709,7 +729,7 @@
      "provider": "Microsoft AI",
      "score": 1124.0,
      "votes": 6110,
-     "range": "12-19",
+     "range": "14-21",
      "released": "2026-09",
      "price": 19.46
     },
@@ -718,7 +738,7 @@
      "provider": "Google",
      "score": 1119.0,
      "votes": 15862,
-     "range": "13-20",
+     "range": "15-22",
      "released": "2025-11",
      "price": 134.0
     },
@@ -727,7 +747,7 @@
      "provider": "Microsoft AI",
      "score": 1117.0,
      "votes": 14421,
-     "range": "13-20",
+     "range": "15-22",
      "released": "2026-06",
      "price": 48.13
     },
@@ -736,7 +756,7 @@
      "provider": "Microsoft AI",
      "score": 1116.0,
      "votes": 12834,
-     "range": "14-20",
+     "range": "16-22",
      "released": "2026-07",
      "price": 108.54
     },
@@ -745,7 +765,7 @@
      "provider": "Black Forest Labs",
      "score": 1115.0,
      "votes": 6751,
-     "range": "14-21",
+     "range": "16-23",
      "released": "2026-10",
      "price": 48.0
     },
@@ -754,7 +774,7 @@
      "provider": "Google",
      "score": 1110.0,
      "votes": 15747,
-     "range": "17-21",
+     "range": "19-23",
      "released": "2026-06",
      "price": 33.6
     },
@@ -763,7 +783,7 @@
      "provider": "ByteDance Seed",
      "score": 1103.0,
      "votes": 12275,
-     "range": "19-22",
+     "range": "21-24",
      "released": "2026-07",
      "price": 90.0
     },
@@ -772,7 +792,7 @@
      "provider": "Alibaba",
      "score": 1094.0,
      "votes": 6993,
-     "range": "21-22",
+     "range": "23-24",
      "released": "2026-07",
      "price": 40.0
     },
@@ -781,7 +801,7 @@
      "provider": "Alibaba",
      "score": 1076.0,
      "votes": 6737,
-     "range": "23-25",
+     "range": "25-27",
      "released": "2026-07",
      "price": 30.0
     },
@@ -790,7 +810,7 @@
      "provider": "MiniMax",
      "score": 1072.0,
      "votes": 3362,
-     "range": "23-26",
+     "range": "25-28",
      "released": "2026-11",
      "price": 35.29
     },
@@ -799,7 +819,7 @@
      "provider": "MiniMax",
      "score": 1066.0,
      "votes": 3258,
-     "range": "23-26",
+     "range": "25-28",
      "released": "2026-11",
      "price": 21.79
     },
@@ -808,7 +828,7 @@
      "provider": "Alibaba",
      "score": 1058.0,
      "votes": 5615,
-     "range": "24-28",
+     "range": "26-30",
      "released": "2026-10",
      "price": 35.33
     },
@@ -817,7 +837,7 @@
      "provider": "SpaceXAI",
      "score": 1049.0,
      "votes": 17406,
-     "range": "26-29",
+     "range": "28-31",
      "released": "2026-05",
      "price": 50.0
     },
@@ -826,7 +846,7 @@
      "provider": "Alibaba",
      "score": 1047.0,
      "votes": 6312,
-     "range": "26-31",
+     "range": "28-33",
      "released": "2026-09",
      "price": null
     },
@@ -835,7 +855,7 @@
      "provider": "Black Forest Labs",
      "score": 1041.0,
      "votes": 5791,
-     "range": "27-34",
+     "range": "29-36",
      "released": "2026-10",
      "price": 9.0
     },
@@ -844,7 +864,7 @@
      "provider": "Bria",
      "score": 1037.0,
      "votes": 5741,
-     "range": "28-37",
+     "range": "30-39",
      "released": "2026-10",
      "price": 32.0
     },
@@ -853,7 +873,7 @@
      "provider": "Krea",
      "score": 1035.0,
      "votes": 15164,
-     "range": "29-36",
+     "range": "31-38",
      "released": "2026-05",
      "price": 60.0
     },
@@ -862,7 +882,7 @@
      "provider": "Alibaba",
      "score": 1034.0,
      "votes": 6699,
-     "range": "29-40",
+     "range": "31-42",
      "released": "2026-04",
      "price": 75.0
     },
@@ -871,7 +891,7 @@
      "provider": "Microsoft AI",
      "score": 1034.0,
      "votes": 6477,
-     "range": "29-40",
+     "range": "31-42",
      "released": "2026-06",
      "price": 19.97
     },
@@ -880,7 +900,7 @@
      "provider": "ByteDance Seed",
      "score": 1030.0,
      "votes": 7057,
-     "range": "30-44",
+     "range": "32-46",
      "released": "2025-12",
      "price": 40.0
     },
@@ -889,7 +909,7 @@
      "provider": "Black Forest Labs",
      "score": 1027.0,
      "votes": 6706,
-     "range": "31-46",
+     "range": "33-48",
      "released": "2025-11",
      "price": 60.0
     },
@@ -898,7 +918,7 @@
      "provider": "Recraft",
      "score": 1027.0,
      "votes": 8106,
-     "range": "31-46",
+     "range": "33-48",
      "released": "2026-05",
      "price": 35.0
     },
@@ -907,7 +927,7 @@
      "provider": "Ideogram",
      "score": 1026.0,
      "votes": 11275,
-     "range": "32-46",
+     "range": "34-48",
      "released": "2026-06",
      "price": 100.0
     },
@@ -916,7 +936,7 @@
      "provider": "Luma Labs",
      "score": 1025.0,
      "votes": 6120,
-     "range": "32-48",
+     "range": "34-50",
      "released": "2026-05",
      "price": 100.0
     },
@@ -925,7 +945,7 @@
      "provider": "Alibaba",
      "score": 1025.0,
      "votes": 5295,
-     "range": "32-48",
+     "range": "34-50",
      "released": "2026-10",
      "price": 16.0
     },
@@ -934,7 +954,7 @@
      "provider": "Alibaba",
      "score": 1024.0,
      "votes": 5992,
-     "range": "32-49",
+     "range": "34-51",
      "released": "2025-12",
      "price": 30.0
     },
@@ -943,7 +963,7 @@
      "provider": "SpaceXAI",
      "score": 1024.0,
      "votes": 6992,
-     "range": "33-48",
+     "range": "35-50",
      "released": "2026-01",
      "price": 20.0
     },
@@ -952,7 +972,7 @@
      "provider": "Black Forest Labs",
      "score": 1021.0,
      "votes": 11730,
-     "range": "35-49",
+     "range": "37-51",
      "released": "2025-12",
      "price": 70.0
     },
@@ -961,7 +981,7 @@
      "provider": "ByteDance Seed",
      "score": 1020.0,
      "votes": 6253,
-     "range": "35-50",
+     "range": "37-52",
      "released": "2026-02",
      "price": 35.0
     },
@@ -970,7 +990,7 @@
      "provider": "Recraft",
      "score": 1020.0,
      "votes": 16085,
-     "range": "37-49",
+     "range": "39-51",
      "released": "2026-05",
      "price": 210.0
     },
@@ -979,7 +999,7 @@
      "provider": "Krea",
      "score": 1020.0,
      "votes": 6687,
-     "range": "35-50",
+     "range": "37-52",
      "released": "2026-06",
      "price": 15.0
     },
@@ -988,7 +1008,7 @@
      "provider": "HiDream",
      "score": 1019.0,
      "votes": 12811,
-     "range": "36-50",
+     "range": "38-52",
      "released": "2026-06",
      "price": 80.0
     },
@@ -997,7 +1017,7 @@
      "provider": "OpenAI",
      "score": 1018.0,
      "votes": 6167,
-     "range": "37-51",
+     "range": "39-53",
      "released": "2025-04",
      "price": 167.0
     },
@@ -1006,27 +1026,9 @@
      "provider": "Ideogram",
      "score": 1017.0,
      "votes": 3549,
-     "range": "35-52",
+     "range": "37-54",
      "released": "2026-09",
      "price": 100.0
-    },
-    {
-     "model": "Wan2.6 Text to Image",
-     "provider": "Alibaba",
-     "score": 1017.0,
-     "votes": 6201,
-     "range": "37-51",
-     "released": "2026-01",
-     "price": 30.0
-    },
-    {
-     "model": "Krea 2 Medium",
-     "provider": "Krea",
-     "score": 1014.0,
-     "votes": 15095,
-     "range": "42-51",
-     "released": "2026-05",
-     "price": 30.0
     }
    ]
   },
@@ -1047,7 +1049,7 @@
      "provider": "Utopai Studios",
      "score": 1168.0,
      "votes": 7442,
-     "range": "1-3",
+     "range": "1-4",
      "released": "2026-09",
      "price": null
     },
@@ -1056,7 +1058,7 @@
      "provider": "MiniMax",
      "score": 1159.0,
      "votes": 8225,
-     "range": "2-6",
+     "range": "2-7",
      "released": "2026-07",
      "price": 4.8
     },
@@ -1065,16 +1067,25 @@
      "provider": "ByteDance Seed",
      "score": 1156.0,
      "votes": 8214,
-     "range": "3-7",
+     "range": "3-8",
      "released": "2026-07",
      "price": 34.12
+    },
+    {
+     "model": "Hyperflow H3",
+     "provider": "Video Rebirth",
+     "score": 1154.0,
+     "votes": 4928,
+     "range": "3-9",
+     "released": "2026-09",
+     "price": null
     },
     {
      "model": "FLUX 3 Max",
      "provider": "Fal",
      "score": 1152.0,
      "votes": 4526,
-     "range": "3-8",
+     "range": "3-9",
      "released": "2026-10",
      "price": 8.7
     },
@@ -1083,7 +1094,7 @@
      "provider": "Google",
      "score": 1151.0,
      "votes": 5634,
-     "range": "3-8",
+     "range": "3-9",
      "released": "2026-11",
      "price": 6.26
     },
@@ -1092,7 +1103,7 @@
      "provider": "HeyGen",
      "score": 1149.0,
      "votes": 7230,
-     "range": "4-8",
+     "range": "4-9",
      "released": "2026-10",
      "price": 2.4
     },
@@ -1101,7 +1112,7 @@
      "provider": "Fal",
      "score": 1143.0,
      "votes": 4549,
-     "range": "5-11",
+     "range": "6-12",
      "released": "2026-08",
      "price": 9.6
     },
@@ -1110,7 +1121,7 @@
      "provider": "Black Forest Labs",
      "score": 1136.0,
      "votes": 7249,
-     "range": "7-12",
+     "range": "8-13",
      "released": "2026-07",
      "price": 17.4
     },
@@ -1119,7 +1130,7 @@
      "provider": "Skywork AI",
      "score": 1134.0,
      "votes": 5507,
-     "range": "8-13",
+     "range": "9-14",
      "released": "2026-03",
      "price": 21.0
     },
@@ -1128,7 +1139,7 @@
      "provider": "ByteDance Seed",
      "score": 1133.0,
      "votes": 7184,
-     "range": "8-13",
+     "range": "9-14",
      "released": "2026-03",
      "price": 22.45
     },
@@ -1137,7 +1148,7 @@
      "provider": "Pruna AI",
      "score": 1128.0,
      "votes": 4130,
-     "range": "9-14",
+     "range": "10-15",
      "released": "2026-09",
      "price": 5.7
     },
@@ -1146,7 +1157,7 @@
      "provider": "Google",
      "score": 1125.0,
      "votes": 8550,
-     "range": "10-14",
+     "range": "11-15",
      "released": "2026-08",
      "price": 9.12
     },
@@ -1155,7 +1166,7 @@
      "provider": "Pika Art",
      "score": 1124.0,
      "votes": 5136,
-     "range": "10-14",
+     "range": "11-15",
      "released": "2026-10",
      "price": 2.1
     },
@@ -1164,7 +1175,7 @@
      "provider": "Sapiens AI",
      "score": 1063.0,
      "votes": 5978,
-     "range": "15-16",
+     "range": "16-17",
      "released": "2026-08",
      "price": 2.4
     },
@@ -1173,7 +1184,7 @@
      "provider": "SpaceXAI",
      "score": 1051.0,
      "votes": 6073,
-     "range": "15-17",
+     "range": "16-18",
      "released": "2026-05",
      "price": 15.0
     },
@@ -1182,7 +1193,7 @@
      "provider": "Alibaba-ATH",
      "score": 1046.0,
      "votes": 7468,
-     "range": "16-18",
+     "range": "17-19",
      "released": "2026-06",
      "price": 10.8
     },
@@ -1191,7 +1202,7 @@
      "provider": "Alibaba",
      "score": 1035.0,
      "votes": 6796,
-     "range": "17-20",
+     "range": "18-21",
      "released": "2026-06",
      "price": 9.0
     },
@@ -1200,7 +1211,7 @@
      "provider": "Sand.ai",
      "score": 1035.0,
      "votes": 7679,
-     "range": "17-20",
+     "range": "18-21",
      "released": "2026-09",
      "price": null
     },
@@ -1209,7 +1220,7 @@
      "provider": "Alibaba-ATH",
      "score": 1030.0,
      "votes": 5944,
-     "range": "18-20",
+     "range": "19-21",
      "released": "2026-04",
      "price": 14.4
     },
@@ -1218,7 +1229,7 @@
      "provider": "KlingAI",
      "score": 1016.0,
      "votes": 5685,
-     "range": "21",
+     "range": "22",
      "released": "2026-02",
      "price": 8.4
     },
@@ -1227,7 +1238,7 @@
      "provider": "KlingAI",
      "score": 1000.0,
      "votes": 6950,
-     "range": "22",
+     "range": "23",
      "released": "2026-02",
      "price": 10.08
     },
@@ -1236,7 +1247,7 @@
      "provider": "SpaceXAI",
      "score": 987.0,
      "votes": 8334,
-     "range": "23-24",
+     "range": "24-25",
      "released": "2026-08",
      "price": 8.4
     },
@@ -1245,7 +1256,7 @@
      "provider": "PixVerse",
      "score": 979.0,
      "votes": 5085,
-     "range": "23-24",
+     "range": "24-25",
      "released": "2026-03",
      "price": 6.9
     },
@@ -1254,7 +1265,7 @@
      "provider": "Google",
      "score": 963.0,
      "votes": 5334,
-     "range": "25-26",
+     "range": "26-27",
      "released": "2026-01",
      "price": 24.0
     },
@@ -1263,7 +1274,7 @@
      "provider": "Google",
      "score": 954.0,
      "votes": 6263,
-     "range": "25-28",
+     "range": "26-29",
      "released": "2026-01",
      "price": 7.2
     },
@@ -1272,7 +1283,7 @@
      "provider": "Google",
      "score": 949.0,
      "votes": 5214,
-     "range": "25-29",
+     "range": "26-30",
      "released": "2026-03",
      "price": 4.8
     },
@@ -1281,7 +1292,7 @@
      "provider": "Lightricks",
      "score": 939.0,
      "votes": 5170,
-     "range": "27-30",
+     "range": "28-31",
      "released": "2026-08",
      "price": 7.8
     },
@@ -1290,7 +1301,7 @@
      "provider": "Lightricks",
      "score": 938.0,
      "votes": 5023,
-     "range": "27-30",
+     "range": "28-31",
      "released": "2026-08",
      "price": 10.2
     },
@@ -1299,7 +1310,7 @@
      "provider": "Vidu",
      "score": 937.0,
      "votes": 6031,
-     "range": "27-30",
+     "range": "28-31",
      "released": "2026-01",
      "price": 7.2
     },
@@ -1308,7 +1319,7 @@
      "provider": "Vidu",
      "score": 905.0,
      "votes": 5633,
-     "range": "31",
+     "range": "32",
      "released": "2026-02",
      "price": 3.9
     },
@@ -1317,7 +1328,7 @@
      "provider": "Lightricks",
      "score": 885.0,
      "votes": 5640,
-     "range": "32",
+     "range": "33",
      "released": "2026-03",
      "price": 4.8
     },
@@ -1326,7 +1337,7 @@
      "provider": "Lightricks",
      "score": 836.0,
      "votes": 5357,
-     "range": "33-34",
+     "range": "34-35",
      "released": "2026-03",
      "price": 3.6
     },
@@ -1335,7 +1346,7 @@
      "provider": "Creatify",
      "score": 827.0,
      "votes": 5088,
-     "range": "33-34",
+     "range": "34-35",
      "released": "2026-09",
      "price": 2.69
     }
@@ -1345,30 +1356,30 @@
    "source": "https://artificialanalysis.ai/zh/text-to-speech/leaderboard/provider-voice",
    "rows": [
     {
-     "model": "Eleven v4 Turbo",
-     "provider": "ElevenLabs",
-     "score": 1340.0,
-     "votes": 2559,
-     "range": "1-2",
-     "released": "2026-09",
-     "price": 40.0,
-     "voices": 8
-    },
-    {
      "model": "Eleven v4",
      "provider": "ElevenLabs",
-     "score": 1338.0,
-     "votes": 2853,
+     "score": 1340.0,
+     "votes": 2925,
      "range": "1-2",
      "released": "2026-09",
      "price": 80.0,
      "voices": 8
     },
     {
+     "model": "Eleven v4 Turbo",
+     "provider": "ElevenLabs",
+     "score": 1339.0,
+     "votes": 2642,
+     "range": "1-2",
+     "released": "2026-09",
+     "price": 40.0,
+     "voices": 8
+    },
+    {
      "model": "Qwen-Audio-3.1-TTS-Plus",
      "provider": "Alibaba",
-     "score": 1298.0,
-     "votes": 2614,
+     "score": 1300.0,
+     "votes": 2695,
      "range": "3-5",
      "released": "2026-09",
      "price": 19.31,
@@ -1377,8 +1388,8 @@
     {
      "model": "Sonic 3.6",
      "provider": "Cartesia",
-     "score": 1295.0,
-     "votes": 3499,
+     "score": 1297.0,
+     "votes": 3572,
      "range": "3-6",
      "released": "2026-08",
      "price": 49.0,
@@ -1387,9 +1398,9 @@
     {
      "model": "Simba 3.5",
      "provider": "SpeechifyAI",
-     "score": 1291.0,
-     "votes": 1852,
-     "range": "3-7",
+     "score": 1296.0,
+     "votes": 1916,
+     "range": "3-6",
      "released": "2026-11",
      "price": 6.58,
      "voices": 8
@@ -1397,9 +1408,9 @@
     {
      "model": "Gemini 3.8 Flash TTS",
      "provider": "Google",
-     "score": 1283.0,
-     "votes": 3772,
-     "range": "4-8",
+     "score": 1284.0,
+     "votes": 3839,
+     "range": "4-9",
      "released": "2026-09",
      "price": 16.49,
      "voices": 8
@@ -1407,9 +1418,9 @@
     {
      "model": "Fish Audio Drama 3",
      "provider": "Fish Audio",
-     "score": 1279.0,
-     "votes": 1861,
-     "range": "4-10",
+     "score": 1277.0,
+     "votes": 1917,
+     "range": "6-10",
      "released": "2026-10",
      "price": 15.0,
      "voices": 8
@@ -1417,9 +1428,9 @@
     {
      "model": "Lightning V3.1 Pro (Oct 2026)",
      "provider": "Smallest.ai",
-     "score": 1271.0,
-     "votes": 2173,
-     "range": "6-11",
+     "score": 1276.0,
+     "votes": 2238,
+     "range": "6-10",
      "released": "2026-10",
      "price": 19.5,
      "voices": 8
@@ -1427,9 +1438,9 @@
     {
      "model": "Realtime TTS-2",
      "provider": "Inworld",
-     "score": 1270.0,
-     "votes": 2884,
-     "range": "7-11",
+     "score": 1271.0,
+     "votes": 2955,
+     "range": "6-11",
      "released": "2026-08",
      "price": 20.83,
      "voices": 8
@@ -1438,8 +1449,8 @@
      "model": "Qwen-Audio-3.0-TTS-Plus",
      "provider": "Alibaba",
      "score": 1263.0,
-     "votes": 3173,
-     "range": "8-12",
+     "votes": 3221,
+     "range": "9-12",
      "released": "2026-09",
      "price": 19.31,
      "voices": 8
@@ -1447,9 +1458,9 @@
     {
      "model": "Gemini 3.8 Flash-Lite TTS",
      "provider": "Google",
-     "score": 1259.0,
-     "votes": 3741,
-     "range": "8-12",
+     "score": 1260.0,
+     "votes": 3783,
+     "range": "9-12",
      "released": "2026-09",
      "price": 11.03,
      "voices": 8
@@ -1457,9 +1468,9 @@
     {
      "model": "Simba 3.2",
      "provider": "SpeechifyAI",
-     "score": 1250.0,
-     "votes": 4044,
-     "range": "11-12",
+     "score": 1253.0,
+     "votes": 4092,
+     "range": "10-12",
      "released": "2026-07",
      "price": 6.58,
      "voices": 8
@@ -1467,8 +1478,8 @@
     {
      "model": "Fish Audio Drama 3 Preview",
      "provider": "Fish Audio",
-     "score": 1236.0,
-     "votes": 2882,
+     "score": 1235.0,
+     "votes": 2925,
      "range": "13-14",
      "released": "2026-10",
      "price": 15.0,
@@ -1477,8 +1488,8 @@
     {
      "model": "Breeze TTS 2",
      "provider": "BreezeBlue",
-     "score": 1229.0,
-     "votes": 3006,
+     "score": 1231.0,
+     "votes": 3056,
      "range": "13-14",
      "released": "2026-08",
      "price": 34.0,
@@ -1487,28 +1498,18 @@
     {
      "model": "v3 Conversational",
      "provider": "ElevenLabs",
-     "score": 1216.0,
-     "votes": 3445,
+     "score": 1217.0,
+     "votes": 3492,
      "range": "15-20",
      "released": "2026-08",
      "price": 50.0,
      "voices": 8
     },
     {
-     "model": "StepAudio 2.5 TTS (Aug 2026)",
-     "provider": "StepFun",
-     "score": 1215.0,
-     "votes": 2893,
-     "range": "15-20",
-     "released": "2026-08",
-     "price": 85.0,
-     "voices": 8
-    },
-    {
      "model": "Gemini 3.1 Flash TTS",
      "provider": "Google",
      "score": 1215.0,
-     "votes": 4879,
+     "votes": 4906,
      "range": "15-20",
      "released": "2026-04",
      "price": 18.31,
@@ -1517,79 +1518,79 @@
     {
      "model": "Realtime TTS-2 Flash",
      "provider": "Inworld",
-     "score": 1215.0,
-     "votes": 3323,
+     "score": 1214.0,
+     "votes": 3363,
      "range": "15-20",
      "released": "2026-08",
      "price": 10.42,
      "voices": 8
     },
     {
+     "model": "StepAudio 2.5 TTS (Aug 2026)",
+     "provider": "StepFun",
+     "score": 1213.0,
+     "votes": 2936,
+     "range": "15-20",
+     "released": "2026-08",
+     "price": 85.0,
+     "voices": 8
+    },
+    {
+     "model": "AssemblyAI-TTS-1",
+     "provider": "AssemblyAI",
+     "score": 1213.0,
+     "votes": 1986,
+     "range": "15-20",
+     "released": "2026-10",
+     "price": 15.0,
+     "voices": 8
+    },
+    {
      "model": "Voxtral 3 TTS",
      "provider": "Mistral",
-     "score": 1213.0,
-     "votes": 2340,
+     "score": 1212.0,
+     "votes": 2368,
      "range": "15-20",
      "released": "2026-10",
      "price": 13.0,
      "voices": 8
     },
     {
-     "model": "AssemblyAI-TTS-1",
-     "provider": "AssemblyAI",
-     "score": 1212.0,
-     "votes": 1947,
-     "range": "15-20",
-     "released": "2026-10",
-     "price": 15.0,
-     "voices": 8
-    },
-    {
-     "model": "Luna TTS",
-     "provider": "VUI Labs",
-     "score": 1196.0,
-     "votes": 4120,
-     "range": "21-23",
-     "released": "2026-06",
-     "price": 15.0,
-     "voices": 3
-    },
-    {
      "model": "Sonic 3.5",
      "provider": "Cartesia",
-     "score": 1195.0,
-     "votes": 4387,
+     "score": 1196.0,
+     "votes": 4409,
      "range": "21-23",
      "released": "2026-05",
      "price": 49.0,
      "voices": 8
     },
     {
+     "model": "Luna TTS",
+     "provider": "VUI Labs",
+     "score": 1193.0,
+     "votes": 4152,
+     "range": "21-23",
+     "released": "2026-06",
+     "price": 15.0,
+     "voices": 3
+    },
+    {
      "model": "Eleven v3",
      "provider": "ElevenLabs",
-     "score": 1190.0,
-     "votes": 5607,
-     "range": "21-26",
+     "score": 1192.0,
+     "votes": 5629,
+     "range": "21-23",
      "released": "2026-02",
      "price": 100.0,
      "voices": 8
     },
     {
-     "model": "Ming-3.0-tts",
-     "provider": "Ant Group",
-     "score": 1182.0,
-     "votes": 2712,
-     "range": "23-29",
-     "released": "2026-10",
-     "price": null,
-     "voices": 3
-    },
-    {
      "model": "Fish Audio S2.1 Pro (Oct 2026)",
      "provider": "Fish Audio",
      "score": 1181.0,
-     "votes": 2711,
-     "range": "23-28",
+     "votes": 2739,
+     "range": "22-29",
      "released": "2026-10",
      "price": 15.0,
      "voices": 8
@@ -1598,38 +1599,48 @@
      "model": "Soniox TTS Real-Time v2",
      "provider": "Soniox",
      "score": 1181.0,
-     "votes": 5999,
-     "range": "23-28",
+     "votes": 6020,
+     "range": "24-28",
      "released": "2026-08",
      "price": 14.23,
      "voices": 8
     },
     {
-     "model": "Speech 2.8 HD",
-     "provider": "MiniMax",
-     "score": 1174.0,
-     "votes": 5705,
-     "range": "24-29",
-     "released": "2026-02",
-     "price": 100.0,
-     "voices": 8
+     "model": "Ming-3.0-tts",
+     "provider": "Ant Group",
+     "score": 1180.0,
+     "votes": 2752,
+     "range": "23-29",
+     "released": "2026-10",
+     "price": null,
+     "voices": 3
     },
     {
      "model": "Gradium TTS (Sep 2026)",
      "provider": "Gradium",
      "score": 1173.0,
-     "votes": 2818,
+     "votes": 2839,
      "range": "24-29",
      "released": "2026-09",
      "price": 47.78,
      "voices": 8
     },
     {
+     "model": "Speech 2.8 HD",
+     "provider": "MiniMax",
+     "score": 1173.0,
+     "votes": 5716,
+     "range": "24-29",
+     "released": "2026-02",
+     "price": 100.0,
+     "voices": 8
+    },
+    {
      "model": "Gradium TTS (Oct 2026)",
      "provider": "Gradium",
-     "score": 1169.0,
-     "votes": 2225,
-     "range": "24-31",
+     "score": 1170.0,
+     "votes": 2249,
+     "range": "24-30",
      "released": "2026-09",
      "price": 47.78,
      "voices": 8
@@ -1638,7 +1649,7 @@
      "model": "SpaceXAI TTS",
      "provider": "SpaceXAI",
      "score": 1160.0,
-     "votes": 2357,
+     "votes": 2377,
      "range": "29-35",
      "released": "2026-03",
      "price": 15.0,
@@ -1647,9 +1658,9 @@
     {
      "model": "Falcon 2",
      "provider": "Murf AI",
-     "score": 1159.0,
-     "votes": 2973,
-     "range": "29-35",
+     "score": 1157.0,
+     "votes": 2990,
+     "range": "30-35",
      "released": "2026-07",
      "price": 10.0,
      "voices": 8
@@ -1658,7 +1669,7 @@
      "model": "Gradium TTS (Aug 2026)",
      "provider": "Gradium",
      "score": 1155.0,
-     "votes": 3029,
+     "votes": 3048,
      "range": "30-35",
      "released": "2026-08",
      "price": 47.78,
@@ -1668,7 +1679,7 @@
      "model": "Falcon 2.1",
      "provider": "Murf AI",
      "score": 1153.0,
-     "votes": 1514,
+     "votes": 1533,
      "range": "30-36",
      "released": "2026-10",
      "price": 10.0,
@@ -1678,7 +1689,7 @@
      "model": "Speech 2.8 Turbo",
      "provider": "MiniMax",
      "score": 1151.0,
-     "votes": 5429,
+     "votes": 5441,
      "range": "30-35",
      "released": "2026-02",
      "price": 60.0,
@@ -1687,8 +1698,8 @@
     {
      "model": "Azure HD 2.5",
      "provider": "Microsoft",
-     "score": 1150.0,
-     "votes": 3383,
+     "score": 1149.0,
+     "votes": 3400,
      "range": "30-36",
      "released": "2026-03",
      "price": 22.0,
@@ -1697,8 +1708,8 @@
     {
      "model": "Async Flash v1.5",
      "provider": "async",
-     "score": 1139.0,
-     "votes": 3126,
+     "score": 1138.0,
+     "votes": 3136,
      "range": "35-38",
      "released": "2026-05",
      "price": 10.1,
@@ -1707,8 +1718,8 @@
     {
      "model": "Step TTS 2 (Mar 2026)",
      "provider": "StepFun",
-     "score": 1136.0,
-     "votes": 3190,
+     "score": 1137.0,
+     "votes": 3202,
      "range": "36-38",
      "released": "2026-02",
      "price": 40.0,
@@ -1718,38 +1729,38 @@
      "model": "Async Pro v1.0",
      "provider": "async",
      "score": 1130.0,
-     "votes": 2989,
+     "votes": 3004,
      "range": "36-40",
      "released": "2026-05",
      "price": 20.2,
      "voices": 8
     },
     {
+     "model": "Speech 2.6 Turbo",
+     "provider": "MiniMax",
+     "score": 1124.0,
+     "votes": 4892,
+     "range": "38-41",
+     "released": "2025-10",
+     "price": 60.0,
+     "voices": 8
+    },
+    {
      "model": "Speech 2.6 HD",
      "provider": "MiniMax",
      "score": 1124.0,
-     "votes": 4648,
+     "votes": 4657,
      "range": "38-41",
      "released": "2025-10",
      "price": 100.0,
      "voices": 8
     },
     {
-     "model": "Speech 2.6 Turbo",
-     "provider": "MiniMax",
-     "score": 1123.0,
-     "votes": 4882,
-     "range": "38-42",
-     "released": "2025-10",
-     "price": 60.0,
-     "voices": 8
-    },
-    {
      "model": "Coda v2",
      "provider": "Rime",
-     "score": 1114.0,
-     "votes": 2009,
-     "range": "39-48",
+     "score": 1116.0,
+     "votes": 2024,
+     "range": "39-46",
      "released": "2026-10",
      "price": 50.0,
      "voices": 8
@@ -1757,9 +1768,9 @@
     {
      "model": "Simba 3.0",
      "provider": "SpeechifyAI",
-     "score": 1113.0,
-     "votes": 3391,
-     "range": "39-46",
+     "score": 1112.0,
+     "votes": 3397,
+     "range": "41-47",
      "released": "2026-02",
      "price": 6.58,
      "voices": 8
@@ -1767,82 +1778,82 @@
     {
      "model": "Chatterbox HD",
      "provider": "Resemble AI",
-     "score": 1110.0,
-     "votes": 3003,
+     "score": 1112.0,
+     "votes": 3009,
      "range": "41-48",
      "released": "2025-05",
      "price": 40.0,
      "voices": null
     },
     {
-     "model": "Phonon 31M (English)",
-     "provider": "Gradium",
-     "score": 1109.0,
-     "votes": 2000,
-     "range": "41-48",
-     "released": "2026-10",
-     "price": 0.0,
-     "voices": 8
-    },
-    {
      "model": "TTS-1 HD",
      "provider": "OpenAI",
-     "score": 1108.0,
-     "votes": 4069,
+     "score": 1109.0,
+     "votes": 4075,
      "range": "41-48",
      "released": "2023-11",
      "price": 30.0,
      "voices": 6
     },
     {
+     "model": "Phonon 31M (English)",
+     "provider": "Gradium",
+     "score": 1106.0,
+     "votes": 2011,
+     "range": "41-49",
+     "released": "2026-10",
+     "price": 0.0,
+     "voices": 8
+    },
+    {
      "model": "Speech-02-HD",
      "provider": "MiniMax",
      "score": 1103.0,
-     "votes": 4939,
-     "range": "41-51",
+     "votes": 4945,
+     "range": "42-51",
      "released": "2025-03",
      "price": 100.0,
      "voices": 4
     },
     {
-     "model": "Step Audio EditX (Mar 2026)",
-     "provider": "StepFun",
-     "score": 1102.0,
-     "votes": 2649,
-     "range": "43-52",
-     "released": "2026-02",
-     "price": null,
-     "voices": 2
-    },
-    {
      "model": "Fish Audio S2 Pro",
      "provider": "Fish Audio",
      "score": 1102.0,
-     "votes": 3042,
-     "range": "43-53",
+     "votes": 3053,
+     "range": "42-52",
      "released": "2026-03",
      "price": 15.0,
      "voices": 4
     },
     {
-     "model": "Voxtral TTS",
-     "provider": "Mistral",
-     "score": 1094.0,
-     "votes": 2787,
-     "range": "46-56",
-     "released": "2026-03",
-     "price": 16.0,
-     "voices": 3
+     "model": "Step Audio EditX (Mar 2026)",
+     "provider": "StepFun",
+     "score": 1101.0,
+     "votes": 2660,
+     "range": "43-53",
+     "released": "2026-02",
+     "price": null,
+     "voices": 2
     },
     {
      "model": "Turbo v2.5",
      "provider": "ElevenLabs",
-     "score": 1094.0,
-     "votes": 7312,
+     "score": 1095.0,
+     "votes": 7317,
      "range": "46-54",
      "released": "2024-07",
      "price": 50.0,
      "voices": 8
+    },
+    {
+     "model": "Voxtral TTS",
+     "provider": "Mistral",
+     "score": 1093.0,
+     "votes": 2796,
+     "range": "46-56",
+     "released": "2026-03",
+     "price": 16.0,
+     "voices": 3
     }
    ]
   }

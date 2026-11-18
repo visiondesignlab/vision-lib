@@ -1,5 +1,11 @@
 [
   {
+    "volume": 26,
+    "date": "2026-11-18",
+    "headline": "GitHub Copilot Evals",
+    "intro": "今天最有用的变化，不是又多了一个会生成页面的模型，而是生成之后终于有人开始补“验收层”。GitHub 把 agent eval、分级 code review、secret scan 和浏览器操作接进同一条工作流；WebKit 让空间界面从专用引擎往声明式 CSS 靠；Vercel 则把预览触发、构建分钟和临时资产寿命直接写进配置与账单。设计团队下一轮效率差距，不在 prompt 写得多花，而在能不能把评估标准、权限边界和运行成本一起交付。今天这批更新基本都还没实测，先看机制，不替官方预览版背书。"
+  },
+  {
     "volume": 25,
     "date": "2026-11-16",
     "headline": "Bring your own key (BYOK)",
