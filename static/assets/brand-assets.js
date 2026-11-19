@@ -15,6 +15,7 @@ export async function createBrandAssets({openPreview}) {
   element.className = "brand-assets";
   let previewText = defaultPreview;
   let documentViewer = null;
+  let productUIView = null, productUILoading = null, renderVersion = 0;
   const $ = selector => element.querySelector(selector);
   const esc = escapeHTML;
 
@@ -27,16 +28,35 @@ export async function createBrandAssets({openPreview}) {
   }
   function render(url) {
     deactivate();
+    const version = renderVersion;
     const section = data.sections.find(item => item.id === url.searchParams.get("section")) || data.sections[0];
     const counts = {"brand-guidelines": 1, "company-intro": data.companyIntros?.length || 0, "visual-assets": data.categories.reduce((total, category) => total + category.assets.length, 0), "font-packages": data.fonts.length};
-    element.innerHTML = `<header class="head"><h1>品牌资产</h1><span class="sub">viaim 的品牌规范、公司介绍、视觉资产与字体</span><div class="right"><span class="tag">viaim</span></div></header>
+    element.innerHTML = `<header class="head"><h1>品牌资产</h1><span class="sub">viaim 的品牌规范、公司介绍、视觉资产、字体与产品界面</span><div class="right"><span class="tag">viaim</span></div></header>
       <nav class="bar" aria-label="品牌资产分类"><div class="chips">${data.sections.map(item => `<a class="chip ${item.id === section.id ? "on" : ""}" href="${href(item.id)}" data-link ${item.id === section.id ? 'aria-current="page"' : ""}>${esc(item.name)}${counts[item.id] ? `<span class="n">${counts[item.id]}</span>` : ""}</a>`).join("")}</div></nav>
       <section id="brandContent" aria-label="${esc(section.name)}"></section>`;
     if (section.id === "brand-guidelines") renderGuidelines();
     else if (section.id === "company-intro") renderCompanyIntros(url);
     else if (section.id === "visual-assets") renderLogos(url);
     else if (section.id === "font-packages") renderFonts(url);
+    else if (section.id === "product-ui" && data.productUI) renderProductUI(url,version);
     else $("#brandContent").innerHTML = VisionSite.emptyState({icon:'folder',title:`暂无${section.name}`,description:'此分类尚未收录资产，添加后会显示在这里。'});
+  }
+
+  function renderProductUI(url,version) {
+    if (productUIView) {
+      $("#brandContent").replaceChildren(productUIView.element);
+      productUIView.render(url);
+      return;
+    }
+    $("#brandContent").innerHTML = VisionSite.emptyState({title:'正在读取产品界面',description:'正在准备截图与导出选项。',busy:true});
+    productUILoading ||= import('./product-ui.js').then(module => module.createProductUI({catalogHref:data.productUI.catalogHref,openPreview})).then(view => { productUIView = view; return view; }).finally(() => { productUILoading = null; });
+    productUILoading.then(() => {
+      if (version === renderVersion) renderProductUI(url,version);
+    }).catch(() => {
+      if (version !== renderVersion) return;
+      $("#brandContent").innerHTML = VisionSite.emptyState({title:'产品界面暂时无法加载',description:'请重试载入截图素材。',actionsHTML:'<button type="button" class="pill-btn shadow" data-ui-retry>重新加载</button>'});
+      $('[data-ui-retry]').onclick = () => renderProductUI(url,version);
+    });
   }
 
   function renderGuidelines() {
@@ -90,7 +110,7 @@ export async function createBrandAssets({openPreview}) {
       };
     });
   }
-  function deactivate() { documentViewer?.destroy(); documentViewer = null; }
+  function deactivate() { renderVersion++; documentViewer?.destroy(); documentViewer = null; productUIView?.deactivate(); }
 
   function renderLogos(url) {
     const category = data.categories.find(item => item.id === url.searchParams.get("category")) || data.categories[0];

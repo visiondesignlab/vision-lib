@@ -1,0 +1,244 @@
+{
+  "sourceCommit": "bbd2b3a16dd0aa621bdaa0292571b26df01bd576",
+  "version": "3.1.0",
+  "device": "iPhone Air",
+  "items": [
+    {
+      "id": "P029.home",
+      "name": "首页 · 未开始倾听",
+      "module": "首页与记录",
+      "locales": {
+        "zh-Hans": {
+          "src": "assets/screenshots/P029.home.zh-Hans@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "45:4",
+          "bytes": 466517,
+          "sha256": "a7e7aacf259ef53179b71ba280d12121b63a5a9bc4c3e4cbefd2cbfa6ed2f07b"
+        },
+        "en": {
+          "src": "assets/screenshots/P029.home.en@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "46:25",
+          "bytes": 459521,
+          "sha256": "e61c61d2217759e28c1e5706fba93308f0a233fb7e0e91b425212ef0afeebbf4"
+        },
+        "ja": {
+          "src": "assets/screenshots/P029.home.ja@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "46:32",
+          "bytes": 502428,
+          "sha256": "7a066fbe3345cdec14d11fea7f96e658ecc914a1a290b959b80ad57c98bac9a3"
+        }
+      }
+    },
+    {
+      "id": "P037.recording",
+      "name": "正在录音 · 实时转写",
+      "module": "录音、导入与翻译",
+      "locales": {
+        "zh-Hans": {
+          "src": "assets/screenshots/P037.recording.zh-Hans@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "112:5",
+          "bytes": 428222,
+          "sha256": "9a864dfe0e546a47d5e91853275dd9770369da87f94c32656e7daea2de4235df"
+        },
+        "en": {
+          "src": "assets/screenshots/P037.recording.en@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "112:7",
+          "bytes": 411743,
+          "sha256": "d9a66af0d6c932436002c96aaf3719a02beeb237b9aad5a6b3709e66f8d92f18"
+        },
+        "ja": {
+          "src": "assets/screenshots/P037.recording.ja@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "112:9",
+          "bytes": 542690,
+          "sha256": "c7cf9f8d72b09a64a43c3298144c69e9ad3d2d4b21b2773d5fd7788282d9ada4"
+        }
+      }
+    },
+    {
+      "id": "P038.translation",
+      "name": "实时翻译 · 译文与原文",
+      "module": "录音、导入与翻译",
+      "locales": {
+        "zh-Hans": {
+          "src": "assets/screenshots/P038.translation.zh-Hans@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "107:8",
+          "bytes": 405898,
+          "sha256": "a4883c0b8ad783fddaf26f2268ba57f45bbcf626455e74c1ad2c1e3c78b225c5"
+        },
+        "en": {
+          "src": "assets/screenshots/P038.translation.en@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "107:10",
+          "bytes": 422349,
+          "sha256": "ee526592acf6765c70727576c767fa97ad7c3cff54df62af33229989020bc364"
+        },
+        "ja": {
+          "src": "assets/screenshots/P038.translation.ja@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "107:12",
+          "bytes": 464712,
+          "sha256": "802d4d2a721da413b2af5e16cdeac92db8fb2fa7d3d1188ecb46822c749834ef"
+        }
+      }
+    },
+    {
+      "id": "P043.editor",
+      "name": "文档编辑",
+      "module": "记录详情与编辑",
+      "locales": {
+        "zh-Hans": {
+          "src": "assets/screenshots/P043.editor.zh-Hans@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "45:15",
+          "bytes": 395445,
+          "sha256": "d3afb1b50dcad27b2b6c5f0deb8ca0522d59aa2379d4f1259e8258b697536c85"
+        },
+        "en": {
+          "src": "assets/screenshots/P043.editor.en@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "46:43",
+          "bytes": 324010,
+          "sha256": "df2b5d0bf77a7c07942387fdb4d13db3d5a5111c4a3492e6e2b1e794fa5b9f44"
+        },
+        "ja": {
+          "src": "assets/screenshots/P043.editor.ja@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "46:54",
+          "bytes": 409695,
+          "sha256": "d4ccc3703fd5f244525d71449c5485c5b8fd97d857b3a5add1afa6275544b975"
+        }
+      }
+    },
+    {
+      "id": "P066.tasks",
+      "name": "任务中心",
+      "module": "Agent、任务与长期记忆",
+      "locales": {
+        "zh-Hans": {
+          "src": "assets/screenshots/P066.tasks.zh-Hans@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "45:33",
+          "bytes": 317315,
+          "sha256": "260663160481485d3c1a4546184da1ec0afb31e9fca031f805c464d4a605e368"
+        },
+        "en": {
+          "src": "assets/screenshots/P066.tasks.en@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "46:61",
+          "bytes": 317896,
+          "sha256": "e0a6209230a951b7da313e3ed6e0c8251bf91447c03c30b421ef878fa47ed5ee"
+        },
+        "ja": {
+          "src": "assets/screenshots/P066.tasks.ja@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "46:70",
+          "bytes": 342139,
+          "sha256": "c010fbb7fb4dda88e84f4a44b2678bfdaad64d9a53ab5d9a0299e232973eab16"
+        }
+      }
+    },
+    {
+      "id": "P074.now",
+      "name": "现在 · 未开始倾听的时间轴",
+      "module": "倾听与声音记忆",
+      "locales": {
+        "zh-Hans": {
+          "src": "assets/screenshots/P074.now.zh-Hans@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "45:55",
+          "bytes": 1435500,
+          "sha256": "695ba21390e7fe84421babacd0091a9403b5c0ac3b03cc9c7be04bda46708192"
+        },
+        "en": {
+          "src": "assets/screenshots/P074.now.en@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "46:91",
+          "bytes": 1450614,
+          "sha256": "e291173242b020c626ae954b4b8e046bba45d4a774d366022349e40f0367a3e5"
+        },
+        "ja": {
+          "src": "assets/screenshots/P074.now.ja@3x.png",
+          "width": 1260,
+          "height": 2736,
+          "nodeId": "46:94",
+          "bytes": 1459977,
+          "sha256": "516401578b4ff2bddbb9a5aeb9694dc74ae244fc348193395a8574dc3b2a25a8"
+        }
+      }
+    }
+  ],
+  "locales": [
+    {
+      "id": "zh-Hans",
+      "label": "简体中文"
+    },
+    {
+      "id": "en",
+      "label": "English"
+    },
+    {
+      "id": "ja",
+      "label": "日本語"
+    }
+  ],
+  "sourceLabel": "海外 3.1.0",
+  "figmaUrl": "https://www.figma.com/design/gIHJx0UvWxZKts73RNaZ9Q?node-id=206-35",
+  "mockup": {
+    "frame": "assets/mockup/iphone-air.png",
+    "shadow": "assets/mockup/shadow.svg",
+    "screen": [
+      420,
+      912
+    ],
+    "frameBounds": [
+      -20,
+      -24,
+      460,
+      960
+    ],
+    "shadowBounds": [
+      -2,
+      900,
+      424,
+      47
+    ],
+    "screenRadius": 32,
+    "inset": [
+      28,
+      32
+    ],
+    "canvas": {
+      "clean": [
+        476,
+        976
+      ],
+      "shadow": [
+        476,
+        987
+      ]
+    }
+  }
+}

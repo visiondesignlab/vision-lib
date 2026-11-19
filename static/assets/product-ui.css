@@ -1,0 +1,56 @@
+/* Layout only. Controls, type, icons, menus and colors belong to the Lab shell. */
+.ui-library-meta{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.product-ui .brand-collection-summary,.ui-library-meta>.muted{color:var(--fg)}
+.product-ui input[type=checkbox]{border-color:var(--fg)}
+.ui-workspace{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:start}
+.ui-gallery-section{min-width:0}
+.ui-selection-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.ui-selection-bar>div{display:flex;gap:8px}
+.ui-selection-count{font-size:12px;color:var(--fg)}
+.ui-shot-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--gap);align-items:start}
+.ui-shot-grid>.empty-state{grid-column:1/-1}
+.ui-shot-card[data-current]{border-color:var(--fg)}
+.ui-shot-top{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 12px 8px;font-size:11px;color:var(--fg)}
+.ui-shot-image{display:grid;place-items:center;width:100%;height:auto;aspect-ratio:3/5;padding:12px 20px;background:var(--bg2);overflow:hidden;cursor:pointer}
+.ui-shot-image img{display:block;width:100%;height:100%;min-height:0;object-fit:contain;aspect-ratio:420/912}
+.ui-shot-card .brand-logo-copy{padding:12px}
+.ui-shot-card h3{line-height:1.5}
+.ui-shot-card .brand-logo-copy p{font-size:12px;color:var(--fg);margin:6px 0 12px}
+.ui-shot-actions{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.ui-shot-actions .pill-btn{font-size:12px}
+.ui-export-panel{position:sticky;top:16px;padding:16px}
+.ui-preview-stage{display:grid;place-items:center;width:100%;height:310px;padding:16px;cursor:zoom-in;border-radius:8px;overflow:hidden;background-color:var(--bg2);background-image:linear-gradient(45deg,var(--line) 25%,transparent 25%,transparent 75%,var(--line) 75%),linear-gradient(45deg,var(--line) 25%,transparent 25%,transparent 75%,var(--line) 75%);background-size:16px 16px;background-position:0 0,8px 8px}
+.ui-preview-stage[data-background=white]{background:var(--bg)}
+.ui-preview-stage[data-background=dark]{background:var(--fg)}
+.ui-preview-stage img{display:block;max-width:100%;max-height:278px;width:auto;height:auto;object-fit:contain;aspect-ratio:auto}
+.ui-preview-stage img[hidden]{display:none}
+.ui-preview-stage[aria-busy=true]{opacity:.5}
+.ui-preview-caption{margin:12px 0 16px}
+.ui-current-name{line-height:1.5}
+.ui-backgrounds{display:flex;align-items:center;gap:4px;margin-top:8px}
+.ui-backgrounds .pill-btn{font-size:12px;padding-inline:10px}
+.ui-export-fields{display:grid;gap:12px}
+.ui-export-fields label{display:flex;flex-direction:column;gap:6px;font-size:12px}
+.ui-export-fields .select-trigger{font-size:13px}
+.ui-dimensions{font-size:12px;font-variant-numeric:tabular-nums;margin:16px 0 12px}
+.ui-download-actions{display:grid;gap:8px}
+.ui-download-hint,.ui-export-status{font-size:12px;color:var(--fg);line-height:1.6;margin:12px 0 0;overflow-wrap:anywhere}
+.ui-export-status:empty{display:none}
+.ui-export-status[role=alert]{font-weight:500}
+.product-ui :focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.ui-shot-image:focus-visible{outline-offset:-3px}
+@media(max-width:1150px){.ui-workspace{grid-template-columns:minmax(0,1fr) 270px;gap:16px}.ui-shot-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:700px){
+  .ui-workspace{display:flex;flex-direction:column}
+  .ui-gallery-section,.ui-export-panel{width:100%}
+  .ui-export-panel{position:static;order:-1}
+  .ui-preview-stage{height:260px}.ui-preview-stage img{max-height:228px}
+  .ui-selection-bar{align-items:flex-start}
+  .ui-selection-bar>div{flex-wrap:wrap}
+  .ui-shot-grid{gap:12px}
+  .ui-shot-image{padding:10px;aspect-ratio:3/5}
+  .ui-shot-top{padding:10px 8px 8px;font-size:10px}
+  .ui-shot-card .brand-logo-copy{padding:10px}
+  .ui-shot-actions .pill-btn{padding-inline:8px}
+  .product-ui .brand-toolbar-right .search{flex:1;width:120px}
+}

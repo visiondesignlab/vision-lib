@@ -88,6 +88,14 @@ python3 server.py --host 127.0.0.1 --port 8787          # 只用 Python 标准�
 - 文件存放于 `static/assets/viaim/files/`，采用安全文件名服务，下载保留源文件名。`provenance.json` 记录来源相对路径、大小和 SHA-256，70 个文件导入时均已校验一致。
 - 这是本次内容的本地副本，运行不依赖 5174 端口；源站之后的更新需另行同步。
 
+### 产品界面截图下载
+
+「品牌资产 → 产品界面」位于 `/assets/brand?section=product-ui`。语言、导出样式、倍率、当前图片与搜索条件保存在 URL，可直接分享与刷新。选择状态保留于当前页面会话，切换语言沿用所选页面，ZIP 固定使用开始下载时的设置。
+
+素材从已核验的 Capture V6 本地 Demo 选择性移植，来源提交 `bbd2b3a16dd0aa621bdaa0292571b26df01bd576`，不是新批次重新截图。`static/assets/viaim/product-ui/catalog.json` 是页面、语言、尺寸、SHA-256 与 Figma mockup 几何的唯一清单；只复制原始截图、设备外框与独立阴影，不依赖原项目目录，也不复制私有路径。原生 @3x 下载直接读取原 PNG；其他倍率与 mockup 在浏览器 Canvas 生成，四周保留原 Demo 的 8pt 安全区。
+
+界面复用 Lab 的按钮、菜单、搜索、选择框及品牌大图预览。`product-ui.js` 负责交互，`product-ui-export.js` 负责输出，ZIP 使用已有本地 JSZip。`tests/browser_product_ui.py` 在临时 CMS 和 Pages 子目录预览中验证真实下载字节、像素、透明边缘、ZIP、路由和移动布局。
+
 ## 内容管理平台（CMS）
 
 从侧栏底部「管理员登录」或「管理 → 内容管理」进入 `/review`，输入管理密码后进入 CMS（也支持 `/cms`）。它与其他栏目共用同一个页面路由和侧栏，切换时只替换右侧内容；界面直接使用本站字体、颜色、药丸按钮与下拉菜单。
