@@ -41,6 +41,7 @@ jobs:
           python -m playwright install --with-deps chromium
           python tests/browser_routes.py
           python tests/browser_playground.py
+          python tests/browser_product_ui.py
       - name: Build public site
         env:
           VISION_INTAKE_URL: ${{ vars.VISION_INTAKE_URL }}

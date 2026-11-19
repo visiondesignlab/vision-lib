@@ -54,8 +54,18 @@ export async function updateGuideAssets(element) {
     const response = await fetch(sitePath('/static/assets/viaim/manifest.json'), {cache:'no-cache'});
     if (!response.ok) throw new Error('资源清单暂时不可用');
     const data = await response.json();
+    let screenshotCount = 0;
+    if (data.productUI?.catalogHref) {
+      try {
+        const catalogResponse = await fetch(sitePath(data.productUI.catalogHref));
+        if (catalogResponse.ok) {
+          const catalog = await catalogResponse.json();
+          screenshotCount = catalog.items.reduce((count,item) => count + Object.keys(item.locales).length,0);
+        }
+      } catch { /* Keep the rest of the guide available if screenshots fail to load. */ }
+    }
     holder.innerHTML = `<div class="guide-resource-links">${data.sections.map(section=>`<a class="pill-btn shadow" href="${esc(sitePath('/assets/brand?section='+encodeURIComponent(section.id)))}" data-link>${esc(section.name)}</a>`).join('')}</div>
-      <p>${esc(data.brand)} 当前收录 ${Number(data.fileCount)} 个文件 · 品牌规范 ${esc(data.guideline.version)} · 公司介绍 ${data.companyIntros.length} 个版本 · 字体 ${data.fonts.length} 个字重</p>`;
+      <p>${esc(data.brand)} 基础品牌资产 ${Number(data.fileCount)} 个文件 · 品牌规范 ${esc(data.guideline.version)} · 公司介绍 ${data.companyIntros.length} 个版本 · 字体 ${data.fonts.length} 个字重${screenshotCount ? ` · 产品界面 ${screenshotCount} 张` : ''}</p>`;
   } catch {
     holder.innerHTML = `<p class="muted">资源信息暂时未能读取。可前往<a href="${sitePath('/assets/brand')}" data-link>品牌资产</a>查看。</p>`;
   }
