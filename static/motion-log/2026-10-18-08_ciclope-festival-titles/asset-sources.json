@@ -1,0 +1,429 @@
+[
+  {
+    "sourcePath": "../contact_sheets/08_ciclope-festival-titles_selected_keyframes.jpg",
+    "localPath": "assets/contact_sheets/08_ciclope-festival-titles_selected_keyframes.jpg",
+    "driveFileId": "167TlJWVI275k00nyP6XisnWj5_CvK1To",
+    "sha256": "8b6690c203c0967714a46dc374315e27a6755fc480d94c37aa8f7e7616402754",
+    "bytes": 708032
+  },
+  {
+    "sourcePath": "../keyframes/08_ciclope-festival-titles/K01_00-02-000.jpg",
+    "localPath": "assets/keyframes/K01_00-02-000.jpg",
+    "driveFileId": "1_HTOb8aAF-ZPHORN7EuClPPmQseTu0aw",
+    "sha256": "4a141900415e2f6879f35c37a6e8cda673cd7e5a59a3f365d26d7b77402f9262",
+    "bytes": 194730
+  },
+  {
+    "sourcePath": "../keyframes/08_ciclope-festival-titles/K02_00-14-000.jpg",
+    "localPath": "assets/keyframes/K02_00-14-000.jpg",
+    "driveFileId": "184x6-Pa7Qb5IH5bM0Pc3lp8h2qV0WPwZ",
+    "sha256": "e3da1a6b9a7be959593e34d7bb7bc587edbad02d1024b4a0a72aa234a0beb850",
+    "bytes": 241598
+  },
+  {
+    "sourcePath": "../keyframes/08_ciclope-festival-titles/K03_00-29-000.jpg",
+    "localPath": "assets/keyframes/K03_00-29-000.jpg",
+    "driveFileId": "1AGI46K5HyJitJTQvr46-etUy3j4W2qeM",
+    "sha256": "c5aba71cfbc515454fdc70d02d34dfcc5e9b401fd3cc4703e328b8ea1dd9cf9e",
+    "bytes": 164099
+  },
+  {
+    "sourcePath": "../keyframes/08_ciclope-festival-titles/K04_00-44-000.jpg",
+    "localPath": "assets/keyframes/K04_00-44-000.jpg",
+    "driveFileId": "154k2F7l5wP5WKflf6c_uyP5WiPrQOwFU",
+    "sha256": "a62f008579b237a1f0be95df1ab9c721d12132ea637a64d8a291d5a92f9fcce1",
+    "bytes": 254045
+  },
+  {
+    "sourcePath": "../keyframes/08_ciclope-festival-titles/K05_01-01-000.jpg",
+    "localPath": "assets/keyframes/K05_01-01-000.jpg",
+    "driveFileId": "1BmhkeBX-OhwNf1bDKUGQecsvDeTLPP2m",
+    "sha256": "3018ac858557568e875ae9cdd3a5f1d51cc8f7d4ad4f5ee83cee43eff9c75cf0",
+    "bytes": 116201
+  },
+  {
+    "sourcePath": "../keyframes/08_ciclope-festival-titles/K06_01-18-000.jpg",
+    "localPath": "assets/keyframes/K06_01-18-000.jpg",
+    "driveFileId": "1VYoFTuB18_ybQYtAYFQgPC8Mi765M5H4",
+    "sha256": "c9dc51cdcf6fb157592af8f5e14654e4838c94c1c78ae91ea796ca2fc71a8544",
+    "bytes": 196435
+  },
+  {
+    "sourcePath": "../keyframes/08_ciclope-festival-titles/K07_01-33-000.jpg",
+    "localPath": "assets/keyframes/K07_01-33-000.jpg",
+    "driveFileId": "1ikeAfxpF8WpyNohIBee8TyP-QnNXLzsQ",
+    "sha256": "90da5f7656292e679f7d9c84c40920bea58a4b41599585c9bb3862fec247c5a6",
+    "bytes": 84943
+  },
+  {
+    "sourcePath": "../keyframes/08_ciclope-festival-titles/K08_01-46-000.jpg",
+    "localPath": "assets/keyframes/K08_01-46-000.jpg",
+    "driveFileId": "1IHpmPrQU54_nTBA6xhFx6FZ-MC5jzynl",
+    "sha256": "054e1ad5ca9e86d5b0e35c38dd19b3145ee564e5fa7f36e8e55b4ab86f515695",
+    "bytes": 52648
+  },
+  {
+    "sourcePath": "../keyframes/08_ciclope-festival-titles/K09_01-51-500.jpg",
+    "localPath": "assets/keyframes/K09_01-51-500.jpg",
+    "driveFileId": "1OEFuTdzwm3qQRM2iu5mGqkeLu0ZcJ191",
+    "sha256": "3fdce47ae1e3a11980d553bea3d60ca23e400a34128a690a266bac75eef18d94",
+    "bytes": 66493
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_001_00-00-00.550.jpg",
+    "localPath": "assets/frames/shot_001_00-00-00.550.jpg",
+    "driveFileId": "1NYzuYiCURiuQODRQVHbjOQoUeaDFiEJW",
+    "sha256": "5e1014bc1e5f8614056353ee8bfa27c6782232f90315fdcaf6d42c1c33d438a3",
+    "bytes": 178847
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_002_00-00-04.550.jpg",
+    "localPath": "assets/frames/shot_002_00-00-04.550.jpg",
+    "driveFileId": "1gM34ve6Xm7YQDwmutJlD-CHroTiMFJTw",
+    "sha256": "de8cc75e9eaa8948273a7ebf04f9883de29824ee5ad147b2325accfb47cf04b0",
+    "bytes": 217837
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_003_00-00-06.425.jpg",
+    "localPath": "assets/frames/shot_003_00-00-06.425.jpg",
+    "driveFileId": "1EGiFmQVgKQV0lJlugUN1Tpaxw0BuddBs",
+    "sha256": "9e29f15ce2fe3c2e8cb1fd92b9f06eb5f96e6fea91214a5a0ec5e42817c1b1e8",
+    "bytes": 208248
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_004_00-00-08.758.jpg",
+    "localPath": "assets/frames/shot_004_00-00-08.758.jpg",
+    "driveFileId": "1WoZsbD_PzU13CNPhTpJ4R6oraAv4048N",
+    "sha256": "3800a51ac0d9183d1345e605798b44fc5c37da2b700713aa95b969b4c02fdbf8",
+    "bytes": 167660
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_005_00-00-11.758.jpg",
+    "localPath": "assets/frames/shot_005_00-00-11.758.jpg",
+    "driveFileId": "12OBMlRCAlzPBZIjYq18i2sV1iDoPaA73",
+    "sha256": "944cd995c46267ca8a5bf21d02789c26c49e9af5200a3e91cec5470d738e9e44",
+    "bytes": 202811
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_006_00-00-14.758.jpg",
+    "localPath": "assets/frames/shot_006_00-00-14.758.jpg",
+    "driveFileId": "12PyujMdRBJvjex-cwmQ2LKu5NSNU39n3",
+    "sha256": "a635a7a4cd4eaef8113d5a3182f9fa86d305163a10f13559e3e9cbc6e496665b",
+    "bytes": 79004
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_007_00-00-16.541.jpg",
+    "localPath": "assets/frames/shot_007_00-00-16.541.jpg",
+    "driveFileId": "1YXMCAuHsO4HjCoUup6kQgMp5UHuimUHU",
+    "sha256": "fd17611099add8c123e628fafdf5e612959424c13b400eaed1c0b164d81ea79e",
+    "bytes": 82452
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_008_00-00-17.194.jpg",
+    "localPath": "assets/frames/shot_008_00-00-17.194.jpg",
+    "driveFileId": "110aJe_yaa2t_6UnV7pYRPVIUX10vvZyi",
+    "sha256": "58283fd34f2e179237b9c4d6094a0b1d3f6d88e6d818567b365af5cd9c8ecedc",
+    "bytes": 84020
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_009_00-00-17.533.jpg",
+    "localPath": "assets/frames/shot_009_00-00-17.533.jpg",
+    "driveFileId": "1kBo1Ncg_hWL6nL_CkTohFt0BIJucJvep",
+    "sha256": "b17c26444524c6cd7e6fc8f9311db1598455bbafd5c2ff5f28ae69345c2238c4",
+    "bytes": 123564
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_010_00-00-17.918.jpg",
+    "localPath": "assets/frames/shot_010_00-00-17.918.jpg",
+    "driveFileId": "1oQYRyTAsDsAGul3B65lKE2dKuIWB9qKB",
+    "sha256": "fef519b9430b42b3336ef92cfae8ea00a947b9c3dcb36c872e1e8e1265ec0e91",
+    "bytes": 124368
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_011_00-00-18.675.jpg",
+    "localPath": "assets/frames/shot_011_00-00-18.675.jpg",
+    "driveFileId": "1b4dxSJgipMLMn4L3I2bNS4dFlTPu-AM-",
+    "sha256": "1c95e71d712e5756ea382b12ddf7017738938d8b120c1179257e9f73627b861a",
+    "bytes": 135507
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_012_00-00-20.717.jpg",
+    "localPath": "assets/frames/shot_012_00-00-20.717.jpg",
+    "driveFileId": "1aInlkrLT1trqd68sUSCbD-jMq8yGr3pg",
+    "sha256": "e5f1ebe5c63febd406ea6b89627b1b287cdef79ff166bbb359f2032b8c6abab5",
+    "bytes": 234035
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_013_00-00-25.258.jpg",
+    "localPath": "assets/frames/shot_013_00-00-25.258.jpg",
+    "driveFileId": "1dsfH_sXMVvDnA54TWljGUhxDXqxD8Yt7",
+    "sha256": "fdec07b7785214a852a28708a8db39b975d91fff23292bcda48396e33583d73c",
+    "bytes": 175366
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_014_00-00-28.467.jpg",
+    "localPath": "assets/frames/shot_014_00-00-28.467.jpg",
+    "driveFileId": "1B3598k5eBaQHQy88TAJB2-_tOTS38R6i",
+    "sha256": "5195d9a2b833bc0624a97bc11c6bc935d3639992e66f4534f89382f36f538235",
+    "bytes": 138730
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_015_00-00-32.133.jpg",
+    "localPath": "assets/frames/shot_015_00-00-32.133.jpg",
+    "driveFileId": "1UcmYXQC2iBwzcoZBufb4211yaUg4YfLy",
+    "sha256": "22403a5f8d4cfd4d1c6cd99065ca956c09985f183850de9c58a5508bd54a81b4",
+    "bytes": 214746
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_016_00-00-36.293.jpg",
+    "localPath": "assets/frames/shot_016_00-00-36.293.jpg",
+    "driveFileId": "1EkidJjf5ey_VMsv2zzMqIsdQyNNtUIVC",
+    "sha256": "85a8bb462beae6260836b112fe5c9c2032ee8327d058be5cbdfe05a05145d1d3",
+    "bytes": 97000
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_017_00-00-36.658.jpg",
+    "localPath": "assets/frames/shot_017_00-00-36.658.jpg",
+    "driveFileId": "1vJNM-k0shSugJOfrFKejlEQUInCCDUOu",
+    "sha256": "ffba77a398599d351e5b8331d11e15a6de1b67a4545805450fdebb61e20a7baf",
+    "bytes": 120879
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_018_00-00-37.467.jpg",
+    "localPath": "assets/frames/shot_018_00-00-37.467.jpg",
+    "driveFileId": "1peR6w0eIbmqeWeKdvJilN8anbnS8Q91m",
+    "sha256": "7761c4a1757529eae97847f893b489a4347443a02edba164482f3ff0ccd88289",
+    "bytes": 124550
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_019_00-00-41.842.jpg",
+    "localPath": "assets/frames/shot_019_00-00-41.842.jpg",
+    "driveFileId": "1KX11OB5O571lWzc5rhy3112KgvLa5cMV",
+    "sha256": "e101b65606c65437dce0ac29b4a154975ecb94d311a335668436178a054de0d5",
+    "bytes": 238905
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_020_00-00-45.675.jpg",
+    "localPath": "assets/frames/shot_020_00-00-45.675.jpg",
+    "driveFileId": "1rdTjvaK0PZd-4Udezj8q00VyMXz-mPxC",
+    "sha256": "b22715d851bbbd1cf29c1bbd504220ac000ef26a7990789570b2a2b6319da68f",
+    "bytes": 235946
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_021_00-00-48.843.jpg",
+    "localPath": "assets/frames/shot_021_00-00-48.843.jpg",
+    "driveFileId": "1I4BO5-b_FMeCTkyJipLHO0kSBF1om8pE",
+    "sha256": "c740346b4f54d1a6399be28d83c981ffc97f4f56a509649b8d0dc81e7a46d159",
+    "bytes": 113068
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_022_00-00-49.883.jpg",
+    "localPath": "assets/frames/shot_022_00-00-49.883.jpg",
+    "driveFileId": "10cFYYyp308aoZWKfbqOIjEXfXZmvzRU1",
+    "sha256": "a2da038e1ff27f67b48fe63bbd4c087811e45f2ab91b7a8c6830ec59944f1a72",
+    "bytes": 147924
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_023_00-00-52.675.jpg",
+    "localPath": "assets/frames/shot_023_00-00-52.675.jpg",
+    "driveFileId": "1irlyWp0SOa5NFjMjVZXhMkH4xCDbcLCL",
+    "sha256": "56c83a816bd9caaf9f7b68e3faf158cfc2ad75a095aa6358e820fad3cab7ba67",
+    "bytes": 143157
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_024_00-00-53.946.jpg",
+    "localPath": "assets/frames/shot_024_00-00-53.946.jpg",
+    "driveFileId": "1oj5ldWQS16f-9KVoivvmWeeSCzq9_H0b",
+    "sha256": "d57fcb8c43df1c8b1ecab61220372f63ad0953c174183ef4d8cc5e3b7e80ed17",
+    "bytes": 131380
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_025_00-00-54.713.jpg",
+    "localPath": "assets/frames/shot_025_00-00-54.713.jpg",
+    "driveFileId": "1Wl-IrFJAQtXQ-9er3CAusdYoYI7ihn_K",
+    "sha256": "1fe0eef477246693ccbbc38475438784c48a2a4fb64ab70bf3463f41d4d05558",
+    "bytes": 136355
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_026_00-00-55.856.jpg",
+    "localPath": "assets/frames/shot_026_00-00-55.856.jpg",
+    "driveFileId": "115bASxEjVW_9kMudYVlza7BJHEjIV3nO",
+    "sha256": "1fc56bafb4fb37b2f7793be928e8d2392bb5c770c1afc42c73acd69bbe39b9fe",
+    "bytes": 240443
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_027_00-00-57.088.jpg",
+    "localPath": "assets/frames/shot_027_00-00-57.088.jpg",
+    "driveFileId": "1mOZ1XXc4x9eI3fIvU7-1Cel8AX4JSWZI",
+    "sha256": "66fbde92dd54f9176f5af6a486f2c882db07d91fa50d5cf49d5624a60ff1a5ce",
+    "bytes": 275320
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_028_00-00-58.104.jpg",
+    "localPath": "assets/frames/shot_028_00-00-58.104.jpg",
+    "driveFileId": "11w8P9qJYIFJZ5ULHxNisYE196sGPCghI",
+    "sha256": "31998fe6612dea5fee8b62d63bfae0221c9787fb67cbc39c2e8b1451abc3a992",
+    "bytes": 277312
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_029_00-00-59.019.jpg",
+    "localPath": "assets/frames/shot_029_00-00-59.019.jpg",
+    "driveFileId": "18pAli-OVgYylGRNY_JeBMXmaVvuVLXdO",
+    "sha256": "35b608895194ec45064bc1e8d81f5bd2968f59d20518ae3d0c6505fee99b56dd",
+    "bytes": 273852
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_030_00-00-59.886.jpg",
+    "localPath": "assets/frames/shot_030_00-00-59.886.jpg",
+    "driveFileId": "1eXyYd-JKn9YTfprW1S6yhf_jGKKZEO6y",
+    "sha256": "90a590e4cbafe18371318f7df217ceaccf9232f658ae48832e01420373fd0104",
+    "bytes": 94822
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_031_00-01-01.133.jpg",
+    "localPath": "assets/frames/shot_031_00-01-01.133.jpg",
+    "driveFileId": "1sr7df5-QCoxs3hOtiWEk8A3HywIHE7JP",
+    "sha256": "c9579d3ffa93e14f54bfead175704435d7bacc62eb5421e58ae15900eacf56ca",
+    "bytes": 105032
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_032_00-01-03.440.jpg",
+    "localPath": "assets/frames/shot_032_00-01-03.440.jpg",
+    "driveFileId": "1pFGeXBhIHu4R_T65zVQljVnriQW_quB0",
+    "sha256": "f75eba9eb562227b64be93832ca0d06b29c90a9b418c60e73fc44895026d7c9f",
+    "bytes": 101937
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_033_00-01-04.300.jpg",
+    "localPath": "assets/frames/shot_033_00-01-04.300.jpg",
+    "driveFileId": "1IrH5WN5_C7xcvXvRJWJRfwwsVqAX6y4d",
+    "sha256": "1be8eee45d956b85133e53bab7f0463a72a2b98b5ca5e075c533e8d8dd2ec5d2",
+    "bytes": 95304
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_034_00-01-06.027.jpg",
+    "localPath": "assets/frames/shot_034_00-01-06.027.jpg",
+    "driveFileId": "1-ZlaH0C5Z-iSKVQVhie4HtQ56W1wVd2_",
+    "sha256": "e8157dbece20839f76cd32b6aeb3b291f1bcf5edbead59b0b46338b3db8a8da0",
+    "bytes": 100659
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_035_00-01-07.300.jpg",
+    "localPath": "assets/frames/shot_035_00-01-07.300.jpg",
+    "driveFileId": "1byHGlp4qz1DSGqRC4cHhABbz4Fa0Ylgj",
+    "sha256": "6458393ce8e5a0547606f82b1a4cc4da35146d4474499ea5545f3aca7075e7de",
+    "bytes": 171185
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_036_00-01-09.800.jpg",
+    "localPath": "assets/frames/shot_036_00-01-09.800.jpg",
+    "driveFileId": "1lNard6MVFo9wVeCeRGPbUtuoKR1obUOk",
+    "sha256": "e7e504e6fcebc26a9a8f42ca17a00fbea62d76e49ce262f292b535bdef1edaa9",
+    "bytes": 45138
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_037_00-01-11.342.jpg",
+    "localPath": "assets/frames/shot_037_00-01-11.342.jpg",
+    "driveFileId": "1XvRH0WM5G87nBzyGqQvlY1fYvyBdgs9P",
+    "sha256": "77bf2ea5a14cd9355767fda839854e32ab3e0582efdf3d6f5a042512edd98777",
+    "bytes": 146735
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_038_00-01-14.800.jpg",
+    "localPath": "assets/frames/shot_038_00-01-14.800.jpg",
+    "driveFileId": "1WA3K1Jh8YwNA9iI6etPyJv4Ok37EUyNc",
+    "sha256": "6d5cadcc583bcc41646bb17ae05a2ac51183c292f0bee992846610eb74808bca",
+    "bytes": 254954
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_039_00-01-17.217.jpg",
+    "localPath": "assets/frames/shot_039_00-01-17.217.jpg",
+    "driveFileId": "1PR8AEIJb7GGTxcngOqzD5dCJcpGiGLPZ",
+    "sha256": "1b5756c37793a9ad5562c9dc13d09d4785ca91ad44760d40383e6297ea540ad1",
+    "bytes": 168953
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_040_00-01-19.633.jpg",
+    "localPath": "assets/frames/shot_040_00-01-19.633.jpg",
+    "driveFileId": "15tU245hIbXhrpOLHyJgvUTpbpRF6B2xB",
+    "sha256": "0a51e58cc616b2b6d3d823b26a4e0fc430afe29d15d386f88e04455980240ea7",
+    "bytes": 223751
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_041_00-01-23.467.jpg",
+    "localPath": "assets/frames/shot_041_00-01-23.467.jpg",
+    "driveFileId": "1YWETr17Xr3E1LXVhRxINbDN-f_Wi_oHy",
+    "sha256": "cdff480845296e309e2060e16900747133a4e668f85d5247db2ce9e043a53457",
+    "bytes": 81833
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_042_00-01-33.233.jpg",
+    "localPath": "assets/frames/shot_042_00-01-33.233.jpg",
+    "driveFileId": "1fnznCKbNAw8-G5hHy1GjBfeI_kbfMp_P",
+    "sha256": "017098b903c3135abec6f9b846bee2e9dfcf7155505a240d2823a203da9155f2",
+    "bytes": 76806
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_043_00-01-34.300.jpg",
+    "localPath": "assets/frames/shot_043_00-01-34.300.jpg",
+    "driveFileId": "1LTheCXkmVKz7HSvwE114mbRD0GQwxt-Q",
+    "sha256": "6a3a5c10665a520db4b029c323e9da8005975f47ccedd7be779d9c0757841864",
+    "bytes": 44996
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_044_00-01-37.127.jpg",
+    "localPath": "assets/frames/shot_044_00-01-37.127.jpg",
+    "driveFileId": "1a_JpV4re17_cb896xI7pmHVmHHFFMJbK",
+    "sha256": "24193c75925df94bcf8fe06404ecf856bcd91820d6e89614d8c140b3f8538884",
+    "bytes": 62582
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_045_00-01-37.492.jpg",
+    "localPath": "assets/frames/shot_045_00-01-37.492.jpg",
+    "driveFileId": "1KEsDkXTcNeAQzPyWLBwxxJdI1_RKjnD0",
+    "sha256": "c4bb8427a05abd7009c8849e8d81e81e98b3dc7b2b29d6f393d3b342d78f8d96",
+    "bytes": 48875
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_046_00-01-38.300.jpg",
+    "localPath": "assets/frames/shot_046_00-01-38.300.jpg",
+    "driveFileId": "1JdSqBgmo18SL8itQDg7W_2msgStTerxD",
+    "sha256": "53448c5726c1a0060f809daf6f32a46d4006981dee9e6e1481047bbcf0c0c6f9",
+    "bytes": 58514
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_047_00-01-39.883.jpg",
+    "localPath": "assets/frames/shot_047_00-01-39.883.jpg",
+    "driveFileId": "11aIqQdigNgUH5j4IHXy42ecQsQWkVyre",
+    "sha256": "9c12f7505b89606424f3bcd5036023eaa0a2569194e9d95f2b2992b036f9302d",
+    "bytes": 56880
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_048_00-01-41.633.jpg",
+    "localPath": "assets/frames/shot_048_00-01-41.633.jpg",
+    "driveFileId": "1n64nn6s_treAXxWgikbdnwTkI9YtuOUC",
+    "sha256": "ac2cdcb18c80690bfaf5e37683125f6d05e74f6902dbb39b3e79f4fa81725f07",
+    "bytes": 49523
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_049_00-01-46.325.jpg",
+    "localPath": "assets/frames/shot_049_00-01-46.325.jpg",
+    "driveFileId": "1uQnsMEhJHghnvjy-G59m4N3SypyZ_X2k",
+    "sha256": "e59ce6d6760ceb650a8d44878966f7c6bd4456ae92e82196310af33b10ec4df8",
+    "bytes": 32130
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_050_00-01-46.805.jpg",
+    "localPath": "assets/frames/shot_050_00-01-46.805.jpg",
+    "driveFileId": "1ORhlPorvQGMQER_VoHE1Wl97nv38rIQ7",
+    "sha256": "5e5184ffbb84bb9b5496b52013eb3b835bd9d9c5a9ca333f668e955b7a03927d",
+    "bytes": 40228
+  },
+  {
+    "sourcePath": "../frames/08_139_12LE_CUBE_CICLOPE_385084011/shot_051_00-01-47.717.jpg",
+    "localPath": "assets/frames/shot_051_00-01-47.717.jpg",
+    "driveFileId": "1izR7U9Ivee1iYe2b_vfUwa-0-9rmzGFw",
+    "sha256": "39d325051cc49f9cc3beab6fa740e4f99510395d585717479681be06c15b66b3",
+    "bytes": 46574
+  }
+]

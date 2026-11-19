@@ -21,7 +21,7 @@ const outside = (url, label) => `<a class="pill-btn shadow" href="${esc(url)}" t
 function card(item) {
   return `<a data-link class="motion-card" href="${link(item.id)}">
     <div class="motion-cover">${item.cover ? `<img src="${esc(item.cover.startsWith('assets/') ? asset(item.id,item.cover) : item.cover)}" alt="${esc(item.title)}" loading="lazy" referrerpolicy="no-referrer">` : ''}<span class="motion-duration">${esc(item.duration)}</span></div>
-    <div class="motion-card-meta"><time datetime="${item.date}">${item.date.replaceAll('-','.')}</time><span>${esc(item.brand)}</span></div>
+    <div class="motion-card-meta"><span>${esc(item.brand)}</span></div>
     <h2>${esc(item.title)}</h2><p>${esc(item.intro)}</p>
     <span class="motion-read">阅读报告 ${icon('forward')}</span></a>`;
 }
@@ -55,7 +55,7 @@ export async function renderMotionLog(view, id, signal) {
   if (signal.aborted || !view.isConnected) return;
   document.title = item.title + ' · 拉片日志 · Vision Lab';
   view.innerHTML = `<div class="motion-toolbar"><div class="motion-toolbar-start">${back}<nav class="motion-pager" aria-label="切换拉片报告">${reportStep(previous,'prev',true)}<span aria-label="第 ${index + 1} 篇，共 ${list.length} 篇">${index + 1} / ${list.length}</span>${reportStep(next,'next',true)}</nav></div><div>${outside(item.sourcePage, '查看原片')}</div></div>
-    <header class="motion-heading"><div class="motion-card-meta"><time>${item.date.replaceAll('-','.')}</time><span>拉片日志</span></div><h1>${esc(item.title)}</h1><p>${esc(item.creator)} · ${esc(item.duration)}</p></header>
+    <header class="motion-heading"><div class="motion-card-meta"><span>拉片日志</span></div><h1>${esc(item.title)}</h1><p>${esc(item.creator)} · ${esc(item.duration)}</p></header>
     <div class="motion-layout"><div class="motion-main">
       <div class="motion-player-slot" id="motion-player"><section class="motion-player" aria-label="原片播放器">
         <a class="motion-player-return" href="#motion-player">回到原片 ${icon('external')}</a>

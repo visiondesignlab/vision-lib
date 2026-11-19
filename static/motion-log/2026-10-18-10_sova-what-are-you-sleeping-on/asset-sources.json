@@ -1,0 +1,226 @@
+[
+  {
+    "sourcePath": "../contact_sheets/10_sova-what-are-you-sleeping-on_selected_keyframes.jpg",
+    "localPath": "assets/contact_sheets/10_sova-what-are-you-sleeping-on_selected_keyframes.jpg",
+    "driveFileId": "1FO6vnFSqAYN2KD0L5yFPmh-KERy5aYPz",
+    "sha256": "f9b4b339cb532eea1e1c0c7a1f7a6f9adafd9855c968c0528cfa10c4a78034d5",
+    "bytes": 690517
+  },
+  {
+    "sourcePath": "../keyframes/10_sova-what-are-you-sleeping-on/K01_00-01-000.jpg",
+    "localPath": "assets/keyframes/K01_00-01-000.jpg",
+    "driveFileId": "12hsHCorTQ2-_k0omlAkIWW0ZzQelNUcI",
+    "sha256": "e611a39c5872aada3bd66cd5540a3a3b02bb6fc106b06fbd7f36444e88e1772b",
+    "bytes": 160658
+  },
+  {
+    "sourcePath": "../keyframes/10_sova-what-are-you-sleeping-on/K02_00-06-500.jpg",
+    "localPath": "assets/keyframes/K02_00-06-500.jpg",
+    "driveFileId": "1c0zs8oRRQlB4g1mzXz1oTkFp0JMCjBfF",
+    "sha256": "ddf03f8ab82eb7ffd08e8e2f2337cbce6f34610c4c199d595eb8d68fe7c992c3",
+    "bytes": 82147
+  },
+  {
+    "sourcePath": "../keyframes/10_sova-what-are-you-sleeping-on/K03_00-13-000.jpg",
+    "localPath": "assets/keyframes/K03_00-13-000.jpg",
+    "driveFileId": "1HvW6yMbWrCa-0hRSq-JvXvX6U5rIMXtW",
+    "sha256": "e3d9f41772ede7d0963f2c2b4c90abfd921e609074dac9a90b70c414e0559caf",
+    "bytes": 163505
+  },
+  {
+    "sourcePath": "../keyframes/10_sova-what-are-you-sleeping-on/K04_00-21-000.jpg",
+    "localPath": "assets/keyframes/K04_00-21-000.jpg",
+    "driveFileId": "1eJFJTHBAJk0JHnr85u_DCEtTTGLenYgW",
+    "sha256": "56154cfd5f43178318768ad79bb73aa07b630cc80f64257278ec0d41e5ada03b",
+    "bytes": 183320
+  },
+  {
+    "sourcePath": "../keyframes/10_sova-what-are-you-sleeping-on/K05_00-28-000.jpg",
+    "localPath": "assets/keyframes/K05_00-28-000.jpg",
+    "driveFileId": "1Ax9HllYaK9x0nQBoR7eYkGQUghjHLYQV",
+    "sha256": "58199bab44b7813c8d6cd6960f2a9cb24d29b950a7dbeac4644d525a0d4dfd3b",
+    "bytes": 215916
+  },
+  {
+    "sourcePath": "../keyframes/10_sova-what-are-you-sleeping-on/K06_00-39-500.jpg",
+    "localPath": "assets/keyframes/K06_00-39-500.jpg",
+    "driveFileId": "1bxeWv7lDLSoDJBsXSdFJsxldwd0SxuJ4",
+    "sha256": "cf2b9e3fcba0dfac9d5bbd58b0c862b6916a539152e91b1995ef416146c75a43",
+    "bytes": 277643
+  },
+  {
+    "sourcePath": "../keyframes/10_sova-what-are-you-sleeping-on/K07_00-49-000.jpg",
+    "localPath": "assets/keyframes/K07_00-49-000.jpg",
+    "driveFileId": "1paJ-S4W9IGH8fv1B2vwj377F4BtyAvMf",
+    "sha256": "9df0fb2d7033acfdc7aa062612c77efde966b84a03c88e17ab44e0efc806ebe4",
+    "bytes": 324428
+  },
+  {
+    "sourcePath": "../keyframes/10_sova-what-are-you-sleeping-on/K08_00-58-500.jpg",
+    "localPath": "assets/keyframes/K08_00-58-500.jpg",
+    "driveFileId": "1GyekB2VkaH12XjL79hDLnooBiz4KeWaK",
+    "sha256": "ecbe21385ded284da57999d95658ed6c2d5ffa67136ec0d0faebb4e7aedf6185",
+    "bytes": 228855
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_001_00-00-00.550.jpg",
+    "localPath": "assets/frames/shot_001_00-00-00.550.jpg",
+    "driveFileId": "1HQilitcPUQI3iNnyy2P7OnQTxFcbkuQO",
+    "sha256": "37aec9b204df195721187800fd6ef5c1f831740991091a2c48ee4405ac9079ef",
+    "bytes": 140864
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_002_00-00-03.230.jpg",
+    "localPath": "assets/frames/shot_002_00-00-03.230.jpg",
+    "driveFileId": "1FasVUYPnvK4kbEofQKxelCNzAdeCGJjx",
+    "sha256": "9e31c4245c40ff7700dc5f94e89c95d04d9a43011a017fcd30b6456f22245ab4",
+    "bytes": 82649
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_003_00-00-05.910.jpg",
+    "localPath": "assets/frames/shot_003_00-00-05.910.jpg",
+    "driveFileId": "1pw17p5bXuRnsPGCRWSwMqnhCacWQ0K4N",
+    "sha256": "cf74f173db6054e7f68957609fa8f1079aa7ac78b7ba95a40a4d5a709e39dd19",
+    "bytes": 60723
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_004_00-00-07.406.jpg",
+    "localPath": "assets/frames/shot_004_00-00-07.406.jpg",
+    "driveFileId": "1ZMH6X0MqkgIxZOEHrkTOI7ve2LLRXSv5",
+    "sha256": "e90d1dab4bb25cf36e0d624af388dcb81eddabc39a3d8cc34fcce5ec868eda29",
+    "bytes": 205372
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_005_00-00-08.750.jpg",
+    "localPath": "assets/frames/shot_005_00-00-08.750.jpg",
+    "driveFileId": "1kC7QSdjuN90Zo6TGtk81PRAzvfsp0Ejo",
+    "sha256": "98d3a1b4586e399930b117a112a5c519e7d03dc3bc6c52b35390fd512089a0d7",
+    "bytes": 310025
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_006_00-00-10.270.jpg",
+    "localPath": "assets/frames/shot_006_00-00-10.270.jpg",
+    "driveFileId": "1OOiPD2UCW4YyMP_EheNHlZ9ooKyhlNfd",
+    "sha256": "3458d2688ca5f7e3e1e0f3b39625db54f101e60194900d028c3101ff20d8adbf",
+    "bytes": 105113
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_007_00-00-12.110.jpg",
+    "localPath": "assets/frames/shot_007_00-00-12.110.jpg",
+    "driveFileId": "1nHkFt0C9NNqW4LmlNCTIv7sJ6aVvsMAH",
+    "sha256": "24b00b20bcc0fc82d970d5fd42e6c985d852e3cb4c2ffb99f482efb7c4a6a261",
+    "bytes": 151146
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_008_00-00-14.950.jpg",
+    "localPath": "assets/frames/shot_008_00-00-14.950.jpg",
+    "driveFileId": "1zko8-yk9PoxcRCD0_kgxvlcIfVn3-qHo",
+    "sha256": "e5eaae3fe12a23dfccc3886c52f59268e2decdbbcdf5aaeefbf64e7897c6804c",
+    "bytes": 229909
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_009_00-00-20.550.jpg",
+    "localPath": "assets/frames/shot_009_00-00-20.550.jpg",
+    "driveFileId": "1_5s-kjF8PfTWgi46qGxgjEzsAfrazRgO",
+    "sha256": "2adb7ca8966173dd0f091766efc615d2ba533fe27567fd03a15abcbbb28aa853",
+    "bytes": 164857
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_010_00-00-22.750.jpg",
+    "localPath": "assets/frames/shot_010_00-00-22.750.jpg",
+    "driveFileId": "1hsr_28C8L_52Wu5nlur8RufbKRSUvQh8",
+    "sha256": "87b6f69b2eb51868d0644f2c60db2c77a1e61e2467c4f8b5f9106e1dc921b791",
+    "bytes": 87304
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_011_00-00-24.867.jpg",
+    "localPath": "assets/frames/shot_011_00-00-24.867.jpg",
+    "driveFileId": "1M1Sr514mOl1r3I9tfpjQS2vr1rhQCp_n",
+    "sha256": "7876db4ef4be3c9b1a4ff4ddcf83f038ac89de6186dc534f7a292e3459136b56",
+    "bytes": 189560
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_012_00-00-26.310.jpg",
+    "localPath": "assets/frames/shot_012_00-00-26.310.jpg",
+    "driveFileId": "1GmgKYKrW_AVCylv6SPOpbrabBxgxsQx0",
+    "sha256": "2086f314cec698f2a1e2258f974b9943b917186174ff0dc74d1f3feb415d6d18",
+    "bytes": 153366
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_013_00-00-28.870.jpg",
+    "localPath": "assets/frames/shot_013_00-00-28.870.jpg",
+    "driveFileId": "1SAry0qJamKutWV6a2uoSEImAm42N--Ee",
+    "sha256": "a0a972291afd35d006ee8e3bbc7bf6c16878400ae1d0a499d2f1845ecc0d7e91",
+    "bytes": 124996
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_014_00-00-31.702.jpg",
+    "localPath": "assets/frames/shot_014_00-00-31.702.jpg",
+    "driveFileId": "1W1fpXGEZLSVFLNIc2QZCczqrlrrMuhRS",
+    "sha256": "b95306b1b284e9561f7ff0ad072f51bc93ddbc683ea72cb79232f8709c1a9ea8",
+    "bytes": 211194
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_015_00-00-33.070.jpg",
+    "localPath": "assets/frames/shot_015_00-00-33.070.jpg",
+    "driveFileId": "1RLOLEwYvah7blKqGucFBnDix4qE5durP",
+    "sha256": "b75c80ab978bec4eecff5249d0730871a87d89619e2fc9d535af1740417ebaa6",
+    "bytes": 117540
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_016_00-00-35.070.jpg",
+    "localPath": "assets/frames/shot_016_00-00-35.070.jpg",
+    "driveFileId": "1e8-9jlTQqVONa7p80xDOZsIHMKiACXF4",
+    "sha256": "698ed67fadf6f6e76394741de52b50aa97d5dec731f335f9be0257a07273c06f",
+    "bytes": 235621
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_017_00-00-40.550.jpg",
+    "localPath": "assets/frames/shot_017_00-00-40.550.jpg",
+    "driveFileId": "15bQxBdZEESP2Dt7Ttgj4wfV1PjlN4Nkp",
+    "sha256": "981c8cfd95eb8e13112230643d27009f86c2083bfbebda363e0e8a6331e27b3a",
+    "bytes": 164557
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_018_00-00-43.150.jpg",
+    "localPath": "assets/frames/shot_018_00-00-43.150.jpg",
+    "driveFileId": "1IFT5tFJMIuqDEkG3KBrODN9TNuczrM8q",
+    "sha256": "1be75576732f704c146b1563a800b869f9ee0ac56255d2708629da2efac750cd",
+    "bytes": 187998
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_019_00-00-45.470.jpg",
+    "localPath": "assets/frames/shot_019_00-00-45.470.jpg",
+    "driveFileId": "1YA6gUNIDdN-jpY5T8huYwdNefy3Jr0zJ",
+    "sha256": "d1a3261fc9afd347fe8cb8cc1109b7fd45fd91b77c8382c07e7d325c1d9a62a9",
+    "bytes": 120157
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_020_00-00-48.710.jpg",
+    "localPath": "assets/frames/shot_020_00-00-48.710.jpg",
+    "driveFileId": "122Cug-r-T2GY0noqxWEDO5Z5ujOdUrg8",
+    "sha256": "189d17ccded64fa9ef1c8a5b893e2fcd61048b574c55f946483efb2c7ae0e6de",
+    "bytes": 303235
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_021_00-00-51.182.jpg",
+    "localPath": "assets/frames/shot_021_00-00-51.182.jpg",
+    "driveFileId": "13yXFMvsFg1JKkR1al4bg9IyWqhn1d_5U",
+    "sha256": "b06c726714f77beaa6fda738ee4b2547ba1c82c331b2a60cdfe4a25cc5b71c0d",
+    "bytes": 262198
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_022_00-00-52.550.jpg",
+    "localPath": "assets/frames/shot_022_00-00-52.550.jpg",
+    "driveFileId": "1qP8km24FxMSXI7VwvuLGOQYaaNsK6_uA",
+    "sha256": "7ade2acce5cf07f689275a218e9299f7a602155755d23bf2a7cd65b1cbbe9e1d",
+    "bytes": 183874
+  },
+  {
+    "sourcePath": "../frames/10_151_16NAIVE_SOVA.mp4_664385445/shot_023_00-00-54.990.jpg",
+    "localPath": "assets/frames/shot_023_00-00-54.990.jpg",
+    "driveFileId": "1njyxVkELMFoA_L6SifPSGNBunw7dyXHE",
+    "sha256": "c6f8e20454f40bc9a0938d19409a68aae157877e7ee29a3ccbad5d74d2cce9cf",
+    "bytes": 193691
+  }
+]

@@ -1,0 +1,394 @@
+[
+  {
+    "sourcePath": "../contact_sheets/09_digital-design-days-networking_selected_keyframes.jpg",
+    "localPath": "assets/contact_sheets/09_digital-design-days-networking_selected_keyframes.jpg",
+    "driveFileId": "15TQCpm5pIsrXOvSw6s6hETnC26WWnGYP",
+    "sha256": "90fa8638ec924cc5c08ee6e321525498efda53e49d9f812b83287c302c5411a8",
+    "bytes": 459456
+  },
+  {
+    "sourcePath": "../keyframes/09_digital-design-days-networking/K01_00-03-000.jpg",
+    "localPath": "assets/keyframes/K01_00-03-000.jpg",
+    "driveFileId": "1OHe6GtnyTwCclTDJzzfzqsoIKTipEucU",
+    "sha256": "72ac95c1b0eceab80778b89b4cd21824e8cb4617ab4bd8aeece9107444ab2b87",
+    "bytes": 83926
+  },
+  {
+    "sourcePath": "../keyframes/09_digital-design-days-networking/K02_00-16-000.jpg",
+    "localPath": "assets/keyframes/K02_00-16-000.jpg",
+    "driveFileId": "1AyIqMbnKLSByfhePrd-pIz_zfOzE0i2r",
+    "sha256": "ee49b8691a1a2a742b7a0a6ac18d2bb90c924440fa8bee395903bca2c59278ae",
+    "bytes": 82357
+  },
+  {
+    "sourcePath": "../keyframes/09_digital-design-days-networking/K03_00-30-000.jpg",
+    "localPath": "assets/keyframes/K03_00-30-000.jpg",
+    "driveFileId": "1tHtlPBLyKdaPN8RvwlEoZBgp0kg212K8",
+    "sha256": "f6b45f1175f1022a226c0d2d87015a827bdb693306b0bcab931c7565927778c7",
+    "bytes": 68007
+  },
+  {
+    "sourcePath": "../keyframes/09_digital-design-days-networking/K04_00-44-000.jpg",
+    "localPath": "assets/keyframes/K04_00-44-000.jpg",
+    "driveFileId": "1bT4zuEyyjJS4nP4EEVQhsJh6rfZqTT4h",
+    "sha256": "919458abfb3b3ecca2513b60667d92eb2d4d55eceac35dd1d06c49596a987d78",
+    "bytes": 156244
+  },
+  {
+    "sourcePath": "../keyframes/09_digital-design-days-networking/K05_01-00-000.jpg",
+    "localPath": "assets/keyframes/K05_01-00-000.jpg",
+    "driveFileId": "1XQQUhVTTWRRmE9NPu6soEcZMUaNq9kNR",
+    "sha256": "68688923a5e1d6f9ce70b24d615221a2fb52e219154cd2e9e581e6fb9ac16f1b",
+    "bytes": 243730
+  },
+  {
+    "sourcePath": "../keyframes/09_digital-design-days-networking/K06_01-16-000.jpg",
+    "localPath": "assets/keyframes/K06_01-16-000.jpg",
+    "driveFileId": "1qLVuaRQ_2cZAc7UO5PEGri8hi1dfcZ57",
+    "sha256": "d2f499fcbe63ceeab611b2f90cec6b192d45d9807eb843a00696e78fc2427a55",
+    "bytes": 80237
+  },
+  {
+    "sourcePath": "../keyframes/09_digital-design-days-networking/K07_01-33-000.jpg",
+    "localPath": "assets/keyframes/K07_01-33-000.jpg",
+    "driveFileId": "1B1qnd6dSP0OTbRoMT7tsdVrOqSKbOSeH",
+    "sha256": "c62c53687672cc1e4a906dc82ea915dbef67cbe59c29946bf5e85f2720d62e05",
+    "bytes": 84344
+  },
+  {
+    "sourcePath": "../keyframes/09_digital-design-days-networking/K08_01-44-000.jpg",
+    "localPath": "assets/keyframes/K08_01-44-000.jpg",
+    "driveFileId": "13F_5CbXsxeiHfvqeCW3yqSjZP5Q5a10b",
+    "sha256": "113a7947ec8211672f3973b74e29832ae0298910496a7ac65390ed420823ace7",
+    "bytes": 66018
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_001_00-00-00.550.jpg",
+    "localPath": "assets/frames/shot_001_00-00-00.550.jpg",
+    "driveFileId": "1N6ZjH5Hv4TGMrDRPSb0h5gHhH-1i5PvD",
+    "sha256": "135c992bc37cb835c30436e017179c4cc070c8369d4d07d4c66d50e23c4f7da0",
+    "bytes": 48472
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_002_00-00-08.310.jpg",
+    "localPath": "assets/frames/shot_002_00-00-08.310.jpg",
+    "driveFileId": "1PthzTj7LfOCOOmhYlUm98uW2utsVNLRz",
+    "sha256": "468ef523a05880b7d70ef64d7698538189cc5df4659e5894985bdc64d6fa7721",
+    "bytes": 46365
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_003_00-00-09.830.jpg",
+    "localPath": "assets/frames/shot_003_00-00-09.830.jpg",
+    "driveFileId": "1GynQs-tur9YGp4Pe96pR-0bWVfLb7Epa",
+    "sha256": "ea5519b128843fba213ff01560f1cdff65ffca871330404611c887a52e06373e",
+    "bytes": 48853
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_004_00-00-12.241.jpg",
+    "localPath": "assets/frames/shot_004_00-00-12.241.jpg",
+    "driveFileId": "10XyWzi0mdpAZDzSBvB8-mK0WgnGVFwrB",
+    "sha256": "b1dbf8d9cd7b53dc0139495a23c20682615d834a04447ba24904c640e302d50a",
+    "bytes": 53869
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_005_00-00-13.510.jpg",
+    "localPath": "assets/frames/shot_005_00-00-13.510.jpg",
+    "driveFileId": "1RhvJjAZIwNSO5TZS2Eo0iM1ntWa5VOFj",
+    "sha256": "2ce869eba8ff371c004f3e97412be442e74707ee5c35dc1142814c77358e6ebb",
+    "bytes": 81731
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_006_00-00-15.388.jpg",
+    "localPath": "assets/frames/shot_006_00-00-15.388.jpg",
+    "driveFileId": "1R86gUrz9u6NUKxi3sCdIKtJ-V4UQJ8w2",
+    "sha256": "a9b22d4cc53697cecb02d925009902e07aab85452bc84979d2adb961ec3d8dd8",
+    "bytes": 68389
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_007_00-00-16.310.jpg",
+    "localPath": "assets/frames/shot_007_00-00-16.310.jpg",
+    "driveFileId": "1MFSjxXiLFp17Qhu83DA2rttbVvxD05hn",
+    "sha256": "50ecd00e0c797bb59aeaf07bff693561c463915c57251f0e8e70ad50435f80c0",
+    "bytes": 75438
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_008_00-00-17.990.jpg",
+    "localPath": "assets/frames/shot_008_00-00-17.990.jpg",
+    "driveFileId": "1DW3Q2jL_4mhlZz7ryPCKJ1tVbmvkri9P",
+    "sha256": "337720b439f9c498e2ca685e2fd88c8811dbe2f4ef7f158ba189a662fb914501",
+    "bytes": 74948
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_009_00-00-21.390.jpg",
+    "localPath": "assets/frames/shot_009_00-00-21.390.jpg",
+    "driveFileId": "1--Xkh8bMUZcP0Zxv57xYXFfHR438sIqG",
+    "sha256": "7e65f68ef337517f1300cf916290f6db740ba299cd91b4c9fcffad89c60efdec",
+    "bytes": 66696
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_010_00-00-23.670.jpg",
+    "localPath": "assets/frames/shot_010_00-00-23.670.jpg",
+    "driveFileId": "1XNt40M3e-ruD1QnpnYMzdfl2oF01MU4t",
+    "sha256": "8fcc6c869ad6cf2e0c395a384aa0f133043da77d22826144b1cec363b39f97f1",
+    "bytes": 71303
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_011_00-00-26.230.jpg",
+    "localPath": "assets/frames/shot_011_00-00-26.230.jpg",
+    "driveFileId": "1yS9pVBC3IBDemf0Wa-SDnNhPw7yYh28L",
+    "sha256": "552b1b5d6da7e072c3ebf3ad83e000f47428ec9239acdfcdf2e0f4d4f8c7e47f",
+    "bytes": 85755
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_012_00-00-29.977.jpg",
+    "localPath": "assets/frames/shot_012_00-00-29.977.jpg",
+    "driveFileId": "1H0KoG28Sm8hjxuycDTQrICNLFjgxPxl3",
+    "sha256": "ef5c9db2a803bee8c612bc26a2ca049928dddfcc2662df2c2f519b3a0e2e0b9f",
+    "bytes": 60846
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_013_00-00-30.750.jpg",
+    "localPath": "assets/frames/shot_013_00-00-30.750.jpg",
+    "driveFileId": "1_FaFPgpdDR7FKmNKBCQHuxj_1hcveQrq",
+    "sha256": "c8c4962148528cc94b6d40165fe0f59a7dd1d72dddfcffd1960651ba74f168c6",
+    "bytes": 55748
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_014_00-00-32.350.jpg",
+    "localPath": "assets/frames/shot_014_00-00-32.350.jpg",
+    "driveFileId": "1yHfyUmUepGFZYFRb0XMhu39V7ejNGtbB",
+    "sha256": "69517788f4eaf408f1eff58141eff8adefc7f9af43d888516f633d696d260416",
+    "bytes": 100633
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_015_00-00-34.030.jpg",
+    "localPath": "assets/frames/shot_015_00-00-34.030.jpg",
+    "driveFileId": "19A6sP044LPuITr88lIIGFf_4irMxivpk",
+    "sha256": "6e9dd9f87e782d26613bcc0725e7669707c83e84272964c1e5d9028e60b40373",
+    "bytes": 67672
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_016_00-00-35.550.jpg",
+    "localPath": "assets/frames/shot_016_00-00-35.550.jpg",
+    "driveFileId": "1qx8DA8G_a4lXL7dgbFOLT_83TPYvZHb9",
+    "sha256": "342e6e7ed7835b6879ba76d0501dd8c457008dc66e93e7fbf84b488b53313821",
+    "bytes": 55334
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_017_00-00-37.550.jpg",
+    "localPath": "assets/frames/shot_017_00-00-37.550.jpg",
+    "driveFileId": "19fgtIonWit3eDVyYHjLgRLaXSMZzS3cz",
+    "sha256": "e3f4e9e4f1c704509c6723a0faf2f2e2f99faa09797550999fee940ac928af36",
+    "bytes": 80513
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_018_00-00-39.430.jpg",
+    "localPath": "assets/frames/shot_018_00-00-39.430.jpg",
+    "driveFileId": "1-bigRPmCGK2qGaMF4NC5_iar5IetSfqz",
+    "sha256": "7107ffabb67d284f72fb365e18ba974c1718459e6bbaaa61abdcf1ca5c26d28c",
+    "bytes": 63344
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_019_00-00-40.950.jpg",
+    "localPath": "assets/frames/shot_019_00-00-40.950.jpg",
+    "driveFileId": "1d2xs6AWCcsiMx6OiOXDpdseM7YNF5CJB",
+    "sha256": "d92eb67cec6b9e2a56e0218e5cacdd438b5d3d94bb1dd32ad3c5bbc73ec7fe05",
+    "bytes": 74731
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_020_00-00-42.550.jpg",
+    "localPath": "assets/frames/shot_020_00-00-42.550.jpg",
+    "driveFileId": "1RCzL_clEfugYjq8dorIxCZam1iKmI_Hw",
+    "sha256": "c4c07be9eadb4788cea798e2f513468d938064a1b1fd9c1754013152dcc1310c",
+    "bytes": 144352
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_021_00-00-54.110.jpg",
+    "localPath": "assets/frames/shot_021_00-00-54.110.jpg",
+    "driveFileId": "1LHjnWmqyk9oU5X6bq68xV-wHFUV7o9ez",
+    "sha256": "d613d747535e766482ec094b42d18f50e66ba8715a50345dcc99a422433935fc",
+    "bytes": 44807
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_022_00-00-56.030.jpg",
+    "localPath": "assets/frames/shot_022_00-00-56.030.jpg",
+    "driveFileId": "10kbF32OtyUQcqPdLqQqBp77a3sRa_ZRt",
+    "sha256": "d791f484bd64e4254df6a0f9e6a8c11684bb8be61310696dd0d53df388f619ba",
+    "bytes": 42768
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_023_00-00-59.390.jpg",
+    "localPath": "assets/frames/shot_023_00-00-59.390.jpg",
+    "driveFileId": "1JEb4a3BGj53R4QnHT6iQ-zu1R5hy1fCX",
+    "sha256": "55374a0cbd073afeb10dc48640f15fc0a692ae3e32c82a044571920ab9e4dd1a",
+    "bytes": 206846
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_024_00-01-02.161.jpg",
+    "localPath": "assets/frames/shot_024_00-01-02.161.jpg",
+    "driveFileId": "1hzgPAmdWO7y-MBre_hr5408gNP2Yas3l",
+    "sha256": "c33e9b4b874f1641b71dcaa6f23e2f914a2cc9d3c7336d5cae726cc52ac09e76",
+    "bytes": 116349
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_025_00-01-03.430.jpg",
+    "localPath": "assets/frames/shot_025_00-01-03.430.jpg",
+    "driveFileId": "1YwN4iXlEGwaPCaCloX3KWR_IYb2hz3dL",
+    "sha256": "0827e78daf1a858c9067c9f77ed38016fc5df5b8c586c984bc0f88b1c293cda9",
+    "bytes": 42702
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_026_00-01-05.030.jpg",
+    "localPath": "assets/frames/shot_026_00-01-05.030.jpg",
+    "driveFileId": "1Z_--elvS_PmGkun6QEeFTsr0ooM5itAn",
+    "sha256": "e3216a7e7096fc77af5a9c179875a0ee89543799a02bc14ff1b955a993bc6f63",
+    "bytes": 72832
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_027_00-01-06.955.jpg",
+    "localPath": "assets/frames/shot_027_00-01-06.955.jpg",
+    "driveFileId": "1ElKbMWPuhWg1VenIwqXztba2AAC3dA12",
+    "sha256": "b685154ba1656683f7fe4ccabf80509cf8191f7fa987041ea2f6df76bbc39d53",
+    "bytes": 41670
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_028_00-01-08.150.jpg",
+    "localPath": "assets/frames/shot_028_00-01-08.150.jpg",
+    "driveFileId": "1CqJobpVZFGvjBr5gEvgyd8Pt3H3QDlJ-",
+    "sha256": "103752e1df8b0cb7a97b8958177942773a7f400f69a52e0ad661df9b3afe00ea",
+    "bytes": 64622
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_029_00-01-11.296.jpg",
+    "localPath": "assets/frames/shot_029_00-01-11.296.jpg",
+    "driveFileId": "1gU7aoz_z8GGxEr8gaRKgEcE4J-iWcjRd",
+    "sha256": "9331ef0a6e93f4378ce56a7d2c7aa5cbce8540ed1658e98f3655d1365a6e4e2a",
+    "bytes": 112095
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_030_00-01-12.481.jpg",
+    "localPath": "assets/frames/shot_030_00-01-12.481.jpg",
+    "driveFileId": "1_oA2ObAzCTWidIAFD9RLhuAdLmgZ510O",
+    "sha256": "a9679ec0a86ee84aa4e38380e63d38dde8472b15cc516280c2ce9ce27b6fe0de",
+    "bytes": 115905
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_031_00-01-13.750.jpg",
+    "localPath": "assets/frames/shot_031_00-01-13.750.jpg",
+    "driveFileId": "1BHBTZZZpBOeINEIcCNbgpK6x182a8PR1",
+    "sha256": "e4b7ce17a0f265606a8d87a3b193d813ce3105d6f525a6d9c405c9ae370fc082",
+    "bytes": 63276
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_032_00-01-16.751.jpg",
+    "localPath": "assets/frames/shot_032_00-01-16.751.jpg",
+    "driveFileId": "1n_46-yVVtSTWlunLzkSP2ViTyUFVRXkd",
+    "sha256": "cb6e2b2a48a4dd178e02bc5f1802dec9bd5f40f09ffcfc48de4e973c8c668166",
+    "bytes": 35187
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_033_00-01-17.915.jpg",
+    "localPath": "assets/frames/shot_033_00-01-17.915.jpg",
+    "driveFileId": "1Ru4j27Q3vb1n91pOA5XTO1PXZ7VYdSmn",
+    "sha256": "cb599bf73f74ddaffd38b40e1bf5c02fc1a8b807e5243a5c8d1482c87b4d48ca",
+    "bytes": 44154
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_034_00-01-19.110.jpg",
+    "localPath": "assets/frames/shot_034_00-01-19.110.jpg",
+    "driveFileId": "11yv6uSWB0OyuRz_3VGysIhON7EeofZt5",
+    "sha256": "75a5182affb042f410ff7aba4f074bb3d23fed66d65c8e705c7068fc5be52b29",
+    "bytes": 87343
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_035_00-01-21.235.jpg",
+    "localPath": "assets/frames/shot_035_00-01-21.235.jpg",
+    "driveFileId": "1jn2tLAj7euCaNfwX4130Jv2lTdVRC0nR",
+    "sha256": "a763a9f04298a2d612550e2133498b07cf32ce5e62cac69c6cac7e954cfb293a",
+    "bytes": 66446
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_036_00-01-22.169.jpg",
+    "localPath": "assets/frames/shot_036_00-01-22.169.jpg",
+    "driveFileId": "1CnfXVicwfNwNr5Q3YfR-hiQzk22o2X5u",
+    "sha256": "80ed2e32aed77a40c9058fcf4bc2fa34883848db79f2970bd63ccdaa06eda1cd",
+    "bytes": 70379
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_037_00-01-22.929.jpg",
+    "localPath": "assets/frames/shot_037_00-01-22.929.jpg",
+    "driveFileId": "1633fq8jBeJccEgbiQNX7Vkf0btfztTQA",
+    "sha256": "75fcf8e74dad8b09e89353f3a8bee27539bc2519f9b016b9638fd9b6a51e46c4",
+    "bytes": 68196
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_038_00-01-23.628.jpg",
+    "localPath": "assets/frames/shot_038_00-01-23.628.jpg",
+    "driveFileId": "1oj-_4FRJEZ2k-WkwnOxonChy0NokHdBM",
+    "sha256": "92cd6905558c503a24139c23babb2acef52eb2b6b25c21dbfff4ef0f6115881c",
+    "bytes": 82507
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_039_00-01-24.274.jpg",
+    "localPath": "assets/frames/shot_039_00-01-24.274.jpg",
+    "driveFileId": "1NfykOQhye1nLrFxwK5Hv4FsmLN5ll8Ik",
+    "sha256": "970f152a252cbe8ff0b41faf04210346c685bcda772615ccc75f57159e08f2c3",
+    "bytes": 64452
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_040_00-01-25.206.jpg",
+    "localPath": "assets/frames/shot_040_00-01-25.206.jpg",
+    "driveFileId": "1uuxW61CHZF0LfU8qWjsjGdZWqBfnnLAM",
+    "sha256": "3a80ef556690658ae2089e3cb343928adb254160118c85e656a402863dd73a54",
+    "bytes": 60225
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_041_00-01-26.550.jpg",
+    "localPath": "assets/frames/shot_041_00-01-26.550.jpg",
+    "driveFileId": "1XAJlSapOreA6h4Q93N5nGp8IjslOooeT",
+    "sha256": "4e5c9902774623597d30e83811bf01cadf0cc353e595831304734be15a791cfa",
+    "bytes": 70529
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_042_00-01-27.918.jpg",
+    "localPath": "assets/frames/shot_042_00-01-27.918.jpg",
+    "driveFileId": "1Vn3JhFUpuU_tua45LJZ75Me5g5HQc1UA",
+    "sha256": "e090d3fccb94ed3de7998cc3343d18fd62e773672740ef74c1f1845699a4ec46",
+    "bytes": 73678
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_043_00-01-28.453.jpg",
+    "localPath": "assets/frames/shot_043_00-01-28.453.jpg",
+    "driveFileId": "1yrlgaFKPcYfqCfqkIfc7M4hunp0l0Atp",
+    "sha256": "f342d55a7c6ec53b94c3f26f9581d144d9f26a6d736c1fe60d1b428e44119a77",
+    "bytes": 88436
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_044_00-01-28.952.jpg",
+    "localPath": "assets/frames/shot_044_00-01-28.952.jpg",
+    "driveFileId": "11VsAF_isETg80-ak5T3U0RFh6yi-JjYp",
+    "sha256": "3db7c97c266c93ae89b77f3c4c22906dbc968213dda4f18248350241246f745d",
+    "bytes": 43433
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_045_00-01-29.458.jpg",
+    "localPath": "assets/frames/shot_045_00-01-29.458.jpg",
+    "driveFileId": "1CaCPIDJir4QTXGoNyBOtyh5_bYrLQ8H6",
+    "sha256": "7802ab9b51f015789780350cb591d7fb784453b9fc686227b69acf8e2d4f7e89",
+    "bytes": 89598
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_046_00-01-30.430.jpg",
+    "localPath": "assets/frames/shot_046_00-01-30.430.jpg",
+    "driveFileId": "1F3Njkf5sE3w5Xwnh3MQRzmp-TAPl_PRP",
+    "sha256": "0ffdc15aaf6e0cccabb2ab471104bf8ba628202c3bd11bd632ad425e06b0922e",
+    "bytes": 84424
+  },
+  {
+    "sourcePath": "../frames/09_139_14DITROIT_DDD_385084158/shot_047_00-01-46.066.jpg",
+    "localPath": "assets/frames/shot_047_00-01-46.066.jpg",
+    "driveFileId": "1apxvKi1u7HIf6guUY7LfA03VM1Jqa1rx",
+    "sha256": "99c2d0edf1cdad45d37c0e1d84ebb195b42920e232df519724cb24c8ccba89bb",
+    "bytes": 12458
+  }
+]

@@ -1,5 +1,5 @@
 {
- "date": "2026-11-18",
+ "date": "2026-11-19",
  "providerLogos": {
   "Alibaba": "providers/alibaba.svg",
   "Alibaba-ATH": "providers/alibaba.svg",
@@ -14,7 +14,6 @@
   "Canva": "providers/canva.svg",
   "Cartesia": "providers/cartesia.svg",
   "China Mobile": "providers/china-mobile.png",
-  "Cohere": "providers/cohere.svg",
   "Creatify": "providers/creatify.svg",
   "DeepSeek": "providers/deepseek.svg",
   "ElevenLabs": "providers/elevenlabs.svg",
@@ -28,12 +27,11 @@
   "InclusionAI": "providers/inclusionai.jpg",
   "Institute of Foundation Models": "providers/ifm.svg",
   "Inworld": "providers/inworld.svg",
+  "Joy Future Academy": "providers/joy-ai.svg",
   "Kimi": "providers/kimi.jpg",
   "KlingAI": "providers/klingai.svg",
   "Krea": "providers/krea.svg",
-  "LG AI Research": "providers/lg.png",
   "Lightricks": "providers/lightricks.svg",
-  "Liquid AI": "providers/liquidai.svg",
   "Luma Labs": "providers/lumalabs.svg",
   "Meta": "meta-color.svg",
   "Microsoft": "providers/microsoft.svg",
@@ -82,8 +80,8 @@
      "score": 65.0,
      "contextTokens": 1000000,
      "costUSD": 26.54,
-     "durationMinutes": 40.7,
-     "firstAnswerSeconds": 214.95
+     "durationMinutes": 41.6,
+     "firstAnswerSeconds": 247.46
     },
     {
      "model": "GPT-6.2 Astra Max",
@@ -92,8 +90,18 @@
      "score": 62.0,
      "contextTokens": 1000000,
      "costUSD": 4.0,
-     "durationMinutes": 10.7,
-     "firstAnswerSeconds": 147.65
+     "durationMinutes": 13.7,
+     "firstAnswerSeconds": 197.65
+    },
+    {
+     "model": "Gemini 4 Neon Xhigh",
+     "url": "https://artificialanalysis.ai/zh/models/gemini-4-neon",
+     "provider": "Google",
+     "score": 61.0,
+     "contextTokens": 1000000,
+     "costUSD": 6.44,
+     "durationMinutes": 21.5,
+     "firstAnswerSeconds": 56.51
     },
     {
      "model": "Gemini 4 Carbon High",
@@ -101,9 +109,9 @@
      "provider": "Google",
      "score": 60.0,
      "contextTokens": 1000000,
-     "costUSD": 5.48,
-     "durationMinutes": 33.2,
-     "firstAnswerSeconds": 73.37
+     "costUSD": 7.76,
+     "durationMinutes": 37.2,
+     "firstAnswerSeconds": 73.04
     },
     {
      "model": "Claude Opus 5.5 Max, Default Fallback",
@@ -113,7 +121,7 @@
      "contextTokens": 1000000,
      "costUSD": 10.04,
      "durationMinutes": 24.5,
-     "firstAnswerSeconds": 355.12
+     "firstAnswerSeconds": 335.85
     },
     {
      "model": "GPT-6.2 Sol Max",
@@ -122,8 +130,8 @@
      "score": 57.0,
      "contextTokens": 1000000,
      "costUSD": 1.01,
-     "durationMinutes": 7.9,
-     "firstAnswerSeconds": 61.56
+     "durationMinutes": 8.5,
+     "firstAnswerSeconds": 75.06
     },
     {
      "model": "Claude Sonnet 5.5 Max, Default Fallback",
@@ -132,8 +140,8 @@
      "score": 55.0,
      "contextTokens": 1000000,
      "costUSD": 10.02,
-     "durationMinutes": 32.3,
-     "firstAnswerSeconds": 290.29
+     "durationMinutes": 32.6,
+     "firstAnswerSeconds": 264.32
     },
     {
      "model": "Gemini 4 Hydrogen Xhigh",
@@ -142,8 +150,8 @@
      "score": 54.0,
      "contextTokens": 1000000,
      "costUSD": 3.16,
-     "durationMinutes": 14.8,
-     "firstAnswerSeconds": 42.69
+     "durationMinutes": 15.2,
+     "firstAnswerSeconds": 45.7
     },
     {
      "model": "GPT-6.1 Terra Max",
@@ -152,8 +160,8 @@
      "score": 51.0,
      "contextTokens": 1000000,
      "costUSD": 0.96,
-     "durationMinutes": 14.2,
-     "firstAnswerSeconds": 144.41
+     "durationMinutes": 15.2,
+     "firstAnswerSeconds": 149.82
     },
     {
      "model": "Gemini 4 Argon High",
@@ -162,8 +170,8 @@
      "score": 50.0,
      "contextTokens": 1000000,
      "costUSD": 4.97,
-     "durationMinutes": 29.1,
-     "firstAnswerSeconds": 47.0
+     "durationMinutes": 29.8,
+     "firstAnswerSeconds": 49.73
     },
     {
      "model": "Muse Wonder Full Max",
@@ -182,8 +190,8 @@
      "score": 46.0,
      "contextTokens": 1000000,
      "costUSD": 3.68,
-     "durationMinutes": 38.3,
-     "firstAnswerSeconds": 155.21
+     "durationMinutes": 39.4,
+     "firstAnswerSeconds": 157.82
     },
     {
      "model": "Muse Wonder Max",
@@ -192,8 +200,8 @@
      "score": 44.0,
      "contextTokens": 1000000,
      "costUSD": 6.95,
-     "durationMinutes": 13.4,
-     "firstAnswerSeconds": 19.58
+     "durationMinutes": 13.7,
+     "firstAnswerSeconds": 20.38
     },
     {
      "model": "Qwen4 Max",
@@ -202,8 +210,8 @@
      "score": 43.0,
      "contextTokens": 984000,
      "costUSD": 3.27,
-     "durationMinutes": 33.1,
-     "firstAnswerSeconds": 143.51
+     "durationMinutes": 31.3,
+     "firstAnswerSeconds": 146.14
     },
     {
      "model": "Claude Haiku 5.5 Max",
@@ -212,8 +220,8 @@
      "score": 36.0,
      "contextTokens": 1000000,
      "costUSD": 0.41,
-     "durationMinutes": 14.7,
-     "firstAnswerSeconds": 190.13
+     "durationMinutes": 14.8,
+     "firstAnswerSeconds": 176.79
     },
     {
      "model": "Muse Ember Max",
@@ -222,8 +230,8 @@
      "score": 36.0,
      "contextTokens": 1000000,
      "costUSD": 0.14,
-     "durationMinutes": 3.1,
-     "firstAnswerSeconds": 4.85
+     "durationMinutes": 3.0,
+     "firstAnswerSeconds": 5.19
     },
     {
      "model": "Grok 4.7 Xhigh",
@@ -232,8 +240,8 @@
      "score": 35.0,
      "contextTokens": 500000,
      "costUSD": 7.77,
-     "durationMinutes": 24.2,
-     "firstAnswerSeconds": 47.29
+     "durationMinutes": 24.7,
+     "firstAnswerSeconds": 51.51
     },
     {
      "model": "Tencent Hy4",
@@ -243,7 +251,7 @@
      "contextTokens": 1000000,
      "costUSD": 1.03,
      "durationMinutes": 13.6,
-     "firstAnswerSeconds": 111.73
+     "firstAnswerSeconds": 112.11
     },
     {
      "model": "DeepSeek V4.1 Flash 1017 Max",
@@ -252,8 +260,8 @@
      "score": 33.0,
      "contextTokens": 1000000,
      "costUSD": 0.6,
-     "durationMinutes": 13.0,
-     "firstAnswerSeconds": 37.93
+     "durationMinutes": 13.7,
+     "firstAnswerSeconds": 42.04
     },
     {
      "model": "GLM-5.3 Max",
@@ -262,8 +270,8 @@
      "score": 32.0,
      "contextTokens": 1000000,
      "costUSD": 5.01,
-     "durationMinutes": 21.7,
-     "firstAnswerSeconds": 69.29
+     "durationMinutes": 23.9,
+     "firstAnswerSeconds": 69.96
     },
     {
      "model": "Inkling 2 Small",
@@ -272,8 +280,8 @@
      "score": 31.0,
      "contextTokens": 1000000,
      "costUSD": 1.18,
-     "durationMinutes": 20.9,
-     "firstAnswerSeconds": 39.18
+     "durationMinutes": 20.6,
+     "firstAnswerSeconds": 39.09
     },
     {
      "model": "MiMo-V2.6-Pro",
@@ -282,8 +290,8 @@
      "score": 30.0,
      "contextTokens": 1000000,
      "costUSD": 0.26,
-     "durationMinutes": 34.8,
-     "firstAnswerSeconds": 25.73
+     "durationMinutes": 35.9,
+     "firstAnswerSeconds": 48.19
     },
     {
      "model": "Ling 3.1 Flash 1019",
@@ -302,8 +310,8 @@
      "score": 29.0,
      "contextTokens": 1000000,
      "costUSD": 0.49,
-     "durationMinutes": 17.6,
-     "firstAnswerSeconds": 48.55
+     "durationMinutes": 17.9,
+     "firstAnswerSeconds": 50.78
     },
     {
      "model": "Qwen3.8-Flash-Next",
@@ -312,8 +320,8 @@
      "score": 29.0,
      "contextTokens": 256000,
      "costUSD": 0.57,
-     "durationMinutes": 29.4,
-     "firstAnswerSeconds": 62.69
+     "durationMinutes": 31.8,
+     "firstAnswerSeconds": 78.58
     },
     {
      "model": "Step 5 Preview",
@@ -322,8 +330,18 @@
      "score": 29.0,
      "contextTokens": 1000000,
      "costUSD": 2.35,
-     "durationMinutes": 13.2,
-     "firstAnswerSeconds": 21.77
+     "durationMinutes": 12.3,
+     "firstAnswerSeconds": 21.14
+    },
+    {
+     "model": "JoyAI-VL-Preview",
+     "url": "https://artificialanalysis.ai/zh/models/joyvl2_v27",
+     "provider": "Joy Future Academy",
+     "score": 28.0,
+     "contextTokens": 1000000,
+     "costUSD": null,
+     "durationMinutes": null,
+     "firstAnswerSeconds": null
     },
     {
      "model": "GPT-6 Luna Max",
@@ -332,8 +350,8 @@
      "score": 28.0,
      "contextTokens": 1000000,
      "costUSD": 0.15,
-     "durationMinutes": 12.1,
-     "firstAnswerSeconds": 64.04
+     "durationMinutes": 11.9,
+     "firstAnswerSeconds": 64.74
     },
     {
      "model": "GLM-5.3-Flash",
@@ -342,8 +360,8 @@
      "score": 28.0,
      "contextTokens": 1000000,
      "costUSD": 0.58,
-     "durationMinutes": 38.3,
-     "firstAnswerSeconds": 84.58
+     "durationMinutes": 39.5,
+     "firstAnswerSeconds": 92.73
     },
     {
      "model": "MiMo-V2.6-Flash",
@@ -352,8 +370,8 @@
      "score": 27.0,
      "contextTokens": 1000000,
      "costUSD": 0.13,
-     "durationMinutes": 54.7,
-     "firstAnswerSeconds": 33.03
+     "durationMinutes": 55.1,
+     "firstAnswerSeconds": 35.4
     },
     {
      "model": "Mistral Large 4 High",
@@ -362,8 +380,8 @@
      "score": 26.0,
      "contextTokens": 1000000,
      "costUSD": 2.06,
-     "durationMinutes": 18.8,
-     "firstAnswerSeconds": 64.46
+     "durationMinutes": 23.0,
+     "firstAnswerSeconds": 86.59
     },
     {
      "model": "Muse Spark Open Xhigh",
@@ -372,8 +390,8 @@
      "score": 25.0,
      "contextTokens": 1000000,
      "costUSD": 2.02,
-     "durationMinutes": 5.8,
-     "firstAnswerSeconds": 10.44
+     "durationMinutes": 6.0,
+     "firstAnswerSeconds": 10.27
     },
     {
      "model": "Agnes 2.5 Pro Theta",
@@ -382,8 +400,8 @@
      "score": 24.0,
      "contextTokens": 1000000,
      "costUSD": 0.57,
-     "durationMinutes": 22.9,
-     "firstAnswerSeconds": 8.1
+     "durationMinutes": 23.5,
+     "firstAnswerSeconds": 8.37
     },
     {
      "model": "DeepSeek V4 Pro 0813 Max",
@@ -392,8 +410,8 @@
      "score": 23.0,
      "contextTokens": 1000000,
      "costUSD": 1.77,
-     "durationMinutes": 16.9,
-     "firstAnswerSeconds": 54.34
+     "durationMinutes": 18.5,
+     "firstAnswerSeconds": 56.98
     },
     {
      "model": "Nanbeige4.3-33B",
@@ -412,8 +430,8 @@
      "score": 20.0,
      "contextTokens": 256000,
      "costUSD": 3.53,
-     "durationMinutes": 38.1,
-     "firstAnswerSeconds": 121.79
+     "durationMinutes": 39.1,
+     "firstAnswerSeconds": 134.95
     },
     {
      "model": "JT-4.1 Flash 236B A21B",
@@ -432,8 +450,8 @@
      "score": 19.0,
      "contextTokens": 1000000,
      "costUSD": 1.29,
-     "durationMinutes": 14.1,
-     "firstAnswerSeconds": 69.98
+     "durationMinutes": 16.5,
+     "firstAnswerSeconds": 90.43
     },
     {
      "model": "K2 Horizon 375B A23B",
@@ -442,8 +460,8 @@
      "score": 18.0,
      "contextTokens": 524000,
      "costUSD": 0.0,
-     "durationMinutes": 4.8,
-     "firstAnswerSeconds": 19.59
+     "durationMinutes": 4.4,
+     "firstAnswerSeconds": 15.14
     },
     {
      "model": "Beam 1.0",
@@ -453,7 +471,7 @@
      "contextTokens": 1000000,
      "costUSD": 0.28,
      "durationMinutes": 2.2,
-     "firstAnswerSeconds": 7.3
+     "firstAnswerSeconds": 7.64
     },
     {
      "model": "Solar Pro 4",
@@ -462,8 +480,28 @@
      "score": 14.0,
      "contextTokens": 512000,
      "costUSD": 0.96,
-     "durationMinutes": 72.0,
-     "firstAnswerSeconds": 31.47
+     "durationMinutes": 72.4,
+     "firstAnswerSeconds": 33.85
+    },
+    {
+     "model": "K2 Horizon 32B",
+     "url": "https://artificialanalysis.ai/zh/models/k2-horizon-32b",
+     "provider": "Institute of Foundation Models",
+     "score": 14.0,
+     "contextTokens": 524000,
+     "costUSD": null,
+     "durationMinutes": null,
+     "firstAnswerSeconds": null
+    },
+    {
+     "model": "K2 Horizon MoVA 36B A4B",
+     "url": "https://artificialanalysis.ai/zh/models/k2-horizon-mova-36b-a4b",
+     "provider": "Institute of Foundation Models",
+     "score": 14.0,
+     "contextTokens": 524000,
+     "costUSD": null,
+     "durationMinutes": null,
+     "firstAnswerSeconds": null
     },
     {
      "model": "Apodex 1.1",
@@ -482,8 +520,8 @@
      "score": 14.0,
      "contextTokens": 1000000,
      "costUSD": 0.48,
-     "durationMinutes": 5.3,
-     "firstAnswerSeconds": 13.69
+     "durationMinutes": 4.3,
+     "firstAnswerSeconds": 12.75
     },
     {
      "model": "Inkling Xhigh",
@@ -492,8 +530,8 @@
      "score": 12.0,
      "contextTokens": 1000000,
      "costUSD": 1.35,
-     "durationMinutes": 8.1,
-     "firstAnswerSeconds": 14.63
+     "durationMinutes": 8.5,
+     "firstAnswerSeconds": 18.44
     },
     {
      "model": "Nemotron 3 Ultra 550B A55B Reasoning",
@@ -503,7 +541,7 @@
      "contextTokens": 262000,
      "costUSD": 2.21,
      "durationMinutes": 4.4,
-     "firstAnswerSeconds": 3.67
+     "firstAnswerSeconds": 7.74
     },
     {
      "model": "Gemini 3.5 Flash-Lite",
@@ -512,8 +550,18 @@
      "score": 12.0,
      "contextTokens": 1000000,
      "costUSD": 0.69,
-     "durationMinutes": 1.5,
-     "firstAnswerSeconds": 4.82
+     "durationMinutes": 1.6,
+     "firstAnswerSeconds": 4.79
+    },
+    {
+     "model": "K2 Horizon 7B",
+     "url": "https://artificialanalysis.ai/zh/models/k2-horizon-7b",
+     "provider": "Institute of Foundation Models",
+     "score": 11.0,
+     "contextTokens": 524000,
+     "costUSD": null,
+     "durationMinutes": null,
+     "firstAnswerSeconds": null
     },
     {
      "model": "A.X-K2",
@@ -524,56 +572,6 @@
      "costUSD": null,
      "durationMinutes": null,
      "firstAnswerSeconds": null
-    },
-    {
-     "model": "K-EXAONE 2.0",
-     "url": "https://artificialanalysis.ai/zh/models/k-exaone-2-0",
-     "provider": "LG AI Research",
-     "score": 8.0,
-     "contextTokens": 262000,
-     "costUSD": null,
-     "durationMinutes": null,
-     "firstAnswerSeconds": null
-    },
-    {
-     "model": "Muse Glimmer High",
-     "url": "https://artificialanalysis.ai/zh/models/muse-glimmer",
-     "provider": "Meta",
-     "score": 6.0,
-     "contextTokens": 131000,
-     "costUSD": 0.18,
-     "durationMinutes": 4.7,
-     "firstAnswerSeconds": 19.29
-    },
-    {
-     "model": "Command A+",
-     "url": "https://artificialanalysis.ai/zh/models/command-a-plus",
-     "provider": "Cohere",
-     "score": 6.0,
-     "contextTokens": 192000,
-     "costUSD": 0.0,
-     "durationMinutes": 3.6,
-     "firstAnswerSeconds": 29.84
-    },
-    {
-     "model": "LFM3-1.7B",
-     "url": "https://artificialanalysis.ai/zh/models/lfm3-1-7b",
-     "provider": "Liquid AI",
-     "score": 6.0,
-     "contextTokens": 262000,
-     "costUSD": 0.17,
-     "durationMinutes": null,
-     "firstAnswerSeconds": null
-    },
-    {
-     "model": "Nemotron 3.5 Lightning",
-     "url": "https://artificialanalysis.ai/zh/models/nemotron-3-5-lightning",
-     "provider": "NVIDIA",
-     "score": 6.0,
-     "contextTokens": 1000000,
-     "costUSD": 0.31,
-     "durationMinutes": 3.9,
-     "firstAnswerSeconds": 13.95
     }
    ]
   },
@@ -1358,8 +1356,8 @@
     {
      "model": "Eleven v4",
      "provider": "ElevenLabs",
-     "score": 1340.0,
-     "votes": 2925,
+     "score": 1341.0,
+     "votes": 2957,
      "range": "1-2",
      "released": "2026-09",
      "price": 80.0,
@@ -1368,8 +1366,8 @@
     {
      "model": "Eleven v4 Turbo",
      "provider": "ElevenLabs",
-     "score": 1339.0,
-     "votes": 2642,
+     "score": 1341.0,
+     "votes": 2669,
      "range": "1-2",
      "released": "2026-09",
      "price": 40.0,
@@ -1378,8 +1376,8 @@
     {
      "model": "Qwen-Audio-3.1-TTS-Plus",
      "provider": "Alibaba",
-     "score": 1300.0,
-     "votes": 2695,
+     "score": 1299.0,
+     "votes": 2743,
      "range": "3-5",
      "released": "2026-09",
      "price": 19.31,
@@ -1388,8 +1386,8 @@
     {
      "model": "Sonic 3.6",
      "provider": "Cartesia",
-     "score": 1297.0,
-     "votes": 3572,
+     "score": 1295.0,
+     "votes": 3640,
      "range": "3-6",
      "released": "2026-08",
      "price": 49.0,
@@ -1398,9 +1396,9 @@
     {
      "model": "Simba 3.5",
      "provider": "SpeechifyAI",
-     "score": 1296.0,
-     "votes": 1916,
-     "range": "3-6",
+     "score": 1293.0,
+     "votes": 1985,
+     "range": "3-8",
      "released": "2026-11",
      "price": 6.58,
      "voices": 8
@@ -1408,9 +1406,9 @@
     {
      "model": "Gemini 3.8 Flash TTS",
      "provider": "Google",
-     "score": 1284.0,
-     "votes": 3839,
-     "range": "4-9",
+     "score": 1283.0,
+     "votes": 3911,
+     "range": "4-8",
      "released": "2026-09",
      "price": 16.49,
      "voices": 8
@@ -1418,9 +1416,9 @@
     {
      "model": "Fish Audio Drama 3",
      "provider": "Fish Audio",
-     "score": 1277.0,
-     "votes": 1917,
-     "range": "6-10",
+     "score": 1279.0,
+     "votes": 1990,
+     "range": "5-9",
      "released": "2026-10",
      "price": 15.0,
      "voices": 8
@@ -1428,9 +1426,9 @@
     {
      "model": "Lightning V3.1 Pro (Oct 2026)",
      "provider": "Smallest.ai",
-     "score": 1276.0,
-     "votes": 2238,
-     "range": "6-10",
+     "score": 1278.0,
+     "votes": 2316,
+     "range": "6-9",
      "released": "2026-10",
      "price": 19.5,
      "voices": 8
@@ -1438,9 +1436,9 @@
     {
      "model": "Realtime TTS-2",
      "provider": "Inworld",
-     "score": 1271.0,
-     "votes": 2955,
-     "range": "6-11",
+     "score": 1270.0,
+     "votes": 3037,
+     "range": "7-11",
      "released": "2026-08",
      "price": 20.83,
      "voices": 8
@@ -1448,8 +1446,8 @@
     {
      "model": "Qwen-Audio-3.0-TTS-Plus",
      "provider": "Alibaba",
-     "score": 1263.0,
-     "votes": 3221,
+     "score": 1262.0,
+     "votes": 3300,
      "range": "9-12",
      "released": "2026-09",
      "price": 19.31,
@@ -1458,8 +1456,8 @@
     {
      "model": "Gemini 3.8 Flash-Lite TTS",
      "provider": "Google",
-     "score": 1260.0,
-     "votes": 3783,
+     "score": 1262.0,
+     "votes": 3863,
      "range": "9-12",
      "released": "2026-09",
      "price": 11.03,
@@ -1468,8 +1466,8 @@
     {
      "model": "Simba 3.2",
      "provider": "SpeechifyAI",
-     "score": 1253.0,
-     "votes": 4092,
+     "score": 1252.0,
+     "votes": 4164,
      "range": "10-12",
      "released": "2026-07",
      "price": 6.58,
@@ -1478,8 +1476,8 @@
     {
      "model": "Fish Audio Drama 3 Preview",
      "provider": "Fish Audio",
-     "score": 1235.0,
-     "votes": 2925,
+     "score": 1237.0,
+     "votes": 2994,
      "range": "13-14",
      "released": "2026-10",
      "price": 15.0,
@@ -1488,8 +1486,8 @@
     {
      "model": "Breeze TTS 2",
      "provider": "BreezeBlue",
-     "score": 1231.0,
-     "votes": 3056,
+     "score": 1229.0,
+     "votes": 3138,
      "range": "13-14",
      "released": "2026-08",
      "price": 34.0,
@@ -1499,17 +1497,27 @@
      "model": "v3 Conversational",
      "provider": "ElevenLabs",
      "score": 1217.0,
-     "votes": 3492,
+     "votes": 3561,
      "range": "15-20",
      "released": "2026-08",
      "price": 50.0,
      "voices": 8
     },
     {
+     "model": "StepAudio 2.5 TTS (Aug 2026)",
+     "provider": "StepFun",
+     "score": 1215.0,
+     "votes": 3007,
+     "range": "15-20",
+     "released": "2026-08",
+     "price": 85.0,
+     "voices": 8
+    },
+    {
      "model": "Gemini 3.1 Flash TTS",
      "provider": "Google",
      "score": 1215.0,
-     "votes": 4906,
+     "votes": 4986,
      "range": "15-20",
      "released": "2026-04",
      "price": 18.31,
@@ -1519,47 +1527,37 @@
      "model": "Realtime TTS-2 Flash",
      "provider": "Inworld",
      "score": 1214.0,
-     "votes": 3363,
+     "votes": 3461,
      "range": "15-20",
      "released": "2026-08",
      "price": 10.42,
      "voices": 8
     },
     {
-     "model": "StepAudio 2.5 TTS (Aug 2026)",
-     "provider": "StepFun",
-     "score": 1213.0,
-     "votes": 2936,
-     "range": "15-20",
-     "released": "2026-08",
-     "price": 85.0,
-     "voices": 8
-    },
-    {
-     "model": "AssemblyAI-TTS-1",
-     "provider": "AssemblyAI",
-     "score": 1213.0,
-     "votes": 1986,
-     "range": "15-20",
-     "released": "2026-10",
-     "price": 15.0,
-     "voices": 8
-    },
-    {
      "model": "Voxtral 3 TTS",
      "provider": "Mistral",
-     "score": 1212.0,
-     "votes": 2368,
+     "score": 1213.0,
+     "votes": 2449,
      "range": "15-20",
      "released": "2026-10",
      "price": 13.0,
      "voices": 8
     },
     {
+     "model": "AssemblyAI-TTS-1",
+     "provider": "AssemblyAI",
+     "score": 1213.0,
+     "votes": 2076,
+     "range": "15-20",
+     "released": "2026-10",
+     "price": 15.0,
+     "voices": 8
+    },
+    {
      "model": "Sonic 3.5",
      "provider": "Cartesia",
-     "score": 1196.0,
-     "votes": 4409,
+     "score": 1195.0,
+     "votes": 4473,
      "range": "21-23",
      "released": "2026-05",
      "price": 49.0,
@@ -1569,7 +1567,7 @@
      "model": "Luna TTS",
      "provider": "VUI Labs",
      "score": 1193.0,
-     "votes": 4152,
+     "votes": 4224,
      "range": "21-23",
      "released": "2026-06",
      "price": 15.0,
@@ -1579,7 +1577,7 @@
      "model": "Eleven v3",
      "provider": "ElevenLabs",
      "score": 1192.0,
-     "votes": 5629,
+     "votes": 5690,
      "range": "21-23",
      "released": "2026-02",
      "price": 100.0,
@@ -1588,58 +1586,58 @@
     {
      "model": "Fish Audio S2.1 Pro (Oct 2026)",
      "provider": "Fish Audio",
-     "score": 1181.0,
-     "votes": 2739,
+     "score": 1182.0,
+     "votes": 2800,
      "range": "22-29",
      "released": "2026-10",
      "price": 15.0,
      "voices": 8
     },
     {
-     "model": "Soniox TTS Real-Time v2",
-     "provider": "Soniox",
-     "score": 1181.0,
-     "votes": 6020,
-     "range": "24-28",
-     "released": "2026-08",
-     "price": 14.23,
-     "voices": 8
-    },
-    {
      "model": "Ming-3.0-tts",
      "provider": "Ant Group",
-     "score": 1180.0,
-     "votes": 2752,
-     "range": "23-29",
+     "score": 1182.0,
+     "votes": 2803,
+     "range": "22-29",
      "released": "2026-10",
      "price": null,
      "voices": 3
     },
     {
-     "model": "Gradium TTS (Sep 2026)",
-     "provider": "Gradium",
-     "score": 1173.0,
-     "votes": 2839,
+     "model": "Soniox TTS Real-Time v2",
+     "provider": "Soniox",
+     "score": 1180.0,
+     "votes": 6093,
      "range": "24-29",
-     "released": "2026-09",
-     "price": 47.78,
+     "released": "2026-08",
+     "price": 14.23,
      "voices": 8
     },
     {
      "model": "Speech 2.8 HD",
      "provider": "MiniMax",
      "score": 1173.0,
-     "votes": 5716,
+     "votes": 5782,
      "range": "24-29",
      "released": "2026-02",
      "price": 100.0,
      "voices": 8
     },
     {
+     "model": "Gradium TTS (Sep 2026)",
+     "provider": "Gradium",
+     "score": 1172.0,
+     "votes": 2910,
+     "range": "24-30",
+     "released": "2026-09",
+     "price": 47.78,
+     "voices": 8
+    },
+    {
      "model": "Gradium TTS (Oct 2026)",
      "provider": "Gradium",
-     "score": 1170.0,
-     "votes": 2249,
+     "score": 1172.0,
+     "votes": 2301,
      "range": "24-30",
      "released": "2026-09",
      "price": 47.78,
@@ -1648,9 +1646,9 @@
     {
      "model": "SpaceXAI TTS",
      "provider": "SpaceXAI",
-     "score": 1160.0,
-     "votes": 2377,
-     "range": "29-35",
+     "score": 1161.0,
+     "votes": 2433,
+     "range": "28-34",
      "released": "2026-03",
      "price": 15.0,
      "voices": 6
@@ -1658,8 +1656,8 @@
     {
      "model": "Falcon 2",
      "provider": "Murf AI",
-     "score": 1157.0,
-     "votes": 2990,
+     "score": 1156.0,
+     "votes": 3045,
      "range": "30-35",
      "released": "2026-07",
      "price": 10.0,
@@ -1669,7 +1667,7 @@
      "model": "Gradium TTS (Aug 2026)",
      "provider": "Gradium",
      "score": 1155.0,
-     "votes": 3048,
+     "votes": 3112,
      "range": "30-35",
      "released": "2026-08",
      "price": 47.78,
@@ -1679,7 +1677,7 @@
      "model": "Falcon 2.1",
      "provider": "Murf AI",
      "score": 1153.0,
-     "votes": 1533,
+     "votes": 1583,
      "range": "30-36",
      "released": "2026-10",
      "price": 10.0,
@@ -1688,8 +1686,8 @@
     {
      "model": "Speech 2.8 Turbo",
      "provider": "MiniMax",
-     "score": 1151.0,
-     "votes": 5441,
+     "score": 1152.0,
+     "votes": 5486,
      "range": "30-35",
      "released": "2026-02",
      "price": 60.0,
@@ -1699,8 +1697,8 @@
      "model": "Azure HD 2.5",
      "provider": "Microsoft",
      "score": 1149.0,
-     "votes": 3400,
-     "range": "30-36",
+     "votes": 3457,
+     "range": "31-36",
      "released": "2026-03",
      "price": 22.0,
      "voices": 8
@@ -1709,7 +1707,7 @@
      "model": "Async Flash v1.5",
      "provider": "async",
      "score": 1138.0,
-     "votes": 3136,
+     "votes": 3206,
      "range": "35-38",
      "released": "2026-05",
      "price": 10.1,
@@ -1719,7 +1717,7 @@
      "model": "Step TTS 2 (Mar 2026)",
      "provider": "StepFun",
      "score": 1137.0,
-     "votes": 3202,
+     "votes": 3250,
      "range": "36-38",
      "released": "2026-02",
      "price": 40.0,
@@ -1728,38 +1726,38 @@
     {
      "model": "Async Pro v1.0",
      "provider": "async",
-     "score": 1130.0,
-     "votes": 3004,
+     "score": 1131.0,
+     "votes": 3038,
      "range": "36-40",
      "released": "2026-05",
      "price": 20.2,
      "voices": 8
     },
     {
-     "model": "Speech 2.6 Turbo",
-     "provider": "MiniMax",
-     "score": 1124.0,
-     "votes": 4892,
-     "range": "38-41",
-     "released": "2025-10",
-     "price": 60.0,
-     "voices": 8
-    },
-    {
      "model": "Speech 2.6 HD",
      "provider": "MiniMax",
-     "score": 1124.0,
-     "votes": 4657,
+     "score": 1125.0,
+     "votes": 4692,
      "range": "38-41",
      "released": "2025-10",
      "price": 100.0,
      "voices": 8
     },
     {
+     "model": "Speech 2.6 Turbo",
+     "provider": "MiniMax",
+     "score": 1124.0,
+     "votes": 4919,
+     "range": "38-41",
+     "released": "2025-10",
+     "price": 60.0,
+     "voices": 8
+    },
+    {
      "model": "Coda v2",
      "provider": "Rime",
      "score": 1116.0,
-     "votes": 2024,
+     "votes": 2077,
      "range": "39-46",
      "released": "2026-10",
      "price": 50.0,
@@ -1768,28 +1766,18 @@
     {
      "model": "Simba 3.0",
      "provider": "SpeechifyAI",
-     "score": 1112.0,
-     "votes": 3397,
-     "range": "41-47",
+     "score": 1113.0,
+     "votes": 3443,
+     "range": "41-46",
      "released": "2026-02",
      "price": 6.58,
      "voices": 8
     },
     {
-     "model": "Chatterbox HD",
-     "provider": "Resemble AI",
-     "score": 1112.0,
-     "votes": 3009,
-     "range": "41-48",
-     "released": "2025-05",
-     "price": 40.0,
-     "voices": null
-    },
-    {
      "model": "TTS-1 HD",
      "provider": "OpenAI",
-     "score": 1109.0,
-     "votes": 4075,
+     "score": 1110.0,
+     "votes": 4099,
      "range": "41-48",
      "released": "2023-11",
      "price": 30.0,
@@ -1798,49 +1786,59 @@
     {
      "model": "Phonon 31M (English)",
      "provider": "Gradium",
-     "score": 1106.0,
-     "votes": 2011,
-     "range": "41-49",
+     "score": 1110.0,
+     "votes": 2042,
+     "range": "41-48",
      "released": "2026-10",
      "price": 0.0,
      "voices": 8
     },
     {
-     "model": "Speech-02-HD",
-     "provider": "MiniMax",
-     "score": 1103.0,
-     "votes": 4945,
-     "range": "42-51",
-     "released": "2025-03",
-     "price": 100.0,
-     "voices": 4
+     "model": "Chatterbox HD",
+     "provider": "Resemble AI",
+     "score": 1109.0,
+     "votes": 3037,
+     "range": "41-48",
+     "released": "2025-05",
+     "price": 40.0,
+     "voices": null
     },
     {
-     "model": "Fish Audio S2 Pro",
-     "provider": "Fish Audio",
-     "score": 1102.0,
-     "votes": 3053,
-     "range": "42-52",
-     "released": "2026-03",
-     "price": 15.0,
+     "model": "Speech-02-HD",
+     "provider": "MiniMax",
+     "score": 1104.0,
+     "votes": 4964,
+     "range": "42-50",
+     "released": "2025-03",
+     "price": 100.0,
      "voices": 4
     },
     {
      "model": "Step Audio EditX (Mar 2026)",
      "provider": "StepFun",
      "score": 1101.0,
-     "votes": 2660,
+     "votes": 2695,
      "range": "43-53",
      "released": "2026-02",
      "price": null,
      "voices": 2
     },
     {
+     "model": "Fish Audio S2 Pro",
+     "provider": "Fish Audio",
+     "score": 1101.0,
+     "votes": 3089,
+     "range": "43-53",
+     "released": "2026-03",
+     "price": 15.0,
+     "voices": 4
+    },
+    {
      "model": "Turbo v2.5",
      "provider": "ElevenLabs",
      "score": 1095.0,
-     "votes": 7317,
-     "range": "46-54",
+     "votes": 7335,
+     "range": "46-55",
      "released": "2024-07",
      "price": 50.0,
      "voices": 8
@@ -1848,9 +1846,9 @@
     {
      "model": "Voxtral TTS",
      "provider": "Mistral",
-     "score": 1093.0,
-     "votes": 2796,
-     "range": "46-56",
+     "score": 1094.0,
+     "votes": 2821,
+     "range": "46-55",
      "released": "2026-03",
      "price": 16.0,
      "voices": 3

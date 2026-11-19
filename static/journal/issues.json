@@ -1,5 +1,11 @@
 [
   {
+    "volume": 27,
+    "date": "2026-11-19",
+    "headline": "Generate multiple images from a single prompt",
+    "intro": "今天的主线不是“生成又快了一点”，而是比较、治理、测量和失败态开始变成默认工作流。Figma 让同一个 prompt 横向出多个候选，也把 OAuth app 与 MCP client 拉进管理员白名单；Vercel 开始测 SPA 的软导航，并把静态交付压到一秒级；Chrome 则直接暴露媒体卡顿状态给前端调试。效率真正拉开差距的地方，已经从会不会生成，转向能不能选、能不能管、能不能验。除页面与播放器状态外，今天这些产品更新都还没实测，不替官方说明扩写体验结论。"
+  },
+  {
     "volume": 26,
     "date": "2026-11-18",
     "headline": "GitHub Copilot Evals",
