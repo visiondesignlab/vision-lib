@@ -1,0 +1,401 @@
+[
+  {
+    "sourcePath": "../contact_sheets/04_casillero-del-diablo-legend_selected_keyframes.jpg",
+    "localPath": "assets/contact_sheets/04_casillero-del-diablo-legend_selected_keyframes.jpg",
+    "driveFileId": "1Sj8EcxR3enCGNcaViY2-ExIh45fQHEvs",
+    "size": 544342,
+    "sha256": "b8881ed8c99d05bda387c0763537af8d58dce3147bbc8fb56959e3053d32da93"
+  },
+  {
+    "sourcePath": "../keyframes/04_casillero-del-diablo-legend/K01_00-02-000.jpg",
+    "localPath": "assets/keyframes/K01_00-02-000.jpg",
+    "driveFileId": "1uwYv5NAg2iFfLAhJF7mJya5On_uPfg_E",
+    "size": 223756,
+    "sha256": "5a20d54b4a4cca32bf325cb3c4a1d804686b62bcbdb6046181e30c56e1f798a9"
+  },
+  {
+    "sourcePath": "../keyframes/04_casillero-del-diablo-legend/K02_00-06-500.jpg",
+    "localPath": "assets/keyframes/K02_00-06-500.jpg",
+    "driveFileId": "1rTgOLYr5JfEO6UTRwoHcSO1YlQ7Fv88i",
+    "size": 106310,
+    "sha256": "8f6ec20a326ccde716afcb1be692e7a5f3dfa224e5d609954e3370722e4068a9"
+  },
+  {
+    "sourcePath": "../keyframes/04_casillero-del-diablo-legend/K03_00-18-500.jpg",
+    "localPath": "assets/keyframes/K03_00-18-500.jpg",
+    "driveFileId": "1TaKbaJSohuxwajlnaxzLD-KE3ee25IJo",
+    "size": 166767,
+    "sha256": "0799a798b12dab39ca55b4db6750b3d6271325b17babaad5e9368302c4bd459c"
+  },
+  {
+    "sourcePath": "../keyframes/04_casillero-del-diablo-legend/K04_00-39-000.jpg",
+    "localPath": "assets/keyframes/K04_00-39-000.jpg",
+    "driveFileId": "1I6QP6SRgxQHqzui72RrUWPUnih8zYahw",
+    "size": 153000,
+    "sha256": "c2051ca473515696746b30dd68f9a3f10e870e9c622abb11f59afa843854ab77"
+  },
+  {
+    "sourcePath": "../keyframes/04_casillero-del-diablo-legend/K05_01-07-000.jpg",
+    "localPath": "assets/keyframes/K05_01-07-000.jpg",
+    "driveFileId": "1Vg9LGqItiII8y-6nESJ5FJZfHBlzbHcO",
+    "size": 140667,
+    "sha256": "129919138a06cfdbfb6dbc75d2e99560a57b5782d49199ea5646dde7a4994a74"
+  },
+  {
+    "sourcePath": "../keyframes/04_casillero-del-diablo-legend/K06_01-31-500.jpg",
+    "localPath": "assets/keyframes/K06_01-31-500.jpg",
+    "driveFileId": "1XuvWmc9TwrgYXIHwCzVdKtXcXXSkGMoY",
+    "size": 118303,
+    "sha256": "c1cf5aa6be28fca40d58c4a03d7f7d8613b798aa2434d01115c81737bee7cf51"
+  },
+  {
+    "sourcePath": "../keyframes/04_casillero-del-diablo-legend/K07_02-00-000.jpg",
+    "localPath": "assets/keyframes/K07_02-00-000.jpg",
+    "driveFileId": "1lzUkpnkZSif8WVyaaGHWmMJG87m8N5td",
+    "size": 77815,
+    "sha256": "585550207f477ac677f279eedbd61e6c923c2e2ee2213b148027f241af909e56"
+  },
+  {
+    "sourcePath": "../keyframes/04_casillero-del-diablo-legend/K08_02-30-000.jpg",
+    "localPath": "assets/keyframes/K08_02-30-000.jpg",
+    "driveFileId": "1CkNISTXS-gS9T1UfZrgRzSvjvDKa6svQ",
+    "size": 29326,
+    "sha256": "1dbe8baf4d1f5654605d861de1e511a70554a643d106df614fad1c452a3ee400"
+  },
+  {
+    "sourcePath": "../keyframes/04_casillero-del-diablo-legend/K09_02-52-000.jpg",
+    "localPath": "assets/keyframes/K09_02-52-000.jpg",
+    "driveFileId": "1QOstauIbYkMfa2wX7Yq8kL2q-l95sJ4L",
+    "size": 127382,
+    "sha256": "4b80762df9a47736222eb58bc1c821e184ae132c70f67728a8e7ca6c356fc39a"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_001_00-00-00.550.jpg",
+    "localPath": "assets/frames/shot_001_00-00-00.550.jpg",
+    "driveFileId": "1NeLN4zoZ-8vFmWvlH4CrW8gS4yOnbAYv",
+    "size": 171422,
+    "sha256": "618eaa09182d405fad5d3f76c2cadf56f9eedd8b5bca5b98cd53cb15553c5f6a"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_002_00-00-09.425.jpg",
+    "localPath": "assets/frames/shot_002_00-00-09.425.jpg",
+    "driveFileId": "1pO6ZzJLhyg9X42EAhvBi92_N8X-O1Mv9",
+    "size": 96501,
+    "sha256": "e532a53a7ee6fcc632eb74a25f35b3a236a38efd688b1e07392f1b68d0be0e38"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_003_00-00-19.383.jpg",
+    "localPath": "assets/frames/shot_003_00-00-19.383.jpg",
+    "driveFileId": "1KqQQRl5UlxMSWyVDJbKGKTYDdtkgToQW",
+    "size": 124824,
+    "sha256": "a9cffb9f48884444191bdb52edfcd738db7cc13f2415f99f3658de78f24dc75b"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_004_00-00-23.378.jpg",
+    "localPath": "assets/frames/shot_004_00-00-23.378.jpg",
+    "driveFileId": "1b2NqM-yVFwSXYwSsfR9pq6DGBnKTT4w-",
+    "size": 20644,
+    "sha256": "bfa08326ba1ac624fbce7f32d45ab72a6ea6eecb3723dafa619a2a95ac003b21"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_005_00-00-24.045.jpg",
+    "localPath": "assets/frames/shot_005_00-00-24.045.jpg",
+    "driveFileId": "1lartV8VbFNVXMml3SaFpxNpGY5E3vEcy",
+    "size": 29561,
+    "sha256": "4cc4839da076f0e08bee3a8694db66b32e0f9389531429334ed554406b0868c1"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_006_00-00-24.696.jpg",
+    "localPath": "assets/frames/shot_006_00-00-24.696.jpg",
+    "driveFileId": "1l7Aiy3ekAsssOUKGWmsv06cHJBffZbP0",
+    "size": 31248,
+    "sha256": "e0843b8f46636d1896999303eb7359443e9d6ede9c60cd373a85fc9eacde0b3a"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_007_00-00-25.633.jpg",
+    "localPath": "assets/frames/shot_007_00-00-25.633.jpg",
+    "driveFileId": "17BDawjgn_ZVGfxViCLy2rLZ890qgT11a",
+    "size": 125706,
+    "sha256": "aca278ead2a3938118cc8dd7a92ac00fe70c427ca40dc95425c94cf32c70f3ea"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_008_00-00-27.842.jpg",
+    "localPath": "assets/frames/shot_008_00-00-27.842.jpg",
+    "driveFileId": "1j5ZKbqpQR_pSpXNo0AdstIejz_0K0xe6",
+    "size": 110310,
+    "sha256": "4e96550de0d2bb8694e8d5a509352817dc38da1decc5a573a57f46c98ac02eb5"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_009_00-00-30.758.jpg",
+    "localPath": "assets/frames/shot_009_00-00-30.758.jpg",
+    "driveFileId": "1xDDEYOzaAasF6NPLK3BPoNSxn0ZdOokt",
+    "size": 100262,
+    "sha256": "1c7f4ff3bf63dca78e11dad7c34400c8e8f6e707ac6213d7be1b80181ce9cd5a"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_010_00-00-34.633.jpg",
+    "localPath": "assets/frames/shot_010_00-00-34.633.jpg",
+    "driveFileId": "1rhQ2yZwYbxRvU43oBXJBT9MyAZraZzfq",
+    "size": 122743,
+    "sha256": "ee81ac4587d685c57ac4ae6423edcf161d15ce7ab34583c2fcaa9957398a3f8f"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_011_00-00-36.508.jpg",
+    "localPath": "assets/frames/shot_011_00-00-36.508.jpg",
+    "driveFileId": "12Nj_eRrRQwB1GF0phUudZ_3paITYwtZg",
+    "size": 135654,
+    "sha256": "7a7403571fa480b6d8e0a800137ccb5be2cffd12c2aca07470ba0f21799913da"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_012_00-00-38.800.jpg",
+    "localPath": "assets/frames/shot_012_00-00-38.800.jpg",
+    "driveFileId": "1VuqzJQJBJYCJCGbf_sUJINFacC_m3kiK",
+    "size": 135422,
+    "sha256": "351fb755656043a79eedf511bc5bde369431b46f917960b74e6a75e8752777d7"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_013_00-00-46.300.jpg",
+    "localPath": "assets/frames/shot_013_00-00-46.300.jpg",
+    "driveFileId": "1z3nAZ85ENjtR1xGCXTy9Xy0-df7rpQUb",
+    "size": 117133,
+    "sha256": "ad898aed17156f09dcdb97f60ec14f02c31335500190bb6436a4f42254e436f8"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_014_00-00-49.967.jpg",
+    "localPath": "assets/frames/shot_014_00-00-49.967.jpg",
+    "driveFileId": "161Po_gtP8F3Yv2PwbjwxQvVg_eZFjluU",
+    "size": 161919,
+    "sha256": "630f95e9d29275730f410be525b656f7c026e78106e45c9eb4b4c6fdac0c257a"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_015_00-00-53.550.jpg",
+    "localPath": "assets/frames/shot_015_00-00-53.550.jpg",
+    "driveFileId": "1JjARMQmhRelUcpV1cIQgIkZXe91q7Xx2",
+    "size": 138477,
+    "sha256": "b636460cdd1f789f0ce858fa2532d6f90dc3cd47c11cd1938d426bff95a28c73"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_016_00-01-00.870.jpg",
+    "localPath": "assets/frames/shot_016_00-01-00.870.jpg",
+    "driveFileId": "1GEgqDRbA_ACGYvhHJsjHH9_YxhS-0MW1",
+    "size": 66425,
+    "sha256": "c3ce328f7733512fa175dab120c9bc576c65c2ea5581f2b8c58f5ed4c6bb70b3"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_017_00-01-02.092.jpg",
+    "localPath": "assets/frames/shot_017_00-01-02.092.jpg",
+    "driveFileId": "1n69ANPwkKmlYk6dCMq35xOOOIWhUMOWR",
+    "size": 146331,
+    "sha256": "010692871208625f99dba584be4ea4763ffe00cb4f7ac996ba27a79292ae3e8b"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_018_00-01-03.252.jpg",
+    "localPath": "assets/frames/shot_018_00-01-03.252.jpg",
+    "driveFileId": "1aO0ZdySyWwMgMGUJckRQF-e3CjMsJBMg",
+    "size": 276717,
+    "sha256": "32ee2653be8f959206db248d17b694f9660a1948fe70b10c631917d95f77bfad"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_019_00-01-04.008.jpg",
+    "localPath": "assets/frames/shot_019_00-01-04.008.jpg",
+    "driveFileId": "1OOkrBcGRNqMf47F0JUYlJ3RZIJhvKyoM",
+    "size": 251187,
+    "sha256": "2dd33dcc5eef82c24ad7997c9a19c46ce7c87e8f4bfb74eef95d9035bbdafaa2"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_020_00-01-05.967.jpg",
+    "localPath": "assets/frames/shot_020_00-01-05.967.jpg",
+    "driveFileId": "1UUpJBE6PuglMxAvoLn-n-5TNvpWvboXB",
+    "size": 116241,
+    "sha256": "6f1b695c0b52dd2e01a19976fbdc32a056b900d6b774146a990896764ec0baff"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_021_00-01-08.258.jpg",
+    "localPath": "assets/frames/shot_021_00-01-08.258.jpg",
+    "driveFileId": "1aN1qFVEWwamoWw2eBHdYVLzBanL6G1Ms",
+    "size": 120657,
+    "sha256": "bea7ebe052d5ae1c8ecb90b6d9b4c7a1770c5aea99614e27a19bd1c4ab9f5f9d"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_022_00-01-09.710.jpg",
+    "localPath": "assets/frames/shot_022_00-01-09.710.jpg",
+    "driveFileId": "1Co-iUeqCtfgKPWJfndVpVyZE0kWqOaju",
+    "size": 84925,
+    "sha256": "9f3f83c6e693278ba950437118048a1b98d2fbdca0f6e2ab1115a2abee8c3715"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_023_00-01-10.467.jpg",
+    "localPath": "assets/frames/shot_023_00-01-10.467.jpg",
+    "driveFileId": "1JkpJkAWfLqD0vERXgXNgBYrrzKIijZzu",
+    "size": 93570,
+    "sha256": "28417ee7d1f86ac6a1ed5d23301a5e57632cb6eb826d2491c6213292f35dfa8c"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_024_00-01-16.835.jpg",
+    "localPath": "assets/frames/shot_024_00-01-16.835.jpg",
+    "driveFileId": "1qiV4qXd13lgWj3x2V2Ygwj-sohk4I-Cf",
+    "size": 125469,
+    "sha256": "a60dea73bb62be00ac9e09ea959caf1ed33e15b0c502a8588140d69e9f53897c"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_025_00-01-17.592.jpg",
+    "localPath": "assets/frames/shot_025_00-01-17.592.jpg",
+    "driveFileId": "1TXaXOuc1_LRXdN0nCgI0x-wt25EdvyTF",
+    "size": 126179,
+    "sha256": "dc3035d8b08b8d4ee9639e1445cfc1736fe6e864c544f99c29383cb01a7ddef5"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_026_00-01-19.175.jpg",
+    "localPath": "assets/frames/shot_026_00-01-19.175.jpg",
+    "driveFileId": "1BMpq7e5XdHYGKDCUspOQKFvCpLlMuBvV",
+    "size": 125980,
+    "sha256": "67eabd3fe590b5df4bb8c4bbafbd1375cd8d8799df84c8eedac4876be34e9f3a"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_027_00-01-21.842.jpg",
+    "localPath": "assets/frames/shot_027_00-01-21.842.jpg",
+    "driveFileId": "1uskFpHdLcdxeE2IEiQvGQPdLALZM8HBw",
+    "size": 248680,
+    "sha256": "20d408c8499a4ca6b9d8d72e8226063b011c368fd60d8db897dc685354ea8a61"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_028_00-01-24.467.jpg",
+    "localPath": "assets/frames/shot_028_00-01-24.467.jpg",
+    "driveFileId": "1L8cR1nPoTIIqWXZxRgHnZYju4L-QkUN5",
+    "size": 151634,
+    "sha256": "e4e8e379800d3cb73790bc225a45a247462a7781c2ab5718e1d853785ea087d7"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_029_00-01-26.758.jpg",
+    "localPath": "assets/frames/shot_029_00-01-26.758.jpg",
+    "driveFileId": "1C518trKJ8lbw1yrguxRIhfQ3b7IVEDki",
+    "size": 245610,
+    "sha256": "ef411048185c3ad1924ae091b071d8d991dc2ad166f45ea8b3a641ec045a6198"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_030_00-01-28.383.jpg",
+    "localPath": "assets/frames/shot_030_00-01-28.383.jpg",
+    "driveFileId": "1-fa5SX_G9gAuH5jR9nMDa77RQ8viqUX8",
+    "size": 155674,
+    "sha256": "b53808c4e44531fa9461583a2de27b18dfa7349d7ddd5db43d2f4047d750f899"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_031_00-01-31.085.jpg",
+    "localPath": "assets/frames/shot_031_00-01-31.085.jpg",
+    "driveFileId": "13cQRixIsobgQtpOBg3fPKp6SwvZxaaXf",
+    "size": 99160,
+    "sha256": "a76ef1c5083ce498a05f460b7d999bdde459c82bcac829f3866759c01ee7a8bd"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_032_00-01-31.640.jpg",
+    "localPath": "assets/frames/shot_032_00-01-31.640.jpg",
+    "driveFileId": "1GFGvc0O8jhlg39ta9NlcVJd3eHjWYxZv",
+    "size": 107628,
+    "sha256": "c1d019f529384a09312906a37429877f651680a2e1fb72b1eae4f639a4af7cbe"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_033_00-01-32.683.jpg",
+    "localPath": "assets/frames/shot_033_00-01-32.683.jpg",
+    "driveFileId": "11m81Z10XYRyoR3pHkxOCWithK6oCpsKX",
+    "size": 121844,
+    "sha256": "4f407852b7fa23df244d31f1d904f7d9d027dea176098525442e0004d6d58ed5"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_034_00-01-34.008.jpg",
+    "localPath": "assets/frames/shot_034_00-01-34.008.jpg",
+    "driveFileId": "1VBX5tuRYGwe9Q83MsVOvY-EMu3miKiuk",
+    "size": 147616,
+    "sha256": "0bca06c83268c80bf411f039b09fbfb95ee99b1042b38d3b1f6357ed43b4718a"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_035_00-01-37.592.jpg",
+    "localPath": "assets/frames/shot_035_00-01-37.592.jpg",
+    "driveFileId": "11E5aJJcoArhp7mKKiacHQ-i00KxB8ADy",
+    "size": 188881,
+    "sha256": "f28e54530df5945ff36eee2c15a2c996fd16561b5e3e7056167fbf042a910125"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_036_00-01-42.842.jpg",
+    "localPath": "assets/frames/shot_036_00-01-42.842.jpg",
+    "driveFileId": "1u-HEzKVmnqA4ZHAFY39sujXKmVEosGD6",
+    "size": 143820,
+    "sha256": "8926e5b20d21ca2f3f784be05924355f4800157e2012da37ec646ebae964ebdb"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_037_00-01-45.592.jpg",
+    "localPath": "assets/frames/shot_037_00-01-45.592.jpg",
+    "driveFileId": "1YWYnwn7hqmA3bUwUy9bD4tp2drKwMzbB",
+    "size": 140740,
+    "sha256": "c941885a1379bc5cbee91cc5be1c0bf6ac7b2fe26acb438cbe5a69bd8ef52fdd"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_038_00-01-47.550.jpg",
+    "localPath": "assets/frames/shot_038_00-01-47.550.jpg",
+    "driveFileId": "1FgAE8nLvu4WtiJZbpTjw8kNuX8eDIxQw",
+    "size": 89861,
+    "sha256": "22639648f94dc1a69cc1e2afc0b93699c99a8e2c0602ce3baca5822795051364"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_039_00-01-49.717.jpg",
+    "localPath": "assets/frames/shot_039_00-01-49.717.jpg",
+    "driveFileId": "1QY5LjiR2HNkfVG63UYi6TS-IMxZlSC_W",
+    "size": 117522,
+    "sha256": "bc9eefb5d29461abc215554e55bdfc37d927535f0d6421fe9c212dd1679f3858"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_040_00-02-06.592.jpg",
+    "localPath": "assets/frames/shot_040_00-02-06.592.jpg",
+    "driveFileId": "1JmKEbnUBIBNVopJYBrqd4po1DNKqGJ6E",
+    "size": 105206,
+    "sha256": "4a71fc255f30f43894f4967d8a16ab87d5796ea58887caf4efad8a4c3b0318f5"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_041_00-02-26.008.jpg",
+    "localPath": "assets/frames/shot_041_00-02-26.008.jpg",
+    "driveFileId": "1v4m7qCt8fo_3tmYbqH4WYnitEHIbhjHA",
+    "size": 122064,
+    "sha256": "750ce1310f94131c8b1d86f8f2e1d198a1d62a33a909fa666855812ad2fa8a25"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_042_00-02-27.633.jpg",
+    "localPath": "assets/frames/shot_042_00-02-27.633.jpg",
+    "driveFileId": "1My5KaKBFsO9GYSefhk_qpQzjEF-QodqV",
+    "size": 19679,
+    "sha256": "e0ae6d68842b4ba4374dca0c769fda76dcbc8c96f2d1221a8192939cc84b3ec0"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_043_00-02-31.236.jpg",
+    "localPath": "assets/frames/shot_043_00-02-31.236.jpg",
+    "driveFileId": "1-w4DHiqHM61HyxUIritLIlIykPUsrtvf",
+    "size": 150542,
+    "sha256": "e9bb617c4a73710ee58a5d54909acc401ab0203b4b7af14d49e6eba4fdef1b53"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_044_00-02-31.638.jpg",
+    "localPath": "assets/frames/shot_044_00-02-31.638.jpg",
+    "driveFileId": "1bAwmuZ7a-oL4766ytv_iZbRHUIog8lD4",
+    "size": 77536,
+    "sha256": "e9ae113c94aebbeb362321419147360f0bc7a63b360a69af12a766467385c14d"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_045_00-02-32.253.jpg",
+    "localPath": "assets/frames/shot_045_00-02-32.253.jpg",
+    "driveFileId": "1dzgcBxBPgHst5CoeMSkhRdozWtRyrCfq",
+    "size": 70892,
+    "sha256": "f860f2f06ac9efc27cfa830d093ee0accbf046c0438b2ebfa9be3ffa6f7f5977"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_046_00-02-33.217.jpg",
+    "localPath": "assets/frames/shot_046_00-02-33.217.jpg",
+    "driveFileId": "1JTmYA9Z3COodQmvIuavOdHgOshZiprx0",
+    "size": 104682,
+    "sha256": "21f05353037a2a7b259976f110141098a38e647dff1309e825d34aab6779575c"
+  },
+  {
+    "sourcePath": "../frames/04_SMOG_Reveals_the_Devilish_Details_Behind_the_Legend_of_Casillero_del_Diablo_1132507925/shot_047_00-02-41.592.jpg",
+    "localPath": "assets/frames/shot_047_00-02-41.592.jpg",
+    "driveFileId": "17cTHRLBTTC-FWKdYpINrk7mdtm4VTHXT",
+    "size": 146000,
+    "sha256": "ee7080a3fcc3d6efc4ca79a14cf7dac72d1e9000b8c2031d870221574d08c626"
+  }
+]

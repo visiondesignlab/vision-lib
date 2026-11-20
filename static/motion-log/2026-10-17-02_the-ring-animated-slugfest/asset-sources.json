@@ -1,0 +1,905 @@
+[
+  {
+    "sourcePath": "../contact_sheets/02_the-ring-animated-slugfest_selected_keyframes.jpg",
+    "localPath": "assets/contact_sheets/02_the-ring-animated-slugfest_selected_keyframes.jpg",
+    "driveFileId": "1rgILbrKlInUa9PFxII-SKUIR4clwi7xH",
+    "size": 727027,
+    "sha256": "6be510e42b2afb8154f3ea31b1b213babbb53cb423b378a2df162ee12e3f52af"
+  },
+  {
+    "sourcePath": "../keyframes/02_the-ring-animated-slugfest/K01_00-01-000.jpg",
+    "localPath": "assets/keyframes/K01_00-01-000.jpg",
+    "driveFileId": "1HLkKC7GkPkCoit-yBHcASADgDdItUdgW",
+    "size": 92441,
+    "sha256": "951f0f92e1a4fcb799bcd611234313585bb92b7830e5108e3d9a21d5d917e29e"
+  },
+  {
+    "sourcePath": "../keyframes/02_the-ring-animated-slugfest/K02_00-08-800.jpg",
+    "localPath": "assets/keyframes/K02_00-08-800.jpg",
+    "driveFileId": "1z7ZgEcQjNjJMS_jYHtLOt0FM0tvuct2Z",
+    "size": 536167,
+    "sha256": "e123d600f046db8770b05ba0eb198874147f2f65b5fd557099074a89e0033b60"
+  },
+  {
+    "sourcePath": "../keyframes/02_the-ring-animated-slugfest/K03_00-17-800.jpg",
+    "localPath": "assets/keyframes/K03_00-17-800.jpg",
+    "driveFileId": "16zg2VY66j-FThK9h-CPWmgheH8UqtoXA",
+    "size": 297151,
+    "sha256": "014bd1217570131ac952e447a6b052fca1874a83081c12f65a81aa10c2288524"
+  },
+  {
+    "sourcePath": "../keyframes/02_the-ring-animated-slugfest/K04_00-28-500.jpg",
+    "localPath": "assets/keyframes/K04_00-28-500.jpg",
+    "driveFileId": "1EBcViwREodevEWK2NwsgtC-g8XmIrXPc",
+    "size": 208512,
+    "sha256": "e392b2265f78a774bf9b153b4567cd58c1cb9c3f86196f9fb6e7e4b1cd33c6c5"
+  },
+  {
+    "sourcePath": "../keyframes/02_the-ring-animated-slugfest/K05_00-44-200.jpg",
+    "localPath": "assets/keyframes/K05_00-44-200.jpg",
+    "driveFileId": "1d4s4RjzoNZYHSZS70QlC4md7tfArZjlP",
+    "size": 494108,
+    "sha256": "98cc199d5ce8d4f5101a4618c3b21b40186dfbd8912fdf3431aaea6baa9fd742"
+  },
+  {
+    "sourcePath": "../keyframes/02_the-ring-animated-slugfest/K06_01-06-000.jpg",
+    "localPath": "assets/keyframes/K06_01-06-000.jpg",
+    "driveFileId": "122EsGSI6vm1eCD-HNyNrffxb5eoOGroK",
+    "size": 828524,
+    "sha256": "f3a7b7a0872074995bf0a8a8a3816ac5182ce3da72bb9764ad678000a13534ff"
+  },
+  {
+    "sourcePath": "../keyframes/02_the-ring-animated-slugfest/K07_01-24-500.jpg",
+    "localPath": "assets/keyframes/K07_01-24-500.jpg",
+    "driveFileId": "1-m28ED6qOg86e1mwABGRNN0_RYLaNcKH",
+    "size": 334225,
+    "sha256": "f10db227bc2e35bc587f88cc74d6b140bb3e7dd838b254a141c07923bf77a0dc"
+  },
+  {
+    "sourcePath": "../keyframes/02_the-ring-animated-slugfest/K08_01-45-800.jpg",
+    "localPath": "assets/keyframes/K08_01-45-800.jpg",
+    "driveFileId": "184EDXlPf6p8N430BFluing2fgCaqdrPB",
+    "size": 810682,
+    "sha256": "2e762206cb81910af96bcde0b57a3132815d7eb6a628bd7612159de5e678f8ee"
+  },
+  {
+    "sourcePath": "../keyframes/02_the-ring-animated-slugfest/K09_01-59-600.jpg",
+    "localPath": "assets/keyframes/K09_01-59-600.jpg",
+    "driveFileId": "1YXZLh9SgqWi_rmaSS1NmkQAFLmfKU9DZ",
+    "size": 417111,
+    "sha256": "e5a0c8d2aad485e62887a3f2b3c577464981490802a8ed40fc4a68f042d32df8"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_001_00-00-00.550.jpg",
+    "localPath": "assets/frames/shot_001_00-00-00.550.jpg",
+    "driveFileId": "1MHsuovKC5-HlXbKDK47mn9U-xPry4B0F",
+    "size": 66344,
+    "sha256": "579db8664a9e5d9ad15c502bf52f074aed10c277d502bcc3eb7548ca47879814"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_002_00-00-02.091.jpg",
+    "localPath": "assets/frames/shot_002_00-00-02.091.jpg",
+    "driveFileId": "1oIQOJ1ucY_9RXBqM_-ArD0Zh27syhFcs",
+    "size": 241744,
+    "sha256": "43303ca5c46e87ed4dc4aaa44f89c88ea67a44ff7195060e7f4ccd3cddf61f3f"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_003_00-00-08.466.jpg",
+    "localPath": "assets/frames/shot_003_00-00-08.466.jpg",
+    "driveFileId": "197MWBXnk0vCY1o8KE0cigu6xWANIZ-Q0",
+    "size": 487059,
+    "sha256": "3d193d87df39b66c4c09ecdc1f7e5723b24ba92cf628fa66f150b04d09a2c0a2"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_004_00-00-10.133.jpg",
+    "localPath": "assets/frames/shot_004_00-00-10.133.jpg",
+    "driveFileId": "1Pb8INeU6CWlmA28zKd9TWpJgKIBfrwf0",
+    "size": 215229,
+    "sha256": "8f5cffc38f96601140281f966829df0e27cf1cee7c73bb93a12fe75d294a75dd"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_005_00-00-11.591.jpg",
+    "localPath": "assets/frames/shot_005_00-00-11.591.jpg",
+    "driveFileId": "145p5AeDT7FN9dtZvQgcIVRvB2-ofLel7",
+    "size": 344106,
+    "sha256": "26aa6dbdea30f177bcd37267a87e58b1764521d4313c43d3ee4ba98e1fb5abd6"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_006_00-00-13.424.jpg",
+    "localPath": "assets/frames/shot_006_00-00-13.424.jpg",
+    "driveFileId": "15uBZjl2FGYhvYpUtfo_WWL6kpfa0PRb7",
+    "size": 266384,
+    "sha256": "29fb44d6e7c6563a6662a01c10f17248d8270ac079fe88f355dc7cdb015b6cf7"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_007_00-00-15.674.jpg",
+    "localPath": "assets/frames/shot_007_00-00-15.674.jpg",
+    "driveFileId": "14zun4GP8t8TZ0b1J9oqhIOSts94bkL3I",
+    "size": 277932,
+    "sha256": "4fb87650f396eda6335ddc66ebb83bac97303b7f1df78a82b2358af21dc4610b"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_008_00-00-17.674.jpg",
+    "localPath": "assets/frames/shot_008_00-00-17.674.jpg",
+    "driveFileId": "1AkPRrpAycPimcYjTTR2RNr1tE73VFRCX",
+    "size": 261994,
+    "sha256": "2f9bcb12280bdfe7b49dd6878e05950035c2a826f0f37d0aaf2dd9ec76e5ceb0"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_009_00-00-20.776.jpg",
+    "localPath": "assets/frames/shot_009_00-00-20.776.jpg",
+    "driveFileId": "10TnJkGmiNVwFMDFyTdpz38CNTH8eOmd5",
+    "size": 385752,
+    "sha256": "edf2710a95ab87e373d4940905fad8f064937f91937264a619d06f2107eb97ae"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_010_00-00-22.049.jpg",
+    "localPath": "assets/frames/shot_010_00-00-22.049.jpg",
+    "driveFileId": "1lWdFc-b5S8vBErsyDWNj8lNmtCOUX7Si",
+    "size": 258027,
+    "sha256": "cd3749d8a50a7bbf3e7d16b601898800f9a992d87dfe831fa831e7fe92a55a65"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_011_00-00-23.633.jpg",
+    "localPath": "assets/frames/shot_011_00-00-23.633.jpg",
+    "driveFileId": "1r-_fJeK6KECdUiOwmU-9Eug3d2AJFYDC",
+    "size": 407917,
+    "sha256": "4911a984024979f07b3e03c3568b2e135aec5ab8a86388704e5c785efc445904"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_012_00-00-25.716.jpg",
+    "localPath": "assets/frames/shot_012_00-00-25.716.jpg",
+    "driveFileId": "1IEJw3XM1vSpFR_C8dXFZAlrjte68EjAX",
+    "size": 288471,
+    "sha256": "90cacfb6198896227302dc2d6bf27684b8135c785b0d8b67514823e7e8afc2fc"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_013_00-00-30.258.jpg",
+    "localPath": "assets/frames/shot_013_00-00-30.258.jpg",
+    "driveFileId": "1qoZOgSgF_hPny6VgWp4a_wduUKOt4i9R",
+    "size": 474972,
+    "sha256": "9cd57f1c61fa1664371977833b58ca080deddf919c3f451e3aa3d05bbaeb520e"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_014_00-00-32.091.jpg",
+    "localPath": "assets/frames/shot_014_00-00-32.091.jpg",
+    "driveFileId": "1w8I3ySJlx0HZz_CxRWAla9UpM1CQER4S",
+    "size": 218393,
+    "sha256": "dbab6b60b6f91acd87f264fdf8fbb1be1c209858fc33fe036938789692a254b0"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_015_00-00-33.883.jpg",
+    "localPath": "assets/frames/shot_015_00-00-33.883.jpg",
+    "driveFileId": "1OXxsd0kYlBL_KahjIYaGrz2oUHquVbMv",
+    "size": 172441,
+    "sha256": "c174896fcce7e06a6ee876f103998ea8b66083247398212e2f3c8b18417ee32b"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_016_00-00-35.424.jpg",
+    "localPath": "assets/frames/shot_016_00-00-35.424.jpg",
+    "driveFileId": "13DxG_mxgQQ-Nd3xkQtYOh01gmD803uSN",
+    "size": 272118,
+    "sha256": "87364381498430ecd3a81a234973c5f8447c9b048bba124fa9eac09fe2c738ae"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_017_00-00-36.776.jpg",
+    "localPath": "assets/frames/shot_017_00-00-36.776.jpg",
+    "driveFileId": "1tKFvi6tpAb96WFKVwI67KRbwheGc0C-6",
+    "size": 340039,
+    "sha256": "59a723cf8e6898e8e9b055d213e93c4eb473d20df513140929a3c2a074ff7cd2"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_018_00-00-37.895.jpg",
+    "localPath": "assets/frames/shot_018_00-00-37.895.jpg",
+    "driveFileId": "14U6njjVhpchc49P10gh-nD2xW2DDCLOH",
+    "size": 291244,
+    "sha256": "b4b1b20178b882893cb4a53744ee28531feff57cffbaaa4b3dc3d8fbf214bdd5"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_019_00-00-39.091.jpg",
+    "localPath": "assets/frames/shot_019_00-00-39.091.jpg",
+    "driveFileId": "1QDKoeO0T4DxqFpVmQ2FL8QdOQYMlf8rx",
+    "size": 250246,
+    "sha256": "205781c87e9fbdccf8e3f040b948edfdb75f1e82847e3f65712b825d541af134"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_020_00-00-40.657.jpg",
+    "localPath": "assets/frames/shot_020_00-00-40.657.jpg",
+    "driveFileId": "1x3jrSvom9Azd8vncNHkR-EDFffsKnWRt",
+    "size": 362411,
+    "sha256": "16baaf83c86f265d420fbae8cd35b1fe8511d3d51f5693eb612fb037567ba52c"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_021_00-00-42.008.jpg",
+    "localPath": "assets/frames/shot_021_00-00-42.008.jpg",
+    "driveFileId": "1h4cLtW-j1IJ-d2vml2bbMfyibBfM7E0F",
+    "size": 218038,
+    "sha256": "a96622eb88cf2db14c97ffa596acf2010bb001cd1de3d5981e058be10d09d05c"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_022_00-00-45.124.jpg",
+    "localPath": "assets/frames/shot_022_00-00-45.124.jpg",
+    "driveFileId": "1d-OIpK0Q4sTU3YC_oCAg2SqhNH71TakH",
+    "size": 721525,
+    "sha256": "55d7b3a87a1ec70ded811ac9b8fa58ad827e1ff01d050f123eacba75bc9135d8"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_023_00-00-45.809.jpg",
+    "localPath": "assets/frames/shot_023_00-00-45.809.jpg",
+    "driveFileId": "1l1o8-DArti__pjoMFcaqAfKjiJbE7KHp",
+    "size": 621834,
+    "sha256": "a6fdf5a6e0a46a369eabe203dd5be6c6003c7bd3ce14091e57ead299fdc93c8b"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_024_00-00-46.184.jpg",
+    "localPath": "assets/frames/shot_024_00-00-46.184.jpg",
+    "driveFileId": "1zRoT7vPNl3Kx5d_yokIcPcBeGnuVfOPR",
+    "size": 709319,
+    "sha256": "4963c7eebf5fc0f4f04c6116575d4eee9808691e14df56952c29c256d167deb0"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_025_00-00-46.559.jpg",
+    "localPath": "assets/frames/shot_025_00-00-46.559.jpg",
+    "driveFileId": "1_C3hUgVMFoNWQNtS7mHyMIsdcPldmjqI",
+    "size": 708460,
+    "sha256": "fb79fb1bcc2831c97bf6408fa15a3378ce62d429322176cb04a278e17a55e9c4"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_026_00-00-46.981.jpg",
+    "localPath": "assets/frames/shot_026_00-00-46.981.jpg",
+    "driveFileId": "1zBxAM5orQON5wFASlblkStb3YowNbp7B",
+    "size": 764371,
+    "sha256": "32c2f2de0e93739b483ad9e65d777b171250e006d734e226e61eb4a939f20a28"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_027_00-00-47.434.jpg",
+    "localPath": "assets/frames/shot_027_00-00-47.434.jpg",
+    "driveFileId": "1AnNSHpQ5-QIJytykeKDyQp5dqRY4gUJe",
+    "size": 654706,
+    "sha256": "1b3e98dbff2a9a5582fd62dfa46a5fd63e7c76a55476f1355ce27d22d11e222a"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_028_00-00-47.856.jpg",
+    "localPath": "assets/frames/shot_028_00-00-47.856.jpg",
+    "driveFileId": "1S4NuYeXIj0Lx2xVR5O47Adcd_pzSfnkX",
+    "size": 534447,
+    "sha256": "e97312eb37300a0c82332079a4e2710f923dfa8b49e6b72efae2744e64a56638"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_029_00-00-48.277.jpg",
+    "localPath": "assets/frames/shot_029_00-00-48.277.jpg",
+    "driveFileId": "1fF65YQYghEyNVirTm3n0idipB6zWWa23",
+    "size": 559504,
+    "sha256": "43c2b706fe4dfe0b988774dff457bb69b7c217eb9b2f09290aa88a4bffe6c081"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_030_00-00-48.600.jpg",
+    "localPath": "assets/frames/shot_030_00-00-48.600.jpg",
+    "driveFileId": "1-e9ufgHCdBF_ZAakuiZY_wJghYp3466M",
+    "size": 887124,
+    "sha256": "dc0472f414a9ea4da91395b39bfeea6533416ed84b6f843e049f92346541a9d7"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_031_00-00-49.355.jpg",
+    "localPath": "assets/frames/shot_031_00-00-49.355.jpg",
+    "driveFileId": "1sviJhPxgpul-NreUSeDY025fjiz13Sd7",
+    "size": 748914,
+    "sha256": "3c837fd5066a140e2c40b6cf1ce8d979dc7c9c9bc376b747c95b59a71ab0670b"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_032_00-00-50.398.jpg",
+    "localPath": "assets/frames/shot_032_00-00-50.398.jpg",
+    "driveFileId": "1gP8_xud57UrBPAZte-5AxNWBh7FRHoel",
+    "size": 770155,
+    "sha256": "0a9a576e6ee62e6588c6d8296d9356439187188ed620d5afa9cab56eb314be0d"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_033_00-00-50.850.jpg",
+    "localPath": "assets/frames/shot_033_00-00-50.850.jpg",
+    "driveFileId": "1MaUvX_v4bHp2s8vJYdPfM7q-AbSt7yoH",
+    "size": 775750,
+    "sha256": "cc1d6e99fd7b09196190ff378608496d25d900fa3bcd68e2ff67291f01e90193"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_034_00-00-51.304.jpg",
+    "localPath": "assets/frames/shot_034_00-00-51.304.jpg",
+    "driveFileId": "1wxkahqyLWWqcirEzWAOhILWzG4Sf07O_",
+    "size": 656560,
+    "sha256": "9586f01e9afa24beb958f8255051861302a74ba5069027d1f873303e8b56e012"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_035_00-00-51.793.jpg",
+    "localPath": "assets/frames/shot_035_00-00-51.793.jpg",
+    "driveFileId": "16mJuvJSULDe7fBCl11yYhB3YpttX26BG",
+    "size": 440163,
+    "sha256": "726ca484dbb8109e866933eff4a3e8efb316b315a4177ebd52f3da57d14522a7"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_036_00-00-52.221.jpg",
+    "localPath": "assets/frames/shot_036_00-00-52.221.jpg",
+    "driveFileId": "1x5xLCgUolEiFDE_RkQa2aCoDvByITuyD",
+    "size": 568622,
+    "sha256": "18c9a7368a5e4660511e1fcc3294ce0201c1f9dc0123ae5dc5f7b10b83d8c203"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_037_00-00-52.773.jpg",
+    "localPath": "assets/frames/shot_037_00-00-52.773.jpg",
+    "driveFileId": "1ffLZ8CkNEUSDvAlyvtjKYV_M8DIYxeNV",
+    "size": 651993,
+    "sha256": "fad33f9ddb5bf05ccf1f304ebd30f4af5c83afb787c4c37d12424946d76fc908"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_038_00-00-53.273.jpg",
+    "localPath": "assets/frames/shot_038_00-00-53.273.jpg",
+    "driveFileId": "18WAtuSgwHEHrroactzubFl1icqSDFJuN",
+    "size": 578853,
+    "sha256": "18bd47d6d9a34c9a8c894ae0b9fa0c07b9bbb399482527596604d37683a34ef2"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_039_00-00-53.868.jpg",
+    "localPath": "assets/frames/shot_039_00-00-53.868.jpg",
+    "driveFileId": "1tmSST0GSUixxNcaXpqPCgkosgI6ETHGj",
+    "size": 584867,
+    "sha256": "aaecdc6decea3990711ede2eb4dd6e60ea36e41fd8fa570f964f7e626e7a4433"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_040_00-00-54.883.jpg",
+    "localPath": "assets/frames/shot_040_00-00-54.883.jpg",
+    "driveFileId": "1MVJ8YyRrKcRqNnAZGYD13chJ87Ua3GDP",
+    "size": 779076,
+    "sha256": "95e1e2cf4166c677484d7757ab090af1f3249e5184abdf6b2e9c47b0ebc1d1de"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_041_00-00-57.049.jpg",
+    "localPath": "assets/frames/shot_041_00-00-57.049.jpg",
+    "driveFileId": "10G7ug0EyriVGy2ysyo3Hiieuv4686PlE",
+    "size": 647434,
+    "sha256": "f7f70a00953b331c6b33083e81929650e2b783bd2d1d0fb5fb1bb899250bbc6e"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_042_00-01-01.658.jpg",
+    "localPath": "assets/frames/shot_042_00-01-01.658.jpg",
+    "driveFileId": "1XqNa8gGTHj-naUyt7SK5E_8EsdXI2Jct",
+    "size": 52686,
+    "sha256": "e5920570e6b51ebe9e8f10ea02e4aa071a3ddfdee042b9a163ae1a2f8e8fac38"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_043_00-01-02.391.jpg",
+    "localPath": "assets/frames/shot_043_00-01-02.391.jpg",
+    "driveFileId": "19Y-Ps54VOz5_H-_YazeEvULL3bOIOSay",
+    "size": 877367,
+    "sha256": "6c774907908f8a489237301cbef2d67527f75510e18906869ec8199cabb00a47"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_044_00-01-03.293.jpg",
+    "localPath": "assets/frames/shot_044_00-01-03.293.jpg",
+    "driveFileId": "1fGFE-2PUxlXUa9ttsvhdwLllyD52n39v",
+    "size": 52701,
+    "sha256": "b83df01b0d1d34bded4c48225e66b50b6b3de5d879a482796cd16fc591ddda23"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_045_00-01-03.753.jpg",
+    "localPath": "assets/frames/shot_045_00-01-03.753.jpg",
+    "driveFileId": "1FGtacrSGkiI50gP2c3ac1u6tnazojbaY",
+    "size": 1060488,
+    "sha256": "8dfba5afc06e33bfb981ced94692ed85e571c8efffef63b4c9926aed89476ff0"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_046_00-01-04.324.jpg",
+    "localPath": "assets/frames/shot_046_00-01-04.324.jpg",
+    "driveFileId": "1QeiQWoj7nqkI_QNQ6yjQ-b325j_TZE5q",
+    "size": 751069,
+    "sha256": "53b1559d4c5f2f9338e6547b22fb77113313ce0ce670f6bd1244f8e196b1a392"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_047_00-01-04.741.jpg",
+    "localPath": "assets/frames/shot_047_00-01-04.741.jpg",
+    "driveFileId": "16JZ9yWb1PkyKHVNWWjeK1BhUY-Ko52CV",
+    "size": 705869,
+    "sha256": "61fc35da05d55fb9ad4c44fe6768beb9481ac5b26a96a2448eb3b67b36b67814"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_048_00-01-05.189.jpg",
+    "localPath": "assets/frames/shot_048_00-01-05.189.jpg",
+    "driveFileId": "1ctrI40oWyqwNMkcRy8g3BDP60kxmjNHf",
+    "size": 738224,
+    "sha256": "bd6b7aedd45edfe37ec341d7f64ed3bdcf06b9512952a0f5e338abde7b7bb4bf"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_049_00-01-05.658.jpg",
+    "localPath": "assets/frames/shot_049_00-01-05.658.jpg",
+    "driveFileId": "1jQvD4g8_OZTG_rdYxmBuXM2i_d2WU8YH",
+    "size": 1039978,
+    "sha256": "e02b4fb339329f21b2dd32daf557bb717a4878810095d960cef74718447cc6f7"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_050_00-01-06.043.jpg",
+    "localPath": "assets/frames/shot_050_00-01-06.043.jpg",
+    "driveFileId": "1MHC7VneYioG1KEJRKK748zn2Fi5akuPp",
+    "size": 746021,
+    "sha256": "ba7db18d067a820f4b3bc911dd29259c615b3c91d358c8013bc8b4dba823cb1f"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_051_00-01-06.376.jpg",
+    "localPath": "assets/frames/shot_051_00-01-06.376.jpg",
+    "driveFileId": "1XTAvXxDjvbG-wDhkeh18Uc_A1mdtgb-M",
+    "size": 651415,
+    "sha256": "d6153292689934323fac084d1d75db7c779b3fded087a251a74156b2a05821ba"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_052_00-01-06.709.jpg",
+    "localPath": "assets/frames/shot_052_00-01-06.709.jpg",
+    "driveFileId": "1dz-y6Cm6Wnh0mp9m5aothV_oAqAH5NHY",
+    "size": 576296,
+    "sha256": "b4e502c4e566cb043e1fa91309b1d0d817f0f0a5b0f4c844e887e052b5c0ed62"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_053_00-01-07.074.jpg",
+    "localPath": "assets/frames/shot_053_00-01-07.074.jpg",
+    "driveFileId": "1B2AXbgSVwoAYJUZJ4MiPcHAV3_qhNV1l",
+    "size": 496559,
+    "sha256": "549e7096db81c81298520f3d9f65e3ff24b3b0fb3a47b7c34149f9f9d1c6f663"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_054_00-01-07.649.jpg",
+    "localPath": "assets/frames/shot_054_00-01-07.649.jpg",
+    "driveFileId": "1fLbFyL7bEMd62KXdBKM-jov34u0tb5jL",
+    "size": 942630,
+    "sha256": "460f96a48018c1938d6953728679d5125f6cab9b20b4cd34a89e0a5c9e8c47cb"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_055_00-01-08.388.jpg",
+    "localPath": "assets/frames/shot_055_00-01-08.388.jpg",
+    "driveFileId": "10xi4Kmwmy1VBvmDSDrDN8TU6Obrl4V4M",
+    "size": 708974,
+    "sha256": "8352d46f8e21764c7410c20f01b6e4e4096f0e296c721d220e0cefd184c8b0d1"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_056_00-01-08.924.jpg",
+    "localPath": "assets/frames/shot_056_00-01-08.924.jpg",
+    "driveFileId": "1YK2uHTLXkFIC2SDYQSQjafLvhXZO9dMB",
+    "size": 790243,
+    "sha256": "6b39da4fcfaf1076751f3bf3244838976aedea06be7767cb2b16ac63418ecc8b"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_057_00-01-09.398.jpg",
+    "localPath": "assets/frames/shot_057_00-01-09.398.jpg",
+    "driveFileId": "1Tnx6uvzAJyL30w-emuTqD8ZOKMv5TVqa",
+    "size": 747977,
+    "sha256": "a2fa9a26f32bdcc6afa49f549622f0bbdf9575706ef360df75553c0a86204265"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_058_00-01-09.993.jpg",
+    "localPath": "assets/frames/shot_058_00-01-09.993.jpg",
+    "driveFileId": "19JVn4545X-YY99_Fb3ALw8XoTxjBPDpP",
+    "size": 704490,
+    "sha256": "b70d1dd1007b23b7045e39e37b4ae25ea2081cb5cd4e656f17dbabdb1aa0411f"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_059_00-01-10.679.jpg",
+    "localPath": "assets/frames/shot_059_00-01-10.679.jpg",
+    "driveFileId": "1NdGla50uwEMFSkx_X7y5MTeQER2FAb6a",
+    "size": 762124,
+    "sha256": "2ed98f04c7f43b4be7851ec512b44baa3bacb99808cf86de1852ea9fdb5fbf9f"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_060_00-01-11.326.jpg",
+    "localPath": "assets/frames/shot_060_00-01-11.326.jpg",
+    "driveFileId": "1rtyjOguPt2ZNIql5DSdej8dL6ZFtisJS",
+    "size": 171985,
+    "sha256": "29108c1772f6b5c06eed897a6b5161fb856afe8191784d3b893d7f8004906a9b"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_061_00-01-12.029.jpg",
+    "localPath": "assets/frames/shot_061_00-01-12.029.jpg",
+    "driveFileId": "1q60X4jYuXLTW0KqkRaPyfo9k1l2mT7tE",
+    "size": 436726,
+    "sha256": "8fc5a0e7e30238be089a88a3256d67c6c50a65ae63fce621a87045cc1601a0e1"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_062_00-01-12.685.jpg",
+    "localPath": "assets/frames/shot_062_00-01-12.685.jpg",
+    "driveFileId": "108a9rwoVbRVpq5GaRRJofYLa02ixfuaH",
+    "size": 566242,
+    "sha256": "7adfac60f5b08eb24119a41c3f5c14736363cc87398a3b42c3f95f72db277390"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_063_00-01-13.552.jpg",
+    "localPath": "assets/frames/shot_063_00-01-13.552.jpg",
+    "driveFileId": "1oMV5TDxJHNnk_s0FNMRESxqM0qYwzU76",
+    "size": 368599,
+    "sha256": "c6a64927b69994c5e560bc63b01d0fc241beff5fac7cfda270d655fed015d344"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_064_00-01-14.645.jpg",
+    "localPath": "assets/frames/shot_064_00-01-14.645.jpg",
+    "driveFileId": "1--4xqkFBjeuuElivfbvHhETU8FpAaWC4",
+    "size": 710343,
+    "sha256": "72b09444d71b541459ccd2de7c1567d8c0e9df99dbaa84eb1a458b79953ab5d7"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_065_00-01-15.418.jpg",
+    "localPath": "assets/frames/shot_065_00-01-15.418.jpg",
+    "driveFileId": "1__lMqL9pkLmpFtuLntmCQvfDjIWajnLs",
+    "size": 567755,
+    "sha256": "343bc9d3d4a558eec99160c7445001430457d06031a5a8ea7406da90e088024b"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_066_00-01-15.846.jpg",
+    "localPath": "assets/frames/shot_066_00-01-15.846.jpg",
+    "driveFileId": "1Ubom1wDaZQ-w--N0xOH6T-bSEZ7vKUQd",
+    "size": 673727,
+    "sha256": "00085618cc2e6d79b1a85f520ea4b6e717e8de06454552bc123732db409bbb7c"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_067_00-01-16.334.jpg",
+    "localPath": "assets/frames/shot_067_00-01-16.334.jpg",
+    "driveFileId": "1Fr_xqcVt1MAhLRqAjjWqPTwN0DSG-rND",
+    "size": 739807,
+    "sha256": "8aca83dd12171a0a5d95177f092a90255588d30f143f0b938bb8b4c574644818"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_068_00-01-17.016.jpg",
+    "localPath": "assets/frames/shot_068_00-01-17.016.jpg",
+    "driveFileId": "1efdpDXB6hIrEkCFypTY1K1yFIKYf9Tx1",
+    "size": 786747,
+    "sha256": "73c443db0be48045b8551f0164d96a1f1edeff19e5066ff98edb600d5ff02a2f"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_069_00-01-17.918.jpg",
+    "localPath": "assets/frames/shot_069_00-01-17.918.jpg",
+    "driveFileId": "1dHUcL9ik6gTeRFSFDgMRxcOXJSO5lNfM",
+    "size": 779140,
+    "sha256": "9b385150e39168340b4e191d2d13b60a10726fa3ffecf5ee933a477dce49099a"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_070_00-01-18.251.jpg",
+    "localPath": "assets/frames/shot_070_00-01-18.251.jpg",
+    "driveFileId": "1VpbyrDu8wAyb2uoc2lcBgfn2gS6_821I",
+    "size": 769775,
+    "sha256": "efa616f2c25882936ae767e75b50a9ef37325de09c07c136a14a2d448c71fdfa"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_071_00-01-18.806.jpg",
+    "localPath": "assets/frames/shot_071_00-01-18.806.jpg",
+    "driveFileId": "1ltu5DjfEQwFnjYE9b9m1l9UYV07cpynQ",
+    "size": 704739,
+    "sha256": "c8e2478b4d80f0f64e585e3b712124838bd95c5a66112f1bb123ea9e0f062627"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_072_00-01-19.596.jpg",
+    "localPath": "assets/frames/shot_072_00-01-19.596.jpg",
+    "driveFileId": "1kvk-fEDBgMGIZ_z2X3vVtwXnYa9yI9GE",
+    "size": 502092,
+    "sha256": "f3d048b885df176b297f09b538bf6447b2f9502405403dd5cd077246ecac7930"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_073_00-01-20.069.jpg",
+    "localPath": "assets/frames/shot_073_00-01-20.069.jpg",
+    "driveFileId": "1uAG0zkDK-GJuqY7t7GIhVWCxRR4JTZ1_",
+    "size": 612976,
+    "sha256": "cef7966e26e458ded78c1db9668fe308e4cd5c42e054b5cd2593c66ebc7d2482"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_074_00-01-20.360.jpg",
+    "localPath": "assets/frames/shot_074_00-01-20.360.jpg",
+    "driveFileId": "1Vqnc6e39K6sVGdcTfsXlPqETlJky5PTk",
+    "size": 685892,
+    "sha256": "9dfe703d68328239630ce2f15767345d7296cd2820e517bdd0c2b79afed907ca"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_075_00-01-20.763.jpg",
+    "localPath": "assets/frames/shot_075_00-01-20.763.jpg",
+    "driveFileId": "1ppsUo9daDYuDba3B2Tzw6Q6C8OcwJ08y",
+    "size": 734224,
+    "sha256": "94d26040c5e182890ed968e6d13e5e0e6f479c0faff4ce45ada16dcd203812a9"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_076_00-01-21.283.jpg",
+    "localPath": "assets/frames/shot_076_00-01-21.283.jpg",
+    "driveFileId": "1Y8Lz2go3vl0xg3vQnDp2CoZchd2s9rvZ",
+    "size": 651200,
+    "sha256": "ef9adf37fae2d5c152066b692e33e2855037e4f9b5833f2d21ef8132acca0dbc"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_077_00-01-22.091.jpg",
+    "localPath": "assets/frames/shot_077_00-01-22.091.jpg",
+    "driveFileId": "1bBdRdWZXaKnt1lXy16g7LcV-Dmsmmx1E",
+    "size": 273322,
+    "sha256": "65627858f17b5db15af93cc91d4233633c387634e44818f2594e51815a01eb53"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_078_00-01-25.366.jpg",
+    "localPath": "assets/frames/shot_078_00-01-25.366.jpg",
+    "driveFileId": "1C4moHIQJ_-R4C2Jm60a0UASJwfywNWq2",
+    "size": 645701,
+    "sha256": "da0e4d70c2d77b6d799b70c511d0a7f97b5634a8c3cd52a31728bd210979f8f6"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_079_00-01-25.751.jpg",
+    "localPath": "assets/frames/shot_079_00-01-25.751.jpg",
+    "driveFileId": "14DJKf6p8dDq6tnPXzcK7m2V79zeE6zWu",
+    "size": 636123,
+    "sha256": "0cd5d83a938c14facb8c7f9b795ec652cabcbe9707ace80fb0908d5e14f66f6f"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_080_00-01-26.211.jpg",
+    "localPath": "assets/frames/shot_080_00-01-26.211.jpg",
+    "driveFileId": "1io0jtwwykwSdmgGHfDjdLviPzFpGF0Xa",
+    "size": 627881,
+    "sha256": "a8fc8c8190c5ee4116d843283b5e07adf05ab87477e9e80ecdf8b2dc0f12ff48"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_081_00-01-26.751.jpg",
+    "localPath": "assets/frames/shot_081_00-01-26.751.jpg",
+    "driveFileId": "1DmV46t1JcOqYkDF-bKmI-z20mtDKUCZz",
+    "size": 637561,
+    "sha256": "84ebc2217191deb0495bc8aba4bffe4633da9c19138bd7d9d1f1d70f1d7297e7"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_082_00-01-27.322.jpg",
+    "localPath": "assets/frames/shot_082_00-01-27.322.jpg",
+    "driveFileId": "1xEnXtQkMcm6Eg9kCWYSsT8bXCf1k33uF",
+    "size": 501286,
+    "sha256": "aa48a040a7ffd4489510005606ff5e8beb4b40100f5b7da350082d80436e9a07"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_083_00-01-28.233.jpg",
+    "localPath": "assets/frames/shot_083_00-01-28.233.jpg",
+    "driveFileId": "1Zwe0vNIdjgpQvH158WLrqNVoGmGRwXrx",
+    "size": 437441,
+    "sha256": "7a42c42c36f10ec74cbe83e005e0e053be41426b2fbfd7ead7b3ada2246bd512"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_084_00-01-28.908.jpg",
+    "localPath": "assets/frames/shot_084_00-01-28.908.jpg",
+    "driveFileId": "1iubVuK-4vIs-_EsL28YyiKgNye-EOWgc",
+    "size": 454739,
+    "sha256": "559ff014eb82d404becda00faabc186aa9844e8eae54a73c5f4418e91402de9d"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_085_00-01-29.356.jpg",
+    "localPath": "assets/frames/shot_085_00-01-29.356.jpg",
+    "driveFileId": "1DYyuSQ5UEjNbC5sJLLcPMj5OqSAS_bNt",
+    "size": 457702,
+    "sha256": "d72e21409df8e72cfe454604a92eea2b410ddc25d18d07bf8d6c6c5378c63dc7"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_086_00-01-29.888.jpg",
+    "localPath": "assets/frames/shot_086_00-01-29.888.jpg",
+    "driveFileId": "1-9ETqd9sZUDCX-kMLgh8kufACVeFVE1R",
+    "size": 435707,
+    "sha256": "bf3f515c8a4b1f9eb326ecef81cc03dba3128c57500967f7c1f479d2a8c6f552"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_087_00-01-30.376.jpg",
+    "localPath": "assets/frames/shot_087_00-01-30.376.jpg",
+    "driveFileId": "1XrfqF20GdONBYBbPR-Djxf9uFxZVEX6M",
+    "size": 352458,
+    "sha256": "24d8b87c7b800d2887feb432e5f4affa04db24333d702a083ba95c25e41a516d"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_088_00-01-30.994.jpg",
+    "localPath": "assets/frames/shot_088_00-01-30.994.jpg",
+    "driveFileId": "15x2Ee5uzNwAo6SCAKcuh0CPY-elyhNIz",
+    "size": 516499,
+    "sha256": "d0921eff5eb1f6085e317c8b62fb370f6cdc51887e31084e7064dd8bb7f911ff"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_089_00-01-32.216.jpg",
+    "localPath": "assets/frames/shot_089_00-01-32.216.jpg",
+    "driveFileId": "1PuM0FfR7Qa0gcIIdSqldi9xRnHHmMvUK",
+    "size": 370251,
+    "sha256": "a2c94dabb5c9641e2a94c94c2d6ccb102d57b31384b97010347cc89bd91b8631"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_090_00-01-33.685.jpg",
+    "localPath": "assets/frames/shot_090_00-01-33.685.jpg",
+    "driveFileId": "1mGdv0GacWK4_ORfq0bkpUKqFY35QRZzL",
+    "size": 921700,
+    "sha256": "0657d0c70ae8e72bbafaa80f3442315cb00843134d637d8faedd3b9ad2be2c5b"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_091_00-01-34.409.jpg",
+    "localPath": "assets/frames/shot_091_00-01-34.409.jpg",
+    "driveFileId": "1JzzAUCeNxyfpyQJ9HNrsaiXdR9a6fjOu",
+    "size": 841498,
+    "sha256": "75d3b52eff44c7602c9ce1d27397066870bf495abc55470faea31b3c0428f4a4"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_092_00-01-35.144.jpg",
+    "localPath": "assets/frames/shot_092_00-01-35.144.jpg",
+    "driveFileId": "1AINrqSDrFdwKyuaUXojkI6R_zSWISWua",
+    "size": 917885,
+    "sha256": "0e899697cca995f6370ea710a762b0ad4e2b56a5a1d2a0d0a28d337c0d8bf611"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_093_00-01-35.709.jpg",
+    "localPath": "assets/frames/shot_093_00-01-35.709.jpg",
+    "driveFileId": "1fke7FLXXijjfytfYGEanhuQO3PKaYALs",
+    "size": 810009,
+    "sha256": "25cd65082539dc216abbb6138e0d5eb06b92b8857fc9dc03e173d264a889d179"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_094_00-01-36.122.jpg",
+    "localPath": "assets/frames/shot_094_00-01-36.122.jpg",
+    "driveFileId": "1-LZg6TuX6ikbKEi2ScN23QrZtUKznb1N",
+    "size": 857831,
+    "sha256": "7133f1d628f7efe80334e6c9dc7d5eb97ebcdda4efa0a907a6b60aeb1b7ede98"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_095_00-01-36.727.jpg",
+    "localPath": "assets/frames/shot_095_00-01-36.727.jpg",
+    "driveFileId": "1ugMM98OkBvjdOxsdOILsmAXnDFvD8XxE",
+    "size": 944317,
+    "sha256": "5da62b77557d5b0d1b3e23126fffd91c3ce13a712372cd16a0450808d3169383"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_096_00-01-37.277.jpg",
+    "localPath": "assets/frames/shot_096_00-01-37.277.jpg",
+    "driveFileId": "1Szh7Wg5H_tn-uKLPzOQQp1b5dF6YQJNg",
+    "size": 998543,
+    "sha256": "5f2ee71d014b98ca715bdc550b7a03966bc1ff89f51dd890680fbb58225ba31a"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_097_00-01-37.759.jpg",
+    "localPath": "assets/frames/shot_097_00-01-37.759.jpg",
+    "driveFileId": "1TfPn7pZOipkSealej_JOxwSnLdWJyt4e",
+    "size": 1368600,
+    "sha256": "930d69ecb803d5904ee3edddddc45f689ff231f43b8f18289da1f60a9b10a6d7"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_098_00-01-38.614.jpg",
+    "localPath": "assets/frames/shot_098_00-01-38.614.jpg",
+    "driveFileId": "12L10uVieUhp7I2WCwbhONNuBnmqGXsdO",
+    "size": 1472244,
+    "sha256": "00a7f91603b697bc53216a58c0edebb91a22c9e8f56aaa7124d35d63d7df8128"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_099_00-01-39.319.jpg",
+    "localPath": "assets/frames/shot_099_00-01-39.319.jpg",
+    "driveFileId": "12D6X7GEl3M-Kpxa6SqYVFksBXCeMoDdk",
+    "size": 567031,
+    "sha256": "18c6a32fd990463f966c31e7aaf527988adda8ee31c93121aec19904ae9a2577"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_100_00-01-39.784.jpg",
+    "localPath": "assets/frames/shot_100_00-01-39.784.jpg",
+    "driveFileId": "1pi2YSFE6hy03OnI-50T7tNdynZjGgsHM",
+    "size": 267944,
+    "sha256": "01da018c1df260aeb67728c875a090fb6e43dab75dedd66a9f946a8de883f96a"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_101_00-01-40.376.jpg",
+    "localPath": "assets/frames/shot_101_00-01-40.376.jpg",
+    "driveFileId": "1F-zLJClVb0UUxa2Z-iM4xmJiYSk5JXf_",
+    "size": 266557,
+    "sha256": "14430fdae413ad2936e47fddb0d94ff5b8c684799c673dd9d0f263ce17bcca8a"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_102_00-01-40.804.jpg",
+    "localPath": "assets/frames/shot_102_00-01-40.804.jpg",
+    "driveFileId": "1-pKeuY5th9Pf5vrvD2XZqzn_lr8JoVjc",
+    "size": 453089,
+    "sha256": "b2c6f7b7c8bb780ae46f2f646171ce6c1fbf7f79f3efc6c2ad4da7a7af67cfb3"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_103_00-01-41.388.jpg",
+    "localPath": "assets/frames/shot_103_00-01-41.388.jpg",
+    "driveFileId": "1-2oSe2F4o3-bEArbOX0ivY_vjaR_qJO_",
+    "size": 429927,
+    "sha256": "374b909d7a2aaded677924f751e0a39a6bd8eb3bc4315fd7c45127eec040778c"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_104_00-01-42.003.jpg",
+    "localPath": "assets/frames/shot_104_00-01-42.003.jpg",
+    "driveFileId": "18HYu3qkMWmfirwVvvpz16n2m_6BVK8f9",
+    "size": 495527,
+    "sha256": "7b40548ab1409606ed982074db2fe27ca826456171eac1f9a2c772e248068e64"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_105_00-01-42.638.jpg",
+    "localPath": "assets/frames/shot_105_00-01-42.638.jpg",
+    "driveFileId": "1N45Ii0gHz16a6WE36axAmF0JVhfaJxJR",
+    "size": 543040,
+    "sha256": "b31fac021356886cbec707f422da4d05476b8b508aa6255d7aad535a2aec480e"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_106_00-01-43.474.jpg",
+    "localPath": "assets/frames/shot_106_00-01-43.474.jpg",
+    "driveFileId": "1IgFJCI-5Jo3dkjQJ6j2dxbXeaeQ1W1Lx",
+    "size": 706450,
+    "sha256": "19ecfa5cb0eff51d949ffa54b4a7b004d36b436c83dbd8486e7ffe39abb0d0f9"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_107_00-01-44.439.jpg",
+    "localPath": "assets/frames/shot_107_00-01-44.439.jpg",
+    "driveFileId": "1u30EHygM40RpEW-L0sQ-wDxzEDvhp7Pp",
+    "size": 575895,
+    "sha256": "52c19a91955e1ca502079e889ef2f615075e9e64a0b05283ccdc0e7fcd081a79"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_108_00-01-44.908.jpg",
+    "localPath": "assets/frames/shot_108_00-01-44.908.jpg",
+    "driveFileId": "17ewmkK61UC9yzOXjsbHql-vfs89_x_dC",
+    "size": 529656,
+    "sha256": "dbd2df396f73803af4fb15821e0376af1aa8e4b23bd35ca50d0e6e6fbf916ad6"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_109_00-01-45.356.jpg",
+    "localPath": "assets/frames/shot_109_00-01-45.356.jpg",
+    "driveFileId": "19-fXEcLGEZIzC1uQRe7cMV5-XOBb_QrR",
+    "size": 559882,
+    "sha256": "20e277067e769c51c4143e5c224778fe71da3e07edd0a56d8103dd32b765a8f6"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_110_00-01-45.919.jpg",
+    "localPath": "assets/frames/shot_110_00-01-45.919.jpg",
+    "driveFileId": "1sAZhlSYbnIKrLewp9zmQtZx0SaZsEJjH",
+    "size": 589820,
+    "sha256": "60a1cf44f6454933e88f408f610c83e1e6ab4a20870b8fa446b4488e1d253814"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_111_00-01-46.491.jpg",
+    "localPath": "assets/frames/shot_111_00-01-46.491.jpg",
+    "driveFileId": "13HDQvGYCmqz3kuZiN-fFZjLf456xmZi7",
+    "size": 489092,
+    "sha256": "b43cdb11f2de2f7ee768572fde92d8b2f26de4f4b968424409509ec48925cb33"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_112_00-01-46.876.jpg",
+    "localPath": "assets/frames/shot_112_00-01-46.876.jpg",
+    "driveFileId": "1bDHBEt3_396ue3NKUhPu03YFg_9ZFqxG",
+    "size": 890936,
+    "sha256": "2e5702007ab22a47930838ec8b53cd03f21173a93116b66eb9a59d47ce61d466"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_113_00-01-47.526.jpg",
+    "localPath": "assets/frames/shot_113_00-01-47.526.jpg",
+    "driveFileId": "1eRfBS4gpAa_zlGGam-xQTkrYqD-y9xV7",
+    "size": 396187,
+    "sha256": "5e7c327ac72b061f56bbbba7d55a6d111d0eb8e36bc743b07ccf3dabd778d5d2"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_114_00-01-48.487.jpg",
+    "localPath": "assets/frames/shot_114_00-01-48.487.jpg",
+    "driveFileId": "1JYd6Uh1gd6_WO4TdXhnWAXL9iMVarA32",
+    "size": 635584,
+    "sha256": "a95bee1f088a8841046f9f75e7973d6d0a989af9c0330b6263be0e184aabcb01"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_115_00-01-49.049.jpg",
+    "localPath": "assets/frames/shot_115_00-01-49.049.jpg",
+    "driveFileId": "17qtB4hBeYP7d-0Ri0vlwUSf71qLgGAeq",
+    "size": 305142,
+    "sha256": "ea36d19cafa45654b0078edc1a49388a219db515279b2cc14fb7b39ce3ce6b6a"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_116_00-01-49.475.jpg",
+    "localPath": "assets/frames/shot_116_00-01-49.475.jpg",
+    "driveFileId": "1L3DOWDG7N626JbBFDtetpHz53enQD9Yn",
+    "size": 326686,
+    "sha256": "ccd3ce4ee85c0a9c8b900ba0b5c1ae0693cd229befb668a04e453c6c1bb69c97"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_117_00-01-50.258.jpg",
+    "localPath": "assets/frames/shot_117_00-01-50.258.jpg",
+    "driveFileId": "1P5qrKF-D8uAEIc-u5P-GZ1nhb9DlqqPN",
+    "size": 335377,
+    "sha256": "723d24c404c08d2cd00c35faba2e98ddd3ea8b74fff9eae1b35591c9ad700845"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_118_00-01-53.508.jpg",
+    "localPath": "assets/frames/shot_118_00-01-53.508.jpg",
+    "driveFileId": "1bUC28wykCveoQ8BfHx-282IGLOzgjIUh",
+    "size": 386698,
+    "sha256": "63ab27144f1f024e20fa87d37c9ffe5d33952a6faa2cae1a1c7849c66ba65691"
+  },
+  {
+    "sourcePath": "../frames/02_Animated_Slugfest__YUCA_&_Colossal_Relaunch_The_Ring_1161535186/shot_119_00-01-56.966.jpg",
+    "localPath": "assets/frames/shot_119_00-01-56.966.jpg",
+    "driveFileId": "14epzoYnZTNJ9pPcSDVzJW4mhNyXSdImo",
+    "size": 171742,
+    "sha256": "5ae165e44596660f748cfc8f9a5d7de98c6ab781331cc189876d7f63c0d61cef"
+  }
+]
