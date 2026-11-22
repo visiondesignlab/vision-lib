@@ -1,0 +1,65 @@
+
+<header>
+<h1>Vol.29 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-11-21 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">今天最实用的更新都没有抢着发明新画布，而是在修“人已经到了，信息却没跟上”的断点。Figma 把移动端恢复位置、精确章节链接和单独导出补齐；GitHub 让常用仓库与安全权限落到明确名单；Vercel 则把上传体积、运行时和内存代价写成硬边界。对设计团队来说，这比再多一个生成按钮更接近生产力：交接对象要能定位，权限要能收口，工程限制要在方案阶段出现。除公开页面、After Effects Beta 与播放器验证外，今天没有做真实团队项目实测，官方说明不改写成亲测结论。</p>
+<h2>● Figma</h2>
+<h3>Smoother FigJam collaboration and navigation on mobile<a class="source-url" href="https://www.figma.com/release-notes/" rel="noopener noreferrer" target="_blank">https://www.figma.com/release-notes/</a></h3>
+<figure><img alt="Figma 移动端 FigJam 协作与导航更新" decoding="async" height="900" loading="lazy" src="01.png" width="1440"/><figcaption>Figma 移动端 FigJam 协作与导航更新</figcaption></figure>
+<p class="mixed-script">Figma 11 月 20 日给移动端补上评论位置提示、嵌套 section 的 frame 预览滑杆、页面下拉切换、精确到 page / section 的分享链接，以及 section 和图片的独立格式、尺寸导出；重新打开时还能回到上次位置。</p>
+<p class="mixed-script">这不是“手机也能看 FigJam”，而是把移动评审从截图聊天拉回文件坐标。最有用的是精确链接和恢复位置：评审人不用再写“右下角那块”，设计师也不用重新走一遍页面树。</p>
+<h3>Work with the Figma agent in dev mode<a class="source-url" href="https://www.figma.com/release-notes/" rel="noopener noreferrer" target="_blank">https://www.figma.com/release-notes/</a></h3>
+<figure><img alt="Figma Dev Mode Agent 更新" decoding="async" height="900" loading="lazy" src="02.png" width="1440"/><figcaption>Figma Dev Mode Agent 更新</figcaption></figure>
+<p class="mixed-script">11 月 19 日的 Dev Mode Agent 能检查和理解设计、比较版本、给代码片段，并批量提供资产下载链接。官方 release note 没写清具体套餐、额度和失败是否计费，先不把它当作免费交付层。</p>
+<p>它真正要过的不是“会不会描述画面”，而是能否稳定回答组件来源、变量值、状态差异与资产清单。下一轮实测应拿同一组件的两个版本追问差异，再核对它给出的代码和下载资产是否都指向正确节点。</p>
+<h2>● Product Interfaces</h2>
+<h3>Pin your favorite repositories to your dashboard<a class="source-url" href="https://github.blog/changelog/2026-11-20-pin-your-favorite-repositories-to-your-dashboard/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-20-pin-your-favorite-repositories-to-your-dashboard/</a></h3>
+<figure><img alt="GitHub Dashboard 收藏仓库" decoding="async" height="900" loading="lazy" src="03.png" width="1440"/><figcaption>GitHub Dashboard 收藏仓库</figcaption></figure>
+<p class="mixed-script">GitHub 新 Dashboard 可以手动维护 Favorite repositories：搜索时已选项不会消失，保存后新仓库排在末尾；它与 GitHub Mobile 的 pinned repositories 同步，共用 25 个上限，超限时整次保存不会落地。</p>
+<p>这类小更新比“智能排序”更可信。常用仓库是用户主动声明的工作集，不该被最近访问或热度替代；25 个上限和原子保存也把边界说得够清楚。</p>
+<h3>Security advisory permissions are now generally available<a class="source-url" href="https://github.blog/changelog/2026-11-20-security-advisory-permissions-are-now-generally-available/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-20-security-advisory-permissions-are-now-generally-available/</a></h3>
+<figure><img alt="GitHub Security Advisory 自定义权限" decoding="async" height="900" loading="lazy" src="04.png" width="1440"/><figcaption>GitHub Security Advisory 自定义权限</figcaption></figure>
+<p class="mixed-script">组织管理员现在能在 custom repository roles 里单独开放四档 Security Advisory 权限：查看，创建/编辑/管理，接受私密漏洞报告与关闭/重开，以及发布公告和申请 CVE。权限可以只给维护者负责的仓库，不再为了处理漏洞把人升成 repo admin 或全组织 security manager。</p>
+<p class="mixed-script">仍有硬边界：合并临时私有 fork 需要管理员或 security manager；这些新角色不能删除临时 fork；机密评论还要求写权限。它把“安全工作很敏感”翻译成可操作的层级，而不是继续用一个大管理员开关糊住责任。</p>
+<h2>● Design Engineering</h2>
+<h3>Vercel Functions now support request bodies up to 20MiB<a class="source-url" href="https://vercel.com/changelog/vercel-functions-now-support-request-bodies-up-to-20mib" rel="noopener noreferrer" target="_blank">https://vercel.com/changelog/vercel-functions-now-support-request-bodies-up-to-20mib</a></h3>
+<figure><img alt="Vercel Functions 20MiB 请求体" decoding="async" height="900" loading="lazy" src="05.png" width="1440"/><figcaption>Vercel Functions 20MiB 请求体</figcaption></figure>
+<p class="mixed-script">Vercel Functions 的入站 request body 在 Public Beta 可从 4.5MB 提到 20MiB。需要设置 <code>VERCEL_SUPPORT_LARGE_REQUEST_BODY=1</code>，按项目与环境生效，并把 Functions 调到 4GB performance memory；Node.js、Python、Bun 和 Routing Middleware 可用，Edge 仍是 4.5MB。</p>
+<p class="mixed-script">代价不能藏在“支持大文件”后面：项目一旦 opt in，Routing Middleware 仍能读 headers 和 metadata，但拿不到 body；大 body 还要尽快消费，避免 backpressure 与内存问题。上传型产品先在 Preview 开开关、测 413 和内存峰值，再决定是否进 Production。</p>
+<h2>● Creative Tools</h2>
+<h3>Triplanar projection mode for 3D materials<a class="source-url" href="https://community.adobe.com/announcements-532/triplanar-projection-mode-for-3d-materials-1657230" rel="noopener noreferrer" target="_blank">https://community.adobe.com/announcements-532/triplanar-projection-mode-for-3d-materials-1657230</a></h3>
+<figure><img alt="After Effects Beta Triplanar 材质投射" decoding="async" height="900" loading="lazy" src="06.png" width="1440"/><figcaption>After Effects Beta Triplanar 材质投射</figcaption></figure>
+<p class="mixed-script">After Effects Beta 27.1x52 加入 Triplanar：纹理由上、前、侧三个方向按表面朝向混合，不再完全依赖模型 UV，针对缺失、扭曲、接缝明显或球体两极夹扁的素材尤其直接。位置、缩放、旋转可调，还有 Blend Softness、Fit to object 与 displacement 支持。</p>
+<p class="mixed-script">它不会替代正规的 UV，但能省掉“只是想让一张材质先看起来对”的往返成本。产品片里常见的临时 3D 字、参数化形体和快速换皮最吃这套；正式交付仍要看接缝、运动时的纹理游移和最终渲染成本。Beta 还没实测，先不下稳定性结论。</p>
+<h3>What’s New in Adobe Express｜November 2026<a class="source-url" href="https://helpx.adobe.com/express/web/whats-new/release-notes.html" rel="noopener noreferrer" target="_blank">https://helpx.adobe.com/express/web/whats-new/release-notes.html</a></h3>
+<figure><img alt="Adobe Express 2026 年 11 月更新" decoding="async" height="900" loading="lazy" src="07.png" width="1440"/><figcaption>Adobe Express 2026 年 11 月更新</figcaption></figure>
+<p class="mixed-script">Adobe 11 月更新把 Express 的 AI Assistant 扩到更多桌面端 Individual Free / Premium 用户：一次给四个方案，可继续对话改文案、图片、图层、配色和布局，也能挂品牌；Teams、Enterprise、Education 目前还没开放。同期还加入从 PDF / JPEG / PNG 抽取品牌、在 ChatGPT / Claude / Copilot / Gemini 里调用 Express，以及导出 IDML、分层 PSD。</p>
+<p class="mixed-script">最有价值的不是四个首稿，而是“生成后还能回到手工编辑”和跨工具保留结构。可惜企业权限、品牌检查、字体映射和 IDML / PSD 还原度才决定能不能接进团队交付；这些没有项目级测试前，只能把它当候选入口。</p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Thomas Bertrand &amp; Mathematic Bridge “The Divide” for Les Restos du Cœur<a class="source-url" href="https://www.stashmedia.tv/thomas-bertrand-mathematic-bridge-the-divide-for-les-restos-du-coeur/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/thomas-bertrand-mathematic-bridge-the-divide-for-les-restos-du-coeur/</a></h3>
+<p class="mixed-script">YouTube 原片<a class="source-url" href="https://www.youtube.com/watch?v=Zxu2mh-QKiM" rel="noopener noreferrer" target="_blank">https://www.youtube.com/watch?v=Zxu2mh-QKiM</a> · Mathematic<a class="source-url" href="https://mathematic.tv/" rel="noopener noreferrer" target="_blank">https://mathematic.tv/</a></p>
+<figure data-film-source="https://www.youtube.com/watch?v=Zxu2mh-QKiM"><img alt="The Divide 角色设计与 3D 定稿对照" decoding="async" height="1152" loading="lazy" src="08.jpg" width="2048"/><figcaption>The Divide 角色设计与 3D 定稿对照</figcaption></figure>
+<p class="mixed-script">这支 55 秒公益片由 Paris agency Change 提案、Thomas Bertrand 执导、Mathematic 制作。核心隐喻是一道不断穿过城市、住宅和人群的巨大裂缝，把贫困造成的社会分隔做成可以被镜头看见的物理对象；结尾从动画切回真人志愿者，把“弥合裂缝”落到现实行动。制作方明确写了没有使用 AI，采用 3D 动画模拟手工定格的触感。</p>
+<p class="mixed-script">片子的好不在“把 3D 做得像黏土”，而在材质、镜头和议题站在同一边：毛毡与纤维的粗糙表面、略带模型比例的角色、浅景深与暖色实景光，让宏大的社会命题保持在人能触到的尺度；裂缝负责推进叙事，粉色志愿者马甲负责跨场景识别，最后真人出现才不会像另起一段广告。</p>
+<p class="mixed-script">YouTube 嵌入已用飞书来源页作为 referrer 实测：readyState 4，960×720，55.041 秒，播放从 1.40 秒推进到 4.41 秒，媒体请求返回 200。产品发布片可以直接借它的结构：先选一个能贯穿界面的“物理问题”，只给一个品牌色承担识别，再用最后一个真人或真实场景镜头收回证据；别让 3D 材质自己充当故事。</p>
+<h2>● Stash 最新内容观察</h2>
+<ul>
+<li><strong>The Divide<a class="source-url" href="https://www.stashmedia.tv/thomas-bertrand-mathematic-bridge-the-divide-for-les-restos-du-coeur/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/thomas-bertrand-mathematic-bridge-the-divide-for-les-restos-du-coeur/</a></strong>｜公益广告 / stop-motion-inspired CG：已升级为今日主卡。社会分隔被压成一道可追踪裂缝，手工触感与真人结尾都服务同一隐喻。</li>
+<li><strong>The Stash x OFFF Montreal 2026 Panel Follow-Up Part 1<a class="source-url" href="https://www.stashmedia.tv/the-stash-x-offf-montreal-2026-panel-follow-up-part-1/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/the-stash-x-offf-montreal-2026-panel-follow-up-part-1/</a></strong>｜行业方法 / studio practice：昨日已覆盖。继续盯后续篇是否给出 pitch、代表与获客的具体样本，不重复摘要。</li>
+<li><strong>Dancing on Osees<a class="source-url" href="https://www.stashmedia.tv/catherine-lepage-friends-go-dancing-on-osees/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/catherine-lepage-friends-go-dancing-on-osees/</a></strong>｜纸上动画 / music-driven film：11 月 20 日已升级主卡。纸张摩擦与动作母题的结论保持，不拿同一片重写。</li>
+<li><strong>The Cutest Dancing Smart Speaker That Never Was<a class="source-url" href="https://www.stashmedia.tv/the-cutest-dancing-smart-speaker-that-never-was/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/the-cutest-dancing-smart-speaker-that-never-was/</a></strong>｜智能硬件 / 3D 角色：11 月 19 日已覆盖并采用静态图降级。除非播放器恢复或制作方公开 breakdown，不再从静帧推节奏。</li>
+<li><strong>Give the Gift of Closeness<a class="source-url" href="https://www.stashmedia.tv/postoffice-amsterdam-give-the-gift-of-closeness-for-swiss-brands-united/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/postoffice-amsterdam-give-the-gift-of-closeness-for-swiss-brands-united/</a></strong>｜角色动画 / holiday film：已登记观察。先留意角色材质与情绪表演，不把节日温情当成产品叙事模板硬套。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>Figma 移动端精确 section 链接、恢复位置和单独导出在大文件中的可靠性。</li>
+<li>Dev Mode Agent 对版本差异、变量、组件来源和批量资产链接的真实准确率，以及套餐/额度边界。</li>
+<li>GitHub Favorite repositories 的 25 项同步冲突；Security Advisory custom roles 的审计日志与临时 fork 流程。</li>
+<li>Vercel 20MiB Preview 的 413、TTFB、4GB 内存成本与 Middleware 无 body 后的鉴权替代方案。</li>
+<li>After Effects Triplanar 在运动镜头中的接缝、纹理游移与 displacement 开销；《The Divide》是否公开材质、灯光和真人转场 breakdown。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<p class="mixed-script">今天已覆盖 Figma 移动端 FigJam 协作与 Dev Mode Agent、GitHub Favorite repositories 与 Security Advisory custom roles、Vercel Functions 20MiB request body、After Effects Beta Triplanar、Adobe Express 11 月更新；完整视频为 Thomas Bertrand / Mathematic《The Divide》。Stash 已登记该片、OFFF Montreal panel、Dancing on Osees、Raven R 与 Give the Gift of Closeness，后三项只保留既有边界。</p>
+<p class="mixed-script">继续避免重复：11 月 20 日的 Replica、Vercel Board、GitHub PR Overview readiness、<code>gh event listen</code>、Vercel Billing CLI、Open Source Accessibility Framework 与 Dancing on Osees；11 月 19 日的 Figma 多图生成、OAuth / MCP allowlist、Vercel Drives、单秒静态部署、soft navigation、Chrome DevTools 12 月更新与 Raven R；11 月 18 日的 Copilot / WebKit / Vercel 既有条目与 Quorum。</p>

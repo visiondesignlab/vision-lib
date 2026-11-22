@@ -1,5 +1,23 @@
 [
   {
+    "volume": 30,
+    "date": "2026-11-22",
+    "headline": "Agents can now find Vercel CLI commands by describing the task",
+    "intro": "今天几条信号看起来分散：Hana 把 3D、CSS Grid 和 MCP 放进同一张设计画布，Vercel 给 CLI 加语义检索，GitHub 开始把云端 Copilot 的计费与权限边界说得更明白，Safari 和 Carbon 则继续修那些“不出效果图、但会直接影响交付”的行为细节。"
+  },
+  {
+    "volume": 29,
+    "date": "2026-11-21",
+    "headline": "Smoother FigJam collaboration and navigation on mobile",
+    "intro": "今天最实用的更新都没有抢着发明新画布，而是在修“人已经到了，信息却没跟上”的断点。Figma 把移动端恢复位置、精确章节链接和单独导出补齐；GitHub 让常用仓库与安全权限落到明确名单；Vercel 则把上传体积、运行时和内存代价写成硬边界。对设计团队来说，这比再多一个生成按钮更接近生产力：交接对象要能定位，权限要能收口，工程限制要在方案阶段出现。除公开页面、After Effects Beta 与播放器验证外，今天没有做真实团队项目实测，官方说明不改写成亲测结论。"
+  },
+  {
+    "volume": 28,
+    "date": "2026-11-20",
+    "headline": "Replica",
+    "intro": "今天几条更新看着分散，实际都在补同一件事：让协作从聊天记录变成可追踪协议。Replica 把设计系统、原型和评论放进同一条反馈链；Vercel Board 把任务领取、续租和权限做成状态；GitHub 则把 PR 是否可合并、还缺什么、什么时候该唤醒 agent 说清楚。真正省时间的不是多一个会生成的入口，而是让反馈、责任、成本和下一步都能被人和机器同时读懂。除公开页面与 Vimeo 播放器外，今天这些工具都还没做项目级实测，不把官方说明扩写成亲测结论。"
+  },
+  {
     "volume": 27,
     "date": "2026-11-19",
     "headline": "Generate multiple images from a single prompt",
