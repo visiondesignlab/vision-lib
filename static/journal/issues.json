@@ -1,5 +1,11 @@
 [
   {
+    "volume": 31,
+    "date": "2026-11-23",
+    "headline": "Connect Supabase, Box, Calendly, and more to Copilot",
+    "intro": "今天没有新的 Figma 大版本，也不需要把周五的更新再热一遍。更实在的变化发生在“代理能接什么、谁替团队决定、上线后怎么付钱”这三层：GitHub 把连接器和团队插件做成共享配置，Vercel 则把脚本、机器人、语音会话与多模态判定拉进可观测和可计费的边界。"
+  },
+  {
     "volume": 30,
     "date": "2026-11-22",
     "headline": "Agents can now find Vercel CLI commands by describing the task",

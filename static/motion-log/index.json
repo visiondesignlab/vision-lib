@@ -3216,6 +3216,274 @@
     "externalAttachments": 6
   },
   {
+    "id": "2026-10-17-09_google-cloud-next-25-motion-identity",
+    "title": "Google Cloud Next 25 — Motion Identity",
+    "date": "2026-10-17",
+    "intro": "把 Next 的字母拆成一组会变形、会玩耍、会变体的模块，让会议身份像云端服务一样持续演化。",
+    "brand": "Google Cloud Next",
+    "creator": "Vucko",
+    "duration": "00:37.461",
+    "spec": "1080×1350 / h264 / 30/1 fps",
+    "cover": "assets/keyframes/K01_00-02-800.jpg",
+    "embed": "https://player.vimeo.com/video/1113431601?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/vucko-knows-whats-next-for-google-cloud/",
+    "reportSource": "https://docs.google.com/document/d/18P4Udt1jVlmPdK5d0HjZmlCUk7YMWxzp/edit?usp=drivesdk&ouid=104407135428793491680&rtpof=true&sd=true",
+    "reportFileId": "18P4Udt1jVlmPdK5d0HjZmlCUk7YMWxzp",
+    "sha256": "405acea2fbf38e39f8f58b46dd3f58506785a27444c64da6bf6155b35cdc93f7",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 7,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(7 张,按内容需要选取)"
+      },
+      {
+        "id": "section-14",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-15",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-21",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-22",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-23",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-24",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 32,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-17-10_bpod-food-preservation",
+    "title": "B!POD — Food Preservation",
+    "date": "2026-10-17",
+    "intro": "用青蛙、章鱼和企鹅等夸张生态隐喻演示真空保鲜机，让抽象功能变成一组可读、可记的吸附与环境切换。",
+    "brand": "B!POD",
+    "creator": "Symbiotic / SAES Design House",
+    "duration": "00:32.085",
+    "spec": "1920×1080 / h264 / 25/1 fps",
+    "cover": "assets/keyframes/K01_00-01-500.jpg",
+    "embed": "https://player.vimeo.com/video/1103101872?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/symbiotic-latches-onto-the-bpod-for-saes-design-house/",
+    "reportSource": "https://docs.google.com/document/d/1dSKuSruRc4yuep_jc0ockuWWjqfUG53D/edit?usp=drivesdk&ouid=104407135428793491680&rtpof=true&sd=true",
+    "reportFileId": "1dSKuSruRc4yuep_jc0ockuWWjqfUG53D",
+    "sha256": "7297c2b8ca79a17567adf84f32c641a506ec71ba324d7a71e227b9dd3c402026",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 6,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(6 张,按内容需要选取)"
+      },
+      {
+        "id": "section-13",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-14",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-20",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-21",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-22",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-23",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 22,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-15-01_shroooms",
+    "title": "Shroooms",
+    "date": "2026-10-15",
+    "intro": "让仿生软体在明暗空间中反复萌发、聚合与解体，用持续形变把人工生成物拍成一段既甜美又异样的生命循环。",
+    "brand": "个人研究项目",
+    "creator": "COLORS AND THE KIDS",
+    "duration": "02:33.771",
+    "spec": "1620×1080 / h264 / 25/1 fps",
+    "cover": "assets/keyframes/K01_00-00-550.jpg",
+    "embed": "https://player.vimeo.com/video/302822587?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/stash-2019-3d-style/",
+    "reportSource": "https://docs.google.com/document/d/1bhZ3qNxTeqQbABneR9mXDYLNm4im6Kzn/edit?usp=drivesdk&ouid=104407135428793491680&rtpof=true&sd=true",
+    "reportFileId": "1bhZ3qNxTeqQbABneR9mXDYLNm4im6Kzn",
+    "sha256": "94dd3d17e5e0be3f49de3b86e1937209e9269f84d13925134c3b17c56354d039",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 7,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(7 张,按内容需要选取)"
+      },
+      {
+        "id": "section-14",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-15",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-21",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-22",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-23",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-24",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 23,
+    "externalAttachments": 6
+  },
+  {
+    "id": "2026-10-15-02_automotive-trend-visuals",
+    "title": "BASF Coatings — Automotive Trend Visuals",
+    "date": "2026-10-15",
+    "intro": "把汽车涂层趋势拆成可穿行的材料景观，让颜色、反射和触感先被身体感知，再被品牌命名。",
+    "brand": "BASF Coatings",
+    "creator": "foam Studio",
+    "duration": "01:23.008",
+    "spec": "3840×2160 / h264 / 25/1 fps",
+    "cover": "assets/keyframes/K01_00-00-460.jpg",
+    "embed": "https://player.vimeo.com/video/347291744?title=0&byline=0&portrait=0",
+    "sourcePage": "https://www.stashmedia.tv/stash-2019-3d-style/",
+    "reportSource": "https://docs.google.com/document/d/1_VyByZnJhpYTxyQYANRcn7L82Ap5LBKJ/edit?usp=drivesdk&ouid=104407135428793491680&rtpof=true&sd=true",
+    "reportFileId": "1_VyByZnJhpYTxyQYANRcn7L82Ap5LBKJ",
+    "sha256": "d94098a6784ed6534597e57b400e210353e4449824a0fc2e6ebbf10d7c92088f",
+    "missingAttachments": 0,
+    "missingImages": 0,
+    "keyframeCount": 7,
+    "toc": [
+      {
+        "id": "section-1",
+        "title": "一句话创意命题"
+      },
+      {
+        "id": "section-2",
+        "title": "基本信息"
+      },
+      {
+        "id": "section-4",
+        "title": "整条片子的故事传递"
+      },
+      {
+        "id": "section-5",
+        "title": "逐镜头/叙事节拍时间轴"
+      },
+      {
+        "id": "section-6",
+        "title": "关键画面(7 张,按内容需要选取)"
+      },
+      {
+        "id": "section-14",
+        "title": "表达手法拆解"
+      },
+      {
+        "id": "section-15",
+        "title": "音乐与声音设计"
+      },
+      {
+        "id": "section-21",
+        "title": "品牌/产品卖点的植入方式"
+      },
+      {
+        "id": "section-22",
+        "title": "可复用方法、观察边界与改进建议"
+      },
+      {
+        "id": "section-23",
+        "title": "全片逐帧与镜头索引"
+      },
+      {
+        "id": "section-24",
+        "title": "权利与使用说明"
+      }
+    ],
+    "representativeFrameCount": 31,
+    "externalAttachments": 6
+  },
+  {
     "id": "2026-10-06-01_alo_handbags",
     "title": "Alo Handbags — Tendril",
     "date": "2026-10-06",
