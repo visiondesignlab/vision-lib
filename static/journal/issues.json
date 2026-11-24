@@ -1,5 +1,11 @@
 [
   {
+    "volume": 32,
+    "date": "2026-11-24",
+    "headline": "The Figma agent is now available in FigJam and Slides",
+    "intro": "今天这批更新没有一个靠“更会聊天”取胜。Figma 把 agent 放进 FigJam 和 Slides，Vercel 同时补上结构化提取、ZDR 探针、供应商国别约束与发布门禁：入口继续变短，交付边界反而被写得更具体。"
+  },
+  {
     "volume": 31,
     "date": "2026-11-23",
     "headline": "Connect Supabase, Box, Calendly, and more to Copilot",

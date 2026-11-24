@@ -1,0 +1,156 @@
+[
+  {
+    "sourcePath": "../contact_sheets/05_horse_selected_keyframes.jpg",
+    "localPath": "assets/contact_sheets/05_horse_selected_keyframes.jpg",
+    "driveFileId": "1okDyauDyGBl28rIEgI787R8mcm5wGhuS",
+    "size": 278635,
+    "sha256": "a78f5c89e885cbb3f15add3ef5add8658086ac2180af522e64e217072bed1b56"
+  },
+  {
+    "sourcePath": "../keyframes/05_horse/K01_00-00-550.jpg",
+    "localPath": "assets/keyframes/K01_00-00-550.jpg",
+    "driveFileId": "10HYQIjy1s9YivxJ8sXEnzGzQAH7l7laE",
+    "size": 28424,
+    "sha256": "614fcd12a717afee50b06a244fb270f9c2755a2b5363f33dfa84995ec6551710"
+  },
+  {
+    "sourcePath": "../keyframes/05_horse/K02_00-11-000.jpg",
+    "localPath": "assets/keyframes/K02_00-11-000.jpg",
+    "driveFileId": "19Bp9Wu9E7MJS7lGuGgR-50-xvIkqXbPV",
+    "size": 38116,
+    "sha256": "954b090864e46bc98a0abcc93e843e09533955911781520816a5cc41cb5fec0c"
+  },
+  {
+    "sourcePath": "../keyframes/05_horse/K03_00-23-000.jpg",
+    "localPath": "assets/keyframes/K03_00-23-000.jpg",
+    "driveFileId": "1C8BlSnU7m3v9iyIeoaIWthUawrKMkVaL",
+    "size": 39405,
+    "sha256": "6850d6886361d874e8409b4e2bc778fde243e661a727a6d5a489f75ece7203a7"
+  },
+  {
+    "sourcePath": "../keyframes/05_horse/K04_01-10-190.jpg",
+    "localPath": "assets/keyframes/K04_01-10-190.jpg",
+    "driveFileId": "1UDXTGpAzN1mGW81s_2L0wc6YQF-HtynH",
+    "size": 69757,
+    "sha256": "a1878ae256fc3dd2c772aaa3e2945f06a060a1579a09b4e2aa005234dac63891"
+  },
+  {
+    "sourcePath": "../keyframes/05_horse/K05_01-23-480.jpg",
+    "localPath": "assets/keyframes/K05_01-23-480.jpg",
+    "driveFileId": "1Us6W-mS4gapxBEO3KO6jx-Nmj5ubw1XR",
+    "size": 74108,
+    "sha256": "9f5a03d4cac7785740a2e2de2addac274beb08f997d65104e74249c2eaba1bbb"
+  },
+  {
+    "sourcePath": "../keyframes/05_horse/K06_01-33-830.jpg",
+    "localPath": "assets/keyframes/K06_01-33-830.jpg",
+    "driveFileId": "1YxGwPm8tni1hibM8VRmLUXithH5OIKT7",
+    "size": 67358,
+    "sha256": "4380febefbf58edef19ca83bbb2c51a869314560f752a807a8f9cf0b65ea9e59"
+  },
+  {
+    "sourcePath": "../keyframes/05_horse/K07_01-51-990.jpg",
+    "localPath": "assets/keyframes/K07_01-51-990.jpg",
+    "driveFileId": "1gf4A8xIkqRXChQ9ocyPTRSD1-GGgUuBf",
+    "size": 12445,
+    "sha256": "5d38e31fdeaa7e0d0ebd8eb9061884f43a233728e4125301f0f40268b5fe8896"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_001_00-00-00.550.jpg",
+    "localPath": "assets/frames/shot_001_00-00-00.550.jpg",
+    "driveFileId": "1KcmKpPJ0cvyislXRBNsfKdQXXh5rSS33",
+    "size": 26151,
+    "sha256": "cc0beba92681524b17b51dfde23a5aef2dd3b3e2f4f89d5f552ab16b71cb6550"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_002_00-01-10.190.jpg",
+    "localPath": "assets/frames/shot_002_00-01-10.190.jpg",
+    "driveFileId": "1_-SpfxHrPUELdW_3VzXrQIzT4jfAKtJZ",
+    "size": 63062,
+    "sha256": "f2077315cc99d44f0904a4c441c5e5f8f678601ec299ae409b0dcf19797254a9"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_003_00-01-11.310.jpg",
+    "localPath": "assets/frames/shot_003_00-01-11.310.jpg",
+    "driveFileId": "1dWNTdHE4RMyw1kWons9l627d6DRwD3cz",
+    "size": 41907,
+    "sha256": "d3245b381fdcf2087ff06a1dd030f72d3ada59cbac4b52940079aa1a47485848"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_004_00-01-16.045.jpg",
+    "localPath": "assets/frames/shot_004_00-01-16.045.jpg",
+    "driveFileId": "1S4TyTYPNAwkyCeOhlckyTZQiNLPy7ooC",
+    "size": 51398,
+    "sha256": "4ad81e8f5dced60f7ab713b5d7d92ccfbf8d630872dcc5861ee32df75f4760ac"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_005_00-01-17.190.jpg",
+    "localPath": "assets/frames/shot_005_00-01-17.190.jpg",
+    "driveFileId": "1v0yabhEb4145J-kp5M2BXqWL_0iPC5t6",
+    "size": 39381,
+    "sha256": "9d1339638a220d2e9bdc261fd575046295cb7ee7b954b056c00523dd6dcb080c"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_006_00-01-23.481.jpg",
+    "localPath": "assets/frames/shot_006_00-01-23.481.jpg",
+    "driveFileId": "1jQLm_i3y_iS838QgDfJHNry75FRAZNdk",
+    "size": 67445,
+    "sha256": "6325a8cc8535e641a483c1f0765799b0add4841e35a556bcfd7112f37fd353db"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_007_00-01-24.750.jpg",
+    "localPath": "assets/frames/shot_007_00-01-24.750.jpg",
+    "driveFileId": "1bwCH3ink8pbcIm9mp2XzvX93Af45X2Ol",
+    "size": 56179,
+    "sha256": "c2e2131aabc11cf790dfc22a3603d38ea9991bd6e757d71615694ecf97e30c30"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_008_00-01-28.486.jpg",
+    "localPath": "assets/frames/shot_008_00-01-28.486.jpg",
+    "driveFileId": "1iTOuPmSHMqCLTK2LsxEVLOn_9Hoqo7Ce",
+    "size": 58064,
+    "sha256": "0ef5e2c4bcdde7e99d56f4b911aa3609c4d20e46eb666597d69352107b71ae3c"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_009_00-01-29.569.jpg",
+    "localPath": "assets/frames/shot_009_00-01-29.569.jpg",
+    "driveFileId": "1lNXZuDevKHhcViMbc7fHIWZ5SzG0iuxR",
+    "size": 37855,
+    "sha256": "cfd3c5ee92f484eab4c2feca40933f37835f6918b3c2bec9dd62836ca0ddb418"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_010_00-01-30.359.jpg",
+    "localPath": "assets/frames/shot_010_00-01-30.359.jpg",
+    "driveFileId": "1DVGdOK73PVYDNbaOOXk3AbfKVLYVCrM9",
+    "size": 51071,
+    "sha256": "2101cc5009dbab894a70575a0cfd4179cf1ef5eb13dec9f62f4e70eed93775d3"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_011_00-01-31.430.jpg",
+    "localPath": "assets/frames/shot_011_00-01-31.430.jpg",
+    "driveFileId": "1ULuQOldjDDqipQj4gp8-yJ0WgmLa_wNU",
+    "size": 68018,
+    "sha256": "d78361536644b9df75c22c4b2d0ba5d229d4e75f8f939899eba7112767c1ce60"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_012_00-01-33.830.jpg",
+    "localPath": "assets/frames/shot_012_00-01-33.830.jpg",
+    "driveFileId": "1VJh5SWQPkBb_sKNxyaJnPvoNuFzAGAWO",
+    "size": 61632,
+    "sha256": "b381a6140fcaf15457fc835de603697c9cf15561a9c92d796f8a7c724a6ce777"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_013_00-01-48.870.jpg",
+    "localPath": "assets/frames/shot_013_00-01-48.870.jpg",
+    "driveFileId": "1DfE3oZPrSTkijvEJ0zBBEv1s5Qz1vHv-",
+    "size": 68367,
+    "sha256": "ed4971dfe160f3642202691ebbccd957f3127920bd03c378d4702d89fe957baf"
+  },
+  {
+    "sourcePath": "../frames/05_141_25JEFFRIES_HORSE_418154525/shot_014_00-01-51.990.jpg",
+    "localPath": "assets/frames/shot_014_00-01-51.990.jpg",
+    "driveFileId": "1Q-Dt2ot56Tmn0xWMbipSuCx_evFl1aO7",
+    "size": 12456,
+    "sha256": "112b836ffda1b5d83aba3601f40ed15cd5be219c4e6e62f58e2cf9dd1e809c34"
+  }
+]

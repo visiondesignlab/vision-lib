@@ -1,0 +1,352 @@
+[
+  {
+    "sourcePath": "../contact_sheets/04_too-good-to-hide-ballantines_selected_keyframes.jpg",
+    "localPath": "assets/contact_sheets/04_too-good-to-hide-ballantines_selected_keyframes.jpg",
+    "driveFileId": "1Rq7doYOJFy2uVr1FskO7IpKFbwJnRhx3",
+    "size": 620485,
+    "sha256": "8825738fe02da0c3dcab6e93b08dbccfa5551badd6c2cd433d48b4819b02a371"
+  },
+  {
+    "sourcePath": "../keyframes/04_too-good-to-hide-ballantines/K01_00-00-550.jpg",
+    "localPath": "assets/keyframes/K01_00-00-550.jpg",
+    "driveFileId": "1rJjqwbw9Pv_GbNctIJbO7cURpuh4bjC7",
+    "size": 39915,
+    "sha256": "bebcf31ea49aebf03801a8da24c651633d87ab281f896201e579c7ff27135696"
+  },
+  {
+    "sourcePath": "../keyframes/04_too-good-to-hide-ballantines/K02_00-13-270.jpg",
+    "localPath": "assets/keyframes/K02_00-13-270.jpg",
+    "driveFileId": "1nYUIGV7qkL_FPpxU03ZudJUfJzfULjQs",
+    "size": 247990,
+    "sha256": "363394a5de2598120a6200c0cc9649ca9cc828821b1a1dc9cef48510d91f5e7f"
+  },
+  {
+    "sourcePath": "../keyframes/04_too-good-to-hide-ballantines/K03_00-35-270.jpg",
+    "localPath": "assets/keyframes/K03_00-35-270.jpg",
+    "driveFileId": "1lonTdTGvJLMXFJdJ_GeCaikoyVTqQl1Z",
+    "size": 165594,
+    "sha256": "ee0091d2b7ffd69e964a781cf4d284e74c45dea3b54d9070ad8470cfce0e8b58"
+  },
+  {
+    "sourcePath": "../keyframes/04_too-good-to-hide-ballantines/K04_00-53-670.jpg",
+    "localPath": "assets/keyframes/K04_00-53-670.jpg",
+    "driveFileId": "1WPHVN5CpVBI_QB6eG__u7cDTh5xvFHPk",
+    "size": 265202,
+    "sha256": "524436badf353f15a369b734dd3e46f5defd1d3de8d602d5e8729f46e48bfe53"
+  },
+  {
+    "sourcePath": "../keyframes/04_too-good-to-hide-ballantines/K05_01-11-950.jpg",
+    "localPath": "assets/keyframes/K05_01-11-950.jpg",
+    "driveFileId": "1Nn9V2X5CBIjFXiAqP4c02TXk1PI8M78J",
+    "size": 167813,
+    "sha256": "a2356b29cd6165bb6a375072098c9c76f48a32fcb10045b75139554b81e72bfc"
+  },
+  {
+    "sourcePath": "../keyframes/04_too-good-to-hide-ballantines/K06_01-30-910.jpg",
+    "localPath": "assets/keyframes/K06_01-30-910.jpg",
+    "driveFileId": "1p03eHArVHYekbW5V1zTArWePixp4sZgD",
+    "size": 303164,
+    "sha256": "b1797226beaf948b065f39a4ee39aa7bf250ca077840b423d5b42e15ded6b825"
+  },
+  {
+    "sourcePath": "../keyframes/04_too-good-to-hide-ballantines/K07_01-47-350.jpg",
+    "localPath": "assets/keyframes/K07_01-47-350.jpg",
+    "driveFileId": "1yi6K1GPHlXfi59aB8SiaHOdJrIaYtH3f",
+    "size": 146507,
+    "sha256": "e92c0cfd6ddf50350dd2f1519f0c7dc11a7b923e29ae0b7df9e008b067f0726c"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_001_00-00-00.550.jpg",
+    "localPath": "assets/frames/shot_001_00-00-00.550.jpg",
+    "driveFileId": "1gEz_nxmHrexChMfeYMRRUeL4k-40-GmQ",
+    "size": 38389,
+    "sha256": "be7832a7342d6a8ffbfc607c77c4349f451d4d50f738abb7d10fa7956527f853"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_002_00-00-10.910.jpg",
+    "localPath": "assets/frames/shot_002_00-00-10.910.jpg",
+    "driveFileId": "1X4AhAOC2geJCcGjshJZMZ4MMID-_KZMw",
+    "size": 208626,
+    "sha256": "617e38c59e1e5bae9dec4f1470d723e65b46ae418870bb6d92c55db7d7fdeeaa"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_003_00-00-13.270.jpg",
+    "localPath": "assets/frames/shot_003_00-00-13.270.jpg",
+    "driveFileId": "107aKd_uIVB5aJgXAdjOB9dNBKMultp9H",
+    "size": 221944,
+    "sha256": "efdc534636daa7f2318b59b72a6693cf0b6d5fce35b129ce7df1adb5e4819c34"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_004_00-00-18.590.jpg",
+    "localPath": "assets/frames/shot_004_00-00-18.590.jpg",
+    "driveFileId": "1kxofK6SpXdvT4Nr-uNb6VdCxmDR9D6-d",
+    "size": 81001,
+    "sha256": "47394d8c87108c1cd224b711e4122e93f9a1207edfbbb8fc88af19a90bd204d0"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_005_00-00-22.270.jpg",
+    "localPath": "assets/frames/shot_005_00-00-22.270.jpg",
+    "driveFileId": "1x7Iu9xA7DzcU0NW5mWrrTpQH4RP5bERQ",
+    "size": 164328,
+    "sha256": "55819861f75cd52c4424b8cc4d0ec715b58cbfad836b028421ac8695665e47d6"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_006_00-00-24.510.jpg",
+    "localPath": "assets/frames/shot_006_00-00-24.510.jpg",
+    "driveFileId": "1pH863821sIC9rBfo61kTALOcVvPqyVHg",
+    "size": 116427,
+    "sha256": "42e5754194580c05a6cd5b47df3bb193eca7ad9e75d616ebab262857fea96ccd"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_007_00-00-28.710.jpg",
+    "localPath": "assets/frames/shot_007_00-00-28.710.jpg",
+    "driveFileId": "1kxrPdOs7wMMyJ0S8R8eex1m9EhLrbp14",
+    "size": 214075,
+    "sha256": "ac01c0afd59abb20c91747a4a8fd9b231197ac3fe6ed6753acb7b0c2a960cfd6"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_008_00-00-30.710.jpg",
+    "localPath": "assets/frames/shot_008_00-00-30.710.jpg",
+    "driveFileId": "1t-wdy9MA3AZFdjhuqFxnaJxVyOoHn9ou",
+    "size": 184747,
+    "sha256": "e27de40fc5456680335d1b1f2d6af868810728ae10978ff8bdeb13234095301c"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_009_00-00-35.270.jpg",
+    "localPath": "assets/frames/shot_009_00-00-35.270.jpg",
+    "driveFileId": "1fV1o1DpV6euwRQm7lg92ZA6feoYaZnKd",
+    "size": 147591,
+    "sha256": "30100f9d9b5a0a321d0e0960db7baefd7e7301dfdc7672879ec6701ef12c7313"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_010_00-00-37.630.jpg",
+    "localPath": "assets/frames/shot_010_00-00-37.630.jpg",
+    "driveFileId": "15A12XOxvSxsXNP2jWjUTXY9zaZNho1GJ",
+    "size": 123489,
+    "sha256": "0bf91b0cbdf456ccce45c2f6807c37830e6c41cf10722569f92e539e68b971c9"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_011_00-00-39.390.jpg",
+    "localPath": "assets/frames/shot_011_00-00-39.390.jpg",
+    "driveFileId": "1G5AECKHuV3smD14c0vzXoNncI50vlf20",
+    "size": 112911,
+    "sha256": "8a3e69e51b58c848999d8661786f0a05ba17874159fc5ad0d82bc745f44f15bc"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_012_00-00-42.390.jpg",
+    "localPath": "assets/frames/shot_012_00-00-42.390.jpg",
+    "driveFileId": "1heLACfiEYzXWzr1PQHBlWItA9wRojaM1",
+    "size": 91213,
+    "sha256": "2c5178ec04a150da13487677b789c1397243f0458463c78a39a7a0e6ec9b5014"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_013_00-00-44.870.jpg",
+    "localPath": "assets/frames/shot_013_00-00-44.870.jpg",
+    "driveFileId": "1gdrMEeHFtlfsG-ufXmDuAuAeyYmLPjKL",
+    "size": 135708,
+    "sha256": "1ee394b5a4b757f8c897ae47b8ee4e0ef2805113a520a43645f93a17d55d553b"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_014_00-00-47.510.jpg",
+    "localPath": "assets/frames/shot_014_00-00-47.510.jpg",
+    "driveFileId": "1XhKG97KW2IKPNQOVYEOhGmrY1F8TOfq-",
+    "size": 135807,
+    "sha256": "4ef81ae35a72c61d05c69f77dfa66e7de3613afeb261e74ab13290d6d37f7854"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_015_00-00-50.550.jpg",
+    "localPath": "assets/frames/shot_015_00-00-50.550.jpg",
+    "driveFileId": "19yVetiFFrvvDk3TsO_JLnGAAzuNGvA4m",
+    "size": 255616,
+    "sha256": "00c71b32cbf5c5512396d431c62f67e8f7fcd008c547ef69bbde94e8c28327c4"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_016_00-00-52.227.jpg",
+    "localPath": "assets/frames/shot_016_00-00-52.227.jpg",
+    "driveFileId": "1t5MtSeAG2batb3oOxON2ilbSvWQQcowR",
+    "size": 168727,
+    "sha256": "656f5644d33cc3553375c25e4fa30f17e03b72d1f6f9cac776fff951ea81d291"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_017_00-00-53.670.jpg",
+    "localPath": "assets/frames/shot_017_00-00-53.670.jpg",
+    "driveFileId": "164iFke7okB4fZE8pqygDeP8c5bmGnbVe",
+    "size": 238230,
+    "sha256": "886924721197a4748d177b17828caff16bc6ee44a3fc451ceba725ac7c2625e1"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_018_00-00-55.550.jpg",
+    "localPath": "assets/frames/shot_018_00-00-55.550.jpg",
+    "driveFileId": "1iyoJZTge02h7bW6GE2edWpQJfYjYa3Cr",
+    "size": 158555,
+    "sha256": "4fd16bc67cb6e7148d4177dd2a022ca4a49b122341ce3abec76363df6820186a"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_019_00-00-57.587.jpg",
+    "localPath": "assets/frames/shot_019_00-00-57.587.jpg",
+    "driveFileId": "1HWQgCwkzfClJ2ks6RVZrbke1UpzpFCyz",
+    "size": 154956,
+    "sha256": "6f748a6d6385d83831802025626066254987d82257a22310e0c0faffe822b95a"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_020_00-00-59.030.jpg",
+    "localPath": "assets/frames/shot_020_00-00-59.030.jpg",
+    "driveFileId": "1bSsakMDoEEPGzacK6vvLG85hubk-0xPs",
+    "size": 266223,
+    "sha256": "426eadf70bd0c99764a920b10462d9676700845f90e7b966ef184af08c8394f4"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_021_00-01-00.790.jpg",
+    "localPath": "assets/frames/shot_021_00-01-00.790.jpg",
+    "driveFileId": "1uNdwMCr_6nynsEJuOvEGGF8skfU8JPS4",
+    "size": 415963,
+    "sha256": "d324dac276533158d04ab994629171f59ab86ec6f4505ea20a59d4a2165f95b8"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_022_00-01-02.317.jpg",
+    "localPath": "assets/frames/shot_022_00-01-02.317.jpg",
+    "driveFileId": "1b2NfE1j1Qn2Sfx-VK2R-QOxoIs9Nj1-b",
+    "size": 117558,
+    "sha256": "f5db0cfb20730ffa9db0450b7c9e22fc8e0c60d819138eb8f4f9ffd87073e7a0"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_023_00-01-03.710.jpg",
+    "localPath": "assets/frames/shot_023_00-01-03.710.jpg",
+    "driveFileId": "13JxqpxnQiNbzRevVFzCtRsY_w0cijgsa",
+    "size": 245709,
+    "sha256": "8a38449bf4af53fee9a22c15b1db5a5af2bb04681dc05141f163aeece405e1ba"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_024_00-01-07.190.jpg",
+    "localPath": "assets/frames/shot_024_00-01-07.190.jpg",
+    "driveFileId": "1a4DmYvIKXh8BhG19KDCMb-Yi7nwiZh8i",
+    "size": 273857,
+    "sha256": "f8293f4aa96451c651e0fc3d25427f65616230f4aa20678af35388e643d10b3f"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_025_00-01-10.270.jpg",
+    "localPath": "assets/frames/shot_025_00-01-10.270.jpg",
+    "driveFileId": "1ktWilXLGaa1h7iRNm1s1-t0Td6hCJYsd",
+    "size": 316385,
+    "sha256": "c9ce136fee4bad3e1ab95b374c2335748fe51290bd3d586a06120b667655cbd4"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_026_00-01-11.950.jpg",
+    "localPath": "assets/frames/shot_026_00-01-11.950.jpg",
+    "driveFileId": "1QfqKg3npziSuRUA3UjfRk2s9NvULaLI7",
+    "size": 150549,
+    "sha256": "881102f407729e406983eb92ae8e1919e8217f44fe63c3718d5d8dc548c00529"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_027_00-01-13.590.jpg",
+    "localPath": "assets/frames/shot_027_00-01-13.590.jpg",
+    "driveFileId": "1eRzWrgUgps5XRT0JHbF64ARQ79LXbk-C",
+    "size": 182809,
+    "sha256": "eecdb71ffa9a0d4dca5241e73c6789a13bce14f1f45ce9618a73d827fa2e9be4"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_028_00-01-15.910.jpg",
+    "localPath": "assets/frames/shot_028_00-01-15.910.jpg",
+    "driveFileId": "1o-RAY3xJIBWRQljB7D6d15tO3QAt1KMn",
+    "size": 250018,
+    "sha256": "27cef0e6b22399086b864001f4e53ca7a16e02cb02451e2b1e3883f62760f513"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_029_00-01-18.230.jpg",
+    "localPath": "assets/frames/shot_029_00-01-18.230.jpg",
+    "driveFileId": "1iS2ozKeB0VdnEh7Si9n9PBUYl69AFkzV",
+    "size": 241404,
+    "sha256": "2e6d88fec95530271ba8519a9995a4aeaef17474ec2208be7abf05e57134c94d"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_030_00-01-20.110.jpg",
+    "localPath": "assets/frames/shot_030_00-01-20.110.jpg",
+    "driveFileId": "1R4aqTK0e-XcBK3b4wrZcv0h2meD3-dbn",
+    "size": 105423,
+    "sha256": "ac449d33b89f6262d9a58613dee80b7e9c7184a55df3ccf6392ae280e54b1996"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_031_00-01-22.150.jpg",
+    "localPath": "assets/frames/shot_031_00-01-22.150.jpg",
+    "driveFileId": "1ydo76CJwSCXAGfhhRya6DkqayAKN23FA",
+    "size": 109087,
+    "sha256": "06fa111337980955eadb495eeac1449cec4c71b3bf9b0ad76257cf4acc15fd9b"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_032_00-01-24.470.jpg",
+    "localPath": "assets/frames/shot_032_00-01-24.470.jpg",
+    "driveFileId": "1Cx4DHbELu3kv7J3EKHjUl7jfLdyZjg8z",
+    "size": 62848,
+    "sha256": "9a83f3756e0b3089cd7575f9a1822dd5d58ea6a78e1d3860b16e21d163aa9860"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_033_00-01-29.310.jpg",
+    "localPath": "assets/frames/shot_033_00-01-29.310.jpg",
+    "driveFileId": "10pMcFRPWXdOX47KLYRB5NadIhl6uT8cl",
+    "size": 125819,
+    "sha256": "f41177ac7a4ac080dfd482d8b2d9d45403b175917aaad0c708febcecd80acd22"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_034_00-01-30.910.jpg",
+    "localPath": "assets/frames/shot_034_00-01-30.910.jpg",
+    "driveFileId": "1pW8QwcI4utmQme4pegyTzXM5ypOuqnwp",
+    "size": 272474,
+    "sha256": "c80918000a18eedb3d2af15c1f711fa12a81bfc106629a540814ea18a1f65f18"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_035_00-01-32.390.jpg",
+    "localPath": "assets/frames/shot_035_00-01-32.390.jpg",
+    "driveFileId": "16YRZq3gVSCNCAzJy64f_rVmSn8QXjLXc",
+    "size": 125904,
+    "sha256": "ffe46af34fa9d344085dfcb7489a71a4a9484426e7c3bdac294c99ea1bbd73c6"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_036_00-01-33.950.jpg",
+    "localPath": "assets/frames/shot_036_00-01-33.950.jpg",
+    "driveFileId": "1sI6oyaDSeeVIKY8LFHuzoE2kIQJaneiQ",
+    "size": 170095,
+    "sha256": "78c11b3b23237e1c6be7fe57c586bb14d7fa7e13cd7279bc022967579c916015"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_037_00-01-36.870.jpg",
+    "localPath": "assets/frames/shot_037_00-01-36.870.jpg",
+    "driveFileId": "10ugJjW1Rp1GGPYW7jBhulBLpIMCArmgK",
+    "size": 151903,
+    "sha256": "df8af1c4f04d3406b8b14c6364adead6a76be444b94db6505cd68bed540499c3"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_038_00-01-38.786.jpg",
+    "localPath": "assets/frames/shot_038_00-01-38.786.jpg",
+    "driveFileId": "1ohStQ-ZMIzVIzpSaGuedKh6dDYiK94B9",
+    "size": 218714,
+    "sha256": "009a883c320e773e1806d2e66f2aed865a04b89a7f7a18ca502533cc5d5c9653"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_039_00-01-40.030.jpg",
+    "localPath": "assets/frames/shot_039_00-01-40.030.jpg",
+    "driveFileId": "1sbZSQe5tMWLGClh815hYlZh3QA6KrAYB",
+    "size": 158223,
+    "sha256": "5dcf06af289c74d01a8092505e002b35fd995d41899dbdf284e8e92f1395b1fd"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_040_00-01-42.910.jpg",
+    "localPath": "assets/frames/shot_040_00-01-42.910.jpg",
+    "driveFileId": "1AaIIHags0FCxDHcWKdfKj6lCpX1MHg9I",
+    "size": 130355,
+    "sha256": "29d43cfe262869806a88023ef90a1a2a9c5651e01ec2ffc25e5da3c7d65f5955"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_041_00-01-45.430.jpg",
+    "localPath": "assets/frames/shot_041_00-01-45.430.jpg",
+    "driveFileId": "1cDV2pSewzi0BsHcp_yJzx5otL-0H23SS",
+    "size": 205298,
+    "sha256": "4950988bd9001bad18ce0cbbedc654beb50905e496f198bc32b5e266bdb50592"
+  },
+  {
+    "sourcePath": "../frames/04_Too_Good_To_Hide___Ballantine's_328413391/shot_042_00-01-47.350.jpg",
+    "localPath": "assets/frames/shot_042_00-01-47.350.jpg",
+    "driveFileId": "1XaK1XH4Ls2OjLI4sD1ouC80xTx-NQdlm",
+    "size": 130382,
+    "sha256": "c27743724c96a0723e5a3879a8580fe627ec635392040bd7d466e0cbe89b4e65"
+  }
+]

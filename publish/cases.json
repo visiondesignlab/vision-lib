@@ -8663,6 +8663,57 @@
    ],
    "updated_at": "2026-11-19T10:31:49+08:00",
    "published_at": "2026-11-19T10:31:49+08:00"
+  },
+  {
+   "id": "cms-f39aff78c0b343c5",
+   "type": "graphic",
+   "title": "nono_ai_archive｜森林香氛包装与分层构图",
+   "category": "品牌视觉",
+   "status": "published",
+   "source": {
+    "platform": "Threads",
+    "author": "@nono_ai_archive",
+    "author_url": "https://www.threads.com/@nono_ai_archive",
+    "url": "https://www.threads.com/@nono_ai_archive/post/DgCfLyEErJs",
+    "date": "2026-11-22 17:30（北京时间）"
+   },
+   "media": {
+    "kind": "images",
+    "thumbnail": "/media/eagle-167c145a82609e68/56B4FBFF-48CA-4493-A356-0F98F86AE751-b25c52d45b.jpg",
+    "items": [
+     {
+      "kind": "image",
+      "url": "/media/eagle-167c145a82609e68/56B4FBFF-48CA-4493-A356-0F98F86AE751-b25c52d45b.jpg"
+     },
+     {
+      "kind": "image",
+      "url": "/media/eagle-167c145a82609e68/A465DA0F-7D98-4DC7-9FD3-0959CF67E3E1-54d42556d7.jpg"
+     },
+     {
+      "kind": "image",
+      "url": "/media/eagle-167c145a82609e68/A946E8C4-63B8-4769-90C0-9CD3E7354B08-2ec9551f91.jpg"
+     },
+     {
+      "kind": "video",
+      "url": "/media/eagle-167c145a82609e68/361FE9DB-CF38-4007-AFD5-DB06A1692E64-f5ef7325c2.mp4",
+      "thumbnail": "/media/eagle-167c145a82609e68/361FE9DB-CF38-4007-AFD5-DB06A1692E64-f5ef7325c2.jpg"
+     }
+    ]
+   },
+   "added_at": "2026-11-24T10:27:47+08:00",
+   "subtitle": "以蓝绿森林图像、圆形开窗和简洁排版呈现扩香器包装，并分享 GPT 产品图的分层构图方法。",
+   "description": "nono_ai_archive 制作的香氛扩香器包装视觉。白色纸盒搭配蓝绿森林图像与圆形开窗，通过前后叠放、序列排列和手持 POV 视角展示包装。作者在原帖回复中说明：用 GPT 制作分层产品图时，可明确允许部分包装文字被遮挡、部分物体超出画面边缘，并限定遮挡范围，让构图更自然。卡片收录同一原帖的 3 张图片与 1 段视频。",
+   "tags": [
+    "包装设计",
+    "香氛",
+    "扩香器",
+    "分层构图",
+    "产品视觉",
+    "GPT",
+    "AI 图像"
+   ],
+   "updated_at": "2026-11-24T10:27:47+08:00",
+   "published_at": "2026-11-24T10:27:47+08:00"
   }
  ]
 }
