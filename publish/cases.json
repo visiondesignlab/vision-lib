@@ -8723,8 +8723,8 @@
    "status": "published",
    "source": {
     "platform": "TikTok",
-    "author": "TWXZZ (@twxzz5)",
-    "author_url": "https://www.tiktok.com/@twxzz5",
+    "author": "",
+    "author_url": "",
     "url": "https://www.tiktok.com/@twxzz5/video/7669868862829071638",
     "date": "2026-08-04"
    },
@@ -8740,16 +8740,16 @@
    },
    "added_at": "2026-11-24T12:19:05+08:00",
    "brand": "Claude",
-   "subtitle": "TWXZZ 的 Claude 概念广告",
-   "description": "TWXZZ 用 17 秒回应「AI 会取代程序员吗？」代码纹理、键盘特写与拳击镜头快速交替，最后定格在黑底白字的 Claude 标识。片尾注明这是作者独立创作的概念短片。",
+   "subtitle": "TWXZZ 在 TikTok 发布的 Claude 概念广告",
+   "description": "这支 17 秒的 Claude 概念广告以「AI 会取代程序员吗？」开场，将代码纹理、键盘特写与拳击镜头交替剪辑。片尾声明本片与 Anthropic 无隶属关系。TikTok 来源发布者为 TWXZZ（@twxzz5），原创归属未确认。",
    "tags": [
     "概念广告",
     "快速剪辑",
     "动态图形"
    ],
    "trust": "社区",
-   "updated_at": "2026-11-24T12:19:05+08:00",
-   "published_at": "2026-11-24T12:19:05+08:00"
+   "updated_at": "2026-11-24T14:27:01+08:00",
+   "published_at": "2026-11-24T14:27:01+08:00"
   }
  ]
 }
