@@ -8714,6 +8714,42 @@
    ],
    "updated_at": "2026-11-24T10:27:47+08:00",
    "published_at": "2026-11-24T10:27:47+08:00"
+  },
+  {
+   "id": "cms-9c13c3db82a146f6",
+   "type": "showcase",
+   "title": "CLAUDE AI [concept ad/edit]",
+   "category": "动效设计",
+   "status": "published",
+   "source": {
+    "platform": "TikTok",
+    "author": "TWXZZ (@twxzz5)",
+    "author_url": "https://www.tiktok.com/@twxzz5",
+    "url": "https://www.tiktok.com/@twxzz5/video/7669868862829071638",
+    "date": "2026-08-04"
+   },
+   "media": {
+    "kind": "video",
+    "video": "/media/twxzz-7669868862829071638/film.mp4",
+    "preview": "/media/twxzz-7669868862829071638/film.mp4",
+    "thumbnail": "/media/twxzz-7669868862829071638/thumb.jpg",
+    "specs": {
+     "resolution": "1024×576",
+     "duration_s": 17.06
+    }
+   },
+   "added_at": "2026-11-24T12:19:05+08:00",
+   "brand": "Claude",
+   "subtitle": "TWXZZ 的 Claude 概念广告",
+   "description": "TWXZZ 用 17 秒回应「AI 会取代程序员吗？」代码纹理、键盘特写与拳击镜头快速交替，最后定格在黑底白字的 Claude 标识。片尾注明这是作者独立创作的概念短片。",
+   "tags": [
+    "概念广告",
+    "快速剪辑",
+    "动态图形"
+   ],
+   "trust": "社区",
+   "updated_at": "2026-11-24T12:19:05+08:00",
+   "published_at": "2026-11-24T12:19:05+08:00"
   }
  ]
 }
