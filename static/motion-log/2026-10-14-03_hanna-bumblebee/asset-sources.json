@@ -1,0 +1,303 @@
+[
+  {
+    "sourcePath": "../contact_sheets/03_hanna-bumblebee_selected_keyframes.jpg",
+    "localPath": "assets/contact_sheets/03_hanna-bumblebee_selected_keyframes.jpg",
+    "driveFileId": "1rFE8m_gGJP25TYY37q-_nzMIOtPhT1OM",
+    "size": 814434,
+    "sha256": "dd3d1e15bbb190470a5d06e4007f72f80f6d34bb56fcee4157bd1d35c97585ac"
+  },
+  {
+    "sourcePath": "../keyframes/03_hanna-bumblebee/K01_00-01-000.jpg",
+    "localPath": "assets/keyframes/K01_00-01-000.jpg",
+    "driveFileId": "1rC7Upi7_9QfimMISvXh2Dx6DalM0zkiZ",
+    "size": 302304,
+    "sha256": "c814fa861c857c91e9365f14f4111e973f411252213c23d1e4f31ce6e3951233"
+  },
+  {
+    "sourcePath": "../keyframes/03_hanna-bumblebee/K02_00-05-000.jpg",
+    "localPath": "assets/keyframes/K02_00-05-000.jpg",
+    "driveFileId": "1LguqWRtjRuqAkXK09Zsf3YMjdg3aadgI",
+    "size": 341133,
+    "sha256": "94874898a4d8cb54d190ae2d6b91653d54f82585f9c755a9716bce562ec9b5d4"
+  },
+  {
+    "sourcePath": "../keyframes/03_hanna-bumblebee/K03_00-14-000.jpg",
+    "localPath": "assets/keyframes/K03_00-14-000.jpg",
+    "driveFileId": "15A5DV9sPd1smcC5OfMa6sUG_zTBDn4wd",
+    "size": 250470,
+    "sha256": "83eb8a55f16dbdd7876959b46ea2131004340f600710fa30c5697414efcfbbc9"
+  },
+  {
+    "sourcePath": "../keyframes/03_hanna-bumblebee/K04_00-22-000.jpg",
+    "localPath": "assets/keyframes/K04_00-22-000.jpg",
+    "driveFileId": "1IXTf62n9PihOEb0itQwOUG3dB34oayEa",
+    "size": 227722,
+    "sha256": "4da0e4dfffc7f37d17734597e6ca478138ea7b7466b55c58f0048d040879a43a"
+  },
+  {
+    "sourcePath": "../keyframes/03_hanna-bumblebee/K05_00-40-000.jpg",
+    "localPath": "assets/keyframes/K05_00-40-000.jpg",
+    "driveFileId": "1YmvvoEW-Ao1Ic2ODP--9wMyvHmNMcyvk",
+    "size": 347189,
+    "sha256": "f66ed12be42892be87a7914346e8998e0a76c2a7da620c398297b5ff6984f296"
+  },
+  {
+    "sourcePath": "../keyframes/03_hanna-bumblebee/K06_00-58-000.jpg",
+    "localPath": "assets/keyframes/K06_00-58-000.jpg",
+    "driveFileId": "175vBisUy5dXnN-nSKBSwbnD5l9mO0ics",
+    "size": 138350,
+    "sha256": "85e6b02038d3ca3b773361aab6ddd0db12476086176a12b14c37a44507794f0e"
+  },
+  {
+    "sourcePath": "../keyframes/03_hanna-bumblebee/K07_01-13-000.jpg",
+    "localPath": "assets/keyframes/K07_01-13-000.jpg",
+    "driveFileId": "1L8gh2eCVIDchvV3uLfGfni8Z-bvnfb67",
+    "size": 209314,
+    "sha256": "8d20fa27f701b1cbc12b6913aeddb9b7821474e4e857e06d9fa4b0152fc5ce76"
+  },
+  {
+    "sourcePath": "../keyframes/03_hanna-bumblebee/K08_01-34-000.jpg",
+    "localPath": "assets/keyframes/K08_01-34-000.jpg",
+    "driveFileId": "1R2zSEOUaKo5Q6uBs33umJ2-tsiKivIEt",
+    "size": 52634,
+    "sha256": "ded6e1a296a8b35ff95e76cb88c43aba98501797ed9b1ececf92bf7ad639b794"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_001_00-00-00.550.jpg",
+    "localPath": "assets/frames/shot_001_00-00-00.550.jpg",
+    "driveFileId": "1lMec3M5ap3VSNYtxbJu75sB6sbeahVSt",
+    "size": 270470,
+    "sha256": "6459705675f740f725688f368c58844ab45c7f9d61c5d607d27269fdeabeed2b"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_002_00-00-03.430.jpg",
+    "localPath": "assets/frames/shot_002_00-00-03.430.jpg",
+    "driveFileId": "1XitWhPDmQuc7MJVLIcmYjcfUK90az1Bl",
+    "size": 500598,
+    "sha256": "7c08612ccea3c1b82fc9133beb72010df8fbba5bc859473afa6b8e6e7e6a9e97"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_003_00-00-07.590.jpg",
+    "localPath": "assets/frames/shot_003_00-00-07.590.jpg",
+    "driveFileId": "1S_GYxgyp5F0z9RVtAkwJ60qNalQbTWN3",
+    "size": 366531,
+    "sha256": "458032f46853988350f5fb58afa0f5eb0c61193b8ff7ade6869545d1a1d0b062"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_004_00-00-10.550.jpg",
+    "localPath": "assets/frames/shot_004_00-00-10.550.jpg",
+    "driveFileId": "1K_XAhyFr-umwXqjFXV0T5mvVd2CTh8am",
+    "size": 217157,
+    "sha256": "9368ddc217f05d37e60134b7b1b55244987ec1dadb9e817ac58238febdaecb96"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_005_00-00-11.670.jpg",
+    "localPath": "assets/frames/shot_005_00-00-11.670.jpg",
+    "driveFileId": "1Gl5wepMjsh0P8a_bz4cF6Llt1rZjCyBh",
+    "size": 232944,
+    "sha256": "7db25f19688050383bc5385fe0a452e23c8925e796cd09c9821a9d73c62f13fe"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_006_00-00-16.230.jpg",
+    "localPath": "assets/frames/shot_006_00-00-16.230.jpg",
+    "driveFileId": "1mTUM4UqvFR92qEgnOUcCqFXRv6EqF_Gw",
+    "size": 279857,
+    "sha256": "6e727baf55eeda753e82d1a54a0467662357e5eb9b38f3d4b913a57ab9bec9b8"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_007_00-00-18.925.jpg",
+    "localPath": "assets/frames/shot_007_00-00-18.925.jpg",
+    "driveFileId": "1-OtoDtlaCE6oFAujIbgkL6cEe9TyRv1O",
+    "size": 370262,
+    "sha256": "58d83ae997013c81a022bdb98c06128400b0a3c70ce3a5c4627c2132e265b201"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_008_00-00-20.070.jpg",
+    "localPath": "assets/frames/shot_008_00-00-20.070.jpg",
+    "driveFileId": "1tPBenTMraSc6EyVUJ2amPMWpFUMl3ghm",
+    "size": 190102,
+    "sha256": "b9858ad41ef6c92f1a833c4905578c9eade2952767e46a35f0e29bec0ca40c34"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_009_00-00-28.350.jpg",
+    "localPath": "assets/frames/shot_009_00-00-28.350.jpg",
+    "driveFileId": "19AnlFdTHn5aqeMz-HRs8ws3gcgImP55V",
+    "size": 183044,
+    "sha256": "7b58e2972af7aead3664b8b79e470d3cdff9a4ae7ae6e8fa7a82f1b20195c533"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_010_00-00-30.910.jpg",
+    "localPath": "assets/frames/shot_010_00-00-30.910.jpg",
+    "driveFileId": "1mAfwZbUiRWAoaWBkMu-x_nvfC7p3zCek",
+    "size": 394076,
+    "sha256": "e746f79ee6b996344e8546573e252033282b78f272135aafc835aa5b632684c8"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_011_00-00-33.406.jpg",
+    "localPath": "assets/frames/shot_011_00-00-33.406.jpg",
+    "driveFileId": "18PYPjAZbWz32ozNlWHE1YrU0HhOI2jzS",
+    "size": 81365,
+    "sha256": "ed3934e47c5dd6f2964b8623cbfafb0a136a34fd9900f4b6f12cf4f94102ff80"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_012_00-00-34.686.jpg",
+    "localPath": "assets/frames/shot_012_00-00-34.686.jpg",
+    "driveFileId": "1Ov5QEiS-0FHUSfzI2Dd2yebOQPWHtUG9",
+    "size": 119327,
+    "sha256": "bb9c983f5530281fd726a436909e5b3cb0b9d635674683b843aebb3a07d35f27"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_013_00-00-35.647.jpg",
+    "localPath": "assets/frames/shot_013_00-00-35.647.jpg",
+    "driveFileId": "1_q4Lx8bWowhIjuZD_gX23TC1SK6rzAAb",
+    "size": 78419,
+    "sha256": "b5d43c7315b4e7b2a6ae75598ba95957f9038163eb275b0695a64aac5923a357"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_014_00-00-36.470.jpg",
+    "localPath": "assets/frames/shot_014_00-00-36.470.jpg",
+    "driveFileId": "1C92UdwUwm9mcMs_bO-GXktWcucKqgIEi",
+    "size": 235762,
+    "sha256": "511cf7c30cd539b2ebe5e3be98d27755204169a97b76793242e37e68ba66d468"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_015_00-00-38.902.jpg",
+    "localPath": "assets/frames/shot_015_00-00-38.902.jpg",
+    "driveFileId": "19BjdtUs3KKSx7Hmt7FuNABSwZF1ZIrIQ",
+    "size": 363377,
+    "sha256": "e3ce67d2bb3422476111318ec9290440a4e4917587174b144b83e9e67d6be78c"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_016_00-00-39.352.jpg",
+    "localPath": "assets/frames/shot_016_00-00-39.352.jpg",
+    "driveFileId": "1-8miX-7UDJe-nz9v6YBSSdmmeAagCrhM",
+    "size": 529937,
+    "sha256": "01a146b8afc52a9164106d083aa1eedb9547d8f827cd97ca27c580af5e2fb06a"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_017_00-00-39.934.jpg",
+    "localPath": "assets/frames/shot_017_00-00-39.934.jpg",
+    "driveFileId": "1c1zw2GPjAUSrxHnIRvhzITW1tAszlwht",
+    "size": 311453,
+    "sha256": "f4187f15585cd8a029d261afdb4d446785fa86d2ee7bb599b7ee374405093486"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_018_00-00-40.708.jpg",
+    "localPath": "assets/frames/shot_018_00-00-40.708.jpg",
+    "driveFileId": "19VXEDVYvOaWTVftHe2RWMQWvYOxBONQ5",
+    "size": 491581,
+    "sha256": "d3b5aae8edb75b8124e180d578337d659a97478c4a7a0022439101d76a59e3b6"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_019_00-00-41.630.jpg",
+    "localPath": "assets/frames/shot_019_00-00-41.630.jpg",
+    "driveFileId": "1x8JkHZTYXkp4_fQ86DZDCExFRp7nRyLp",
+    "size": 95484,
+    "sha256": "4e1562e898f1d4199ce1dd10c6975b90ba33dbb6e603569f550475fd64d47a15"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_020_00-00-43.510.jpg",
+    "localPath": "assets/frames/shot_020_00-00-43.510.jpg",
+    "driveFileId": "1efCQxvXmhTQxrsXWWg1pwSKdIAaZycex",
+    "size": 197324,
+    "sha256": "62901be56627340bd5564887e30c6fd951e6d59407a5f726dc0599361f93624e"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_021_00-00-45.182.jpg",
+    "localPath": "assets/frames/shot_021_00-00-45.182.jpg",
+    "driveFileId": "1jAKpIKITfdBaKvpWJYl0gM4ZtJKrr6jy",
+    "size": 151504,
+    "sha256": "3ca9ac2bc68711d62d3c3ce36f1013160790be0c5195279be772669a3353cd8c"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_022_00-00-45.586.jpg",
+    "localPath": "assets/frames/shot_022_00-00-45.586.jpg",
+    "driveFileId": "1d1kjOG_XbnnMpw33TU3Zag-GKkJs7GOe",
+    "size": 69300,
+    "sha256": "f65181c29176114e1dc0f7e0c668f308697712e11b706048358deacb03748e9e"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_023_00-00-46.292.jpg",
+    "localPath": "assets/frames/shot_023_00-00-46.292.jpg",
+    "driveFileId": "1aqNxUVDwltv4q8jppfzILLlRdnjN65X8",
+    "size": 292169,
+    "sha256": "b61c3a525d26c8bbfd0b85401bc67285578388e24a65f61790be81d9f45db9f7"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_024_00-00-47.710.jpg",
+    "localPath": "assets/frames/shot_024_00-00-47.710.jpg",
+    "driveFileId": "1nA-wdmOZv0wyBCYGEDQ9wRypUBdPPUaI",
+    "size": 604300,
+    "sha256": "9d1316ff539c7f936f9ca5db80eb3d80eeea17778ba86a7104d4b235ce8a2360"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_025_00-00-57.950.jpg",
+    "localPath": "assets/frames/shot_025_00-00-57.950.jpg",
+    "driveFileId": "1woPQ0SRW1Aos2bdQMlJ1LlhWqWiMqWef",
+    "size": 122894,
+    "sha256": "2cefd4c4c945f685f32f81033b06ef5d28dfaf9f19f076780db6120e168300e5"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_026_00-00-59.550.jpg",
+    "localPath": "assets/frames/shot_026_00-00-59.550.jpg",
+    "driveFileId": "1dptXaaHgCN_v1XN5XqtQnOZUICpfxx5G",
+    "size": 285812,
+    "sha256": "fae70e4bd4b8147fd9f9134a716710c84552f27bbe3c1a8c020f7db2c578a5a8"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_027_00-01-02.206.jpg",
+    "localPath": "assets/frames/shot_027_00-01-02.206.jpg",
+    "driveFileId": "1pQ6H7jXfQnE49yBV_Us8EmpbQ1kj0g3t",
+    "size": 171299,
+    "sha256": "5d4245bfad934afe0525b0733e03623f6f98a7d8afa16e8ff21eb73c618b7bff"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_028_00-01-03.550.jpg",
+    "localPath": "assets/frames/shot_028_00-01-03.550.jpg",
+    "driveFileId": "150PrY_H7xY5DXKjqoQgmXWGb_XiweZS1",
+    "size": 242757,
+    "sha256": "8547e74f33224044d7303b5c2752d1b4bbb5c161b4e0f2e3b2da24c0fd76bfcf"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_029_00-01-11.030.jpg",
+    "localPath": "assets/frames/shot_029_00-01-11.030.jpg",
+    "driveFileId": "1Cz5Atz3pFcxDn4A-XMmamuRNMJjwljTH",
+    "size": 213722,
+    "sha256": "4ecd5da8b803b2ce903d76e1a2defa30a7ce96838f6583c761201d08700a3750"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_030_00-01-12.830.jpg",
+    "localPath": "assets/frames/shot_030_00-01-12.830.jpg",
+    "driveFileId": "1ogDER7llmqKkzD7Dxkhi3QC2kZWuaLxb",
+    "size": 185459,
+    "sha256": "9c99190229e85ada7fac8973548d5bc0bc84fd8c5dad1f6c64da04e060d9bf7b"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_031_00-01-14.430.jpg",
+    "localPath": "assets/frames/shot_031_00-01-14.430.jpg",
+    "driveFileId": "13pAXOolhf9UFfnU8uMZMigVKbybSplVw",
+    "size": 278479,
+    "sha256": "f4f606853f07c37a34e5a31c0b58d56a33ec89f7449ce4b66893503fe0ea95a0"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_032_00-01-15.950.jpg",
+    "localPath": "assets/frames/shot_032_00-01-15.950.jpg",
+    "driveFileId": "1_eSx4F0NT1mSElABRnNhN48g3c6d20RD",
+    "size": 214495,
+    "sha256": "a2d47fb88270e103d8ebe0508bbdd2ace69770a2c00620cfb0ce5b31d6498969"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_033_00-01-18.350.jpg",
+    "localPath": "assets/frames/shot_033_00-01-18.350.jpg",
+    "driveFileId": "1ZbL6-7t-Ny4keiE-pevECUcD0osnm4Uy",
+    "size": 279383,
+    "sha256": "d28c68305f3feca1c8e2e854beea18cc3409a2c4e11974223973fb78f970ee5b"
+  },
+  {
+    "sourcePath": "../frames/03_140_08PASSION_#HANNAHBUMBLEBEE_397311446/shot_034_00-01-28.510.jpg",
+    "localPath": "assets/frames/shot_034_00-01-28.510.jpg",
+    "driveFileId": "1btHpdX_DDv2GCVI88_q03DKBbr73oZth",
+    "size": 33670,
+    "sha256": "a8994adb4b66993d19f61b74da9055f0cb51ef1262e271320b6348bb146f69dc"
+  }
+]

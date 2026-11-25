@@ -1,0 +1,61 @@
+
+<header>
+<h1>Vol.33 有点意思 A Little Something</h1>
+<p class="byline">Design Intelligence · 2026-11-25 · 产品设计 / 视觉设计 / 设计工程 / 前端实现</p>
+</header>
+<h2>● 今日主线判断</h2>
+<p class="mixed-script">W3C 昨天公开了指针驱动动画和滤镜效果两份工作草案，分别讨论指针位置怎样映射成进度、背景滤镜能采到哪一层。GitHub 同期把任务状态带进 Issue 和仓库看板，并预告 12 月 1 日起调整「什么动作会让你重新订阅」。这几件事都适合拿来改组件验收：写出状态由什么输入触发、离开后如何恢复、谁能改。Wix Studio Two 的发布片也是这个思路，把一次选中、改色或导入后的结果留在画面里，观众才知道工具改了哪里。</p>
+<h2>● 前端实现</h2>
+<h3>Pointer-driven Animations Module Level 1</h3>
+<p class="mixed-script">11 月 24 日发布的首份公开工作草案提出 CSS 的 <code>pointer()</code> 与 Web Animations API 的 <code>PointerTimeline</code>，让元素某一轴上的指针位置决定动画进度。元素范围的起点、终点对应 0% 和 100%，草案还定义了可以调整 50% 落点的范围。这是规范草案，浏览器实现进度需要另查。</p>
+<p>对有拖动对比、材质预览的组件，先把 0%／50%／100% 分别画清楚，再给触屏和键盘保留可操作的控件。这样将来换时间线实现，产品定义仍然成立。</p>
+<p class="mixed-script">W3C 草案<a class="source-url" href="https://www.w3.org/TR/2026/WD-pointer-animations-1-20261124/" rel="noopener noreferrer" target="_blank">https://www.w3.org/TR/2026/WD-pointer-animations-1-20261124/</a></p>
+<h3>Filter Effects Module Level 2</h3>
+<p class="mixed-script">一模一样的磨砂面板，放进带 <code>opacity</code> 的祖先，采到的背景就可能变了。W3C 的首份公开工作草案用 Backdrop Root 描述背景滤镜向上取样的边界，也列了对应的 Web Platform Tests。草案仍待工作组达成共识，当前项目先在目标浏览器跑自己的组件组合。</p>
+<p>设计系统里的玻璃材质应注明使用层级。最容易在交付时漏掉的是嵌套弹层，单独预览时通透，接进带透明度过渡的容器后背景就不对了。</p>
+<p class="mixed-script">W3C 草案<a class="source-url" href="https://www.w3.org/TR/2026/WD-filter-effects-2-20261124/" rel="noopener noreferrer" target="_blank">https://www.w3.org/TR/2026/WD-filter-effects-2-20261124/</a> · Backdrop Root / opacity 测试<a class="source-url" href="https://wpt.live/css/filter-effects/backdrop-filter-backdrop-root-opacity.html" rel="noopener noreferrer" target="_blank">https://wpt.live/css/filter-effects/backdrop-filter-backdrop-root-opacity.html</a></p>
+<h3>Computing with CSS Layout</h3>
+<figure><img alt="Agustin Capeletto 的文章与 CSS-only 物理演示" decoding="async" height="960" loading="lazy" src="01.png" width="1440"/><figcaption>Agustin Capeletto 的文章与 CSS-only 物理演示</figcaption></figure>
+<p class="mixed-script">Agustin Capeletto 把 Grid 的 <code>auto</code> 列当作求最大值，把 Flex 行当作求和，再用容器单位和自定义属性把布局产出的尺寸送入下一步计算。开篇的纯 CSS 小球是演示，真正可以带回项目的是阅读布局的方式。比如一组操作项要按最长标签对齐，先看看轨道尺寸能否直接表达这个约束，省掉一份跟字体加载和本地化一起变化的测量状态。</p>
+<p class="mixed-script">原文与演示<a class="source-url" href="https://noscript.ing/compute" rel="noopener noreferrer" target="_blank">https://noscript.ing/compute</a></p>
+<h2>● 产品与协作</h2>
+<h3>Issue statuses and repository boards are in public preview</h3>
+<figure><img alt="GitHub 官方 Issue 截图，状态菜单独立于 Bug 类型" decoding="async" height="1000" loading="lazy" src="02.png" width="1720"/><figcaption>GitHub 官方 Issue 截图，状态菜单独立于 Bug 类型</figcaption></figure>
+<p class="mixed-script">GitHub 在公测中给 Issue 增加 Backlog、Todo、In progress、In review 等状态，仓库的保存视图也能切成看板。关联草稿 PR 会进 In progress，草稿转为待审会进 In review，团队的 GitHub Project 若有同名状态，可以双向同步。</p>
+<p>还没实测，先不下结论。对组件库团队，第一条验收用例应该是「代码准备好评审，但视觉还没验收」。如果两件事都落进同一列，设计签核最好留在单独字段里，否则看板的自动推进容易把它藏掉。</p>
+<p class="mixed-script">GitHub Changelog<a class="source-url" href="https://github.blog/changelog/2026-11-23-issue-statuses-and-repository-boards-are-in-public-preview/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-23-issue-statuses-and-repository-boards-are-in-public-preview/</a></p>
+<h3>More predictable notifications on GitHub.com</h3>
+<p class="mixed-script">GitHub.com 计划从 12 月 1 日开始分批迁移通知。手动退订后，自己写评论、提交评审这类活动将保留退订状态，点名、指派或请求评审仍可重新订阅。收件箱显示的通知原因将按优先级排列，邮件头会带上全部适用原因。</p>
+<p>协作产品做「取消关注」时，可以直接借用这条规则写验收：参与讨论保留用户偏好，收到明确指派才恢复提醒。用通知邮件做分流的团队则要先查解析器，它现在可能拿到多个原因。</p>
+<p class="mixed-script">GitHub Changelog<a class="source-url" href="https://github.blog/changelog/2026-11-24-more-predictable-notifications-on-github-com/" rel="noopener noreferrer" target="_blank">https://github.blog/changelog/2026-11-24-more-predictable-notifications-on-github-com/</a></p>
+<h3>Firefox 161</h3>
+<p class="mixed-script">11 月 24 日的 Firefox 161 把标签页组放进应用菜单，方便再找回来，也允许为「复制当前标签页地址」绑定自定义快捷键，默认留空。标签组最实用的设计发生在离开它以后：重新发现入口能不能跟普通页面一样快。复制地址则适合保留为用户主动绑定的高频动作，给已有快捷键配置留出空间。</p>
+<p class="mixed-script">Firefox 161 发布说明<a class="source-url" href="https://www.firefox.com/en-US/firefox/161.0/releasenotes/" rel="noopener noreferrer" target="_blank">https://www.firefox.com/en-US/firefox/161.0/releasenotes/</a></p>
+<h2>● Case Study</h2>
+<h3>You own Co-op</h3>
+<figure><img alt="SomeOne 为 Co-op 制作的购物袋，完整标志与拆分图形组成的纹样并置" decoding="async" height="1536" loading="lazy" src="03.png" width="2048"/><figcaption>SomeOne 为 Co-op 制作的购物袋，完整标志与拆分图形组成的纹样并置</figcaption></figure>
+<p class="mixed-script">SomeOne 把 Co-op 经典标志拆成五种 Membershapes，给食品、保险、法律等不同业务共用，还与 F37 合作推出 Co-op Headline，保留轮廓版和带滚墨质感的 SVG 版。这是回看案例，合作始于 2023 年。袋子上的完整标志负责识别，浅蓝碎片负责形成图案，其中一枚深蓝碎片被单独标出来呼应会员持有的一份。做跨业务的品牌规范时，这张图比一页色板更好用，它直接示范了同一组形状如何在不同尺寸承担不同任务。</p>
+<p class="mixed-script">SomeOne 项目页<a class="source-url" href="https://www.someoneinlondon.com/projects/co-op" rel="noopener noreferrer" target="_blank">https://www.someoneinlondon.com/projects/co-op</a></p>
+<h2>● 产品动态 3D/2D 视频</h2>
+<h3>Technological, Precise &amp; Open: Wix Launches Studio Two</h3>
+<figure data-film-source="https://framerate.tv/embed/s0JOdofI?primary_color=%2523ffffff&amp;track_color=%2523ffffff&amp;theme=minimal"><img alt="Wix Studio Two 发布片的 Resonance 镜头，蓝色选框、调色面板和唱片排版同屏" decoding="async" height="1078" loading="lazy" src="04.jpg" width="1920"/><figcaption>Wix Studio Two 发布片的 Resonance 镜头，蓝色选框、调色面板和唱片排版同屏</figcaption></figure>
+<p class="mixed-script">Wix 在 11 月初公布 Studio Two，编辑器把生成、画布编辑和 React 代码放在一起，面向 Wix Partners 分批开放。Stash 11 月 24 日收录的是 Wix Studio 自制的 86 秒发布片。片段约 19 秒切到斜放的笔电，代码和排版同框，32 秒左右回到深色 AI 输入框和亮色页面，44 秒附近把人像、字块和蓝色影像切成横条。黑白硬切让工具和作品交替占据画面，像素字和光标在不同镜头中提供连续性。</p>
+<p class="mixed-script">最适合抄进分镜的是约 71 秒的 Montora 段落。橙色布料和户外人像已经给了作品气质，蓝色选框只在需要说明能动哪个元素时出现。Resonance 也把调色面板和渐变唱片同时留在画面里。下一支工具片可先录一个真实操作，留足时间给「选中 → 改一项 → 看结果」三个状态，尤其把代码导入前后用了哪个组件拍清楚。产品的导入与往返还没实测，先不下结论。</p>
+<p class="mixed-script">在 Framerate 播放原片<a class="source-url" href="https://framerate.tv/embed/s0JOdofI?primary_color=%2523ffffff&amp;track_color=%2523ffffff&amp;theme=minimal" rel="noopener noreferrer" target="_blank">https://framerate.tv/embed/s0JOdofI?primary_color=%2523ffffff&amp;track_color=%2523ffffff&amp;theme=minimal</a></p>
+<p class="mixed-script">Stash 制作记录<a class="source-url" href="https://www.stashmedia.tv/technological-precise-open-wix-launches-studio-two/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/technological-precise-open-wix-launches-studio-two/</a> · Wix 产品公告<a class="source-url" href="https://www.wix.com/blog/meet-wix-studio-two" rel="noopener noreferrer" target="_blank">https://www.wix.com/blog/meet-wix-studio-two</a> · 开放范围与导入／导出 FAQ<a class="source-url" href="https://forum.wixstudio.com/t/studio-two-your-questions-answered/80700" rel="noopener noreferrer" target="_blank">https://forum.wixstudio.com/t/studio-two-your-questions-answered/80700</a></p>
+<h2>● Stash 最新内容观察</h2>
+<p class="mixed-script">首页和最新 8 条中只有 Wix 是上期之后的新条目。另两条取自近期已登记作品，补看制作细节。</p>
+<ul>
+<li>Wix Launches Studio Two<a class="source-url" href="https://www.stashmedia.tv/technological-precise-open-wix-launches-studio-two/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/technological-precise-open-wix-launches-studio-two/</a>｜<strong>产品发布片</strong>｜已升级为今日主卡。保留改色前后的同一构图，便于读懂操作结果。</li>
+<li>The Tower &amp; the Witch<a class="source-url" href="https://www.stashmedia.tv/the-tower-the-witch-new-spec-game-trailer-by-ripplet/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/the-tower-the-witch-new-spec-game-trailer-by-ripplet/</a>｜<strong>CG 游戏概念片</strong>｜制作方把环境按 30 fps、角色按 12 fps 处理，布料模拟因此成了难点。角色和环境可以分开设计更新节奏，合成时专门验布料和接触点。</li>
+<li>Give the Gift of Closeness<a class="source-url" href="https://www.stashmedia.tv/postoffice-amsterdam-give-the-gift-of-closeness-for-swiss-brands-united/" rel="noopener noreferrer" target="_blank">https://www.stashmedia.tv/postoffice-amsterdam-give-the-gift-of-closeness-for-swiss-brands-united/</a>｜<strong>品牌片 / 角色 VFX</strong>｜Postoffice 用 CGI 与 AI 混合制作蝾螈 Oskar，叙事靠停顿和细小表情。做角色镜头回归时，先逐镜核对视线和动作的连续性。</li>
+</ul>
+<h2>● 明天继续盯什么</h2>
+<ul>
+<li>PointerTimeline 的首次浏览器实现进度，以及触屏离开和键盘操作能否对应同一组状态。</li>
+<li>GitHub 公测状态与既有 Projects 自动化同时改值时，设计验收字段怎么保留。12 月 1 日后再查邮件头的多值变化。</li>
+<li>Wix Studio Two 用小型 React 组件做一次导入、编辑、导出的往返实测，重点看断点与交互状态。Ripplet 若公布布料处理过程，再补 12 fps／30 fps 合成的实现。</li>
+</ul>
+<h2>● 已覆盖 / 避免重复</h2>
+<p class="mixed-script">已覆盖 Pointer-driven Animations、Filter Effects 2、Computing with CSS Layout、GitHub Issue 状态与仓库看板、GitHub 通知订阅、Firefox 161 和 Co-op Membershapes。</p>
+<p class="mixed-script">视频已覆盖 Wix Studio Two 发布片。Stash 记录 Wix、The Tower &amp; the Witch 与 Give the Gift of Closeness，后两条只补制作细节。后续有新案例、实测或实现细节时再跟进。</p>

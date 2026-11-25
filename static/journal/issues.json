@@ -1,5 +1,11 @@
 [
   {
+    "volume": 33,
+    "date": "2026-11-25",
+    "headline": "Pointer-driven Animations Module Level 1",
+    "intro": "W3C 昨天公开了指针驱动动画和滤镜效果两份工作草案，分别讨论指针位置怎样映射成进度、背景滤镜能采到哪一层。GitHub 同期把任务状态带进 Issue 和仓库看板，并预告 12 月 1 日起调整「什么动作会让你重新订阅」。这几件事都适合拿来改组件验收：写出状态由什么输入触发、离开后如何恢复、谁能改。Wix Studio Two 的发布片也是这个思路，把一次选中、改色或导入后的结果留在画面里，观众才知道工具改了哪里。"
+  },
+  {
     "volume": 32,
     "date": "2026-11-24",
     "headline": "The Figma agent is now available in FigJam and Slides",
